@@ -8,7 +8,7 @@ export default class SkillItem extends React.Component<Props> {
   render() {
     return (
       <Link href={this.props.href} passHref>
-        <a>
+        <a target="_blank">
           <div
             style={{
               display: "grid",
