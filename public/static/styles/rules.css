@@ -9,3 +9,7 @@ a:hover {
   text-decoration: none;
   color: initial;
 }
+
+html {
+  font-family: Roboto, sans-serif;
+}
