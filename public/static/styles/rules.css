@@ -4,7 +4,8 @@
 
 a,
 a *,
-a:acive,
+a:active,
 a:hover {
   text-decoration: none;
+  color: initial;
 }
