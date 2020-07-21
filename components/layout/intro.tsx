@@ -13,6 +13,9 @@ const styles = createStyles({
     height: "100%",
     gap: "10px",
   },
+  button: {
+    color: "white",
+  },
 });
 interface State {
   typing: boolean;

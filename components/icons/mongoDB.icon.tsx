@@ -26,8 +26,8 @@ const MongoDBIcon: React.FC<Props> = (props: Props) => {
           y2="0"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#74cb32" />
-          <stop offset="1" stop-color="#abeb6b" />
+          <stop stopColor="#74cb32" />
+          <stop offset="1" stopColor="#abeb6b" />
         </linearGradient>
       </defs>
       <circle r="24" cy="24" cx="24" fill="url(#0)" />

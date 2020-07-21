@@ -1,11 +1,9 @@
 * {
   box-sizing: border-box;
+  color: inherit;
 }
 
-a,
-a *,
-a:active,
-a:hover {
+a {
   text-decoration: none;
   color: initial;
 }
