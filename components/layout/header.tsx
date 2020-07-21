@@ -30,6 +30,9 @@ class Header extends Component<WithStyles<typeof styles>> {
             <Link href="/#kenntnisse">
               <Button color="inherit">Kenntnisse</Button>
             </Link>
+            <Link href="/#projekte">
+              <Button color="inherit">Projekte</Button>
+            </Link>
           </Grid>
         </Toolbar>
       </AppBar>
