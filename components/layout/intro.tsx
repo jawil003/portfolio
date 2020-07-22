@@ -7,7 +7,6 @@ import {
   withStyles,
   WithStyles,
   Button,
-  Link,
 } from "@material-ui/core";
 import Typist from "react-typist";
 const styles = createStyles({

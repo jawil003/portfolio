@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Layout } from "components/layout";
+import { Layout } from "../components/layout/layout";
 import IndexItem from "components/layout/indexItem";
 
 export default class Sources extends Component {
