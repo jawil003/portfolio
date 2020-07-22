@@ -1,9 +1,18 @@
 const withCss = require("@zeit/next-css");
 const withPlugins = require("next-compose-plugins");
 const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const debug = process.env.NODE_ENV !== "production";
 
 const nextConfig = {
-  webpack: config => {
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+      "/sources": { page: "/sources" },
+    };
+  },
+  //assetPrefix: '',
+  assetPrefix: !debug ? "/Portfolio/" : "",
+  webpack: (config) => {
     if (config.resolve.plugins) {
       config.resolve.plugins.push(new TsConfigPathsPlugin());
     } else {
@@ -14,12 +23,12 @@ const nextConfig = {
   },
   serverRuntimeConfig: {
     // Will only be available on the server side
-    mySecret: "secret"
+    mySecret: "secret",
   },
   env: {
     // Will be available on both server and client
-    API_URL: process.env.REACT_APP_SERVICE_URL
-  }
+    API_URL: process.env.REACT_APP_SERVICE_URL,
+  },
 };
 
 // next.config.js

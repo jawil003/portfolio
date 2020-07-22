@@ -24,16 +24,25 @@ class Header extends Component<WithStyles<typeof styles>> {
       <AppBar id="navigation" classes={{ root: this.props.classes.appBar }}>
         <Toolbar>
           <Grid container alignContent="center" justify="center">
-            <Link href="/#lebenslauf">
+            <Link
+              href="/#lebenslauf"
+              as={process.env.BACKEND_URL + "/#lebenslauf"}
+            >
               <Button color="inherit">Lebenslauf</Button>
             </Link>
-            <Link href="/#kenntnisse">
+            <Link
+              href="/#kenntnisse"
+              as={process.env.BACKEND_URL + "/#kenntnisse"}
+            >
               <Button color="inherit">Kenntnisse</Button>
             </Link>
-            <Link href="/#projekte">
+            <Link href="/#projekte" as={process.env.BACKEND_URL + "/#projekte"}>
               <Button color="inherit">Projekte</Button>
             </Link>
-            <Link href="/sources/#navigation">
+            <Link
+              href="/sources/#navigation"
+              as={process.env.BACKEND_URL + "/sources/#navigation"}
+            >
               <Button color="inherit">Quellen</Button>
             </Link>
           </Grid>
