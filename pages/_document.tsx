@@ -11,8 +11,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
             rel="stylesheet"
-            href="/styles/style.css"
-            as={process.env.BACKEND_URL + "/styles/style.css"}
+            href={`${process.env.BACKEND_URL}/styles/style.css`}
           />
         </Head>
         <body style={{ margin: "0px" }}>
