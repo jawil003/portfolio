@@ -6,6 +6,7 @@ import {
   withStyles,
   WithStyles,
   Button,
+  Link,
 } from "@material-ui/core";
 import Typist from "react-typist";
 const styles = createStyles({
@@ -78,9 +79,11 @@ class Intro extends React.Component<Props, State> {
               </Typography>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary" href="/#navigation">
-                Lernen wir uns kennen
-              </Button>
+              <Link href="/#navigation">
+                <Button variant="contained" color="primary">
+                  Lernen wir uns kennen
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </div>

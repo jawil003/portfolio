@@ -2,11 +2,13 @@ import React from "react";
 import IndexItem from "./layout/indexItem";
 import ProjectItem from "./projectsItem";
 import WebIcon from "@material-ui/icons/Web";
+import DnsIcon from "@material-ui/icons/Dns";
 import { createStyles, WithStyles, withStyles } from "@material-ui/core";
 const styles = createStyles({
   icon: {
     fontSize: "5rem",
   },
+  iconWithPadding: { fontSize: "5rem", padding: "5px" },
 });
 class Project extends React.Component<WithStyles<typeof styles>> {
   render() {
@@ -19,42 +21,21 @@ class Project extends React.Component<WithStyles<typeof styles>> {
               classes={{ root: this.props.classes.icon }}
             />
           }
-          href=""
+          href="https://github.com/jawil003/Portfolio"
         >
           Portfolio
         </ProjectItem>
+
         <ProjectItem
           icon={
-            <WebIcon
+            <DnsIcon
               color="primary"
-              classes={{ root: this.props.classes.icon }}
+              classes={{ root: this.props.classes.iconWithPadding }}
             />
           }
-          href=""
+          href="https://github.com/jawil003/Web-Praktika"
         >
-          DeliveryTool
-        </ProjectItem>
-        <ProjectItem
-          icon={
-            <WebIcon
-              color="primary"
-              classes={{ root: this.props.classes.icon }}
-            />
-          }
-          href=""
-        >
-          BreakTool
-        </ProjectItem>
-        <ProjectItem
-          icon={
-            <WebIcon
-              color="primary"
-              classes={{ root: this.props.classes.icon }}
-            />
-          }
-          href=""
-        >
-          WebServer NodeJS
+          WebServer
         </ProjectItem>
       </IndexItem>
     );
