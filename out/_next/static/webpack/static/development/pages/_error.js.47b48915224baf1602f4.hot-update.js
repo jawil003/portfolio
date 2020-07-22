@@ -288,8 +288,8 @@ false,
 /***/ "./pages/_error.tsx":
 false,
 
-/***/ 1:
+/***/ 2:
 false
 
 })
-//# sourceMappingURL=_error.js.55ce74d0b5c6d0b51c39.hot-update.js.map
+//# sourceMappingURL=_error.js.47b48915224baf1602f4.hot-update.js.map

@@ -2130,7 +2130,11 @@ var styles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__["createStyle
     color: "white"
   },
   typist: {
-    textAlign: "center"
+    textAlign: "center",
+    overflowWrap: "break-word",
+    wordWrap: "break-word",
+    padding: "0px 10px",
+    width: "100vw"
   }
 });
 
@@ -2174,7 +2178,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46,
+          lineNumber: 50,
           columnNumber: 7
         }
       }, __jsx("div", {
@@ -2185,7 +2189,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54,
+          lineNumber: 58,
           columnNumber: 9
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__["Grid"], {
@@ -2200,7 +2204,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55,
+          lineNumber: 59,
           columnNumber: 11
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__["Grid"], {
@@ -2208,7 +2212,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63,
+          lineNumber: 67,
           columnNumber: 13
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__["Typography"], {
@@ -2217,7 +2221,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64,
+          lineNumber: 68,
           columnNumber: 15
         }
       }, __jsx(react_typist__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -2228,7 +2232,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65,
+          lineNumber: 69,
           columnNumber: 17
         }
       }, __jsx("span", {
@@ -2239,7 +2243,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71,
+          lineNumber: 75,
           columnNumber: 19
         }
       }, "Hallo, mein Name ist Jannik"), __jsx(react_typist__WEBPACK_IMPORTED_MODULE_11___default.a.Backspace, {
@@ -2248,7 +2252,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76,
+          lineNumber: 80,
           columnNumber: 19
         }
       }), __jsx("span", {
@@ -2259,7 +2263,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77,
+          lineNumber: 81,
           columnNumber: 19
         }
       }, "Ich bin Student der Wirtschaftsinformatik"), __jsx(react_typist__WEBPACK_IMPORTED_MODULE_11___default.a.Backspace, {
@@ -2268,7 +2272,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82,
+          lineNumber: 86,
           columnNumber: 19
         }
       }), __jsx("span", {
@@ -2279,7 +2283,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83,
+          lineNumber: 87,
           columnNumber: 19
         }
       }, "Borussia Dortmund Fan")))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__["Grid"], {
@@ -2287,7 +2291,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91,
+          lineNumber: 95,
           columnNumber: 13
         }
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -2295,7 +2299,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92,
+          lineNumber: 96,
           columnNumber: 15
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__["Button"], {
@@ -2304,7 +2308,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93,
+          lineNumber: 97,
           columnNumber: 17
         }
       }, "Lernen wir uns kennen")))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -2312,7 +2316,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99,
+          lineNumber: 103,
           columnNumber: 11
         }
       }, __jsx("a", {
@@ -2321,7 +2325,7 @@ var Intro = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100,
+          lineNumber: 104,
           columnNumber: 13
         }
       }, "Foto von sxss"))));
@@ -37433,7 +37437,7 @@ var yellow = {
 /*!*****************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/index.js ***!
   \*****************************************************/
-/*! exports provided: colors, hexToRgb, rgbToHex, hslToRgb, decomposeColor, recomposeColor, getContrastRatio, getLuminance, emphasize, fade, darken, lighten, createMuiTheme, unstable_createMuiStrictModeTheme, createStyles, makeStyles, responsiveFontSizes, styled, easing, duration, useTheme, withStyles, withTheme, createGenerateClassName, jssPreset, ServerStyleSheets, StylesProvider, MuiThemeProvider, ThemeProvider, Accordion, AccordionActions, AccordionDetails, AccordionSummary, AppBar, Avatar, Backdrop, Badge, BottomNavigation, BottomNavigationAction, Box, Breadcrumbs, Button, ButtonBase, ButtonGroup, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Checkbox, Chip, CircularProgress, ClickAwayListener, Collapse, Container, CssBaseline, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Drawer, ExpansionPanel, ExpansionPanelActions, ExpansionPanelDetails, ExpansionPanelSummary, Fab, Fade, FilledInput, FormControl, FormControlLabel, FormGroup, FormHelperText, FormLabel, Grid, GridList, GridListTile, GridListTileBar, Grow, Hidden, Icon, IconButton, Input, InputAdornment, InputBase, InputLabel, LinearProgress, Link, List, ListItem, ListItemAvatar, ListItemIcon, ListItemSecondaryAction, ListItemText, ListSubheader, Menu, MenuItem, MenuList, MobileStepper, Modal, NativeSelect, NoSsr, OutlinedInput, Paper, Popover, Popper, Portal, Radio, RadioGroup, RootRef, Select, Slide, Slider, Snackbar, SnackbarContent, Step, StepButton, StepConnector, StepContent, StepIcon, StepLabel, Stepper, SvgIcon, SwipeableDrawer, Switch, Tab, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow, TableSortLabel, Tabs, TabScrollButton, TextField, TextareaAutosize, Toolbar, Tooltip, Typography, Unstable_TrapFocus, useMediaQuery, useScrollTrigger, withMobileDialog, withWidth, Zoom, capitalize, createChainedFunction, createSvgIcon, debounce, deprecatedPropType, isMuiElement, ownerDocument, ownerWindow, requirePropFactory, setRef, unsupportedProp, useControlled, useEventCallback, useForkRef, unstable_useId, useIsFocusVisible, styleFunction, useFormControl, ModalManager, useRadioGroup, isWidthUp, isWidthDown */
+/*! exports provided: colors, hexToRgb, rgbToHex, hslToRgb, decomposeColor, recomposeColor, getContrastRatio, getLuminance, emphasize, fade, darken, lighten, createMuiTheme, unstable_createMuiStrictModeTheme, createStyles, makeStyles, responsiveFontSizes, styled, easing, duration, useTheme, withStyles, withTheme, createGenerateClassName, jssPreset, ServerStyleSheets, StylesProvider, MuiThemeProvider, ThemeProvider, capitalize, createChainedFunction, createSvgIcon, debounce, deprecatedPropType, isMuiElement, ownerDocument, ownerWindow, requirePropFactory, setRef, unsupportedProp, useControlled, useEventCallback, useForkRef, unstable_useId, useIsFocusVisible, Accordion, AccordionActions, AccordionDetails, AccordionSummary, AppBar, Avatar, Backdrop, Badge, BottomNavigation, BottomNavigationAction, Box, styleFunction, Breadcrumbs, Button, ButtonBase, ButtonGroup, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Checkbox, Chip, CircularProgress, ClickAwayListener, Collapse, Container, CssBaseline, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Drawer, ExpansionPanel, ExpansionPanelActions, ExpansionPanelDetails, ExpansionPanelSummary, Fab, Fade, FilledInput, FormControl, useFormControl, FormControlLabel, FormGroup, FormHelperText, FormLabel, Grid, GridList, GridListTile, GridListTileBar, Grow, Hidden, Icon, IconButton, Input, InputAdornment, InputBase, InputLabel, LinearProgress, Link, List, ListItem, ListItemAvatar, ListItemIcon, ListItemSecondaryAction, ListItemText, ListSubheader, Menu, MenuItem, MenuList, MobileStepper, Modal, ModalManager, NativeSelect, NoSsr, OutlinedInput, Paper, Popover, Popper, Portal, Radio, RadioGroup, useRadioGroup, RootRef, Select, Slide, Slider, Snackbar, SnackbarContent, Step, StepButton, StepConnector, StepContent, StepIcon, StepLabel, Stepper, SvgIcon, SwipeableDrawer, Switch, Tab, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow, TableSortLabel, Tabs, TabScrollButton, TextField, TextareaAutosize, Toolbar, Tooltip, Typography, Unstable_TrapFocus, useMediaQuery, useScrollTrigger, withMobileDialog, withWidth, Zoom, isWidthUp, isWidthDown */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65207,7 +65211,7 @@ var Index = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjannik%2FDesktop%2Fnextjs-typescript-starter%2Fpages%2Findex.tsx ***!
   \********************************************************************************************************************************************/
@@ -65230,5 +65234,5 @@ module.exports = dll_b29684ed772f9fa2503e;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
