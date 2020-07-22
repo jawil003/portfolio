@@ -25,6 +25,10 @@ const styles = createStyles({
   },
   typist: {
     textAlign: "center",
+    overflowWrap: "break-word",
+    wordWrap: "break-word",
+    padding: "0px 10px",
+    width: "100vw",
   },
 });
 interface State {
