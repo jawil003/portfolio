@@ -32,7 +32,7 @@ export default class CustomApp extends App {
     return (
       <>
         <Head>
-          <title>Flask, React App</title>
+          <title>Portfolio</title>
         </Head>
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />

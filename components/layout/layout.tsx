@@ -1,6 +1,6 @@
 import React from "react";
 import { ErrorBoundary } from "../error-boundary";
-import { Header } from "components/layout";
+import Header from "../layout/header";
 import Intro from "../layout/intro";
 export const Layout = (props) => {
   return (

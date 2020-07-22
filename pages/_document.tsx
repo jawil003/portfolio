@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link rel="stylesheet" href="static/styles/style.css" />
+          <link rel="stylesheet" href="/styles/style.css" />
         </Head>
         <body style={{ margin: "0px" }}>
           <Main />

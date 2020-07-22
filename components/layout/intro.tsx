@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Typography,
   Grid,
@@ -12,6 +13,12 @@ const styles = createStyles({
   gridContainer: {
     height: "100%",
     gap: "10px",
+  },
+  copyright: {
+    position: "absolute",
+    left: "16px",
+    top: "16px",
+    color: "rgba(255,255,255,0.3)",
   },
   button: {
     color: "white",
@@ -37,7 +44,7 @@ class Intro extends React.Component<Props, State> {
         style={{
           height: "100vh",
           width: "100vw",
-          background: "url(/background_dortmund.jpg) no-repeat center center",
+          background: `url(/pictures/background_dortmund.jpg) no-repeat center center`,
           backgroundSize: "cover",
         }}
       >
@@ -83,6 +90,11 @@ class Intro extends React.Component<Props, State> {
               </Button>
             </Grid>
           </Grid>
+          <Link href="https://pixabay.com/de/photos/dortmund-dortmunder-u-u-turm-602962/">
+            <a target="_blank" className={`${this.props.classes.copyright}`}>
+              Foto von sxss
+            </a>
+          </Link>
         </div>
       </div>
     );

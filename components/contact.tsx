@@ -51,6 +51,7 @@ class Contact extends React.Component<WithStyles<typeof styles>, State> {
           <Link href="https://de.linkedin.com/" target="_blank">
             <Fab
               classes={{ root: this.props.classes.littlefab }}
+              className="customAnchor"
               color="secondary"
               aria-label="github"
               size="small"
