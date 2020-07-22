@@ -9,6 +9,8 @@ import JavaIcon from "./icons/java.icon";
 import HibernateIcon from "./icons/hibernate.icon";
 import MongoDBIcon from "./icons/mongoDB.icon";
 import MySQLIcon from "./icons/mySQL.icon";
+import NodeJSIcon from "./icons/nodejs.icon";
+import SwiftIcon from "./icons/swift.icon";
 
 export default class Skills extends React.Component {
   render() {
@@ -61,6 +63,18 @@ export default class Skills extends React.Component {
           icon={<MySQLIcon fontSize="large" />}
         >
           MySQL
+        </SkillItem>
+        <SkillItem
+          href="https://www.mysql.com/"
+          icon={<NodeJSIcon fontSize="large" />}
+        >
+          NodeJS
+        </SkillItem>
+        <SkillItem
+          href="https://www.mysql.com/"
+          icon={<SwiftIcon fontSize="large" />}
+        >
+          Swift
         </SkillItem>
       </IndexItem>
     );
