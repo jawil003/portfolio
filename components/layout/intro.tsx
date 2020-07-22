@@ -23,6 +23,9 @@ const styles = createStyles({
   button: {
     color: "white",
   },
+  typist: {
+    textAlign: "center",
+  },
 });
 interface State {
   typing: boolean;
@@ -60,6 +63,7 @@ class Intro extends React.Component<Props, State> {
             <Grid item>
               <Typography variant="h3" component="h3">
                 <Typist
+                  className={this.props.classes.typist}
                   key={this.state.typing}
                   onTypingDone={this.done}
                   cursor={{}}

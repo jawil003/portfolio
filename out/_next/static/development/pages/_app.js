@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\_app.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
 
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
 /*!*******************************************************************!*\
@@ -21017,7 +21017,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\JW98\\OneDrive\\Dokumente\\Web\\Portfolio\\pages\\_app.tsx";
+var _jsxFileName = "/Users/jannik/Desktop/nextjs-typescript-starter/pages/_app.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
@@ -21160,7 +21160,7 @@ var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["create
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! next-client-pages-loader?page=%2F_app&absolutePagePath=private-next-pages%2F_app.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.tsx!./");
-module.exports = __webpack_require__(/*! C:\Users\JW98\OneDrive\Dokumente\Web\Portfolio\node_modules\next\dist\client\router.js */"./node_modules/next/dist/client/router.js");
+module.exports = __webpack_require__(/*! /Users/jannik/Desktop/nextjs-typescript-starter/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
 
 
 /***/ }),

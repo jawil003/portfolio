@@ -1,4 +1,4 @@
-webpackHotUpdate("static\\development\\pages\\_error.js",{
+webpackHotUpdate("static/development/pages/_error.js",{
 
 /***/ "./components/errors/five_hundred_error.tsx":
 false,
@@ -186,7 +186,7 @@ false,
 /***/ "./node_modules/next/dist/build/polyfills/object.assign/index.js":
 false,
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_error&absolutePagePath=C%3A%5CUsers%5CJW98%5COneDrive%5CDokumente%5CWeb%5CPortfolio%5Cpages%5C_error.tsx!./":
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_error&absolutePagePath=%2FUsers%2Fjannik%2FDesktop%2Fnextjs-typescript-starter%2Fpages%2F_error.tsx!./":
 false,
 
 /***/ "./node_modules/next/dist/client/link.js":
@@ -292,4 +292,4 @@ false,
 false
 
 })
-//# sourceMappingURL=_error.js.4125f3149a59c212e1f2.hot-update.js.map
+//# sourceMappingURL=_error.js.55ce74d0b5c6d0b51c39.hot-update.js.map

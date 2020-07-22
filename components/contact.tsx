@@ -48,7 +48,10 @@ class Contact extends React.Component<WithStyles<typeof styles>, State> {
           classes={{ container: this.props.classes.collapse }}
           in={this.state.open}
         >
-          <Link href="https://de.linkedin.com/" target="_blank">
+          <Link
+            href="https://linkedin.com/in/jannik-will-450564182"
+            target="_blank"
+          >
             <Fab
               classes={{ root: this.props.classes.littlefab }}
               className="customAnchor"
