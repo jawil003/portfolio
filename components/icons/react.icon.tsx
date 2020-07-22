@@ -20,7 +20,7 @@ const ReactIcon: React.FC<Props> = (props: Props) => {
       }}
       width="1em"
       height="1em"
-      viewBox="0 0 841.9 595.3"
+      viewBox="160 140 541.9 295.3"
       enableBackground="new 0 0 841.9 595.3"
     >
       <g>

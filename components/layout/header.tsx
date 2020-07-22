@@ -33,6 +33,9 @@ class Header extends Component<WithStyles<typeof styles>> {
             <Link href="/#projekte">
               <Button color="inherit">Projekte</Button>
             </Link>
+            <Link href="/sources/#navigation">
+              <Button color="inherit">Quellen</Button>
+            </Link>
           </Grid>
         </Toolbar>
       </AppBar>
