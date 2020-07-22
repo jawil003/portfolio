@@ -44,7 +44,7 @@ class Intro extends React.Component<Props, State> {
         style={{
           height: "100vh",
           width: "100vw",
-          background: `url(/pictures/background_dortmund.jpg) no-repeat center center`,
+          background: `url(${process.env.BACKEND_URL}/pictures/background_dortmund.jpg) no-repeat center center`,
           backgroundSize: "cover",
         }}
       >
