@@ -85,7 +85,7 @@ class Intro extends React.Component<Props, State> {
               </Typography>
             </Grid>
             <Grid item>
-              <Link href="/#navigation">
+              <Link href={`${process.env.BACKEND_URL}/#navigation`}>
                 <Button variant="contained" color="primary">
                   Lernen wir uns kennen
                 </Button>
