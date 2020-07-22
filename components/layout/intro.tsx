@@ -43,7 +43,7 @@ class Intro extends React.Component<Props, State> {
       <div
         style={{
           height: "100vh",
-          width: "100vw",
+          width: "100%",
           background: `url(${process.env.BACKEND_URL}/pictures/background_dortmund.jpg) no-repeat center center`,
           backgroundSize: "cover",
         }}
