@@ -13,6 +13,11 @@ const nextConfig = {
   //assetPrefix: '',
   assetPrefix: !debug ? "/Portfolio/" : "",
   webpack: (config) => {
+    config.output = config.output || {};
+    if (debug) config.devtool = "eval-source-map";
+    config.output.devtoolModuleFilenameTemplate = function (info) {
+      return "file:///" + encodeURI(info.absoluteResourcePath);
+    };
     if (config.resolve.plugins) {
       config.resolve.plugins.push(new TsConfigPathsPlugin());
     } else {

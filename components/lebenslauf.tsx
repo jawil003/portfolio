@@ -3,65 +3,70 @@ import LebenslaufItem from "./lebenslaufItem";
 import SchoolIcon from "@material-ui/icons/School";
 import WorkIcon from "@material-ui/icons/Work";
 import IndexItem from "./layout/indexItem";
-export default class Lebenslauf extends React.Component {
+import { withTranslation, WithTranslation } from "next-translate";
+class Lebenslauf extends React.Component<WithTranslation> {
   render() {
     return (
       <IndexItem title="Lebenslauf">
         <LebenslaufItem
           href="https://www.fh-dortmund.de/de/index.php"
           icon={<SchoolIcon color="primary" fontSize="large" />}
+          title={this.props.i18n.t("resume:study")}
+          place="Fachhochschule Dortmund"
+          startdate="2017"
+          enddate="heute"
         >
-          Studium an der Fachhochschule Dortmund Bsc. Wirtschaftsinformatik
-          <ul style={{ padding: "0px" }}>
-            <li>Algorithmen und Datenstrukturen</li>
-            <li>
-              Java Grundkenntnisse und fortgeschrittenes UI Design mit Swing
-            </li>
-            <li>Moderne Webentwicklung mit HTML, CSS, Javascript und NodeJS</li>
-          </ul>
+          <li>{this.props.i18n.t("resume:study_description.0")}</li>
+          <li>{this.props.i18n.t("resume:study_description.1")}</li>
+          <li>{this.props.i18n.t("resume:study_description.2")}</li>
         </LebenslaufItem>
         <LebenslaufItem
           href="https://www.adesso.de/de/index.jsp"
           icon={<SchoolIcon color="primary" fontSize="large" />}
+          title="Projekt im Bereich Mobile App Development
+              ChatBot"
+          place="Adesso SE"
+          startdate="14.4.2017"
+          enddate="today"
         >
-          Projekt mit der Adesso SE im Bereich Mobile App Development ChatBot
-          <ul style={{ padding: "0px" }}>
-            <li>Entwicklung einer Java Android App</li>
-            <li>Kommunikation mit der Adesso ChatBot Workbench</li>
-          </ul>
+          <li>Entwicklung einer Java Android App</li>
+          <li>Kommunikation mit der Adesso ChatBot Workbench</li>
         </LebenslaufItem>
         <LebenslaufItem
           href="https://www.agido.com/"
           icon={<WorkIcon color="primary" fontSize="large" />}
+          title="Werkstudententätigkeit"
+          place="Agido GmbH"
+          startdate="14.4.2017"
+          enddate="today"
         >
-          Arbeit als Werkstudent Agido GmbH
-          <br />
-          <br />
-          <ul style={{ padding: "0px" }}>
-            <li>Weiterentwicklung Java Swing Client</li>
-            <li>Entwicklung JBoss Backend</li>
-          </ul>
+          <li>Weiterentwicklung Java Swing Client</li>
+          <li>Entwicklung JBoss Backend</li>
         </LebenslaufItem>
         <LebenslaufItem
           href="https://www.phoenix-gymnasium-hoerde.de/"
           icon={<SchoolIcon color="primary" fontSize="large" />}
+          title="Allgemeine Hochschulreife"
+          place="Phoenix Gymnasium Dortmund"
+          startdate="14.4.2017"
+          enddate="today"
         >
-          Allgemeine Hochschulreife (Phoenix Gymnasium Dortmund)
-          <ul style={{ padding: "0px" }}>
-            <li>Besuch des Informatik Leistungskurses</li>
-            <li>Entwicklung von Software basierend aus Stifte und Mäuse SDK</li>
-          </ul>
+          <li>Besuch des Informatik Leistungskurses</li>
+          <li>Entwicklung von Software basierend aus Stifte und Mäuse SDK</li>
         </LebenslaufItem>
         <LebenslaufItem
           href="https://www.berghofer-grundschule.de/%C3%BCber-uns/"
           icon={<SchoolIcon color="primary" fontSize="large" />}
+          title="Grundschulabschluss"
+          place="Busenberg Grundschule"
+          startdate="14.4.2017"
+          enddate="today"
         >
-          Grundschulabschluss (Busenberg Grundschule)
-          <ul style={{ padding: "0px" }}>
-            <li>Grundausbildung in Wort, Mathematik und Schrift</li>
-          </ul>
+          <li>Grundausbildung in Wort, Mathematik und Schrift</li>
         </LebenslaufItem>
       </IndexItem>
     );
   }
 }
+
+export default withTranslation(Lebenslauf);

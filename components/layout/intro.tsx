@@ -8,7 +8,9 @@ import {
   WithStyles,
   Button,
 } from "@material-ui/core";
+import { withTranslation, WithTranslation } from "next-translate";
 import Typist from "react-typist";
+import UtilService from "../../services/util.service";
 const styles = createStyles({
   gridContainer: {
     height: "100%",
@@ -35,9 +37,14 @@ interface State {
   typing: boolean;
 }
 interface Props extends WithStyles<typeof styles> {}
-class Intro extends React.Component<Props, State> {
-  constructor(props: Props) {
+class Intro extends React.Component<Props & WithTranslation, State> {
+  public description1 = this.props.i18n.t("intro:description1");
+  public description2 = this.props.i18n.t("intro:description2");
+  public description3 = this.props.i18n.t("intro:description3");
+  private utilService: UtilService;
+  constructor(props: Props & WithTranslation) {
     super(props);
+    this.utilService = new UtilService();
   }
   state = { typing: true };
   done = () => {
@@ -75,19 +82,37 @@ class Intro extends React.Component<Props, State> {
                   <span
                     style={{ color: "white", textShadow: "3px 3px 4px #777" }}
                   >
-                    Hallo, mein Name ist Jannik
+                    {this.description1}
                   </span>
-                  <Typist.Backspace count={30} delay={2000} />
+                  <Typist.Backspace
+                    count={this.utilService.getDifferenceFromEnd(
+                      this.description1,
+                      this.description2
+                    )}
+                    delay={2000}
+                  />
                   <span
                     style={{ color: "white", textShadow: "3px 3px 4px #777" }}
                   >
-                    Ich bin Student der Wirtschaftsinformatik
+                    {this.utilService.removeDuplicate(
+                      this.description2,
+                      this.description1
+                    )}
                   </span>
-                  <Typist.Backspace count={33} delay={2000} />
+                  <Typist.Backspace
+                    count={this.utilService.getDifferenceFromEnd(
+                      this.description2,
+                      this.description3
+                    )}
+                    delay={2000}
+                  />
                   <span
                     style={{ color: "white", textShadow: "3px 3px 4px #777" }}
                   >
-                    Borussia Dortmund Fan
+                    {this.utilService.removeDuplicate(
+                      this.description3,
+                      this.description2
+                    )}
                   </span>
                 </Typist>
               </Typography>
@@ -95,14 +120,14 @@ class Intro extends React.Component<Props, State> {
             <Grid item>
               <Link href={`${process.env.BACKEND_URL}/#navigation`}>
                 <Button variant="contained" color="primary">
-                  Lernen wir uns kennen
+                  {this.props.i18n.t("intro:buttontext")}
                 </Button>
               </Link>
             </Grid>
           </Grid>
           <Link href="https://pixabay.com/de/photos/dortmund-dortmunder-u-u-turm-602962/">
             <a target="_blank" className={`${this.props.classes.copyright}`}>
-              Foto von sxss
+              {this.props.i18n.t("intro:copyright", { person: "sxxs" })}
             </a>
           </Link>
         </div>
@@ -111,4 +136,4 @@ class Intro extends React.Component<Props, State> {
   }
 }
 
-export default withStyles(styles)(Intro);
+export default withStyles(styles)(withTranslation(Intro));

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Toolbar from "@material-ui/core/Toolbar";
 import AppBar from "@material-ui/core/AppBar";
+import { withTranslation, WithTranslation } from "next-translate";
 import {
   createStyles,
   WithStyles,
@@ -18,7 +19,7 @@ const styles = createStyles({
     position: "static",
   },
 });
-class Header extends Component<WithStyles<typeof styles>> {
+class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
   render() {
     return (
       <AppBar id="navigation" classes={{ root: this.props.classes.appBar }}>
@@ -28,22 +29,30 @@ class Header extends Component<WithStyles<typeof styles>> {
               href="/#lebenslauf"
               as={process.env.BACKEND_URL + "/#lebenslauf"}
             >
-              <Button color="inherit">Lebenslauf</Button>
+              <Button color="inherit">
+                {this.props.i18n.t("header:resume")}
+              </Button>
             </Link>
             <Link
               href="/#kenntnisse"
               as={process.env.BACKEND_URL + "/#kenntnisse"}
             >
-              <Button color="inherit">Kenntnisse</Button>
+              <Button color="inherit">
+                {this.props.i18n.t("header:knowledge")}
+              </Button>
             </Link>
             <Link href="/#projekte" as={process.env.BACKEND_URL + "/#projekte"}>
-              <Button color="inherit">Projekte</Button>
+              <Button color="inherit">
+                {this.props.i18n.t("header:projects")}
+              </Button>
             </Link>
             <Link
               href="/sources/#navigation"
               as={process.env.BACKEND_URL + "/sources/#navigation"}
             >
-              <Button color="inherit">Quellen</Button>
+              <Button color="inherit">
+                {this.props.i18n.t("header:sources")}
+              </Button>
             </Link>
           </Grid>
         </Toolbar>
@@ -52,4 +61,4 @@ class Header extends Component<WithStyles<typeof styles>> {
   }
 }
 
-export default withStyles(styles)(Header);
+export default withTranslation(withStyles(styles)(Header));

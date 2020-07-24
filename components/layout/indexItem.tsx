@@ -33,11 +33,12 @@ class IndexItem extends React.Component<Props> {
         <div
           style={{
             display: "flex",
-            gap: "10px",
+            rowGap: "30px",
+            columnGap: "50px",
             gridAutoRows: "auto",
             gridTemplateColumns: "30% 30% 30%",
             alignContent: "center",
-            alignItems: "baseline",
+            alignItems: "stretch",
             justifyContent: "center",
             margin: "0px 15px",
             flexWrap: "wrap",

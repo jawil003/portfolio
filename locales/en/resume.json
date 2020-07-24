@@ -1,0 +1,8 @@
+{
+  "study": "Studies at the University of Applied Sciences Dortmund Bsc. Business Information Technology",
+  "study_description": {
+    "0": "Algorithms and data structures",
+    "1": "Java basic knowledge and advanced UI design with Swing",
+    "2": "Modern web development with HTML, CSS, Javascript and NodeJS"
+  }
+}
