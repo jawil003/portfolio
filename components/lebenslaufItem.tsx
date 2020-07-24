@@ -6,7 +6,7 @@ interface Props {
   title: string;
   place: string;
   startdate: string;
-  enddate: string;
+  enddate?: string;
 }
 export default class LebenslaufItem extends React.Component<Props> {
   render() {
@@ -22,7 +22,7 @@ export default class LebenslaufItem extends React.Component<Props> {
             justifyItems: "center",
             width: "350px",
             height: "100%",
-            gridTemplateRows: "auto auto 3.5em 1fr",
+            gridTemplateRows: "auto auto 3.5em 1fr auto ",
             padding: "30px",
             border: "1px solid rgba(0,0,0,0.1)",
             boxShadow: "3 2 2px rgba(0,0,0,1",
@@ -48,6 +48,7 @@ export default class LebenslaufItem extends React.Component<Props> {
               {this.props.title}
             </p>
           </p>
+
           <div
             style={{
               display: "flex",
@@ -57,8 +58,8 @@ export default class LebenslaufItem extends React.Component<Props> {
               fontSize: "0.95em",
             }}
           >
-            <PlaceIcon />
-            <span>{this.props.place}</span>
+            <PlaceIcon fontSize="small" />
+            <span style={{ textAlign: "center" }}>{this.props.place}</span>
           </div>
 
           <div
@@ -81,30 +82,16 @@ export default class LebenslaufItem extends React.Component<Props> {
               {this.props.children}
             </ul>
           </div>
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            top: "0px",
-            left: "0px",
-            padding: "10px",
-            fontSize: "0.7em",
-            fontWeight: "bold",
-          }}
-        >
-          {this.props.startdate}
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            top: "0px",
-            right: "0px",
-            padding: "10px",
-            fontSize: "0.7em",
-            fontWeight: "bold",
-          }}
-        >
-          {this.props.enddate}
+          <div
+            style={{
+              alignSelf: "start",
+              fontSize: "0.68em",
+            }}
+          >
+            {this.props.enddate
+              ? `${this.props.startdate} - ${this.props.enddate}`
+              : this.props.startdate}
+          </div>
         </div>
       </div>
     );

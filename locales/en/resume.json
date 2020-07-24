@@ -4,5 +4,11 @@
     "0": "Algorithms and data structures",
     "1": "Java basic knowledge and advanced UI design with Swing",
     "2": "Modern web development with HTML, CSS, Javascript and NodeJS"
-  }
+  },
+  "today": "today",
+  "university": "University of Applied Sciences and Arts Dortmund",
+  "adesso": "Mobile App Development Project",
+  "agido": "Working student activity",
+  "phoenix": "General qualification for university entrance",
+  "busenberg": "Primary school certificate"
 }
