@@ -15,4 +15,20 @@ export default class UtilService {
         }
         return result.join(" ");
     }
+
+    public resolveLocation = (currentUrl: string = location.host, newSuburl: string): string => {
+        const result = currentUrl.split("/");
+        if (process.env.NODE_ENV === "development")
+            if (result[1] === "de" || result[1] === "en") {
+                return `${result[0]}/${result[1]}/${newSuburl}`;
+            } else {
+                return `${newSuburl}`;
+            }
+        else
+            if (result[2] === "de" || result[1] === "en") {
+                return `${result[0]}/${result[1]}/${result[2]}/${newSuburl}`;
+            } else {
+                return `${result[1]}/${newSuburl}`;
+            }
+    }
 }

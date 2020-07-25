@@ -2,14 +2,8 @@ import React, { Component } from "react";
 import Toolbar from "@material-ui/core/Toolbar";
 import AppBar from "@material-ui/core/AppBar";
 import { withTranslation, WithTranslation } from "next-translate";
-import {
-  createStyles,
-  WithStyles,
-  withStyles,
-  Button,
-  Grid,
-} from "@material-ui/core";
-import Link from "next/link";
+import { createStyles, WithStyles, withStyles, Grid } from "@material-ui/core";
+import Link from "next-translate/link";
 const styles = createStyles({
   icon: {
     marginRight: "10px",
@@ -18,8 +12,10 @@ const styles = createStyles({
   appBar: {
     position: "static",
   },
+  link: { color: "white", margin: "8px" },
 });
 class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
+  componentDidMount() {}
   render() {
     return (
       <AppBar id="navigation" classes={{ root: this.props.classes.appBar }}>
@@ -27,32 +23,30 @@ class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
           <Grid container alignContent="center" justify="center">
             <Link
               href="/#lebenslauf"
-              as={process.env.BACKEND_URL + "/#lebenslauf"}
+              as={`${process.env.BACKEND_URL}/#lebenslauf`}
             >
-              <Button color="inherit">
+              <a className={this.props.classes.link}>
                 {this.props.i18n.t("header:resume")}
-              </Button>
+              </a>
             </Link>
             <Link
               href="/#kenntnisse"
-              as={process.env.BACKEND_URL + "/#kenntnisse"}
+              as={`${process.env.BACKEND_URL}/#kenntnisse`}
             >
-              <Button color="inherit">
+              <a className={this.props.classes.link}>
+                {" "}
                 {this.props.i18n.t("header:knowledge")}
-              </Button>
+              </a>
             </Link>
-            <Link href="/#projekte" as={process.env.BACKEND_URL + "/#projekte"}>
-              <Button color="inherit">
+            <Link href="/#projekte" as={`${process.env.BACKEND_URL}/#projekte`}>
+              <a className={this.props.classes.link}>
                 {this.props.i18n.t("header:projects")}
-              </Button>
+              </a>
             </Link>
-            <Link
-              href="/sources/#navigation"
-              as={process.env.BACKEND_URL + "/sources/#navigation"}
-            >
-              <Button color="inherit">
+            <Link href="/sources" as={`${process.env.BACKEND_URL}/sources`}>
+              <a className={this.props.classes.link}>
                 {this.props.i18n.t("header:sources")}
-              </Button>
+              </a>
             </Link>
           </Grid>
         </Toolbar>

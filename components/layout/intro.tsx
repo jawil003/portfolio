@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import {
   Typography,
   Grid,
@@ -11,6 +10,7 @@ import {
 import { withTranslation, WithTranslation } from "next-translate";
 import Typist from "react-typist";
 import UtilService from "../../services/util.service";
+import Link from "next-translate/link";
 const styles = createStyles({
   gridContainer: {
     height: "100%",
@@ -118,18 +118,24 @@ class Intro extends React.Component<Props & WithTranslation, State> {
               </Typography>
             </Grid>
             <Grid item>
-              <Link href={`${process.env.BACKEND_URL}/#navigation`}>
+              <Link
+                href="/#navigation"
+                as={`${process.env.BACKEND_URL}/#navigation`}
+              >
                 <Button variant="contained" color="primary">
                   {this.props.i18n.t("intro:buttontext")}
                 </Button>
               </Link>
             </Grid>
           </Grid>
-          <Link href="https://pixabay.com/de/photos/dortmund-dortmunder-u-u-turm-602962/">
-            <a target="_blank" className={`${this.props.classes.copyright}`}>
-              {this.props.i18n.t("intro:copyright", { person: "sxxs" })}
-            </a>
-          </Link>
+
+          <a
+            href="https://pixabay.com/de/photos/dortmund-dortmunder-u-u-turm-602962/"
+            target="_blank"
+            className={`${this.props.classes.copyright}`}
+          >
+            {this.props.i18n.t("intro:copyright", { person: "sxxs" })}
+          </a>
         </div>
       </div>
     );

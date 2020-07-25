@@ -2,6 +2,7 @@ const withCss = require("@zeit/next-css");
 const withPlugins = require("next-compose-plugins");
 const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const debug = process.env.NODE_ENV !== "production";
+const isLocal = process.env.IS_LOCAL === "true";
 
 const nextConfig = {
   exportPathMap: function () {
@@ -10,8 +11,7 @@ const nextConfig = {
       "/sources": { page: "/sources" },
     };
   },
-  //assetPrefix: '',
-  assetPrefix: !debug ? "/Portfolio/" : "",
+  assetPrefix: !debug && !isLocal ? "/Portfolio/" : "",
   webpack: (config) => {
     config.output = config.output || {};
     if (debug) config.devtool = "eval-source-map";

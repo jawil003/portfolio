@@ -1,10 +1,11 @@
 import App from "next/app";
 import Head from "next/head";
-import Router from "next/router";
+import Router, { withRouter } from "next/router";
 import NProgress from "nprogress";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../themes/theme";
-export default class CustomApp extends App {
+import { WithRouterProps } from "next/dist/client/with-router";
+class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
     Router.events.on("routeChangeComplete", () => {
       NProgress.start();
@@ -12,6 +13,8 @@ export default class CustomApp extends App {
 
     Router.events.on("routeChangeComplete", () => NProgress.done());
     Router.events.on("routeChangeError", () => NProgress.done());
+
+    if (navigator.language === "de") this.props.router.push("/de");
   }
 
   componentDidCatch(error: any, errorInfo: any) {
@@ -41,3 +44,5 @@ export default class CustomApp extends App {
     );
   }
 }
+
+export default withRouter(CustomApp);

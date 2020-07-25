@@ -1,8 +1,10 @@
 {
   "study": "Studium an der Fachhochschule Dortmund Bsc. Wirtschaftsinformatik",
-  "study.description.0": "Algorithmen und Datenstrukturen",
-  "study.description.1": "Java Grundkenntnisse und fortgeschrittenes UI Design mit Swing",
-  "study.description.2": "Moderne Webentwicklung mit HTML, CSS, Javascript und NodeJS",
+  "study_description": {
+    "0": "Algorithmen und Datenstrukturen",
+    "1": "Java Grundkenntnisse und fortgeschrittenes UI Design mit Swing",
+    "2": "Moderne Webentwicklung mit HTML, CSS, Javascript und NodeJS"
+  },
   "today": "today",
   "university": "Fachhochschule Dortmund",
   "adesso": "Projekt im Bereich Mobile App Development",

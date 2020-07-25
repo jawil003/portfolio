@@ -5,7 +5,7 @@
   "finalPagesDir": "pages",
   "localesPath": "locales",
   "pages": {
-    "*": ["common"],
-    "/": ["intro", "project", "header", "resume"]
+    "*": ["common", "header", "intro"],
+    "/": ["project", "resume"]
   }
 }
