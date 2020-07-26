@@ -20,11 +20,15 @@ class CustomApp extends App<WithRouterProps> {
       navigator.language.slice(0, 2) === "de"
     ) {
       console.info(`Browser language is German`);
-      this.props.router.push(`${url}`);
+      console.debug(`Redirected to /de${url}`);
+      this.props.router.push(`/de${url}`);
     } else {
       console.info(`Browser language is English or another Language`);
       if (url === "") this.props.router.push(`/`);
-      else this.props.router.push(`${url}`);
+      else {
+        console.debug(`${url}`);
+        this.props.router.push(`${url}`);
+      }
     }
     //FIXME: Issue here not react in correct Situation
     /*if (/\/{1}#{1}[a-zA-Zäöüß]+/.test(location.pathname)) {
