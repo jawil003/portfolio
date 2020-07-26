@@ -8,7 +8,24 @@
   "today": "today",
   "university": "Fachhochschule Dortmund",
   "adesso": "Projekt im Bereich Mobile App Development",
+  "adesso_description": {
+    "0": "Entwicklung einer Java Android App",
+    "1": "Kommunikation mit der Adesso ChatBot Workbench"
+  },
   "agido": "Werksstudententätigkeit",
+  "agido_description": {
+    "0": "Weiterentwicklung Java Swing Client",
+    "1": "Entwicklung JBoss Backend"
+  },
   "phoenix": "Allgemeine Hochschulreife",
-  "busenberg": "Grundschulabschluss"
+  "phoenix_school": "Phoenix Gymnasium Dortmund",
+  "phoenix_description": {
+    "0": "Besuch des Informatik Leistungskurses",
+    "1": "Entwicklung von Software basierend aus Stifte und Mäuse SDK"
+  },
+  "busenberg": "Grundschulabschluss",
+  "busenberg_school": "Busenberg Grundschule",
+  "busenberg_description": {
+    "0": "Grundausbildung in Wort, Mathematik und Schrift"
+  }
 }

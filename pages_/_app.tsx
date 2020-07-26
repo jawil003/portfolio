@@ -14,7 +14,12 @@ class CustomApp extends App<WithRouterProps> {
     Router.events.on("routeChangeComplete", () => NProgress.done());
     Router.events.on("routeChangeError", () => NProgress.done());
 
-    if (navigator.language === "de") this.props.router.push("/de");
+    if (
+      process.env.NODE_ENV === "production" &&
+      navigator.language.slice(0, 2) === "de"
+    )
+      this.props.router.push("/de");
+    else this.props.router.push("/");
   }
 
   componentDidCatch(error: any, errorInfo: any) {

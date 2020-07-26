@@ -27,8 +27,8 @@ class Lebenslauf extends React.Component<WithTranslation> {
           place="Adesso SE"
           startdate="2020"
         >
-          <li>Entwicklung einer Java Android App</li>
-          <li>Kommunikation mit der Adesso ChatBot Workbench</li>
+          <li>{this.props.i18n.t("resume:adesso_description.0")}</li>
+          <li>{this.props.i18n.t("resume:adesso_description.1")}</li>
         </LebenslaufItem>
         <LebenslaufItem
           href="https://www.agido.com/"
@@ -37,29 +37,29 @@ class Lebenslauf extends React.Component<WithTranslation> {
           place="Agido GmbH"
           startdate="2019"
         >
-          <li>Weiterentwicklung Java Swing Client</li>
-          <li>Entwicklung JBoss Backend</li>
+          <li>{this.props.i18n.t("resume:agido_description.0")}</li>
+          <li>{this.props.i18n.t("resume:agido_description.1")}</li>
         </LebenslaufItem>
         <LebenslaufItem
           href="https://www.phoenix-gymnasium-hoerde.de/"
           icon={<SchoolIcon color="primary" fontSize="large" />}
           title={this.props.i18n.t("resume:phoenix")}
-          place="Phoenix Gymnasium Dortmund"
+          place={this.props.i18n.t("resume:phoenix_school")}
           startdate="2011"
           enddate="2017"
         >
-          <li>Besuch des Informatik Leistungskurses</li>
-          <li>Entwicklung von Software basierend aus Stifte und Mäuse SDK</li>
+          <li>{this.props.i18n.t("resume:phoenix_description.0")}</li>
+          <li>{this.props.i18n.t("resume:phoenix_description.1")}</li>
         </LebenslaufItem>
         <LebenslaufItem
           href="https://www.berghofer-grundschule.de/%C3%BCber-uns/"
           icon={<SchoolIcon color="primary" fontSize="large" />}
           title={this.props.i18n.t("resume:busenberg")}
-          place="Busenberg Grundschule"
+          place={this.props.i18n.t("resume:busenberg_school")}
           startdate="2003"
           enddate="2009"
         >
-          <li>Grundausbildung in Wort, Mathematik und Schrift</li>
+          <li>{this.props.i18n.t("resume:busenberg_description.0")}</li>
         </LebenslaufItem>
       </IndexItem>
     );
