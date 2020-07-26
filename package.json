@@ -1,6 +1,6 @@
 {
-  "name": "flask-react-docker-app",
-  "version": "1.0.0",
+  "name": "willey3x37_portfolio",
+  "version": "0.6",
   "scripts": {
     "start:dev": "next-translate && cross-env IS_LOCAL=true next",
     "start:local": "npm run build:local && next start",
