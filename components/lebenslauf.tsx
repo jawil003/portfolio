@@ -7,7 +7,7 @@ import { withTranslation, WithTranslation } from "next-translate";
 class Lebenslauf extends React.Component<WithTranslation> {
   render() {
     return (
-      <IndexItem title="Lebenslauf">
+      <IndexItem title={this.props.i18n.t("resume:resume")}>
         <LebenslaufItem
           href="https://www.fh-dortmund.de/de/index.php"
           icon={<SchoolIcon color="primary" fontSize="large" />}
@@ -45,8 +45,6 @@ class Lebenslauf extends React.Component<WithTranslation> {
           icon={<SchoolIcon color="primary" fontSize="large" />}
           title={this.props.i18n.t("resume:phoenix")}
           place={this.props.i18n.t("resume:phoenix_school")}
-          startdate="2011"
-          enddate="2017"
         >
           <li>{this.props.i18n.t("resume:phoenix_description.0")}</li>
           <li>{this.props.i18n.t("resume:phoenix_description.1")}</li>
@@ -56,8 +54,6 @@ class Lebenslauf extends React.Component<WithTranslation> {
           icon={<SchoolIcon color="primary" fontSize="large" />}
           title={this.props.i18n.t("resume:busenberg")}
           place={this.props.i18n.t("resume:busenberg_school")}
-          startdate="2003"
-          enddate="2009"
         >
           <li>{this.props.i18n.t("resume:busenberg_description.0")}</li>
         </LebenslaufItem>

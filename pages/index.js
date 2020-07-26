@@ -5,10 +5,9 @@ import C from '../pages_'
 import ns0 from '../locales/en/common.json'
 import ns1 from '../locales/en/header.json'
 import ns2 from '../locales/en/intro.json'
-import ns3 from '../locales/en/project.json'
-import ns4 from '../locales/en/resume.json'
+import ns3 from '../locales/en/resume.json'
 
-const namespaces = { 'common': ns0, 'header': ns1, 'intro': ns2, 'project': ns3, 'resume': ns4 }
+const namespaces = { 'common': ns0, 'header': ns1, 'intro': ns2, 'resume': ns3 }
 
 export default function Page(p){
   return (

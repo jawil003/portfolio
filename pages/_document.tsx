@@ -22,6 +22,7 @@ export default class MyDocument extends Document {
         <body style={{ margin: "0px" }}>
           <Main />
           <NextScript />
+          <style></style>
         </body>
       </Html>
     );

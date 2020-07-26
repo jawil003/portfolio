@@ -7,7 +7,6 @@ import Link from "next-translate/link";
 const styles = createStyles({
   icon: {
     marginRight: "10px",
-    primary: { backgrounColor: "green" },
   },
   appBar: {
     position: "static",
@@ -15,7 +14,6 @@ const styles = createStyles({
   link: { color: "white", margin: "8px" },
 });
 class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
-  componentDidMount() {}
   render() {
     return (
       <AppBar id="navigation" classes={{ root: this.props.classes.appBar }}>

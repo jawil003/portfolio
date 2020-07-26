@@ -6,6 +6,6 @@
   "localesPath": "locales",
   "pages": {
     "*": ["common", "header", "intro"],
-    "/": ["project", "resume"]
+    "/": ["resume"]
   }
 }

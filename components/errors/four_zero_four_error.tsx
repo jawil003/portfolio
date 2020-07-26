@@ -1,201 +1,49 @@
 import React from "react";
-import styled from "styled-components";
-import Link from "next/link";
+import Link from "next-translate/link";
+import {
+  createStyles,
+  withStyles,
+  WithStyles,
+  Button,
+} from "@material-ui/core";
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  flex-direction: column;
+const styles = createStyles({
+  container: {
+    background: "url(/pictures/background_dortmund.jpg) no-repeat",
+    backgroundSize: "cover",
+    display: "grid",
+    alignContent: "center",
+    justifyContent: "center",
+    justifyItems: "center",
+    height: "100vh",
+    overflow: "hidden",
+    rowGap: "15px",
+    color: "white",
+    ".error-code": {
+      "&:after": {
+        content: "Looks like you are lost! !important",
+      },
+    },
+  },
+});
 
-  .error-code {
-    &:after {
-      content: "Looks like you are lost!" !important;
-    }
-  }
-`;
-
-export const FourZeroFour = () => {
+const FourZeroFour = (props: WithStyles<typeof styles>) => {
   return (
-    <Container>
-      <div>
-        <button className="error-code">
-          <div className="number four">
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-          </div>
-          <div className="number zero">
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-          </div>
-          <div className="number four">
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell empty"></div>
-            <div className="cell filled">
-              <div className="bug"></div>
-            </div>
-          </div>
-        </button>
+    <div className={props.classes.container}>
+      <div style={{ fontSize: "4em", fontWeight: "bold", textAlign: "center" }}>
+        Error 404
       </div>
-      <br />
       <div style={{ width: "400px", textAlign: "center" }}>
         The page you are looking for might have been removed had its name
         changed or is temporarily unavailable.
-        <br />
-        <Link href="/" passHref>
-          <a className="btn btn-tomato mt-4">Back to homepage</a>
-        </Link>
       </div>
-    </Container>
+      <Link href="/">
+        <Button variant="contained" color="primary">
+          Back to homepage
+        </Button>
+      </Link>
+    </div>
   );
 };
+
+export default withStyles(styles)(FourZeroFour);

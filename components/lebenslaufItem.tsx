@@ -5,7 +5,7 @@ interface Props {
   href: string;
   title: string;
   place: string;
-  startdate: string;
+  startdate?: string;
   enddate?: string;
 }
 export default class LebenslaufItem extends React.Component<Props> {
@@ -58,8 +58,10 @@ export default class LebenslaufItem extends React.Component<Props> {
               fontSize: "0.95em",
             }}
           >
-            <PlaceIcon fontSize="small" />
-            <span style={{ textAlign: "center" }}>{this.props.place}</span>
+            <a href={this.props.href}>
+              <PlaceIcon fontSize="small" />
+              <span style={{ textAlign: "center" }}>{this.props.place}</span>
+            </a>
           </div>
 
           <div

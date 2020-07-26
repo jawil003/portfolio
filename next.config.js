@@ -35,6 +35,10 @@ const nextConfig = {
     API_URL: process.env.REACT_APP_SERVICE_URL,
   },
 };
-
+console.info(
+  `Build App in ${process.env.NODE_ENV} mode, with Config ${JSON.stringify(
+    Object.assign(nextConfig, { isLocal, isProduction: !debug })
+  )}`
+);
 // next.config.js
 module.exports = withPlugins([withCss], nextConfig);

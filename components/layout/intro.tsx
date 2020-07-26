@@ -11,6 +11,8 @@ import { withTranslation, WithTranslation } from "next-translate";
 import Typist from "react-typist";
 import UtilService from "../../services/util.service";
 import Link from "next-translate/link";
+import GermanFlag from "components/icons/german_flag.icon";
+import USAFlag from "components/icons/usa_flag.icon";
 const styles = createStyles({
   gridContainer: {
     height: "100%",
@@ -52,6 +54,7 @@ class Intro extends React.Component<Props & WithTranslation, State> {
       this.setState({ typing: !this.state.typing });
     }, 2000);
   };
+
   render() {
     return (
       <div
@@ -136,6 +139,32 @@ class Intro extends React.Component<Props & WithTranslation, State> {
           >
             {this.props.i18n.t("intro:copyright", { person: "sxxs" })}
           </a>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              padding: "16px",
+              color: "white",
+              display: "flex",
+              gap: "20px",
+            }}
+          >
+            {process.env.NODE_ENV !== "production"
+              ? [
+                  <Link href="/" lang="de">
+                    <a>
+                      <GermanFlag fontSize="large" />
+                    </a>
+                  </Link>,
+                  <Link href="/" noLang>
+                    <a>
+                      <USAFlag fontSize="large" />
+                    </a>
+                  </Link>,
+                ]
+              : undefined}
+          </div>
         </div>
       </div>
     );

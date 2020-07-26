@@ -4,16 +4,19 @@ import ProjectItem from "./projectsItem";
 import WebIcon from "@material-ui/icons/Web";
 import DnsIcon from "@material-ui/icons/Dns";
 import { createStyles, WithStyles, withStyles } from "@material-ui/core";
+import { withTranslation, WithTranslation } from "next-translate";
 const styles = createStyles({
   icon: {
     fontSize: "5rem",
   },
   iconWithPadding: { fontSize: "5rem", padding: "5px" },
 });
-class Project extends React.Component<WithStyles<typeof styles>> {
+class Project extends React.Component<
+  WithStyles<typeof styles> & WithTranslation
+> {
   render() {
     return (
-      <IndexItem title="Projekte">
+      <IndexItem title={this.props.i18n.t("common:projects")}>
         <ProjectItem
           icon={
             <WebIcon
@@ -41,4 +44,4 @@ class Project extends React.Component<WithStyles<typeof styles>> {
     );
   }
 }
-export default withStyles(styles)(Project);
+export default withTranslation(withStyles(styles)(Project));

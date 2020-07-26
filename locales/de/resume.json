@@ -1,11 +1,12 @@
 {
+  "resume": "Lebenslauf",
   "study": "Studium an der Fachhochschule Dortmund Bsc. Wirtschaftsinformatik",
   "study_description": {
     "0": "Algorithmen und Datenstrukturen",
     "1": "Java Grundkenntnisse und fortgeschrittenes UI Design mit Swing",
     "2": "Moderne Webentwicklung mit HTML, CSS, Javascript und NodeJS"
   },
-  "today": "today",
+  "today": "heute",
   "university": "Fachhochschule Dortmund",
   "adesso": "Projekt im Bereich Mobile App Development",
   "adesso_description": {
