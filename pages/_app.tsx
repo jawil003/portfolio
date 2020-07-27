@@ -5,36 +5,30 @@ import theme from "../themes/theme";
 import withRouter, { WithRouterProps } from "next/dist/client/with-router";
 class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
-    // TODO: Enable Language Detection Feature when Fix available
-    let url = location.pathname;
-    console.debug(`Url is ${url}`);
-    const indexOf = url.indexOf("de");
-    console.debug(`Index of 'de' is ${indexOf}`);
-
-    if (indexOf !== -1) {
-      url = url.substring(indexOf + 2);
-      console.debug(`Transformed Url is ${url}`);
-    }
+    // FIXME: Just test and see is there are any Bugs left
+    let prefix = location.pathname.match(/^(\/Portfolio)?(\/de)?/)[0];
+    const suffix = location.pathname.replace(prefix, "").replace(/\/$/, "");
+    console.debug(`Url Prefix is ${prefix} and Suffix is ${suffix}`);
+    const urlIsGerman = prefix.indexOf("de") !== -1;
+    prefix = prefix.replace("/de", "");
+    console.debug(
+      urlIsGerman
+        ? "Url is German Language"
+        : "Url is English or another Language"
+    );
     if (
       /*process.env.NODE_ENV === "production" &&*/
-      navigator.language.slice(0, 2) === "de"
+      navigator.language.slice(0, 2) === "de" &&
+      !urlIsGerman
     ) {
       console.info(`Browser language is German`);
-      console.debug(`Redirected to /de${url}`);
-      this.props.router.push(`/de${url}`);
-    } else {
+      console.debug(`Redirected to ${prefix}/de${suffix}`);
+      this.props.router.push(`${prefix}/de${suffix}`);
+    } else if (urlIsGerman && navigator.language.slice(0, 2) !== "de") {
       console.info(`Browser language is English or another Language`);
-      if (url === "") this.props.router.push(`/`);
-      else {
-        console.debug(`${url}`);
-        this.props.router.push(`${url}`);
-      }
+      if (prefix === "" && suffix === "") this.props.router.push("/");
+      else this.props.router.push(prefix + suffix);
     }
-    //FIXME: Issue here not react in correct Situation
-    /*if (/\/{1}#{1}[a-zA-Zäöüß]+/.test(location.pathname)) {
-      const url = location.pathname.replace(/\/{1}#{1}[a-zA-Zäöüß]+/, "");
-      this.props.router.push(`${url}`);
-    }*/
   }
 
   componentDidCatch(error: any, errorInfo: any) {
