@@ -6,7 +6,7 @@ import withRouter, { WithRouterProps } from "next/dist/client/with-router";
 class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
     // FIXME: Just test and see is there are any Bugs left
-    let prefix = location.pathname.match(/^(\/[a-zA-Z]+)?(\/de)?/)[0];
+    /*let prefix = location.pathname.match(/^(\/[a-zA-Z]+)?(\/de)?/)[0];
     const suffix = location.pathname.replace(prefix, "").replace(/\/$/, "");
     console.debug(`Url Prefix is ${prefix} and Suffix is ${suffix}`);
     const urlIsGerman = prefix.indexOf("de") !== -1;
@@ -17,7 +17,7 @@ class CustomApp extends App<WithRouterProps> {
         : "Url is English or another Language"
     );
     if (
-      /*process.env.NODE_ENV === "production" &&*/
+      /*process.env.NODE_ENV === "production" &&
       navigator.language.slice(0, 2) === "de" &&
       !urlIsGerman
     ) {
@@ -28,7 +28,7 @@ class CustomApp extends App<WithRouterProps> {
       console.info(`Browser language is English or another Language`);
       if (prefix === "" && suffix === "") this.props.router.push("/");
       else this.props.router.push(prefix + suffix);
-    }
+    }*/
   }
 
   componentDidCatch(error: any, errorInfo: any) {
