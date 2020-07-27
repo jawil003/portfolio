@@ -7,7 +7,7 @@
     "start:prod": "npm run build:prod && cross-env IS_LOCAL=false next start",
     "build:local": "next-translate && cross-env IS_LOCAL=true next build",
     "build:prod": "next-translate && next build",
-    "export": "next export && npx touch out/.nojekyll",
+    "export": "cross-env IS_LOCAL=false next export && npx touch out/.nojekyll",
     "deploy": "git add . && git commit -m 'Deploy' && git push && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
