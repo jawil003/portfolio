@@ -37,7 +37,7 @@ const FourZeroFour = (props: WithStyles<typeof styles>) => {
         The page you are looking for might have been removed had its name
         changed or is temporarily unavailable.
       </div>
-      <Link href="/">
+      <Link href="/" as={process.env.BACKEND_URL + "/"}>
         <Button variant="contained" color="primary">
           Back to homepage
         </Button>
