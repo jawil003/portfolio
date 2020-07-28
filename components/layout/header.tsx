@@ -19,11 +19,17 @@ class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
       <AppBar id="navigation" classes={{ root: this.props.classes.appBar }}>
         <Toolbar>
           <Grid container alignContent="center" justify="center">
-            <CustomLanguageLink href="/#lebenslauf">
-              <a className={this.props.classes.link}>
-                {this.props.i18n.t("header:resume")}
-              </a>
-            </CustomLanguageLink>
+            <a
+              onClick={(ent) => {
+                ent.preventDefault();
+                document.querySelector("#lebenslauf").scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className={this.props.classes.link}
+            >
+              {this.props.i18n.t("header:resume")}
+            </a>
             <CustomLanguageLink href="/#kenntnisse">
               <a className={this.props.classes.link}>
                 {" "}
