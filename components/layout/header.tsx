@@ -19,10 +19,7 @@ class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
       <AppBar id="navigation" classes={{ root: this.props.classes.appBar }}>
         <Toolbar>
           <Grid container alignContent="center" justify="center">
-            <Link
-              href="/#lebenslauf"
-              as={`${process.env.BACKEND_URL}/#lebenslauf`}
-            >
+            <Link href="/#lebenslauf">
               <a className={this.props.classes.link}>
                 {this.props.i18n.t("header:resume")}
               </a>
