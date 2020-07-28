@@ -1,8 +1,13 @@
 import React, { Children } from "react";
-import NextLink from "next/link";
+import NextLink, { LinkProps } from "next/link";
 import clientSideLang from "next-translate/clientSideLang";
 import * as i18njson from "../i18n.json";
-export default function Link({ children, href, ...props }) {
+interface Props extends LinkProps {
+  href: string;
+  as?: string;
+  children?: JSX.Element | JSX.Element[];
+}
+export default function Link({ children, href, as, ...props }: Props) {
   const lng = clientSideLang();
   const child = Children.only(
     typeof children === "string" ? <a>{children}</a> : children
@@ -22,6 +27,11 @@ export default function Link({ children, href, ...props }) {
         lng === i18njson.defaultLanguage
           ? `/Portfolio/${href}`
           : `/Portfolio/${lng}${href}`
+      }
+      as={
+        lng === i18njson.defaultLanguage
+          ? `/Portfolio/${as}`
+          : `/Portfolio/${lng}${as}`
       }
       {...props}
     >
