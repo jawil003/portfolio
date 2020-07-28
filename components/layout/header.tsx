@@ -11,7 +11,7 @@ const styles = createStyles({
   appBar: {
     position: "static",
   },
-  link: { color: "white", margin: "8px" },
+  link: { color: "white", margin: "8px", cursor: "pointer" },
 });
 class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
   render() {
@@ -30,17 +30,30 @@ class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
             >
               {this.props.i18n.t("header:resume")}
             </a>
-            <CustomLanguageLink href="/#kenntnisse">
-              <a className={this.props.classes.link}>
-                {" "}
-                {this.props.i18n.t("header:knowledge")}
-              </a>
-            </CustomLanguageLink>
-            <CustomLanguageLink href="/#projekte">
-              <a className={this.props.classes.link}>
-                {this.props.i18n.t("header:projects")}
-              </a>
-            </CustomLanguageLink>
+
+            <a
+              onClick={(ent) => {
+                ent.preventDefault();
+                document.querySelector("#kenntnisse").scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className={this.props.classes.link}
+            >
+              {" "}
+              {this.props.i18n.t("header:knowledge")}
+            </a>
+            <a
+              onClick={(ent) => {
+                ent.preventDefault();
+                document.querySelector("#projekte").scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className={this.props.classes.link}
+            >
+              {this.props.i18n.t("header:projects")}
+            </a>
             <CustomLanguageLink href="/sources">
               <a className={this.props.classes.link}>
                 {this.props.i18n.t("header:sources")}
