@@ -1,6 +1,6 @@
 const withCss = require("@zeit/next-css");
 const withPlugins = require("next-compose-plugins");
-const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 const debug = process.env.NODE_ENV !== "production";
 const isLocal = process.env.IS_LOCAL === "true";
 
@@ -20,11 +20,10 @@ const nextConfig = {
     config.output.devtoolModuleFilenameTemplate = function (info) {
       return "file:///" + encodeURI(info.absoluteResourcePath);
     };
-    if (config.resolve.plugins) {
-      config.resolve.plugins.push(new TsConfigPathsPlugin());
-    } else {
-      config.resolve.plugins = [new TsConfigPathsPlugin()];
+    if (!config.resolve.plugins) {
+      config.resolve.plugins = [];
     }
+    config.resolve.plugins.push(new TsConfigPathsPlugin());
 
     return config;
   },
