@@ -3,6 +3,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import AppBar from "@material-ui/core/AppBar";
 import { withTranslation, WithTranslation } from "next-translate";
 import { createStyles, WithStyles, withStyles, Grid } from "@material-ui/core";
+import CustomLanguageLink from "./../CustomLanguageLink";
 import Link from "next-translate/link";
 const styles = createStyles({
   icon: {
@@ -19,11 +20,11 @@ class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
       <AppBar id="navigation" classes={{ root: this.props.classes.appBar }}>
         <Toolbar>
           <Grid container alignContent="center" justify="center">
-            <Link href="/#lebenslauf">
+            <CustomLanguageLink noLang={false} href="/#lebenslauf">
               <a className={this.props.classes.link}>
                 {this.props.i18n.t("header:resume")}
               </a>
-            </Link>
+            </CustomLanguageLink>
             <Link
               href="/#kenntnisse"
               as={`${process.env.BACKEND_URL}/#kenntnisse`}

@@ -5,7 +5,6 @@ const debug = process.env.NODE_ENV !== "production";
 const isLocal = process.env.IS_LOCAL === "true";
 
 const nextConfig = {
-  basePath: !debug ? "/Portfolio" : "",
   exportPathMap: function () {
     return {
       "/": { page: "/" },
