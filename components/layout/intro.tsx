@@ -13,7 +13,6 @@ import UtilService from "../../services/util.service";
 import Link from "next-translate/link";
 import GermanFlag from "components/icons/german_flag.icon";
 import USAFlag from "components/icons/usa_flag.icon";
-import CustomLanguageLink from "../CustomLanguageLink";
 const styles = createStyles({
   gridContainer: {
     height: "100%",
@@ -122,11 +121,18 @@ class Intro extends React.Component<Props & WithTranslation, State> {
               </Typography>
             </Grid>
             <Grid item>
-              <CustomLanguageLink href="/#navigation">
-                <Button variant="contained" color="primary">
-                  {this.props.i18n.t("intro:buttontext")}
-                </Button>
-              </CustomLanguageLink>
+              <Button
+                onClick={(ent) => {
+                  ent.preventDefault();
+                  document.querySelector("#navigation").scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                variant="contained"
+                color="primary"
+              >
+                {this.props.i18n.t("intro:buttontext")}
+              </Button>
             </Grid>
           </Grid>
 
