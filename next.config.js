@@ -8,6 +8,8 @@ const nextConfig = {
   exportPathMap: function () {
     return {
       "/": { page: "/" },
+      "/de": { page: "/de" },
+      "/de/sources": { page: "/de/sources" },
       "/sources": { page: "/sources" },
     };
   },
