@@ -7,8 +7,12 @@ interface Props extends LinkProps {
   as?: string;
   children?: JSX.Element | JSX.Element[];
 }
-export default function Link({ children, href, as, ...props }: Props) {
+const Link: React.FC<Props> = ({ children, href, as, ...props }: Props) => {
   const lng = clientSideLang();
+  const basePath =
+    process.env.NODE_ENV !== "production" || process.env.IS_LOCAL === "true"
+      ? ""
+      : "/Portfolio";
   const child = Children.only(
     typeof children === "string" ? <a>{children}</a> : children
   );
@@ -25,17 +29,23 @@ export default function Link({ children, href, as, ...props }: Props) {
     <NextLink
       href={
         lng === i18njson.defaultLanguage
-          ? `/Portfolio/${href}`
-          : `/Portfolio/${lng}${href}`
+          ? `${basePath}${href}`
+          : `${basePath}/${lng}${href}`
       }
       as={
-        lng === i18njson.defaultLanguage
-          ? `/Portfolio/${as}`
-          : `/Portfolio/${lng}${as}`
+        as
+          ? lng === i18njson.defaultLanguage
+            ? `${basePath}${as}`
+            : `${basePath}/${lng}${as}`
+          : lng === i18njson.defaultLanguage
+          ? `${basePath}${href}`
+          : `${basePath}/${lng}${href}`
       }
       {...props}
     >
       {React.cloneElement(child, { onClick })}
     </NextLink>
   );
-}
+};
+
+export default Link;

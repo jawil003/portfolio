@@ -122,7 +122,7 @@ class Intro extends React.Component<Props & WithTranslation, State> {
               </Typography>
             </Grid>
             <Grid item>
-              <CustomLanguageLink as="/#navigation" href="/">
+              <CustomLanguageLink href="/#navigation">
                 <Button variant="contained" color="primary">
                   {this.props.i18n.t("intro:buttontext")}
                 </Button>
