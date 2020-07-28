@@ -16,7 +16,7 @@ export default function Link({ children, href, noLang, ...props }) {
   }
 
   return (
-    <NextLink href={noLang ? href : `/Portfolio/${lng}/${href}`} {...props}>
+    <NextLink href={noLang ? href : `/Portfolio/${lng}${href}`} {...props}>
       {React.cloneElement(child, { onClick })}
     </NextLink>
   );
