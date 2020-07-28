@@ -19,7 +19,7 @@ export default function Link({ children, href, ...props }) {
   return (
     <NextLink
       href={
-        lng !== i18njson.defaultLanguage
+        lng === i18njson.defaultLanguage
           ? `/Portfolio/${href}`
           : `/Portfolio/${lng}${href}`
       }
