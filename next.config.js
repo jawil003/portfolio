@@ -11,6 +11,7 @@ const nextConfig = {
     return {
       "/": { page: "/" },
       "/de": { page: "/de" },
+      "/de/": { page: "/de" },
       "/de/sources": { page: "/de/sources" },
       "/sources": { page: "/sources" },
     };
