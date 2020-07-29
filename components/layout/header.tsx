@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import { withTranslation, WithTranslation } from "next-translate";
 import { createStyles, WithStyles, withStyles, Grid } from "@material-ui/core";
 import CustomLanguageLink from "./../CustomLanguageLink";
+import CustomPageMover from "../CustomPageMover";
 const styles = createStyles({
   icon: {
     marginRight: "10px",
@@ -19,17 +20,11 @@ class Header extends Component<WithStyles<typeof styles> & WithTranslation> {
       <AppBar id="navigation" classes={{ root: this.props.classes.appBar }}>
         <Toolbar>
           <Grid container alignContent="center" justify="center">
-            <a
-              onClick={(ent) => {
-                ent.preventDefault();
-                document.querySelector("#lebenslauf").scrollIntoView({
-                  behavior: "smooth",
-                });
-              }}
-              className={this.props.classes.link}
-            >
-              {this.props.i18n.t("header:resume")}
-            </a>
+            <CustomPageMover href="/" selector="#lebenslauf">
+              <a className={this.props.classes.link}>
+                {this.props.i18n.t("header:resume")}
+              </a>
+            </CustomPageMover>
 
             <a
               onClick={(ent) => {

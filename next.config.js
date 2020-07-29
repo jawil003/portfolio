@@ -1,6 +1,7 @@
 const withCss = require("@zeit/next-css");
 const withPlugins = require("next-compose-plugins");
 const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
+const withModernizr = require("next-plugin-modernizr");
 const debug = process.env.NODE_ENV !== "production";
 const isLocal = process.env.IS_LOCAL === "true";
 
@@ -42,4 +43,4 @@ console.info(
   )}`
 );
 // next.config.js
-module.exports = withPlugins([withCss], nextConfig);
+module.exports = withModernizr(withPlugins([withCss], nextConfig));

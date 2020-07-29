@@ -13,11 +13,12 @@ const theme = createMuiTheme({
         },
         error: {
             main: red.A400,
-        },
-        background: {
-            default: '#fff',
-        },
+        }
     },
+    shape: {
+        borderRadius: 0
+    },
+    overrides: { MuiButton: { root: { textTransform: "none" } } }
 });
 
 export default theme;

@@ -58,7 +58,14 @@ export default class LebenslaufItem extends React.Component<Props> {
               fontSize: "0.95em",
             }}
           >
-            <a href={this.props.href}>
+            <a
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+              href={this.props.href}
+            >
               <PlaceIcon fontSize="small" />
               <span style={{ textAlign: "center" }}>{this.props.place}</span>
             </a>

@@ -5,9 +5,18 @@ import theme from "../themes/theme";
 import withRouter, { WithRouterProps } from "next/dist/client/with-router";
 class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
-    let prefix = location.pathname.match(/^(\/[a-zA-Z]+)?(\/de)?/)[0];
-    const suffix = location.pathname.replace(prefix, "").replace(/\/$/, "");
-    console.debug(`Url Prefix is ${prefix} and Suffix is ${suffix}`);
+    const path = location.pathname;
+    let prefix = path.match(/^(\/[a-zA-Z]+)?(\/de)?/)[0];
+    let suffix = path.replace(prefix, "").replace(/\/$/, "");
+
+    //Fix for Local redirecting '/suffix' is not prefix f.e
+    if (prefix === path) {
+      suffix = prefix;
+      prefix = "";
+    }
+    console.debug(
+      `Url Path is '${path}', Url Prefix is '${prefix}' and Suffix is '${suffix}'`
+    );
     const urlIsGerman = prefix.indexOf("de") !== -1;
     prefix = prefix.replace("/de", "");
     console.debug(

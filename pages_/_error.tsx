@@ -1,5 +1,5 @@
 import React from "react";
-import { FiveHundredError, FourZeroFour } from "components/errors";
+import { FiveHundredError, FourZeroFour } from "../components/errors";
 
 class Error extends React.PureComponent<{ statusCode: number }> {
   static async getInitialProps({ res, err }) {

@@ -11,8 +11,8 @@ import { withTranslation, WithTranslation } from "next-translate";
 import Typist from "react-typist";
 import UtilService from "../../services/util.service";
 import Link from "next-translate/link";
-import GermanFlag from "components/icons/german_flag.icon";
-import USAFlag from "components/icons/usa_flag.icon";
+import GermanFlag from "../icons/german_flag.icon";
+import USAFlag from "../icons/usa_flag.icon";
 const styles = createStyles({
   gridContainer: {
     height: "100%",
@@ -61,7 +61,7 @@ class Intro extends React.Component<Props & WithTranslation, State> {
         style={{
           height: "100vh",
           width: "100%",
-          background: `url(${process.env.BACKEND_URL}/pictures/background_dortmund.jpg) no-repeat center center`,
+          background: `url(${process.env.BACKEND_URL}/pictures/background_dortmund-min.webp) no-repeat center center`,
           backgroundSize: "cover",
         }}
       >
@@ -156,12 +156,12 @@ class Intro extends React.Component<Props & WithTranslation, State> {
           >
             {process.env.NODE_ENV !== "production"
               ? [
-                  <Link href="/" lang="de">
+                  <Link key="de/" href="/" lang="de">
                     <a>
                       <GermanFlag fontSize="large" />
                     </a>
                   </Link>,
-                  <Link href="/" noLang>
+                  <Link key={"/"} href="/" noLang>
                     <a>
                       <USAFlag fontSize="large" />
                     </a>
