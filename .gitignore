@@ -4,5 +4,4 @@ node_modules/
 tags
 .vim
 .vscode
-pages/*
-!out/pages/*
+pages
