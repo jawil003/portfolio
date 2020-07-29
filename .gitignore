@@ -4,5 +4,9 @@ node_modules/
 tags
 .vim
 .vscode
-pages
-!out/pages
+pages/de/*
+pages/_app.tsx
+pages/_document.tsx
+pages/_error.tsx
+pages/index.js
+pages/sources.js
