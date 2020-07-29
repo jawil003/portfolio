@@ -1,7 +1,10 @@
 import { Component } from "react";
 import { Layout } from "../components/layout/layout";
 import IndexItem from "../components/layout/indexItem";
-import { withTranslation, WithTranslation } from "next-translate";
+import {
+  withTranslation,
+  WithTranslation,
+} from "next-translate";
 import SourcesContainer from "../components/sourcesContainer";
 import SourcesItem from "../components/sourcesItem";
 class Sources extends Component<WithTranslation> {
@@ -9,32 +12,30 @@ class Sources extends Component<WithTranslation> {
     return (
       <Layout>
         <div style={{ display: "grid" }}>
-          <IndexItem title={this.props.i18n.t("sources:graphicsources")}>
+          <IndexItem
+            title={this.props.i18n.t(
+              "sources:graphicsources"
+            )}
+          >
             <SourcesContainer>
               <SourcesItem
                 href="https://www.flaticon.com/authors/pixel-perfect"
                 title="Pixel perfect"
               />
               <SourcesItem
-                href="https://www.flaticon.com/authors/pixel-perfect"
-                title="Pixel perfect"
+                href="https://www.flaticon.com/authors/freepik"
+                title="Freepik"
               />
               <SourcesItem
-                href="https://www.flaticon.com/authors/pixel-perfect"
-                title="Pixel perfect"
-              />
-              <SourcesItem
-                href="https://www.flaticon.com/authors/pixel-perfect"
-                title="Pixel perfect"
-              />
-              <SourcesItem
-                href="https://www.flaticon.com/authors/pixel-perfect"
-                title="Pixel perfect"
+                href="https://www.flaticon.com/authors/those-icons"
+                title="Those Icons"
               />
             </SourcesContainer>
           </IndexItem>
           <IndexItem
-            title={this.props.i18n.t("sources:textsources")}
+            title={this.props.i18n.t(
+              "sources:textsources"
+            )}
           ></IndexItem>
         </div>
       </Layout>
