@@ -9,7 +9,8 @@ import {
 
 const styles = createStyles({
   container: {
-    background: "url(/pictures/background_dortmund.jpg) no-repeat",
+    background:
+      "url(/pictures/background_dortmund.jpg) no-repeat",
     backgroundSize: "cover",
     display: "grid",
     alignContent: "center",
@@ -27,17 +28,28 @@ const styles = createStyles({
   },
 });
 
-const FourZeroFour = (props: WithStyles<typeof styles>) => {
+const FourZeroFour = (
+  props: WithStyles<typeof styles>
+) => {
   return (
     <div className={props.classes.container}>
-      <div style={{ fontSize: "4em", fontWeight: "bold", textAlign: "center" }}>
+      <div
+        style={{
+          fontSize: "4em",
+          fontWeight: "bold",
+          textAlign: "center",
+        }}
+      >
         Error 404
       </div>
-      <div style={{ width: "400px", textAlign: "center" }}>
-        The page you are looking for might have been removed had its name
-        changed or is temporarily unavailable.
+      <div
+        style={{ width: "400px", textAlign: "center" }}
+      >
+        The page you are looking for might have been
+        removed had its name changed or is temporarily
+        unavailable.
       </div>
-      <Link href="/" as={process.env.BACKEND_URL + "/"}>
+      <Link href="/">
         <Button variant="contained" color="primary">
           Back to homepage
         </Button>
