@@ -8,7 +8,7 @@
     "build:local": "next-translate && cross-env IS_LOCAL=true next build",
     "build:prod": "next-translate && next build",
     "export": "cross-env IS_LOCAL=false next export && npx touch out/.nojekyll",
-    "deploy": "git rm -r --cached out && git commit -m 'Pre Deploy' && git push && git push origin --delete gh-pages && origin master && git add . && git commit -m 'Deploy' && git push && git subtree push --prefix out origin gh-pages"
+    "deploy": "git add . && git commit -m 'Deploy' && git push && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@types/modernizr": "^3.5.3",
