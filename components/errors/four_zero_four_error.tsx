@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next-translate/link";
+import { Link } from "next-translate";
 import {
   createStyles,
   withStyles,

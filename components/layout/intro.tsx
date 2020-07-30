@@ -13,7 +13,7 @@ import {
 } from "next-translate";
 import Typist from "react-typist";
 import UtilService from "../../services/util.service";
-import Link from "next-translate/link";
+import { Link } from "next-translate";
 import GermanFlag from "../icons/german_flag.icon";
 import USAFlag from "../icons/usa_flag.icon";
 const styles = createStyles({
