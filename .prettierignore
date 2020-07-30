@@ -1,3 +1,8 @@
+.next
+.babelrc.js
+tsconfig.json
+out
+pages
 package.json
 package-lock.json
 build

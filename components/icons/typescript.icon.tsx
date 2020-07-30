@@ -2,7 +2,9 @@ interface Props {
   fontSize: "large" | "normal" | "small";
 }
 
-const TypescriptIcon: React.FC<Props> = (props: Props) => {
+const TypescriptIcon: React.FC<Props> = (
+  props: Props
+) => {
   return (
     <svg
       style={{

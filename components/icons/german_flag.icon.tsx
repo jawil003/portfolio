@@ -40,7 +40,10 @@ const GermanFlag: React.FC<Props> = (props: Props) => {
           d="m8.667 297 7.849 14.053h495.484v-110.107h-495.484l-7.849 17.387z"
           fill="#e5646e"
         />
-        <path d="m0 200.946h16.516v110.107h-16.516z" fill="#db4655" />
+        <path
+          d="m0 200.946h16.516v110.107h-16.516z"
+          fill="#db4655"
+        />
       </g>
     </svg>
   );

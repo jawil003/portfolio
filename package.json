@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next-translate && next",
     "start": "next start -p $PORT",
-    "build": "next-translate && next build"
+    "build": "next-translate && next build",
+    "format": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -37,8 +38,13 @@
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.1",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "eslint": "^7.5.0",
+    "eslint-plugin-react": "^7.20.5",
+    "next-translate": "^0.17.1",
+    "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
-    "typescript": "^3.9.7",
-    "next-translate": "^0.17.1"
+    "typescript": "^3.9.7"
   }
 }

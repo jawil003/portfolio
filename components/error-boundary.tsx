@@ -6,7 +6,10 @@ export class ErrorBoundary extends Component {
     eventId: null,
   };
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  componentDidCatch(
+    error: Error,
+    errorInfo: React.ErrorInfo
+  ) {
     this.setState({ error });
     console.log(error, errorInfo);
   }

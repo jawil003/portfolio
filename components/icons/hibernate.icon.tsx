@@ -1,7 +1,9 @@
 interface Props {
   fontSize: "large" | "normal" | "small";
 }
-const HibernateIcon: React.FC<Props> = (props: Props) => {
+const HibernateIcon: React.FC<Props> = (
+  props: Props
+) => {
   return (
     <svg
       style={{
