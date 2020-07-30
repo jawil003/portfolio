@@ -3,7 +3,7 @@
   "version": "0.6.2",
   "scripts": {
     "dev": "next-translate && next",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "build": "next-translate && next build"
   },
   "repository": {
