@@ -7,13 +7,13 @@ import {
   WithStyles,
   Button,
 } from "@material-ui/core";
+import Link from "next-translate/Link";
 import {
   withTranslation,
   WithTranslation,
 } from "next-translate";
 import Typist from "react-typist";
 import UtilService from "../../services/util.service";
-import { Link } from "next-translate";
 import GermanFlag from "../icons/german_flag.icon";
 import USAFlag from "../icons/usa_flag.icon";
 const styles = createStyles({
@@ -188,12 +188,12 @@ class Intro extends React.Component<
           >
             {process.env.NODE_ENV !== "production"
               ? [
-                  <Link key="de/" href="/" lang="de">
+                  <Link key="/" href="/" lang="de">
                     <a>
                       <GermanFlag fontSize="large" />
                     </a>
                   </Link>,
-                  <Link key={"/"} href="/" noLang>
+                  <Link key="/" href="/" noLang>
                     <a>
                       <USAFlag fontSize="large" />
                     </a>

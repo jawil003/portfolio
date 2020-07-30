@@ -7,7 +7,7 @@ import withRouter, {
 } from "next/dist/client/with-router";
 class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
-    const path = location.pathname;
+    /*const path = location.pathname;
     let prefix = path.match(
       /^(\/[a-zA-Z]+)?(\/de)?/
     )[0];
@@ -49,7 +49,7 @@ class CustomApp extends App<WithRouterProps> {
       if (prefix === "" && suffix === "")
         this.props.router.push("/");
       else this.props.router.push(prefix + suffix);
-    }
+    }*/
   }
 
   componentDidCatch(error: any, errorInfo: any) {
