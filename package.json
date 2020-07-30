@@ -34,7 +34,7 @@
     "babel-plugin-inline-import-data-uri": "^1.0.1",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "next-compose-plugins": "^2.2.0",
+    "next-compose-plugins": "^2.2.0"
   },
   "devDependencies": {
     "@types/node": "^13.7.6",
