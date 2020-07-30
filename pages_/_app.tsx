@@ -7,24 +7,14 @@ import withRouter, {
 } from "next/dist/client/with-router";
 class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
-    /*const path = location.pathname;
-    let prefix = path.match(
-      /^(\/[a-zA-Z]+)?(\/de)?/
-    )[0];
-    let suffix = path
-      .replace(prefix, "")
-      .replace(/\/$/, "");
+    const path = location.pathname;
+    const prefix = path.match(/(\/de)?/)[0];
+    const suffix = path.replace(prefix, "");
 
-    //FIXME for Local redirecting '/suffix' is not prefix f.e
-    if (prefix === path && suffix === "") {
-      suffix = prefix;
-      prefix = "";
-    }
     console.debug(
       `Url Path is '${path}', Url Prefix is '${prefix}' and Suffix is '${suffix}'`
     );
-    const urlIsGerman = prefix.indexOf("de") !== -1;
-    prefix = prefix.replace("/de", "");
+    const urlIsGerman = prefix === "/de";
     console.debug(
       urlIsGerman
         ? "Url is German Language"
@@ -38,7 +28,7 @@ class CustomApp extends App<WithRouterProps> {
       console.debug(
         `Redirected to ${prefix}/de${suffix}`
       );
-      this.props.router.push(`${prefix}/de${suffix}`);
+      this.props.router.push(`/de${suffix}`);
     } else if (
       urlIsGerman &&
       navigator.language.slice(0, 2) !== "de"
@@ -46,10 +36,8 @@ class CustomApp extends App<WithRouterProps> {
       console.info(
         `Browser language is English or another Language`
       );
-      if (prefix === "" && suffix === "")
-        this.props.router.push("/");
-      else this.props.router.push(prefix + suffix);
-    }*/
+      this.props.router.push(suffix);
+    }
   }
 
   componentDidCatch(error: any, errorInfo: any) {
