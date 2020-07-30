@@ -6,9 +6,6 @@
     "start": "next start",
     "build": "next-translate && next build"
   },
-  "engines": {
-    "node": "10"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jawil003/Portfolio.git"
