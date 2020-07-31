@@ -42,6 +42,7 @@
     "@typescript-eslint/parser": "^3.7.1",
     "eslint": "^7.5.0",
     "eslint-plugin-react": "^7.20.5",
+    "next-offline": "^5.0.2",
     "next-translate": "^0.17.1",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",

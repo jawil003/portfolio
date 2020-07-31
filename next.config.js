@@ -1,5 +1,6 @@
 const withCss = require("@zeit/next-css");
 const withPlugins = require("next-compose-plugins");
+const withOffline = require("next-offline");
 const {
   TsConfigPathsPlugin,
 } = require("awesome-typescript-loader");
@@ -53,4 +54,6 @@ console.info(
   )}`
 );
 // next.config.js
-module.exports = withPlugins([withCss], nextConfig);
+module.exports = withOffline(
+  withPlugins([withCss], nextConfig)
+);
