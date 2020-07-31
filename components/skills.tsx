@@ -12,12 +12,17 @@ import MySQLIcon from "./icons/mySQL.icon";
 import NodeJSIcon from "./icons/nodejs.icon";
 import SwiftIcon from "./icons/swift.icon";
 import SpringIcon from "./icons/spring.icon";
-import { withTranslation, WithTranslation } from "next-translate";
+import {
+  withTranslation,
+  WithTranslation,
+} from "next-translate";
 
 class Skills extends React.Component<WithTranslation> {
   render() {
     return (
-      <IndexItem title={this.props.i18n.t("common:skills")}>
+      <IndexItem
+        title={this.props.i18n.t("common:skills")}
+      >
         <SkillItem
           href="https://www.typescriptlang.org/"
           icon={<TypescriptIcon fontSize="large" />}

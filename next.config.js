@@ -4,7 +4,6 @@ const {
   TsConfigPathsPlugin,
 } = require("awesome-typescript-loader");
 const debug = process.env.NODE_ENV !== "production";
-const isLocal = process.env.IS_LOCAL === "true";
 
 const nextConfig = {
   exportPathMap: function () {
@@ -15,7 +14,6 @@ const nextConfig = {
       "/sources": { page: "/sources" },
     };
   },
-  assetPrefix: !debug && !isLocal ? "/Portfolio/" : "",
   webpack: (config) => {
     config.output = config.output || {};
     if (debug) config.devtool = "eval-source-map";
@@ -50,7 +48,6 @@ console.info(
     process.env.NODE_ENV
   } mode, with Config ${JSON.stringify(
     Object.assign(nextConfig, {
-      isLocal,
       isProduction: !debug,
     })
   )}`

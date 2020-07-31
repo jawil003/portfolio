@@ -5,13 +5,13 @@ import {
   withTranslation,
   WithTranslation,
 } from "next-translate";
+import Link from "next-translate/Link";
 import {
   createStyles,
   WithStyles,
   withStyles,
   Grid,
 } from "@material-ui/core";
-import CustomLanguageLink from "./../CustomLanguageLink";
 const styles = createStyles({
   icon: {
     marginRight: "10px",
@@ -40,11 +40,11 @@ class Header extends Component<
             alignContent="center"
             justify="center"
           >
-            <CustomLanguageLink href="/">
+            <Link key="/" href="/">
               <a className={this.props.classes.link}>
                 {this.props.i18n.t("header:resume")}
               </a>
-            </CustomLanguageLink>
+            </Link>
             <a
               target="_blank"
               href="https://github.com/jawil003"
@@ -66,11 +66,11 @@ class Header extends Component<
             >
               {this.props.i18n.t("Twitter")}
             </a>
-            <CustomLanguageLink href="/sources">
+            <Link key="/sources" href="/sources">
               <a className={this.props.classes.link}>
                 {this.props.i18n.t("header:sources")}
               </a>
-            </CustomLanguageLink>
+            </Link>
           </Grid>
         </Toolbar>
       </AppBar>

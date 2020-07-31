@@ -8,7 +8,9 @@ import {
 interface Props extends WithStyles<typeof styles> {
   title: string;
 }
-const styles = createStyles({ text: { marginLeft: "10px" } });
+const styles = createStyles({
+  text: { marginLeft: "10px" },
+});
 class IndexItem extends React.Component<Props> {
   render() {
     return (

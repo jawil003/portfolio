@@ -1,7 +1,9 @@
 interface Props {
   fontSize: "large" | "normal" | "small";
 }
-const MaterialUIIcon: React.FC<Props> = (props: Props) => {
+const MaterialUIIcon: React.FC<Props> = (
+  props: Props
+) => {
   return (
     <svg
       style={{

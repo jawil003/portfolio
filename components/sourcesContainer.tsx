@@ -1,9 +1,17 @@
 import React from "react";
 
 export default class SourcesContainer extends React.Component {
-  render() {
+  render(): JSX.Element {
     return (
-      <div style={{ display: "flex", alignContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          alignContent: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "20px",
+        }}
+      >
         {this.props.children}
       </div>
     );

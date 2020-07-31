@@ -57,8 +57,20 @@ const MySQLIcon: React.FC<Props> = (props: Props) => {
         y2="627.4446"
         gradientTransform="matrix(21.3333 0 0 -21.3333 996.3027 13791.7012)"
       >
-        <stop offset="0" style={{ stopColor: "#FFFFFF", stopOpacity: 0.2 }} />
-        <stop offset="1" style={{ stopColor: "#FFFFFF", stopOpacity: 0 }} />
+        <stop
+          offset="0"
+          style={{
+            stopColor: "#FFFFFF",
+            stopOpacity: 0.2,
+          }}
+        />
+        <stop
+          offset="1"
+          style={{
+            stopColor: "#FFFFFF",
+            stopOpacity: 0,
+          }}
+        />
       </linearGradient>
       <path
         style={{ fill: "url(#SVGID_1_)" }}

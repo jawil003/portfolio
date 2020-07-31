@@ -8,7 +8,9 @@ interface Props {
   startdate?: string;
   enddate?: string;
 }
-export default class LebenslaufItem extends React.Component<Props> {
+export default class LebenslaufItem extends React.Component<
+  Props
+> {
   render() {
     return (
       <div style={{ position: "relative" }}>
@@ -22,7 +24,8 @@ export default class LebenslaufItem extends React.Component<Props> {
             justifyItems: "center",
             width: "350px",
             height: "100%",
-            gridTemplateRows: "auto auto 3.5em 1fr auto ",
+            gridTemplateRows:
+              "auto auto 3.5em 1fr auto ",
             padding: "30px",
             border: "1px solid rgba(0,0,0,0.1)",
             boxShadow: "3 2 2px rgba(0,0,0,1",
@@ -67,7 +70,9 @@ export default class LebenslaufItem extends React.Component<Props> {
               href={this.props.href}
             >
               <PlaceIcon fontSize="small" />
-              <span style={{ textAlign: "center" }}>{this.props.place}</span>
+              <span style={{ textAlign: "center" }}>
+                {this.props.place}
+              </span>
             </a>
           </div>
 

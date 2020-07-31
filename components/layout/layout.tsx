@@ -8,7 +8,9 @@ export const Layout = (props) => {
       <Intro />
       <Header />
       <ErrorBoundary>
-        <main className="container mt-3">{props.children}</main>
+        <main className="container mt-3">
+          {props.children}
+        </main>
       </ErrorBoundary>
     </>
   );

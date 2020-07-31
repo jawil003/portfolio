@@ -7,10 +7,13 @@ import {
   WithStyles,
   Button,
 } from "@material-ui/core";
-import { withTranslation, WithTranslation } from "next-translate";
+import Link from "next-translate/Link";
+import {
+  withTranslation,
+  WithTranslation,
+} from "next-translate";
 import Typist from "react-typist";
 import UtilService from "../../services/util.service";
-import Link from "next-translate/link";
 import GermanFlag from "../icons/german_flag.icon";
 import USAFlag from "../icons/usa_flag.icon";
 const styles = createStyles({
@@ -39,10 +42,19 @@ interface State {
   typing: boolean;
 }
 interface Props extends WithStyles<typeof styles> {}
-class Intro extends React.Component<Props & WithTranslation, State> {
-  public description1 = this.props.i18n.t("intro:description1");
-  public description2 = this.props.i18n.t("intro:description2");
-  public description3 = this.props.i18n.t("intro:description3");
+class Intro extends React.Component<
+  Props & WithTranslation,
+  State
+> {
+  public description1 = this.props.i18n.t(
+    "intro:description1"
+  );
+  public description2 = this.props.i18n.t(
+    "intro:description2"
+  );
+  public description3 = this.props.i18n.t(
+    "intro:description3"
+  );
   private utilService: UtilService;
   constructor(props: Props & WithTranslation) {
     super(props);
@@ -61,18 +73,25 @@ class Intro extends React.Component<Props & WithTranslation, State> {
         style={{
           height: "100vh",
           width: "100%",
-          background: `url(${process.env.BACKEND_URL}/pictures/background_dortmund-min.webp) no-repeat center center`,
+          background: `url(/pictures/background_dortmund-min.webp) no-repeat center center`,
           backgroundSize: "cover",
         }}
       >
-        <div style={{ height: "100%", background: "rgba(0,0,0,0.3)" }}>
+        <div
+          style={{
+            height: "100%",
+            background: "rgba(0,0,0,0.3)",
+          }}
+        >
           <Grid
             container
             direction="column"
             alignContent="center"
             alignItems="center"
             justify="center"
-            classes={{ root: this.props.classes.gridContainer }}
+            classes={{
+              root: this.props.classes.gridContainer,
+            }}
           >
             <Grid item>
               <Typography variant="h3" component="h3">
@@ -83,7 +102,10 @@ class Intro extends React.Component<Props & WithTranslation, State> {
                   cursor={{}}
                 >
                   <span
-                    style={{ color: "white", textShadow: "3px 3px 4px #777" }}
+                    style={{
+                      color: "white",
+                      textShadow: "3px 3px 4px #777",
+                    }}
                   >
                     {this.description1}
                   </span>
@@ -95,7 +117,10 @@ class Intro extends React.Component<Props & WithTranslation, State> {
                     delay={2000}
                   />
                   <span
-                    style={{ color: "white", textShadow: "3px 3px 4px #777" }}
+                    style={{
+                      color: "white",
+                      textShadow: "3px 3px 4px #777",
+                    }}
                   >
                     {this.utilService.removeDuplicate(
                       this.description2,
@@ -110,7 +135,10 @@ class Intro extends React.Component<Props & WithTranslation, State> {
                     delay={2000}
                   />
                   <span
-                    style={{ color: "white", textShadow: "3px 3px 4px #777" }}
+                    style={{
+                      color: "white",
+                      textShadow: "3px 3px 4px #777",
+                    }}
                   >
                     {this.utilService.removeDuplicate(
                       this.description3,
@@ -124,9 +152,11 @@ class Intro extends React.Component<Props & WithTranslation, State> {
               <Button
                 onClick={(ent) => {
                   ent.preventDefault();
-                  document.querySelector("#navigation").scrollIntoView({
-                    behavior: "smooth",
-                  });
+                  document
+                    .querySelector("#navigation")
+                    .scrollIntoView({
+                      behavior: "smooth",
+                    });
                 }}
                 variant="contained"
                 color="primary"
@@ -141,7 +171,9 @@ class Intro extends React.Component<Props & WithTranslation, State> {
             target="_blank"
             className={`${this.props.classes.copyright}`}
           >
-            {this.props.i18n.t("intro:copyright", { person: "sxxs" })}
+            {this.props.i18n.t("intro:copyright", {
+              person: "sxxs",
+            })}
           </a>
           <div
             style={{
@@ -156,12 +188,12 @@ class Intro extends React.Component<Props & WithTranslation, State> {
           >
             {process.env.NODE_ENV !== "production"
               ? [
-                  <Link key="de/" href="/" lang="de">
+                  <Link key="/" href="/" lang="de">
                     <a>
                       <GermanFlag fontSize="large" />
                     </a>
                   </Link>,
-                  <Link key={"/"} href="/" noLang>
+                  <Link key="/" href="/" noLang>
                     <a>
                       <USAFlag fontSize="large" />
                     </a>
@@ -175,4 +207,6 @@ class Intro extends React.Component<Props & WithTranslation, State> {
   }
 }
 
-export default withStyles(styles)(withTranslation(Intro));
+export default withStyles(styles)(
+  withTranslation(Intro)
+);
