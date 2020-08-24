@@ -6,18 +6,19 @@ import ReactIcon from "./icons/react.icon";
 import NextJSIcon from "./icons/nextjs.icon";
 import MaterialUIIcon from "./icons/material-ui.icon";
 import JavaIcon from "./icons/java.icon";
-import HibernateIcon from "./icons/hibernate.icon";
 import MongoDBIcon from "./icons/mongoDB.icon";
 import MySQLIcon from "./icons/mySQL.icon";
 import NodeJSIcon from "./icons/nodejs.icon";
-import SwiftIcon from "./icons/swift.icon";
-import SpringIcon from "./icons/spring.icon";
 import {
   withTranslation,
   WithTranslation,
 } from "next-translate";
+import { TrelloIcon } from "./icons/trello.icon";
+import { ReactQueryIcon } from "./icons/reactQuery.icon";
 
-class Skills extends React.Component<WithTranslation> {
+class AdvancedSkills extends React.Component<
+  WithTranslation
+> {
   render() {
     return (
       <IndexItem
@@ -39,7 +40,7 @@ class Skills extends React.Component<WithTranslation> {
           href="https://nextjs.org/"
           icon={<NextJSIcon fontSize="large" />}
         >
-          NextJs
+          NextJS
         </SkillItem>
         <SkillItem
           href="https://material-ui.com/"
@@ -52,12 +53,6 @@ class Skills extends React.Component<WithTranslation> {
           icon={<JavaIcon fontSize="large" />}
         >
           Java
-        </SkillItem>
-        <SkillItem
-          href="https://hibernate.org/"
-          icon={<HibernateIcon fontSize="large" />}
-        >
-          Hibernate
         </SkillItem>
         <SkillItem
           href="https://www.mongodb.com/"
@@ -78,19 +73,20 @@ class Skills extends React.Component<WithTranslation> {
           NodeJS
         </SkillItem>
         <SkillItem
-          href="https://swift.org/"
-          icon={<SwiftIcon fontSize="large" />}
+          href="https://trello.com/"
+          icon={<TrelloIcon />}
         >
-          Swift
+          Trello
         </SkillItem>
+
         <SkillItem
-          href="https://spring.io/"
-          icon={<SpringIcon fontSize="large" />}
+          href="https://react-query.tanstack.com/"
+          icon={<ReactQueryIcon fontSize="large" />}
         >
-          Spring Boot
+          React-Query
         </SkillItem>
       </IndexItem>
     );
   }
 }
-export default withTranslation(Skills);
+export default withTranslation(AdvancedSkills);

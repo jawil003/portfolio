@@ -8,7 +8,7 @@ import Document, {
 import { ServerStyleSheets } from "@material-ui/core/styles";
 import theme from "../themes/theme";
 export default class MyDocument extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <Html
         style={{ scrollBehavior: "smooth" }}
@@ -20,6 +20,7 @@ export default class MyDocument extends Document {
             name="theme-color"
             content={theme.palette.primary.main}
           />
+          <link rel="manifest" href="/manifest.json" />
           <link
             rel="stylesheet"
             href={`/styles/style.css`}
