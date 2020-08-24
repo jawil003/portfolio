@@ -74,7 +74,7 @@ class AdvancedSkills extends React.Component<
         </SkillItem>
         <SkillItem
           href="https://trello.com/"
-          icon={<TrelloIcon />}
+          icon={<TrelloIcon fontSize="large" />}
         >
           Trello
         </SkillItem>
