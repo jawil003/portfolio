@@ -6,7 +6,8 @@ const {
 } = require("awesome-typescript-loader");
 const debug = process.env.NODE_ENV !== "production";
 
-const nextConfig = {
+const nextConfig = withOffline({
+  workboxOpts: {} /*
   exportPathMap: function () {
     return {
       "/": { page: "/" },
@@ -14,7 +15,7 @@ const nextConfig = {
       "/de/sources": { page: "/de/sources" },
       "/sources": { page: "/sources" },
     };
-  },
+  },*/,
   webpack: (config) => {
     config.output = config.output || {};
     if (debug) config.devtool = "eval-source-map";
@@ -43,7 +44,7 @@ const nextConfig = {
     // Will be available on both server and client
     API_URL: process.env.REACT_APP_SERVICE_URL,
   },
-};
+});
 console.info(
   `Build App in ${
     process.env.NODE_ENV
@@ -54,6 +55,4 @@ console.info(
   )}`
 );
 // next.config.js
-module.exports = withOffline(
-  withPlugins([withCss], nextConfig)
-);
+module.exports = withPlugins([withCss], nextConfig);
