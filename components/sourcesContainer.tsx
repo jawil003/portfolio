@@ -9,7 +9,6 @@ export default class SourcesContainer extends React.Component {
           alignContent: "center",
           justifyContent: "center",
           flexWrap: "wrap",
-          gap: "20px",
         }}
       >
         {this.props.children}

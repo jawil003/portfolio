@@ -21,12 +21,15 @@ class Sources extends Component<WithTranslation> {
               <SourcesItem
                 href="https://www.flaticon.com/authors/pixel-perfect"
                 title="Pixel perfect"
+                color="#8E44AD"
               />
               <SourcesItem
+                color="#3498DB"
                 href="https://www.flaticon.com/authors/freepik"
                 title="Freepik"
               />
               <SourcesItem
+                color="#4caf50"
                 href="https://www.flaticon.com/authors/those-icons"
                 title="Those Icons"
               />

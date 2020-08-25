@@ -35,8 +35,8 @@ class IndexItem extends React.Component<Props> {
         <div
           style={{
             display: "flex",
-            rowGap: "30px",
-            columnGap: "50px",
+            /*rowGap: "30px",
+            columnGap: "50px",*/
             gridAutoRows: "auto",
             gridTemplateColumns: "30% 30% 30%",
             alignContent: "center",
