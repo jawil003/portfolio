@@ -13,7 +13,12 @@ export default class LebenslaufItem extends React.Component<
 > {
   render() {
     return (
-      <div style={{ position: "relative" }}>
+      <div
+        style={{
+          position: "relative",
+          margin: "30px",
+        }}
+      >
         <div
           style={{
             display: "grid",

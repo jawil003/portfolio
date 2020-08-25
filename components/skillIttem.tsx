@@ -8,7 +8,14 @@ export default class SkillItem extends React.Component<
 > {
   render() {
     return (
-      <a href={this.props.href} target="_blank">
+      <a
+        href={this.props.href}
+        target="_blank"
+        rel="noreferrer"
+        style={{
+          margin: "20px",
+        }}
+      >
         <div
           style={{
             display: "grid",

@@ -8,13 +8,18 @@ export default class ProjectItem extends React.Component<
 > {
   render() {
     return (
-      <a href={this.props.href} target="_blank">
+      <a
+        href={this.props.href}
+        target="_blank"
+        rel="noreferrer"
+      >
         <div
           style={{
             display: "grid",
             justifyContent: "center",
             alignItems: "center",
             justifyItems: "center",
+            margin: "30px",
           }}
         >
           <div>{this.props.icon}</div>

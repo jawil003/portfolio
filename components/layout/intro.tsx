@@ -41,7 +41,7 @@ const styles = createStyles({
 interface State {
   typing: boolean;
 }
-interface Props extends WithStyles<typeof styles> {}
+type Props = WithStyles<typeof styles>;
 class Intro extends React.Component<
   Props & WithTranslation,
   State
@@ -77,11 +77,11 @@ class Intro extends React.Component<
       >
         <picture>
           <source
-            srcSet="./pictures/background_dortmund-min.avif"
+            srcSet="/pictures/background_dortmund-min.avif"
             type="image/avif"
           />
           <source
-            srcSet="./pictures/background_dortmund-min.webp"
+            srcSet="/pictures/background_dortmund-min.webp"
             type="image/webp"
           />
           <img
@@ -90,7 +90,7 @@ class Intro extends React.Component<
               height: "100%",
               objectFit: "cover",
             }}
-            src="./pictures/background_dortmund-min.jpg"
+            src="/pictures/background_dortmund-min.jpg"
             alt="Dortmunder Union"
           ></img>
         </picture>
@@ -103,6 +103,7 @@ class Intro extends React.Component<
           }}
         >
           <Grid
+            key={0}
             container
             direction="column"
             alignContent="center"
@@ -112,11 +113,15 @@ class Intro extends React.Component<
               root: this.props.classes.gridContainer,
             }}
           >
-            <Grid item>
-              <Typography variant="h3" component="h3">
+            <Grid key={1} item>
+              <Typography
+                key={5}
+                variant="h3"
+                component="h3"
+              >
                 <Typist
+                  key={4}
                   className={this.props.classes.typist}
-                  key={this.state.typing}
                   onTypingDone={this.done}
                   cursor={{}}
                 >
@@ -129,6 +134,7 @@ class Intro extends React.Component<
                     {this.description1}
                   </span>
                   <Typist.Backspace
+                    key={2}
                     count={this.utilService.getDifferenceFromEnd(
                       this.description1,
                       this.description2
@@ -147,6 +153,7 @@ class Intro extends React.Component<
                     )}
                   </span>
                   <Typist.Backspace
+                    key={3}
                     count={this.utilService.getDifferenceFromEnd(
                       this.description2,
                       this.description3
@@ -167,8 +174,9 @@ class Intro extends React.Component<
                 </Typist>
               </Typography>
             </Grid>
-            <Grid item>
+            <Grid key={7} item>
               <Button
+                key={6}
                 onClick={(ent) => {
                   ent.preventDefault();
                   document
@@ -208,7 +216,7 @@ class Intro extends React.Component<
           >
             {process.env.NODE_ENV !== "production"
               ? [
-                  <Link key="/" href="/" lang="de">
+                  <Link key="/de" href="/" lang="de">
                     <a>
                       <GermanFlag fontSize="large" />
                     </a>
