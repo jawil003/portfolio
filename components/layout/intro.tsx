@@ -73,12 +73,31 @@ class Intro extends React.Component<
         style={{
           height: "100vh",
           width: "100%",
-          background: `url(/pictures/background_dortmund-min.webp) no-repeat center center`,
-          backgroundSize: "cover",
         }}
       >
+        <picture>
+          <source
+            srcSet="./pictures/background_dortmund-min.avif"
+            type="image/avif"
+          />
+          <source
+            srcSet="./pictures/background_dortmund-min.webp"
+            type="image/webp"
+          />
+          <img
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+            src="./pictures/background_dortmund-min.jpg"
+            alt="Dortmunder Union"
+          ></img>
+        </picture>
         <div
           style={{
+            position: "absolute",
+            top: "0px",
             height: "100%",
             background: "rgba(0,0,0,0.3)",
           }}
@@ -168,6 +187,7 @@ class Intro extends React.Component<
 
           <a
             href="https://pixabay.com/de/photos/dortmund-dortmunder-u-u-turm-602962/"
+            rel="noreferrer"
             target="_blank"
             className={`${this.props.classes.copyright}`}
           >
