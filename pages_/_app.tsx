@@ -7,7 +7,28 @@ import withRouter, {
 } from "next/dist/client/with-router";
 class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
-    /*const path = location.pathname;
+    if (
+      window &&
+      process.env.NODE_ENV === "production" &&
+      "serviceWorker" in navigator
+    ) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => {
+            console.log(
+              "service worker registration successful"
+            );
+          })
+          .catch((err) => {
+            console.warn(
+              "service worker registration failed",
+              err.message
+            );
+          });
+      });
+    }
+    const path = location.pathname;
     const prefix = path.match(/(\/de)?/)[0];
     const suffix = path.replace(prefix, "");
 
@@ -37,7 +58,7 @@ class CustomApp extends App<WithRouterProps> {
         `Browser language is English or another Language`
       );
       this.props.router.push(suffix);
-    }*/
+    }
   }
 
   componentDidCatch(error: any, errorInfo: any) {
