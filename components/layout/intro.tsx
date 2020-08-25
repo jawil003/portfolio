@@ -115,7 +115,7 @@ class Intro extends React.Component<
           >
             <Grid key={1} item>
               <Typography
-                key={5}
+                key={5 + Number(this.state.typing)}
                 variant="h3"
                 component="h3"
               >
