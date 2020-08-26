@@ -23,6 +23,10 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link
             rel="stylesheet"
+            href={`/styles/reset.css`}
+          />
+          <link
+            rel="stylesheet"
             href={`/styles/style.css`}
           />
           <link
