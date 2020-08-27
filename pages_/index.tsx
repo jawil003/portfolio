@@ -4,7 +4,6 @@ import Lebenslauf from "../components/lebenslauf";
 import Divider from "@material-ui/core/Divider";
 import AdvancedSkills from "../components/advancedSkills";
 import BasicSkills from "../components/basicSkills";
-import Contact from "../components/contact";
 import Project from "../components/projects";
 
 export default class Index extends Component {
@@ -18,7 +17,6 @@ export default class Index extends Component {
           <Divider />
           <BasicSkills />
           <Divider />
-          <Contact />
           <Divider />
           <Project />
         </div>

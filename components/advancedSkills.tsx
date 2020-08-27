@@ -15,6 +15,8 @@ import {
 } from "next-translate";
 import { TrelloIcon } from "./icons/trello.icon";
 import { ReactQueryIcon } from "./icons/reactQuery.icon";
+import { ExpressJSIcon } from "./icons/expressJs.icon";
+import { JavascriptLogo } from "./icons/javascript.con";
 
 class AdvancedSkills extends React.Component<
   WithTranslation
@@ -24,6 +26,12 @@ class AdvancedSkills extends React.Component<
       <IndexItem
         title={this.props.i18n.t("common:skills")}
       >
+        <SkillItem
+          href="https://developer.mozilla.org/de/docs/Web/JavaScript"
+          icon={<JavascriptLogo fontSize="large" />}
+        >
+          Javascript
+        </SkillItem>
         <SkillItem
           href="https://www.typescriptlang.org/"
           icon={<TypescriptIcon fontSize="large" />}
@@ -84,6 +92,12 @@ class AdvancedSkills extends React.Component<
           icon={<ReactQueryIcon fontSize="large" />}
         >
           React-Query
+        </SkillItem>
+        <SkillItem
+          href="https://react-redux.js.org/"
+          icon={<ExpressJSIcon fontSize="large" />}
+        >
+          Express JS
         </SkillItem>
       </IndexItem>
     );
