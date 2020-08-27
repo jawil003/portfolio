@@ -12,6 +12,13 @@ import { ConfluenceIcon } from "./icons/confluence.icon";
 import HibernateIcon from "./icons/hibernate.icon";
 import { BitbucketIcon } from "./icons/bitbucket.icon";
 import { FormikIcon } from "./icons/formik.icon";
+import { FramerMotionIcon } from "./icons/framerMotion.icon";
+import { ZustandIcon } from "./icons/zustand.icon";
+import { ReactReduxIcon } from "./icons/reactRedux.icon";
+import {
+  FeathersJs,
+  FeathersJsIcon,
+} from "./icons/feathersJs.icon";
 
 class BasicSkills extends React.Component<
   WithTranslation
@@ -62,6 +69,30 @@ class BasicSkills extends React.Component<
           icon={<FormikIcon fontSize="large" />}
         >
           Formik
+        </SkillItem>
+        <SkillItem
+          href="https://www.framer.com/motion/"
+          icon={<FramerMotionIcon fontSize="large" />}
+        >
+          Framer-Motion
+        </SkillItem>
+        <SkillItem
+          href="https://github.com/react-spring/zustand"
+          icon={<ZustandIcon fontSize="large" />}
+        >
+          Zustand
+        </SkillItem>
+        <SkillItem
+          href="https://react-redux.js.org/"
+          icon={<ReactReduxIcon fontSize="large" />}
+        >
+          React-Redux
+        </SkillItem>
+        <SkillItem
+          href="https://feathersjs.com/"
+          icon={<FeathersJsIcon />}
+        >
+          Feathers JS
         </SkillItem>
       </IndexItem>
     );
