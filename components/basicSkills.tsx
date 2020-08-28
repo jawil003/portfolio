@@ -1,7 +1,6 @@
 import React from "react";
 import IndexItem from "./layout/indexItem";
 import SkillItem from "./skillIttem";
-import SwiftIcon from "./icons/swift.icon";
 import SpringIcon from "./icons/spring.icon";
 import {
   withTranslation,
