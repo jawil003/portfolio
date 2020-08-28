@@ -15,10 +15,7 @@ import { FormikIcon } from "./icons/formik.icon";
 import { FramerMotionIcon } from "./icons/framerMotion.icon";
 import { ZustandIcon } from "./icons/zustand.icon";
 import { ReactReduxIcon } from "./icons/reactRedux.icon";
-import {
-  FeathersJs,
-  FeathersJsIcon,
-} from "./icons/feathersJs.icon";
+import { FeathersJsIcon } from "./icons/feathersJs.icon";
 
 class BasicSkills extends React.Component<
   WithTranslation
