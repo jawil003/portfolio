@@ -31,12 +31,7 @@ class BasicSkills extends React.Component<
         >
           Hibernate
         </SkillItem>
-        <SkillItem
-          href="https://swift.org/"
-          icon={<SwiftIcon fontSize="large" />}
-        >
-          Swift
-        </SkillItem>
+
         <SkillItem
           href="https://spring.io/"
           icon={<SpringIcon fontSize="large" />}
