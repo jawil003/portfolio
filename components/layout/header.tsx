@@ -47,6 +47,15 @@ class Header extends Component<
             </Link>
             <a
               target="_blank"
+              rel="noreferrer"
+              href="https://willey3x37.hashnode.dev/"
+              className={this.props.classes.link}
+            >
+              Blog
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
               href="https://github.com/jawil003"
               className={this.props.classes.link}
             >
@@ -54,6 +63,7 @@ class Header extends Component<
             </a>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://linkedin.com/in/jannik-will-450564182"
               className={this.props.classes.link}
             >
@@ -61,6 +71,7 @@ class Header extends Component<
             </a>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://twitter.com/Willey3x37"
               className={this.props.classes.link}
             >
