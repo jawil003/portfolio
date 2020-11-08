@@ -1,6 +1,7 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 import theme from "themes/theme";
+import NewContact from "./designs/NewContact";
 import PhoneDesign from "./designs/Phone";
 import PhoneMockup from "./PhoneMoockup";
 
@@ -64,7 +65,12 @@ const Showcase: React.FC = () => {
             >
               Nachverfolgung einfach gemacht
             </span>
-            <span style={{ display: "block" }}>
+            <span
+              style={{
+                display: "block",
+                color: "darkgrey",
+              }}
+            >
               Nimmt Ihnen die lästige Zettelarbeit und
               sie behalten trotzdem die volle Kontrolle
               über die Daten ihrer Kunden
@@ -84,23 +90,26 @@ const Showcase: React.FC = () => {
           </div>
         </div>
         <PhoneMockup style={{ bottom: "80px" }}>
-          <div
-            style={{
-              height: "100%",
-              display: "grid",
-              justifyContent: "center",
-              alignContent: "center",
-            }}
-          >
-            <div
-              style={{
-                width: "20px",
-                height: "20px",
-                backgroundColor: "#000",
-              }}
-            />
-          </div>
+          <NewContact />
         </PhoneMockup>
+      </div>
+      <div>
+        <h3
+          style={{
+            textAlign: "center",
+            fontSize: "2em",
+            fontWeight: "bold",
+          }}
+        >
+          How the App Works
+        </h3>
+        <div style={{ display: "flex" }}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
   );
