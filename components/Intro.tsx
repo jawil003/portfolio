@@ -8,8 +8,6 @@ import {
 import Link from "next-translate/Link";
 import Typist from "react-typist";
 import UtilService from "../services/util.service";
-import GermanFlag from "./icons/german_flag.icon";
-import USAFlag from "./icons/usa_flag.icon";
 import { useTranslation } from "next-translate";
 const useStyles = makeStyles({
   gridContainer: {
@@ -237,22 +235,7 @@ const Intro: React.FC = () => {
             display: "flex",
             gap: "20px",
           }}
-        >
-          {process.env.NODE_ENV !== "production"
-            ? [
-                <Link key="/de" href="/" lang="de">
-                  <a>
-                    <GermanFlag fontSize="large" />
-                  </a>
-                </Link>,
-                <Link key="/" href="/" noLang>
-                  <a>
-                    <USAFlag fontSize="large" />
-                  </a>
-                </Link>,
-              ]
-            : undefined}
-        </div>
+        ></div>
       </div>
     </div>
   );

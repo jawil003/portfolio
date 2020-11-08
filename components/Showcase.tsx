@@ -11,8 +11,10 @@ import PhoneMockup from "./PhoneMoockup";
 import ShowcaseAppitem from "./ShowcaseAppitem";
 import Spacer from "./Spacer";
 import styles from "./Showcase.module.css";
+import { useTranslation } from "next-translate";
 
 const Showcase: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div style={{ paddingBottom: "20px" }}>
       <div
@@ -70,7 +72,7 @@ const Showcase: React.FC = () => {
                 marginBottom: "10px",
               }}
             >
-              Nachverfolgung einfach gemacht
+              {t("localtrack:header")}
             </span>
             <span
               style={{
@@ -78,22 +80,50 @@ const Showcase: React.FC = () => {
                 color: "darkgrey",
               }}
             >
-              Nimmt Ihnen die lästige Zettelarbeit und
-              Sie behalten trotzdem die volle Kontrolle
-              über die Daten ihrer Kunden
+              {t("localtrack:description")}
             </span>
           </p>
           <div
             style={{
+              position: "relative",
               marginTop: "20px",
               display: "grid",
               justifyItems: "center",
               alignItems: "center",
             }}
           >
-            <Button color="primary" variant="outlined">
-              Play Store
-            </Button>
+            <div
+              style={{
+                position: "relative",
+                display: "grid",
+                alignItems: "center",
+                justifyItems: "center",
+                rowGap: "5px",
+              }}
+            >
+              <Button
+                color="primary"
+                variant="outlined"
+                disabled
+              >
+                Play Store
+              </Button>
+              <div
+                style={{
+                  /*position: "absolute",*/
+                  bottom: -10,
+                  left: 20,
+                  backgroundColor: "var(--red)",
+                  padding: "5px 20px",
+                  fontSize: "0.8em",
+                  borderRadius: "10px",
+                  color: "white",
+                  textAlign: "center",
+                }}
+              >
+                {t("localtrack:lower-button")}
+              </div>
+            </div>
           </div>
         </div>
         <PhoneMockup
@@ -123,7 +153,7 @@ const Showcase: React.FC = () => {
             fontWeight: "bold",
           }}
         >
-          Wie die App funktioniert
+          {t("localtrack:app-header")}
         </h3>
         <Spacer height="30px" />
         <div
@@ -137,32 +167,42 @@ const Showcase: React.FC = () => {
           <ShowcaseAppitem
             color="var(--red)"
             icon={<TwoPeopleIcon size="60%" />}
-            title="Neue Kontakte verwalten"
-            description="Ob manuell oder per QR Code, geben Sie einfach die Daten des Kunden ein und die App sichert sie dann"
+            title={t("localtrack:newContact.title")}
+            description={t(
+              "localtrack:newContact.description"
+            )}
           />
           <ShowcaseAppitem
             color="var(--orange)"
             icon={<LockIcon size="50%" />}
-            title="Automatische Verschlüsselung sensibler Daten"
-            description="Die Daten deiner Kunden bedürfen besonderen Schutz, deswegen verschlüsselt LocalTrack standardmäßig alle personenbezogenen Daten"
+            title={t("localtrack:encryption.title")}
+            description={t(
+              "localtrack:encryption.description"
+            )}
           />
           <ShowcaseAppitem
             color="var(--blue)"
             icon={<SdCardIcon size="50%" />}
-            title="Einfacher Export der Kontaktdaten"
-            description="Daten lassen sich in dem von vielen Programmen genutzten CSV exportieren und dann beliebig versendet werden, indem nur ein Zeitraum gewählt wird"
+            title={t("localtrack:export.title")}
+            description={t(
+              "localtrack:export.description"
+            )}
           />
           <ShowcaseAppitem
             color="var(--green)"
             icon={<ListIcon size="50%" />}
-            title="Einfaches Eintragen von Anfangs- und Enddaten"
-            description="Daten lassen sich in dem von vielen Programmen genutzten CSV exportieren und dann beliebig versendet werden, indem nur ein Zeitraum gewählt wird"
+            title={t("localtrack:date.title")}
+            description={t(
+              "localtrack:date.description"
+            )}
           />
           <ShowcaseAppitem
             color="var(--yellow)"
             icon={<InfoIcon size="50%" />}
-            title="Kundenapp für Generierung der Daten als QR Code"
-            description="Kunde kann selbe App nutzen um sich einen QR Code zu generieren den er dann im Laden seiner Wahl"
+            title={t("localtrack:customer.title")}
+            description={t(
+              "localtrack:customer.description"
+            )}
           />
         </div>
       </div>
