@@ -1,12 +1,12 @@
 import { Component } from "react";
-import { Layout } from "../components/layout/layout";
-import IndexItem from "../components/layout/indexItem";
+import Layout from "../components/Layout";
+import IndexItem from "../components/IndexItem";
 import {
   withTranslation,
   WithTranslation,
 } from "next-translate";
-import SourcesContainer from "../components/sourcesContainer";
-import SourcesItem from "../components/sourcesItem";
+import SourcesContainer from "../components/SourcesContainer";
+import SourcesItem from "../components/SourcesItem";
 class Sources extends Component<WithTranslation> {
   render() {
     return (

@@ -9,7 +9,7 @@ export class ErrorBoundary extends Component {
   componentDidCatch(
     error: Error,
     errorInfo: React.ErrorInfo
-  ) {
+  ): void {
     this.setState({ error });
     console.log(error, errorInfo);
   }

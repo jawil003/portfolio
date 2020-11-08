@@ -1,5 +1,5 @@
-import IndexItem from "./layout/indexItem";
-import SkillItem from "./skillIttem";
+import IndexItem from "./IndexItem";
+import SkillItem from "./SkillItem";
 import SwiftIcon from "./icons/swift.icon";
 import { CPlusPlusIcon } from "./icons/cplusplus.icon";
 import { PythonLogo } from "./icons/python.icon";
