@@ -1,5 +1,3 @@
-const withCss = require("@zeit/next-css");
-const withPlugins = require("next-compose-plugins");
 const withOffline = require("next-offline");
 const {
   locales,
@@ -60,4 +58,4 @@ console.info(
   )}`
 );
 // next.config.js
-module.exports = withPlugins([withCss], nextConfig);
+module.exports = nextConfig;

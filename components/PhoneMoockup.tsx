@@ -3,16 +3,19 @@ import PhoneDesign from "./designs/Phone";
 
 interface Props {
   style?: CSSProperties;
+  className?: string;
 }
 const PhoneMockup: React.FC<Props> = ({
   children,
   style,
+  className,
 }) => {
   return (
     <div
+      className={className}
       style={{
         position: "relative",
-        display: "grid",
+        /*display: "grid",*/
         justifyContent: "center",
         alignContent: "center",
         zIndex: 1,
