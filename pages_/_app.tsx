@@ -72,7 +72,7 @@ class CustomApp extends App<WithRouterProps> {
     return (
       <>
         <Head>
-          <title>Portfolio</title>
+          <title>Jannik Will</title>
         </Head>
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />

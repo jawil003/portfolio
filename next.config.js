@@ -2,11 +2,16 @@ const withCss = require("@zeit/next-css");
 const withPlugins = require("next-compose-plugins");
 const withOffline = require("next-offline");
 const {
+  locales,
+  defaultLocale,
+} = require("./i18n.json");
+const {
   TsConfigPathsPlugin,
 } = require("awesome-typescript-loader");
 const debug = process.env.NODE_ENV !== "production";
 
 const nextConfig = withOffline({
+  i18n: { locales, defaultLocale },
   workboxOpts: {} /*
   exportPathMap: function () {
     return {

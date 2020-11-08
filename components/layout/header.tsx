@@ -11,6 +11,7 @@ import {
   WithStyles,
   withStyles,
   Grid,
+  Hidden,
 } from "@material-ui/core";
 const styles = createStyles({
   icon: {
@@ -30,61 +31,63 @@ class Header extends Component<
 > {
   render() {
     return (
-      <AppBar
-        id="navigation"
-        classes={{ root: this.props.classes.appBar }}
-      >
-        <Toolbar>
-          <Grid
-            container
-            alignContent="center"
-            justify="center"
-          >
-            <Link key="/" href="/">
-              <a className={this.props.classes.link}>
-                {this.props.i18n.t("header:resume")}
+      <Hidden xsDown>
+        <AppBar
+          id="navigation"
+          classes={{ root: this.props.classes.appBar }}
+        >
+          <Toolbar>
+            <Grid
+              container
+              alignContent="center"
+              justify="center"
+            >
+              <Link key="/" href="/">
+                <a className={this.props.classes.link}>
+                  {this.props.i18n.t("header:resume")}
+                </a>
+              </Link>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://willey3x37.hashnode.dev/"
+                className={this.props.classes.link}
+              >
+                Blog
               </a>
-            </Link>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://willey3x37.hashnode.dev/"
-              className={this.props.classes.link}
-            >
-              Blog
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/jawil003"
-              className={this.props.classes.link}
-            >
-              {this.props.i18n.t("Github")}
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://linkedin.com/in/jannik-will-450564182"
-              className={this.props.classes.link}
-            >
-              {this.props.i18n.t("LinkedIn")}
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://twitter.com/Willey3x37"
-              className={this.props.classes.link}
-            >
-              {this.props.i18n.t("Twitter")}
-            </a>
-            <Link key="/sources" href="/sources">
-              <a className={this.props.classes.link}>
-                {this.props.i18n.t("header:sources")}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/jawil003"
+                className={this.props.classes.link}
+              >
+                {this.props.i18n.t("Github")}
               </a>
-            </Link>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://linkedin.com/in/jannik-will-450564182"
+                className={this.props.classes.link}
+              >
+                {this.props.i18n.t("LinkedIn")}
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/Willey3x37"
+                className={this.props.classes.link}
+              >
+                {this.props.i18n.t("Twitter")}
+              </a>
+              <Link key="/sources" href="/sources">
+                <a className={this.props.classes.link}>
+                  {this.props.i18n.t("header:sources")}
+                </a>
+              </Link>
+            </Grid>
+          </Toolbar>
+        </AppBar>
+      </Hidden>
     );
   }
 }

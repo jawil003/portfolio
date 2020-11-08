@@ -94,10 +94,10 @@ class AdvancedSkills extends React.Component<
           React-Query
         </SkillItem>
         <SkillItem
-          href="https://react-redux.js.org/"
+          href="https://expressjs.com/"
           icon={<ExpressJSIcon fontSize="large" />}
         >
-          Express JS
+          Express
         </SkillItem>
       </IndexItem>
     );

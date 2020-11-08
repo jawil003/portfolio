@@ -83,7 +83,7 @@ class BasicSkills extends React.Component<
           href="https://feathersjs.com/"
           icon={<FeathersJsIcon />}
         >
-          Feathers JS
+          Feathers
         </SkillItem>
       </IndexItem>
     );
