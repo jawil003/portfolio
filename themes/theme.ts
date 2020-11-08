@@ -20,10 +20,15 @@ const theme = createMuiTheme({
     },
   },
   shape: {
-    borderRadius: 0,
+    borderRadius: 20,
   },
   overrides: {
-    MuiButton: { root: { textTransform: "none" } },
+    MuiButton: {
+      root: {
+        textTransform: "none",
+        padding: "8px 16px",
+      },
+    },
   },
 });
 

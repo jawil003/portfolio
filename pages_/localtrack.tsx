@@ -1,4 +1,7 @@
+import Showcase from "components/Showcase";
+import React from "react";
+
 const LocalTrack: React.FC = () => {
-  return <div></div>;
+  return <Showcase />;
 };
 export default LocalTrack;
