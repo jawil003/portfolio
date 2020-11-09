@@ -5,10 +5,10 @@ import {
   Button,
   makeStyles,
 } from "@material-ui/core";
-import Link from "next-translate/Link";
 import Typist from "react-typist";
 import UtilService from "../services/util.service";
 import { useTranslation } from "next-translate";
+import Spacer from "./Spacer";
 const useStyles = makeStyles({
   gridContainer: {
     height: "100%",
@@ -197,20 +197,28 @@ const Intro: React.FC = () => {
             </Typography>
           </Grid>
           <Grid key={7} item>
+            {/*<Button
+                key={6}
+                onClick={(ent) => {
+                  ent.preventDefault();
+                  document
+                    .querySelector("#navigation")
+                    .scrollIntoView({
+                      behavior: "smooth",
+                    });
+                }}
+                variant="contained"
+                color="primary"
+              >
+              {t("intro:buttontext")}
+              </Button>*/}
             <Button
               key={6}
-              onClick={(ent) => {
-                ent.preventDefault();
-                document
-                  .querySelector("#navigation")
-                  .scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
+              href="/localtrack"
               variant="contained"
               color="primary"
             >
-              {t("intro:buttontext")}
+              {t("intro:exploreLocaltrack")}
             </Button>
           </Grid>
         </Grid>
@@ -225,17 +233,6 @@ const Intro: React.FC = () => {
             person: "sxxs",
           })}
         </a>
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            padding: "16px",
-            color: "white",
-            display: "flex",
-            gap: "20px",
-          }}
-        ></div>
       </div>
     </div>
   );
