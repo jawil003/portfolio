@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
 });
 const Contact: React.FC = () => {
-  const [_state, setState] = useState({
+  const [, setState] = useState({
     open: false,
   });
   const { icon } = useStyles();

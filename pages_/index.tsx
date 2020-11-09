@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import Lebenslauf from "../components/Lebenslauf";
 import Divider from "@material-ui/core/Divider";
