@@ -10,7 +10,7 @@ const CustomFooter = styled.footer`
   background-color: #f5f5f5;
 `;
 
-export const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <CustomFooter className="bg-dark">
       <div className="container">
@@ -32,4 +32,4 @@ export const Footer = () => {
   );
 };
 
-Footer.displayName = "Footer";
+export default Footer;

@@ -1,0 +1,26 @@
+{
+  "header": "Nachverfolgung einfach gemacht",
+  "description": "Nimmt Ihnen die lästige Zettelarbeit und Sie behalten trotzdem die volle Kontrolle über die Daten ihrer Kunden",
+  "app-header": "Wie die App funktioniert",
+  "lower-button": "Bald",
+  "newContact": {
+    "title": "Neue Kontakte verwalten",
+    "description": "Ob manuell oder per QR Code, geben Sie einfach die Daten des Kunden ein und die App sichert sie dann"
+  },
+  "encryption": {
+    "title": "Automatische Verschlüsselung sensibler Daten",
+    "description": "Die Daten deiner Kunden bedürfen besonderen Schutz, deswegen verschlüsselt LocalTrack standardmäßig alle personenbezogenen Daten"
+  },
+  "export": {
+    "title": "Einfacher Export der Kontaktdaten",
+    "description": "Daten lassen sich in dem von vielen Programmen genutzten CSV exportieren und dann beliebig versendet werden, indem nur ein Zeitraum gewählt wird"
+  },
+  "date": {
+    "title": "Einfaches Eintragen von Anfangs- und Enddaten",
+    "description": "Daten lassen sich in dem von vielen Programmen genutzten CSV exportieren und dann beliebig versendet werden, indem nur ein Zeitraum gewählt wird"
+  },
+  "customer": {
+    "title": "Kundenapp für Generierung der Daten als QR Code",
+    "description": "Kunde kann selbe App nutzen um sich einen QR Code zu generieren den er dann im Laden seiner Wahl"
+  }
+}

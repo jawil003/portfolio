@@ -1,15 +1,19 @@
 import React, { Component } from "react";
-import { Layout } from "../components/layout/layout";
-import Lebenslauf from "../components/lebenslauf";
+import Layout from "../components/Layout";
+import Lebenslauf from "../components/Lebenslauf";
 import Divider from "@material-ui/core/Divider";
-import AdvancedSkills from "../components/advancedSkills";
-import BasicSkills from "../components/basicSkills";
-import Project from "../components/projects";
-import LookedIntoSkills from "components/lookedIntoSkills";
+import AdvancedSkills from "../components/AdvancedSkills";
+import BasicSkills from "../components/BasicSkills";
+import Project from "../components/Projects";
+import LookedIntoSkills from "components/LookedIntoSkills";
+import Head from "next/head";
 
-export default class Index extends Component {
-  render() {
-    return (
+const Index: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Jannik Will | Portfolio</title>
+      </Head>
       <Layout>
         <div style={{ display: "grid" }}>
           <Lebenslauf />
@@ -23,7 +27,7 @@ export default class Index extends Component {
           <Project />
         </div>
       </Layout>
-    );
-  }
-  s;
-}
+    </>
+  );
+};
+export default Index;

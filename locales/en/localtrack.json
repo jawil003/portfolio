@@ -1,0 +1,26 @@
+{
+  "header": "Tracking made easy",
+  "description": "Takes away the annoying paperwork and you still have full control over your customers' data",
+  "app-header": "How the app works",
+  "lower-button": "Soon",
+  "newContact": {
+    "title": "Manage new contacts",
+    "description": "Whether manually or via QR Code, simply enter the customer's data and the app will save it"
+  },
+  "encryption": {
+    "title": "Automatic encryption of sensitive data",
+    "description": "Your customers' data requires special protection, which is why LocalTrack encrypts all personal data by default"
+  },
+  "export": {
+    "title": "Easy export of contact data",
+    "description": "Data can be exported in the CSV used by many programs and then be sent as desired by selecting only one period"
+  },
+  "date": {
+    "title": "Simple entry of start and end dates",
+    "description": "Data can be exported in the CSV used by many programs and then be sent as desired by selecting only one period"
+  },
+  "customer": {
+    "title": "Customer application for generating data as QR Code",
+    "description": "Customers can use the same app to generate a QR Code which they can then buy in the store of their choice"
+  }
+}

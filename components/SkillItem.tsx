@@ -3,20 +3,26 @@ interface Props {
   icon: JSX.Element;
   href: string;
 }
-const ProjectItem: React.FC<Props> = ({
+const SkillItem: React.FC<Props> = ({
   children,
   href,
   icon,
 }) => {
   return (
-    <a href={href} target="_blank" rel="noreferrer">
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        margin: "20px",
+      }}
+    >
       <div
         style={{
           display: "grid",
           justifyContent: "center",
           alignItems: "center",
           justifyItems: "center",
-          margin: "30px",
         }}
       >
         <div>{icon}</div>
@@ -24,7 +30,7 @@ const ProjectItem: React.FC<Props> = ({
           style={{
             display: "inline-block",
             margin: "0px",
-            marginTop: "1px",
+            marginTop: "10px",
             maxWidth: "300px",
             textAlign: "center",
           }}
@@ -36,4 +42,4 @@ const ProjectItem: React.FC<Props> = ({
   );
 };
 
-export default ProjectItem;
+export default SkillItem;

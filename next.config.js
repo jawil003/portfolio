@@ -1,12 +1,19 @@
-const withCss = require("@zeit/next-css");
-const withPlugins = require("next-compose-plugins");
 const withOffline = require("next-offline");
+const {
+  locales,
+  defaultLocale,
+} = require("./i18n.json");
 const {
   TsConfigPathsPlugin,
 } = require("awesome-typescript-loader");
 const debug = process.env.NODE_ENV !== "production";
 
 const nextConfig = withOffline({
+  i18n: {
+    locales,
+    defaultLocale,
+    localeDetection: true,
+  },
   workboxOpts: {} /*
   exportPathMap: function () {
     return {
@@ -55,4 +62,4 @@ console.info(
   )}`
 );
 // next.config.js
-module.exports = withPlugins([withCss], nextConfig);
+module.exports = nextConfig;
