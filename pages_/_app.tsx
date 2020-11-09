@@ -1,5 +1,4 @@
 import App from "next/app";
-import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../themes/theme";
 import withRouter, {
