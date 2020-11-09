@@ -9,11 +9,6 @@ const {
 const debug = process.env.NODE_ENV !== "production";
 
 const nextConfig = withOffline({
-  i18n: {
-    locales,
-    defaultLocale,
-    localeDetection: true,
-  },
   workboxOpts: {} /*
   exportPathMap: function () {
     return {

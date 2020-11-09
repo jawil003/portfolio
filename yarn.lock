@@ -5791,10 +5791,10 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next-translate@^0.19.4:
-  version "0.19.4"
-  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-0.19.4.tgz#d55f7b3176d45a0ff3b2c6fce87ef6ab75497d32"
-  integrity sha512-yfwLDKXBUVdaFfb6tX0sY/nnc71LiwxBuTZYRRvK3HDPtBF7QZwnfDRRLoALhyJE0yYXTN1qDBxCv+HFfk0Hsg==
+next-translate@0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-0.18.0.tgz#ef5d6eb8ee5a2a46e78427a3ef3eb30c5a5089ac"
+  integrity sha512-JzUtUokMuCX4SobKdjV8UXuOIwDYVtfRiqA881wJ7ncbX0gZNqQsdIwUWot/HOLVNh8igEQ51TKnjqLAcR/g3w==
 
 next@9.5.5:
   version "9.5.5"

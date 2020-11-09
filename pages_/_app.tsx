@@ -27,7 +27,7 @@ class CustomApp extends App<WithRouterProps> {
           });
       });
     }
-    /*const path = location.pathname;
+    const path = location.pathname;
     const prefix = path.match(/(\/de)?/)[0];
     const suffix = path.replace(prefix, "");
 
@@ -57,7 +57,7 @@ class CustomApp extends App<WithRouterProps> {
         `Browser language is English or another Language`
       );
       this.props.router.push(suffix);
-    }*/
+    }
   }
 
   componentDidCatch(error: any, errorInfo: any) {

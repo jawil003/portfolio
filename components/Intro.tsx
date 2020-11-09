@@ -8,7 +8,7 @@ import {
 import Typist from "react-typist";
 import UtilService from "../services/util.service";
 import { useTranslation } from "next-translate";
-import Link from "next/link";
+import Link from "next-translate/link";
 const useStyles = makeStyles({
   gridContainer: {
     height: "100%",
