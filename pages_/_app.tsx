@@ -5,7 +5,6 @@ import withRouter, {
   WithRouterProps,
 } from "next/dist/client/with-router";
 import React from "react";
-import { Head } from "next/document";
 class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
     if (
