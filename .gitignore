@@ -7,3 +7,5 @@ tags
 pages
 package-lock.json
 out
+.env.development
+.env

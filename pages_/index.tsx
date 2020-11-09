@@ -7,12 +7,18 @@ import BasicSkills from "../components/BasicSkills";
 import Project from "../components/Projects";
 import LookedIntoSkills from "components/LookedIntoSkills";
 import Head from "next/head";
-
+import { useTranslation } from "next-translate";
+import generateMetaTags from "../components/MetaTags";
 const Index: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Jannik Will | Portfolio</title>
+        {generateMetaTags(
+          t("intro:social.title"),
+          t("intro:social.description"),
+          "pictures/background-dortmund/jpg/background_dortmund-min.jpg"
+        )}
       </Head>
       <Layout>
         <div style={{ display: "grid" }}>

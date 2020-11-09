@@ -5,12 +5,17 @@ import SourcesContainer from "../components/SourcesContainer";
 import SourcesItem from "../components/SourcesItem";
 import Head from "next/head";
 import { useTranslation } from "next-translate";
+import generateMetaTags from "components/MetaTags";
 const Sources: React.FC = () => {
   const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Jannik Will | Quellen</title>
+        {generateMetaTags(
+          t("sources:social.title"),
+          t("sources:social.description"),
+          "pictures/background-dortmund/jpg/background_dortmund-min.jpg"
+        )}
       </Head>
       <Layout>
         <div style={{ display: "grid" }}>

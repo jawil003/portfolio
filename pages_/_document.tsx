@@ -6,7 +6,6 @@ import Document, {
   NextScript,
 } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
-import theme from "../themes/theme";
 export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
@@ -15,11 +14,6 @@ export default class MyDocument extends Document {
         lang="en"
       >
         <Head>
-          {/* PWA primary color */}
-          <meta
-            name="theme-color"
-            content={theme.palette.primary.main}
-          />
           <link rel="manifest" href="/manifest.json" />
           <link
             rel="stylesheet"

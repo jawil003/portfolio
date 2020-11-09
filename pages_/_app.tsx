@@ -4,6 +4,8 @@ import theme from "../themes/theme";
 import withRouter, {
   WithRouterProps,
 } from "next/dist/client/with-router";
+import React from "react";
+import { Head } from "next/document";
 class CustomApp extends App<WithRouterProps> {
   componentDidMount() {
     if (
@@ -60,7 +62,7 @@ class CustomApp extends App<WithRouterProps> {
     }
   }
 
-  componentDidCatch(error: any, errorInfo: any) {
+  componentDidCatch(error, errorInfo) {
     console.log(error);
     super.componentDidCatch(error, errorInfo);
   }

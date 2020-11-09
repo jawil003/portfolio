@@ -1,4 +1,8 @@
 {
+  "social": {
+    "title": "Lebenslauf",
+    "description": "Folg dem Link und schau dir meinen Lebenslauf und meine Kenntnisse im Bereich Programmierung unde Design an"
+  },
   "copyright": "Foto von {{person}}",
   "buttontext": "Lernen wir uns kennen",
   "exploreLocaltrack": "Entdecke mein neustes Projekt",

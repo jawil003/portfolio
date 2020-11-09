@@ -1,4 +1,8 @@
 {
+  "social": {
+    "title": "Resume",
+    "description": "Follow the link and have a look at my resume and my knowledge in programming and design"
+  },
   "copyright": "Photo by {{person}}",
   "buttontext": "Let's get to know each other",
   "exploreLocaltrack": "Discover my latest project",
