@@ -128,7 +128,7 @@ const Showcase: React.FC = () => {
         </div>
         <PhoneMockup
           className={styles.Device}
-          style={{ bottom: "80px" }}
+          style={{ bottom: "80px", width: "100%" }}
         >
           <NewContact />
         </PhoneMockup>

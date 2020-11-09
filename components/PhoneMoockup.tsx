@@ -22,14 +22,14 @@ const PhoneMockup: React.FC<Props> = ({
         ...style,
       }}
     >
-      <PhoneDesign size="calc(100% + 80px)" />
+      <PhoneDesign size="calc(100vh - 20px)" />
       <div
         style={{
           position: "absolute",
           top: 15,
           left: 23,
           width: "calc(100% - 45px)",
-          height: "calc(100% + 42px)",
+          height: "100%",
           zIndex: -1,
         }}
       >

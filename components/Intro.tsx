@@ -8,7 +8,7 @@ import {
 import Typist from "react-typist";
 import UtilService from "../services/util.service";
 import { useTranslation } from "next-translate";
-import Spacer from "./Spacer";
+import Link from "next/link";
 const useStyles = makeStyles({
   gridContainer: {
     height: "100%",
@@ -212,15 +212,15 @@ const Intro: React.FC = () => {
               >
               {t("intro:buttontext")}
               </Button>*/}
-            <Button
-              key={6}
-              href="/localtrack"
-              target="_blank"
-              variant="contained"
-              color="primary"
-            >
-              {t("intro:exploreLocaltrack")}
-            </Button>
+            <Link href="/localtrack">
+              <Button
+                key={6}
+                variant="contained"
+                color="primary"
+              >
+                {t("intro:exploreLocaltrack")}
+              </Button>
+            </Link>
           </Grid>
         </Grid>
 
