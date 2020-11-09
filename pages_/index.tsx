@@ -6,10 +6,14 @@ import AdvancedSkills from "../components/AdvancedSkills";
 import BasicSkills from "../components/BasicSkills";
 import Project from "../components/Projects";
 import LookedIntoSkills from "components/LookedIntoSkills";
+import Head from "next/head";
 
-export default class Index extends Component {
-  render() {
-    return (
+const Index: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Jannik Will | Portfolio</title>
+      </Head>
       <Layout>
         <div style={{ display: "grid" }}>
           <Lebenslauf />
@@ -23,6 +27,7 @@ export default class Index extends Component {
           <Project />
         </div>
       </Layout>
-    );
-  }
-}
+    </>
+  );
+};
+export default Index;

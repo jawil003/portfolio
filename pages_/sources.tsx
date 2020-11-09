@@ -1,21 +1,21 @@
-import { Component } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import IndexItem from "../components/IndexItem";
-import {
-  withTranslation,
-  WithTranslation,
-} from "next-translate";
 import SourcesContainer from "../components/SourcesContainer";
 import SourcesItem from "../components/SourcesItem";
-class Sources extends Component<WithTranslation> {
-  render() {
-    return (
+import Head from "next/head";
+import { useTranslation } from "next-translate";
+const Sources: React.FC = () => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <Head>
+        <title>Jannik Will | Quellen</title>
+      </Head>
       <Layout>
         <div style={{ display: "grid" }}>
           <IndexItem
-            title={this.props.i18n.t(
-              "sources:graphicsources"
-            )}
+            title={t("sources:graphicsources")}
           >
             <SourcesContainer>
               <SourcesItem
@@ -36,14 +36,12 @@ class Sources extends Component<WithTranslation> {
             </SourcesContainer>
           </IndexItem>
           <IndexItem
-            title={this.props.i18n.t(
-              "sources:textsources"
-            )}
+            title={t("sources:textsources")}
           ></IndexItem>
         </div>
       </Layout>
-    );
-  }
-}
+    </>
+  );
+};
 
-export default withTranslation(Sources);
+export default Sources;

@@ -215,6 +215,7 @@ const Intro: React.FC = () => {
             <Button
               key={6}
               href="/localtrack"
+              target="_blank"
               variant="contained"
               color="primary"
             >
