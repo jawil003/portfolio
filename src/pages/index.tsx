@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import NavigationBar from "../components/NavigationBar";
 
@@ -10,10 +11,17 @@ interface Props {}
  */
 const Index: React.FC<Props> = () => {
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        background: "var(--primaryDark)",
+      }}
+    >
+      <Head>
+        <title>Jannik Will | Startseite</title>
+      </Head>
       <NavigationBar />
-      <div>Hello World</div>
-    </>
+    </div>
   );
 };
 

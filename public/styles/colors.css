@@ -1,5 +1,6 @@
 :root {
-  --primary: var(--darkblue);
+  --primaryDark: var(--darkblue);
+  --primary: var(--darkbluelight);
   --secondary: var(--white);
   --white: #fff;
   --darkgrey: darkgrey;
@@ -7,6 +8,7 @@
   --orange: #e67e22;
   --blue: #2980b9;
   --darkblue: #165c6f;
+  --darkbluelight: #2d6c7d;
   --green: #28b463;
   --yellow: #f4d03f;
 }
