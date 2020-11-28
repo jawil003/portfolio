@@ -8,7 +8,7 @@ import ThemeProvider from "../components/ThemeProvider";
  * @author Jannik Will
  * @version 0.1
  */
-const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
@@ -21,4 +21,4 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   );
 };
 
-export default App;
+export default MyApp;

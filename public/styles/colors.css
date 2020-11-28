@@ -1,0 +1,12 @@
+:root {
+  --primary: var(--darkblue);
+  --secondary: var(--white);
+  --white: #fff;
+  --darkgrey: darkgrey;
+  --red: red;
+  --orange: #e67e22;
+  --blue: #2980b9;
+  --darkblue: #165c6f;
+  --green: #28b463;
+  --yellow: #f4d03f;
+}
