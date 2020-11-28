@@ -24,7 +24,7 @@ const Logo: React.FC<Props> = () => {
         borderRadius: "5px",
         flexGrow: 0,
         flexBasis: "auto",
-        padding: "20px 40px",
+        padding: "20px",
       }}
     >
       <div

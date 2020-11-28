@@ -20,7 +20,7 @@ const NavigationBarItem: React.FC<Props> = ({ children, icon }) => {
         justifyContent: "flex-start",
         alignItems: "baseline",
         borderRadius: "5px",
-        padding: "20px 40px",
+        padding: "20px",
       }}
     >
       <div style={{ flex: 0.2 }}>{icon}</div>
