@@ -10,6 +10,7 @@ import IconLink from "../components/elements/IconLink";
 import { motion } from "framer-motion";
 import flyFromTop from "../variants/flyFromTop";
 import flyFromRight from "../variants/flyFromRight";
+import DribbleIcon from "../components/icons/dribble.icon";
 
 interface Props {}
 
@@ -52,8 +53,7 @@ const Index: React.FC<Props> = () => {
       >
         <Typography variant="h3">Hallo, ich bin Jannik</Typography>
         <Typography>
-          ich bin leidenschaftlicher Softwareentwickler und Designer aus
-          Dortmund
+          ein leidenschaftlicher Softwareentwickler und Designer aus Dortmund
         </Typography>
         <Spacer height="35px" />
         <div
@@ -68,9 +68,18 @@ const Index: React.FC<Props> = () => {
             <TwitterIcon height="48px" />
           </IconLink>
           <Spacer width="20px" />
-          <LinkedInIcon height="48px" />
+          <IconLink external href="https://linkedin.com/willey3x37">
+            <LinkedInIcon height="48px" />
+          </IconLink>
+
           <Spacer width="20px" />
-          <GithubIcon height="48px" />
+          <IconLink external href="https://github.com/jawil003">
+            <GithubIcon height="48px" />
+          </IconLink>
+          <Spacer width="20px" />
+          <IconLink external href="https://dribbble.com/willey3x37">
+            <DribbleIcon height="48px" />
+          </IconLink>
         </div>
       </motion.div>
       <motion.div
