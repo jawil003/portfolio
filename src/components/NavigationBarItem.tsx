@@ -22,8 +22,20 @@ const NavigationBarItem: React.FC<Props> = ({ children, icon, href }) => {
   } = useTheme();
   return (
     <Link href={href}>
-      <a className={styles.naviagtionBarItem}>
-        <div>{icon}</div>
+      <a
+        className={styles.naviagtionBarItem}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          columnGap: "10px",
+          cursor: "pointer",
+          height: "63px",
+          padding: "20px",
+        }}
+      >
+        <div style={{ height: "100%" }}>{icon}</div>
         <Typography variant="b1" bold="semi-bold" color={secondaryText}>
           {children}
         </Typography>

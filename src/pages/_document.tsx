@@ -19,7 +19,11 @@ class MyDocument extends Document {
             type="image/x-icon"
           />
         </Head>
-        <body>
+        <body
+          style={{
+            minHeight: "100vh",
+          }}
+        >
           <Main />
           <NextScript />
         </body>

@@ -22,7 +22,7 @@ const NavigationBar: React.FC<Props> = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        maxHeight: "125px",
+        height: "100px",
       }}
     >
       <div>

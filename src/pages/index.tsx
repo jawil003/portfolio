@@ -1,10 +1,15 @@
 import Head from "next/head";
 import React from "react";
-import Footer from "../components/Footer";
-import NavigationBar from "../components/NavigationBar";
 import useTheme from "../hooks/useTheme.hook";
-import Image from "next/image";
 import Typography from "../components/elements/Typography";
+import TwitterIcon from "../components/icons/twitter.icon";
+import Spacer from "../components/elements/Spacer";
+import LinkedInIcon from "../components/icons/linkedin.icon";
+import GithubIcon from "../components/icons/github.icon";
+import IconLink from "../components/elements/IconLink";
+import { motion } from "framer-motion";
+import flyFromTop from "../variants/flyFromTop";
+import flyFromRight from "../variants/flyFromRight";
 
 interface Props {}
 
@@ -20,49 +25,68 @@ const Index: React.FC<Props> = () => {
     },
   } = useTheme();
   return (
-    <div
+    <motion.main
       style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        backgroundColor: primary,
-        color: secondaryText,
+        flex: 1,
+        display: "grid",
+        gridTemplateColumns: "50% 50%",
+        gridTemplateRows: "100%",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Head>
         <title>Jannik Will | Startseite</title>
       </Head>
-      <NavigationBar />
-      <main
+
+      <motion.div
+        variants={flyFromTop}
+        initial="initial"
+        animate="animate"
         style={{
-          alignSelf: "stretch",
-          flex: 1,
-          display: "grid",
-          gridTemplateColumns: "50% 50%",
-          gridTemplateRows: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
         }}
       >
+        <Typography variant="h3">Hallo, ich bin Jannik</Typography>
+        <Typography>
+          ich bin leidenschaftlicher Softwareentwickler und Designer aus
+          Dortmund
+        </Typography>
+        <Spacer height="35px" />
         <div
           style={{
+            width: "60%",
             display: "flex",
-            flexDirection: "column",
+            justifyContent: "space-around",
             alignItems: "center",
-            justifyContent: "center",
           }}
         >
-          <Typography variant="h3">Hallo, ich bin Jannik</Typography>
-          <Typography>
-            ich bin leidenschaftlicher Softwareentwickler und Designer aus
-            Dortmund
-          </Typography>
+          <IconLink external href="https://twitter.com/willey3x37">
+            <TwitterIcon height="48px" />
+          </IconLink>
+          <Spacer width="20px" />
+          <LinkedInIcon height="48px" />
+          <Spacer width="20px" />
+          <GithubIcon height="48px" />
         </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <img src="/img/dortmund-u.jpg" width="100%" />
-        </div>
-      </main>
-      <Footer />
-    </div>
+      </motion.div>
+      <motion.div
+        variants={flyFromRight}
+        initial="initial"
+        animate="animate"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <img src="/img/dortmund-u.jpg" width="100%" />
+      </motion.div>
+    </motion.main>
   );
 };
 

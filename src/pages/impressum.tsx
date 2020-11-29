@@ -1,9 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import ContactMeDesign from "../components/designs/contactMe.design";
-import Button from "../components/elements/Button";
+import AtHomeDesign from "../components/designs/atHome.design";
 import Spacer from "../components/elements/Spacer";
-import TextField from "../components/elements/TextField";
+import Typography from "../components/elements/Typography";
 import useTheme from "../hooks/useTheme.hook";
 import { motion } from "framer-motion";
 import flyFromTop from "../variants/flyFromTop";
@@ -23,45 +22,38 @@ const Contact: React.FC<Props> = () => {
     },
   } = useTheme();
   return (
-    <main
+    <div
       style={{
         flex: 1,
         display: "grid",
         gridTemplateColumns: "50% 50%",
-        gridTemplateRows: "100%",
         backgroundColor: primary,
         color: secondaryText,
       }}
     >
       <Head>
-        <title>Jannik Will | Kontakt</title>
+        <title>Jannik Will | Impressum</title>
       </Head>
       <motion.div
         variants={flyFromTop}
         initial="initial"
         animate="animate"
         style={{
-          display: "grid",
-          gridTemplateColumns: "450px",
+          padding: "20px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           justifyContent: "center",
-          alignContent: "center",
-          padding: "0px 20px",
         }}
       >
-        <TextField title="Name" placeholder="Maxine Musterfrau" />
-        <Spacer height="20px" />
-        <TextField title="Email Adresse" placeholder="maxine@musterfrau.de" />
-        <Spacer height="20px" />
-        <TextField title="Betreff" placeholder="Musterbetreff" />
-        <Spacer height="20px" />
-        <TextField
-          title="Nachricht"
-          placeholder="Bitte Nachricht eingeben"
-          area
-          rows={4}
-        />
-        <Spacer height="25px" />
-        <Button>Absenden</Button>
+        <Typography variant="h3" align="center">
+          Impressum
+        </Typography>
+        <Spacer height="10px" />
+        <Typography align="center">
+          Jannik Will <br /> Ostkirchstraße 23 <br />
+          44269 Dortmund <br /> Deutschland
+        </Typography>
       </motion.div>
       <motion.div
         variants={flyFromRight}
@@ -70,12 +62,13 @@ const Contact: React.FC<Props> = () => {
         style={{
           display: "flex",
           alignItems: "center",
+          flexDirection: "column",
           justifyContent: "center",
         }}
       >
-        <ContactMeDesign color={secondary} />
+        <AtHomeDesign width="100%" />
       </motion.div>
-    </main>
+    </div>
   );
 };
 

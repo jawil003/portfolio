@@ -15,10 +15,13 @@ const Footer: React.FC<Props> = () => {
   return (
     <footer
       style={{
+        flex: 0,
+        height: "50px",
         width: "100vw",
         padding: "5px",
         display: "flex",
         justifyContent: "space-around",
+        alignItems: "center",
       }}
     >
       <NavigationBarItem href="/contact" icon={<MailIcon height="23px" />}>

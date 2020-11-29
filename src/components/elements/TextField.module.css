@@ -1,0 +1,26 @@
+.input {
+  font-size: 1.15em;
+  width: 100%;
+  border: none;
+  resize: none;
+  background: transparent;
+}
+.inputRoot {
+  display: grid;
+  grid-template-rows: auto auto;
+  display: inline-block;
+}
+
+.input:hover,
+.input:focus {
+  border: none;
+  outline: none;
+}
+
+.inputContainer {
+  padding: 10px 15px;
+  background: var(--lightgrey);
+  border-radius: 5px;
+  max-width: 450px;
+  width: 100%;
+}
