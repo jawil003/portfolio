@@ -1,6 +1,8 @@
 import React from "react";
-import useTheme from "../hooks/useTheme.hook";
 import Spacer from "./elements/Spacer";
+import HomeIcon from "./icons/home.icon";
+import KnowledgeIcon from "./icons/knowledge.icon";
+import LearningIcon from "./icons/learning.icon";
 import Logo from "./Logo";
 import NavigationBarItem from "./NavigationBarItem";
 
@@ -12,31 +14,42 @@ interface Props {}
  * @version 0.1
  */
 const NavigationBar: React.FC<Props> = () => {
-  const {
-    palette: {
-      color: { primary },
-    },
-  } = useTheme();
   return (
-    <div
+    <nav
       style={{
+        width: "100vw",
         padding: "20px",
-        minWidth: "64px",
-        minHeight: "100vh",
-        backgroundColor: "transparent",
         display: "flex",
-        flexDirection: "column",
-        boxShadow: "2px 0px 5px 0px rgba(50, 50, 50, 0.75)",
+        justifyContent: "space-between",
+        alignItems: "center",
+        maxHeight: "125px",
       }}
     >
-      <Logo />
-      <Spacer height="50px" />
-      <NavigationBarItem>Start</NavigationBarItem>
-      <Spacer height="10px" />
-      <NavigationBarItem>Was ich kann</NavigationBarItem>
-      <Spacer height="10px" />
-      <NavigationBarItem>Was ich gelernt habe</NavigationBarItem>
-    </div>
+      <div>
+        <Logo />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+        }}
+      >
+        <NavigationBarItem href="/" icon={<HomeIcon height="23px" />}>
+          Start
+        </NavigationBarItem>
+        <Spacer height="20px" />
+        <NavigationBarItem
+          href="/knowledge"
+          icon={<KnowledgeIcon height="23px" />}
+        >
+          Was ich kann
+        </NavigationBarItem>
+        <Spacer height="20px" />
+        <NavigationBarItem href="/resume" icon={<LearningIcon height="23px" />}>
+          Was ich gelernt habe
+        </NavigationBarItem>
+      </div>
+    </nav>
   );
 };
 

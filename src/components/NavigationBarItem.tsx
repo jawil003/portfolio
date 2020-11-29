@@ -1,8 +1,12 @@
+import Link from "next/link";
 import React from "react";
+import useTheme from "../hooks/useTheme.hook";
 import Typography from "./elements/Typography";
+import styles from "./NavigationBarItem.module.css";
 
 interface Props {
   icon: JSX.Element;
+  href: string;
 }
 
 /**
@@ -10,24 +14,21 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const NavigationBarItem: React.FC<Props> = ({ children, icon }) => {
+const NavigationBarItem: React.FC<Props> = ({ children, icon, href }) => {
+  const {
+    palette: {
+      color: { secondaryText },
+    },
+  } = useTheme();
   return (
-    <div
-      style={{
-        maxHeight: "41px",
-        minWidth: "150px",
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "baseline",
-        borderRadius: "5px",
-        padding: "20px",
-      }}
-    >
-      <div style={{ flex: 0.2 }}>{icon}</div>
-      <Typography variant="b1" align="center">
-        {children}
-      </Typography>
-    </div>
+    <Link href={href}>
+      <a className={styles.naviagtionBarItem}>
+        <div>{icon}</div>
+        <Typography variant="b1" bold="semi-bold" color={secondaryText}>
+          {children}
+        </Typography>
+      </a>
+    </Link>
   );
 };
 

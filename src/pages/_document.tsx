@@ -13,6 +13,11 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="stylesheet" href="styles/index.css" />
+          <link
+            rel="shortcut icon"
+            href="img/favicon.png"
+            type="image/x-icon"
+          />
         </Head>
         <body>
           <Main />

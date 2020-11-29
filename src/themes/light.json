@@ -1,1 +1,10 @@
-{ "palette": { "color": { "primary": "#165C6F", "secondary": "#000" } } }
+{
+  "palette": {
+    "color": {
+      "primary": "var(--primary)",
+      "primaryContrast": "var(--primaryContrast)",
+      "secondary": "var(--secondary)",
+      "secondaryText": "var(--secondaryText)"
+    }
+  }
+}

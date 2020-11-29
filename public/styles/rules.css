@@ -1,8 +1,13 @@
 body {
-  font-family: Roboto, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   margin: 0px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
 }

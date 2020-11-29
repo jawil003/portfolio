@@ -1,14 +1,18 @@
 :root {
-  --primaryDark: var(--darkblue);
-  --primary: var(--darkbluelight);
-  --secondary: var(--white);
+  --primary: var(--white);
+  --primaryContrast: var(--darklightgrey);
+  --secondary: var(--darkblue);
+  --secondaryText: var(--black);
   --white: #fff;
-  --darkgrey: darkgrey;
+  --lightgrey: rgb(247, 247, 247);
+  --darklightgrey: rgb(172, 171, 171);
   --red: red;
   --orange: #e67e22;
   --blue: #2980b9;
   --darkblue: #165c6f;
   --darkbluelight: #2d6c7d;
+  --lightblue: #d0dee2;
   --green: #28b463;
   --yellow: #f4d03f;
+  --black: "#000";
 }
