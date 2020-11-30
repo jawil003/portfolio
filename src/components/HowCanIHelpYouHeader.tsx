@@ -1,6 +1,5 @@
 import React from "react";
 import KnowledgeDesign from "./designs/knowledge.design";
-import Typography from "./elements/Typography";
 
 interface Props {}
 
@@ -9,7 +8,7 @@ interface Props {}
  * @author Jannik Will
  * @version 0.1
  */
-const HowCanIHelpYouHeader: React.FC<Props> = () => {
+const HowCanIHelpYouHeader: React.FC<Props> = ({ children }) => {
   return (
     <div
       style={{
@@ -28,11 +27,7 @@ const HowCanIHelpYouHeader: React.FC<Props> = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h3">Wie kann ich dir helfen?</Typography>
-        <Typography>
-          Vielleicht sagt dir ja eines meiner Fachgebiete zu, dann kontaktiere
-          mich gerne
-        </Typography>
+        {children}
       </div>
       <div
         style={{

@@ -33,6 +33,8 @@ const NavigationBarItem: React.FC<Props> = ({ children, icon, href }) => {
           cursor: "pointer",
           height: "63px",
           padding: "20px",
+          color: "initial",
+          textDecoration: "none",
         }}
       >
         <div style={{ height: "100%" }}>{icon}</div>

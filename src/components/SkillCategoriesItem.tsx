@@ -2,8 +2,7 @@ import React from "react";
 
 interface Props {
   icon: JSX.Element;
-  title: string;
-  description: string;
+  color?: string;
 }
 
 /**
@@ -11,27 +10,24 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const SkillCategoriesItem: React.FC<Props> = ({ title, icon, description }) => {
+const SkillCategoriesItem: React.FC<Props> = ({ icon, color }) => {
   return (
     <div
       style={{
         height: "64px",
         width: "64px",
-        display: "grid",
+        backgroundColor: color,
+        borderRadius: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <div
-        style={{
-          borderRadius: "100%",
-          backgroundColor: "var(--red)",
-          padding: "10px",
-        }}
-      >
-        {icon}
-      </div>
-      <div></div>
+      {icon}
     </div>
   );
 };
+
+SkillCategoriesItem.defaultProps = { color: "var(--blue)" };
 
 export default SkillCategoriesItem;

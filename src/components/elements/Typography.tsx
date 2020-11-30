@@ -39,6 +39,7 @@ interface Props {
   bold?: "semi-bold" | "bold" | "bolder";
   italic?: boolean;
   underline?: boolean;
+  inline?: boolean;
 }
 
 /**
@@ -53,10 +54,27 @@ const Typography: React.FC<Props> = ({
   fontFamily,
   align,
   bold,
-  itailc,
+  italic,
   underline,
+  inline,
 }) => {
-  if (variant?.includes("b"))
+  if (variant?.includes("b")) {
+    if (inline)
+      return (
+        <span
+          style={generateStyle(
+            variant === "b1" ? 1 : variant === "b2" ? 0.8 : 0.6,
+            color,
+            fontFamily,
+            align,
+            bold,
+            italic,
+            underline
+          )}
+        >
+          {children}
+        </span>
+      );
     return (
       <p
         style={generateStyle(
@@ -65,13 +83,14 @@ const Typography: React.FC<Props> = ({
           fontFamily,
           align,
           bold,
-          itailc,
+          italic,
           underline
         )}
       >
         {children}
       </p>
     );
+  }
   switch (variant) {
     case "h1": {
       return (
@@ -82,7 +101,7 @@ const Typography: React.FC<Props> = ({
             fontFamily,
             align,
             bold,
-            itailc,
+            italic,
             underline
           )}
         >
@@ -99,7 +118,7 @@ const Typography: React.FC<Props> = ({
             fontFamily,
             align,
             bold,
-            itailc,
+            italic,
             underline
           )}
         >
@@ -116,7 +135,7 @@ const Typography: React.FC<Props> = ({
             fontFamily,
             align,
             bold,
-            itailc,
+            italic,
             underline
           )}
         >
@@ -133,7 +152,7 @@ const Typography: React.FC<Props> = ({
             fontFamily,
             align,
             bold,
-            itailc,
+            italic,
             underline
           )}
         >
@@ -150,7 +169,7 @@ const Typography: React.FC<Props> = ({
             fontFamily,
             align,
             bold,
-            itailc,
+            italic,
             underline
           )}
         >
@@ -167,7 +186,7 @@ const Typography: React.FC<Props> = ({
             fontFamily,
             align,
             bold,
-            itailc,
+            italic,
             underline
           )}
         >
@@ -184,6 +203,7 @@ Typography.defaultProps = {
   align: "left",
   italic: false,
   underline: false,
+  inline: false,
 };
 
 export default Typography;

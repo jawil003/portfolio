@@ -27,6 +27,7 @@ const Contact: React.FC<Props> = () => {
         flex: 1,
         display: "grid",
         gridTemplateColumns: "50% 50%",
+        gridTemplateRows: "100%",
         backgroundColor: primary,
         color: secondaryText,
       }}

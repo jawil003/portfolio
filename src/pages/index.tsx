@@ -47,18 +47,23 @@ const Index: React.FC<Props> = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+          alignContent: "center",
+          alignItems: "stretch",
           flexDirection: "column",
+          padding: "105px",
         }}
       >
-        <Typography variant="h3">Hallo, ich bin Jannik</Typography>
-        <Typography>
+        <Typography variant="h3" align="center">
+          Hallo, ich bin Jannik
+        </Typography>
+        <Typography align="center">
           ein leidenschaftlicher Softwareentwickler und Designer aus Dortmund
+          und spezialisiert auf Frontend und Backend Lösungen aller Art
         </Typography>
         <Spacer height="35px" />
         <div
           style={{
-            width: "60%",
+            width: "100%",
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
