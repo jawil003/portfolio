@@ -6,14 +6,21 @@ import CategoryCardWrapper from "../components/CategoryCardWrapper";
 import CategoryHeader from "../components/CategoryHeader";
 import CategoryWrapper from "../components/CategoryWrapper";
 import FlaskDesign from "../components/designs/flask.design";
+import PrototypeDesign from "../components/designs/prototype.design";
+import SettingsPageDesign from "../components/designs/settingsPage.design";
 import Spacer from "../components/elements/Spacer";
 import Typography from "../components/elements/Typography";
 import Footer from "../components/Footer";
 import HowCanIHelpYouHeader from "../components/HowCanIHelpYouHeader";
+import AndroidIcon from "../components/icons/android.icon";
 import DatabaseIcon from "../components/icons/database.icon";
 import DesktopIcon from "../components/icons/desktop.icon";
 import DisplayAndWebpageIcon from "../components/icons/displayAndWebpage.icon";
+import JavaIcon from "../components/icons/java.icon";
+import NodeIcon from "../components/icons/nodejs.icon";
+import ReactIcon from "../components/icons/react.icon";
 import SmartphoneIcon from "../components/icons/smartphone.icon";
+import TypescriptIcon from "../components/icons/typescript.icon";
 import NavigationBar from "../components/NavigationBar";
 import SkillCategories from "../components/SkillCategories";
 import SkillCategoriesItem from "../components/SkillCategoriesItem";
@@ -95,12 +102,12 @@ const Contact: React.FC<Props> = () => {
             description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
           />
           <CategoryCard
-            icon={<FlaskDesign height="100%" />}
+            icon={<SettingsPageDesign height="100%" />}
             title="Kommentierter Code"
             description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
           />
           <CategoryCard
-            icon={<FlaskDesign height="100%" />}
+            icon={<PrototypeDesign height="100%" />}
             title="Prototyping"
             description="Die Entwicklung von Software auf Basis von Modellen"
           />
@@ -113,12 +120,12 @@ const Contact: React.FC<Props> = () => {
         />
         <CategoryCardWrapper>
           <CategoryCard
-            icon={<FlaskDesign height="100%" />}
+            icon={<NodeIcon width="100%" />}
             title="Node"
             description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
           />
           <CategoryCard
-            icon={<FlaskDesign height="100%" />}
+            icon={<JavaIcon width="100%" />}
             title="Java"
             description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
           />
@@ -131,12 +138,12 @@ const Contact: React.FC<Props> = () => {
         />
         <CategoryCardWrapper>
           <CategoryCard
-            icon={<FlaskDesign height="100%" />}
+            icon={<TypescriptIcon width="84px" height="84px" />}
             title="Typescript"
             description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
           />
           <CategoryCard
-            icon={<FlaskDesign height="100%" />}
+            icon={<ReactIcon width="84px" height="84px" />}
             title="React"
             description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
           />
@@ -149,12 +156,12 @@ const Contact: React.FC<Props> = () => {
         />
         <CategoryCardWrapper>
           <CategoryCard
-            icon={<FlaskDesign height="100%" />}
+            icon={<AndroidIcon width="84px" height="84px" />}
             title="Android JDK"
             description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
           />
           <CategoryCard
-            icon={<FlaskDesign height="100%" />}
+            icon={<ReactIcon width="84px" height="84px" />}
             title="React Native"
             description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
           />
