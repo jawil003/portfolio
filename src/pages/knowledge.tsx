@@ -1,7 +1,10 @@
 import Head from "next/head";
 import React from "react";
+import Spacer from "../components/elements/Spacer";
 import Footer from "../components/Footer";
+import HowCanIHelpYouHeader from "../components/HowCanIHelpYouHeader";
 import NavigationBar from "../components/NavigationBar";
+import SkillCategories from "../components/SkillCategories";
 import useTheme from "../hooks/useTheme.hook";
 
 interface Props {}
@@ -18,20 +21,22 @@ const Contact: React.FC<Props> = () => {
     },
   } = useTheme();
   return (
-    <div
+    <main
       style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
+        flex: 1,
+        minHeight: "100%",
+        display: "grid",
         backgroundColor: primary,
         color: secondaryText,
       }}
     >
       <Head>
-        <title>Jannik Will | Kontakt</title>
+        <title>Jannik Will | Kenntnisse</title>
       </Head>
-    </div>
+      <HowCanIHelpYouHeader />
+      <Spacer height="100px" />
+      <SkillCategories />
+    </main>
   );
 };
 
