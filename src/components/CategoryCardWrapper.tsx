@@ -14,9 +14,7 @@ const CategoryCardWrapper: React.FC<Props> = ({ children }) => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-around",
-        alignItems: "center",
-        alignContent: "center",
-        padding: "20px 80px",
+        padding: "0px 80px",
       }}
     >
       {children}

@@ -164,7 +164,7 @@ const Typography: React.FC<Props> = ({
       return (
         <h5
           style={generateStyle(
-            2.5,
+            1.5,
             color,
             fontFamily,
             align,

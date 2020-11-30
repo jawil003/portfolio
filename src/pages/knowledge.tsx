@@ -4,6 +4,7 @@ import React from "react";
 import CategoryCard from "../components/CategoryCard";
 import CategoryCardWrapper from "../components/CategoryCardWrapper";
 import CategoryHeader from "../components/CategoryHeader";
+import CategoryWrapper from "../components/CategoryWrapper";
 import FlaskDesign from "../components/designs/flask.design";
 import Spacer from "../components/elements/Spacer";
 import Typography from "../components/elements/Typography";
@@ -82,21 +83,96 @@ const Contact: React.FC<Props> = () => {
           />
         </div>
       </HowCanIHelpYouHeader>
-      <Spacer height="100px" />
-      <CategoryHeader
-        title="Prinzipien"
-        description="Die Designprinzipien an denen sich mein Code orientiert"
-      />
-      <CategoryCardWrapper>
-        <CategoryCard
-          icon={<FlaskDesign width="100%" />}
-          title="Test Driven Development"
-          description="Test"
+      <CategoryWrapper>
+        <CategoryHeader
+          title="Prinzipien"
+          description="Die Designprinzipien an denen sich mein Code orientiert"
         />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-      </CategoryCardWrapper>
+        <CategoryCardWrapper>
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="Test Driven Development"
+            description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+          />
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="Kommentierter Code"
+            description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
+          />
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="Prototyping"
+            description="Die Entwicklung von Software auf Basis von Modellen"
+          />
+        </CategoryCardWrapper>
+      </CategoryWrapper>
+      <CategoryWrapper>
+        <CategoryHeader
+          title="Serversysteme"
+          description="Meine Kenntnisse im Bereich der Serverentwicklung"
+        />
+        <CategoryCardWrapper>
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="Node"
+            description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+          />
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="Java"
+            description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
+          />
+        </CategoryCardWrapper>
+      </CategoryWrapper>
+      <CategoryWrapper>
+        <CategoryHeader
+          title="Webentwicklungskenntnisse"
+          description="Meine Kenntnisse im Bereich der der Webentwicklung"
+        />
+        <CategoryCardWrapper>
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="Typescript"
+            description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+          />
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="React"
+            description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
+          />
+        </CategoryCardWrapper>
+      </CategoryWrapper>
+      <CategoryWrapper>
+        <CategoryHeader
+          title="Kenntnisse der mobilen Anwendungsenwicklung"
+          description="Meine Kenntnisse im Bereich der der Mobile App Entwicklung"
+        />
+        <CategoryCardWrapper>
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="Android JDK"
+            description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+          />
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="React Native"
+            description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
+          />
+        </CategoryCardWrapper>
+      </CategoryWrapper>
+      <CategoryWrapper latest>
+        <CategoryHeader
+          title="Desktopanwendungsentwicklung"
+          description="Meine Kenntnisse im Bereich der Desktop Entwicklung für PC und Mac"
+        />
+        <CategoryCardWrapper>
+          <CategoryCard
+            icon={<FlaskDesign height="100%" />}
+            title="Electron"
+            description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+          />
+        </CategoryCardWrapper>
+      </CategoryWrapper>
     </main>
   );
 };
