@@ -47,7 +47,7 @@ const Contact: React.FC<Props> = () => {
         <Spacer height="0.4em" />
         <Typography align="center">
           Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
-          wenn weiterentwicklung möglich ist
+          wenn Weiterentwicklung möglich ist
         </Typography>
       </MyExperiencesHeader>
     </div>

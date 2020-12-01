@@ -1,4 +1,7 @@
+import { motion } from "framer-motion";
 import React, { forwardRef } from "react";
+import flyFromRight from "../variants/flyFromRight";
+import flyFromTop from "../variants/flyFromTop";
 import KnowledgeDesign from "./designs/knowledge.design";
 
 interface Props {
@@ -24,7 +27,10 @@ const HowCanIHelpYouHeader = forwardRef<HTMLDivElement, Props>(
           gridTemplateRows: "100%",
         }}
       >
-        <div
+        <motion.div
+          variants={flyFromTop}
+          initial="initial"
+          animate="animate"
           style={{
             width: "100%",
             display: "flex",
@@ -35,8 +41,11 @@ const HowCanIHelpYouHeader = forwardRef<HTMLDivElement, Props>(
           }}
         >
           {children}
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          variants={flyFromRight}
+          initial="initial"
+          animate="animate"
           style={{
             width: "100%",
             display: "flex",
@@ -46,7 +55,7 @@ const HowCanIHelpYouHeader = forwardRef<HTMLDivElement, Props>(
           }}
         >
           <KnowledgeDesign width="80%" />
-        </div>
+        </motion.div>
       </div>
     );
   }

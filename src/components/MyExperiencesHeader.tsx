@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import React, { forwardRef } from "react";
+import flyFromTop from "../variants/flyFromTop";
 import DesigningDesign from "./designs/designing.design";
 
 interface Props {
@@ -13,7 +15,10 @@ interface Props {
 const MyExperiencesHeader = forwardRef<HTMLDivElement, Props>(
   ({ children }, ref) => {
     return (
-      <div
+      <motion.div
+        variants={flyFromTop}
+        initial="initial"
+        animate="animate"
         ref={ref}
         style={{
           height: "calc(100vh - 100px)",
@@ -45,7 +50,7 @@ const MyExperiencesHeader = forwardRef<HTMLDivElement, Props>(
         >
           <DesigningDesign width="80%" />
         </div>
-      </div>
+      </motion.div>
     );
   }
 );

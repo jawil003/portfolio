@@ -1,15 +1,13 @@
 import Head from "next/head";
-import React from "react";
-import useTheme from "../hooks/useTheme.hook";
+import React, { useEffect } from "react";
 import Typography from "../components/elements/Typography";
 import TwitterIcon from "../components/icons/twitter.icon";
 import Spacer from "../components/elements/Spacer";
 import LinkedInIcon from "../components/icons/linkedin.icon";
 import GithubIcon from "../components/icons/github.icon";
 import IconLink from "../components/elements/IconLink";
-import { motion } from "framer-motion";
+import { motion, useSpring, useTransform } from "framer-motion";
 import flyFromTop from "../variants/flyFromTop";
-import flyFromRight from "../variants/flyFromRight";
 import DribbleIcon from "../components/icons/dribble.icon";
 
 interface Props {}
@@ -20,13 +18,14 @@ interface Props {}
  * @version 0.1
  */
 const Index: React.FC<Props> = () => {
-  const {
-    palette: {
-      color: { primary, secondary, secondaryText },
-    },
-  } = useTheme();
+  const x = useSpring(200);
+  const opacity = useTransform(x, [200, 0], [0, 1]);
+  const handleImageLoaded = () => x.set(0);
+  useEffect(() => {
+    handleImageLoaded();
+  }, []);
   return (
-    <motion.main
+    <main
       style={{
         flex: 1,
         display: "grid",
@@ -89,19 +88,23 @@ const Index: React.FC<Props> = () => {
         </div>
       </motion.div>
       <motion.div
-        variants={flyFromRight}
-        initial="initial"
-        animate="animate"
+        transition={{ delay: 5, type: "spring" }}
         style={{
+          x,
+          opacity,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
         }}
       >
-        <img src="/img/dortmund-u.jpg" width="100%" />
+        <img
+          onLoad={handleImageLoaded}
+          src="/img/dortmund-u.jpg"
+          width="100%"
+        />
       </motion.div>
-    </motion.main>
+    </main>
   );
 };
 
