@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import CategoryCard from "../components/CategoryCard";
 import CategoryCardWrapper from "../components/CategoryCardWrapper";
 import CategoryHeader from "../components/CategoryHeader";
@@ -10,7 +10,6 @@ import PrototypeDesign from "../components/designs/prototype.design";
 import SettingsPageDesign from "../components/designs/settingsPage.design";
 import Spacer from "../components/elements/Spacer";
 import Typography from "../components/elements/Typography";
-import Footer from "../components/Footer";
 import HowCanIHelpYouHeader from "../components/HowCanIHelpYouHeader";
 import AndroidIcon from "../components/icons/android.icon";
 import DatabaseIcon from "../components/icons/database.icon";
@@ -21,8 +20,6 @@ import NodeIcon from "../components/icons/nodejs.icon";
 import ReactIcon from "../components/icons/react.icon";
 import SmartphoneIcon from "../components/icons/smartphone.icon";
 import TypescriptIcon from "../components/icons/typescript.icon";
-import NavigationBar from "../components/NavigationBar";
-import SkillCategories from "../components/SkillCategories";
 import SkillCategoriesItem from "../components/SkillCategoriesItem";
 import useTheme from "../hooks/useTheme.hook";
 
@@ -34,6 +31,44 @@ interface Props {}
  * @version 0.1
  */
 const Contact: React.FC<Props> = () => {
+  const paragraphs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
+  useEffect(() => {
+    let currentParagraph = 0;
+    let lastScrollTop = 0;
+    let hasScrolled = false;
+    //FIXME: Fix Method
+    const onScroll = (ev: Event) => {
+      ev.preventDefault();
+      if (hasScrolled) {
+        hasScrolled = false;
+        return;
+      }
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop && currentParagraph < 4) {
+        currentParagraph++;
+      } else if (currentParagraph > 0) {
+        currentParagraph--;
+      } else {
+        return;
+      }
+      paragraphs[currentParagraph].current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      lastScrollTop = st <= 0 ? 0 : st;
+      hasScrolled = true;
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
   const {
     palette: {
       color: { primary, secondary, secondaryText },
@@ -52,7 +87,7 @@ const Contact: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Kenntnisse</title>
       </Head>
-      <HowCanIHelpYouHeader>
+      <HowCanIHelpYouHeader ref={paragraphs[0]}>
         <Typography variant="h3">Wie kann ich dir helfen?</Typography>
         <Typography>
           Vielleicht sagt dir ja eines meiner Fachgebiete zu, dann{" "}
@@ -90,7 +125,7 @@ const Contact: React.FC<Props> = () => {
           />
         </div>
       </HowCanIHelpYouHeader>
-      <CategoryWrapper>
+      <CategoryWrapper ref={paragraphs[1]}>
         <CategoryHeader
           title="Prinzipien"
           description="Die Designprinzipien an denen sich mein Code orientiert"
@@ -113,7 +148,7 @@ const Contact: React.FC<Props> = () => {
           />
         </CategoryCardWrapper>
       </CategoryWrapper>
-      <CategoryWrapper>
+      <CategoryWrapper ref={paragraphs[2]}>
         <CategoryHeader
           title="Serversysteme"
           description="Meine Kenntnisse im Bereich der Serverentwicklung"
@@ -131,7 +166,7 @@ const Contact: React.FC<Props> = () => {
           />
         </CategoryCardWrapper>
       </CategoryWrapper>
-      <CategoryWrapper>
+      <CategoryWrapper ref={paragraphs[3]}>
         <CategoryHeader
           title="Webentwicklungskenntnisse"
           description="Meine Kenntnisse im Bereich der der Webentwicklung"
@@ -149,7 +184,7 @@ const Contact: React.FC<Props> = () => {
           />
         </CategoryCardWrapper>
       </CategoryWrapper>
-      <CategoryWrapper>
+      <CategoryWrapper ref={paragraphs[4]}>
         <CategoryHeader
           title="Kenntnisse der mobilen Anwendungsenwicklung"
           description="Meine Kenntnisse im Bereich der der Mobile App Entwicklung"
@@ -167,7 +202,7 @@ const Contact: React.FC<Props> = () => {
           />
         </CategoryCardWrapper>
       </CategoryWrapper>
-      <CategoryWrapper latest>
+      <CategoryWrapper ref={paragraphs[5]} latest>
         <CategoryHeader
           title="Desktopanwendungsentwicklung"
           description="Meine Kenntnisse im Bereich der Desktop Entwicklung für PC und Mac"
