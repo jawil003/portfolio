@@ -1,7 +1,10 @@
 import Head from "next/head";
 import React, { useRef } from "react";
+import DesigningDesign from "../components/designs/designing.design";
+import KnowledgeDesign from "../components/designs/knowledge.design";
 import Spacer from "../components/elements/Spacer";
 import Typography from "../components/elements/Typography";
+import HeaderWithIcon from "../components/HeaderWithIcon";
 import MyExperiencesHeader from "../components/MyExperiencesHeader";
 import useTheme from "../hooks/useTheme.hook";
 
@@ -29,7 +32,6 @@ const Contact: React.FC<Props> = () => {
   return (
     <div
       style={{
-        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
@@ -40,7 +42,11 @@ const Contact: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Erfahrungen</title>
       </Head>
-      <MyExperiencesHeader ref={_paragraphs[0]}>
+      <HeaderWithIcon
+        icon={<DesigningDesign width="100%" />}
+        latest
+        ref={_paragraphs[0]}
+      >
         <Typography variant="h3" align="center">
           Was habe ich bereits gelernt?
         </Typography>
@@ -49,7 +55,7 @@ const Contact: React.FC<Props> = () => {
           Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
           wenn Weiterentwicklung möglich ist
         </Typography>
-      </MyExperiencesHeader>
+      </HeaderWithIcon>
     </div>
   );
 };
