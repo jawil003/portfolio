@@ -56,6 +56,7 @@ const Index: React.FC<Props> = () => {
         <Typography variant="h3" align="center">
           Hallo, ich bin Jannik
         </Typography>
+        <Spacer height="0.4em" />
         <Typography align="center">
           ein leidenschaftlicher Softwareentwickler und Designer aus Dortmund
           und spezialisiert auf Frontend und Backend Lösungen aller Art

@@ -1,22 +1,20 @@
 import React, { forwardRef } from "react";
-import KnowledgeDesign from "./designs/knowledge.design";
+import DesigningDesign from "./designs/designing.design";
 
 interface Props {
-  onScroll?: (event: React.UIEvent<HTMLDivElement, UIEvent>) => void;
   children?: any;
 }
 
 /**
- * An HowCanIHelpYouHeader React Component.
+ * An MyExperiencesHeader React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const HowCanIHelpYouHeader = forwardRef<HTMLDivElement, Props>(
-  ({ children, onScroll }, ref) => {
+const MyExperiencesHeader = forwardRef<HTMLDivElement, Props>(
+  ({ children }, ref) => {
     return (
       <div
         ref={ref}
-        onScroll={onScroll}
         style={{
           height: "calc(100vh - 100px)",
           display: "grid",
@@ -45,11 +43,11 @@ const HowCanIHelpYouHeader = forwardRef<HTMLDivElement, Props>(
             alignItems: "center",
           }}
         >
-          <KnowledgeDesign width="80%" />
+          <DesigningDesign width="80%" />
         </div>
       </div>
     );
   }
 );
 
-export default HowCanIHelpYouHeader;
+export default MyExperiencesHeader;

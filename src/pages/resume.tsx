@@ -1,7 +1,8 @@
 import Head from "next/head";
-import React from "react";
-import Footer from "../components/Footer";
-import NavigationBar from "../components/NavigationBar";
+import React, { useRef } from "react";
+import Spacer from "../components/elements/Spacer";
+import Typography from "../components/elements/Typography";
+import MyExperiencesHeader from "../components/MyExperiencesHeader";
 import useTheme from "../hooks/useTheme.hook";
 
 interface Props {}
@@ -12,6 +13,14 @@ interface Props {}
  * @version 0.1
  */
 const Contact: React.FC<Props> = () => {
+  const _paragraphs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
   const {
     palette: {
       color: { primary, secondary, secondaryText },
@@ -29,8 +38,18 @@ const Contact: React.FC<Props> = () => {
       }}
     >
       <Head>
-        <title>Jannik Will | Kontakt</title>
+        <title>Jannik Will | Erfahrungen</title>
       </Head>
+      <MyExperiencesHeader ref={_paragraphs[0]}>
+        <Typography variant="h3" align="center">
+          Was habe ich bereits gelernt?
+        </Typography>
+        <Spacer height="0.4em" />
+        <Typography align="center">
+          Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
+          wenn weiterentwicklung möglich ist
+        </Typography>
+      </MyExperiencesHeader>
     </div>
   );
 };

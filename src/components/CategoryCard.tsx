@@ -30,7 +30,7 @@ const CategoryCard: React.FC<Props> = ({ icon, title, description }) => {
           boxShadow: "0px 0px 2px 0px rgba(50, 50, 50, 0.25)",
           padding: "20%",
           display: "grid",
-          gridTemplateRows: "35% auto 1fr;",
+          gridTemplateRows: "35% auto 1fr",
           gridTemplateColumns: "auto",
           justifyContent: "center",
         }}
