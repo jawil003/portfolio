@@ -56,7 +56,7 @@ const Index: React.FC<Props> = () => {
           Hallo, ich bin Jannik
         </Typography>
         <Spacer height="0.4em" />
-        <Typography align="center">
+        <Typography align="center" italic>
           ein leidenschaftlicher Softwareentwickler und Designer aus Dortmund
           und spezialisiert auf Frontend und Backend Lösungen aller Art
         </Typography>
@@ -70,20 +70,18 @@ const Index: React.FC<Props> = () => {
           }}
         >
           <IconLink external href="https://twitter.com/willey3x37">
-            <TwitterIcon height="48px" />
+            <TwitterIcon height="100%" />
           </IconLink>
-          <Spacer width="20px" />
           <IconLink external href="https://linkedin.com/willey3x37">
-            <LinkedInIcon height="48px" />
+            <LinkedInIcon height="100%" />
           </IconLink>
 
-          <Spacer width="20px" />
           <IconLink external href="https://github.com/jawil003">
-            <GithubIcon height="48px" />
+            <GithubIcon height="100%" />
           </IconLink>
-          <Spacer width="20px" />
+
           <IconLink external href="https://dribbble.com/willey3x37">
-            <DribbleIcon height="48px" />
+            <DribbleIcon height="100%" />
           </IconLink>
         </div>
       </motion.div>

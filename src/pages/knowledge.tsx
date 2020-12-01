@@ -8,6 +8,8 @@ import CategoryWrapper from "../components/CategoryWrapper";
 import FlaskDesign from "../components/designs/flask.design";
 import PrototypeDesign from "../components/designs/prototype.design";
 import SettingsPageDesign from "../components/designs/settingsPage.design";
+import IconButton from "../components/elements/IconButton";
+import IconLink from "../components/elements/IconLink";
 import Spacer from "../components/elements/Spacer";
 import Typography from "../components/elements/Typography";
 import HowCanIHelpYouHeader from "../components/HowCanIHelpYouHeader";
@@ -93,7 +95,7 @@ const Contact: React.FC<Props> = () => {
           Wie kann ich dir helfen?
         </Typography>
         <Spacer height="0.4em" />
-        <Typography align="center">
+        <Typography align="center" italic>
           Vielleicht sagt dir ja eines meiner Fachgebiete zu, dann{" "}
           <Typography underline inline>
             <Link href="/contact">
@@ -110,22 +112,21 @@ const Contact: React.FC<Props> = () => {
             justifyContent: "space-around",
           }}
         >
-          <SkillCategoriesItem icon={<DatabaseIcon height="50%" />} />
-          <Spacer width="10px" />
-          <SkillCategoriesItem
-            icon={<DisplayAndWebpageIcon height="60%" />}
-            color="var(--yellow)"
-          />
-          <Spacer width="10px" />
-          <SkillCategoriesItem
-            icon={<SmartphoneIcon height="50%" />}
-            color="var(--red)"
-          />
-          <Spacer width="10px" />
-          <SkillCategoriesItem
-            icon={<DesktopIcon height="50%" />}
-            color="var(--green)"
-          />
+          <IconButton>
+            <DatabaseIcon height="50%" />
+          </IconButton>
+
+          <IconButton color="var(--yellow)">
+            <DisplayAndWebpageIcon height="60%" />
+          </IconButton>
+
+          <IconButton color="var(--red)">
+            <SmartphoneIcon height="50%" />
+          </IconButton>
+
+          <IconButton color="var(--green)">
+            <DesktopIcon height="50%" />
+          </IconButton>
         </div>
       </HowCanIHelpYouHeader>
       <CategoryWrapper ref={_paragraphs[1]}>

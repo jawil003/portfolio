@@ -2,7 +2,6 @@ import { motion, useSpring } from "framer-motion";
 import React from "react";
 
 interface Props {
-  icon: JSX.Element;
   color?: string;
 }
 
@@ -11,7 +10,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const SkillCategoriesItem: React.FC<Props> = ({ icon, color }) => {
+const IconButton: React.FC<Props> = ({ children, color }) => {
   const scale = useSpring(1);
   return (
     <motion.div
@@ -29,11 +28,11 @@ const SkillCategoriesItem: React.FC<Props> = ({ icon, color }) => {
       onHoverStart={() => scale.set(1.2)}
       onHoverEnd={() => scale.set(1)}
     >
-      {icon}
+      {children}
     </motion.div>
   );
 };
 
-SkillCategoriesItem.defaultProps = { color: "var(--blue)" };
+IconButton.defaultProps = { color: "var(--blue)" };
 
-export default SkillCategoriesItem;
+export default IconButton;

@@ -45,7 +45,7 @@ const Contact: React.FC<Props> = () => {
           Was habe ich bereits gelernt?
         </Typography>
         <Spacer height="0.4em" />
-        <Typography align="center">
+        <Typography align="center" italic>
           Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
           wenn Weiterentwicklung möglich ist
         </Typography>
