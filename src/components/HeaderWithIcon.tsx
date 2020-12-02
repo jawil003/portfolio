@@ -5,6 +5,7 @@ import flyFromTop from "../variants/flyFromTop";
 
 interface Props {
   icon: JSX.Element;
+  fill?: boolean;
   latest?: boolean;
 }
 
@@ -14,7 +15,7 @@ interface Props {
  * @version 0.1
  */
 const HeaderWithIcon = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
-  ({ children, icon, latest }, ref) => {
+  ({ children, icon, latest, fill }, ref) => {
     return (
       <div
         ref={ref}
@@ -37,7 +38,7 @@ const HeaderWithIcon = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: fill ? "stretch" : "center",
             padding: "105px",
           }}
         >
@@ -63,6 +64,6 @@ const HeaderWithIcon = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
   }
 );
 
-HeaderWithIcon.defaultProps = { latest: false };
+HeaderWithIcon.defaultProps = { latest: false, fill: false };
 
 export default HeaderWithIcon;

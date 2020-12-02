@@ -1,3 +1,5 @@
+import { motion, MotionStyle } from "framer-motion";
+import Link from "next/link";
 import React from "react";
 import Spacer from "./elements/Spacer";
 import Typography from "./elements/Typography";
@@ -6,6 +8,8 @@ interface Props {
   icon: JSX.Element;
   title: string;
   description: string;
+  style?: MotionStyle;
+  href?: sting;
 }
 
 /**
@@ -13,10 +17,17 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const CategoryCard: React.FC<Props> = ({ icon, title, description }) => {
+const CategoryCard: React.FC<Props> = ({
+  icon,
+  title,
+  description,
+  style,
+  href,
+}) => {
   return (
-    <div
+    <motion.div
       style={{
+        ...style,
         padding: "0px 30px",
         paddingTop: "60px",
       }}
@@ -33,6 +44,7 @@ const CategoryCard: React.FC<Props> = ({ icon, title, description }) => {
           gridTemplateRows: "35% auto 1fr",
           gridTemplateColumns: "auto",
           justifyContent: "center",
+          position: "relative",
         }}
       >
         <div
@@ -61,10 +73,22 @@ const CategoryCard: React.FC<Props> = ({ icon, title, description }) => {
           <Spacer height="10px" />
           <Typography italic align="center">
             {description}
+            {href
+              ? [
+                  <Spacer height="10px" />,
+                  <Link href="knowledge/testDrivenDevelopment">
+                    <a>
+                      <Typography align="center" underline>
+                        Mehr erfahren
+                      </Typography>
+                    </a>
+                  </Link>,
+                ]
+              : undefined}
           </Typography>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

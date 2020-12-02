@@ -1,29 +1,29 @@
+import { useTransform, useViewportScroll } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-import CategoryCard from "../components/CategoryCard";
-import CategoryCardWrapper from "../components/CategoryCardWrapper";
-import CategoryHeader from "../components/CategoryHeader";
-import CategoryWrapper from "../components/CategoryWrapper";
-import FlaskDesign from "../components/designs/flask.design";
-import PrototypeDesign from "../components/designs/prototype.design";
-import SettingsPageDesign from "../components/designs/settingsPage.design";
-import IconButton from "../components/elements/IconButton";
-import IconLink from "../components/elements/IconLink";
-import Spacer from "../components/elements/Spacer";
-import Typography from "../components/elements/Typography";
-import HowCanIHelpYouHeader from "../components/HowCanIHelpYouHeader";
-import AndroidIcon from "../components/icons/android.icon";
-import DatabaseIcon from "../components/icons/database.icon";
-import DesktopIcon from "../components/icons/desktop.icon";
-import DisplayAndWebpageIcon from "../components/icons/displayAndWebpage.icon";
-import JavaIcon from "../components/icons/java.icon";
-import NodeIcon from "../components/icons/nodejs.icon";
-import ReactIcon from "../components/icons/react.icon";
-import SmartphoneIcon from "../components/icons/smartphone.icon";
-import TypescriptIcon from "../components/icons/typescript.icon";
-import SkillCategoriesItem from "../components/SkillCategoriesItem";
-import useTheme from "../hooks/useTheme.hook";
+import CategoryCard from "../../components/CategoryCard";
+import CategoryCardWrapper from "../../components/CategoryCardWrapper";
+import CategoryHeader from "../../components/CategoryHeader";
+import CategoryWrapper from "../../components/CategoryWrapper";
+import FlaskDesign from "../../components/designs/flask.design";
+import KnowledgeDesign from "../../components/designs/knowledge.design";
+import PrototypeDesign from "../../components/designs/prototype.design";
+import SettingsPageDesign from "../../components/designs/settingsPage.design";
+import IconButton from "../../components/elements/IconButton";
+import Spacer from "../../components/elements/Spacer";
+import Typography from "../../components/elements/Typography";
+import HeaderWithIcon from "../../components/HeaderWithIcon";
+import AndroidIcon from "../../components/icons/android.icon";
+import DatabaseIcon from "../../components/icons/database.icon";
+import DesktopIcon from "../../components/icons/desktop.icon";
+import DisplayAndWebpageIcon from "../../components/icons/displayAndWebpage.icon";
+import JavaIcon from "../../components/icons/java.icon";
+import NodeIcon from "../../components/icons/nodejs.icon";
+import ReactIcon from "../../components/icons/react.icon";
+import SmartphoneIcon from "../../components/icons/smartphone.icon";
+import TypescriptIcon from "../../components/icons/typescript.icon";
+import useTheme from "../../hooks/useTheme.hook";
 
 interface Props {}
 
@@ -33,9 +33,6 @@ interface Props {}
  * @version 0.1
  */
 const Contact: React.FC<Props> = () => {
-  let _preventScroll = false;
-  let _currentParagraph = 0;
-  let _lastScrollTop = 0;
   const _paragraphs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -46,27 +43,6 @@ const Contact: React.FC<Props> = () => {
   ];
   useEffect(() => {
     //FIXME: Fix Method
-    const onScroll = (ev: Event) => {
-      if (_preventScroll) {
-        ev.preventDefault();
-        _preventScroll = false;
-        return;
-      }
-
-      var st = window.pageYOffset || document.documentElement.scrollTop;
-      if (st > _lastScrollTop && _currentParagraph < 5) {
-        _currentParagraph++;
-      } else if (_currentParagraph > 0) {
-        _currentParagraph--;
-      }
-      _preventScroll = true;
-      _paragraphs[_currentParagraph].current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-      _lastScrollTop = st <= 0 ? 0 : st;
-    };
     //window.addEventListener("scroll", onScroll);
     return () => {
       //window.removeEventListener("scroll", onScroll);
@@ -77,6 +53,7 @@ const Contact: React.FC<Props> = () => {
       color: { primary, secondaryText },
     },
   } = useTheme();
+
   return (
     <main
       style={{
@@ -90,7 +67,10 @@ const Contact: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Kenntnisse</title>
       </Head>
-      <HowCanIHelpYouHeader ref={_paragraphs[0]}>
+      <HeaderWithIcon
+        icon={<KnowledgeDesign width="100%" />}
+        ref={_paragraphs[0]}
+      >
         <Typography variant="h3" align="center">
           Wie kann ich dir helfen?
         </Typography>
@@ -128,7 +108,7 @@ const Contact: React.FC<Props> = () => {
             <DesktopIcon height="50%" />
           </IconButton>
         </div>
-      </HowCanIHelpYouHeader>
+      </HeaderWithIcon>
       <CategoryWrapper ref={_paragraphs[1]}>
         <CategoryHeader
           title="Prinzipien"
@@ -139,6 +119,7 @@ const Contact: React.FC<Props> = () => {
             icon={<FlaskDesign height="100%" />}
             title="Test Driven Development"
             description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+            href="/knowledge/testDrivenDevelopment"
           />
           <CategoryCard
             icon={<SettingsPageDesign height="100%" />}
@@ -170,7 +151,7 @@ const Contact: React.FC<Props> = () => {
           />
         </CategoryCardWrapper>
       </CategoryWrapper>
-      <CategoryWrapper ref={_paragraphs[3]}>
+      <CategoryWrapper ref={_paragraphs[2]}>
         <CategoryHeader
           title="Webentwicklungskenntnisse"
           description="Meine Kenntnisse im Bereich der der Webentwicklung"

@@ -1,8 +1,10 @@
+import { motion, MotionStyle } from "framer-motion";
 import React, { forwardRef } from "react";
 
 interface Props {
   latest?: boolean;
   children?: any;
+  style?: MotionStyle;
 }
 
 /**
@@ -11,19 +13,21 @@ interface Props {
  * @version 0.1
  */
 const CategoryWrapper = forwardRef<HTMLDivElement, Props>(
-  ({ children, latest }, ref) => {
+  ({ children, latest, style }, ref) => {
     return (
-      <div
+      <motion.div
         ref={ref}
         style={{
-          minHeight: latest ? "calc(100vh - 50px)" : "100vh",
+          ...style,
+          minHeight: latest ? "calc(1024px - 50px)" : "1024px",
+          height: latest ? "calc(100vh - 50px)" : "100vh",
           display: "grid",
           justifyContent: "center",
           alignContent: "center",
         }}
       >
         {children}
-      </div>
+      </motion.div>
     );
   }
 );
