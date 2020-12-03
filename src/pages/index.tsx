@@ -31,7 +31,7 @@ const Index: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Startseite</title>
       </Head>
-      <header>
+      <header style={{ flex: 1 }}>
         <NavigationBar />
         <HeaderWithImage
           latest
