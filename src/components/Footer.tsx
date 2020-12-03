@@ -15,7 +15,6 @@ const Footer: React.FC<Props> = () => {
   return (
     <footer
       style={{
-        flex: 0,
         height: "50px",
         width: "100vw",
         padding: "5px",

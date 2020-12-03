@@ -3,6 +3,7 @@ import React from "react";
 
 interface Props {
   color?: string;
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 /**
@@ -10,10 +11,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const IconButton: React.FC<Props> = ({ children, color }) => {
+const IconButton: React.FC<Props> = ({ children, color, onClick }) => {
   const scale = useSpring(1);
   return (
     <motion.div
+      onClick={onClick}
       style={{
         margin: "10px 0px",
         height: "64px",

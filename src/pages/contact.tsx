@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import flyFromTop from "../variants/flyFromTop";
 import flyFromRight from "../variants/flyFromRight";
 import HeaderWithIcon from "../components/HeaderWithIcon";
+import NavigationBar from "../components/NavigationBar";
+import Footer from "../components/Footer";
 
 interface Props {}
 
@@ -28,26 +30,30 @@ const Contact: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Kontakt</title>
       </Head>
-      <HeaderWithIcon
-        fill
-        latest
-        icon={<ContactMeDesign color={secondary} width="100%" />}
-      >
-        <TextField title="Name" placeholder="Maxine Musterfrau" />
-        <Spacer height="20px" />
-        <TextField title="Email Adresse" placeholder="maxine@musterfrau.de" />
-        <Spacer height="20px" />
-        <TextField title="Betreff" placeholder="Musterbetreff" />
-        <Spacer height="20px" />
-        <TextField
-          title="Nachricht"
-          placeholder="Bitte Nachricht eingeben"
-          area
-          rows={4}
-        />
-        <Spacer height="25px" />
-        <Button>Absenden</Button>
-      </HeaderWithIcon>
+      <header>
+        <NavigationBar />
+        <HeaderWithIcon
+          fill
+          latest
+          icon={<ContactMeDesign color={secondary} width="100%" />}
+        >
+          <TextField title="Name" placeholder="Maxine Musterfrau" />
+          <Spacer height="20px" />
+          <TextField title="Email Adresse" placeholder="maxine@musterfrau.de" />
+          <Spacer height="20px" />
+          <TextField title="Betreff" placeholder="Musterbetreff" />
+          <Spacer height="20px" />
+          <TextField
+            title="Nachricht"
+            placeholder="Bitte Nachricht eingeben"
+            area
+            rows={4}
+          />
+          <Spacer height="25px" />
+          <Button>Absenden</Button>
+        </HeaderWithIcon>
+      </header>
+      <Footer />
     </>
   );
 };

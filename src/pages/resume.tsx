@@ -4,8 +4,10 @@ import DesigningDesign from "../components/designs/designing.design";
 import KnowledgeDesign from "../components/designs/knowledge.design";
 import Spacer from "../components/elements/Spacer";
 import Typography from "../components/elements/Typography";
+import Footer from "../components/Footer";
 import HeaderWithIcon from "../components/HeaderWithIcon";
 import MyExperiencesHeader from "../components/MyExperiencesHeader";
+import NavigationBar from "../components/NavigationBar";
 import useTheme from "../hooks/useTheme.hook";
 
 interface Props {}
@@ -30,33 +32,29 @@ const Contact: React.FC<Props> = () => {
     },
   } = useTheme();
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        backgroundColor: primary,
-        color: secondaryText,
-      }}
-    >
+    <>
       <Head>
         <title>Jannik Will | Erfahrungen</title>
       </Head>
-      <HeaderWithIcon
-        icon={<DesigningDesign width="100%" />}
-        latest
-        ref={_paragraphs[0]}
-      >
-        <Typography variant="h3" align="center">
-          Was habe ich bereits gelernt?
-        </Typography>
-        <Spacer height="0.4em" />
-        <Typography align="center" italic>
-          Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
-          wenn Weiterentwicklung möglich ist
-        </Typography>
-      </HeaderWithIcon>
-    </div>
+      <header>
+        <NavigationBar />
+        <HeaderWithIcon
+          icon={<DesigningDesign width="100%" />}
+          latest
+          ref={_paragraphs[0]}
+        >
+          <Typography variant="h3" align="center">
+            Was habe ich bereits gelernt?
+          </Typography>
+          <Spacer height="0.4em" />
+          <Typography align="center" italic>
+            Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
+            wenn Weiterentwicklung möglich ist
+          </Typography>
+        </HeaderWithIcon>
+      </header>
+      <Footer />
+    </>
   );
 };
 

@@ -7,6 +7,7 @@ interface Props {
   icon: JSX.Element;
   fill?: boolean;
   latest?: boolean;
+  style?: React.CSSProperties;
 }
 
 /**
@@ -15,11 +16,12 @@ interface Props {
  * @version 0.1
  */
 const HeaderWithIcon = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
-  ({ children, icon, latest, fill }, ref) => {
+  ({ children, icon, latest, fill, style }, ref) => {
     return (
       <div
         ref={ref}
         style={{
+          ...style,
           width: "100%",
           height: latest
             ? "calc(100vh - calc(100px + 73px))"

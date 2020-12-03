@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import flyFromTop from "../variants/flyFromTop";
 import flyFromRight from "../variants/flyFromRight";
 import HeaderWithIcon from "../components/HeaderWithIcon";
+import NavigationBar from "../components/NavigationBar";
+import Footer from "../components/Footer";
 
 interface Props {}
 
@@ -27,16 +29,21 @@ const Contact: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Impressum</title>
       </Head>
-      <HeaderWithIcon latest icon={<AtHomeDesign width="100%" />}>
-        <Typography variant="h3" align="center">
-          Impressum
-        </Typography>
-        <Spacer height="10px" />
-        <Typography align="center">
-          Jannik Will <br /> Ostkirchstraße 23 <br />
-          44269 Dortmund <br /> Deutschland
-        </Typography>
-      </HeaderWithIcon>
+      <header>
+        {" "}
+        <NavigationBar />
+        <HeaderWithIcon latest icon={<AtHomeDesign width="100%" />}>
+          <Typography variant="h3" align="center">
+            Impressum
+          </Typography>
+          <Spacer height="10px" />
+          <Typography align="center">
+            Jannik Will <br /> Ostkirchstraße 23 <br />
+            44269 Dortmund <br /> Deutschland
+          </Typography>
+        </HeaderWithIcon>
+      </header>
+      <Footer />
     </>
   );
 };

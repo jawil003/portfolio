@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@material-ui/icons": "^4.9.1",
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "framer-motion": "^2.9.4",
     "next": "latest",
     "react": "^16.12.0",

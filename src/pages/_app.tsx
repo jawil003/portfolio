@@ -4,6 +4,7 @@ import Head from "next/head";
 import ThemeProvider from "../components/ThemeProvider";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
+import Spacer from "../components/elements/Spacer";
 
 /**
  * An App React Component.
@@ -23,10 +24,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <ThemeProvider>
-        <NavigationBar />
         <Component {...pageProps} />
-
-        <Footer />
       </ThemeProvider>
     </div>
   );
