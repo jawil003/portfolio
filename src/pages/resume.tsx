@@ -36,7 +36,7 @@ const Contact: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Erfahrungen</title>
       </Head>
-      <header>
+      <header style={{ flex: 1 }}>
         <NavigationBar />
         <HeaderWithIcon
           icon={<DesigningDesign width="100%" />}

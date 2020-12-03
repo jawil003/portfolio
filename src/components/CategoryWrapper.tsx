@@ -19,7 +19,7 @@ const CategoryWrapper = forwardRef<HTMLDivElement, Props>(
         ref={ref}
         style={{
           ...style,
-          height: latest ? "calc(100vh - 50px)" : "100vh",
+          minHeight: latest ? "calc(100vh - 50px)" : "100vh",
           display: "grid",
           justifyContent: "center",
           alignContent: "center",

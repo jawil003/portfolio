@@ -49,11 +49,11 @@ const CategoryCard: React.FC<Props> = ({
       >
         <div
           style={{
-            display: "grid",
+            display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            gridTemplateColumns: "84px",
-            gridTemplateRows: "84px",
+            width: "100%",
+            height: "84px",
           }}
         >
           {icon}

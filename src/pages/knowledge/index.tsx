@@ -134,9 +134,8 @@ const Contact: React.FC<Props> = () => {
       <main
         style={{
           flex: 1,
-          display: "grid",
-          gridTemplateColumns: "100%",
-          gridTemplateRows: "100%",
+          display: "flex",
+          flexDirection: "column",
           backgroundColor: primary,
           color: secondaryText,
         }}
@@ -173,12 +172,12 @@ const Contact: React.FC<Props> = () => {
           />
           <CategoryCardWrapper>
             <CategoryCard
-              icon={<NodeIcon width="100%" />}
+              icon={<NodeIcon height="100%" />}
               title="Node"
               description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
             />
             <CategoryCard
-              icon={<JavaIcon width="100%" />}
+              icon={<JavaIcon height="100%" />}
               title="Java"
               description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
             />
@@ -192,12 +191,12 @@ const Contact: React.FC<Props> = () => {
           />
           <CategoryCardWrapper>
             <CategoryCard
-              icon={<TypescriptIcon width="84px" height="84px" />}
+              icon={<TypescriptIcon height="100%" />}
               title="Typescript"
               description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
             />
             <CategoryCard
-              icon={<ReactIcon width="84px" height="84px" />}
+              icon={<ReactIcon height="100%" />}
               title="React"
               description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
             />
@@ -211,12 +210,12 @@ const Contact: React.FC<Props> = () => {
           />
           <CategoryCardWrapper>
             <CategoryCard
-              icon={<AndroidIcon width="84px" height="84px" />}
+              icon={<AndroidIcon height="100%" />}
               title="Android JDK"
               description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
             />
             <CategoryCard
-              icon={<ReactIcon width="84px" height="84px" />}
+              icon={<ReactIcon height="100%" />}
               title="React Native"
               description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
             />

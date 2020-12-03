@@ -22,6 +22,7 @@ const HeaderWithIcon = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
         ref={ref}
         style={{
           ...style,
+
           width: "100%",
           height: latest
             ? "calc(100vh - calc(100px + 73px))"
