@@ -1,15 +1,15 @@
 import { motion, MotionStyle } from "framer-motion";
 import Link from "next/link";
 import React from "react";
-import Spacer from "./elements/Spacer";
-import Typography from "./elements/Typography";
+import Spacer from "../generic/Spacer";
+import Typography from "../generic/Typography";
 
 interface Props {
   icon: JSX.Element;
   title: string;
   description: string;
   style?: MotionStyle;
-  href?: sting;
+  href?: string;
 }
 
 /**

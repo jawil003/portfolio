@@ -26,6 +26,8 @@ const IconLink: React.FC<Props> = ({
     <>
       {external ? (
         <motion.a
+          href={href}
+          target="_blank"
           onHoverStart={() => scale.set(1.2)}
           onHoverEnd={() => scale.set(1)}
           style={{

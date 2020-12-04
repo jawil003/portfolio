@@ -10,7 +10,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html style={{ scrollSnapType: "y mandatory" }}>
         <Head>
           <link rel="stylesheet" href="/styles/index.css" />
           <link
@@ -19,6 +19,7 @@ class MyDocument extends Document {
             type="image/x-icon"
           />
         </Head>
+
         <body
           style={{
             minHeight: "100vh",

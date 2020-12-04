@@ -1,10 +1,10 @@
 import React from "react";
-import Spacer from "./elements/Spacer";
-import HomeIcon from "./icons/home.icon";
-import KnowledgeIcon from "./icons/knowledge.icon";
-import LearningIcon from "./icons/learning.icon";
-import Logo from "./Logo";
-import NavigationBarItem from "./NavigationBarItem";
+import Spacer from "../elements/generic/Spacer";
+import HomeIcon from "../icons/home.icon";
+import KnowledgeIcon from "../icons/knowledge.icon";
+import LearningIcon from "../icons/learning.icon";
+import Logo from "../elements/custom/Logo";
+import NavigationBarItem from "../elements/custom/NavigationBarItem";
 
 interface Props {}
 
@@ -17,8 +17,6 @@ const NavigationBar: React.FC<Props> = () => {
   return (
     <nav
       style={{
-        width: "100vw",
-        padding: "20px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",

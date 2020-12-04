@@ -1,14 +1,15 @@
 import Head from "next/head";
 import React, { useRef } from "react";
 import DesigningDesign from "../components/designs/designing.design";
-import KnowledgeDesign from "../components/designs/knowledge.design";
-import Spacer from "../components/elements/Spacer";
-import Typography from "../components/elements/Typography";
-import Footer from "../components/Footer";
-import HeaderWithIcon from "../components/HeaderWithIcon";
-import MyExperiencesHeader from "../components/MyExperiencesHeader";
-import NavigationBar from "../components/NavigationBar";
+import Spacer from "../components/elements/generic/Spacer";
+import Typography from "../components/elements/generic/Typography";
+import Footer from "../components/layout/Footer";
+import HeaderWithIcon from "../components/layout/HeaderWithIcon";
+import NavigationBar from "../components/layout/NavigationBar";
 import useTheme from "../hooks/useTheme.hook";
+import SectionWithIcon from "../components/layout/SectionWithIcon";
+import SnapScrollParagraph from "../components/elements/generic/SnapScrollParagraph";
+import TimelineSection from "../components/elements/custom/TimelineSection";
 
 interface Props {}
 
@@ -36,23 +37,28 @@ const Contact: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Erfahrungen</title>
       </Head>
-      <header style={{ flex: 1 }}>
+      <SnapScrollParagraph>
         <NavigationBar />
-        <HeaderWithIcon
-          icon={<DesigningDesign width="100%" />}
-          latest
-          ref={_paragraphs[0]}
-        >
-          <Typography variant="h3" align="center">
-            Was habe ich bereits gelernt?
-          </Typography>
-          <Spacer height="0.4em" />
-          <Typography align="center" italic>
-            Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
-            wenn Weiterentwicklung möglich ist
-          </Typography>
-        </HeaderWithIcon>
-      </header>
+      </SnapScrollParagraph>
+      <HeaderWithIcon
+        first
+        icon={<DesigningDesign width="100%" />}
+        ref={_paragraphs[0]}
+      >
+        <Typography variant="h3" align="center">
+          Was habe ich bereits gelernt?
+        </Typography>
+        <Spacer height="0.4em" />
+        <Typography align="center" italic>
+          Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
+          wenn Weiterentwicklung möglich ist
+        </Typography>
+      </HeaderWithIcon>
+      <main style={{ flex: 1 }}>
+        <SnapScrollParagraph>
+          <TimelineSection latest />
+        </SnapScrollParagraph>
+      </main>
       <Footer />
     </>
   );

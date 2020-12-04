@@ -1,14 +1,27 @@
 import { motion, useSpring, useTransform } from "framer-motion";
 import React, { forwardRef, PropsWithChildren, useEffect } from "react";
-import flyFromTop from "../variants/flyFromTop";
-import ResponsiveImage from "./elements/ResponsiveImage";
+import flyFromTop from "../../variants/flyFromTop";
+import ResponsiveImage from "../elements/generic/ResponsiveImage";
+
+const getHeightForSection = (first?: boolean, latest?: boolean) => {
+  if (first && latest) {
+    return "calc(100vh - calc(70px + 100px))";
+  } else if (first) {
+    return "calc(100vh - 100px)";
+  } else if (latest) {
+    return "calc(100vh - 70px)";
+  }
+  return "100vh";
+};
 
 interface Props {
+  align?: "left" | "right";
   basePath: string;
   image: string;
   imageSet: string[];
   sizes: string;
   alt: string;
+  first?: boolean;
   latest?: boolean;
 }
 
@@ -18,7 +31,10 @@ interface Props {
  * @version 0.1
  */
 const HeaderWithImage = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
-  ({ children, imageSet, latest, image, sizes, alt, basePath }, ref) => {
+  (
+    { children, imageSet, latest, image, sizes, alt, basePath, align, first },
+    ref
+  ) => {
     const x = useSpring(200);
     const opacity = useTransform(x, [200, 0], [0, 1]);
     const handleImageLoaded = () => x.set(0);
@@ -26,13 +42,12 @@ const HeaderWithImage = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
       handleImageLoaded();
     }, []);
     return (
-      <div
+      <header
         ref={ref}
         style={{
+          flex: 1,
           width: "100%",
-          height: latest
-            ? "calc(100vh - calc(100px + 73px))"
-            : "calc(100vh - 100px)",
+          height: getHeightForSection(first, latest),
           display: "grid",
           gridTemplateColumns: "50% 50%",
           gridTemplateRows: "100%",
@@ -52,7 +67,19 @@ const HeaderWithImage = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
             padding: "105px",
           }}
         >
-          {children}
+          {align === "right" ? (
+            children
+          ) : (
+            <ResponsiveImage
+              basePath={basePath}
+              src={image}
+              srcSet={imageSet}
+              sizes={sizes}
+              width="100%"
+              height="auto"
+              alt={alt}
+            />
+          )}
         </motion.div>
         <motion.div
           style={{
@@ -67,21 +94,25 @@ const HeaderWithImage = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
             padding: "10%",
           }}
         >
-          <ResponsiveImage
-            basePath={basePath}
-            src={image}
-            srcSet={imageSet}
-            sizes={sizes}
-            width="100%"
-            height="auto"
-            alt={alt}
-          />
+          {align === "left" ? (
+            children
+          ) : (
+            <ResponsiveImage
+              basePath={basePath}
+              src={image}
+              srcSet={imageSet}
+              sizes={sizes}
+              width="100%"
+              height="auto"
+              alt={alt}
+            />
+          )}
         </motion.div>
-      </div>
+      </header>
     );
   }
 );
 
-HeaderWithImage.defaultProps = { latest: false };
+HeaderWithImage.defaultProps = { latest: false, align: "right", first: false };
 
 export default HeaderWithImage;

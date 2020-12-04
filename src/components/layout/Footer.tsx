@@ -1,8 +1,7 @@
 import React from "react";
-import LearningIcon from "./icons/learning.icon";
-import MailIcon from "./icons/mail.icon";
-import WorldWideIcon from "./icons/worldwide.icon";
-import NavigationBarItem from "./NavigationBarItem";
+import MailIcon from "../icons/mail.icon";
+import WorldWideIcon from "../icons/worldwide.icon";
+import NavigationBarItem from "../elements/custom/NavigationBarItem";
 
 interface Props {}
 
@@ -15,7 +14,7 @@ const Footer: React.FC<Props> = () => {
   return (
     <footer
       style={{
-        height: "50px",
+        height: "70px",
         width: "100vw",
         padding: "5px",
         display: "flex",

@@ -1,5 +1,5 @@
 import React from "react";
-import Typography from "./elements/Typography";
+import Typography from "../generic/Typography";
 
 interface Props {
   title: string;

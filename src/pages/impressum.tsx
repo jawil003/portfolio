@@ -1,15 +1,12 @@
 import Head from "next/head";
 import React from "react";
 import AtHomeDesign from "../components/designs/atHome.design";
-import Spacer from "../components/elements/Spacer";
-import Typography from "../components/elements/Typography";
+import Spacer from "../components/elements/generic/Spacer";
+import Typography from "../components/elements/generic/Typography";
 import useTheme from "../hooks/useTheme.hook";
-import { motion } from "framer-motion";
-import flyFromTop from "../variants/flyFromTop";
-import flyFromRight from "../variants/flyFromRight";
-import HeaderWithIcon from "../components/HeaderWithIcon";
-import NavigationBar from "../components/NavigationBar";
-import Footer from "../components/Footer";
+import HeaderWithIcon from "../components/layout/HeaderWithIcon";
+import NavigationBar from "../components/layout/NavigationBar";
+import Footer from "../components/layout/Footer";
 
 interface Props {}
 
@@ -29,20 +26,18 @@ const Contact: React.FC<Props> = () => {
       <Head>
         <title>Jannik Will | Impressum</title>
       </Head>
-      <header>
-        {" "}
-        <NavigationBar />
-        <HeaderWithIcon latest icon={<AtHomeDesign width="100%" />}>
-          <Typography variant="h3" align="center">
-            Impressum
-          </Typography>
-          <Spacer height="10px" />
-          <Typography align="center">
-            Jannik Will <br /> Ostkirchstraße 23 <br />
-            44269 Dortmund <br /> Deutschland
-          </Typography>
-        </HeaderWithIcon>
-      </header>
+
+      <NavigationBar />
+      <HeaderWithIcon first latest icon={<AtHomeDesign width="100%" />}>
+        <Typography variant="h3" align="center">
+          Impressum
+        </Typography>
+        <Spacer height="10px" />
+        <Typography align="center">
+          Jannik Will <br /> Ostkirchstraße 23 <br />
+          44269 Dortmund <br /> Deutschland
+        </Typography>
+      </HeaderWithIcon>
       <Footer />
     </>
   );

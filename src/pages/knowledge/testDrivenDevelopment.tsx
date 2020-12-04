@@ -3,6 +3,7 @@ import FlaskDesign from "../../components/designs/flask.design";
 import Spacer from "../../components/elements/Spacer";
 import Typography from "../../components/elements/Typography";
 import HeaderWithIcon from "../../components/HeaderWithIcon";
+import NavigationBar from "../../components/layout/NavigationBar";
 
 interface Props {}
 
@@ -14,6 +15,7 @@ interface Props {}
 const TestDrivenDevelopment: React.FC<Props> = () => {
   return (
     <>
+      <NavigationBar />
       <HeaderWithIcon icon={<FlaskDesign width="70%" />}>
         <Typography variant="h3" align="center">
           Test Driven Development

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import useTheme from "../hooks/useTheme.hook";
-import Typography from "./elements/Typography";
+import useTheme from "../../../hooks/useTheme.hook";
+import Typography from "../generic/Typography";
 import styles from "./NavigationBarItem.module.css";
 
 interface Props {

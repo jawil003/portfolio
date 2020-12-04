@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Theme from "src/types/Theme.type";
-import LightTheme from "../themes/light.json";
-import DarkTheme from "../themes/light.json";
-import ThemeContextType from "../types/ThemeContext.type";
+import LightTheme from "../../themes/light.json";
+import DarkTheme from "../../themes/light.json";
+import ThemeContextType from "../../types/ThemeContext.type";
 
 export const ThemeContext = React.createContext<ThemeContextType>({} as any);
 
