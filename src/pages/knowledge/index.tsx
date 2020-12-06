@@ -71,10 +71,10 @@ const Contact: React.FC<Props> = () => {
           </Typography>{" "}
           mich gerne
         </Typography>
-        <Spacer height="35px" />
+        <Spacer height="12px" />
         <div
           style={{
-            width: "100%",
+            width: "60%",
             display: "flex",
             justifyContent: "space-around",
           }}

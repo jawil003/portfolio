@@ -59,10 +59,10 @@ const Index: React.FC<Props> = () => {
           ein leidenschaftlicher Softwareentwickler und Designer aus Dortmund
           und spezialisiert auf Frontend und Backend Lösungen aller Art
         </Typography>
-        <Spacer height="35px" />
+        <Spacer height="8px" />
         <div
           style={{
-            width: "100%",
+            width: "60%",
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",

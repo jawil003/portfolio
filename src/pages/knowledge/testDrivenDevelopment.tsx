@@ -1,8 +1,9 @@
 import React from "react";
 import FlaskDesign from "../../components/designs/flask.design";
-import Spacer from "../../components/elements/Spacer";
-import Typography from "../../components/elements/Typography";
-import HeaderWithIcon from "../../components/HeaderWithIcon";
+import ScienceDesign from "../../components/designs/science.design";
+import Spacer from "../../components/elements/generic/Spacer";
+import Typography from "../../components/elements/generic/Typography";
+import HeaderWithIcon from "../../components/layout/HeaderWithIcon";
 import NavigationBar from "../../components/layout/NavigationBar";
 
 interface Props {}
@@ -16,7 +17,7 @@ const TestDrivenDevelopment: React.FC<Props> = () => {
   return (
     <>
       <NavigationBar />
-      <HeaderWithIcon icon={<FlaskDesign width="70%" />}>
+      <HeaderWithIcon first icon={<ScienceDesign width="70%" />}>
         <Typography variant="h3" align="center">
           Test Driven Development
         </Typography>
