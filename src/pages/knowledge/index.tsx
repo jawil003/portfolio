@@ -26,6 +26,7 @@ import useTheme from "../../hooks/useTheme.hook";
 import NavigationBar from "../../components/layout/NavigationBar";
 import Footer from "../../components/layout/Footer";
 import ScrollSnapParagraph from "../../components/elements/generic/SnapScrollParagraph";
+import BackTopButton from "../../components/elements/custom/BackTopButton";
 
 interface Props {}
 
@@ -127,7 +128,6 @@ const Contact: React.FC<Props> = () => {
           </IconButton>
         </div>
       </HeaderWithIcon>
-
       <main
         style={{
           flex: 1,
@@ -239,7 +239,7 @@ const Contact: React.FC<Props> = () => {
           </FullScreenSection>
         </ScrollSnapParagraph>
       </main>
-      <Footer />
+      <Footer /> <BackTopButton />
     </>
   );
 };

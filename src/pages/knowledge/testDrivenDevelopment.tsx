@@ -1,5 +1,4 @@
 import React from "react";
-import FlaskDesign from "../../components/designs/flask.design";
 import ScienceDesign from "../../components/designs/science.design";
 import Spacer from "../../components/elements/generic/Spacer";
 import Typography from "../../components/elements/generic/Typography";

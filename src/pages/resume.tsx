@@ -6,10 +6,7 @@ import Typography from "../components/elements/generic/Typography";
 import Footer from "../components/layout/Footer";
 import HeaderWithIcon from "../components/layout/HeaderWithIcon";
 import NavigationBar from "../components/layout/NavigationBar";
-import useTheme from "../hooks/useTheme.hook";
-import SectionWithIcon from "../components/layout/SectionWithIcon";
 import SnapScrollParagraph from "../components/elements/generic/SnapScrollParagraph";
-import TimelineSection from "../components/elements/custom/TimelineSection";
 
 interface Props {}
 
@@ -27,11 +24,6 @@ const Contact: React.FC<Props> = () => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
   ];
-  const {
-    palette: {
-      color: { primary, secondary, secondaryText },
-    },
-  } = useTheme();
   return (
     <>
       <Head>
@@ -54,11 +46,7 @@ const Contact: React.FC<Props> = () => {
           wenn Weiterentwicklung möglich ist
         </Typography>
       </HeaderWithIcon>
-      <main style={{ flex: 1 }}>
-        <SnapScrollParagraph>
-          <TimelineSection latest />
-        </SnapScrollParagraph>
-      </main>
+      <main style={{ flex: 1 }}></main>
       <Footer />
     </>
   );

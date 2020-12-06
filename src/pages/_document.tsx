@@ -10,7 +10,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html style={{ scrollSnapType: "y mandatory" }}>
+      <Html lang="de" style={{ scrollSnapType: "y mandatory" }}>
         <Head>
           <link rel="stylesheet" href="/styles/index.css" />
           <link
