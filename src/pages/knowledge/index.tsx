@@ -75,9 +75,10 @@ const Contact: React.FC<Props> = () => {
         <Spacer height="12px" />
         <div
           style={{
-            width: "60%",
+            width: "70%",
             display: "flex",
             justifyContent: "space-around",
+            flexWrap: "wrap",
           }}
         >
           <IconButton

@@ -18,8 +18,8 @@ const IconButton: React.FC<Props> = ({ children, color, onClick }) => {
       onClick={onClick}
       style={{
         margin: "10px 0px",
-        height: "64px",
-        width: "64px",
+        height: "52px",
+        width: "52px",
         backgroundColor: color,
         borderRadius: "100%",
         display: "flex",

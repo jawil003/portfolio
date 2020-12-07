@@ -62,10 +62,11 @@ const Index: React.FC<Props> = () => {
         <Spacer height="8px" />
         <div
           style={{
-            width: "60%",
+            width: "70%",
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
+            flexWrap: "wrap",
           }}
         >
           <IconLink external href="https://twitter.com/willey3x37">
