@@ -1,3 +1,4 @@
+import { motion, useSpring } from "framer-motion";
 import React, { useState } from "react";
 import Tooltip from "./Tooltip";
 
@@ -23,24 +24,33 @@ const IconButton: React.FC<Props> = ({
   tooltipText,
 }) => {
   const [toolTipHidden, setToolTipHidden] = useState(true);
+  const scale = useSpring(1);
   return (
-    <div
-      onMouseOver={() => setToolTipHidden(false)}
-      onMouseOut={() => setToolTipHidden(true)}
-      onClick={onClick}
-      style={{
-        position: "relative",
-        margin: "10px 0px",
-        height: size,
-        width: size,
-        backgroundColor: color,
-        borderRadius: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {children}
+    <div style={{ position: "relative" }}>
+      <motion.div
+        onMouseOver={() => {
+          setToolTipHidden(false);
+          scale.set(1.2);
+        }}
+        onMouseOut={() => {
+          setToolTipHidden(true);
+          scale.set(1);
+        }}
+        onClick={onClick}
+        style={{
+          scale,
+          margin: "10px 0px",
+          height: size,
+          width: size,
+          backgroundColor: color,
+          borderRadius: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {children}
+      </motion.div>
       <Tooltip hidden={toolTipHidden} orientation={tooltipOrientation}>
         {tooltipText}
       </Tooltip>

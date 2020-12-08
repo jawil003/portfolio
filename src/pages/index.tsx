@@ -69,18 +69,37 @@ const Index: React.FC<Props> = () => {
             flexWrap: "wrap",
           }}
         >
-          <IconLink external href="https://twitter.com/willey3x37">
+          <IconLink
+            tooltipText="Twitter"
+            tooltipOrientation="left"
+            external
+            href="https://twitter.com/willey3x37"
+          >
             <TwitterIcon height="100%" />
           </IconLink>
-          <IconLink external href="https://linkedin.com/willey3x37">
+          <IconLink
+            tooltipText="LinkedIn"
+            tooltipOrientation="bottom"
+            external
+            href="https://linkedin.com/willey3x37"
+          >
             <LinkedInIcon height="100%" />
           </IconLink>
 
-          <IconLink external href="https://github.com/jawil003">
+          <IconLink
+            tooltipText="Github"
+            tooltipOrientation="bottom"
+            external
+            href="https://github.com/jawil003"
+          >
             <GithubIcon height="100%" />
           </IconLink>
 
-          <IconLink external href="https://dribbble.com/willey3x37">
+          <IconLink
+            tooltipText="Dribbble"
+            external
+            href="https://dribbble.com/willey3x37"
+          >
             <DribbleIcon height="100%" />
           </IconLink>
         </div>

@@ -1,12 +1,15 @@
 import { motion, useSpring } from "framer-motion";
 import Link from "next/link";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useState } from "react";
+import Tooltip from "./Tooltip";
 
 interface Props {
   size?: string;
   href: string;
   external?: boolean;
   background?: string;
+  tooltipOrientation?: "left" | "right" | "top" | "bottom";
+  tooltipText: string;
 }
 
 /**
@@ -20,16 +23,25 @@ const IconLink: React.FC<Props> = ({
   external,
   size,
   background,
+  tooltipText,
+  tooltipOrientation,
 }) => {
   const scale = useSpring(1);
+  const [toolTipHidden, setToolTipHidden] = useState(true);
   return (
-    <>
+    <div style={{ position: "relative" }}>
       {external ? (
         <motion.a
           href={href}
           target="_blank"
-          onHoverStart={() => scale.set(1.2)}
-          onHoverEnd={() => scale.set(1)}
+          onMouseOver={() => {
+            setToolTipHidden(false);
+            scale.set(1.2);
+          }}
+          onMouseOut={() => {
+            setToolTipHidden(true);
+            scale.set(1);
+          }}
           style={{
             backgroundColor: background,
             borderRadius: "100%",
@@ -44,8 +56,14 @@ const IconLink: React.FC<Props> = ({
       ) : (
         <Link href={href}>
           <motion.a
-            onHoverStart={() => scale.set(1.2)}
-            onHoverEnd={() => scale.set(1)}
+            onMouseOver={() => {
+              setToolTipHidden(false);
+              scale.set(1.2);
+            }}
+            onMouseOut={() => {
+              setToolTipHidden(true);
+              scale.set(1);
+            }}
             style={{
               backgroundColor: background,
               scale,
@@ -58,7 +76,14 @@ const IconLink: React.FC<Props> = ({
           </motion.a>
         </Link>
       )}
-    </>
+      <Tooltip
+        backgroundColor={background}
+        hidden={toolTipHidden}
+        orientation={tooltipOrientation}
+      >
+        {tooltipText}
+      </Tooltip>
+    </div>
   );
 };
 

@@ -2,6 +2,8 @@ import { motion, useSpring, useTransform } from "framer-motion";
 import React, { useEffect } from "react";
 
 interface Props {
+  backgroundColor?: string;
+  color?: string;
   orientation?: "left" | "right" | "top" | "bottom";
   hidden?: boolean;
   children?: string;
@@ -12,16 +14,21 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const Tooltip: React.FC<Props> = ({ orientation, children, hidden }) => {
+const Tooltip: React.FC<Props> = ({
+  orientation,
+  children,
+  hidden,
+  backgroundColor,
+}) => {
   const x = useSpring(
-    orientation === "right" ? -20 : orientation === "left" ? 20 : 0
+    orientation === "right" ? -10 : orientation === "left" ? 10 : 0
   );
   const y = useSpring(
-    orientation === "bottom" ? -20 : orientation === "top" ? 20 : 0
+    orientation === "bottom" ? -10 : orientation === "top" ? 10 : 0
   );
   const opacity = useTransform(
     orientation === "right" || orientation === "left" ? x : y,
-    [orientation === "right" || orientation === "bottom" ? -20 : 20, 0],
+    [orientation === "right" || orientation === "bottom" ? -10 : 10, 0],
     [0, 1]
   );
   useEffect(() => {
@@ -65,29 +72,27 @@ const Tooltip: React.FC<Props> = ({ orientation, children, hidden }) => {
       style={{
         x,
         y,
+        borderRadius: "5px",
         opacity,
         position: "absolute",
         left:
           orientation === "right"
-            ? "calc(100% + calc(22.5px + 10px))"
+            ? "calc(100% + calc(12.5px + 6px))"
             : undefined,
         right:
           orientation === "left"
-            ? "calc(100% + calc(22.5px + 10px))"
+            ? "calc(100% + calc(12.5px + 6px))"
             : undefined,
         bottom:
-          orientation === "top"
-            ? "calc(100% + calc(22.5px + 10px))"
-            : undefined,
+          orientation === "top" ? "calc(100% + calc(12.5px + 6px))" : undefined,
         top:
           orientation === "bottom"
-            ? "calc(100% + calc(22.5px + 10px))"
+            ? "calc(100% + calc(12.5px + 6px))"
             : orientation === "top"
             ? undefined
             : "calc(50% - 1rem)",
         fontSize: "0.8rem",
-        backgroundColor: "#000",
-        borderRadius: "5px",
+        backgroundColor,
       }}
     >
       <div
@@ -108,38 +113,38 @@ const Tooltip: React.FC<Props> = ({ orientation, children, hidden }) => {
             position: "absolute",
             left:
               orientation === "right"
-                ? -20
+                ? -10
                 : orientation === "left"
                 ? undefined
                 : "calc(50% - calc(20px / 2))",
-            right: orientation === "left" ? -20 : undefined,
+            right: orientation === "left" ? -10 : undefined,
             top:
               orientation === "bottom"
-                ? -20
+                ? -10
                 : orientation === "top"
                 ? undefined
                 : "23%",
-            bottom: orientation === "top" ? -20 : undefined,
+            bottom: orientation === "top" ? -10 : undefined,
 
             width: 0,
             height: 0,
             borderStyle: "solid",
             borderWidth:
               orientation === "right"
-                ? "11.25px 22.5px 11.25px 0"
+                ? "11.25px 12.5px 11.25px 0"
                 : orientation === "left"
-                ? "11.25px 0 11.25px 22.5px"
+                ? "11.25px 0 11.25px 12.5px"
                 : orientation === "bottom"
-                ? "0 11.25px 22.5px 11.25px"
-                : "22.5px 11.25px 0 11.25px",
+                ? "0 11.25px 12.5px 11.25px"
+                : "12.5px 11.25px 0 11.25px",
             borderColor:
               orientation === "right"
-                ? "transparent #000 transparent transparent"
+                ? `transparent ${backgroundColor} transparent transparent`
                 : orientation === "left"
-                ? "transparent transparent transparent #000"
+                ? `transparent transparent transparent ${backgroundColor}`
                 : orientation === "bottom"
-                ? "transparent transparent #000 transparent"
-                : "#000 transparent transparent transparent",
+                ? `transparent transparent ${backgroundColor} transparent`
+                : `${backgroundColor} transparent transparent transparent`,
           }}
         />
       </div>
@@ -150,6 +155,8 @@ const Tooltip: React.FC<Props> = ({ orientation, children, hidden }) => {
 Tooltip.defaultProps = {
   orientation: "right",
   children: "Bitte Text eingeben",
+  backgroundColor: "#000",
+  color: "#fff",
 };
 
 export default Tooltip;
