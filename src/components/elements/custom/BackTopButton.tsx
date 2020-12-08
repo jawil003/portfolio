@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useSpring, useTransform } from "framer-motion";
 import React, { useEffect } from "react";
 import TopArrowIcon from "../../icons/topArrow.icon";
 

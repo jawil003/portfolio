@@ -3,7 +3,6 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
-  color?: string;
 }
 
 /**
@@ -11,7 +10,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const HomeIcon: React.FC<Props> = ({ width, height, color }) => {
+const HomeIcon: React.FC<Props> = ({ width, height }) => {
   return (
     <svg
       viewBox="0 0 511 511.999"
@@ -23,7 +22,5 @@ const HomeIcon: React.FC<Props> = ({ width, height, color }) => {
     </svg>
   );
 };
-
-HomeIcon.defaultProps = { color: "#000" };
 
 export default HomeIcon;

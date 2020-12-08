@@ -6,7 +6,6 @@ interface Props {
   title: string;
   placeholder?: string;
   area?: boolean;
-  cols?: number;
   rows?: number;
 }
 
@@ -15,13 +14,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const TextField: React.FC<Props> = ({
-  title,
-  placeholder,
-  cols,
-  rows,
-  area,
-}) => {
+const TextField: React.FC<Props> = ({ title, placeholder, rows, area }) => {
   return (
     <div className={styles.inputRoot}>
       <Typography variant="b1">{title}</Typography>

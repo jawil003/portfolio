@@ -30,7 +30,7 @@ interface Props {
  * @version 0.1
  */
 const HeaderWithIcon = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
-  ({ children, icon, latest, fill, style, first, align }, ref) => {
+  ({ children, icon, latest, first, align }, ref) => {
     return (
       <header
         className={styles.header}

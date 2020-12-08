@@ -6,7 +6,7 @@ import Spacer from "../components/elements/generic/Spacer";
 import LinkedInIcon from "../components/icons/linkedin.icon";
 import GithubIcon from "../components/icons/github.icon";
 import IconLink from "../components/elements/generic/IconLink";
-import { useSpring, useTransform } from "framer-motion";
+import { useSpring } from "framer-motion";
 import DribbleIcon from "../components/icons/dribble.icon";
 import HeaderWithImage from "../components/layout/HeaderWithImage";
 import NavigationBar from "../components/layout/NavigationBar";
@@ -21,7 +21,6 @@ interface Props {}
  */
 const Index: React.FC<Props> = () => {
   const x = useSpring(200);
-  const opacity = useTransform(x, [200, 0], [0, 1]);
   const handleImageLoaded = () => x.set(0);
   useEffect(() => {
     handleImageLoaded();

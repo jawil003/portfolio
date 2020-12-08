@@ -19,7 +19,7 @@ interface Props {}
 const Contact: React.FC<Props> = () => {
   const {
     palette: {
-      color: { primary, secondary, secondaryText },
+      color: { secondary },
     },
   } = useTheme();
   return (

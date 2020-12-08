@@ -3,7 +3,6 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
-  color?: string;
 }
 
 /**
@@ -11,7 +10,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const KnowledgeDesign: React.FC<Props> = ({ width, height, color }) => {
+const KnowledgeDesign: React.FC<Props> = ({ width, height }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +200,5 @@ const KnowledgeDesign: React.FC<Props> = ({ width, height, color }) => {
     </svg>
   );
 };
-
-KnowledgeDesign.defaultProps = { color: "var(--secondary)" };
 
 export default KnowledgeDesign;

@@ -3,7 +3,6 @@ import React from "react";
 import AtHomeDesign from "../components/designs/atHome.design";
 import Spacer from "../components/elements/generic/Spacer";
 import Typography from "../components/elements/generic/Typography";
-import useTheme from "../hooks/useTheme.hook";
 import HeaderWithIcon from "../components/layout/HeaderWithIcon";
 import NavigationBar from "../components/layout/NavigationBar";
 import Footer from "../components/layout/Footer";
@@ -16,11 +15,6 @@ interface Props {}
  * @version 0.1
  */
 const Contact: React.FC<Props> = () => {
-  const {
-    palette: {
-      color: { primary, secondary, secondaryText },
-    },
-  } = useTheme();
   return (
     <>
       <Head>

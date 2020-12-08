@@ -1,4 +1,4 @@
-import { motion, useSpring, useTransform } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 import React, { forwardRef, PropsWithChildren, useEffect } from "react";
 import flyFromTop from "../../variants/flyFromTop";
 import ResponsiveImage from "../elements/generic/ResponsiveImage";
@@ -37,7 +37,6 @@ const HeaderWithImage = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
     ref
   ) => {
     const x = useSpring(200);
-    const opacity = useTransform(x, [200, 0], [0, 1]);
     const handleImageLoaded = () => x.set(0);
     useEffect(() => {
       handleImageLoaded();

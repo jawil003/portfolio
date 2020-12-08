@@ -1,5 +1,4 @@
 import React from "react";
-import useTheme from "../../../hooks/useTheme.hook";
 import LogoIcon from "../../icons/logo.icon";
 interface Props {}
 
@@ -9,11 +8,6 @@ interface Props {}
  * @version 0.1
  */
 const Logo: React.FC<Props> = () => {
-  const {
-    palette: {
-      color: { primary, secondary },
-    },
-  } = useTheme();
   return (
     <div
       style={{

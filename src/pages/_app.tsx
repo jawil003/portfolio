@@ -2,9 +2,6 @@ import React from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import ThemeProvider from "../components/context/ThemeProvider";
-import NavigationBar from "../components/layout/NavigationBar";
-import Footer from "../components/layout/Footer";
-import Spacer from "../components/elements/Spacer";
 
 /**
  * An App React Component.
