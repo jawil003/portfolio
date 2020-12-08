@@ -28,6 +28,7 @@ import Footer from "../../components/layout/Footer";
 import ScrollSnapParagraph from "../../components/elements/generic/SnapScrollParagraph";
 import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import DropIcon from "../../components/icons/drop.icon";
 
 interface Props {}
 
@@ -46,6 +47,7 @@ const Contact: React.FC<Props> = () => {
   const [hideButton, setHideButton] = useState(true);
 
   const paragraphs = Array.of(
+    useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -149,6 +151,18 @@ const Contact: React.FC<Props> = () => {
             color="var(--green)"
           >
             <DesktopIcon height="50%" />
+          </IconButton>
+          <IconButton
+            tooltipText="Design"
+            onClick={() =>
+              paragraphs[6].current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              })
+            }
+            color="var(--orange)"
+          >
+            <DropIcon height="50%" />
           </IconButton>
         </div>
       </HeaderWithIcon>
@@ -257,6 +271,31 @@ const Contact: React.FC<Props> = () => {
               <CategoryCard
                 icon={<FlaskDesign height="100%" />}
                 title="Electron"
+                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+              />
+            </CategoryCardWrapper>
+          </FullScreenSection>
+        </ScrollSnapParagraph>
+        <ScrollSnapParagraph ref={paragraphs[6]}>
+          <FullScreenSection latest>
+            <CategoryHeader
+              title="Designtools"
+              description="Meine Kenntnisse im Bereich von Prototyping und Bildbearbeitung"
+            />
+            <CategoryCardWrapper>
+              <CategoryCard
+                icon={<FlaskDesign height="100%" />}
+                title="Adobe XD"
+                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+              />
+              <CategoryCard
+                icon={<FlaskDesign height="100%" />}
+                title="Affinity Photo"
+                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
+              />
+              <CategoryCard
+                icon={<FlaskDesign height="100%" />}
+                title="Affinity Designer"
                 description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
               />
             </CategoryCardWrapper>
