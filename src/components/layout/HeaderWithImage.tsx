@@ -2,6 +2,7 @@ import { motion, useSpring, useTransform } from "framer-motion";
 import React, { forwardRef, PropsWithChildren, useEffect } from "react";
 import flyFromTop from "../../variants/flyFromTop";
 import ResponsiveImage from "../elements/generic/ResponsiveImage";
+import styles from "./HeaderWithImage.module.css";
 
 const getHeightForSection = (first?: boolean, latest?: boolean) => {
   if (first && latest) {
@@ -43,30 +44,13 @@ const HeaderWithImage = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
     }, []);
     return (
       <header
+        className={styles.header}
         ref={ref}
         style={{
-          flex: 1,
-          width: "100%",
           height: getHeightForSection(first, latest),
-          display: "grid",
-          gridTemplateColumns: "50% 50%",
-          gridTemplateRows: "100%",
         }}
       >
-        <motion.div
-          variants={flyFromTop}
-          initial="initial"
-          animate="animate"
-          style={{
-            flex: 1,
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "105px",
-          }}
-        >
+        <motion.div variants={flyFromTop} initial="initial" animate="animate">
           {align === "right" ? (
             children
           ) : (
@@ -81,19 +65,7 @@ const HeaderWithImage = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
             />
           )}
         </motion.div>
-        <motion.div
-          style={{
-            flex: 1,
-            x,
-            opacity,
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "10%",
-          }}
-        >
+        <motion.div>
           {align === "left" ? (
             children
           ) : (
