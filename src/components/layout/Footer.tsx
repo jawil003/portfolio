@@ -15,7 +15,6 @@ const Footer: React.FC<Props> = () => {
     <footer
       style={{
         height: "70px",
-        width: "100vw",
         padding: "5px",
         display: "flex",
         justifyContent: "space-around",

@@ -51,6 +51,7 @@ const Contact: React.FC<Props> = () => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null)
   );
 
@@ -100,7 +101,7 @@ const Contact: React.FC<Props> = () => {
             tooltipText="Backend"
             tooltipOrientation="left"
             onClick={() =>
-              paragraphs[1].current?.scrollIntoView({
+              paragraphs[2].current?.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
               })
@@ -113,7 +114,7 @@ const Contact: React.FC<Props> = () => {
             tooltipText="Web"
             tooltipOrientation="bottom"
             onClick={() =>
-              paragraphs[2].current?.scrollIntoView({
+              paragraphs[3].current?.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
               })
@@ -127,7 +128,7 @@ const Contact: React.FC<Props> = () => {
             tooltipText="Mobile"
             tooltipOrientation="bottom"
             onClick={() =>
-              paragraphs[3].current?.scrollIntoView({
+              paragraphs[4].current?.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
               })
@@ -140,7 +141,7 @@ const Contact: React.FC<Props> = () => {
           <IconButton
             tooltipText="Desktop"
             onClick={() =>
-              paragraphs[4].current?.scrollIntoView({
+              paragraphs[5].current?.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
               })
@@ -207,7 +208,7 @@ const Contact: React.FC<Props> = () => {
           </FullScreenSection>
         </ScrollSnapParagraph>
         <ScrollSnapParagraph>
-          <FullScreenSection ref={paragraphs[2]}>
+          <FullScreenSection ref={paragraphs[3]}>
             <CategoryHeader
               title="Webentwicklungskenntnisse"
               description="Meine Kenntnisse im Bereich der der Webentwicklung"
@@ -226,7 +227,7 @@ const Contact: React.FC<Props> = () => {
             </CategoryCardWrapper>
           </FullScreenSection>
         </ScrollSnapParagraph>
-        <ScrollSnapParagraph ref={paragraphs[3]}>
+        <ScrollSnapParagraph ref={paragraphs[4]}>
           <FullScreenSection>
             <CategoryHeader
               title="Kenntnisse der mobilen Anwendungsenwicklung"
@@ -246,7 +247,7 @@ const Contact: React.FC<Props> = () => {
             </CategoryCardWrapper>
           </FullScreenSection>
         </ScrollSnapParagraph>
-        <ScrollSnapParagraph ref={paragraphs[4]}>
+        <ScrollSnapParagraph ref={paragraphs[5]}>
           <FullScreenSection latest>
             <CategoryHeader
               title="Desktopanwendungsentwicklung"
