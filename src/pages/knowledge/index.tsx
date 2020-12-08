@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import CategoryCard from "../../components/elements/custom/CategoryCard";
 import CategoryCardWrapper from "../../components/layout/CategoryCardWrapper";
 import CategoryHeader from "../../components/elements/custom/CategoryHeader";
@@ -27,6 +27,7 @@ import NavigationBar from "../../components/layout/NavigationBar";
 import Footer from "../../components/layout/Footer";
 import ScrollSnapParagraph from "../../components/elements/generic/SnapScrollParagraph";
 import BackTopButton from "../../components/elements/custom/BackTopButton";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 interface Props {}
 
@@ -42,7 +43,10 @@ const Contact: React.FC<Props> = () => {
     },
   } = useTheme();
 
+  const [hideButton, setHideButton] = useState(true);
+
   const paragraphs = Array.of(
+    useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -50,12 +54,23 @@ const Contact: React.FC<Props> = () => {
     useRef<HTMLDivElement>(null)
   );
 
+  useScrollPosition(
+    ({ currPos }) => {
+      if (currPos.y === 0) setHideButton(true);
+      else setHideButton(false);
+    },
+    [hideButton],
+    undefined,
+    false,
+    300
+  );
+
   return (
     <>
       <Head>
         <title>Jannik Will | Kenntnisse</title>
       </Head>
-      <ScrollSnapParagraph align="start">
+      <ScrollSnapParagraph ref={paragraphs[0]} align="start">
         <NavigationBar />
       </ScrollSnapParagraph>
       <HeaderWithIcon first icon={<KnowledgeDesign width="100%" />}>
@@ -82,6 +97,8 @@ const Contact: React.FC<Props> = () => {
           }}
         >
           <IconButton
+            tooltipText="Backend"
+            tooltipOrientation="left"
             onClick={() =>
               paragraphs[1].current?.scrollIntoView({
                 behavior: "smooth",
@@ -93,6 +110,8 @@ const Contact: React.FC<Props> = () => {
           </IconButton>
 
           <IconButton
+            tooltipText="Web"
+            tooltipOrientation="bottom"
             onClick={() =>
               paragraphs[2].current?.scrollIntoView({
                 behavior: "smooth",
@@ -105,6 +124,8 @@ const Contact: React.FC<Props> = () => {
           </IconButton>
 
           <IconButton
+            tooltipText="Mobile"
+            tooltipOrientation="bottom"
             onClick={() =>
               paragraphs[3].current?.scrollIntoView({
                 behavior: "smooth",
@@ -117,6 +138,7 @@ const Contact: React.FC<Props> = () => {
           </IconButton>
 
           <IconButton
+            tooltipText="Desktop"
             onClick={() =>
               paragraphs[4].current?.scrollIntoView({
                 behavior: "smooth",
@@ -138,8 +160,8 @@ const Contact: React.FC<Props> = () => {
           color: secondaryText,
         }}
       >
-        <ScrollSnapParagraph>
-          <FullScreenSection ref={paragraphs[0]}>
+        <ScrollSnapParagraph ref={paragraphs[1]}>
+          <FullScreenSection>
             <CategoryHeader
               title="Prinzipien"
               description="Die Designprinzipien an denen sich mein Code orientiert"
@@ -164,8 +186,8 @@ const Contact: React.FC<Props> = () => {
             </CategoryCardWrapper>
           </FullScreenSection>
         </ScrollSnapParagraph>
-        <ScrollSnapParagraph>
-          <FullScreenSection ref={paragraphs[1]}>
+        <ScrollSnapParagraph ref={paragraphs[2]}>
+          <FullScreenSection>
             <CategoryHeader
               title="Serversysteme"
               description="Meine Kenntnisse im Bereich der Serverentwicklung"
@@ -204,8 +226,8 @@ const Contact: React.FC<Props> = () => {
             </CategoryCardWrapper>
           </FullScreenSection>
         </ScrollSnapParagraph>
-        <ScrollSnapParagraph>
-          <FullScreenSection ref={paragraphs[3]}>
+        <ScrollSnapParagraph ref={paragraphs[3]}>
+          <FullScreenSection>
             <CategoryHeader
               title="Kenntnisse der mobilen Anwendungsenwicklung"
               description="Meine Kenntnisse im Bereich der der Mobile App Entwicklung"
@@ -224,8 +246,8 @@ const Contact: React.FC<Props> = () => {
             </CategoryCardWrapper>
           </FullScreenSection>
         </ScrollSnapParagraph>
-        <ScrollSnapParagraph>
-          <FullScreenSection ref={paragraphs[4]} latest>
+        <ScrollSnapParagraph ref={paragraphs[4]}>
+          <FullScreenSection latest>
             <CategoryHeader
               title="Desktopanwendungsentwicklung"
               description="Meine Kenntnisse im Bereich der Desktop Entwicklung für PC und Mac"
@@ -240,7 +262,16 @@ const Contact: React.FC<Props> = () => {
           </FullScreenSection>
         </ScrollSnapParagraph>
       </main>
-      <Footer /> <BackTopButton />
+      <Footer />{" "}
+      <BackTopButton
+        hidden={hideButton}
+        onClick={() => {
+          paragraphs[0].current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }}
+      />
     </>
   );
 };

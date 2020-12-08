@@ -1,5 +1,5 @@
-import { motion, useMotionValue } from "framer-motion";
-import React from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React, { useEffect } from "react";
 import TopArrowIcon from "../../icons/topArrow.icon";
 
 interface Props {
@@ -13,12 +13,28 @@ interface Props {
  * @version 0.1
  */
 const BackTopButton: React.FC<Props> = ({ hidden, onClick }) => {
-  const scale = useMotionValue(1);
+  const scale = useSpring(1);
+  const y = useSpring(0);
+  const opacity = useTransform(y, [5, 0], [0, 1]);
+
+  useEffect(() => {
+    if (hidden) {
+      y.set(5);
+    } else {
+      y.set(0);
+    }
+  }, [hidden]);
+
   return (
     <motion.div
+      onHoverStart={() => scale.set(1.2)}
+      onHoverEnd={() => scale.set(1)}
       style={{
+        y,
+        opacity,
         scale,
-        display: hidden ? "none" : "flex",
+        boxSizing: "border-box",
+        display: "flex",
         width: "52px",
         height: "52px",
         backgroundColor: "var(--darkblue)",

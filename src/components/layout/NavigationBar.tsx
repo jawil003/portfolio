@@ -19,7 +19,6 @@ const NavigationBar: React.FC<Props> = () => {
       style={{
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "center",
         height: "100px",
       }}
     >
@@ -29,7 +28,7 @@ const NavigationBar: React.FC<Props> = () => {
       <div
         style={{
           display: "flex",
-          alignItems: "flex-start",
+          alignItems: "center",
         }}
       >
         <NavigationBarItem href="/" icon={<HomeIcon height="23px" />}>
