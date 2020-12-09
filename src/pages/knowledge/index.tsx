@@ -29,6 +29,7 @@ import ScrollSnapParagraph from "../../components/elements/generic/SnapScrollPar
 import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
+import useBreakpoint from "../../hooks/useBreakpoints.hook";
 
 interface Props {}
 
@@ -56,7 +57,7 @@ const Contact: React.FC<Props> = () => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null)
   );
-
+  const { width } = useBreakpoint();
   useScrollPosition(
     ({ currPos }) => {
       if (currPos.y === 0) setHideButton(true);
@@ -95,7 +96,8 @@ const Contact: React.FC<Props> = () => {
           style={{
             width: "70%",
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "center",
+            gap: "10px",
             flexWrap: "wrap",
           }}
         >
@@ -114,7 +116,7 @@ const Contact: React.FC<Props> = () => {
 
           <IconButton
             tooltipText="Web"
-            tooltipOrientation="bottom"
+            tooltipOrientation={width > 1350 ? "bottom" : "top"}
             onClick={() =>
               paragraphs[3].current?.scrollIntoView({
                 behavior: "smooth",
@@ -128,7 +130,9 @@ const Contact: React.FC<Props> = () => {
 
           <IconButton
             tooltipText="Mobile"
-            tooltipOrientation="bottom"
+            tooltipOrientation={
+              width > 1350 ? "bottom" : width > 1160 ? "top" : "right"
+            }
             onClick={() =>
               paragraphs[4].current?.scrollIntoView({
                 behavior: "smooth",
@@ -141,6 +145,9 @@ const Contact: React.FC<Props> = () => {
           </IconButton>
 
           <IconButton
+            tooltipOrientation={
+              width > 1350 ? "bottom" : width > 1160 ? "right" : "bottom"
+            }
             tooltipText="Desktop"
             onClick={() =>
               paragraphs[5].current?.scrollIntoView({
@@ -154,6 +161,7 @@ const Contact: React.FC<Props> = () => {
           </IconButton>
           <IconButton
             tooltipText="Design"
+            tooltipOrientation={width > 1350 ? "right" : "bottom"}
             onClick={() =>
               paragraphs[6].current?.scrollIntoView({
                 behavior: "smooth",
@@ -162,7 +170,7 @@ const Contact: React.FC<Props> = () => {
             }
             color="var(--orange)"
           >
-            <DropIcon height="50%" />
+            <DropIcon height="27px" />
           </IconButton>
         </div>
       </HeaderWithIcon>

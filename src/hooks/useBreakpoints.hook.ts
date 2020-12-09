@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { throttle } from "lodash";
 
 const getDeviceConfig = (width: number) => {
   if (width < 320) {
@@ -12,18 +11,26 @@ const getDeviceConfig = (width: number) => {
     return "lg";
   }
 };
-
 const useBreakpoint = () => {
-  const [brkPnt, setBrkPnt] = useState(() =>
-    getDeviceConfig(window.innerWidth)
-  );
+  const [brkPnt, setBrkPnt] = useState<{
+    width: number;
+    height: number;
+    breakpoint?: "xs" | "sm" | "md" | "lg";
+  }>({ width: 0, height: 0, breakpoint: undefined });
 
   useEffect(() => {
-    const calcInnerWidth = throttle(function () {
-      setBrkPnt(getDeviceConfig(window.innerWidth));
-    }, 200);
+    const calcInnerWidth = function () {
+      setBrkPnt({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        breakpoint: getDeviceConfig(window.innerWidth),
+      });
+    };
     window.addEventListener("resize", calcInnerWidth);
-    return () => window.removeEventListener("resize", calcInnerWidth);
+    calcInnerWidth();
+    return () => {
+      window.removeEventListener("resize", calcInnerWidth);
+    };
   }, []);
 
   return brkPnt;

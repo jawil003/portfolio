@@ -39,7 +39,6 @@ const IconButton: React.FC<Props> = ({
         onClick={onClick}
         style={{
           scale,
-          margin: "10px 10px",
           height: size,
           width: size,
           backgroundColor: color,

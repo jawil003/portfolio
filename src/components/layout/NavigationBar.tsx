@@ -19,18 +19,17 @@ interface Props {}
  * @version 0.1
  */
 const NavigationBar: React.FC<Props> = () => {
-  const isServer = useIsServer();
   const scaleX = useSpring(0, { duration: 120 });
   const opacity = useTransform(scaleX, [0, 1], [0, 1]);
 
-  const points = isServer ? undefined : useBreakpoint();
+  const { breakpoint } = useBreakpoint();
 
   useEffect(() => {
-    if (points === "xs" || points === "sm") scaleX.set(0);
+    if (breakpoint === "xs" || breakpoint === "sm") scaleX.set(0);
     else {
       scaleX.set(1);
     }
-  }, [points]);
+  }, [breakpoint]);
 
   return (
     <>

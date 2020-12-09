@@ -13,7 +13,7 @@ interface Props {
 const DropIcon: React.FC<Props> = ({ width, height }) => {
   return (
     <svg
-      viewBox="0 0 512 512"
+      viewBox="0 0 351 512"
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
