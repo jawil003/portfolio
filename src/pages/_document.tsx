@@ -18,6 +18,11 @@ class MyDocument extends Document {
             href="img/favicon.png"
             type="image/x-icon"
           />
+          <script
+            data-ad-client="ca-pub-5824308190612452"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
         </Head>
 
         <body

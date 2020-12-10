@@ -30,6 +30,8 @@ import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
 import useBreakpoint from "../../hooks/useBreakpoints.hook";
+import ElectronIcon from "../../components/icons/electron.icon";
+import AdobeXdIcon from "../../components/icons/adobeXd.icon";
 
 interface Props {}
 
@@ -194,7 +196,6 @@ const Contact: React.FC<Props> = () => {
                 icon={<FlaskDesign height="100%" />}
                 title="Test Driven Development"
                 description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-                href="/knowledge/testDrivenDevelopment"
               />
               <CategoryCard
                 icon={<SettingsPageDesign height="100%" />}
@@ -277,7 +278,7 @@ const Contact: React.FC<Props> = () => {
             />
             <CategoryCardWrapper>
               <CategoryCard
-                icon={<FlaskDesign height="100%" />}
+                icon={<ElectronIcon height="100%" />}
                 title="Electron"
                 description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
               />
@@ -292,7 +293,7 @@ const Contact: React.FC<Props> = () => {
             />
             <CategoryCardWrapper>
               <CategoryCard
-                icon={<FlaskDesign height="100%" />}
+                icon={<AdobeXdIcon height="100%" />}
                 title="Adobe XD"
                 description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
               />
