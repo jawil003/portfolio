@@ -7,6 +7,7 @@ import styles from "./NavigationBarItem.module.css";
 interface Props {
   icon: JSX.Element;
   href: string;
+  color?: string;
 }
 
 /**
@@ -14,12 +15,12 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const NavigationBarItem: React.FC<Props> = ({ children, icon, href }) => {
-  const {
-    palette: {
-      color: { secondaryText },
-    },
-  } = useTheme();
+const NavigationBarItem: React.FC<Props> = ({
+  children,
+  icon,
+  href,
+  color,
+}) => {
   return (
     <Link href={href}>
       <a
@@ -38,12 +39,14 @@ const NavigationBarItem: React.FC<Props> = ({ children, icon, href }) => {
         }}
       >
         <div style={{ height: "100%" }}>{icon}</div>
-        <Typography variant="b1" bold="semi-bold" color={secondaryText}>
+        <Typography variant="b1" bold="semi-bold" color={color}>
           {children}
         </Typography>
       </a>
     </Link>
   );
 };
+
+NavigationBarItem.defaultProps = { color: "var(--secondaryText)" };
 
 export default NavigationBarItem;

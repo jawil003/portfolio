@@ -25,12 +25,17 @@ const Footer: React.FC<Props> = ({ color }) => {
         alignItems: "center",
       }}
     >
-      <NavigationBarItem href="/contact" icon={<MailIcon height="23px" />}>
+      <NavigationBarItem
+        color={color}
+        href="/contact"
+        icon={<MailIcon color={color} height="23px" />}
+      >
         Kontakt
       </NavigationBarItem>
       <NavigationBarItem
+        color={color}
         href="/impressum"
-        icon={<WorldWideIcon height="23px" />}
+        icon={<WorldWideIcon color={color} height="23px" />}
       >
         Impressum
       </NavigationBarItem>

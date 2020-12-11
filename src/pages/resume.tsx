@@ -100,7 +100,7 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
             ))}
           </ResumeContainer>
         </main>
-        <Footer color="var(--darkwhite)" />
+        <Footer color="var(--primary)" />
       </ColorContainer>
     </>
   );
