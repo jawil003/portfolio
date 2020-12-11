@@ -15,7 +15,10 @@ export default class KnowledgeService {
             items {
               title
               description
-              icon
+              icon {
+                title
+                href
+              }
             }
           }
         }

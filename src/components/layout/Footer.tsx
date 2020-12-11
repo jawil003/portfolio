@@ -3,14 +3,18 @@ import MailIcon from "../icons/mail.icon";
 import WorldWideIcon from "../icons/worldwide.icon";
 import NavigationBarItem from "../elements/custom/NavigationBarItem";
 
-interface Props {}
+interface Props {
+  color?: string;
+}
+
+//TODO: Complete Color Mechanism
 
 /**
  * An Footer React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const Footer: React.FC<Props> = () => {
+const Footer: React.FC<Props> = ({ color }) => {
   return (
     <footer
       style={{
@@ -33,5 +37,7 @@ const Footer: React.FC<Props> = () => {
     </footer>
   );
 };
+
+Footer.defaultProps = { color: "var(--secondaryText)" };
 
 export default Footer;

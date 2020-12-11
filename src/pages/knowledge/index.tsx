@@ -23,7 +23,7 @@ import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
 import useBreakpoint from "../../hooks/useBreakpoints.hook";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import KnowledgeService from "src/services/knowledge.service";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
 import dynamic from "next/dynamic";
@@ -48,6 +48,9 @@ const SettingsPageDesign = dynamic(
 );
 const PrototypeDesign = dynamic(
   () => import("../../components/designs/prototype.design")
+);
+const AffinityDesignerIcon = dynamic(
+  () => import("../../components/icons/affinityDesigner.icon")
 );
 const AffinityPhotoIcon = dynamic(
   () => import("../../components/icons/affinityPhoto.icon")
@@ -81,6 +84,9 @@ const getIconForName = (name?: string) => {
     }
     case "PrototypeDesign": {
       return <PrototypeDesign height="100%" />;
+    }
+    case "AffinityDesignerIcon": {
+      return <AffinityDesignerIcon height="100%" />;
     }
     case "AffinityPhotoIcon": {
       return <AffinityPhotoIcon height="100%" />;
@@ -280,7 +286,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
       knowledgeCategories: await KnowledgeService.getAllKnowledgeCategoriesWithItems(),
