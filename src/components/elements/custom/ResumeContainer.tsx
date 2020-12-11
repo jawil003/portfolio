@@ -11,9 +11,10 @@ const ResumeContainer: React.FC<Props> = ({ children }) => {
   return (
     <div
       style={{
-        display: "grid",
+        display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
-        alignContent: "center",
+        paddingTop: "100px",
       }}
     >
       {children}

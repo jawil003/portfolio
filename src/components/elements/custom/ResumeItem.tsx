@@ -1,13 +1,12 @@
 import React from "react";
 import useTheme from "src/hooks/useTheme.hook";
+import Spacer from "../generic/Spacer";
+import Typography from "../generic/Typography";
 
 interface Props {
-  backgroundColor: "primary" | "secondary";
   date: string;
+  title: string;
   description: string;
-  icon: JSX.Element;
-  direction?: "ltr" | "rtl";
-  first?: boolean;
   latest?: boolean;
 }
 
@@ -16,82 +15,87 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ResumeItem: React.FC<Props> = ({
-  backgroundColor,
-  description,
-  icon,
-  date,
-  first,
-  latest,
-}) => {
+const ResumeItem: React.FC<Props> = ({ description, title, date, latest }) => {
   const {
     palette: {
-      color: { primary, secondary },
+      color: { secondary },
     },
   } = useTheme();
   return (
-    <div
-      style={{
-        margin: "auto",
-        paddingTop: first ? "70px" : undefined,
-        paddingBottom: latest ? "70px" : undefined,
-        borderTopLeftRadius: first ? "20px" : undefined,
-        borderTopRightRadius: first ? "20px" : undefined,
-        borderBottomLeftRadius: latest ? "20px" : undefined,
-        borderBottomRightRadius: latest ? "20px" : undefined,
-        width: "calc(100%)",
-        display: "flex",
-
-        height: "200px",
-      }}
-    >
-      <div
-        style={{
-          flex: 0,
-          padding: "20px",
-          color: "primary" ? primary : secondary,
-          fontSize: "1.2em",
-          display: "flex",
-          alignItems: first ? "flex-start" : latest ? "flex-end" : "center",
-        }}
-      >
-        {date}
+    <div style={{ position: "relative", display: "flex", minHeight: "200px" }}>
+      <div style={{ display: "flex", flex: 1, justifyContent: "center" }}>
+        <div
+          style={{
+            backgroundColor: "var(--darkwhite)",
+            width: "3.5px",
+            height: latest ? "calc(100% + 70px)" : "100%",
+          }}
+        />
       </div>
       <div
         style={{
-          borderLeft: `2.5px solid ${
-            backgroundColor === "primary" ? secondary : primary
-          }`,
-
-          width: "2.5px",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
           height: "100%",
-        }}
-      />
-      <div
-        style={{
-          flex: 1,
           display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
         }}
       >
         <div
           style={{
             flex: 1,
-            color: backgroundColor === "primary" ? secondary : primary,
-            padding: "20px",
-            opacity: 0.75,
             display: "flex",
-            alignItems: first ? "flex-start" : latest ? "flex-end" : "center",
+            justifyContent: "flex-end",
+            alignItems: "flex-start",
+            color: "var(--darkwhite)",
           }}
         >
-          {description}
+          <Typography color={"var(--darkwhite)"} variant="h6" bold="semi-bold">
+            {date}
+          </Typography>
+        </div>
+        <div
+          style={{
+            width: "25px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            margin: "0px 20px",
+          }}
+        >
+          <div
+            style={{
+              height: "25px",
+              border: `5px solid ${"var(--darkwhite)"}`,
+              borderRadius: "100%",
+              backgroundColor: secondary,
+            }}
+          />
+        </div>
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            color: "var(--darkwhite)",
+          }}
+        >
+          <Typography bold="semi-bold" color={"var(--darkwhite)"} variant="h6">
+            {title}
+          </Typography>
+          <Spacer height="0.4em" />
+          <Typography variant="b2" color={"var(--darkwhite)"} italic>
+            {description}
+          </Typography>
         </div>
       </div>
     </div>
   );
 };
 
-ResumeItem.defaultProps = { direction: "ltr", first: false, latest: false };
+ResumeItem.defaultProps = { latest: false };
 
 export default ResumeItem;

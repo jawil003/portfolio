@@ -10,6 +10,7 @@ import SnapScrollParagraph from "../components/elements/generic/SnapScrollParagr
 import ResumeItem from "src/components/elements/custom/ResumeItem";
 import ColorContainer from "src/components/elements/generic/ColorContainer";
 import ResumeContainer from "src/components/elements/custom/ResumeContainer";
+import ResumeHeader from "src/components/elements/custom/ResumeHeader";
 
 interface Props {}
 
@@ -76,12 +77,19 @@ const Contact: React.FC<Props> = () => {
             </svg>
           </div>
           <ResumeContainer>
-            <ResumeItem first date="12.12.2012" description="Hallo Test" />
-            <ResumeItem date="12.12.2012" description="Hallo Test" />
+            <ResumeItem
+              date="2019"
+              title="Agido Gmbh"
+              description="Hallo Test"
+            />
+            <ResumeItem
+              date="12.12.2012"
+              description="Hallo Test wefffewf fewfewfwefew fwefwfwfwfwf"
+            />
             <ResumeItem latest date="12.12.2012" description="Hallo Test" />
           </ResumeContainer>
         </main>
-        <Footer color="var(--primary)" />
+        <Footer color="var(--darkwhite)" />
       </ColorContainer>
     </>
   );

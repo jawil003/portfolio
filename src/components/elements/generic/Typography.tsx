@@ -12,14 +12,14 @@ const generateStyle = (
   const style: CSSProperties = {
     fontSize: `${fontSize}rem`,
     fontWeight:
-      fontSize > 1
-        ? 700
-        : bold === "semi-bold"
+      bold === "semi-bold"
         ? 600
         : bold === "bold"
         ? 700
         : bold === "bolder"
         ? 900
+        : fontSize > 1
+        ? 700
         : 400,
     color,
     fontFamily,
