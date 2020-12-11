@@ -7,21 +7,14 @@ import CategoryHeader from "../../components/elements/custom/CategoryHeader";
 import FullScreenSection from "../../components/elements/custom/FullScreenSection";
 import FlaskDesign from "../../components/designs/flask.design";
 import KnowledgeDesign from "../../components/designs/knowledge.design";
-import PrototypeDesign from "../../components/designs/prototype.design";
-import SettingsPageDesign from "../../components/designs/settingsPage.design";
 import IconButton from "../../components/elements/generic/IconButton";
 import Spacer from "../../components/elements/generic/Spacer";
 import Typography from "../../components/elements/generic/Typography";
 import HeaderWithIcon from "../../components/layout/HeaderWithIcon";
-import AndroidIcon from "../../components/icons/android.icon";
 import DatabaseIcon from "../../components/icons/database.icon";
 import DesktopIcon from "../../components/icons/desktop.icon";
 import DisplayAndWebpageIcon from "../../components/icons/displayAndWebpage.icon";
-import JavaIcon from "../../components/icons/java.icon";
-import NodeIcon from "../../components/icons/nodejs.icon";
-import ReactIcon from "../../components/icons/react.icon";
 import SmartphoneIcon from "../../components/icons/smartphone.icon";
-import TypescriptIcon from "../../components/icons/typescript.icon";
 import useTheme from "../../hooks/useTheme.hook";
 import NavigationBar from "../../components/layout/NavigationBar";
 import Footer from "../../components/layout/Footer";
@@ -30,17 +23,86 @@ import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
 import useBreakpoint from "../../hooks/useBreakpoints.hook";
-import ElectronIcon from "../../components/icons/electron.icon";
-import AdobeXdIcon from "../../components/icons/adobeXd.icon";
+import { GetStaticProps } from "next";
+import KnowledgeService from "src/services/knowledge.service";
+import KnowledgeCategory from "src/model/KnowledgeCategory.model";
+import dynamic from "next/dynamic";
+
+const AdobeXdIcon = dynamic(
+  () => import("../../components/icons/adobeXd.icon")
+);
+const ElectronIcon = dynamic(
+  () => import("../../components/icons/electron.icon")
+);
+const TypescriptIcon = dynamic(
+  () => import("../../components/icons/typescript.icon")
+);
+const ReactIcon = dynamic(() => import("../../components/icons/react.icon"));
+const NodeIcon = dynamic(() => import("../../components/icons/nodejs.icon"));
+const JavaIcon = dynamic(() => import("../../components/icons/java.icon"));
+const AndroidIcon = dynamic(
+  () => import("../../components/icons/android.icon")
+);
+const SettingsPageDesign = dynamic(
+  () => import("../../components/designs/settingsPage.design")
+);
+const PrototypeDesign = dynamic(
+  () => import("../../components/designs/prototype.design")
+);
+const AffinityPhotoIcon = dynamic(
+  () => import("../../components/icons/affinityPhoto.icon")
+);
+
+const getIconForName = (name: string) => {
+  switch (name) {
+    case "ElectronIcon": {
+      return <ElectronIcon height="100%" />;
+    }
+    case "AdobeXdIcon": {
+      return <AdobeXdIcon height="100%" />;
+    }
+    case "TypescriptIcon": {
+      return <TypescriptIcon height="100%" />;
+    }
+    case "ReactIcon": {
+      return <ReactIcon height="100%" />;
+    }
+    case "NodeIcon": {
+      return <NodeIcon height="100%" />;
+    }
+    case "JavaIcon": {
+      return <JavaIcon height="100%" />;
+    }
+    case "AndroidIcon": {
+      return <AndroidIcon height="100%" />;
+    }
+    case "SettingsPageDesign": {
+      return <SettingsPageDesign height="100%" />;
+    }
+    case "PrototypeDesign": {
+      return <PrototypeDesign height="100%" />;
+    }
+    case "AffinityPhotoIcon": {
+      return <AffinityPhotoIcon height="100%" />;
+    }
+    default: {
+      return <FlaskDesign height="100%" />;
+    }
+  }
+};
 
 interface Props {}
+
+interface StaticProps {
+  knowledgeCategories: KnowledgeCategory[];
+}
 
 /**
  * An Contact React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const Contact: React.FC<Props> = () => {
+const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
   const {
     palette: {
       color: { primary, secondaryText },
@@ -185,131 +247,24 @@ const Contact: React.FC<Props> = () => {
           color: secondaryText,
         }}
       >
-        <ScrollSnapParagraph ref={paragraphs[1]}>
-          <FullScreenSection>
-            <CategoryHeader
-              title="Prinzipien"
-              description="Die Designprinzipien an denen sich mein Code orientiert"
-            />
-            <CategoryCardWrapper>
-              <CategoryCard
-                icon={<FlaskDesign height="100%" />}
-                title="Test Driven Development"
-                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-              />
-              <CategoryCard
-                icon={<SettingsPageDesign height="100%" />}
-                title="Kommentierter Code"
-                description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
-              />
-              <CategoryCard
-                icon={<PrototypeDesign height="100%" />}
-                title="Prototyping"
-                description="Die Entwicklung von Software auf Basis von Modellen"
-              />
-            </CategoryCardWrapper>
-          </FullScreenSection>
-        </ScrollSnapParagraph>
-        <ScrollSnapParagraph ref={paragraphs[2]}>
-          <FullScreenSection>
-            <CategoryHeader
-              title="Serversysteme"
-              description="Meine Kenntnisse im Bereich der Serverentwicklung"
-            />
-            <CategoryCardWrapper>
-              <CategoryCard
-                icon={<NodeIcon height="100%" />}
-                title="Node"
-                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-              />
-              <CategoryCard
-                icon={<JavaIcon height="100%" />}
-                title="Java"
-                description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
-              />
-            </CategoryCardWrapper>
-          </FullScreenSection>
-        </ScrollSnapParagraph>
-        <ScrollSnapParagraph>
-          <FullScreenSection ref={paragraphs[3]}>
-            <CategoryHeader
-              title="Webentwicklungskenntnisse"
-              description="Meine Kenntnisse im Bereich der der Webentwicklung"
-            />
-            <CategoryCardWrapper>
-              <CategoryCard
-                icon={<TypescriptIcon height="100%" />}
-                title="Typescript"
-                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-              />
-              <CategoryCard
-                icon={<ReactIcon height="100%" />}
-                title="React"
-                description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
-              />
-            </CategoryCardWrapper>
-          </FullScreenSection>
-        </ScrollSnapParagraph>
-        <ScrollSnapParagraph ref={paragraphs[4]}>
-          <FullScreenSection>
-            <CategoryHeader
-              title="Kenntnisse der mobilen Anwendungsenwicklung"
-              description="Meine Kenntnisse im Bereich der der Mobile App Entwicklung"
-            />
-            <CategoryCardWrapper>
-              <CategoryCard
-                icon={<AndroidIcon height="100%" />}
-                title="Android JDK"
-                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-              />
-              <CategoryCard
-                icon={<ReactIcon height="100%" />}
-                title="React Native"
-                description="Die Entwicklung von Software auf Basis von verständlichen Kommentaren"
-              />
-            </CategoryCardWrapper>
-          </FullScreenSection>
-        </ScrollSnapParagraph>
-        <ScrollSnapParagraph ref={paragraphs[5]}>
-          <FullScreenSection latest>
-            <CategoryHeader
-              title="Desktopanwendungsentwicklung"
-              description="Meine Kenntnisse im Bereich der Desktop Entwicklung für PC und Mac"
-            />
-            <CategoryCardWrapper>
-              <CategoryCard
-                icon={<ElectronIcon height="100%" />}
-                title="Electron"
-                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-              />
-            </CategoryCardWrapper>
-          </FullScreenSection>
-        </ScrollSnapParagraph>
-        <ScrollSnapParagraph ref={paragraphs[6]}>
-          <FullScreenSection latest>
-            <CategoryHeader
-              title="Designtools"
-              description="Meine Kenntnisse im Bereich von Prototyping und Bildbearbeitung"
-            />
-            <CategoryCardWrapper>
-              <CategoryCard
-                icon={<AdobeXdIcon height="100%" />}
-                title="Adobe XD"
-                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-              />
-              <CategoryCard
-                icon={<FlaskDesign height="100%" />}
-                title="Affinity Photo"
-                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-              />
-              <CategoryCard
-                icon={<FlaskDesign height="100%" />}
-                title="Affinity Designer"
-                description="Die Entwicklung von Software auf Basis von getrennten Zuständigkeiten"
-              />
-            </CategoryCardWrapper>
-          </FullScreenSection>
-        </ScrollSnapParagraph>
+        {knowledgeCategories.map(({ title, description, items }, index) => (
+          <ScrollSnapParagraph ref={paragraphs[index + 1]}>
+            <FullScreenSection
+              latest={index === knowledgeCategories.length - 1 ? true : false}
+            >
+              <CategoryHeader title={title} description={description} />
+              <CategoryCardWrapper>
+                {items.map(({ title, description, icon }) => (
+                  <CategoryCard
+                    title={title}
+                    description={description}
+                    icon={getIconForName(icon)}
+                  />
+                ))}
+              </CategoryCardWrapper>
+            </FullScreenSection>
+          </ScrollSnapParagraph>
+        ))}
       </main>
       <Footer />{" "}
       <BackTopButton
@@ -323,6 +278,14 @@ const Contact: React.FC<Props> = () => {
       />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      knowledgeCategories: await KnowledgeService.getAllKnowledgeCategoriesWithItems(),
+    },
+  };
 };
 
 export default Contact;
