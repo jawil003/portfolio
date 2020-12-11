@@ -87,7 +87,12 @@ const ResumeItem: React.FC<Props> = ({ description, title, date, latest }) => {
             {title}
           </Typography>
           <Spacer height="0.4em" />
-          <Typography variant="b2" color={"var(--darkwhite)"} italic>
+          <Typography
+            maxLength="150px"
+            variant="b2"
+            color={"var(--darkwhite)"}
+            italic
+          >
             {description}
           </Typography>
         </div>

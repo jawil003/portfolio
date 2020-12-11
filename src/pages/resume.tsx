@@ -6,20 +6,25 @@ import Typography from "../components/elements/generic/Typography";
 import Footer from "../components/layout/Footer";
 import HeaderWithIcon from "../components/layout/HeaderWithIcon";
 import NavigationBar from "../components/layout/NavigationBar";
-import SnapScrollParagraph from "../components/elements/generic/SnapScrollParagraph";
-import ResumeItem from "src/components/elements/custom/ResumeItem";
 import ColorContainer from "src/components/elements/generic/ColorContainer";
 import ResumeContainer from "src/components/elements/custom/ResumeContainer";
-import ResumeHeader from "src/components/elements/custom/ResumeHeader";
+import { GetServerSideProps } from "next";
+import ResumeService from "src/services/resume.service";
+import ResumeItemType from "src/model/ResumeItem.model";
+import ResumeItem from "src/components/elements/custom/ResumeItem";
 
 interface Props {}
+
+interface ServerSideProps {
+  resumeItems: ResumeItemType[];
+}
 
 /**
  * An Contact React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const Contact: React.FC<Props> = () => {
+const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
   const _paragraphs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -77,22 +82,32 @@ const Contact: React.FC<Props> = () => {
             </svg>
           </div>
           <ResumeContainer>
-            <ResumeItem
-              date="2019"
-              title="Agido Gmbh"
-              description="Hallo Test"
-            />
-            <ResumeItem
-              date="12.12.2012"
-              description="Hallo Test wefffewf fewfewfwefew fwefwfwfwfwf"
-            />
-            <ResumeItem latest date="12.12.2012" description="Hallo Test" />
+            {resumeItems.map(({ title, description, start_year, end_year }) => (
+              <ResumeItem
+                latest
+                date={
+                  start_year && end_year
+                    ? `${start_year}-${end_year}`
+                    : end_year
+                    ? String(end_year)
+                    : start_year
+                    ? `${start_year}-heute`
+                    : "Keines"
+                }
+                title={title}
+                description={description}
+              />
+            ))}
           </ResumeContainer>
         </main>
         <Footer color="var(--darkwhite)" />
       </ColorContainer>
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return { props: { resumeItems: await ResumeService.getAllResumeItems() } };
 };
 
 export default Contact;
