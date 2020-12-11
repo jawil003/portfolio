@@ -53,7 +53,7 @@ const AffinityPhotoIcon = dynamic(
   () => import("../../components/icons/affinityPhoto.icon")
 );
 
-const getIconForName = (name: string) => {
+const getIconForName = (name?: string) => {
   switch (name) {
     case "ElectronIcon": {
       return <ElectronIcon height="100%" />;
@@ -258,7 +258,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
                   <CategoryCard
                     title={title}
                     description={description}
-                    icon={getIconForName(icon)}
+                    icon={getIconForName(icon?.title)}
                   />
                 ))}
               </CategoryCardWrapper>
