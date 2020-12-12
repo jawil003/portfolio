@@ -85,15 +85,8 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
             {resumeItems.map(({ title, description, start_year, end_year }) => (
               <ResumeItem
                 latest
-                date={
-                  start_year && end_year
-                    ? `${start_year}-${end_year}`
-                    : end_year
-                    ? String(end_year)
-                    : start_year
-                    ? `${start_year}-heute`
-                    : "Keines"
-                }
+                start_year={start_year}
+                end_year={end_year}
                 title={title}
                 description={description}
               />

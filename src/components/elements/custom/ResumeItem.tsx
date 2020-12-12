@@ -4,10 +4,11 @@ import Spacer from "../generic/Spacer";
 import Typography from "../generic/Typography";
 
 interface Props {
-  date: string;
   title: string;
   description: string;
   latest?: boolean;
+  start_year?: number;
+  end_year?: number;
 }
 
 /**
@@ -15,7 +16,13 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ResumeItem: React.FC<Props> = ({ description, title, date, latest }) => {
+const ResumeItem: React.FC<Props> = ({
+  description,
+  title,
+  start_year,
+  end_year,
+  latest,
+}) => {
   const {
     palette: {
       color: { secondary },
@@ -45,15 +52,36 @@ const ResumeItem: React.FC<Props> = ({ description, title, date, latest }) => {
         <div
           style={{
             flex: 1,
-            display: "flex",
+            display: "grid",
             justifyContent: "flex-end",
             alignItems: "flex-start",
+            alignContent: "flex-start",
             color: "var(--darkwhite)",
           }}
         >
-          <Typography color={"var(--darkwhite)"} variant="h6" bold="semi-bold">
-            {date}
-          </Typography>
+          {start_year && end_year ? (
+            [
+              <Typography align="center" variant="h6" color="var(--darkwhite)">
+                {start_year}
+              </Typography>,
+              <Typography align="center" variant="h6" color="var(--darkwhite)">
+                {end_year}
+              </Typography>,
+            ]
+          ) : start_year ? (
+            [
+              <Typography align="center" variant="h6" color="var(--darkwhite)">
+                {start_year}
+              </Typography>,
+              <Typography align="center" variant="h6" color="var(--darkwhite)">
+                {"heute"}
+              </Typography>,
+            ]
+          ) : (
+            <Typography align="center" variant="h6" color="var(--darkwhite)">
+              {end_year}
+            </Typography>
+          )}
         </div>
         <div
           style={{
