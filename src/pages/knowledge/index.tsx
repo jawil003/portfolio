@@ -127,7 +127,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null)
   );
-  const { width } = useBreakpoint();
+  const { width, breakpoint } = useBreakpoint();
   useScrollPosition(
     ({ currPos }) => {
       if (currPos.y === 0) setHideButton(true);
@@ -144,9 +144,13 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
       <Head>
         <title>Jannik Will | Kenntnisse</title>
       </Head>
-      <ScrollSnapParagraph ref={paragraphs[0]} align="start">
+      {breakpoint === "xs" || breakpoint === "sm" ? (
         <NavigationBar />
-      </ScrollSnapParagraph>
+      ) : (
+        <ScrollSnapParagraph ref={paragraphs[0]} align="start">
+          <NavigationBar />
+        </ScrollSnapParagraph>
+      )}
       <HeaderWithIcon first icon={<KnowledgeDesign width="100%" />}>
         <Typography variant="h3" align="center">
           Wie kann ich dir helfen?
@@ -258,33 +262,70 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
           color: secondaryText,
         }}
       >
-        {knowledgeCategories.map(({ title, description, items }, index) => (
-          <ScrollSnapParagraph ref={paragraphs[index + 1]}>
-            <FullScreenSection
-              latest={index === knowledgeCategories.length - 1 ? true : false}
-            >
-              <CategoryHeader title={title} description={description} />
-              <CategoryCardWrapper>
-                {items.map(({ title, description, icon }) => (
-                  <CategoryCard
-                    title={title}
-                    description={description}
-                    icon={getIconForName(icon?.title)}
-                  />
-                ))}
-              </CategoryCardWrapper>
-            </FullScreenSection>
-          </ScrollSnapParagraph>
-        ))}
+        {knowledgeCategories.map(({ title, description, items }, index) => {
+          if (breakpoint === "xs" || breakpoint === "sm")
+            return (
+              <FullScreenSection
+                key={title + "-snap"}
+                latest={index === knowledgeCategories.length - 1 ? true : false}
+              >
+                <CategoryHeader
+                  key={title + "-header"}
+                  title={title}
+                  description={description}
+                />
+                <CategoryCardWrapper key={title + "-wrapper"}>
+                  {items.map(({ title, description, icon }) => (
+                    <CategoryCard
+                      key={title + "-card"}
+                      title={title}
+                      description={description}
+                      icon={getIconForName(icon?.title)}
+                    />
+                  ))}
+                </CategoryCardWrapper>
+              </FullScreenSection>
+            );
+          return (
+            <ScrollSnapParagraph key={title} ref={paragraphs[index + 1]}>
+              <FullScreenSection
+                key={title + "-snap"}
+                latest={index === knowledgeCategories.length - 1 ? true : false}
+              >
+                <CategoryHeader
+                  key={title + "-header"}
+                  title={title}
+                  description={description}
+                />
+                <CategoryCardWrapper key={title + "-wrapper"}>
+                  {items.map(({ title, description, icon }) => (
+                    <CategoryCard
+                      key={title + "-card"}
+                      title={title}
+                      description={description}
+                      icon={getIconForName(icon?.title)}
+                    />
+                  ))}
+                </CategoryCardWrapper>
+              </FullScreenSection>
+            </ScrollSnapParagraph>
+          );
+        })}
       </main>
       <Footer />{" "}
       <BackTopButton
         hidden={hideButton}
         onClick={() => {
-          paragraphs[0].current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+          if (breakpoint === "xs" || breakpoint === "sm")
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          else
+            paragraphs[0].current?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
         }}
       />
     </>

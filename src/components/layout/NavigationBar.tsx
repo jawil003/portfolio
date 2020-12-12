@@ -9,7 +9,6 @@ import styles from "./NavigationBar.module.css";
 import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
 import { motion, useSpring, useTransform } from "framer-motion";
 import useBreakpoint from "../../hooks/useBreakpoints.hook";
-import useIsServer from "../../hooks/useIsServer.hook";
 
 interface Props {}
 
