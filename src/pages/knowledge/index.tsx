@@ -172,6 +172,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
           }}
         >
           <IconButton
+            key="Backend"
             tooltipText="Backend"
             tooltipOrientation="left"
             onClick={() =>
@@ -185,6 +186,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
           </IconButton>
 
           <IconButton
+            key="Web"
             tooltipText="Web"
             tooltipOrientation={width > 1350 ? "bottom" : "top"}
             onClick={() =>
@@ -199,6 +201,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
           </IconButton>
 
           <IconButton
+            key="Mobile"
             tooltipText="Mobile"
             tooltipOrientation={
               width > 1350 ? "bottom" : width > 1160 ? "top" : "right"
@@ -215,6 +218,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
           </IconButton>
 
           <IconButton
+            key="Desktop"
             tooltipOrientation={
               width > 1350 ? "bottom" : width > 1160 ? "right" : "bottom"
             }
@@ -230,6 +234,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
             <DesktopIcon height="50%" />
           </IconButton>
           <IconButton
+            key="Design"
             tooltipText="Design"
             tooltipOrientation={width > 1350 ? "right" : "bottom"}
             onClick={() =>

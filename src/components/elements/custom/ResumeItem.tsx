@@ -59,26 +59,32 @@ const ResumeItem: React.FC<Props> = ({
             color: "var(--darkwhite)",
           }}
         >
-          {start_year && end_year ? (
+          {start_year ? (
             [
-              <Typography align="center" variant="h6" color="var(--darkwhite)">
+              <Typography
+                key="start_year"
+                align="center"
+                variant="h6"
+                color="var(--darkwhite)"
+              >
                 {start_year}
               </Typography>,
-              <Typography align="center" variant="h6" color="var(--darkwhite)">
-                {end_year}
-              </Typography>,
-            ]
-          ) : start_year ? (
-            [
-              <Typography align="center" variant="h6" color="var(--darkwhite)">
-                {start_year}
-              </Typography>,
-              <Typography align="center" variant="h6" color="var(--darkwhite)">
-                {"heute"}
+              <Typography
+                key="end_year"
+                align="center"
+                variant="h6"
+                color="var(--darkwhite)"
+              >
+                {end_year ? end_year : "heute"}
               </Typography>,
             ]
           ) : (
-            <Typography align="center" variant="h6" color="var(--darkwhite)">
+            <Typography
+              key="end_year"
+              align="center"
+              variant="h6"
+              color="var(--darkwhite)"
+            >
               {end_year}
             </Typography>
           )}

@@ -60,13 +60,16 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
         <main
           style={{
             flex: 1,
-
             position: "relative",
             left: "-20px",
-            width: "calc(100% + 40px)",
           }}
         >
-          <div style={{ overflow: "hidden" }}>
+          <div
+            style={{
+              overflow: "hidden",
+              width: "calc(100vw + 20px)",
+            }}
+          >
             <svg
               preserveAspectRatio="none"
               viewBox="0 0 1200 120"
@@ -82,15 +85,18 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
             </svg>
           </div>
           <ResumeContainer>
-            {resumeItems.map(({ title, description, start_year, end_year }) => (
-              <ResumeItem
-                latest
-                start_year={start_year}
-                end_year={end_year}
-                title={title}
-                description={description}
-              />
-            ))}
+            {resumeItems.map(
+              ({ title, description, start_year, end_year }, index) => (
+                <ResumeItem
+                  key={title}
+                  latest={index === resumeItems.length - 1 ? true : false}
+                  start_year={start_year}
+                  end_year={end_year}
+                  title={title}
+                  description={description}
+                />
+              )
+            )}
           </ResumeContainer>
         </main>
         <Footer color="var(--primary)" />

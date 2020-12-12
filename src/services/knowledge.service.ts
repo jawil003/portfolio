@@ -17,7 +17,10 @@ export default class KnowledgeService {
               description
               icon {
                 title
-                href
+                href {
+                  alternativeText
+                  url
+                }
               }
             }
           }
