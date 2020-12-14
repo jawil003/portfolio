@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./TextField.module.css";
 import Typography from "./Typography";
 
-interface Props {
-  title: string;
+export interface Props {
+  title?: string;
   placeholder?: string;
   area?: boolean;
   rows?: number;
@@ -34,6 +34,6 @@ const TextField: React.FC<Props> = ({ title, placeholder, rows, area }) => {
   );
 };
 
-TextField.defaultProps = { area: false };
+TextField.defaultProps = { title: "Bitte Titel eingeben", area: false };
 
 export default TextField;

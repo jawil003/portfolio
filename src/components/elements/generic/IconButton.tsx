@@ -2,7 +2,7 @@ import { motion, useSpring } from "framer-motion";
 import React, { useState } from "react";
 import Tooltip from "./Tooltip";
 
-interface Props {
+export interface Props {
   size?: string;
   color?: string;
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;

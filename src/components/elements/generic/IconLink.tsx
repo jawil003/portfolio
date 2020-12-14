@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { CSSProperties, useState } from "react";
 import Tooltip from "./Tooltip";
 
-interface Props {
+export interface Props {
   size?: string;
   href: string;
   external?: boolean;

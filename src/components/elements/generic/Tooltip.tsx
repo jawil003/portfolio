@@ -1,7 +1,7 @@
 import { motion, useSpring, useTransform } from "framer-motion";
 import React, { useEffect } from "react";
 
-interface Props {
+export interface Props {
   backgroundColor?: string;
   color?: string;
   orientation?: "left" | "right" | "top" | "bottom";
