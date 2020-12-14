@@ -23,7 +23,7 @@ import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
 import useBreakpoint from "../../hooks/useBreakpoints.hook";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import KnowledgeService from "src/services/knowledge.service";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
 import dynamic from "next/dynamic";
@@ -332,7 +332,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       knowledgeCategories: await KnowledgeService.getAllKnowledgeCategoriesWithItems(),

@@ -8,7 +8,7 @@ import HeaderWithIcon from "../components/layout/HeaderWithIcon";
 import NavigationBar from "../components/layout/NavigationBar";
 import ColorContainer from "src/components/elements/generic/ColorContainer";
 import ResumeContainer from "src/components/elements/custom/ResumeContainer";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import ResumeService from "src/services/resume.service";
 import ResumeItemType from "src/model/ResumeItem.model";
 import ResumeItem from "src/components/elements/custom/ResumeItem";
@@ -105,7 +105,7 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   return { props: { resumeItems: await ResumeService.getAllResumeItems() } };
 };
 
