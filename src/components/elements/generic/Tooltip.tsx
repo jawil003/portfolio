@@ -78,7 +78,9 @@ const Tooltip: React.FC<Props> = ({
         left:
           orientation === "right"
             ? "calc(100% + calc(12.5px + 6px))"
-            : undefined,
+            : orientation === "left"
+            ? undefined
+            : "calc(-50% - calc(18.5px / 2))",
         right:
           orientation === "left"
             ? "calc(100% + calc(12.5px + 6px))"

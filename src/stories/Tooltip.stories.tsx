@@ -5,7 +5,18 @@ import Tooltip, {
 
 export default { title: "Elements/Tooltip", component: Tooltip };
 
-const TooltipElement: Story<TooltipProps> = (args) => <Tooltip {...args} />;
+const TooltipElement: Story<TooltipProps> = (args) => (
+  <div
+    style={{
+      width: "54px",
+      height: "54px",
+      position: "relative",
+      backgroundColor: "#000",
+    }}
+  >
+    <Tooltip {...args} />
+  </div>
+);
 
 export const Left = TooltipElement.bind({});
 Left.args = {
