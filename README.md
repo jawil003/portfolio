@@ -1,8 +1,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="media/portfolio_logo.png" alt="Logo" height="80">
+  <a href="https://github.com/jawil003/Portfolio">
+    <img src="/jawil003/Portfolio/production/media/portfolio_logo.png" alt="Logo" height="80">
   </a>
 
   <h3 align="center">Portfolio</h3>
@@ -45,5 +45,5 @@
 - [mongoDB](https://www.mongodb.com)
 
 ### Screenshots
-![Product Name Screen Shot](media/Screenshot_index.png)
+![Index Page](/jawil003/Portfolio/production/media/Screenshot_index.png)
 
