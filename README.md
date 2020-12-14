@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jawil003/Portfolio">
-    <img src="/jawil003/Portfolio/production/media/portfolio_logo.png" alt="Logo" height="80">
+    <img src="/jawil003/Portfolio/blob/Production/media/Portfolio_Logo.png" alt="Logo" height="80">
   </a>
 
   <h3 align="center">Portfolio</h3>
@@ -45,5 +45,5 @@
 - [mongoDB](https://www.mongodb.com)
 
 ### Screenshots
-![Index Page](/jawil003/Portfolio/production/media/Screenshot_index.png)
+![Index Page](/jawil003/Portfolio/blob/Production/media/Screenshot_Index.png)
 
