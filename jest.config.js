@@ -7,5 +7,12 @@ module.exports = {
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: "<rootDir>/",
   }),
-  setupFiles: ["dotenv/config"],
+  setupFiles: ["dotenv/config", "<rootDir>/src/tests/config/setup.js"],
+  setupFilesAfterEnv: ["<rootDir>/src/tests/config/setupAfterEnv.js"],
+  testPathIgnorePatterns: [
+    "/.next/",
+    "/node_modules/",
+    "/tests/config/",
+    "/coverage/",
+  ],
 };
