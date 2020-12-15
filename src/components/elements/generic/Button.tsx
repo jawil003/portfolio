@@ -70,4 +70,4 @@ Button.defaultProps = {
   variant: "filled",
 };
 
-export default Button;
+export default React.memo(Button);

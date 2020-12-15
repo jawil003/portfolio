@@ -1,6 +1,5 @@
 import { motion, useSpring } from "framer-motion";
-import React, { useState } from "react";
-import Tooltip from "./Tooltip";
+import React from "react";
 
 export interface Props {
   size?: string;
@@ -15,25 +14,15 @@ export interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const IconButton: React.FC<Props> = ({
-  size,
-  children,
-  color,
-  onClick,
-  tooltipOrientation,
-  tooltipText,
-}) => {
-  const [toolTipHidden, setToolTipHidden] = useState(true);
+const IconButton: React.FC<Props> = ({ size, children, color, onClick }) => {
   const scale = useSpring(1);
   return (
     <div style={{ position: "relative" }}>
       <motion.div
         onMouseOver={() => {
-          setToolTipHidden(false);
           scale.set(1.2);
         }}
         onMouseOut={() => {
-          setToolTipHidden(true);
           scale.set(1);
         }}
         onClick={onClick}
@@ -50,13 +39,10 @@ const IconButton: React.FC<Props> = ({
       >
         {children}
       </motion.div>
-      <Tooltip hidden={toolTipHidden} orientation={tooltipOrientation}>
-        {tooltipText}
-      </Tooltip>
     </div>
   );
 };
 
 IconButton.defaultProps = { color: "var(--blue)", size: "54px" };
 
-export default IconButton;
+export default React.memo(IconButton);

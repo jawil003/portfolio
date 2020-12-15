@@ -7,6 +7,10 @@ export interface Props {
   placeholder?: string;
   area?: boolean;
   rows?: number;
+  value: string;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 }
 
 /**
@@ -14,26 +18,44 @@ export interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const TextField: React.FC<Props> = ({ title, placeholder, rows, area }) => {
+const TextField: React.FC<Props> = ({
+  title,
+  placeholder,
+  rows,
+  area,
+  onChange,
+  value,
+}) => {
   return (
     <div className={styles.inputRoot}>
       <Typography variant="b1">{title}</Typography>
       <div className={styles.inputContainer}>
         {area ? (
           <textarea
+            onChange={onChange}
+            value={value}
             placeholder={placeholder}
             className={styles.input}
             cols={23}
             rows={rows}
           ></textarea>
         ) : (
-          <input placeholder={placeholder} className={styles.input} />
+          <input
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            className={styles.input}
+          />
         )}
       </div>
     </div>
   );
 };
 
-TextField.defaultProps = { title: "Bitte Titel eingeben", area: false };
+TextField.defaultProps = {
+  title: "Bitte Titel eingeben",
+  area: false,
+  value: "",
+};
 
-export default TextField;
+export default React.memo(TextField, (prev, next) => prev.value === next.value);

@@ -1,15 +1,12 @@
 import { motion, useSpring } from "framer-motion";
 import Link from "next/link";
-import React, { CSSProperties, useState } from "react";
-import Tooltip from "./Tooltip";
+import React, { CSSProperties } from "react";
 
 export interface Props {
   size?: string;
   href: string;
   external?: boolean;
   background?: string;
-  tooltipOrientation?: "left" | "right" | "top" | "bottom";
-  tooltipText: string;
 }
 
 /**
@@ -23,25 +20,20 @@ const IconLink: React.FC<Props> = ({
   external,
   size,
   background,
-  tooltipText,
-  tooltipOrientation,
 }) => {
   const scale = useSpring(1);
-  const [toolTipHidden, setToolTipHidden] = useState(true);
   return (
     <div style={{ position: "relative" }}>
       {external ? (
         <motion.a
-          href={href}
-          target="_blank"
           onMouseOver={() => {
-            setToolTipHidden(false);
             scale.set(1.2);
           }}
           onMouseOut={() => {
-            setToolTipHidden(true);
             scale.set(1);
           }}
+          href={href}
+          target="_blank"
           style={{
             backgroundColor: background,
             borderRadius: "100%",
@@ -57,11 +49,9 @@ const IconLink: React.FC<Props> = ({
         <Link href={href}>
           <motion.a
             onMouseOver={() => {
-              setToolTipHidden(false);
               scale.set(1.2);
             }}
             onMouseOut={() => {
-              setToolTipHidden(true);
               scale.set(1);
             }}
             style={{
@@ -76,13 +66,6 @@ const IconLink: React.FC<Props> = ({
           </motion.a>
         </Link>
       )}
-      <Tooltip
-        backgroundColor={background}
-        hidden={toolTipHidden}
-        orientation={tooltipOrientation}
-      >
-        {tooltipText}
-      </Tooltip>
     </div>
   );
 };
@@ -100,4 +83,4 @@ const styles: { [x: string]: CSSProperties } = {
 
 IconLink.defaultProps = { size: "52px" };
 
-export default IconLink;
+export default React.memo(IconLink);

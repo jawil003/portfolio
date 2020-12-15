@@ -75,24 +75,8 @@ const Tooltip: React.FC<Props> = ({
         borderRadius: "5px",
         opacity,
         position: "absolute",
-        left:
-          orientation === "right"
-            ? "calc(100% + calc(12.5px + 6px))"
-            : orientation === "left"
-            ? undefined
-            : "calc(-50% - calc(18.5px / 2))",
-        right:
-          orientation === "left"
-            ? "calc(100% + calc(12.5px + 6px))"
-            : undefined,
-        bottom:
-          orientation === "top" ? "calc(100% + calc(12.5px + 6px))" : undefined,
-        top:
-          orientation === "bottom"
-            ? "calc(100% + calc(12.5px + 6px))"
-            : orientation === "top"
-            ? undefined
-            : "calc(50% - 1rem)",
+        top: "calc(50% - calc(36px / 2))",
+        left: "-50%",
         fontSize: "0.8rem",
         backgroundColor,
       }}
