@@ -10,14 +10,16 @@ import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
 import { motion, useSpring, useTransform } from "framer-motion";
 import useBreakpoint from "../../hooks/useBreakpoints.hook";
 
-interface Props {}
+interface Props {
+  elementsColor?: string;
+}
 
 /**
  * An NavigationBar React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const NavigationBar: React.FC<Props> = () => {
+const NavigationBar: React.FC<Props> = ({ elementsColor }) => {
   const scaleX = useSpring(0, { duration: 120 });
   const opacity = useTransform(scaleX, [0, 1], [0, 1]);
 
@@ -34,26 +36,32 @@ const NavigationBar: React.FC<Props> = () => {
     <>
       <motion.nav
         className={styles.container}
-        style={{ scaleX, transformOrigin: "left center", opacity }}
+        style={{ scaleX, transformOrigin: "right center", opacity }}
       >
         <div className={styles.logo}>
           <Logo />
         </div>
         <div className={styles.links}>
-          <NavigationBarItem href="/" icon={<HomeIcon height="23px" />}>
+          <NavigationBarItem
+            color={elementsColor}
+            href="/"
+            icon={<HomeIcon color={elementsColor} height="23px" />}
+          >
             Start
           </NavigationBarItem>
           <Spacer height="20px" />
           <NavigationBarItem
+            color={elementsColor}
             href="/knowledge"
-            icon={<KnowledgeIcon height="23px" />}
+            icon={<KnowledgeIcon color={elementsColor} height="23px" />}
           >
             Was ich kann
           </NavigationBarItem>
           <Spacer height="20px" />
           <NavigationBarItem
+            color={elementsColor}
             href="/resume"
-            icon={<LearningIcon height="23px" />}
+            icon={<LearningIcon color={elementsColor} height="23px" />}
           >
             Was ich gelernt habe
           </NavigationBarItem>
@@ -66,14 +74,16 @@ const NavigationBar: React.FC<Props> = () => {
 
       <div className={styles.mobileNavBarButtonContainer}>
         <div
-          style={{ height: "100%", padding: "20px 10px" }}
+          style={{ height: "100%", padding: "20px 10px", float: "right" }}
           onClick={() => scaleX.set(1)}
         >
-          <HamburgerMenuIcon height="100%" />
+          <HamburgerMenuIcon height="100%" color="var(--primary)" />
         </div>
       </div>
     </>
   );
 };
+
+NavigationBar.defaultProps = { elementsColor: "var(--secondaryText)" };
 
 export default NavigationBar;

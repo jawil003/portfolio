@@ -81,6 +81,6 @@ const styles: { [x: string]: CSSProperties } = {
   },
 };
 
-IconLink.defaultProps = { size: "52px" };
+IconLink.defaultProps = { size: "40px" };
 
 export default React.memo(IconLink);

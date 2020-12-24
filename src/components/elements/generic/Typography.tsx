@@ -8,7 +8,9 @@ const generateStyle = (
   bold?: "semi-bold" | "bold" | "bolder",
   italic?: boolean,
   underline?: boolean,
-  maxLength?: string
+  maxLength?: string,
+  letterSpacing?: number,
+  wordSpacing?: number
 ) => {
   const style: CSSProperties = {
     fontSize: `${fontSize}rem`,
@@ -29,6 +31,8 @@ const generateStyle = (
     fontStyle: italic ? "italic" : "normal",
     textDecoration: underline ? "underline" : "normal",
     maxWidth: maxLength,
+    letterSpacing,
+    wordSpacing,
   };
   return style;
 };
@@ -43,6 +47,8 @@ export interface Props {
   underline?: boolean;
   inline?: boolean;
   maxLength?: string;
+  letterSpacing?: number;
+  wordSpacing?: number;
 }
 
 /**
@@ -61,6 +67,8 @@ const Typography: React.FC<Props> = ({
   underline,
   inline,
   maxLength,
+  letterSpacing,
+  wordSpacing,
 }) => {
   if (variant?.includes("b")) {
     if (inline)
@@ -74,7 +82,9 @@ const Typography: React.FC<Props> = ({
             bold,
             italic,
             underline,
-            maxLength
+            maxLength,
+            letterSpacing,
+            wordSpacing
           )}
         >
           {children}
@@ -90,7 +100,9 @@ const Typography: React.FC<Props> = ({
           bold,
           italic,
           underline,
-          maxLength
+          maxLength,
+          letterSpacing,
+          wordSpacing
         )}
       >
         {children}
@@ -109,7 +121,9 @@ const Typography: React.FC<Props> = ({
             bold,
             italic,
             underline,
-            maxLength
+            maxLength,
+            letterSpacing,
+            wordSpacing
           )}
         >
           {children}
@@ -127,7 +141,9 @@ const Typography: React.FC<Props> = ({
             bold,
             italic,
             underline,
-            maxLength
+            maxLength,
+            letterSpacing,
+            wordSpacing
           )}
         >
           {children}
@@ -145,7 +161,9 @@ const Typography: React.FC<Props> = ({
             bold,
             italic,
             underline,
-            maxLength
+            maxLength,
+            letterSpacing,
+            wordSpacing
           )}
         >
           {children}
@@ -163,7 +181,9 @@ const Typography: React.FC<Props> = ({
             bold,
             italic,
             underline,
-            maxLength
+            maxLength,
+            letterSpacing,
+            wordSpacing
           )}
         >
           {children}
@@ -181,7 +201,9 @@ const Typography: React.FC<Props> = ({
             bold,
             italic,
             underline,
-            maxLength
+            maxLength,
+            letterSpacing,
+            wordSpacing
           )}
         >
           {children}
@@ -199,7 +221,9 @@ const Typography: React.FC<Props> = ({
             bold,
             italic,
             underline,
-            maxLength
+            maxLength,
+            letterSpacing,
+            wordSpacing
           )}
         >
           {children}

@@ -1,0 +1,16 @@
+@media (min-width: 600px) {
+  .blobContainer {
+  }
+  .blobContainer > svg {
+    height: 75vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .blobContainer {
+  }
+
+  .blobContainer > svg {
+    height: 100vh;
+  }
+}
