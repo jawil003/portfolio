@@ -30,7 +30,7 @@ const Index: React.FC<Props> = () => {
   useEffect(() => {
     handleImageLoaded();
   }, []);
-  const { width } = useBreakpoint();
+  const { width, height } = useBreakpoint();
   return (
     <>
       <Head>
@@ -43,16 +43,25 @@ const Index: React.FC<Props> = () => {
             className={styles.blobContainer}
             style={{ position: "absolute", right: 0, top: 0 }}
           >
-            {width > 600 ? <BlobDesign /> : <BlobMobileDesign />}
+            {width >= 1171 ? <BlobDesign /> : <BlobMobileDesign />}
           </div>
         }
       >
         <HeaderWithSpacer first latest>
-          <Typography variant="h3" align="left">
+          <Typography
+            variant="h3"
+            align={width > 600 && height >= 786 ? "left" : "center"}
+            color={width <= 466 && height >= 786 ? "var(--primary)" : undefined}
+          >
             Hallo, ich bin Jannik
           </Typography>
           <Spacer height="0.4em" />
-          <Typography align="left" italic wordSpacing={11}>
+          <Typography
+            align={width > 600 && height >= 786 ? "left" : "center"}
+            italic
+            wordSpacing={11}
+            color={width <= 466 && height >= 786 ? "var(--primary)" : undefined}
+          >
             ein leidenschaftlicher Softwareentwickler und Designer aus Dortmund
             und spezialisiert auf Frontend und Backend Lösungen aller Art
           </Typography>
@@ -73,7 +82,12 @@ const Index: React.FC<Props> = () => {
               external
               href="https://twitter.com/willey3x37"
             >
-              <TwitterIcon height="100%" />
+              <TwitterIcon
+                color={
+                  width <= 466 && height >= 786 ? "var(--primary)" : undefined
+                }
+                height="100%"
+              />
             </IconLink>
             <IconLink
               tooltipText="LinkedIn"
@@ -81,7 +95,15 @@ const Index: React.FC<Props> = () => {
               external
               href="https://linkedin.com/willey3x37"
             >
-              <LinkedInIcon height="100%" />
+              <LinkedInIcon
+                color={
+                  width <= 466 && height >= 786 ? "var(--primary)" : undefined
+                }
+                textColor={
+                  width <= 466 && height >= 786 ? "var(--secondary" : undefined
+                }
+                height="100%"
+              />
             </IconLink>
 
             <IconLink
@@ -90,7 +112,12 @@ const Index: React.FC<Props> = () => {
               external
               href="https://github.com/jawil003"
             >
-              <GithubIcon height="100%" />
+              <GithubIcon
+                color={
+                  width <= 466 && height >= 786 ? "var(--primary)" : undefined
+                }
+                height="100%"
+              />
             </IconLink>
 
             <IconLink
@@ -98,7 +125,13 @@ const Index: React.FC<Props> = () => {
               external
               href="https://dribbble.com/willey3x37"
             >
-              <DribbleIcon height="100%" />
+              <DribbleIcon
+                color={
+                  width <= 466 && height >= 786 ? "var(--primary)" : undefined
+                }
+                accentColor={width <= 466 ? "var(--secondary)" : undefined}
+                height="100%"
+              />
             </IconLink>
           </div>
         </HeaderWithSpacer>

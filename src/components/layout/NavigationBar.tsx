@@ -23,14 +23,14 @@ const NavigationBar: React.FC<Props> = ({ elementsColor }) => {
   const scaleX = useSpring(0, { duration: 120 });
   const opacity = useTransform(scaleX, [0, 1], [0, 1]);
 
-  const { breakpoint } = useBreakpoint();
+  const { width } = useBreakpoint();
 
   useEffect(() => {
-    if (breakpoint === "xs" || breakpoint === "sm") scaleX.set(0);
+    if (width < 1191) scaleX.set(0);
     else {
       scaleX.set(1);
     }
-  }, [breakpoint]);
+  }, [width]);
 
   return (
     <>

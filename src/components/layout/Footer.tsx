@@ -2,6 +2,7 @@ import React from "react";
 import MailIcon from "../icons/mail.icon";
 import WorldWideIcon from "../icons/worldwide.icon";
 import NavigationBarItem from "../elements/custom/NavigationBarItem";
+import useBreakpoint from "src/hooks/useBreakpoints.hook";
 
 interface Props {
   color?: string;
@@ -15,6 +16,7 @@ interface Props {
  * @version 0.1
  */
 const Footer: React.FC<Props> = ({ color }) => {
+  const { width } = useBreakpoint();
   return (
     <footer
       style={{
@@ -30,14 +32,14 @@ const Footer: React.FC<Props> = ({ color }) => {
         href="/contact"
         icon={<MailIcon color={color} height="23px" />}
       >
-        Kontakt
+        {width > 466 ? "Kontakt" : undefined}
       </NavigationBarItem>
       <NavigationBarItem
         color={color}
         href="/impressum"
         icon={<WorldWideIcon color={color} height="23px" />}
       >
-        Impressum
+        {width > 466 ? "Impressum" : undefined}
       </NavigationBarItem>
     </footer>
   );
