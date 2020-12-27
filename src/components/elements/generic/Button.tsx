@@ -23,7 +23,7 @@ const Button: React.FC<Props> = ({ text, backgroundColor, color, variant }) => {
       style={{
         overflow: "hidden",
         position: "relative",
-        margin: "8px",
+        margin: "8px 0px",
         padding: "10px 20px",
         borderRadius: "5px",
         backgroundColor: variant === "filled" ? backgroundColor : color,

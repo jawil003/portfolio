@@ -76,12 +76,7 @@ const Index: React.FC<Props> = () => {
               flexWrap: "wrap",
             }}
           >
-            <IconLink
-              tooltipText="Twitter"
-              tooltipOrientation="left"
-              external
-              href="https://twitter.com/willey3x37"
-            >
+            <IconLink external href="https://twitter.com/willey3x37">
               <TwitterIcon
                 color={
                   width <= 466 && height >= 786 ? "var(--primary)" : undefined
@@ -89,12 +84,7 @@ const Index: React.FC<Props> = () => {
                 height="100%"
               />
             </IconLink>
-            <IconLink
-              tooltipText="LinkedIn"
-              tooltipOrientation="bottom"
-              external
-              href="https://linkedin.com/willey3x37"
-            >
+            <IconLink external href="https://linkedin.com/willey3x37">
               <LinkedInIcon
                 color={
                   width <= 466 && height >= 786 ? "var(--primary)" : undefined
@@ -106,12 +96,7 @@ const Index: React.FC<Props> = () => {
               />
             </IconLink>
 
-            <IconLink
-              tooltipText="Github"
-              tooltipOrientation="bottom"
-              external
-              href="https://github.com/jawil003"
-            >
+            <IconLink external href="https://github.com/jawil003">
               <GithubIcon
                 color={
                   width <= 466 && height >= 786 ? "var(--primary)" : undefined
@@ -120,11 +105,7 @@ const Index: React.FC<Props> = () => {
               />
             </IconLink>
 
-            <IconLink
-              tooltipText="Dribbble"
-              external
-              href="https://dribbble.com/willey3x37"
-            >
+            <IconLink external href="https://dribbble.com/willey3x37">
               <DribbleIcon
                 color={
                   width <= 466 && height >= 786 ? "var(--primary)" : undefined

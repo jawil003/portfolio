@@ -16,28 +16,24 @@ const IconLinkElement: Story<IconLinkProps> = (args) => (
 
 export const Top = IconLinkElement.bind({});
 Top.args = {
-  tooltipOrientation: "top",
   href: "example.com",
   external: true,
 };
 
 export const Left = IconLinkElement.bind({});
 Left.args = {
-  tooltipOrientation: "left",
   href: "example.com",
   external: true,
 };
 
 export const Right = IconLinkElement.bind({});
 Right.args = {
-  tooltipOrientation: "right",
   href: "example.com",
   external: true,
 };
 
 export const Bottom = IconLinkElement.bind({});
 Bottom.args = {
-  tooltipOrientation: "bottom",
   href: "example.com",
   external: true,
 };

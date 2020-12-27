@@ -7,6 +7,7 @@ export interface Props {
   href: string;
   external?: boolean;
   background?: string;
+  children?: any;
 }
 
 /**

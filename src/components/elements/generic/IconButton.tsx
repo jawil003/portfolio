@@ -7,6 +7,7 @@ export interface Props {
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   tooltipOrientation?: "left" | "right" | "top" | "bottom";
   tooltipText: string;
+  children: any;
 }
 
 /**
