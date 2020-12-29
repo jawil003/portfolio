@@ -50,17 +50,17 @@ const Index: React.FC<Props> = () => {
         <HeaderWithSpacer first latest>
           <Typography
             variant="h3"
-            align={width > 600 && height >= 786 ? "left" : "center"}
-            color={width <= 466 && height >= 786 ? "var(--primary)" : undefined}
+            align={width > 600 ? "left" : "center"}
+            color={width <= 466 ? "var(--primary)" : undefined}
           >
             Hallo, ich bin Jannik
           </Typography>
           <Spacer height="0.4em" />
           <Typography
-            align={width > 600 && height >= 786 ? "left" : "center"}
+            align={width > 600 ? "left" : "center"}
             italic
             wordSpacing={11}
-            color={width <= 466 && height >= 786 ? "var(--primary)" : undefined}
+            color={width <= 466 ? "var(--primary)" : undefined}
           >
             ein leidenschaftlicher Softwareentwickler und Designer aus Dortmund
             und spezialisiert auf Frontend und Backend Lösungen aller Art
@@ -78,38 +78,28 @@ const Index: React.FC<Props> = () => {
           >
             <IconLink external href="https://twitter.com/willey3x37">
               <TwitterIcon
-                color={
-                  width <= 466 && height >= 786 ? "var(--primary)" : undefined
-                }
+                color={width <= 466 ? "var(--primary)" : undefined}
                 height="100%"
               />
             </IconLink>
             <IconLink external href="https://linkedin.com/willey3x37">
               <LinkedInIcon
-                color={
-                  width <= 466 && height >= 786 ? "var(--primary)" : undefined
-                }
-                textColor={
-                  width <= 466 && height >= 786 ? "var(--secondary" : undefined
-                }
+                color={width <= 466 ? "var(--primary)" : undefined}
+                textColor={width <= 466 ? "var(--secondary" : undefined}
                 height="100%"
               />
             </IconLink>
 
             <IconLink external href="https://github.com/jawil003">
               <GithubIcon
-                color={
-                  width <= 466 && height >= 786 ? "var(--primary)" : undefined
-                }
+                color={width <= 466 ? "var(--primary)" : undefined}
                 height="100%"
               />
             </IconLink>
 
             <IconLink external href="https://dribbble.com/willey3x37">
               <DribbleIcon
-                color={
-                  width <= 466 && height >= 786 ? "var(--primary)" : undefined
-                }
+                color={width <= 466 ? "var(--primary)" : undefined}
                 accentColor={width <= 466 ? "var(--secondary)" : undefined}
                 height="100%"
               />

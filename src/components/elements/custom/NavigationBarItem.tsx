@@ -22,21 +22,7 @@ const NavigationBarItem: React.FC<Props> = ({
 }) => {
   return (
     <Link href={href}>
-      <a
-        className={styles.naviagtionBarItem}
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          columnGap: "10px",
-          cursor: "pointer",
-          height: "63px",
-          padding: "20px",
-          color: "initial",
-          textDecoration: "none",
-        }}
-      >
+      <a className={styles.navigationBarItem}>
         <div style={{ height: "100%" }}>{icon}</div>
         <Typography variant="b1" bold="semi-bold" color={color}>
           {children}

@@ -27,7 +27,6 @@ const generateStyle = (
     color,
     fontFamily,
     textAlign: align,
-    margin: "0px",
     fontStyle: italic ? "italic" : "normal",
     textDecoration: underline ? "underline" : "normal",
     maxWidth: maxLength,
