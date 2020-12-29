@@ -26,7 +26,7 @@ const NavigationBar: React.FC<Props> = ({ elementsColor }) => {
   const { width } = useBreakpoint();
 
   useEffect(() => {
-    if (width < 1191) scaleX.set(0);
+    if (width < 1100) scaleX.set(0);
     else {
       scaleX.set(1);
     }

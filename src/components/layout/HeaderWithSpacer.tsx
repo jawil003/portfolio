@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import React, { forwardRef, PropsWithChildren } from "react";
 import flyFromTop from "../../variants/flyFromTop";
-import styles from "./HeaderWithSpacer.module.css";
 
 const getHeightForSection = (first?: boolean, latest?: boolean) => {
   if (first && latest) {
@@ -29,12 +28,72 @@ const HeaderWithSpacer = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
   ({ children, latest, align, first }, ref) => {
     return (
       <header
-        className={styles.header}
+        className="header"
         ref={ref}
         style={{
           height: getHeightForSection(first, latest),
         }}
       >
+        <style jsx>{`
+          @media (min-width: 1100px) {
+            .header {
+              flex: 1;
+              width: 100%;
+              display: grid;
+              grid-template-columns: 50% 50%;
+              grid-template-rows: 100%;
+            }
+
+            .header > :global(div:first-child) {
+              flex: 1;
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+            .header > :global(div:last-child) {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+
+          @media (max-width: 1099px) {
+            .header {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .header > :global(div):first-child {
+              height: calc(100% - calc(100px + 70px));
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+            }
+
+            .header > :global(div:first-child) > :global(h3),
+            .header > :global(div:first-child) > :global(p),
+            .header > :global(div:first-child) > :global(div) {
+            }
+          }
+
+          @media (min-width: 500px) and (max-width: 819px) {
+            .header > div:last-child {
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+
+          @media (max-width: 499px) {
+            .header > div:last-child {
+              display: none;
+            }
+          }
+        `}</style>
         <motion.div variants={flyFromTop} initial="initial" animate="animate">
           {align === "right" ? (
             <div

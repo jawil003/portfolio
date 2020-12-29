@@ -19,11 +19,13 @@ const BackgroundWrapper: React.FC<Props> = ({ background, children }) => {
           top: 0,
           left: 0,
           zIndex: -1,
-          minHeight: "100vh",
+          height: "100vh",
           width: "100vw",
         }}
       >
-        {background}
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          {background}
+        </div>
       </div>
       <div style={{ position: "relative", zIndex: 2 }}>{children}</div>
     </div>
