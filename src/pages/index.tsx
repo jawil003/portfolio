@@ -16,6 +16,7 @@ import BlobDesign from "src/components/designs/blob.design";
 import BlobMobileDesign from "src/components/designs/blobMobile.design";
 import styles from "./index.module.css";
 import useBreakpoint from "src/hooks/useBreakpoints.hook";
+import FlexContainer from "src/components/elements/generic/FlexContainer";
 
 interface Props {}
 
@@ -66,16 +67,7 @@ const Index: React.FC<Props> = () => {
             und spezialisiert auf Frontend und Backend Lösungen aller Art
           </Typography>
           <Spacer height="8px" />
-          <div
-            style={{
-              alignSelf: "center",
-              width: "70%",
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-              flexWrap: "wrap",
-            }}
-          >
+          <FlexContainer justifyContent="center" columnGap="8px">
             <IconLink external href="https://twitter.com/willey3x37">
               <TwitterIcon
                 color={width <= 466 ? "var(--primary)" : undefined}
@@ -104,11 +96,15 @@ const Index: React.FC<Props> = () => {
                 height="100%"
               />
             </IconLink>
-          </div>
+          </FlexContainer>
         </HeaderWithSpacer>
       </BackgroundWrapper>
 
-      <Footer />
+      <Footer
+        color={
+          width <= 466 ? ["var(--secondaryText)", "var(--primary)"] : undefined
+        }
+      />
     </>
   );
 };

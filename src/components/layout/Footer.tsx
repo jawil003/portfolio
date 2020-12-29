@@ -4,8 +4,46 @@ import WorldWideIcon from "../icons/worldwide.icon";
 import NavigationBarItem from "../elements/custom/NavigationBarItem";
 import useBreakpoint from "src/hooks/useBreakpoints.hook";
 
+const items = [
+  { href: "/contact", name: "Kontakt" },
+  { href: "/impressum", name: "Impressum" },
+];
+
+const getIconForName = (
+  name: string,
+  options: { color: string; width?: string; height?: string }
+) => {
+  switch (name) {
+    case "Kontakt": {
+      return (
+        <MailIcon
+          color={options.color}
+          height={options.height}
+          width={options.width}
+        />
+      );
+    }
+    case "Impressum": {
+      return (
+        <WorldWideIcon
+          color={options.color}
+          height={options.height}
+          width={options.width}
+        />
+      );
+    }
+    default: {
+      <WorldWideIcon
+        color={options.color}
+        height={options.height}
+        width={options.width}
+      />;
+    }
+  }
+};
+
 interface Props {
-  color?: string;
+  color?: string | string[];
 }
 
 //TODO: Complete Color Mechanism
@@ -27,24 +65,37 @@ const Footer: React.FC<Props> = ({ color }) => {
         alignItems: "center",
       }}
     >
-      <NavigationBarItem
-        color={color}
-        href="/contact"
-        icon={<MailIcon color={color} height="23px" />}
-      >
-        {width > 466 ? "Kontakt" : undefined}
-      </NavigationBarItem>
-      <NavigationBarItem
-        color={color}
-        href="/impressum"
-        icon={<WorldWideIcon color={color} height="23px" />}
-      >
-        {width > 466 ? "Impressum" : undefined}
-      </NavigationBarItem>
+      {color instanceof Array
+        ? color.map((c, index) => (
+            <NavigationBarItem
+              color={c}
+              href="/contact"
+              icon={getIconForName(items[index].name, {
+                color: c,
+                height: "23px",
+              })}
+            >
+              {width > 466 ? items[index].name : undefined}
+            </NavigationBarItem>
+          ))
+        : items.map((i) => (
+            <NavigationBarItem
+              color={color}
+              href="/contact"
+              icon={getIconForName(i.name, {
+                color,
+                height: "23px",
+              })}
+            >
+              {width > 466 ? i.name : undefined}
+            </NavigationBarItem>
+          ))}
     </footer>
   );
 };
 
-Footer.defaultProps = { color: "var(--secondaryText)" };
+Footer.defaultProps = {
+  color: "var(--secondaryText)",
+};
 
 export default Footer;
