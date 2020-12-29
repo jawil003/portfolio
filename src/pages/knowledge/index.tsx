@@ -6,7 +6,6 @@ import CategoryCardWrapper from "../../components/layout/CategoryCardWrapper";
 import CategoryHeader from "../../components/elements/custom/CategoryHeader";
 import FullScreenSection from "../../components/elements/custom/FullScreenSection";
 import FlaskDesign from "../../components/designs/flask.design";
-import KnowledgeDesign from "../../components/designs/knowledge.design";
 import IconButton from "../../components/elements/generic/IconButton";
 import Spacer from "../../components/elements/generic/Spacer";
 import Typography from "../../components/elements/generic/Typography";
@@ -22,38 +21,42 @@ import ScrollSnapParagraph from "../../components/elements/generic/SnapScrollPar
 import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
-import useBreakpoint from "../../hooks/useBreakpoints.hook";
+import useBreakpoint, { breakpoints } from "../../hooks/useBreakpoints.hook";
 import { GetStaticProps } from "next";
 import KnowledgeService from "src/services/knowledge.service";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
 import dynamic from "next/dynamic";
+import FlexContainer from "src/components/elements/generic/FlexContainer";
+import ReactDesign from "src/components/designs/react.design";
+import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
+import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 
-const AdobeXdIcon = dynamic(
-  () => import("../../components/icons/adobeXd.icon")
+const AdobeXdIcon = dynamic(() =>
+  import("../../components/icons/adobeXd.icon")
 );
-const ElectronIcon = dynamic(
-  () => import("../../components/icons/electron.icon")
+const ElectronIcon = dynamic(() =>
+  import("../../components/icons/electron.icon")
 );
-const TypescriptIcon = dynamic(
-  () => import("../../components/icons/typescript.icon")
+const TypescriptIcon = dynamic(() =>
+  import("../../components/icons/typescript.icon")
 );
 const ReactIcon = dynamic(() => import("../../components/icons/react.icon"));
 const NodeIcon = dynamic(() => import("../../components/icons/nodejs.icon"));
 const JavaIcon = dynamic(() => import("../../components/icons/java.icon"));
-const AndroidIcon = dynamic(
-  () => import("../../components/icons/android.icon")
+const AndroidIcon = dynamic(() =>
+  import("../../components/icons/android.icon")
 );
-const SettingsPageDesign = dynamic(
-  () => import("../../components/designs/settingsPage.design")
+const SettingsPageDesign = dynamic(() =>
+  import("../../components/designs/settingsPage.design")
 );
-const PrototypeDesign = dynamic(
-  () => import("../../components/designs/prototype.design")
+const PrototypeDesign = dynamic(() =>
+  import("../../components/designs/prototype.design")
 );
-const AffinityDesignerIcon = dynamic(
-  () => import("../../components/icons/affinityDesigner.icon")
+const AffinityDesignerIcon = dynamic(() =>
+  import("../../components/icons/affinityDesigner.icon")
 );
-const AffinityPhotoIcon = dynamic(
-  () => import("../../components/icons/affinityPhoto.icon")
+const AffinityPhotoIcon = dynamic(() =>
+  import("../../components/icons/affinityPhoto.icon")
 );
 
 const getIconForName = (name?: string) => {
@@ -127,7 +130,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null)
   );
-  const { width, breakpoint } = useBreakpoint();
+  const { width } = useBreakpoint();
   useScrollPosition(
     ({ currPos }) => {
       if (currPos.y === 0) setHideButton(true);
@@ -144,115 +147,142 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
       <Head>
         <title>Jannik Will | Kenntnisse</title>
       </Head>
-      {breakpoint === "xs" || breakpoint === "sm" ? (
+      {width < breakpoints.lg ? (
         <NavigationBar />
       ) : (
         <ScrollSnapParagraph ref={paragraphs[0]} align="start">
           <NavigationBar />
         </ScrollSnapParagraph>
       )}
-      <HeaderWithIcon first icon={<KnowledgeDesign width="100%" />}>
-        <Typography variant="h3" align="center">
-          Wie kann ich dir helfen?
-        </Typography>
-        <Spacer height="0.4em" />
-        <Typography align="center" italic>
-          Vielleicht sagt dir ja eines meiner Fachgebiete zu, dann{" "}
-          <Typography underline inline>
-            <Link href="/contact">
-              <a>kontaktiere</a>
-            </Link>
-          </Typography>{" "}
-          mich gerne
-        </Typography>
-        <Spacer height="12px" />
-        <div
-          style={{
-            width: "70%",
-            display: "flex",
-            justifyContent: "center",
-            gap: "10px",
-            flexWrap: "wrap",
-          }}
-        >
-          <IconButton
-            key="Backend"
-            tooltipText="Backend"
-            tooltipOrientation="left"
-            onClick={() =>
-              paragraphs[2].current?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
+      <BackgroundWrapper
+        background={
+          <div
+            style={{
+              position: "absolute",
+              right: width >= breakpoints.lg ? 0 : undefined,
+              left: width < breakpoints.lg ? 0 : undefined,
+              top: 0,
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: width >= breakpoints.lg ? "center" : "flex-emd",
+              justifyContent: width >= breakpoints.lg ? "center" : "flex-start",
+            }}
           >
-            <DatabaseIcon height="50%" />
-          </IconButton>
+            <div
+              style={{
+                position: "relative",
+                right: width < breakpoints.lg ? "70%" : 0,
+              }}
+            >
+              <ReactDesign
+                width={"100%"}
+                height={width < breakpoints.lg ? "100vh" : undefined}
+              />
+            </div>
+          </div>
+        }
+      >
+        <HeaderWithSpacer first>
+          <Typography variant="h3" align="center">
+            Wie kann ich dir helfen?
+          </Typography>
+          <Spacer height="0.4em" />
+          <Typography align="center" italic>
+            Vielleicht sagt dir ja eines meiner Fachgebiete zu, dann{" "}
+            <Typography underline inline>
+              <Link href="/contact">
+                <a>kontaktiere</a>
+              </Link>
+            </Typography>{" "}
+            mich gerne
+          </Typography>
+          <Spacer height="12px" />
+          <FlexContainer
+            justifyContent="center"
+            columnGap="10px"
+            rowGap="10px"
+            wrap
+          >
+            <IconButton
+              key="Backend"
+              tooltipText="Backend"
+              tooltipOrientation="left"
+              onClick={() =>
+                paragraphs[2].current?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                })
+              }
+            >
+              <DatabaseIcon height="50%" />
+            </IconButton>
 
-          <IconButton
-            key="Web"
-            tooltipText="Web"
-            tooltipOrientation={width > 1350 ? "bottom" : "top"}
-            onClick={() =>
-              paragraphs[3].current?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
-            color="var(--yellow)"
-          >
-            <DisplayAndWebpageIcon height="60%" />
-          </IconButton>
+            <IconButton
+              key="Web"
+              tooltipText="Web"
+              tooltipOrientation={width > 1350 ? "bottom" : "top"}
+              onClick={() =>
+                paragraphs[3].current?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                })
+              }
+              color="var(--yellow)"
+            >
+              <DisplayAndWebpageIcon height="60%" />
+            </IconButton>
 
-          <IconButton
-            key="Mobile"
-            tooltipText="Mobile"
-            tooltipOrientation={
-              width > 1350 ? "bottom" : width > 1160 ? "top" : "right"
-            }
-            onClick={() =>
-              paragraphs[4].current?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
-            color="var(--red)"
-          >
-            <SmartphoneIcon height="50%" />
-          </IconButton>
+            <IconButton
+              key="Mobile"
+              tooltipText="Mobile"
+              tooltipOrientation={
+                width > 1350 ? "bottom" : width > 1160 ? "top" : "right"
+              }
+              onClick={() =>
+                paragraphs[4].current?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                })
+              }
+              color="var(--red)"
+            >
+              <SmartphoneIcon height="50%" />
+            </IconButton>
 
-          <IconButton
-            key="Desktop"
-            tooltipOrientation={
-              width > 1350 ? "bottom" : width > 1160 ? "right" : "bottom"
-            }
-            tooltipText="Desktop"
-            onClick={() =>
-              paragraphs[5].current?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
-            color="var(--green)"
-          >
-            <DesktopIcon height="50%" />
-          </IconButton>
-          <IconButton
-            key="Design"
-            tooltipText="Design"
-            tooltipOrientation={width > 1350 ? "right" : "bottom"}
-            onClick={() =>
-              paragraphs[6].current?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
-            color="var(--orange)"
-          >
-            <DropIcon height="27px" />
-          </IconButton>
-        </div>
-      </HeaderWithIcon>
+            <IconButton
+              key="Desktop"
+              tooltipOrientation={
+                width > 1350 ? "bottom" : width > 1160 ? "right" : "bottom"
+              }
+              tooltipText="Desktop"
+              onClick={() =>
+                paragraphs[5].current?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                })
+              }
+              color="var(--green)"
+            >
+              <DesktopIcon height="50%" />
+            </IconButton>
+            <IconButton
+              key="Design"
+              tooltipText="Design"
+              tooltipOrientation={width > 1350 ? "right" : "bottom"}
+              onClick={() =>
+                paragraphs[6].current?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                })
+              }
+              color="var(--orange)"
+            >
+              <DropIcon height="27px" />
+            </IconButton>
+          </FlexContainer>
+        </HeaderWithSpacer>
+      </BackgroundWrapper>
       <main
         style={{
           flex: 1,
@@ -263,7 +293,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
         }}
       >
         {knowledgeCategories.map(({ title, description, items }, index) => {
-          if (breakpoint === "xs" || breakpoint === "sm")
+          if (width < breakpoints.lg)
             return (
               <FullScreenSection
                 key={title + "-snap"}
@@ -316,7 +346,7 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
       <BackTopButton
         hidden={hideButton}
         onClick={() => {
-          if (breakpoint === "xs" || breakpoint === "sm")
+          if (width < breakpoints.lg)
             window.scrollTo({
               top: 0,
               behavior: "smooth",
