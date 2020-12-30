@@ -6,11 +6,10 @@
     "debug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --passWithNoTests",
-    "lint": "eslint --ext js,jsx,ts,tsx --fix",
+    "lint": "tsc && eslint --ext js,jsx,ts,tsx --fix",
     "format": "prettier --write ."
   },
   "dependencies": {

@@ -12,7 +12,6 @@ import FlaskDesign from "../../components/designs/flask.design";
 import IconButton from "../../components/elements/generic/IconButton";
 import Spacer from "../../components/elements/generic/Spacer";
 import Typography from "../../components/elements/generic/Typography";
-import HeaderWithIcon from "../../components/layout/HeaderWithIcon";
 import DatabaseIcon from "../../components/icons/database.icon";
 import DesktopIcon from "../../components/icons/desktop.icon";
 import DisplayAndWebpageIcon from "../../components/icons/displayAndWebpage.icon";
