@@ -1,4 +1,7 @@
-import { motion, MotionStyle } from "framer-motion";
+import {
+  motion,
+  MotionStyle,
+} from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import Spacer from "../generic/Spacer";
@@ -36,12 +39,16 @@ const CategoryCard: React.FC<Props> = ({
         style={{
           width: "270px",
           height: "405px",
-          backgroundColor: "var(--primary)",
-          background: "var(--lightgrey)",
-          boxShadow: "0px 0px 2px 0px rgba(50, 50, 50, 0.25)",
+          backgroundColor:
+            "var(--primary)",
+          background:
+            "var(--lightgrey)",
+          boxShadow:
+            "0px 0px 2px 0px rgba(50, 50, 50, 0.25)",
           padding: "20%",
           display: "grid",
-          gridTemplateRows: "35% auto 1fr",
+          gridTemplateRows:
+            "35% auto 1fr",
           gridTemplateColumns: "auto",
           justifyContent: "center",
           position: "relative",
@@ -63,22 +70,32 @@ const CategoryCard: React.FC<Props> = ({
           style={{
             display: "grid",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            justifyContent:
+              "flex-start",
             alignItems: "flex-start",
           }}
         >
-          <Typography variant="h5" align="center">
+          <Typography
+            variant="h5"
+            align="center"
+          >
             {title}
           </Typography>
           <Spacer height="10px" />
-          <Typography italic align="center">
+          <Typography
+            italic
+            align="center"
+          >
             {description}
             {href
               ? [
                   <Spacer height="10px" />,
                   <Link href="knowledge/testDrivenDevelopment">
                     <a>
-                      <Typography align="center" underline>
+                      <Typography
+                        align="center"
+                        underline
+                      >
                         Mehr erfahren
                       </Typography>
                     </a>

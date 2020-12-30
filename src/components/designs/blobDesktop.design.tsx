@@ -20,7 +20,10 @@ const BlobDesktopDesign: React.FC<Props> = () => {
       viewBox="0 0 663 539"
     >
       <g clipPath="url(#clip0)">
-        <path fill="#fff" d="M0 0H663V539H0z"></path>
+        <path
+          fill="#fff"
+          d="M0 0H663V539H0z"
+        ></path>
         <path
           fill="#00739D"
           fillRule="evenodd"
@@ -30,7 +33,10 @@ const BlobDesktopDesign: React.FC<Props> = () => {
       </g>
       <defs>
         <clipPath id="clip0">
-          <path fill="#fff" d="M0 0H663V539H0z"></path>
+          <path
+            fill="#fff"
+            d="M0 0H663V539H0z"
+          ></path>
         </clipPath>
       </defs>
     </svg>

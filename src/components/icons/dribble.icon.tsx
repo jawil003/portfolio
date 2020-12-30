@@ -38,6 +38,9 @@ const DribbleIcon: React.FC<Props> = ({
   );
 };
 
-DribbleIcon.defaultProps = { color: "#E74D89", accentColor: "#B2215A" };
+DribbleIcon.defaultProps = {
+  color: "#E74D89",
+  accentColor: "#B2215A",
+};
 
 export default DribbleIcon;

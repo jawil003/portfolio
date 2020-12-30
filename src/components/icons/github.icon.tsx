@@ -10,7 +10,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const GithubIcon: React.FC<Props> = ({ width, height, color }) => {
+const GithubIcon: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +31,8 @@ const GithubIcon: React.FC<Props> = ({ width, height, color }) => {
   );
 };
 
-GithubIcon.defaultProps = { color: "#161614" };
+GithubIcon.defaultProps = {
+  color: "#161614",
+};
 
 export default GithubIcon;

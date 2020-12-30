@@ -1,16 +1,25 @@
-import React, { CSSProperties } from "react";
+import React, {
+  CSSProperties,
+} from "react";
 
 const generateStyle = (
   fontSize: number,
   color?: string,
   fontFamily?: string,
-  align?: "left" | "center" | "right" | "justify",
-  bold?: "semi-bold" | "bold" | "bolder",
+  align?:
+    | "left"
+    | "center"
+    | "right"
+    | "justify",
+  bold?:
+    | "semi-bold"
+    | "bold"
+    | "bolder",
   italic?: boolean,
   underline?: boolean,
   maxLength?: string,
   letterSpacing?: number,
-  wordSpacing?: number
+  wordSpacing?: number,
 ) => {
   const style: CSSProperties = {
     fontSize: `${fontSize}rem`,
@@ -27,8 +36,12 @@ const generateStyle = (
     color,
     fontFamily,
     textAlign: align,
-    fontStyle: italic ? "italic" : "normal",
-    textDecoration: underline ? "underline" : "normal",
+    fontStyle: italic
+      ? "italic"
+      : "normal",
+    textDecoration: underline
+      ? "underline"
+      : "normal",
     maxWidth: maxLength,
     letterSpacing,
     wordSpacing,
@@ -37,11 +50,27 @@ const generateStyle = (
 };
 
 export interface Props {
-  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "b1" | "b2" | "b3";
+  variant?:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "b1"
+    | "b2"
+    | "b3";
   color?: string;
   fontFamily?: string;
-  align?: "left" | "center" | "right" | "justify";
-  bold?: "semi-bold" | "bold" | "bolder";
+  align?:
+    | "left"
+    | "center"
+    | "right"
+    | "justify";
+  bold?:
+    | "semi-bold"
+    | "bold"
+    | "bolder";
   italic?: boolean;
   underline?: boolean;
   inline?: boolean;
@@ -74,7 +103,11 @@ const Typography: React.FC<Props> = ({
       return (
         <span
           style={generateStyle(
-            variant === "b1" ? 1 : variant === "b2" ? 0.8 : 0.6,
+            variant === "b1"
+              ? 1
+              : variant === "b2"
+              ? 0.8
+              : 0.6,
             color,
             fontFamily,
             align,
@@ -83,7 +116,7 @@ const Typography: React.FC<Props> = ({
             underline,
             maxLength,
             letterSpacing,
-            wordSpacing
+            wordSpacing,
           )}
         >
           {children}
@@ -92,7 +125,11 @@ const Typography: React.FC<Props> = ({
     return (
       <p
         style={generateStyle(
-          variant === "b1" ? 1 : variant === "b2" ? 0.8 : 0.6,
+          variant === "b1"
+            ? 1
+            : variant === "b2"
+            ? 0.8
+            : 0.6,
           color,
           fontFamily,
           align,
@@ -101,7 +138,7 @@ const Typography: React.FC<Props> = ({
           underline,
           maxLength,
           letterSpacing,
-          wordSpacing
+          wordSpacing,
         )}
       >
         {children}
@@ -122,7 +159,7 @@ const Typography: React.FC<Props> = ({
             underline,
             maxLength,
             letterSpacing,
-            wordSpacing
+            wordSpacing,
           )}
         >
           {children}
@@ -142,7 +179,7 @@ const Typography: React.FC<Props> = ({
             underline,
             maxLength,
             letterSpacing,
-            wordSpacing
+            wordSpacing,
           )}
         >
           {children}
@@ -162,7 +199,7 @@ const Typography: React.FC<Props> = ({
             underline,
             maxLength,
             letterSpacing,
-            wordSpacing
+            wordSpacing,
           )}
         >
           {children}
@@ -182,7 +219,7 @@ const Typography: React.FC<Props> = ({
             underline,
             maxLength,
             letterSpacing,
-            wordSpacing
+            wordSpacing,
           )}
         >
           {children}
@@ -202,7 +239,7 @@ const Typography: React.FC<Props> = ({
             underline,
             maxLength,
             letterSpacing,
-            wordSpacing
+            wordSpacing,
           )}
         >
           {children}
@@ -222,7 +259,7 @@ const Typography: React.FC<Props> = ({
             underline,
             maxLength,
             letterSpacing,
-            wordSpacing
+            wordSpacing,
           )}
         >
           {children}

@@ -6,7 +6,9 @@ export default class KnowledgeService {
   public static async getAllKnowledgeCategoriesWithItems() {
     const {
       data: { knowledgeCategories },
-    } = await client.query<{ knowledgeCategories: KnowledgeCategory[] }>({
+    } = await client.query<{
+      knowledgeCategories: KnowledgeCategory[];
+    }>({
       query: gql`
         {
           knowledgeCategories {

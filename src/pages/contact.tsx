@@ -30,7 +30,14 @@ const Contact: React.FC<Props> = () => {
       color: { secondary },
     },
   } = useTheme();
-  const [{ name, emailAdress, title, message }] = useState<UserMessage>({
+  const [
+    {
+      name,
+      emailAdress,
+      title,
+      message,
+    },
+  ] = useState<UserMessage>({
     name: "",
     emailAdress: "",
     title: "",
@@ -40,14 +47,21 @@ const Contact: React.FC<Props> = () => {
   return (
     <>
       <Head>
-        <title>Jannik Will | Kontakt</title>
+        <title>
+          Jannik Will | Kontakt
+        </title>
       </Head>
       <NavigationBar />
       <HeaderWithIcon
         fill
         first
         latest
-        icon={<ContactMeDesign color={secondary} width="100%" />}
+        icon={
+          <ContactMeDesign
+            color={secondary}
+            width="100%"
+          />
+        }
       >
         <Form>
           <TextField

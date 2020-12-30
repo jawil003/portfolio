@@ -1,6 +1,11 @@
-import { motion, useSpring } from "framer-motion";
+import {
+  motion,
+  useSpring,
+} from "framer-motion";
 import Link from "next/link";
-import React, { CSSProperties } from "react";
+import React, {
+  CSSProperties,
+} from "react";
 
 export interface Props {
   size?: string;
@@ -24,7 +29,9 @@ const IconLink: React.FC<Props> = ({
 }) => {
   const scale = useSpring(1);
   return (
-    <div style={{ position: "relative" }}>
+    <div
+      style={{ position: "relative" }}
+    >
       {external ? (
         <motion.a
           onMouseOver={() => {
@@ -71,7 +78,9 @@ const IconLink: React.FC<Props> = ({
   );
 };
 
-const styles: { [x: string]: CSSProperties } = {
+const styles: {
+  [x: string]: CSSProperties;
+} = {
   container: {
     margin: "10px 0px",
 
@@ -82,6 +91,8 @@ const styles: { [x: string]: CSSProperties } = {
   },
 };
 
-IconLink.defaultProps = { size: "40px" };
+IconLink.defaultProps = {
+  size: "40px",
+};
 
 export default React.memo(IconLink);

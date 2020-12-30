@@ -11,7 +11,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const AtHomeDesign: React.FC<Props> = ({ width, height, color }) => {
+const AtHomeDesign: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -54,17 +58,37 @@ const AtHomeDesign: React.FC<Props> = ({ width, height, color }) => {
         fill="#fff"
         d="M683.371 0.294L538.455 170.193 538.455 427.706 798.937 427.706 798.937 137.873 683.371 0.294z"
       ></path>
-      <path fill={color} d="M643.015 285.298H696.212V332.318H643.015z"></path>
-      <path fill={color} d="M643.015 203.911H696.212V250.186H643.015z"></path>
-      <path fill="#fff" d="M643.015 285.298H696.212V332.318H643.015z"></path>
-      <path fill="#fff" d="M643.015 203.911H696.212V250.186H643.015z"></path>
+      <path
+        fill={color}
+        d="M643.015 285.298H696.212V332.318H643.015z"
+      ></path>
+      <path
+        fill={color}
+        d="M643.015 203.911H696.212V250.186H643.015z"
+      ></path>
+      <path
+        fill="#fff"
+        d="M643.015 285.298H696.212V332.318H643.015z"
+      ></path>
+      <path
+        fill="#fff"
+        d="M643.015 203.911H696.212V250.186H643.015z"
+      ></path>
       <path
         fill="#e6e6e6"
         d="M682.08 655.462s1.14-23.896 24.519-21.118"
         transform="translate(-179.75 -236.147)"
       ></path>
-      <circle cx="495.724" cy="384.874" r="11.701" fill="#fff"></circle>
-      <path fill="#e6e6e6" d="M493.82 404.578H497.123V427.698H493.82z"></path>
+      <circle
+        cx="495.724"
+        cy="384.874"
+        r="11.701"
+        fill="#fff"
+      ></circle>
+      <path
+        fill="#e6e6e6"
+        d="M493.82 404.578H497.123V427.698H493.82z"
+      ></path>
       <ellipse
         cx="110.955"
         cy="237.096"
@@ -109,15 +133,32 @@ const AtHomeDesign: React.FC<Props> = ({ width, height, color }) => {
         d="M384.826 369.67H387.12600000000003V449.541H384.826z"
         transform="rotate(-61.843 98.984 441.574)"
       ></path>
-      <path fill={color} d="M0 425.813H840.5V427.813H0z"></path>
-      <path fill={color} d="M406.602 272.821H459.799V319.841H406.602z"></path>
-      <path fill={color} d="M406.602 191.434H459.799V237.709H406.602z"></path>
-      <path fill="#fff" d="M406.602 272.821H459.799V319.841H406.602z"></path>
-      <path fill="#fff" d="M406.602 191.434H459.799V237.709H406.602z"></path>
+      <path
+        fill={color}
+        d="M0 425.813H840.5V427.813H0z"
+      ></path>
+      <path
+        fill={color}
+        d="M406.602 272.821H459.799V319.841H406.602z"
+      ></path>
+      <path
+        fill={color}
+        d="M406.602 191.434H459.799V237.709H406.602z"
+      ></path>
+      <path
+        fill="#fff"
+        d="M406.602 272.821H459.799V319.841H406.602z"
+      ></path>
+      <path
+        fill="#fff"
+        d="M406.602 191.434H459.799V237.709H406.602z"
+      ></path>
     </svg>
   );
 };
 
-AtHomeDesign.defaultProps = { color: "var(--secondary)" };
+AtHomeDesign.defaultProps = {
+  color: "var(--secondary)",
+};
 
 export default AtHomeDesign;

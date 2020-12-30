@@ -9,7 +9,9 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const Form: React.FC<Props> = ({ children }) => {
+const Form: React.FC<Props> = ({
+  children,
+}) => {
   return (
     <div
       style={{

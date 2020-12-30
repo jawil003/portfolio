@@ -1,6 +1,13 @@
-import { useState, useEffect } from "react";
+import {
+  useState,
+  useEffect,
+} from "react";
 
-export const breakpoints = { sm: 400, md: 780, lg: 1100 };
+export const breakpoints = {
+  sm: 400,
+  md: 780,
+  lg: 1100,
+};
 
 const useBreakpoint = () => {
   const [brkPnt, setBrkPnt] = useState<{
@@ -15,10 +22,16 @@ const useBreakpoint = () => {
         height: window.innerHeight,
       });
     };
-    window.addEventListener("resize", calcInnerWidth);
+    window.addEventListener(
+      "resize",
+      calcInnerWidth,
+    );
     calcInnerWidth();
     return () => {
-      window.removeEventListener("resize", calcInnerWidth);
+      window.removeEventListener(
+        "resize",
+        calcInnerWidth,
+      );
     };
   }, []);
 

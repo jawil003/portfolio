@@ -1,5 +1,11 @@
-import { motion, useSpring, useTransform } from "framer-motion";
-import React, { useEffect } from "react";
+import {
+  motion,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import React, {
+  useEffect,
+} from "react";
 import TopArrowIcon from "../../icons/topArrow.icon";
 
 interface Props {
@@ -12,10 +18,17 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const BackTopButton: React.FC<Props> = ({ hidden, onClick }) => {
+const BackTopButton: React.FC<Props> = ({
+  hidden,
+  onClick,
+}) => {
   const scale = useSpring(1);
   const y = useSpring(0);
-  const opacity = useTransform(y, [5, 0], [0, 1]);
+  const opacity = useTransform(
+    y,
+    [5, 0],
+    [0, 1],
+  );
 
   useEffect(() => {
     if (hidden) {
@@ -27,7 +40,9 @@ const BackTopButton: React.FC<Props> = ({ hidden, onClick }) => {
 
   return (
     <motion.div
-      onHoverStart={() => scale.set(1.2)}
+      onHoverStart={() =>
+        scale.set(1.2)
+      }
       onHoverEnd={() => scale.set(1)}
       style={{
         y,
@@ -37,7 +52,8 @@ const BackTopButton: React.FC<Props> = ({ hidden, onClick }) => {
         display: "flex",
         width: "52px",
         height: "52px",
-        backgroundColor: "var(--darkblue)",
+        backgroundColor:
+          "var(--darkblue)",
         justifyContent: "center",
         alignItems: "center",
         position: "fixed",
@@ -47,11 +63,16 @@ const BackTopButton: React.FC<Props> = ({ hidden, onClick }) => {
       }}
       onClick={onClick}
     >
-      <TopArrowIcon rotate="top" height="50%" />
+      <TopArrowIcon
+        rotate="top"
+        height="50%"
+      />
     </motion.div>
   );
 };
 
-BackTopButton.defaultProps = { hidden: false };
+BackTopButton.defaultProps = {
+  hidden: false,
+};
 
 export default BackTopButton;

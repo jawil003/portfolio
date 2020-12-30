@@ -10,7 +10,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const DesigningDesign: React.FC<Props> = ({ width, height }) => {
+const DesigningDesign: React.FC<Props> = ({
+  width,
+  height,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,9 +32,21 @@ const DesigningDesign: React.FC<Props> = ({ width, height }) => {
           y2="679.56"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stopColor="gray" stopOpacity="0.25"></stop>
-          <stop offset="0.54" stopColor="gray" stopOpacity="0.12"></stop>
-          <stop offset="1" stopColor="gray" stopOpacity="0.1"></stop>
+          <stop
+            offset="0"
+            stopColor="gray"
+            stopOpacity="0.25"
+          ></stop>
+          <stop
+            offset="0.54"
+            stopColor="gray"
+            stopOpacity="0.12"
+          ></stop>
+          <stop
+            offset="1"
+            stopColor="gray"
+            stopOpacity="0.1"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="72a3db62-0825-44ad-a640-19754e14ba99"

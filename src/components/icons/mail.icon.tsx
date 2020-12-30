@@ -11,7 +11,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const MailIcon: React.FC<Props> = ({ width, height, color }) => {
+const MailIcon: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -31,6 +35,8 @@ const MailIcon: React.FC<Props> = ({ width, height, color }) => {
   );
 };
 
-MailIcon.defaultProps = { color: "var(--secondaryText)" };
+MailIcon.defaultProps = {
+  color: "var(--secondaryText)",
+};
 
 export default MailIcon;

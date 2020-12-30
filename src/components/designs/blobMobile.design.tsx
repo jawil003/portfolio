@@ -1,4 +1,6 @@
-import React, { CSSProperties } from "react";
+import React, {
+  CSSProperties,
+} from "react";
 
 interface Props {
   width?: string;
@@ -11,7 +13,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const BlobMobileDesign: React.FC<Props> = ({ width, height, style }) => {
+const BlobMobileDesign: React.FC<Props> = ({
+  width,
+  height,
+  style,
+}) => {
   return (
     <svg
       preserveAspectRatio="none"

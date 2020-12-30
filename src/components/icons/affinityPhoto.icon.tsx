@@ -10,7 +10,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const AffinityPhotoIcon: React.FC<Props> = ({ width, height }) => {
+const AffinityPhotoIcon: React.FC<Props> = ({
+  width,
+  height,
+}) => {
   return (
     <img
       width={width}

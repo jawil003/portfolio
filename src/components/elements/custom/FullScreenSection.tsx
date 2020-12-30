@@ -1,7 +1,15 @@
-import { motion, MotionStyle } from "framer-motion";
-import React, { forwardRef } from "react";
+import {
+  motion,
+  MotionStyle,
+} from "framer-motion";
+import React, {
+  forwardRef,
+} from "react";
 
-const getHeightForSection = (first?: boolean, latest?: boolean) => {
+const getHeightForSection = (
+  first?: boolean,
+  latest?: boolean,
+) => {
   if (first && latest) {
     return "calc(100vh - calc(70px + 100px))";
   } else if (first) {
@@ -24,14 +32,23 @@ interface Props {
  * @author
  * @version 0.1
  */
-const FullScreenSection = forwardRef<HTMLDivElement, Props>(
-  ({ children, latest, style, first }, ref) => {
+const FullScreenSection = forwardRef<
+  HTMLDivElement,
+  Props
+>(
+  (
+    { children, latest, style, first },
+    ref,
+  ) => {
     return (
       <motion.section
         ref={ref}
         style={{
           ...style,
-          minHeight: getHeightForSection(first, latest),
+          minHeight: getHeightForSection(
+            first,
+            latest,
+          ),
           display: "grid",
           justifyContent: "center",
           alignContent: "center",
@@ -40,9 +57,12 @@ const FullScreenSection = forwardRef<HTMLDivElement, Props>(
         {children}
       </motion.section>
     );
-  }
+  },
 );
 
-FullScreenSection.defaultProps = { latest: false, first: false };
+FullScreenSection.defaultProps = {
+  latest: false,
+  first: false,
+};
 
 export default FullScreenSection;

@@ -10,7 +10,10 @@ interface Props {
  * @author
  * @version 0.1
  */
-const BackgroundWrapper: React.FC<Props> = ({ background, children }) => {
+const BackgroundWrapper: React.FC<Props> = ({
+  background,
+  children,
+}) => {
   return (
     <div>
       <div
@@ -23,11 +26,24 @@ const BackgroundWrapper: React.FC<Props> = ({ background, children }) => {
           width: "100vw",
         }}
       >
-        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+          }}
+        >
           {background}
         </div>
       </div>
-      <div style={{ position: "relative", zIndex: 2 }}>{children}</div>
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 };

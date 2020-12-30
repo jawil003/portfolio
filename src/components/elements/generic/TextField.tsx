@@ -9,7 +9,10 @@ export interface Props {
   rows?: number;
   value: string;
   onChange?: (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<
+      | HTMLInputElement
+      | HTMLTextAreaElement
+    >,
   ) => void;
 }
 
@@ -28,8 +31,14 @@ const TextField: React.FC<Props> = ({
 }) => {
   return (
     <div className={styles.inputRoot}>
-      <Typography variant="b1">{title}</Typography>
-      <div className={styles.inputContainer}>
+      <Typography variant="b1">
+        {title}
+      </Typography>
+      <div
+        className={
+          styles.inputContainer
+        }
+      >
         {area ? (
           <textarea
             onChange={onChange}
@@ -58,4 +67,8 @@ TextField.defaultProps = {
   value: "",
 };
 
-export default React.memo(TextField, (prev, next) => prev.value === next.value);
+export default React.memo(
+  TextField,
+  (prev, next) =>
+    prev.value === next.value,
+);

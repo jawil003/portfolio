@@ -16,7 +16,11 @@ interface Props {
     | "center"
     | "flex-start"
     | "flex-end";
-  alignItems?: "center" | "flex-start" | "flex-end" | "stretch";
+  alignItems?:
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "stretch";
   wrap?: boolean;
 }
 
@@ -44,7 +48,9 @@ const FlexContainer: React.FC<Props> = ({
           align-content: ${alignContent};
           justify-content: ${justifyContent};
           align-items: ${alignItems};
-          flex-wrap: ${wrap ? "wrap" : "no-wrap"};
+          flex-wrap: ${wrap
+            ? "wrap"
+            : "no-wrap"};
         }
         .flexContainer > :global(*) {
           margin: ${rowGap} ${columnGap};

@@ -9,7 +9,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ColorContainer: React.FC<Props> = ({ children, color }) => {
+const ColorContainer: React.FC<Props> = ({
+  children,
+  color,
+}) => {
   return (
     <div
       style={{

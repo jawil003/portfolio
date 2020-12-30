@@ -1,4 +1,7 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+} from "@apollo/client";
 import { buildAxiosFetch } from "@lifeomic/axios-fetch";
 import axios from "axios";
 import { createHttpLink } from "apollo-link-http";

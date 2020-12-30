@@ -1,4 +1,7 @@
-import React, { forwardRef, PropsWithChildren } from "react";
+import React, {
+  forwardRef,
+  PropsWithChildren,
+} from "react";
 
 interface Props {
   align?: "start" | "center" | "end";
@@ -19,7 +22,9 @@ const SnapScrollParagraph = forwardRef<
       ref={ref}
       style={{
         scrollSnapAlign: align,
-        scrollSnapStop: stop ? "always" : "normal",
+        scrollSnapStop: stop
+          ? "always"
+          : "normal",
       }}
     >
       {children}
@@ -27,6 +32,9 @@ const SnapScrollParagraph = forwardRef<
   );
 });
 
-SnapScrollParagraph.defaultProps = { align: "start", stop: false };
+SnapScrollParagraph.defaultProps = {
+  align: "start",
+  stop: false,
+};
 
 export default SnapScrollParagraph;

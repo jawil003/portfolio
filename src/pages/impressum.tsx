@@ -18,18 +18,31 @@ const Contact: React.FC<Props> = () => {
   return (
     <>
       <Head>
-        <title>Jannik Will | Impressum</title>
+        <title>
+          Jannik Will | Impressum
+        </title>
       </Head>
 
       <NavigationBar />
-      <HeaderWithIcon first latest icon={<AtHomeDesign width="100%" />}>
-        <Typography variant="h3" align="center">
+      <HeaderWithIcon
+        first
+        latest
+        icon={
+          <AtHomeDesign width="100%" />
+        }
+      >
+        <Typography
+          variant="h3"
+          align="center"
+        >
           Impressum
         </Typography>
         <Spacer height="10px" />
         <Typography align="center">
-          Jannik Will <br /> Ostkirchstraße 23 <br />
-          44269 Dortmund <br /> Deutschland
+          Jannik Will <br />{" "}
+          Ostkirchstraße 23 <br />
+          44269 Dortmund <br />{" "}
+          Deutschland
         </Typography>
       </HeaderWithIcon>
       <Footer />

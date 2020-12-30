@@ -6,7 +6,11 @@ interface Props {
   color?: string;
 }
 
-const DeveloperIcon: React.FC<Props> = ({ width, height, color }) => {
+const DeveloperIcon: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       width={width}
@@ -30,6 +34,8 @@ const DeveloperIcon: React.FC<Props> = ({ width, height, color }) => {
   );
 };
 
-DeveloperIcon.defaultProps = { color: "var(--secondary)" };
+DeveloperIcon.defaultProps = {
+  color: "var(--secondary)",
+};
 
 export default DeveloperIcon;

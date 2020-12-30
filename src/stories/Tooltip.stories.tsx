@@ -3,9 +3,14 @@ import Tooltip, {
   Props as TooltipProps,
 } from "../components/elements/generic/Tooltip";
 
-export default { title: "Elements/Tooltip", component: Tooltip };
+export default {
+  title: "Elements/Tooltip",
+  component: Tooltip,
+};
 
-const TooltipElement: Story<TooltipProps> = (args) => (
+const TooltipElement: Story<TooltipProps> = (
+  args,
+) => (
   <div
     style={{
       width: "54px",
@@ -18,16 +23,24 @@ const TooltipElement: Story<TooltipProps> = (args) => (
   </div>
 );
 
-export const Left = TooltipElement.bind({});
+export const Left = TooltipElement.bind(
+  {},
+);
 Left.args = {
   orientation: "left",
 };
 
-export const Right = TooltipElement.bind({});
+export const Right = TooltipElement.bind(
+  {},
+);
 Right.args = { orientation: "right" };
 
-export const Top = TooltipElement.bind({});
+export const Top = TooltipElement.bind(
+  {},
+);
 Top.args = { orientation: "top" };
 
-export const Bottom = TooltipElement.bind({});
+export const Bottom = TooltipElement.bind(
+  {},
+);
 Bottom.args = { orientation: "bottom" };

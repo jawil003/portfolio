@@ -24,7 +24,9 @@ interface ServerSideProps {
  * @author Jannik Will
  * @version 0.1
  */
-const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
+const Contact: React.FC<
+  Props & ServerSideProps
+> = ({ resumeItems }) => {
   const _paragraphs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -36,7 +38,9 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
   return (
     <>
       <Head>
-        <title>Jannik Will | Erfahrungen</title>
+        <title>
+          Jannik Will | Erfahrungen
+        </title>
       </Head>
 
       <NavigationBar />
@@ -44,16 +48,26 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
       <HeaderWithIcon
         latest
         first
-        icon={<DesigningDesign width="100%" />}
+        icon={
+          <DesigningDesign width="100%" />
+        }
         ref={_paragraphs[0]}
       >
-        <Typography variant="h3" align="center">
+        <Typography
+          variant="h3"
+          align="center"
+        >
           Was habe ich bereits gelernt?
         </Typography>
         <Spacer height="0.4em" />
-        <Typography align="center" italic>
-          Das Leben besteht aus kontinuierlichen Lernen. Warum stehen bleiben
-          wenn Weiterentwicklung möglich ist
+        <Typography
+          align="center"
+          italic
+        >
+          Das Leben besteht aus
+          kontinuierlichen Lernen. Warum
+          stehen bleiben wenn
+          Weiterentwicklung möglich ist
         </Typography>
       </HeaderWithIcon>
       <ColorContainer color="var(--secondary)">
@@ -67,7 +81,8 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
           <div
             style={{
               overflow: "hidden",
-              width: "calc(100vw + 20px)",
+              width:
+                "calc(100vw + 20px)",
             }}
           >
             <svg
@@ -86,16 +101,34 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
           </div>
           <ResumeContainer>
             {resumeItems.map(
-              ({ title, description, start_year, end_year }, index) => (
+              (
+                {
+                  title,
+                  description,
+                  start_year,
+                  end_year,
+                },
+                index,
+              ) => (
                 <ResumeItem
                   key={title}
-                  latest={index === resumeItems.length - 1 ? true : false}
-                  start_year={start_year}
+                  latest={
+                    index ===
+                    resumeItems.length -
+                      1
+                      ? true
+                      : false
+                  }
+                  start_year={
+                    start_year
+                  }
                   end_year={end_year}
                   title={title}
-                  description={description}
+                  description={
+                    description
+                  }
                 />
-              )
+              ),
             )}
           </ResumeContainer>
         </main>
@@ -106,7 +139,11 @@ const Contact: React.FC<Props & ServerSideProps> = ({ resumeItems }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  return { props: { resumeItems: await ResumeService.getAllResumeItems() } };
+  return {
+    props: {
+      resumeItems: await ResumeService.getAllResumeItems(),
+    },
+  };
 };
 
 export default Contact;

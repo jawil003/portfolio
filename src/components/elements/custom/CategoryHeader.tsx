@@ -11,7 +11,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const CategoryHeader: React.FC<Props> = ({ title, description }) => {
+const CategoryHeader: React.FC<Props> = ({
+  title,
+  description,
+}) => {
   return (
     <div
       style={{
@@ -21,8 +24,12 @@ const CategoryHeader: React.FC<Props> = ({ title, description }) => {
         flexDirection: "column",
       }}
     >
-      <Typography variant="h4">{title}</Typography>
-      <Typography italic>{description}</Typography>
+      <Typography variant="h4">
+        {title}
+      </Typography>
+      <Typography italic>
+        {description}
+      </Typography>
     </div>
   );
 };

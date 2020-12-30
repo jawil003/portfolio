@@ -15,8 +15,16 @@ interface Props {
     | "center"
     | "flex-start"
     | "flex-end";
-  alignItems?: "center" | "flex-start" | "flex-end" | "stretch";
-  justifyItems?: "center" | "flex-start" | "flex-end" | "stretch";
+  alignItems?:
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "stretch";
+  justifyItems?:
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "stretch";
 }
 
 /**

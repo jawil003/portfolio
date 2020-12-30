@@ -29,13 +29,28 @@ const ResumeItem: React.FC<Props> = ({
     },
   } = useTheme();
   return (
-    <div style={{ position: "relative", display: "flex", minHeight: "200px" }}>
-      <div style={{ display: "flex", flex: 1, justifyContent: "center" }}>
+    <div
+      style={{
+        position: "relative",
+        display: "flex",
+        minHeight: "200px",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flex: 1,
+          justifyContent: "center",
+        }}
+      >
         <div
           style={{
-            backgroundColor: "var(--darkwhite)",
+            backgroundColor:
+              "var(--darkwhite)",
             width: "3.5px",
-            height: latest ? "calc(100% + 70px)" : "100%",
+            height: latest
+              ? "calc(100% + 70px)"
+              : "100%",
           }}
         />
       </div>
@@ -75,7 +90,9 @@ const ResumeItem: React.FC<Props> = ({
                 variant="h6"
                 color="var(--darkwhite)"
               >
-                {end_year ? end_year : "heute"}
+                {end_year
+                  ? end_year
+                  : "heute"}
               </Typography>,
             ]
           ) : (
@@ -94,7 +111,8 @@ const ResumeItem: React.FC<Props> = ({
             width: "25px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            justifyContent:
+              "flex-start",
             margin: "0px 20px",
           }}
         >
@@ -112,7 +130,8 @@ const ResumeItem: React.FC<Props> = ({
             flex: 1,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            justifyContent:
+              "flex-start",
             alignItems: "flex-start",
             color: "var(--darkwhite)",
           }}
@@ -140,6 +159,8 @@ const ResumeItem: React.FC<Props> = ({
   );
 };
 
-ResumeItem.defaultProps = { latest: false };
+ResumeItem.defaultProps = {
+  latest: false,
+};
 
 export default ResumeItem;

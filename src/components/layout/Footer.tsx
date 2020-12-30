@@ -6,12 +6,19 @@ import useBreakpoint from "src/hooks/useBreakpoints.hook";
 
 const items = [
   { href: "/contact", name: "Kontakt" },
-  { href: "/impressum", name: "Impressum" },
+  {
+    href: "/impressum",
+    name: "Impressum",
+  },
 ];
 
 const getIconForName = (
   name: string,
-  options: { color: string; width?: string; height?: string }
+  options: {
+    color: string;
+    width?: string;
+    height?: string;
+  },
 ) => {
   switch (name) {
     case "Kontakt": {
@@ -53,7 +60,9 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const Footer: React.FC<Props> = ({ color }) => {
+const Footer: React.FC<Props> = ({
+  color,
+}) => {
   const { width } = useBreakpoint();
   return (
     <footer
@@ -70,24 +79,34 @@ const Footer: React.FC<Props> = ({ color }) => {
             <NavigationBarItem
               color={c}
               href="/contact"
-              icon={getIconForName(items[index].name, {
-                color: c,
-                height: "23px",
-              })}
+              icon={getIconForName(
+                items[index].name,
+                {
+                  color: c,
+                  height: "23px",
+                },
+              )}
             >
-              {width > 466 ? items[index].name : undefined}
+              {width > 466
+                ? items[index].name
+                : undefined}
             </NavigationBarItem>
           ))
         : items.map((i) => (
             <NavigationBarItem
               color={color}
               href="/contact"
-              icon={getIconForName(i.name, {
-                color,
-                height: "23px",
-              })}
+              icon={getIconForName(
+                i.name,
+                {
+                  color,
+                  height: "23px",
+                },
+              )}
             >
-              {width > 466 ? i.name : undefined}
+              {width > 466
+                ? i.name
+                : undefined}
             </NavigationBarItem>
           ))}
     </footer>

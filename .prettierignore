@@ -1,0 +1,18 @@
+#Nextjs Build
+.next
+
+#vscode Settings
+.vscode
+
+#Github Media Files
+media
+breakpoints.txt
+
+#Dependencies
+node_modules
+
+#Config
+.env
+.env.example
+.prettierrc.js
+jest.config.js

@@ -10,7 +10,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const JavaIcon: React.FC<Props> = ({ width, height }) => {
+const JavaIcon: React.FC<Props> = ({
+  width,
+  height,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

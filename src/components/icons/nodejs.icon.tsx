@@ -10,7 +10,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const NodeIcon: React.FC<Props> = ({ width, height }) => {
+const NodeIcon: React.FC<Props> = ({
+  width,
+  height,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -27,9 +30,18 @@ const NodeIcon: React.FC<Props> = ({ width, height }) => {
           gradientTransform="rotate(116.114 53.1 202.97) scale(86.48)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3" stopColor="#3E863D"></stop>
-          <stop offset="0.5" stopColor="#55934F"></stop>
-          <stop offset="0.8" stopColor="#5AAD45"></stop>
+          <stop
+            offset="0.3"
+            stopColor="#3E863D"
+          ></stop>
+          <stop
+            offset="0.5"
+            stopColor="#55934F"
+          ></stop>
+          <stop
+            offset="0.8"
+            stopColor="#5AAD45"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="d"
@@ -38,9 +50,18 @@ const NodeIcon: React.FC<Props> = ({ width, height }) => {
           gradientTransform="rotate(-36.46 550.846 -214.337) scale(132.798)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.57" stopColor="#3E863D"></stop>
-          <stop offset="0.72" stopColor="#619857"></stop>
-          <stop offset="1" stopColor="#76AC64"></stop>
+          <stop
+            offset="0.57"
+            stopColor="#3E863D"
+          ></stop>
+          <stop
+            offset="0.72"
+            stopColor="#619857"
+          ></stop>
+          <stop
+            offset="1"
+            stopColor="#76AC64"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="f"
@@ -49,11 +70,26 @@ const NodeIcon: React.FC<Props> = ({ width, height }) => {
           gradientTransform="translate(192.862 279.652) scale(97.417)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.16" stopColor="#6BBF47"></stop>
-          <stop offset="0.38" stopColor="#79B461"></stop>
-          <stop offset="0.47" stopColor="#75AC64"></stop>
-          <stop offset="0.7" stopColor="#659E5A"></stop>
-          <stop offset="0.9" stopColor="#3E863D"></stop>
+          <stop
+            offset="0.16"
+            stopColor="#6BBF47"
+          ></stop>
+          <stop
+            offset="0.38"
+            stopColor="#79B461"
+          ></stop>
+          <stop
+            offset="0.47"
+            stopColor="#75AC64"
+          ></stop>
+          <stop
+            offset="0.7"
+            stopColor="#659E5A"
+          ></stop>
+          <stop
+            offset="0.9"
+            stopColor="#3E863D"
+          ></stop>
         </linearGradient>
       </defs>
       <path

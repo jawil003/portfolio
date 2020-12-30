@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, {
+  useRef,
+  useState,
+} from "react";
 import CategoryCard from "../../components/elements/custom/CategoryCard";
 import CategoryCardWrapper from "../../components/layout/CategoryCardWrapper";
 import CategoryHeader from "../../components/elements/custom/CategoryHeader";
@@ -21,7 +24,9 @@ import ScrollSnapParagraph from "../../components/elements/generic/SnapScrollPar
 import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
-import useBreakpoint, { breakpoints } from "../../hooks/useBreakpoints.hook";
+import useBreakpoint, {
+  breakpoints,
+} from "../../hooks/useBreakpoints.hook";
 import { GetStaticProps } from "next";
 import KnowledgeService from "src/services/knowledge.service";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
@@ -31,47 +36,96 @@ import ReactDesign from "src/components/designs/react.design";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 
-const AdobeXdIcon = dynamic(() =>
-  import("../../components/icons/adobeXd.icon")
+const AdobeXdIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/adobeXd.icon"
+    ),
 );
-const ElectronIcon = dynamic(() =>
-  import("../../components/icons/electron.icon")
+const ElectronIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/electron.icon"
+    ),
 );
-const TypescriptIcon = dynamic(() =>
-  import("../../components/icons/typescript.icon")
+const TypescriptIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/typescript.icon"
+    ),
 );
-const ReactIcon = dynamic(() => import("../../components/icons/react.icon"));
-const NodeIcon = dynamic(() => import("../../components/icons/nodejs.icon"));
-const JavaIcon = dynamic(() => import("../../components/icons/java.icon"));
-const AndroidIcon = dynamic(() =>
-  import("../../components/icons/android.icon")
+const ReactIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/react.icon"
+    ),
 );
-const SettingsPageDesign = dynamic(() =>
-  import("../../components/designs/settingsPage.design")
+const NodeIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/nodejs.icon"
+    ),
 );
-const PrototypeDesign = dynamic(() =>
-  import("../../components/designs/prototype.design")
+const JavaIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/java.icon"
+    ),
 );
-const AffinityDesignerIcon = dynamic(() =>
-  import("../../components/icons/affinityDesigner.icon")
+const AndroidIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/android.icon"
+    ),
 );
-const AffinityPhotoIcon = dynamic(() =>
-  import("../../components/icons/affinityPhoto.icon")
+const SettingsPageDesign = dynamic(
+  () =>
+    import(
+      "../../components/designs/settingsPage.design"
+    ),
+);
+const PrototypeDesign = dynamic(
+  () =>
+    import(
+      "../../components/designs/prototype.design"
+    ),
+);
+const AffinityDesignerIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/affinityDesigner.icon"
+    ),
+);
+const AffinityPhotoIcon = dynamic(
+  () =>
+    import(
+      "../../components/icons/affinityPhoto.icon"
+    ),
 );
 
-const getIconForName = (name?: string) => {
+const getIconForName = (
+  name?: string,
+) => {
   switch (name) {
     case "ElectronIcon": {
-      return <ElectronIcon height="100%" />;
+      return (
+        <ElectronIcon height="100%" />
+      );
     }
     case "AdobeXdIcon": {
-      return <AdobeXdIcon height="100%" />;
+      return (
+        <AdobeXdIcon height="100%" />
+      );
     }
     case "TypescriptIcon": {
-      return <TypescriptIcon height="100%" />;
+      return (
+        <TypescriptIcon height="100%" />
+      );
     }
     case "ReactIcon": {
-      return <ReactIcon height="100%" />;
+      return (
+        <ReactIcon height="100%" />
+      );
     }
     case "NodeIcon": {
       return <NodeIcon height="100%" />;
@@ -80,22 +134,34 @@ const getIconForName = (name?: string) => {
       return <JavaIcon height="100%" />;
     }
     case "AndroidIcon": {
-      return <AndroidIcon height="100%" />;
+      return (
+        <AndroidIcon height="100%" />
+      );
     }
     case "SettingsPageDesign": {
-      return <SettingsPageDesign height="100%" />;
+      return (
+        <SettingsPageDesign height="100%" />
+      );
     }
     case "PrototypeDesign": {
-      return <PrototypeDesign height="100%" />;
+      return (
+        <PrototypeDesign height="100%" />
+      );
     }
     case "AffinityDesignerIcon": {
-      return <AffinityDesignerIcon height="100%" />;
+      return (
+        <AffinityDesignerIcon height="100%" />
+      );
     }
     case "AffinityPhotoIcon": {
-      return <AffinityPhotoIcon height="100%" />;
+      return (
+        <AffinityPhotoIcon height="100%" />
+      );
     }
     default: {
-      return <FlaskDesign height="100%" />;
+      return (
+        <FlaskDesign height="100%" />
+      );
     }
   }
 };
@@ -111,14 +177,19 @@ interface StaticProps {
  * @author Jannik Will
  * @version 0.1
  */
-const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
+const Contact: React.FC<
+  Props & StaticProps
+> = ({ knowledgeCategories }) => {
   const {
     palette: {
       color: { primary, secondaryText },
     },
   } = useTheme();
 
-  const [hideButton, setHideButton] = useState(true);
+  const [
+    hideButton,
+    setHideButton,
+  ] = useState(true);
 
   const paragraphs = Array.of(
     useRef<HTMLDivElement>(null),
@@ -128,29 +199,35 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null)
+    useRef<HTMLDivElement>(null),
   );
   const { width } = useBreakpoint();
   useScrollPosition(
     ({ currPos }) => {
-      if (currPos.y === 0) setHideButton(true);
+      if (currPos.y === 0)
+        setHideButton(true);
       else setHideButton(false);
     },
     [hideButton],
     undefined,
     false,
-    300
+    300,
   );
 
   return (
     <>
       <Head>
-        <title>Jannik Will | Kenntnisse</title>
+        <title>
+          Jannik Will | Kenntnisse
+        </title>
       </Head>
       {width < breakpoints.lg ? (
         <NavigationBar />
       ) : (
-        <ScrollSnapParagraph ref={paragraphs[0]} align="start">
+        <ScrollSnapParagraph
+          ref={paragraphs[0]}
+          align="start"
+        >
           <NavigationBar />
         </ScrollSnapParagraph>
       )}
@@ -159,38 +236,67 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
           <div
             style={{
               position: "absolute",
-              right: width >= breakpoints.lg ? 0 : undefined,
-              left: width < breakpoints.lg ? 0 : undefined,
+              right:
+                width >= breakpoints.lg
+                  ? 0
+                  : undefined,
+              left:
+                width < breakpoints.lg
+                  ? 0
+                  : undefined,
               top: 0,
               width: "100%",
               height: "100%",
               display: "flex",
-              alignItems: width >= breakpoints.lg ? "center" : "flex-emd",
-              justifyContent: width >= breakpoints.lg ? "center" : "flex-start",
+              alignItems:
+                width >= breakpoints.lg
+                  ? "center"
+                  : "flex-emd",
+              justifyContent:
+                width >= breakpoints.lg
+                  ? "center"
+                  : "flex-start",
             }}
           >
             <div
               style={{
                 position: "relative",
-                right: width < breakpoints.lg ? "70%" : 0,
+                right:
+                  width < breakpoints.lg
+                    ? "70%"
+                    : 0,
               }}
             >
               <ReactDesign
                 width={"100%"}
-                height={width < breakpoints.lg ? "100vh" : undefined}
+                height={
+                  width < breakpoints.lg
+                    ? "100vh"
+                    : undefined
+                }
               />
             </div>
           </div>
         }
       >
         <HeaderWithSpacer first>
-          <Typography variant="h3" align="center">
+          <Typography
+            variant="h3"
+            align="center"
+          >
             Wie kann ich dir helfen?
           </Typography>
           <Spacer height="0.4em" />
-          <Typography align="center" italic>
-            Vielleicht sagt dir ja eines meiner Fachgebiete zu, dann{" "}
-            <Typography underline inline>
+          <Typography
+            align="center"
+            italic
+          >
+            Vielleicht sagt dir ja eines
+            meiner Fachgebiete zu, dann{" "}
+            <Typography
+              underline
+              inline
+            >
               <Link href="/contact">
                 <a>kontaktiere</a>
               </Link>
@@ -209,10 +315,12 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
               tooltipText="Backend"
               tooltipOrientation="left"
               onClick={() =>
-                paragraphs[2].current?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                })
+                paragraphs[2].current?.scrollIntoView(
+                  {
+                    behavior: "smooth",
+                    block: "start",
+                  },
+                )
               }
             >
               <DatabaseIcon height="50%" />
@@ -221,12 +329,18 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
             <IconButton
               key="Web"
               tooltipText="Web"
-              tooltipOrientation={width > 1350 ? "bottom" : "top"}
+              tooltipOrientation={
+                width > 1350
+                  ? "bottom"
+                  : "top"
+              }
               onClick={() =>
-                paragraphs[3].current?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                })
+                paragraphs[3].current?.scrollIntoView(
+                  {
+                    behavior: "smooth",
+                    block: "start",
+                  },
+                )
               }
               color="var(--yellow)"
             >
@@ -237,13 +351,19 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
               key="Mobile"
               tooltipText="Mobile"
               tooltipOrientation={
-                width > 1350 ? "bottom" : width > 1160 ? "top" : "right"
+                width > 1350
+                  ? "bottom"
+                  : width > 1160
+                  ? "top"
+                  : "right"
               }
               onClick={() =>
-                paragraphs[4].current?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                })
+                paragraphs[4].current?.scrollIntoView(
+                  {
+                    behavior: "smooth",
+                    block: "start",
+                  },
+                )
               }
               color="var(--red)"
             >
@@ -253,14 +373,20 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
             <IconButton
               key="Desktop"
               tooltipOrientation={
-                width > 1350 ? "bottom" : width > 1160 ? "right" : "bottom"
+                width > 1350
+                  ? "bottom"
+                  : width > 1160
+                  ? "right"
+                  : "bottom"
               }
               tooltipText="Desktop"
               onClick={() =>
-                paragraphs[5].current?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                })
+                paragraphs[5].current?.scrollIntoView(
+                  {
+                    behavior: "smooth",
+                    block: "start",
+                  },
+                )
               }
               color="var(--green)"
             >
@@ -269,12 +395,18 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
             <IconButton
               key="Design"
               tooltipText="Design"
-              tooltipOrientation={width > 1350 ? "right" : "bottom"}
+              tooltipOrientation={
+                width > 1350
+                  ? "right"
+                  : "bottom"
+              }
               onClick={() =>
-                paragraphs[6].current?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                })
+                paragraphs[6].current?.scrollIntoView(
+                  {
+                    behavior: "smooth",
+                    block: "start",
+                  },
+                )
               }
               color="var(--orange)"
             >
@@ -292,55 +424,123 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
           color: secondaryText,
         }}
       >
-        {knowledgeCategories.map(({ title, description, items }, index) => {
-          if (width < breakpoints.lg)
+        {knowledgeCategories.map(
+          (
+            {
+              title,
+              description,
+              items,
+            },
+            index,
+          ) => {
+            if (width < breakpoints.lg)
+              return (
+                <FullScreenSection
+                  key={title + "-snap"}
+                  latest={
+                    index ===
+                    knowledgeCategories.length -
+                      1
+                      ? true
+                      : false
+                  }
+                >
+                  <CategoryHeader
+                    key={
+                      title + "-header"
+                    }
+                    title={title}
+                    description={
+                      description
+                    }
+                  />
+                  <CategoryCardWrapper
+                    key={
+                      title + "-wrapper"
+                    }
+                  >
+                    {items.map(
+                      ({
+                        title,
+                        description,
+                        icon,
+                      }) => (
+                        <CategoryCard
+                          key={
+                            title +
+                            "-card"
+                          }
+                          title={title}
+                          description={
+                            description
+                          }
+                          icon={getIconForName(
+                            icon?.title,
+                          )}
+                        />
+                      ),
+                    )}
+                  </CategoryCardWrapper>
+                </FullScreenSection>
+              );
             return (
-              <FullScreenSection
-                key={title + "-snap"}
-                latest={index === knowledgeCategories.length - 1 ? true : false}
+              <ScrollSnapParagraph
+                key={title}
+                ref={
+                  paragraphs[index + 1]
+                }
               >
-                <CategoryHeader
-                  key={title + "-header"}
-                  title={title}
-                  description={description}
-                />
-                <CategoryCardWrapper key={title + "-wrapper"}>
-                  {items.map(({ title, description, icon }) => (
-                    <CategoryCard
-                      key={title + "-card"}
-                      title={title}
-                      description={description}
-                      icon={getIconForName(icon?.title)}
-                    />
-                  ))}
-                </CategoryCardWrapper>
-              </FullScreenSection>
+                <FullScreenSection
+                  key={title + "-snap"}
+                  latest={
+                    index ===
+                    knowledgeCategories.length -
+                      1
+                      ? true
+                      : false
+                  }
+                >
+                  <CategoryHeader
+                    key={
+                      title + "-header"
+                    }
+                    title={title}
+                    description={
+                      description
+                    }
+                  />
+                  <CategoryCardWrapper
+                    key={
+                      title + "-wrapper"
+                    }
+                  >
+                    {items.map(
+                      ({
+                        title,
+                        description,
+                        icon,
+                      }) => (
+                        <CategoryCard
+                          key={
+                            title +
+                            "-card"
+                          }
+                          title={title}
+                          description={
+                            description
+                          }
+                          icon={getIconForName(
+                            icon?.title,
+                          )}
+                        />
+                      ),
+                    )}
+                  </CategoryCardWrapper>
+                </FullScreenSection>
+              </ScrollSnapParagraph>
             );
-          return (
-            <ScrollSnapParagraph key={title} ref={paragraphs[index + 1]}>
-              <FullScreenSection
-                key={title + "-snap"}
-                latest={index === knowledgeCategories.length - 1 ? true : false}
-              >
-                <CategoryHeader
-                  key={title + "-header"}
-                  title={title}
-                  description={description}
-                />
-                <CategoryCardWrapper key={title + "-wrapper"}>
-                  {items.map(({ title, description, icon }) => (
-                    <CategoryCard
-                      key={title + "-card"}
-                      title={title}
-                      description={description}
-                      icon={getIconForName(icon?.title)}
-                    />
-                  ))}
-                </CategoryCardWrapper>
-              </FullScreenSection>
-            </ScrollSnapParagraph>
-          );
-        })}
+          },
+        )}
       </main>
       <Footer />{" "}
       <BackTopButton
@@ -352,10 +552,12 @@ const Contact: React.FC<Props & StaticProps> = ({ knowledgeCategories }) => {
               behavior: "smooth",
             });
           else
-            paragraphs[0].current?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
+            paragraphs[0].current?.scrollIntoView(
+              {
+                behavior: "smooth",
+                block: "start",
+              },
+            );
         }}
       />
     </>

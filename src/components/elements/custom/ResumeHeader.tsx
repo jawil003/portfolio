@@ -8,9 +8,15 @@ interface Props {}
  * @author Jannik Will
  * @version 0.1
  */
-const ResumeHeader: React.FC<Props> = ({ children }) => {
+const ResumeHeader: React.FC<Props> = ({
+  children,
+}) => {
   return (
-    <Typography variant="h4" italic color="var(--primary)">
+    <Typography
+      variant="h4"
+      italic
+      color="var(--primary)"
+    >
       {children}
     </Typography>
   );

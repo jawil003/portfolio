@@ -10,7 +10,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const LogoIcon: React.FC<Props> = ({ width, height }) => {
+const LogoIcon: React.FC<Props> = ({
+  width,
+  height,
+}) => {
   return (
     <svg
       width={width}
@@ -44,10 +47,22 @@ const LogoIcon: React.FC<Props> = ({ width, height }) => {
           y1="0"
           y2="0"
         >
-          <stop offset="0" stopColor="#0078a3" />
-          <stop offset=".27" stopColor="#00749e" />
-          <stop offset=".5" stopColor="#00678d" />
-          <stop offset="1" stopColor="#004a65" />
+          <stop
+            offset="0"
+            stopColor="#0078a3"
+          />
+          <stop
+            offset=".27"
+            stopColor="#00749e"
+          />
+          <stop
+            offset=".5"
+            stopColor="#00678d"
+          />
+          <stop
+            offset="1"
+            stopColor="#004a65"
+          />
         </linearGradient>
         <linearGradient
           id="b"
@@ -58,10 +73,22 @@ const LogoIcon: React.FC<Props> = ({ width, height }) => {
           y1="0"
           y2="0"
         >
-          <stop offset="0" stopColor="#0078a3" />
-          <stop offset=".27" stopColor="#00749e" />
-          <stop offset=".5" stopColor="#00678d" />
-          <stop offset="1" stopColor="#004a65" />
+          <stop
+            offset="0"
+            stopColor="#0078a3"
+          />
+          <stop
+            offset=".27"
+            stopColor="#00749e"
+          />
+          <stop
+            offset=".5"
+            stopColor="#00678d"
+          />
+          <stop
+            offset="1"
+            stopColor="#004a65"
+          />
         </linearGradient>
         <linearGradient
           id="c"
@@ -72,10 +99,22 @@ const LogoIcon: React.FC<Props> = ({ width, height }) => {
           y1="0"
           y2="0"
         >
-          <stop offset="0" stopColor="#0078a3" />
-          <stop offset=".27" stopColor="#00749e" />
-          <stop offset=".5" stopColor="#00678d" />
-          <stop offset="1" stopColor="#004a65" />
+          <stop
+            offset="0"
+            stopColor="#0078a3"
+          />
+          <stop
+            offset=".27"
+            stopColor="#00749e"
+          />
+          <stop
+            offset=".5"
+            stopColor="#00678d"
+          />
+          <stop
+            offset="1"
+            stopColor="#004a65"
+          />
         </linearGradient>
       </defs>
     </svg>

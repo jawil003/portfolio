@@ -11,7 +11,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
+const ContactMeDesign: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -30,9 +34,21 @@ const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
           y2="560.46"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stopColor="gray" stopOpacity="0.25"></stop>
-          <stop offset="0.54" stopColor="gray" stopOpacity="0.12"></stop>
-          <stop offset="1" stopColor="gray" stopOpacity="0.1"></stop>
+          <stop
+            offset="0"
+            stopColor="gray"
+            stopOpacity="0.25"
+          ></stop>
+          <stop
+            offset="0.54"
+            stopColor="gray"
+            stopOpacity="0.12"
+          ></stop>
+          <stop
+            offset="1"
+            stopColor="gray"
+            stopOpacity="0.1"
+          ></stop>
         </linearGradient>
         <pattern
           id="ad310e25-2b04-44c8-bb7b-982389166780"
@@ -42,7 +58,10 @@ const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
           patternUnits="userSpaceOnUse"
           viewBox="0 0 36.88 49.48"
         >
-          <path fill="none" d="M0 0H36.88V49.48H0z"></path>
+          <path
+            fill="none"
+            d="M0 0H36.88V49.48H0z"
+          ></path>
           <path d="M4.33 13.19c4.5 0 4.51-7 0-7s-4.52 7 0 7z"></path>
           <path d="M4.51 17.16c4.51 0 4.52-7 0-7s-4.51 7 0 7z"></path>
           <path d="M4.51 20.94c4.51 0 4.52-7 0-7s-4.51 7 0 7z"></path>
@@ -409,7 +428,12 @@ const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
         opacity="0.1"
         transform="translate(-52 -162.63)"
       ></path>
-      <circle cx="779.73" cy="238.18" r="99.96" fill={color}></circle>
+      <circle
+        cx="779.73"
+        cy="238.18"
+        r="99.96"
+        fill={color}
+      ></circle>
       <path
         fill="#fff"
         d="M874.64 426.59c-3.48-3.48-11.85-8.73-16-10.69-4.79-2.3-6.55-2.26-9.94.19-2.82 2-4.65 3.93-7.89 3.22s-9.66-5.55-15.87-11.74-11.03-12.57-11.72-15.86 1.21-5.08 3.23-7.9c2.44-3.39 2.51-5.15.19-9.94-2-4.15-7.19-12.5-10.7-16s-4.27-2.73-6.19-2a35.8 35.8 0 00-5.67 3c-3.48 2.33-5.43 4.27-6.8 7.19s-2.92 8.34 5.05 22.53a125.69 125.69 0 0022.1 29.47A125.88 125.88 0 00844 440.2c14.18 8 19.61 6.41 22.53 5.05s4.86-3.29 7.18-6.8a35.33 35.33 0 003-5.67c.66-1.92 1.44-2.7-2.07-6.19z"
@@ -420,7 +444,12 @@ const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
         opacity="0.1"
         transform="translate(-52 -162.63)"
       ></path>
-      <circle cx="550.08" cy="390.01" r="99.96" fill={color}></circle>
+      <circle
+        cx="550.08"
+        cy="390.01"
+        r="99.96"
+        fill={color}
+      ></circle>
       <path
         fill="#fff"
         d="M658.93 522.44L629 552.89a.54.54 0 000 .78L650 576a3.62 3.62 0 01-2.55 6.17 3.64 3.64 0 01-2.56-1.06L624 558.86a.57.57 0 00-.8 0l-5.09 5.14a22.37 22.37 0 01-16 6.73 22.86 22.86 0 01-16.28-6.92l-4.89-5a.57.57 0 00-.8 0l-20.84 22.2a3.61 3.61 0 01-5.11 0 3.6 3.6 0 010-5.11l20.92-22.28a.6.6 0 000-.78l-29.93-30.45a.55.55 0 00-.94.39v60.93a8.92 8.92 0 008.89 8.89H651a8.92 8.92 0 008.89-8.89v-60.88a.55.55 0 00-.96-.39z"
@@ -436,7 +465,12 @@ const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
         opacity="0.1"
         transform="translate(-52 -162.63)"
       ></path>
-      <circle cx="312.85" cy="315.36" r="99.96" fill={color}></circle>
+      <circle
+        cx="312.85"
+        cy="315.36"
+        r="99.96"
+        fill={color}
+      ></circle>
       <path
         fill="#fff"
         d="M364.85 430.16L325 522.1l3.72 3.72 36.14-15.94L401 525.82l3.72-3.72z"
@@ -503,7 +537,12 @@ const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
         opacity="0.1"
         transform="translate(-52 -162.63)"
       ></path>
-      <circle cx="776.11" cy="438.7" r="9.04" fill="#be6f72"></circle>
+      <circle
+        cx="776.11"
+        cy="438.7"
+        r="9.04"
+        fill="#be6f72"
+      ></circle>
       <path
         fill="#ff6f61"
         d="M840.88 729.64c0 .79-1.57 2.75-1.57 2.75a19.46 19.46 0 01-9.43-1.18c-.79-.39.39-2.75.39-2.75l.09-.19a9.54 9.54 0 011.49-2.56c.78-.78 1.25-4 1.25-4 2.44-4 6.77 1.73 6.77 1.73s.55 3 .84 4.82c.1.65.17 1.18.17 1.38z"
@@ -514,7 +553,12 @@ const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
         opacity="0.1"
         transform="translate(-52 -162.63)"
       ></path>
-      <circle cx="758.03" cy="419.83" r="8.84" fill="#be6f72"></circle>
+      <circle
+        cx="758.03"
+        cy="419.83"
+        r="8.84"
+        fill="#be6f72"
+      ></circle>
       <path
         fill="#be6f72"
         d="M802.9 600.14c-1.94 1.85-2.26 4.78-2.46 7.45l-.3 3.91a19.72 19.72 0 00-.07 3.17c0 .65.16 1.31.22 2s.08 1.56.09 2.35v5.78a6.82 6.82 0 00.64 3.47 2.36 2.36 0 003 1.08 3.42 3.42 0 001.24-1.92 29.85 29.85 0 002-7.32c.08-.87.09-1.74.17-2.61s.23-1.78.36-2.66c.56-3.68.81-7.4 1.06-11.11.07-1.1 1.06-5.43-.38-5.91-.7-.23-2.15.49-2.82.73a7.94 7.94 0 00-2.75 1.59z"
@@ -745,6 +789,8 @@ const ContactMeDesign: React.FC<Props> = ({ width, height, color }) => {
   );
 };
 
-ContactMeDesign.defaultProps = { color: "var(--primary)" };
+ContactMeDesign.defaultProps = {
+  color: "var(--primary)",
+};
 
 export default ContactMeDesign;

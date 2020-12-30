@@ -1,5 +1,10 @@
 import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from "next/document";
 
 /**
  * An  React Component.
@@ -10,9 +15,17 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="de" style={{ scrollSnapType: "y mandatory" }}>
+      <Html
+        lang="de"
+        style={{
+          scrollSnapType: "y mandatory",
+        }}
+      >
         <Head>
-          <link rel="stylesheet" href="/styles/index.css" />
+          <link
+            rel="stylesheet"
+            href="/styles/index.css"
+          />
           <link
             rel="shortcut icon"
             href="img/favicon.png"

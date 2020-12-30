@@ -1,6 +1,8 @@
 :root {
   --primary: var(--white);
-  --primaryContrast: var(--darklightgrey);
+  --primaryContrast: var(
+    --darklightgrey
+  );
   --secondary: var(--darkblue);
   --secondaryText: var(--black);
   --white: #fff;

@@ -10,7 +10,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ScienceDesign: React.FC<Props> = ({ width, height }) => {
+const ScienceDesign: React.FC<Props> = ({
+  width,
+  height,
+}) => {
   return (
     <svg
       viewBox="0 0 987.62 787.4"
@@ -28,9 +31,21 @@ const ScienceDesign: React.FC<Props> = ({ width, height }) => {
           y1="782.16"
           y2="259.8"
         >
-          <stop offset="0" stopColor="gray" stopOpacity=".25" />
-          <stop offset=".54" stopColor="gray" stopOpacity=".12" />
-          <stop offset="1" stopColor="gray" stopOpacity=".1" />
+          <stop
+            offset="0"
+            stopColor="gray"
+            stopOpacity=".25"
+          />
+          <stop
+            offset=".54"
+            stopColor="gray"
+            stopOpacity=".12"
+          />
+          <stop
+            offset="1"
+            stopColor="gray"
+            stopOpacity=".1"
+          />
         </linearGradient>
       </defs>
       <path
@@ -55,7 +70,10 @@ const ScienceDesign: React.FC<Props> = ({ width, height }) => {
         fill="#96b7fe"
         opacity=".9"
       />
-      <path d="M446.52 200.25h134.34v2.57H446.52z" opacity=".1" />
+      <path
+        d="M446.52 200.25h134.34v2.57H446.52z"
+        opacity=".1"
+      />
       <path
         d="M407.81 563.7s114-2 171-30.53 89.57-3.06 86.51 14.25-19.33 50.88-84.47 55-173.04-38.72-173.04-38.72z"
         fill="#6c63ff"
@@ -309,18 +327,90 @@ const ScienceDesign: React.FC<Props> = ({ width, height }) => {
         rx="78.75"
         ry="4.86"
       />
-      <circle cx="507.53" cy="472.5" fill="#6c63ff" opacity=".3" r="20.73" />
-      <circle cx="519.37" cy="389.57" fill="#6c63ff" opacity=".3" r="12.83" />
-      <circle cx="490.74" cy="315.52" fill="#6c63ff" opacity=".3" r="12.83" />
-      <circle cx="480.37" cy="85.01" fill="#6c63ff" opacity=".3" r="20.73" />
-      <circle cx="542.56" cy="49.47" fill="#6c63ff" opacity=".3" r="15.41" />
-      <circle cx="498.14" cy="8.01" fill="#6c63ff" opacity=".3" r="8.01" />
-      <circle cx="198.07" cy="361.59" fill="#6c63ff" opacity=".3" r="7.24" />
-      <circle cx="221.76" cy="335.92" fill="#6c63ff" opacity=".3" r="4.61" />
-      <circle cx="189.51" cy="326.71" fill="#6c63ff" opacity=".3" r="4.61" />
-      <circle cx="213.09" cy="214.5" fill="#6c63ff" opacity=".3" r="17.59" />
-      <circle cx="160.32" cy="184.34" fill="#6c63ff" opacity=".3" r="13.08" />
-      <circle cx="198.01" cy="149.16" fill="#6c63ff" opacity=".3" r="6.8" />
+      <circle
+        cx="507.53"
+        cy="472.5"
+        fill="#6c63ff"
+        opacity=".3"
+        r="20.73"
+      />
+      <circle
+        cx="519.37"
+        cy="389.57"
+        fill="#6c63ff"
+        opacity=".3"
+        r="12.83"
+      />
+      <circle
+        cx="490.74"
+        cy="315.52"
+        fill="#6c63ff"
+        opacity=".3"
+        r="12.83"
+      />
+      <circle
+        cx="480.37"
+        cy="85.01"
+        fill="#6c63ff"
+        opacity=".3"
+        r="20.73"
+      />
+      <circle
+        cx="542.56"
+        cy="49.47"
+        fill="#6c63ff"
+        opacity=".3"
+        r="15.41"
+      />
+      <circle
+        cx="498.14"
+        cy="8.01"
+        fill="#6c63ff"
+        opacity=".3"
+        r="8.01"
+      />
+      <circle
+        cx="198.07"
+        cy="361.59"
+        fill="#6c63ff"
+        opacity=".3"
+        r="7.24"
+      />
+      <circle
+        cx="221.76"
+        cy="335.92"
+        fill="#6c63ff"
+        opacity=".3"
+        r="4.61"
+      />
+      <circle
+        cx="189.51"
+        cy="326.71"
+        fill="#6c63ff"
+        opacity=".3"
+        r="4.61"
+      />
+      <circle
+        cx="213.09"
+        cy="214.5"
+        fill="#6c63ff"
+        opacity=".3"
+        r="17.59"
+      />
+      <circle
+        cx="160.32"
+        cy="184.34"
+        fill="#6c63ff"
+        opacity=".3"
+        r="13.08"
+      />
+      <circle
+        cx="198.01"
+        cy="149.16"
+        fill="#6c63ff"
+        opacity=".3"
+        r="6.8"
+      />
     </svg>
   );
 };

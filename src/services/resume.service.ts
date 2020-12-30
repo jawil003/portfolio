@@ -6,7 +6,9 @@ export default class ResumeService {
   public static async getAllResumeItems() {
     const {
       data: { resumeItems },
-    } = await client.query<{ resumeItems: ResumeItem[] }>({
+    } = await client.query<{
+      resumeItems: ResumeItem[];
+    }>({
       query: gql`
         {
           resumeItems {

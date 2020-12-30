@@ -11,7 +11,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const WorldWideIcon: React.FC<Props> = ({ width, height, color }) => {
+const WorldWideIcon: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +33,8 @@ const WorldWideIcon: React.FC<Props> = ({ width, height, color }) => {
   );
 };
 
-WorldWideIcon.defaultProps = { color: "var(--secondaryText)" };
+WorldWideIcon.defaultProps = {
+  color: "var(--secondaryText)",
+};
 
 export default WorldWideIcon;

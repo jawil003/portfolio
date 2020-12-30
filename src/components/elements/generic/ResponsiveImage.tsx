@@ -28,7 +28,9 @@ const ResponsiveImage: React.FC<Props> = ({
     <picture>
       <img
         src={basePath + src}
-        srcSet={srcSet.map((s) => basePath + s).join(", ")}
+        srcSet={srcSet
+          .map((s) => basePath + s)
+          .join(", ")}
         sizes={sizes}
         width={width}
         height={height}

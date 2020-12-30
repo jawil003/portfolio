@@ -11,7 +11,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const HamburgerMenuIcon: React.FC<Props> = ({ width, height, color }) => {
+const HamburgerMenuIcon: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -49,10 +53,22 @@ const HamburgerMenuIcon: React.FC<Props> = ({ width, height, color }) => {
           gradientTransform="matrix(8.55347 1718.32 -2247.83 6.53858 701.965 411.352)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stopColor="#0078A3"></stop>
-          <stop offset="0.27" stopColor="#00749E"></stop>
-          <stop offset="0.5" stopColor="#00678D"></stop>
-          <stop offset="1" stopColor="#004A65"></stop>
+          <stop
+            offset="0"
+            stopColor="#0078A3"
+          ></stop>
+          <stop
+            offset="0.27"
+            stopColor="#00749E"
+          ></stop>
+          <stop
+            offset="0.5"
+            stopColor="#00678D"
+          ></stop>
+          <stop
+            offset="1"
+            stopColor="#004A65"
+          ></stop>
         </linearGradient>
         <linearGradient
           id="_Linear2"
@@ -63,10 +79,22 @@ const HamburgerMenuIcon: React.FC<Props> = ({ width, height, color }) => {
           gradientTransform="matrix(8.55347 1718.32 -2247.83 6.53858 701.965 411.352)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stopColor="#0078A3"></stop>
-          <stop offset="0.27" stopColor="#00749E"></stop>
-          <stop offset="0.5" stopColor="#00678D"></stop>
-          <stop offset="1" stopColor="#004A65"></stop>
+          <stop
+            offset="0"
+            stopColor="#0078A3"
+          ></stop>
+          <stop
+            offset="0.27"
+            stopColor="#00749E"
+          ></stop>
+          <stop
+            offset="0.5"
+            stopColor="#00678D"
+          ></stop>
+          <stop
+            offset="1"
+            stopColor="#004A65"
+          ></stop>
         </linearGradient>
         <radialGradient
           id="_Radial3"
@@ -76,10 +104,22 @@ const HamburgerMenuIcon: React.FC<Props> = ({ width, height, color }) => {
           gradientTransform="matrix(8.55347 1718.32 -2247.83 6.53858 701.965 411.352)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stopColor="#0078A3"></stop>
-          <stop offset="0.27" stopColor="#00749E"></stop>
-          <stop offset="0.5" stopColor="#00678D"></stop>
-          <stop offset="1" stopColor="#004A65"></stop>
+          <stop
+            offset="0"
+            stopColor="#0078A3"
+          ></stop>
+          <stop
+            offset="0.27"
+            stopColor="#00749E"
+          ></stop>
+          <stop
+            offset="0.5"
+            stopColor="#00678D"
+          ></stop>
+          <stop
+            offset="1"
+            stopColor="#004A65"
+          ></stop>
         </radialGradient>
       </defs>
     </svg>

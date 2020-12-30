@@ -7,7 +7,9 @@ interface Props {}
  * @author Jannik Will
  * @version 0.1
  */
-const ResumeContainer: React.FC<Props> = ({ children }) => {
+const ResumeContainer: React.FC<Props> = ({
+  children,
+}) => {
   return (
     <div
       style={{

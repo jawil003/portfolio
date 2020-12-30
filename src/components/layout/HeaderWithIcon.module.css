@@ -34,7 +34,9 @@
     top: 100px;
     left: 0;
     padding: 100px;
-    height: calc(100% - calc(100px + 70px));
+    height: calc(
+      100% - calc(100px + 70px)
+    );
     display: flex;
     justify-content: center;
     align-items: center;

@@ -4,7 +4,9 @@ import LightTheme from "../../themes/light.json";
 import DarkTheme from "../../themes/light.json";
 import ThemeContextType from "../../types/ThemeContext.type";
 
-export const ThemeContext = React.createContext<ThemeContextType>({} as any);
+export const ThemeContext = React.createContext<ThemeContextType>(
+  {} as any,
+);
 
 interface Props {}
 
@@ -13,14 +15,21 @@ interface Props {}
  * @author
  * @version 0.1
  */
-const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(LightTheme);
+const ThemeProvider: React.FC<Props> = ({
+  children,
+}) => {
+  const [
+    theme,
+    setTheme,
+  ] = useState<Theme>(LightTheme);
   return (
     <ThemeContext.Provider
       value={{
         ...theme,
-        setDarkTheme: () => setTheme(DarkTheme),
-        setLightTheme: () => setTheme(LightTheme),
+        setDarkTheme: () =>
+          setTheme(DarkTheme),
+        setLightTheme: () =>
+          setTheme(LightTheme),
       }}
     >
       {children}

@@ -10,11 +10,13 @@
   padding: 20px;
   color: initial;
   text-decoration: none;
-  margin: calc(var(--rowGap) / -2) calc(var(--columnGap) / -2);
+  margin: calc(var(--rowGap) / -2)
+    calc(var(--columnGap) / -2);
 }
 
 .navigationBarItem > * {
-  margin: calc(var(--rowGap) / 2) calc(var(--columnGap) / 2);
+  margin: calc(var(--rowGap) / 2)
+    calc(var(--columnGap) / 2);
 }
 
 .navigationBarItem:hover > p {

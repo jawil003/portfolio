@@ -11,7 +11,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const HomeIcon: React.FC<Props> = ({ width, height, color }) => {
+const HomeIcon: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       viewBox="0 0 511 511.999"

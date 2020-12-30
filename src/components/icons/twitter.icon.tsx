@@ -11,7 +11,11 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const TwitterIcon: React.FC<Props> = ({ width, height, color }) => {
+const TwitterIcon: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +33,8 @@ const TwitterIcon: React.FC<Props> = ({ width, height, color }) => {
   );
 };
 
-TwitterIcon.defaultProps = { color: "#5da8dc" };
+TwitterIcon.defaultProps = {
+  color: "#5da8dc",
+};
 
 export default TwitterIcon;

@@ -8,7 +8,10 @@ import ThemeProvider from "../components/context/ThemeProvider";
  * @author Jannik Will
  * @version 0.1
  */
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp: React.FC<AppProps> = ({
+  Component,
+  pageProps,
+}) => {
   return (
     <div
       style={{
@@ -18,7 +21,10 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       }}
     >
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        />
       </Head>
       <ThemeProvider>
         <Component {...pageProps} />

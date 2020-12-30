@@ -1,4 +1,8 @@
-import { motion, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import React from "react";
 
 export interface Props {
@@ -13,9 +17,18 @@ export interface Props {
  * @author Jannik will
  * @version 0.1
  */
-const Button: React.FC<Props> = ({ text, backgroundColor, color, variant }) => {
+const Button: React.FC<Props> = ({
+  text,
+  backgroundColor,
+  color,
+  variant,
+}) => {
   const scaleX = useSpring(0);
-  const colorValue = useTransform(scaleX, [0, 1], [backgroundColor, color]);
+  const colorValue = useTransform(
+    scaleX,
+    [0, 1],
+    [backgroundColor, color],
+  );
   return (
     <button
       onMouseOver={() => scaleX.set(1)}
@@ -26,10 +39,15 @@ const Button: React.FC<Props> = ({ text, backgroundColor, color, variant }) => {
         margin: "8px 0px",
         padding: "10px 20px",
         borderRadius: "5px",
-        backgroundColor: variant === "filled" ? backgroundColor : color,
+        backgroundColor:
+          variant === "filled"
+            ? backgroundColor
+            : color,
         outline: "none",
         border:
-          variant === "outlined" ? ` 1px solid ${backgroundColor}` : "none",
+          variant === "outlined"
+            ? ` 1px solid ${backgroundColor}`
+            : "none",
         boxShadow:
           "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
       }}
@@ -38,7 +56,10 @@ const Button: React.FC<Props> = ({ text, backgroundColor, color, variant }) => {
         style={{
           position: "relative",
           zIndex: 3,
-          color: variant === "outlined" ? colorValue : color,
+          color:
+            variant === "outlined"
+              ? colorValue
+              : color,
           fontSize: "1.15em",
           fontWeight: 500,
         }}
@@ -56,7 +77,9 @@ const Button: React.FC<Props> = ({ text, backgroundColor, color, variant }) => {
           height: "100%",
           display: "block",
           backgroundColor:
-            variant === "filled" ? "rgba(0,0,0, 0.25)" : backgroundColor,
+            variant === "filled"
+              ? "rgba(0,0,0, 0.25)"
+              : backgroundColor,
         }}
       />
     </button>

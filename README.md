@@ -34,16 +34,16 @@
   </ol>
 </details>
 
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
-
 ### Built with
+
 - [Strapi](https://strapi.io)
 - [Next.js](https://nextjs.org/)
 - [mongoDB](https://www.mongodb.com)
 
 ### Screenshots
-![Index Page](media/Screenshot_Index.png)
 
+![Index Page](media/Screenshot_Index.png)

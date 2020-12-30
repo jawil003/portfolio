@@ -7,7 +7,9 @@ interface Props {}
  * @author
  * @version 0.1
  */
-const CategoryCardWrapper: React.FC<Props> = ({ children }) => {
+const CategoryCardWrapper: React.FC<Props> = ({
+  children,
+}) => {
   return (
     <div
       style={{

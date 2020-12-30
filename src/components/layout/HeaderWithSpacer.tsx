@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
-import React, { forwardRef, PropsWithChildren } from "react";
+import React, {
+  forwardRef,
+  PropsWithChildren,
+} from "react";
 import flyFromTop from "../../variants/flyFromTop";
 
-const getHeightForSection = (first?: boolean, latest?: boolean) => {
+const getHeightForSection = (
+  first?: boolean,
+  latest?: boolean,
+) => {
   if (first && latest) {
     return "calc(100vh - calc(70px + 100px))";
   } else if (first) {
@@ -24,14 +30,23 @@ interface Props {
  * @author
  * @version 0.1
  */
-const HeaderWithSpacer = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
-  ({ children, latest, align, first }, ref) => {
+const HeaderWithSpacer = forwardRef<
+  HTMLDivElement,
+  PropsWithChildren<Props>
+>(
+  (
+    { children, latest, align, first },
+    ref,
+  ) => {
     return (
       <header
         className="header"
         ref={ref}
         style={{
-          height: getHeightForSection(first, latest),
+          height: getHeightForSection(
+            first,
+            latest,
+          ),
         }}
       >
         <style jsx>{`
@@ -44,14 +59,16 @@ const HeaderWithSpacer = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
               grid-template-rows: 100%;
             }
 
-            .header > :global(div:first-child) {
+            .header
+              > :global(div:first-child) {
               flex: 1;
               width: 100%;
               display: flex;
               flex-direction: column;
               justify-content: center;
             }
-            .header > :global(div:last-child) {
+            .header
+              > :global(div:last-child) {
               display: flex;
               justify-content: center;
               align-items: center;
@@ -65,17 +82,27 @@ const HeaderWithSpacer = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
               align-items: center;
             }
 
-            .header > :global(div):first-child {
-              height: calc(100% - calc(100px + 70px));
+            .header
+              > :global(div):first-child {
+              height: calc(
+                100% -
+                  calc(100px + 70px)
+              );
               display: flex;
               justify-content: center;
               align-items: center;
               flex-direction: column;
             }
 
-            .header > :global(div:first-child) > :global(h3),
-            .header > :global(div:first-child) > :global(p),
-            .header > :global(div:first-child) > :global(div) {
+            .header
+              > :global(div:first-child)
+              > :global(h3),
+            .header
+              > :global(div:first-child)
+              > :global(p),
+            .header
+              > :global(div:first-child)
+              > :global(div) {
             }
           }
 
@@ -94,7 +121,11 @@ const HeaderWithSpacer = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
             }
           }
         `}</style>
-        <motion.div variants={flyFromTop} initial="initial" animate="animate">
+        <motion.div
+          variants={flyFromTop}
+          initial="initial"
+          animate="animate"
+        >
           {align === "right" ? (
             <div
               style={{
@@ -124,9 +155,13 @@ const HeaderWithSpacer = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
         </motion.div>
       </header>
     );
-  }
+  },
 );
 
-HeaderWithSpacer.defaultProps = { latest: false, align: "right", first: false };
+HeaderWithSpacer.defaultProps = {
+  latest: false,
+  align: "right",
+  first: false,
+};
 
 export default HeaderWithSpacer;

@@ -18,8 +18,16 @@
     "strict": true,
     "target": "esnext",
     "baseUrl": ".",
-    "paths": {"@apollo/myclient": ["src/config/client.ts"]}
+    "paths": {
+      "@apollo/myclient": [
+        "src/config/client.ts"
+      ]
+    }
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "src/tests/config/setupAfterEnv.js"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "src/tests/config/setupAfterEnv.js"
+  ]
 }

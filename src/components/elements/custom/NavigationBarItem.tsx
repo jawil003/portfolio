@@ -22,9 +22,19 @@ const NavigationBarItem: React.FC<Props> = ({
 }) => {
   return (
     <Link href={href}>
-      <a className={styles.navigationBarItem}>
-        <div style={{ height: "100%" }}>{icon}</div>
-        <Typography variant="b1" bold="semi-bold" color={color}>
+      <a
+        className={
+          styles.navigationBarItem
+        }
+      >
+        <div style={{ height: "100%" }}>
+          {icon}
+        </div>
+        <Typography
+          variant="b1"
+          bold="semi-bold"
+          color={color}
+        >
           {children}
         </Typography>
       </a>
@@ -32,6 +42,8 @@ const NavigationBarItem: React.FC<Props> = ({
   );
 };
 
-NavigationBarItem.defaultProps = { color: "var(--secondaryText)" };
+NavigationBarItem.defaultProps = {
+  color: "var(--secondaryText)",
+};
 
 export default NavigationBarItem;

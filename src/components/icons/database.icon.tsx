@@ -10,7 +10,10 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const DatabaseIcon: React.FC<Props> = ({ width, height }) => {
+const DatabaseIcon: React.FC<Props> = ({
+  width,
+  height,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +22,10 @@ const DatabaseIcon: React.FC<Props> = ({ width, height }) => {
       enableBackground="new 0 0 512 512"
       viewBox="0 0 24 24"
     >
-      <g xmlns="http://www.w3.org/2000/svg" fill="#fff">
+      <g
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#fff"
+      >
         <ellipse
           cx="12"
           cy="3"

@@ -1,2 +1,3 @@
-const useIsServer = () => typeof window === "undefined";
+const useIsServer = () =>
+  typeof window === "undefined";
 export default useIsServer;
