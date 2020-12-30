@@ -1,4 +1,5 @@
 import React from "react";
+import FlexContainer from "../elements/generic/FlexContainer";
 
 interface Props {}
 
@@ -11,15 +12,12 @@ const CategoryCardWrapper: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-      }}
+    <FlexContainer
+        justifyContent= "space-around"
+      
     >
       {children}
-    </div>
+    </FlexContainer>
   );
 };
 

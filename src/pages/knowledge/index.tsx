@@ -250,30 +250,33 @@ const Contact: React.FC<
               alignItems:
                 width >= breakpoints.lg
                   ? "center"
-                  : "flex-emd",
+                  : "flex-end",
               justifyContent:
                 width >= breakpoints.lg
-                  ? "center"
+                  ? "flex-end"
                   : "flex-start",
             }}
           >
             <div
               style={{
+                padding: "50px",
+                paddingTop: "150px",
+                paddingRight: "0px",
+                display: "flex",
+                justifyContent:
+                  "center",
+                alignItems: "center",
+                height: "100%",
+                width: "auto",
                 position: "relative",
+                overflow: "hidden",
                 right:
                   width < breakpoints.lg
                     ? "70%"
                     : 0,
               }}
             >
-              <ReactDesign
-                width={"100%"}
-                height={
-                  width < breakpoints.lg
-                    ? "100vh"
-                    : undefined
-                }
-              />
+              <ReactDesign height="100%" />
             </div>
           </div>
         }
@@ -281,14 +284,22 @@ const Contact: React.FC<
         <HeaderWithSpacer first>
           <Typography
             variant="h3"
-            align="center"
+            align={
+              width > breakpoints.lg
+                ? "left"
+                : "center"
+            }
           >
             Wie kann ich dir helfen?
           </Typography>
           <Spacer height="0.4em" />
           <Typography
-            align="center"
-            italic
+            wordSpacing={11}
+            align={
+              width > breakpoints.lg
+                ? "left"
+                : "center"
+            }
           >
             Vielleicht sagt dir ja eines
             meiner Fachgebiete zu, dann{" "}
@@ -453,33 +464,38 @@ const Contact: React.FC<
                       description
                     }
                   />
-                  <CategoryCardWrapper
-                    key={
-                      title + "-wrapper"
-                    }
-                  >
-                    {items.map(
-                      ({
-                        title,
-                        description,
-                        icon,
-                      }) => (
-                        <CategoryCard
-                          key={
-                            title +
-                            "-card"
-                          }
-                          title={title}
-                          description={
-                            description
-                          }
-                          icon={getIconForName(
-                            icon?.title,
-                          )}
-                        />
-                      ),
-                    )}
-                  </CategoryCardWrapper>
+                  <div style={{maxWidth: "100vw", overflowX: "scroll"}}>
+                    <CategoryCardWrapper
+                      key={
+                        title +
+                        "-wrapper"
+                      }
+                    >
+                      {items.map(
+                        ({
+                          title,
+                          description,
+                          icon,
+                        }) => (
+                          <CategoryCard
+                            key={
+                              title +
+                              "-card"
+                            }
+                            title={
+                              title
+                            }
+                            description={
+                              description
+                            }
+                            icon={getIconForName(
+                              icon?.title,
+                            )}
+                          />
+                        ),
+                      )}
+                    </CategoryCardWrapper>
+                  </div>
                 </FullScreenSection>
               );
             return (

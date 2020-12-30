@@ -65,7 +65,7 @@ const IconButton: React.FC<Props> = ({
 
 IconButton.defaultProps = {
   color: "var(--blue)",
-  size: "54px",
+  size: "48px",
 };
 
 export default React.memo(IconButton);
