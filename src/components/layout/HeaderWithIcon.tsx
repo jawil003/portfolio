@@ -5,7 +5,6 @@ import React, {
 } from "react";
 import flyFromRight from "../../variants/flyFromRight";
 import flyFromTop from "../../variants/flyFromTop";
-import styles from "./HeaderWithIcon.module.css";
 
 const getHeightForSection = (
   first?: boolean,
@@ -51,7 +50,7 @@ const HeaderWithIcon = forwardRef<
   ) => {
     return (
       <header
-        className={styles.header}
+        className="header"
         ref={ref}
         style={{
           height: getHeightForSection(
@@ -60,6 +59,81 @@ const HeaderWithIcon = forwardRef<
           ),
         }}
       >
+        <style jsx>{`
+          .header > div:first-child {
+            width: 100%;
+          }
+          @media (min-width: 820px) {
+            .header {
+              width: 100%;
+              display: grid;
+              grid-template-columns: 50% 50%;
+              grid-template-rows: 100%;
+            }
+
+            .header > :global(div):first-child {
+              align-items: center;
+              align-content: center;
+              flex: 1;
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 105px;
+            }
+            .header > :global(div):last-child {
+              display: flex;
+              justify-content: center;
+            }
+          }
+
+          @media (max-width: 819px) {
+            .header {
+            }
+
+            .header > :global(div):first-child {
+              position: absolute;
+              top: 100px;
+              left: 0;
+              padding: 100px;
+              height: calc(
+                100% -
+                  calc(100px + 70px)
+              );
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+            }
+
+            .header
+              > :global(div):first-child
+              > :global(h3),
+            .header
+              > :global(div):first-child
+              > :global(p),
+            .header
+              > :global(div):first-child
+              > :global(div) {
+              background-color: #fff;
+            }
+          }
+
+          @media (min-width: 500px) and (max-width: 819px) {
+            .header > :global(div):last-child {
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+
+          @media (max-width: 499px) {
+            .header > :global(div):last-child {
+              display: none;
+            }
+          }
+        `}</style>
         <motion.div
           variants={flyFromTop}
           initial="initial"

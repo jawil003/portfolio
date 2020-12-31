@@ -244,37 +244,22 @@ const Contact: React.FC<
                   ? 0
                   : undefined,
               top: 0,
-              width: "100%",
+              width: "50%",
               height: "100%",
               display: "flex",
-              alignItems:
-                width >= breakpoints.lg
-                  ? "center"
-                  : "flex-emd",
-              justifyContent:
-                width >= breakpoints.lg
-                  ? "center"
-                  : "flex-start",
+              justifyContent: "flex-end"
             }}
           >
-            <div
-              style={{
-                position: "relative",
-                right:
-                  width < breakpoints.lg
-                    ? "70%"
-                    : 0,
-              }}
-            >
+           
               <ReactDesign
-                width={"100%"}
+                
                 height={
                   width < breakpoints.lg
-                    ? "100vh"
+                    ? "100%"
                     : undefined
                 }
               />
-            </div>
+
           </div>
         }
       >
