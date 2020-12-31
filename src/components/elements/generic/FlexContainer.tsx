@@ -43,6 +43,8 @@ const FlexContainer: React.FC<Props> = ({
     <div className="flexContainer">
       <style jsx>{`
         .flexContainer {
+          width: 100%;
+          height: 100%;
           display: flex;
           flex-direction: ${direction};
           align-content: ${alignContent};

@@ -234,32 +234,29 @@ const Contact: React.FC<
         background={
           <div
             style={{
-              position: "absolute",
-              right:
+              display: "grid",
+              justifyItems: width < breakpoints.lg ? "center": undefined,
+              justifyContent:
                 width >= breakpoints.lg
-                  ? 0
-                  : undefined,
-              left:
-                width < breakpoints.lg
-                  ? 0
-                  : undefined,
-              top: 0,
-              width: "50%",
+                  ? "end"
+                  : "center",
+              alignItems: "center",
+              width: "100%",
               height: "100%",
-              display: "flex",
-              justifyContent: "flex-end"
+              gridTemplateRows: "100%",
+              gridTemplateColumns:
+                width >= breakpoints.lg
+                  ? "50%"
+                  : "100%",
+              opacity:
+                width < breakpoints.lg
+                  ? 0.3
+                  : undefined,
             }}
           >
-           
-              <ReactDesign
-                
-                height={
-                  width < breakpoints.lg
-                    ? "100%"
-                    : undefined
-                }
-              />
-
+            <div>
+              <ReactDesign width="auto" height="100%" />
+            </div>
           </div>
         }
       >
@@ -407,7 +404,8 @@ const Contact: React.FC<
           </FlexContainer>
         </HeaderWithSpacer>
       </BackgroundWrapper>
-      <main
+      {/* TODO: Find Out why Page becomes more than 100vw on Mobile Devices*/}
+     { /*<main
         style={{
           flex: 1,
           display: "flex",
@@ -446,7 +444,13 @@ const Contact: React.FC<
                       description
                     }
                   />
-                  <div style={{maxWidth: "100vw", overflowX: "scroll"}}>
+                  <div
+                    style={{
+                      maxWidth: "100vw",
+                      overflowX:
+                        "scroll",
+                    }}
+                  >
                     <CategoryCardWrapper
                       key={
                         title +
@@ -538,7 +542,7 @@ const Contact: React.FC<
             );
           },
         )}
-      </main>
+        </main>*/}
       <Footer />{" "}
       <BackTopButton
         hidden={hideButton}
