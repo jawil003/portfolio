@@ -1,7 +1,6 @@
 import React, {
   useEffect,
 } from "react";
-import Spacer from "../elements/generic/Spacer";
 import HomeIcon from "../icons/home.icon";
 import KnowledgeIcon from "../icons/knowledge.icon";
 import LearningIcon from "../icons/learning.icon";
@@ -16,8 +15,66 @@ import {
 } from "framer-motion";
 import useBreakpoint from "../../hooks/useBreakpoints.hook";
 
+const items = [
+  { href: "/", name: "Start" },
+  {
+    href: "/knowledge",
+    name: " Was ich kann",
+  },
+  {
+    href: "/resume",
+    name: " Was ich gelernt habe",
+  },
+];
+
+const getIconForName = (
+  name: string,
+  options: {
+    color: string;
+    width?: string;
+    height?: string;
+  },
+) => {
+  switch (name) {
+    case "Start": {
+      return (
+        <HomeIcon
+          color={options.color}
+          height={options.height}
+          width={options.width}
+        />
+      );
+    }
+    case "Was ich kann": {
+      return (
+        <KnowledgeIcon
+          color={options.color}
+          height={options.height}
+          width={options.width}
+        />
+      );
+    }
+    case "Was ich gelernt habe": {
+      return (
+        <LearningIcon
+          color={options.color}
+          height={options.height}
+          width={options.width}
+        />
+      );
+    }
+    default: {
+      <LearningIcon
+        color={options.color}
+        height={options.height}
+        width={options.width}
+      />;
+    }
+  }
+};
+
 interface Props {
-  elementsColor?: string;
+  elementsColor?: string | string[];
 }
 
 /**
@@ -61,44 +118,46 @@ const NavigationBar: React.FC<Props> = ({
           <Logo />
         </div>
         <div className={styles.links}>
-          <NavigationBarItem
-            color={elementsColor}
-            href="/"
-            icon={
-              <HomeIcon
-                color={elementsColor}
-                height="23px"
-              />
-            }
-          >
-            Start
-          </NavigationBarItem>
-          <Spacer height="20px" />
-          <NavigationBarItem
-            color={elementsColor}
-            href="/knowledge"
-            icon={
-              <KnowledgeIcon
-                color={elementsColor}
-                height="23px"
-              />
-            }
-          >
-            Was ich kann
-          </NavigationBarItem>
-          <Spacer height="20px" />
-          <NavigationBarItem
-            color={elementsColor}
-            href="/resume"
-            icon={
-              <LearningIcon
-                color={elementsColor}
-                height="23px"
-              />
-            }
-          >
-            Was ich gelernt habe
-          </NavigationBarItem>
+          {elementsColor instanceof
+          Array
+            ? elementsColor.map(
+                (color, index) => (
+                  <NavigationBarItem
+                    color={color}
+                    href={
+                      items[index].href
+                    }
+                    icon={
+                      <HomeIcon
+                        color={color}
+                        height="23px"
+                      />
+                    }
+                  >
+                    {items[index].name}
+                  </NavigationBarItem>
+                ),
+              )
+            : items.map(
+                ({ href, name }) => (
+                  <NavigationBarItem
+                    color={
+                      elementsColor
+                    }
+                    href={href}
+                    icon={
+                      <HomeIcon
+                        color={
+                          elementsColor
+                        }
+                        height="23px"
+                      />
+                    }
+                  >
+                    {name}
+                  </NavigationBarItem>
+                ),
+              )}
         </div>
         <div
           className={

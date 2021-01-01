@@ -31,8 +31,6 @@ const CategoryCard: React.FC<Props> = ({
     <motion.div
       style={{
         ...style,
-        padding: "0px 30px",
-        paddingTop: "60px",
       }}
     >
       <div

@@ -43,8 +43,8 @@ const FlexContainer: React.FC<Props> = ({
     <div className="flexContainer">
       <style jsx>{`
         .flexContainer {
-          width: 100%;
-          height: 100%;
+          min-width: 100%;
+          min-height: 100%;
           display: flex;
           flex-direction: ${direction};
           align-content: ${alignContent};
@@ -53,9 +53,11 @@ const FlexContainer: React.FC<Props> = ({
           flex-wrap: ${wrap
             ? "wrap"
             : "no-wrap"};
+          margin: calc(${rowGap} / -2)
+            calc(${columnGap} / -2);
         }
         .flexContainer > :global(*) {
-          margin: ${rowGap} ${columnGap};
+          margin: calc(${rowGap} / 2) calc(${columnGap} / 2);
         }
       `}</style>
       {children}

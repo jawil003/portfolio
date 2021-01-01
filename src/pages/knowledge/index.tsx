@@ -405,7 +405,7 @@ const Contact: React.FC<
         </HeaderWithSpacer>
       </BackgroundWrapper>
       {/* TODO: Find Out why Page becomes more than 100vw on Mobile Devices*/}
-     { /*<main
+     <main
         style={{
           flex: 1,
           display: "flex",
@@ -426,6 +426,7 @@ const Contact: React.FC<
             if (width < breakpoints.lg)
               return (
                 <FullScreenSection
+                rowGap="30px"
                   key={title + "-snap"}
                   latest={
                     index ===
@@ -435,6 +436,7 @@ const Contact: React.FC<
                       : false
                   }
                 >
+                  
                   <CategoryHeader
                     key={
                       title + "-header"
@@ -444,13 +446,7 @@ const Contact: React.FC<
                       description
                     }
                   />
-                  <div
-                    style={{
-                      maxWidth: "100vw",
-                      overflowX:
-                        "scroll",
-                    }}
-                  >
+                  
                     <CategoryCardWrapper
                       key={
                         title +
@@ -481,7 +477,7 @@ const Contact: React.FC<
                         ),
                       )}
                     </CategoryCardWrapper>
-                  </div>
+    
                 </FullScreenSection>
               );
             return (
@@ -542,9 +538,9 @@ const Contact: React.FC<
             );
           },
         )}
-        </main>*/}
-      <Footer />{" "}
-      <BackTopButton
+        </main>
+      <Footer />
+      {width >= breakpoints.lg ? <BackTopButton
         hidden={hideButton}
         onClick={() => {
           if (width < breakpoints.lg)
@@ -560,7 +556,7 @@ const Contact: React.FC<
               },
             );
         }}
-      />
+      />: undefined}
     </>
   );
 };

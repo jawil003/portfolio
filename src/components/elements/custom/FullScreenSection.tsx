@@ -25,6 +25,8 @@ interface Props {
   latest?: boolean;
   children?: any;
   style?: MotionStyle;
+  columnGap?: string;
+  rowGap?: string;
 }
 
 /**
@@ -37,7 +39,7 @@ const FullScreenSection = forwardRef<
   Props
 >(
   (
-    { children, latest, style, first },
+    { children, latest, style, first, columnGap, rowGap },
     ref,
   ) => {
     return (
@@ -52,6 +54,7 @@ const FullScreenSection = forwardRef<
           display: "grid",
           justifyContent: "center",
           alignContent: "center",
+          columnGap, rowGap
         }}
       >
         {children}

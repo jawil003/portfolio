@@ -20,6 +20,7 @@ const generateStyle = (
   maxLength?: string,
   letterSpacing?: number,
   wordSpacing?: number,
+  wrap?:boolean,
 ) => {
   const style: CSSProperties = {
     fontSize: `${fontSize}rem`,
@@ -45,6 +46,7 @@ const generateStyle = (
     maxWidth: maxLength,
     letterSpacing,
     wordSpacing,
+    wordWrap: wrap ? "break-word": "normal",
   };
   return style;
 };
@@ -77,6 +79,7 @@ export interface Props {
   maxLength?: string;
   letterSpacing?: number;
   wordSpacing?: number;
+  wrap?: boolean;
 }
 
 /**
@@ -97,6 +100,7 @@ const Typography: React.FC<Props> = ({
   maxLength,
   letterSpacing,
   wordSpacing,
+  wrap
 }) => {
   if (variant?.includes("b")) {
     if (inline)
@@ -117,6 +121,7 @@ const Typography: React.FC<Props> = ({
             maxLength,
             letterSpacing,
             wordSpacing,
+            wrap,
           )}
         >
           {children}
@@ -138,7 +143,7 @@ const Typography: React.FC<Props> = ({
           underline,
           maxLength,
           letterSpacing,
-          wordSpacing,
+          wordSpacing,wrap
         )}
       >
         {children}
@@ -160,6 +165,7 @@ const Typography: React.FC<Props> = ({
             maxLength,
             letterSpacing,
             wordSpacing,
+            wrap,
           )}
         >
           {children}
@@ -180,6 +186,7 @@ const Typography: React.FC<Props> = ({
             maxLength,
             letterSpacing,
             wordSpacing,
+            wrap,
           )}
         >
           {children}
@@ -200,6 +207,7 @@ const Typography: React.FC<Props> = ({
             maxLength,
             letterSpacing,
             wordSpacing,
+            wrap,
           )}
         >
           {children}
@@ -220,6 +228,7 @@ const Typography: React.FC<Props> = ({
             maxLength,
             letterSpacing,
             wordSpacing,
+            wrap,
           )}
         >
           {children}
@@ -240,6 +249,7 @@ const Typography: React.FC<Props> = ({
             maxLength,
             letterSpacing,
             wordSpacing,
+            wrap,
           )}
         >
           {children}
@@ -260,6 +270,7 @@ const Typography: React.FC<Props> = ({
             maxLength,
             letterSpacing,
             wordSpacing,
+            wrap,
           )}
         >
           {children}
@@ -276,6 +287,8 @@ Typography.defaultProps = {
   italic: false,
   underline: false,
   inline: false,
+  wrap: false,
+  maxLength: "100%"
 };
 
 export default Typography;
