@@ -1,6 +1,5 @@
-import React from "react";
-import FlexContainer from "../elements/generic/FlexContainer";
-import Spacer from "../elements/generic/Spacer";
+import React, { Children } from "react";
+import useBreakpoint from "src/hooks/useBreakpoints.hook";
 
 interface Props {}
 
@@ -12,13 +11,25 @@ interface Props {}
 const CategoryCardWrapper: React.FC<Props> = ({
   children,
 }) => {
+  const {width} = useBreakpoint();
+  const elementsWidth = Children.toArray(children).length * 310;
   return (
     <div className="container">
       <style jsx>{`
         .container {
+          position: relative;
+          left: 0px;
+          width: 100vw;
           --gap: 40px;
+          overflow-x: ${width >=
+          elementsWidth
+            ? "hidden"
+            : "scroll"};
           display: flex;
-          overflow-x: scroll;
+          justify-content: ${width >=
+          elementsWidth
+            ? "center"
+            : "flex-start"};
           -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
           /*margin: calc(10px / -2)
@@ -37,14 +48,19 @@ const CategoryCardWrapper: React.FC<Props> = ({
           padding-right: calc(
             calc(
               calc(100% / 2) -
-                calc(270px / 2) - 10px
+                calc(270px / 2) -
+                calc(var(--gap) / 2)
             )
           );
         }
       `}</style>
-      <div className="spacer" />
+      {width < elementsWidth ? (
+        <div className="spacer" />
+      ) : undefined}
       {children}
-      <div className="spacer" />
+      {width < elementsWidth ? (
+        <div className="spacer" />
+      ) : undefined}
     </div>
   );
 };

@@ -2,8 +2,6 @@ import React, {
   useEffect,
 } from "react";
 import HomeIcon from "../icons/home.icon";
-import KnowledgeIcon from "../icons/knowledge.icon";
-import LearningIcon from "../icons/learning.icon";
 import Logo from "../elements/custom/Logo";
 import NavigationBarItem from "../elements/custom/NavigationBarItem";
 import styles from "./NavigationBar.module.css";
@@ -26,52 +24,6 @@ const items = [
     name: " Was ich gelernt habe",
   },
 ];
-
-const getIconForName = (
-  name: string,
-  options: {
-    color: string;
-    width?: string;
-    height?: string;
-  },
-) => {
-  switch (name) {
-    case "Start": {
-      return (
-        <HomeIcon
-          color={options.color}
-          height={options.height}
-          width={options.width}
-        />
-      );
-    }
-    case "Was ich kann": {
-      return (
-        <KnowledgeIcon
-          color={options.color}
-          height={options.height}
-          width={options.width}
-        />
-      );
-    }
-    case "Was ich gelernt habe": {
-      return (
-        <LearningIcon
-          color={options.color}
-          height={options.height}
-          width={options.width}
-        />
-      );
-    }
-    default: {
-      <LearningIcon
-        color={options.color}
-        height={options.height}
-        width={options.width}
-      />;
-    }
-  }
-};
 
 interface Props {
   elementsColor?: string | string[];

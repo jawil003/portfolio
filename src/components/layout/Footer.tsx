@@ -40,7 +40,7 @@ const getIconForName = (
       );
     }
     default: {
-      <WorldWideIcon
+      return <WorldWideIcon
         color={options.color}
         height={options.height}
         width={options.width}
@@ -99,7 +99,7 @@ const Footer: React.FC<Props> = ({
               icon={getIconForName(
                 i.name,
                 {
-                  color,
+                  color: color as string,
                   height: "23px",
                 },
               )}
