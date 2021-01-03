@@ -7,7 +7,7 @@ import React, {
 import CategoryCard from "../../components/elements/custom/CategoryCard";
 import CategoryCardWrapper from "../../components/layout/CategoryCardWrapper";
 import CategoryHeader from "../../components/elements/custom/CategoryHeader";
-import FullScreenSection from "../../components/elements/custom/FullScreenSection";
+import FullScreenKnowledgeSection from "../../components/elements/custom/FullScreenKnowledgeSection";
 import FlaskDesign from "../../components/designs/flask.design";
 import IconButton from "../../components/elements/generic/IconButton";
 import Spacer from "../../components/elements/generic/Spacer";
@@ -235,7 +235,10 @@ const Contact: React.FC<
           <div
             style={{
               display: "grid",
-              justifyItems: width < breakpoints.lg ? "center": undefined,
+              justifyItems:
+                width < breakpoints.lg
+                  ? "center"
+                  : undefined,
               justifyContent:
                 width >= breakpoints.lg
                   ? "end"
@@ -255,7 +258,10 @@ const Contact: React.FC<
             }}
           >
             <div>
-              <ReactDesign width="auto" height="100%" />
+              <ReactDesign
+                width="auto"
+                height="100%"
+              />
             </div>
           </div>
         }
@@ -405,7 +411,7 @@ const Contact: React.FC<
         </HeaderWithSpacer>
       </BackgroundWrapper>
       {/* TODO: Find Out why Page becomes more than 100vw on Mobile Devices*/}
-     <main
+      <main
         style={{
           flex: 1,
           display: "flex",
@@ -423,10 +429,15 @@ const Contact: React.FC<
             },
             index,
           ) => {
-            if (width < breakpoints.lg)
+            if (
+              width < breakpoints.lg ||
+              index ===
+                knowledgeCategories.length -
+                  1
+            )
               return (
-                <FullScreenSection
-                rowGap="30px"
+                <FullScreenKnowledgeSection
+                  rowGap="30px"
                   key={title + "-snap"}
                   latest={
                     index ===
@@ -436,7 +447,6 @@ const Contact: React.FC<
                       : false
                   }
                 >
-                  
                   <CategoryHeader
                     key={
                       title + "-header"
@@ -446,39 +456,35 @@ const Contact: React.FC<
                       description
                     }
                   />
-                  
-                    <CategoryCardWrapper
-                      key={
-                        title +
-                        "-wrapper"
-                      }
-                    >
-                      {items.map(
-                        ({
-                          title,
-                          description,
-                          icon,
-                        }) => (
-                          <CategoryCard
-                            key={
-                              title +
-                              "-card"
-                            }
-                            title={
-                              title
-                            }
-                            description={
-                              description
-                            }
-                            icon={getIconForName(
-                              icon?.title,
-                            )}
-                          />
-                        ),
-                      )}
-                    </CategoryCardWrapper>
-    
-                </FullScreenSection>
+
+                  <CategoryCardWrapper
+                    key={
+                      title + "-wrapper"
+                    }
+                  >
+                    {items.map(
+                      ({
+                        title,
+                        description,
+                        icon,
+                      }) => (
+                        <CategoryCard
+                          key={
+                            title +
+                            "-card"
+                          }
+                          title={title}
+                          description={
+                            description
+                          }
+                          icon={getIconForName(
+                            icon?.title,
+                          )}
+                        />
+                      ),
+                    )}
+                  </CategoryCardWrapper>
+                </FullScreenKnowledgeSection>
               );
             return (
               <ScrollSnapParagraph
@@ -487,7 +493,7 @@ const Contact: React.FC<
                   paragraphs[index + 1]
                 }
               >
-                <FullScreenSection
+                <FullScreenKnowledgeSection
                   key={title + "-snap"}
                   latest={
                     index ===
@@ -533,30 +539,41 @@ const Contact: React.FC<
                       ),
                     )}
                   </CategoryCardWrapper>
-                </FullScreenSection>
+                </FullScreenKnowledgeSection>
               </ScrollSnapParagraph>
             );
           },
         )}
-        </main>
-      <Footer />
-      {width >= breakpoints.lg ? <BackTopButton
-        hidden={hideButton}
-        onClick={() => {
-          if (width < breakpoints.lg)
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          else
-            paragraphs[0].current?.scrollIntoView(
-              {
+      </main>
+      {width < breakpoints.lg ? (
+        <Footer />
+      ) : (
+        <ScrollSnapParagraph
+          ref={paragraphs[knowledgeCategories.length]}
+          align="end"
+        >
+          <Footer />
+        </ScrollSnapParagraph>
+      )}
+      {width >= breakpoints.lg ? (
+        <BackTopButton
+          hidden={hideButton}
+          onClick={() => {
+            if (width < breakpoints.lg)
+              window.scrollTo({
+                top: 0,
                 behavior: "smooth",
-                block: "start",
-              },
-            );
-        }}
-      />: undefined}
+              });
+            else
+              paragraphs[0].current?.scrollIntoView(
+                {
+                  behavior: "smooth",
+                  block: "start",
+                },
+              );
+          }}
+        />
+      ) : undefined}
     </>
   );
 };

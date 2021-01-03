@@ -10,6 +10,7 @@ export interface Props {
   color?: string;
   text?: string;
   variant?: "outlined" | "filled";
+  onClick?: ()=>void;
 }
 
 /**
@@ -21,7 +22,7 @@ const Button: React.FC<Props> = ({
   text,
   backgroundColor,
   color,
-  variant,
+  variant, onClick
 }) => {
   const scaleX = useSpring(0);
   const colorValue = useTransform(
@@ -31,6 +32,7 @@ const Button: React.FC<Props> = ({
   );
   return (
     <button
+    onClick={onClick}
       onMouseOver={() => scaleX.set(1)}
       onMouseOut={() => scaleX.set(0)}
       style={{

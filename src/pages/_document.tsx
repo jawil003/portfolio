@@ -18,7 +18,7 @@ class MyDocument extends Document {
       <Html
         lang="de"
         style={{
-          scrollSnapType: "y mandatory",
+          scrollSnapType: "y",
         }}
       >
         <Head>

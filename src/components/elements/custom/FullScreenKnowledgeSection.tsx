@@ -30,11 +30,11 @@ interface Props {
 }
 
 /**
- * An CategoryWrapper React Component.
+ * An FullScreenKnowledgeSection React Component.
  * @author
  * @version 0.1
  */
-const FullScreenSection = forwardRef<
+const FullScreenKnowledgeSection = forwardRef<
   HTMLDivElement,
   Props
 >(
@@ -47,14 +47,16 @@ const FullScreenSection = forwardRef<
         ref={ref}
         style={{
           ...style,
-          minHeight: getHeightForSection(
+          overflow: "hidden",
+          height: getHeightForSection(
             first,
             latest,
           ),
           display: "grid",
           justifyContent: "center",
           alignContent: "center",
-          columnGap, rowGap
+          columnGap,
+          rowGap,
         }}
       >
         {children}
@@ -63,9 +65,9 @@ const FullScreenSection = forwardRef<
   },
 );
 
-FullScreenSection.defaultProps = {
+FullScreenKnowledgeSection.defaultProps = {
   latest: false,
   first: false,
 };
 
-export default FullScreenSection;
+export default FullScreenKnowledgeSection;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 interface Props {
   direction?: "row" | "column";
@@ -22,6 +22,7 @@ interface Props {
     | "flex-end"
     | "stretch";
   wrap?: boolean;
+  style?: CSSProperties;
 }
 
 /**
@@ -37,10 +38,10 @@ const FlexContainer: React.FC<Props> = ({
   alignItems,
   alignContent,
   wrap,
-  children,
+  children, style
 }) => {
   return (
-    <div className="flexContainer">
+    <div className="flexContainer" style={{...style}}>
       <style jsx>{`
         .flexContainer {
           min-width: 100%;

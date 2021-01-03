@@ -61,7 +61,8 @@ export interface Props {
     | "h6"
     | "b1"
     | "b2"
-    | "b3";
+    | "b3" | "custom";
+    size?: "string",
   color?: string;
   fontFamily?: string;
   align?:
