@@ -47,7 +47,6 @@ const Contact: React.FC<Props> = () => {
           <Spacer height="10px" />
           <Typography align="center">
             Jannik Will <br />{" "}
-            Ostkirchstraße 23 <br />
             44269 Dortmund <br />{" "}
             Deutschland
           </Typography>
