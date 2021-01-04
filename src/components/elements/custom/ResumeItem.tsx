@@ -1,5 +1,4 @@
 import React from "react";
-import useTheme from "src/hooks/useTheme.hook";
 import Spacer from "../generic/Spacer";
 import Typography from "../generic/Typography";
 
@@ -23,11 +22,6 @@ const ResumeItem: React.FC<Props> = ({
   end_year,
   latest,
 }) => {
-  const {
-    palette: {
-      color: { secondary },
-    },
-  } = useTheme();
   return (
     <div
       style={{
@@ -121,7 +115,7 @@ const ResumeItem: React.FC<Props> = ({
               height: "25px",
               border: `5px solid ${"var(--darkwhite)"}`,
               borderRadius: "100%",
-              backgroundColor: secondary,
+              backgroundColor: "var(--secondary)",
             }}
           />
         </div>

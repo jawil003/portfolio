@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import ThemeProvider from "../components/context/ThemeProvider";
-import Button from "src/components/elements/generic/Button";
-import FlexContainer from "src/components/elements/generic/FlexContainer";
-import Typography from "src/components/elements/generic/Typography";
 import BetaDialog from "src/components/elements/custom/BetaDialog";
-
-const DIALOG_SHOWN_KEY = "beta_dialog_shown";
 
 /**
  * An App React Component.

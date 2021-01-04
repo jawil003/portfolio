@@ -4,7 +4,6 @@ import DesigningDesign from "../components/designs/designing.design";
 import Spacer from "../components/elements/generic/Spacer";
 import Typography from "../components/elements/generic/Typography";
 import Footer from "../components/layout/Footer";
-import HeaderWithIcon from "../components/layout/HeaderWithIcon";
 import NavigationBar from "../components/layout/NavigationBar";
 import ColorContainer from "src/components/elements/generic/ColorContainer";
 import ResumeContainer from "src/components/elements/custom/ResumeContainer";
@@ -12,6 +11,9 @@ import { GetStaticProps } from "next";
 import ResumeService from "src/services/resume.service";
 import ResumeItemType from "src/model/ResumeItem.model";
 import ResumeItem from "src/components/elements/custom/ResumeItem";
+import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
+import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
+import useBreakpoint, {breakpoints} from "src/hooks/useBreakpoints.hook";
 
 interface Props {}
 
@@ -35,6 +37,7 @@ const Contact: React.FC<
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
   ];
+  const { width } = useBreakpoint();
   return (
     <>
       <Head>
@@ -44,32 +47,57 @@ const Contact: React.FC<
       </Head>
 
       <NavigationBar />
-
-      <HeaderWithIcon
-        latest
-        first
-        icon={
-          <DesigningDesign width="100%" />
+      <BackgroundWrapper
+        background={
+          <div
+            style={{
+              marginLeft:
+                width >= breakpoints.lg
+                  ? "50%"
+                  : undefined,
+              width:
+                width >= breakpoints.lg
+                  ? "50%"
+                  : "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+              opacity:
+                width >= breakpoints.lg
+                  ? 1
+                  : 0.3,
+            }}
+          >
+            <DesigningDesign width="100%" />
+          </div>
         }
-        ref={_paragraphs[0]}
       >
-        <Typography
-          variant="h3"
-          align="center"
+        <HeaderWithSpacer
+          latest
+          first
+          ref={_paragraphs[0]}
         >
-          Was habe ich bereits gelernt?
-        </Typography>
-        <Spacer height="0.4em" />
-        <Typography
-          align="center"
-          italic
-        >
-          Das Leben besteht aus
-          kontinuierlichen Lernen. Warum
-          stehen bleiben wenn
-          Weiterentwicklung möglich ist
-        </Typography>
-      </HeaderWithIcon>
+          <Typography
+            variant="h3"
+            align="center"
+          >
+            Was habe ich bereits
+            gelernt?
+          </Typography>
+          <Spacer height="0.4em" />
+          <Typography
+            align="center"
+            italic
+          >
+            Das Leben besteht aus
+            kontinuierlichen Lernen.
+            Warum stehen bleiben wenn
+            Weiterentwicklung möglich
+            ist
+          </Typography>
+        </HeaderWithSpacer>
+      </BackgroundWrapper>
       <ColorContainer color="var(--secondary)">
         <main
           style={{
