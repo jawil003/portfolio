@@ -41,6 +41,7 @@ const Index: React.FC = () => {
         </title>
       </Head>
       <NavigationBar
+      mobileMenuColor="var(--primary)"
         elementsColor={
           width <= breakpoints.lg
             ? "var(--secondaryText)"

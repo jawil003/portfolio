@@ -60,6 +60,10 @@
   }
 }
 
+.container > .logo {
+  overflow: visible;
+}
+
 .container {
   display: flex;
   justify-content: space-between;

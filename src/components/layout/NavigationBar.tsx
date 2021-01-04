@@ -12,21 +12,61 @@ import {
   useTransform,
 } from "framer-motion";
 import useBreakpoint from "../../hooks/useBreakpoints.hook";
+import KnowledgeIcon from "../icons/knowledge.icon";
+import LearningIcon from "../icons/learning.icon";
 
 const items = [
   { href: "/", name: "Start" },
   {
     href: "/knowledge",
-    name: " Was ich kann",
+    name: "Was ich kann",
   },
   {
     href: "/resume",
-    name: " Was ich gelernt habe",
+    name: "Was ich gelernt habe",
   },
 ];
 
+const getIconForName = (name: string, color: string, width: string) => {
+  switch (name) {
+    case "Start": {
+      return (
+        <HomeIcon
+          color={color}
+          width={width}
+        />
+      );
+    }
+    case "Was ich gelernt habe": {
+      return (
+        <KnowledgeIcon
+          color={color}
+          width={width}
+        />
+      );
+    }
+    case "Was ich kann": {
+      return (
+        <LearningIcon
+          color={color}
+          width={width}
+        />
+      );
+    }
+    default: {
+      return (
+        <HomeIcon
+          color={color}
+          width={width}
+        />
+      );
+    }
+  }
+}
+
 interface Props {
   elementsColor?: string | string[];
+  mobileMenuColor?: string;
 }
 
 /**
@@ -36,6 +76,7 @@ interface Props {
  */
 const NavigationBar: React.FC<Props> = ({
   elementsColor,
+  mobileMenuColor
 }) => {
   const scaleX = useSpring(0, {
     duration: 120,
@@ -79,12 +120,11 @@ const NavigationBar: React.FC<Props> = ({
                     href={
                       items[index].href
                     }
-                    icon={
-                      <HomeIcon
-                        color={color}
-                        height="23px"
-                      />
-                    }
+                    icon={getIconForName(
+                      items[index].name,
+                      color,
+                      "23px",
+                    )}
                   >
                     {items[index].name}
                   </NavigationBarItem>
@@ -97,14 +137,11 @@ const NavigationBar: React.FC<Props> = ({
                       elementsColor
                     }
                     href={href}
-                    icon={
-                      <HomeIcon
-                        color={
-                          elementsColor
-                        }
-                        height="23px"
-                      />
-                    }
+                    icon={getIconForName(
+                      name,
+                      elementsColor as string,
+                      "23px",
+                    )}
                   >
                     {name}
                   </NavigationBarItem>
@@ -134,7 +171,7 @@ const NavigationBar: React.FC<Props> = ({
         >
           <HamburgerMenuIcon
             height="100%"
-            color="var(--primary)"
+            color={mobileMenuColor}
           />
         </div>
       </div>
@@ -144,6 +181,7 @@ const NavigationBar: React.FC<Props> = ({
 
 NavigationBar.defaultProps = {
   elementsColor: "var(--secondaryText)",
+
 };
 
-export default NavigationBar;
+export default React.memo(NavigationBar);

@@ -23,6 +23,7 @@ const generateStyle = (
   wrap?:boolean,
 ) => {
   const style: CSSProperties = {
+    overflow: "visible",
     fontSize: `${fontSize}rem`,
     fontWeight:
       bold === "semi-bold"

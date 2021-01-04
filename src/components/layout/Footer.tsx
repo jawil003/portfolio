@@ -78,7 +78,7 @@ const Footer: React.FC<Props> = ({
         ? color.map((c, index) => (
             <NavigationBarItem
               color={c}
-              href="/contact"
+              href={items[index].href}
               icon={getIconForName(
                 items[index].name,
                 {
@@ -95,7 +95,7 @@ const Footer: React.FC<Props> = ({
         : items.map((i) => (
             <NavigationBarItem
               color={color}
-              href="/contact"
+              href={i.href}
               icon={getIconForName(
                 i.name,
                 {

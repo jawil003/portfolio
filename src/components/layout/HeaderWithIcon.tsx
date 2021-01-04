@@ -53,7 +53,7 @@ const HeaderWithIcon = forwardRef<
         className="header"
         ref={ref}
         style={{
-          height: getHeightForSection(
+          minHeight: getHeightForSection(
             first,
             latest,
           ),
@@ -96,7 +96,7 @@ const HeaderWithIcon = forwardRef<
               top: 100px;
               left: 0;
               padding: 100px;
-              height: calc(
+              min-height: calc(
                 100% -
                   calc(100px + 70px)
               );
@@ -121,7 +121,7 @@ const HeaderWithIcon = forwardRef<
 
           @media (min-width: 500px) and (max-width: 819px) {
             .header > :global(div):last-child {
-              height: 100%;
+              min-height: 100%;
               display: flex;
               justify-content: center;
               align-items: center;

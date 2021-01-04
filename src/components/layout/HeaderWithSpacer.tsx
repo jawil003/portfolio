@@ -50,6 +50,9 @@ const HeaderWithSpacer = forwardRef<
         }}
       >
         <style jsx>{`
+          .header {
+            overflow: hidden;
+          }
           @media (min-width: 1100px) {
             .header {
               flex: 1;
