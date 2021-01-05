@@ -33,12 +33,9 @@ class MyDocument extends Document {
             type="image/x-icon"
           />
           {generateGeneralTags(true)}
-          {provideImages("./img/icons",
+          {provideImages(
+            "./img/icons",
             "icon",
-          )}
-          {generateIndividualTags(
-            "#fff",
-            title,
           )}
         </Head>
 

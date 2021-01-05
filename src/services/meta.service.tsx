@@ -1,3 +1,5 @@
+import {title as appTitle} from "../../package.json";
+
 class MetaService {
   public static generateGeneralTags(
       webApp?: boolean
@@ -8,26 +10,48 @@ class MetaService {
         http-equiv="X-UA-Compatible"
         content="IE=edge"
       />,
-      <meta
-        name="viewport"
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-      />,
      webApp ? <meta name="apple-mobile-web-app-capable" content="yes"/> : undefined,
      <link href="./manifest.json" rel="manifest"/>
     ];
   }
-  public static generateIndividualTags(
-    accentColor?: string,
+  public static generateIndividualTags(data: 
+    {accentColor?: string,
     title?: string,
-    description?: string, /* Max 160 Characters */
+    description?: string,
     keywords?: string[],
     author?:string,
     indexPage?: boolean,
-    crawlHyperlinks?: boolean,
+    crawlHyperlinks?: boolean ,
     cache?: boolean,
-    expiresIn?: number
+    expiresIn?: number} = {}
 
   ) {
+    
+    const {accentColor : defaultAccentColor, title : defaultTitle, description: defaultDescription, keywords: defaultKeywords, author : defaultAuthor, indexPage : defaultIndexPage, crawlHyperlinks : defaultCrawlHyperlinks, cache: defaultCache, expiresIn: defaultExpiresIn} = {accentColor: "#fffff",
+    title: appTitle,
+    description:"Dies ist meine Portfolio Seite. Hier erfährst du wie ich dir bei deinem nächsten Projekt helfen kann.", /* Max 160 Characters */
+    keywords:["portfolio",
+              "web design",
+              "web development",
+              "programming", 
+              "java", 
+              "css", 
+              "html", 
+              "javascript", 
+              "typescript", 
+              "electron", 
+              "adobe xd", 
+              "figma", 
+              "affinity designer", 
+              "affinity photo"
+            ],
+    author:"Jannik Will",
+    indexPage: true,
+    crawlHyperlinks: true,
+    cache:  true,
+    expiresIn: undefined};
+    const {accentColor = defaultAccentColor, title = defaultTitle, description = defaultDescription, keywords = defaultKeywords, author = defaultAuthor, indexPage = defaultIndexPage, crawlHyperlinks = defaultCrawlHyperlinks, cache = defaultCache, expiresIn = defaultExpiresIn} = data;
+          
     return [
       <meta
         name="theme-color"

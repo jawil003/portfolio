@@ -19,6 +19,7 @@ import useBreakpoint, {
 } from "src/hooks/useBreakpoints.hook";
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 import BlobDesktopDesign from "src/components/designs/blobDesktop.design";
+import { generateIndividualTags } from "src/services/meta.service";
 
 /**
  * An Index React Component.
@@ -35,11 +36,7 @@ const Index: React.FC = () => {
   const { width } = useBreakpoint();
   return (
     <>
-      <Head>
-        <title>
-          Jannik Will | Startseite
-        </title>
-      </Head>
+    <Head>{generateIndividualTags()}</Head>
       <NavigationBar
       mobileMenuColor="var(--primary)"
         elementsColor={

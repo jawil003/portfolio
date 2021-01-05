@@ -34,6 +34,8 @@ import FlexContainer from "src/components/elements/generic/FlexContainer";
 import ReactDesign from "src/components/designs/react.design";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
+import { generateIndividualTags } from "src/services/meta.service";
+import {title} from "../../../package.json";
 
 const AdobeXdIcon = dynamic(
   () =>
@@ -216,9 +218,7 @@ const Contact: React.FC<
   return (
     <>
       <Head>
-        <title>
-          Jannik Will | Kenntnisse
-        </title>
+        {generateIndividualTags({title: `${title} | Kenntnisse`, description: "Meine Kenntnisse im Bereich, Webentwicklung und vielem mehr."})}
       </Head>
       {width < breakpoints.lg ? (
         <NavigationBar />

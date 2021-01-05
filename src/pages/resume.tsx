@@ -14,6 +14,8 @@ import ResumeItem from "src/components/elements/custom/ResumeItem";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 import useBreakpoint, {breakpoints} from "src/hooks/useBreakpoints.hook";
+import { generateIndividualTags } from "src/services/meta.service";
+import { title } from "../../package.json";
 
 interface Props {}
 
@@ -41,9 +43,11 @@ const Contact: React.FC<
   return (
     <>
       <Head>
-        <title>
-          Jannik Will | Erfahrungen
-        </title>
+        {generateIndividualTags({
+          title: `${title} | Erfahrungen`,
+          description:
+            "Meine praktischen Erfahrungen im Bereich, Webentwicklung und vielem mehr.",
+        })}
       </Head>
 
       <NavigationBar />
