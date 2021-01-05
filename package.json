@@ -24,6 +24,7 @@
     "graphql": "^15.4.0",
     "lodash": "^4.17.20",
     "next": "latest",
+    "next-pwa": "^5.0.2",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "react": "^17.0.1",

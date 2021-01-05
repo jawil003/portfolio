@@ -12,7 +12,8 @@ class MetaService {
         name="viewport"
         content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
       />,
-     webApp ? <meta name="apple-mobile-web-app-capable" content="yes"/> : undefined
+     webApp ? <meta name="apple-mobile-web-app-capable" content="yes"/> : undefined,
+     <link href="./manifest.json" rel="manifest"/>
     ];
   }
   public static generateIndividualTags(

@@ -38,3 +38,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#Generated Service Worker is removed
+public/workbox**.js
+public/sw.js
