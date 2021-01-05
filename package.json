@@ -11,6 +11,7 @@
     "build-storybook": "build-storybook",
     "test": "jest --passWithNoTests",
     "lint": "tsc && eslint --ext js,jsx,ts,tsx --fix",
+    "lint-staged": "lint-staged",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -73,12 +74,12 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "npm run lint-staged && pretty-quick --staged"
     }
   },
   "lint-staged": {
     "*.{js, ts, tsx}": [
-      "npm run build",
+      "tslint --fix --config tslint.json --project tsconfig.json",
       "eslint --fix",
       "git add"
     ]
