@@ -1,4 +1,4 @@
-export default class MetaService {
+class MetaService {
   public static generateGeneralTags(
       webApp?: boolean
   ) {
@@ -32,102 +32,127 @@ export default class MetaService {
         name="theme-color"
         content={accentColor}
       />,
-      <title>{title}</title>,
-      <meta name="apple-mobile-web-app-title" content={title}/>,
-      <meta
-        name="description"
-        content={description}
-      />,
-      <meta
-        name="keywords"
-        content={keywords?.join()}
-      />,
-      <meta
-        name="author"
-        content={author}
-      />,
-      <meta
-        name="copyright"
-        content={author}
-      />,
-      <meta
-        name="robots"
-        content={
-          indexPage
-            ? "index"
-            : "noindex"
-        }
-      />,
-      <meta
-        name="robots"
-        content={
-          crawlHyperlinks
-            ? "follow"
-            : "nofollow"
-        }
-      />,
+      title ? (
+        <title>{title}</title>
+      ) : undefined,
+      title ? (
+        <meta
+          name="apple-mobile-web-app-title"
+          content={title}
+        />
+      ) : undefined,
+      description ? (
+        <meta
+          name="description"
+          content={description}
+        />
+      ) : undefined,
+      keywords ? (
+        <meta
+          name="keywords"
+          content={keywords?.join()}
+        />
+      ) : undefined,
+      author
+        ? [
+            <meta
+              name="author"
+              content={author}
+            />,
+            <meta
+              name="copyright"
+              content={author}
+            />,
+          ]
+        : undefined,
+      indexPage !== undefined ? (
+        <meta
+          name="robots"
+          content={
+            indexPage
+              ? "index"
+              : "noindex"
+          }
+        />
+      ) : undefined,
+      crawlHyperlinks !== undefined ? (
+        <meta
+          name="robots"
+          content={
+            crawlHyperlinks
+              ? "follow"
+              : "nofollow"
+          }
+        />
+      ) : undefined,
       cache ? undefined : (
         <meta
           http-equiv="cache-control"
           content="no-cache"
         />
       ),
-      <meta
+      expiresIn ? <meta
         http-equiv="expires"
         content={String(expiresIn)}
-      />,
+      />: undefined,
     ];
   }
-  private static provideImages(iosImages: {
-      default: string, 
-      iPad: {"2x": string, "3x": string},
-      iPadPro: {"2x": string, "3x": string}, 
-      iPhone: {"1x": string, "2x": string, "3x": string}, 
-      launch: string
-  }){
+  public static provideImages(basePath: string,
+      iconName: string){
+      iconName = basePath + iconName;
       return [
         <link
+          rel="shortcut icon"
+          type="image/x-icon"
+          href={`${basePath}/favicon.png`}
+        />,
+        <link
           rel="apple-touch-icon"
-          href={iosImages.default}
+          href={`${iconName}-512x512.png`}
         />,
         <link
           rel="apple-touch-icon"
           sizes="60x60"
-          href={iosImages.iPhone["1x"]}
+          href={`${iconName}-60x60.png`}
         />,
         <link
           rel="apple-touch-icon"
           sizes="76x76"
-          href={iosImages.iPad["2x"]}
+          href={`${iconName}-76x76.png`}
         />,
         <link
           rel="apple-touch-icon"
           sizes="83.5x83.5"
-          href={iosImages.iPadPro["2x"]}
+          href={`${iconName}-83.5x83.5.png`}
         />,
         <link
           rel="apple-touch-icon"
           sizes="120x120"
-          href={iosImages.iPhone["2x"]}
+          href={`${iconName}-120x120.png`}
         />,
         <link
           rel="apple-touch-icon"
           sizes="152x152"
-          href={iosImages.iPad["3x"]}
+          href={`${iconName}-152x152.png`}
         />,
 
         <link
           rel="apple-touch-icon"
           sizes="167x167"
-          href={iosImages.iPadPro["3x"]}
+          href={`${iconName}-167x167.png`}
         />,
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={iosImages.iPhone["3x"]}
+          href={`${iconName}-180x180.png`}
         />,
       ];
   }
 }
 
-export const generateTags = MetaService.generateTags;
+export const generateGeneralTags =
+  MetaService.generateGeneralTags;
+export const generateIndividualTags =
+    MetaService.generateIndividualTags;
+export const provideImages =
+  MetaService.provideImages;
