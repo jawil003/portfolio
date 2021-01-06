@@ -21,6 +21,7 @@
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@sambego/storybook-state": "^2.0.1",
     "apollo-link-http": "^1.5.17",
+    "dayjs": "^1.10.2",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.9.5",
     "graphql": "^15.4.0",

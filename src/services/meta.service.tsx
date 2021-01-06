@@ -1,4 +1,10 @@
+/* eslint-disable react/jsx-key */
 import { title as appTitle } from "../../package.json";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 class MetaService {
   public static generateGeneralTags(
@@ -7,7 +13,7 @@ class MetaService {
     return [
       <meta charSet="UTF-8" />,
       <meta
-        http-equiv="X-UA-Compatible"
+        httpEquiv="X-UA-Compatible"
         content="IE=edge"
       />,
       webApp ? (
@@ -33,8 +39,17 @@ class MetaService {
       description?: string;
       keywords?: string[];
       author?: string;
-      indexPage?: boolean;
-      crawlHyperlinks?: boolean;
+      language?: string;
+      robots?: {
+        indexPage?: boolean;
+        indexImage?: boolean;
+        crawlLinks?: boolean;
+        archivePage?: boolean;
+        snipPage?: boolean;
+        translate?: boolean;
+        caya?: boolean;
+      };
+      revisedTime?: string;
       cache?: boolean;
       expiresIn?: number;
     } = {},
@@ -45,10 +60,11 @@ class MetaService {
       description: defaultDescription,
       keywords: defaultKeywords,
       author: defaultAuthor,
-      indexPage: defaultIndexPage,
-      crawlHyperlinks: defaultCrawlHyperlinks,
+      robots: defaultRobots,
       cache: defaultCache,
       expiresIn: defaultExpiresIn,
+      language: defaultLanguage,
+      revisedTime: defaultRevisedTime,
     } = {
       accentColor: "#fffff",
       title: appTitle,
@@ -71,10 +87,20 @@ class MetaService {
         "affinity photo",
       ],
       author: "Jannik Will",
-      indexPage: true,
-      crawlHyperlinks: true,
+      language: "de",
+      robots: {
+        indexPage: true,
+        crawlHyperlinks: true,
+        archivePage: true,
+        snipPage: true,
+        translate: true,
+        caya: true,
+      },
       cache: true,
       expiresIn: undefined,
+      revisedTime: dayjs()
+        .tz("America/New York")
+        .format(),
     };
     const {
       accentColor = defaultAccentColor,
@@ -82,10 +108,11 @@ class MetaService {
       description = defaultDescription,
       keywords = defaultKeywords,
       author = defaultAuthor,
-      indexPage = defaultIndexPage,
-      crawlHyperlinks = defaultCrawlHyperlinks,
+      robots = defaultRobots,
       cache = defaultCache,
       expiresIn = defaultExpiresIn,
+      language = defaultLanguage,
+      revisedTime = defaultRevisedTime,
     } = data;
 
     return [
@@ -99,6 +126,12 @@ class MetaService {
       title ? (
         <meta
           name="apple-mobile-web-app-title"
+          content={title}
+        />
+      ) : undefined,
+      title ? (
+        <meta
+          name="subject"
           content={title}
         />
       ) : undefined,
@@ -126,35 +159,36 @@ class MetaService {
             />,
           ]
         : undefined,
-      indexPage !== undefined ? (
+      language ? (
         <meta
-          name="robots"
-          content={
-            indexPage
-              ? "index"
-              : "noindex"
-          }
+          name="language"
+          content={language}
         />
       ) : undefined,
-      crawlHyperlinks !== undefined ? (
+      robots ? (
         <meta
           name="robots"
-          content={
-            crawlHyperlinks
-              ? "follow"
-              : "nofollow"
-          }
+          content={Object.values({
+            ...defaultRobots,
+            ...robots,
+          }).join()}
         />
       ) : undefined,
       cache ? undefined : (
         <meta
-          http-equiv="cache-control"
+          httpEquiv="cache-control"
           content="no-cache"
         />
       ),
+      revisedTime ? (
+        <meta
+          name="revised"
+          content={revisedTime}
+        />
+      ) : undefined,
       expiresIn ? (
         <meta
-          http-equiv="expires"
+          httpEquiv="expires"
           content={String(expiresIn)}
         />
       ) : undefined,
