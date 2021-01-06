@@ -3,7 +3,6 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import ThemeProvider from "../components/context/ThemeProvider";
 import BetaDialog from "src/components/elements/custom/BetaDialog";
-
 /**
  * An App React Component.
  * @author Jannik Will
@@ -28,7 +27,7 @@ const MyApp: React.FC<AppProps> = ({
 
       <ThemeProvider>
         <Component {...pageProps} />
-        <BetaDialog/>
+        <BetaDialog />
       </ThemeProvider>
     </div>
   );

@@ -1,4 +1,4 @@
-const prettier = require("./prettierrc.js")
+const prettier = require("./.prettierrc.js");
 
 module.exports = {
   root: true,
@@ -64,7 +64,7 @@ module.exports = {
         ],
         "prettier/prettier": [
           "error",
-          {...prettier},
+          prettier,
           { usePrettierrc: true },
         ], // Includes .prettierrc.js rules
       },
