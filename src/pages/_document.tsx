@@ -5,8 +5,10 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import { generateGeneralTags, generateIndividualTags, provideImages } from "src/services/meta.service";
-import {title} from "../../package.json";
+import {
+  generateGeneralTags,
+  provideImages,
+} from "src/services/meta.service";
 /**
  * An  React Component.
  * @author
