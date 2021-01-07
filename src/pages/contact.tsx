@@ -13,8 +13,7 @@ import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import useBreakpoint, {
   breakpoints,
 } from "src/hooks/useBreakpoints.hook";
-
-interface Props {}
+import { generateIndividualTags } from "src/services/meta.service";
 
 interface UserMessage {
   name: string;
@@ -28,7 +27,7 @@ interface UserMessage {
  * @author Jannik Will
  * @version 0.1
  */
-const Contact: React.FC<Props> = () => {
+const Contact: React.FC = () => {
   const {
     palette: {
       color: { secondary },
@@ -52,9 +51,11 @@ const Contact: React.FC<Props> = () => {
   return (
     <>
       <Head>
-        <title>
-          Jannik Will | Kontakt
-        </title>
+        {generateIndividualTags({
+          title: `${title} | Kontakt`,
+          description:
+            "Kontaktiere mich gerne für Hilfe bei deinem Entwicklungsprojekt.",
+        })}
       </Head>
       <NavigationBar />
       <BackgroundWrapper

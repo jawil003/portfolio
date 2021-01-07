@@ -13,11 +13,11 @@ import ResumeItemType from "src/model/ResumeItem.model";
 import ResumeItem from "src/components/elements/custom/ResumeItem";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
-import useBreakpoint, {breakpoints} from "src/hooks/useBreakpoints.hook";
+import useBreakpoint, {
+  breakpoints,
+} from "src/hooks/useBreakpoints.hook";
 import { generateIndividualTags } from "src/services/meta.service";
 import { title } from "../../package.json";
-
-interface Props {}
 
 interface ServerSideProps {
   resumeItems: ResumeItemType[];
@@ -28,9 +28,9 @@ interface ServerSideProps {
  * @author Jannik Will
  * @version 0.1
  */
-const Contact: React.FC<
-  Props & ServerSideProps
-> = ({ resumeItems }) => {
+const Contact: React.FC<ServerSideProps> = ({
+  resumeItems,
+}) => {
   const _paragraphs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),

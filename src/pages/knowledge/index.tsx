@@ -35,7 +35,7 @@ import ReactDesign from "src/components/designs/react.design";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 import { generateIndividualTags } from "src/services/meta.service";
-import {title} from "../../../package.json";
+import { title } from "../../../package.json";
 
 const AdobeXdIcon = dynamic(
   () =>
@@ -167,8 +167,6 @@ const getIconForName = (
   }
 };
 
-interface Props {}
-
 interface StaticProps {
   knowledgeCategories: KnowledgeCategory[];
 }
@@ -178,9 +176,9 @@ interface StaticProps {
  * @author Jannik Will
  * @version 0.1
  */
-const Contact: React.FC<
-  Props & StaticProps
-> = ({ knowledgeCategories }) => {
+const Contact: React.FC<StaticProps> = ({
+  knowledgeCategories,
+}) => {
   const {
     palette: {
       color: { primary, secondaryText },
@@ -218,7 +216,11 @@ const Contact: React.FC<
   return (
     <>
       <Head>
-        {generateIndividualTags({title: `${title} | Kenntnisse`, description: "Meine Kenntnisse im Bereich, Webentwicklung und vielem mehr."})}
+        {generateIndividualTags({
+          title: `${title} | Kenntnisse`,
+          description:
+            "Meine Kenntnisse im Bereich, Webentwicklung und vielem mehr.",
+        })}
       </Head>
       {width < breakpoints.lg ? (
         <NavigationBar />
@@ -549,7 +551,11 @@ const Contact: React.FC<
         <Footer />
       ) : (
         <ScrollSnapParagraph
-          ref={paragraphs[knowledgeCategories.length]}
+          ref={
+            paragraphs[
+              knowledgeCategories.length
+            ]
+          }
           align="end"
         >
           <Footer />

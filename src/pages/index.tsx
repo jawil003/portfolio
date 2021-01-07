@@ -36,9 +36,11 @@ const Index: React.FC = () => {
   const { width } = useBreakpoint();
   return (
     <>
-    <Head>{generateIndividualTags()}</Head>
+      <Head>
+        {generateIndividualTags()}
+      </Head>
       <NavigationBar
-      mobileMenuColor="var(--primary)"
+        mobileMenuColor="var(--primary)"
         elementsColor={
           width <= breakpoints.lg
             ? "var(--secondaryText)"
