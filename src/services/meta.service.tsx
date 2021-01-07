@@ -98,9 +98,7 @@ class MetaService {
       },
       cache: true,
       expiresIn: undefined,
-      revisedTime: dayjs()
-        .tz("America/New York")
-        .format(),
+      revisedTime: dayjs().format(),
     };
     const {
       accentColor = defaultAccentColor,
