@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client";
-import client from "@apollo/myclient";
+import { cmsClient } from "@apollo/myclient";
 import ResumeItem from "../model/ResumeItem.model";
 
 export default class ResumeService {
   public static async getAllResumeItems() {
     const {
       data: { resumeItems },
-    } = await client.query<{
+    } = await cmsClient.query<{
       resumeItems: ResumeItem[];
     }>({
       query: gql`

@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client";
-import client from "@apollo/myclient";
+import { cmsClient } from "@apollo/myclient";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
 
 export default class KnowledgeService {
   public static async getAllKnowledgeCategoriesWithItems() {
     const {
       data: { knowledgeCategories },
-    } = await client.query<{
+    } = await cmsClient.query<{
       knowledgeCategories: KnowledgeCategory[];
     }>({
       query: gql`

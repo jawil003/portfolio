@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,12 +9,14 @@ import { createHttpLink } from "apollo-link-http";
 
 const link = createHttpLink({
   uri: process.env.GRAPHQL_URL,
-  fetch: buildAxiosFetch(axios) as any,
+  fetch: buildAxiosFetch(
+    axios as any,
+  ) as any,
 });
 
-const client = new ApolloClient({
-  link: link as any,
-  cache: new InMemoryCache(),
-});
-
-export default client;
+export const cmsClient = new ApolloClient(
+  {
+    link: link as any,
+    cache: new InMemoryCache(),
+  },
+);

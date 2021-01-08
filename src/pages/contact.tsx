@@ -14,6 +14,7 @@ import useBreakpoint, {
   breakpoints,
 } from "src/hooks/useBreakpoints.hook";
 import { generateIndividualTags } from "src/services/meta.service";
+import MailService from "src/services/mail.service";
 
 interface UserMessage {
   name: string;
@@ -115,7 +116,19 @@ const Contact: React.FC = () => {
               rows={4}
             />
             <Spacer height="25px" />
-            <Button text="Absenden" />
+            <Button
+              text="Absenden"
+              onClick={async () => {
+                await MailService.request(
+                  {
+                    name,
+                    emailAdress,
+                    title,
+                    description: message,
+                  },
+                );
+              }}
+            />
           </Form>
         </HeaderWithSpacer>
       </BackgroundWrapper>
