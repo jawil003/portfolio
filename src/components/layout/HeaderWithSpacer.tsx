@@ -23,6 +23,7 @@ interface Props {
   align?: "left" | "right";
   first?: boolean;
   latest?: boolean;
+  forceHeight?: boolean;
 }
 
 /**
@@ -35,19 +36,34 @@ const HeaderWithSpacer = forwardRef<
   PropsWithChildren<Props>
 >(
   (
-    { children, latest, align, first },
+    {
+      children,
+      latest,
+      align,
+      first,
+      forceHeight,
+    },
     ref,
   ) => {
     return (
       <header
         className="header"
         ref={ref}
-        style={{
-          height: getHeightForSection(
-            first,
-            latest,
-          ),
-        }}
+        style={
+          forceHeight
+            ? {
+                height: getHeightForSection(
+                  first,
+                  latest,
+                ),
+              }
+            : {
+                minHeight: getHeightForSection(
+                  first,
+                  latest,
+                ),
+              }
+        }
       >
         <style jsx>{`
           .header {
@@ -135,7 +151,10 @@ const HeaderWithSpacer = forwardRef<
                 alignSelf: "center",
                 display: "flex",
                 flexDirection: "column",
-                maxWidth: "500px",
+                justifyContent:
+                  "center",
+                alignItems: "center",
+                width: "100%",
               }}
             >
               {children}
@@ -161,10 +180,14 @@ const HeaderWithSpacer = forwardRef<
   },
 );
 
+HeaderWithSpacer.displayName =
+  "HeaderWithSpacer";
+
 HeaderWithSpacer.defaultProps = {
   latest: false,
   align: "right",
   first: false,
+  forceHeight: true,
 };
 
 export default HeaderWithSpacer;

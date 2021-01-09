@@ -1,6 +1,5 @@
 import { ContactRequestType } from "src/types/typeDefs/contactRequest.type";
 import { createTransport } from "nodemailer";
-import axios from "axios";
 
 const {
   EMAIL_USERNAME: user,
@@ -31,31 +30,6 @@ export default class MailService {
       to: user,
       subject: title,
       html: description,
-    });
-  }
-  public static async request({
-    name,
-    title,
-    description,
-    emailAdress,
-  }: ContactRequestType) {
-    await axios.post("api/graphql", {
-      data: {
-        query: `
-      mutation {
-      send(
-    contactRequest: {
-      name: "${name}"
-      emailAdress: "${emailAdress}"
-      title: "${title}"
-      description: "${description}"
-    }
-  ) {
-    name
-    emailAdress
-  }
-}`,
-      },
     });
   }
 }

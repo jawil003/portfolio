@@ -14,7 +14,8 @@ import useBreakpoint, {
   breakpoints,
 } from "src/hooks/useBreakpoints.hook";
 import { generateIndividualTags } from "src/services/meta.service";
-import MailService from "src/services/mail.service";
+import ContactRequestService from "src/services/backend/contactRequest.service";
+import { title as appTitle } from "../../package.json";
 
 interface UserMessage {
   name: string;
@@ -42,6 +43,7 @@ const Contact: React.FC = () => {
       title,
       message,
     },
+    setFormState,
   ] = useState<UserMessage>({
     name: "",
     emailAdress: "",
@@ -53,7 +55,7 @@ const Contact: React.FC = () => {
     <>
       <Head>
         {generateIndividualTags({
-          title: `${title} | Kontakt`,
+          title: `${appTitle} | Kontakt`,
           description:
             "Kontaktiere mich gerne für Hilfe bei deinem Entwicklungsprojekt.",
         })}
@@ -88,28 +90,72 @@ const Contact: React.FC = () => {
           </div>
         }
       >
-        <HeaderWithSpacer first latest>
+        <HeaderWithSpacer
+          first
+          latest
+          forceHeight={false}
+        >
           <Form>
             <TextField
               value={name}
               title="Name"
               placeholder="Maxine Musterfrau"
+              onChange={({
+                target: { value },
+              }) =>
+                setFormState(
+                  (prev) => ({
+                    ...prev,
+                    name: value,
+                  }),
+                )
+              }
             />
             <Spacer height="20px" />
             <TextField
               value={emailAdress}
               title="Email Adresse"
               placeholder="maxine@musterfrau.de"
+              onChange={({
+                target: { value },
+              }) =>
+                setFormState(
+                  (prev) => ({
+                    ...prev,
+                    emailAdress: value,
+                  }),
+                )
+              }
             />
             <Spacer height="20px" />
             <TextField
               value={title}
               title="Betreff"
               placeholder="Musterbetreff"
+              onChange={({
+                target: { value },
+              }) =>
+                setFormState(
+                  (prev) => ({
+                    ...prev,
+                    title: value,
+                  }),
+                )
+              }
             />
             <Spacer height="20px" />
             <TextField
               value={message}
+              onChange={({
+                target: { value },
+              }) =>
+                setFormState(
+                  (prev) => ({
+                    ...prev,
+                    message: value,
+                  }),
+                )
+              }
               title="Nachricht"
               placeholder="Bitte Nachricht eingeben"
               area
@@ -119,7 +165,7 @@ const Contact: React.FC = () => {
             <Button
               text="Absenden"
               onClick={async () => {
-                await MailService.request(
+                await ContactRequestService.do(
                   {
                     name,
                     emailAdress,
@@ -127,6 +173,12 @@ const Contact: React.FC = () => {
                     description: message,
                   },
                 );
+                setFormState({
+                  name: "",
+                  emailAdress: "",
+                  message: "",
+                  title: "",
+                });
               }}
             />
           </Form>
