@@ -2,7 +2,6 @@ import Head from "next/head";
 import React, {
   useEffect,
 } from "react";
-import Typography from "../components/elements/generic/Typography";
 import TwitterIcon from "../components/icons/twitter.icon";
 import Spacer from "../components/elements/generic/Spacer";
 import LinkedInIcon from "../components/icons/linkedin.icon";
@@ -20,7 +19,7 @@ import useBreakpoint, {
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 import BlobDesktopDesign from "src/components/designs/blobDesktop.design";
 import { generateIndividualTags } from "src/services/meta.service";
-
+import HeaderWithSubtitle from "../components/elements/custom/HeaderWithSubtitle";
 /**
  * An Index React Component.
  * @author Jannik Will
@@ -72,7 +71,16 @@ const Index: React.FC = () => {
         }
       >
         <HeaderWithSpacer first latest>
-          <Typography
+          <HeaderWithSubtitle
+            heading="Hallo, ich bin Jannik"
+            description="ein leidenschaftlicher
+            Softwareentwickler und
+            Designer aus Dortmund und
+            spezialisiert auf Frontend
+            und Backend Lösungen aller
+            Art"
+          >
+            {/*<Typography
             variant="h3"
             align={
               width > breakpoints.lg
@@ -108,83 +116,84 @@ const Index: React.FC = () => {
             spezialisiert auf Frontend
             und Backend Lösungen aller
             Art
-          </Typography>
-          <Spacer height="8px" />
-          <FlexContainer
-            justifyContent="center"
-            columnGap="8px"
-          >
-            <IconLink
-              external
-              href="https://twitter.com/willey3x37"
+          </Typography>*/}
+            <Spacer height="8px" />
+            <FlexContainer
+              justifyContent="center"
+              columnGap="8px"
             >
-              <TwitterIcon
-                color={
-                  width <=
-                  breakpoints.lg
-                    ? "var(--primary)"
-                    : undefined
-                }
-                height="100%"
-              />
-            </IconLink>
-            <IconLink
-              external
-              href="https://linkedin.com/willey3x37"
-            >
-              <LinkedInIcon
-                color={
-                  width <=
-                  breakpoints.lg
-                    ? "var(--primary)"
-                    : undefined
-                }
-                textColor={
-                  width <=
-                  breakpoints.lg
-                    ? "var(--secondary"
-                    : undefined
-                }
-                height="100%"
-              />
-            </IconLink>
+              <IconLink
+                external
+                href="https://twitter.com/willey3x37"
+              >
+                <TwitterIcon
+                  color={
+                    width <=
+                    breakpoints.lg
+                      ? "var(--primary)"
+                      : undefined
+                  }
+                  height="100%"
+                />
+              </IconLink>
+              <IconLink
+                external
+                href="https://linkedin.com/willey3x37"
+              >
+                <LinkedInIcon
+                  color={
+                    width <=
+                    breakpoints.lg
+                      ? "var(--primary)"
+                      : undefined
+                  }
+                  textColor={
+                    width <=
+                    breakpoints.lg
+                      ? "var(--secondary"
+                      : undefined
+                  }
+                  height="100%"
+                />
+              </IconLink>
 
-            <IconLink
-              external
-              href="https://github.com/jawil003"
-            >
-              <GithubIcon
-                color={
-                  width <=
-                  breakpoints.lg
-                    ? "var(--primary)"
-                    : undefined
-                }
-                height="100%"
-              />
-            </IconLink>
+              <IconLink
+                external
+                href="https://github.com/jawil003"
+              >
+                <GithubIcon
+                  color={
+                    width <=
+                    breakpoints.lg
+                      ? "var(--primary)"
+                      : undefined
+                  }
+                  height="100%"
+                />
+              </IconLink>
 
-            <IconLink
-              external
-              href="https://dribbble.com/willey3x37"
-            >
-              <DribbleIcon
-                color={
-                  width <=
-                  breakpoints.lg
-                    ? "var(--primary)"
-                    : undefined
-                }
-                accentColor={
-                  width <=
-                  breakpoints.lg
-                    ? "var(--secondary)"
-                    : undefined
-                }
-                height="100%"
-              />
-            </IconLink>
-          </FlexContainer>
+              <IconLink
+                external
+                href="https://dribbble.com/willey3x37"
+              >
+                <DribbleIcon
+                  color={
+                    width <=
+                    breakpoints.lg
+                      ? "var(--primary)"
+                      : undefined
+                  }
+                  accentColor={
+                    width <=
+                    breakpoints.lg
+                      ? "var(--secondary)"
+                      : undefined
+                  }
+                  height="100%"
+                />
+              </IconLink>
+            </FlexContainer>
+          </HeaderWithSubtitle>
         </HeaderWithSpacer>
       </BackgroundWrapper>
 

@@ -1,5 +1,7 @@
 import React, {
   CSSProperties,
+  forwardRef,
+  PropsWithChildren,
 } from "react";
 
 const generateStyle = (
@@ -20,7 +22,7 @@ const generateStyle = (
   maxLength?: string,
   letterSpacing?: number,
   wordSpacing?: number,
-  wrap?:boolean,
+  wrap?: boolean,
 ) => {
   const style: CSSProperties = {
     overflow: "visible",
@@ -47,7 +49,9 @@ const generateStyle = (
     maxWidth: maxLength,
     letterSpacing,
     wordSpacing,
-    wordWrap: wrap ? "break-word": "normal",
+    wordWrap: wrap
+      ? "break-word"
+      : "normal",
   };
   return style;
 };
@@ -62,8 +66,9 @@ export interface Props {
     | "h6"
     | "b1"
     | "b2"
-    | "b3" | "custom";
-    size?: "string",
+    | "b3"
+    | "custom";
+  size?: "string";
   color?: string;
   fontFamily?: string;
   align?:
@@ -89,25 +94,58 @@ export interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const Typography: React.FC<Props> = ({
-  variant,
-  color,
-  children,
-  fontFamily,
-  align,
-  bold,
-  italic,
-  underline,
-  inline,
-  maxLength,
-  letterSpacing,
-  wordSpacing,
-  wrap
-}) => {
-  if (variant?.includes("b")) {
-    if (inline)
+const Typography: React.FC<Props> = forwardRef<
+  | HTMLHeadingElement
+  | HTMLParagraphElement,
+  PropsWithChildren<Props>
+>(
+  (
+    {
+      variant,
+      color,
+      children,
+      fontFamily,
+      align,
+      bold,
+      italic,
+      underline,
+      inline,
+      maxLength,
+      letterSpacing,
+      wordSpacing,
+      wrap,
+    },
+    ref,
+  ) => {
+    if (variant?.includes("b")) {
+      if (inline)
+        return (
+          <span
+            ref={ref}
+            style={generateStyle(
+              variant === "b1"
+                ? 1
+                : variant === "b2"
+                ? 0.8
+                : 0.6,
+              color,
+              fontFamily,
+              align,
+              bold,
+              italic,
+              underline,
+              maxLength,
+              letterSpacing,
+              wordSpacing,
+              wrap,
+            )}
+          >
+            {children}
+          </span>
+        );
       return (
-        <span
+        <p
+          ref={ref}
           style={generateStyle(
             variant === "b1"
               ? 1
@@ -127,160 +165,147 @@ const Typography: React.FC<Props> = ({
           )}
         >
           {children}
-        </span>
-      );
-    return (
-      <p
-        style={generateStyle(
-          variant === "b1"
-            ? 1
-            : variant === "b2"
-            ? 0.8
-            : 0.6,
-          color,
-          fontFamily,
-          align,
-          bold,
-          italic,
-          underline,
-          maxLength,
-          letterSpacing,
-          wordSpacing,wrap
-        )}
-      >
-        {children}
-      </p>
-    );
-  }
-  switch (variant) {
-    case "h1": {
-      return (
-        <h1
-          style={generateStyle(
-            5,
-            color,
-            fontFamily,
-            align,
-            bold,
-            italic,
-            underline,
-            maxLength,
-            letterSpacing,
-            wordSpacing,
-            wrap,
-          )}
-        >
-          {children}
-        </h1>
+        </p>
       );
     }
-    case "h2": {
-      return (
-        <h2
-          style={generateStyle(
-            4,
-            color,
-            fontFamily,
-            align,
-            bold,
-            italic,
-            underline,
-            maxLength,
-            letterSpacing,
-            wordSpacing,
-            wrap,
-          )}
-        >
-          {children}
-        </h2>
-      );
+    switch (variant) {
+      case "h1": {
+        return (
+          <h1
+            ref={ref}
+            style={generateStyle(
+              5,
+              color,
+              fontFamily,
+              align,
+              bold,
+              italic,
+              underline,
+              maxLength,
+              letterSpacing,
+              wordSpacing,
+              wrap,
+            )}
+          >
+            {children}
+          </h1>
+        );
+      }
+      case "h2": {
+        return (
+          <h2
+            ref={ref}
+            style={generateStyle(
+              4,
+              color,
+              fontFamily,
+              align,
+              bold,
+              italic,
+              underline,
+              maxLength,
+              letterSpacing,
+              wordSpacing,
+              wrap,
+            )}
+          >
+            {children}
+          </h2>
+        );
+      }
+      case "h3": {
+        return (
+          <h3
+            ref={ref}
+            style={generateStyle(
+              3,
+              color,
+              fontFamily,
+              align,
+              bold,
+              italic,
+              underline,
+              maxLength,
+              letterSpacing,
+              wordSpacing,
+              wrap,
+            )}
+          >
+            {children}
+          </h3>
+        );
+      }
+      case "h4": {
+        return (
+          <h4
+            ref={ref}
+            style={generateStyle(
+              2,
+              color,
+              fontFamily,
+              align,
+              bold,
+              italic,
+              underline,
+              maxLength,
+              letterSpacing,
+              wordSpacing,
+              wrap,
+            )}
+          >
+            {children}
+          </h4>
+        );
+      }
+      case "h5": {
+        return (
+          <h5
+            ref={ref}
+            style={generateStyle(
+              1.5,
+              color,
+              fontFamily,
+              align,
+              bold,
+              italic,
+              underline,
+              maxLength,
+              letterSpacing,
+              wordSpacing,
+              wrap,
+            )}
+          >
+            {children}
+          </h5>
+        );
+      }
+      default: {
+        return (
+          <h6
+            ref={ref}
+            style={generateStyle(
+              1.1,
+              color,
+              fontFamily,
+              align,
+              bold,
+              italic,
+              underline,
+              maxLength,
+              letterSpacing,
+              wordSpacing,
+              wrap,
+            )}
+          >
+            {children}
+          </h6>
+        );
+      }
     }
-    case "h3": {
-      return (
-        <h3
-          style={generateStyle(
-            3,
-            color,
-            fontFamily,
-            align,
-            bold,
-            italic,
-            underline,
-            maxLength,
-            letterSpacing,
-            wordSpacing,
-            wrap,
-          )}
-        >
-          {children}
-        </h3>
-      );
-    }
-    case "h4": {
-      return (
-        <h4
-          style={generateStyle(
-            2,
-            color,
-            fontFamily,
-            align,
-            bold,
-            italic,
-            underline,
-            maxLength,
-            letterSpacing,
-            wordSpacing,
-            wrap,
-          )}
-        >
-          {children}
-        </h4>
-      );
-    }
-    case "h5": {
-      return (
-        <h5
-          style={generateStyle(
-            1.5,
-            color,
-            fontFamily,
-            align,
-            bold,
-            italic,
-            underline,
-            maxLength,
-            letterSpacing,
-            wordSpacing,
-            wrap,
-          )}
-        >
-          {children}
-        </h5>
-      );
-    }
-    default: {
-      return (
-        <h6
-          style={generateStyle(
-            1.1,
-            color,
-            fontFamily,
-            align,
-            bold,
-            italic,
-            underline,
-            maxLength,
-            letterSpacing,
-            wordSpacing,
-            wrap,
-          )}
-        >
-          {children}
-        </h6>
-      );
-    }
-  }
-};
+  },
+);
+
+Typography.displayName = "Typography";
 
 Typography.defaultProps = {
   variant: "b1",
@@ -290,7 +315,7 @@ Typography.defaultProps = {
   underline: false,
   inline: false,
   wrap: false,
-  maxLength: "100%"
+  maxLength: "100%",
 };
 
 export default Typography;

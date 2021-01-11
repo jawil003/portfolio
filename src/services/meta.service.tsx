@@ -11,22 +11,29 @@ class MetaService {
     webApp?: boolean,
   ) {
     return [
-      <meta charSet="UTF-8" />,
       <meta
+        key="charSet"
+        charSet="UTF-8"
+      />,
+      <meta
+        key="X-UA-Compatible-IE=edge"
         httpEquiv="X-UA-Compatible"
         content="IE=edge"
       />,
       webApp ? (
         <meta
+          key="apple-mobile-web-app-capable"
           name="apple-mobile-web-app-capable"
           content="yes"
         />
       ) : undefined,
       <link
+        key="manifest"
         href="./manifest.json"
         rel="manifest"
       />,
       <meta
+        key="google-site-verification"
         name="google-site-verification"
         content="MUDZxZGALZQh7TZBbItP-Hd-lJCot4Uuakc2eivcKPs"
       />,
@@ -37,7 +44,6 @@ class MetaService {
       accentColor?: string;
       title?: string;
       description?: string;
-      keywords?: string[];
       author?: string;
       language?: string;
       robots?: {
@@ -58,7 +64,6 @@ class MetaService {
       accentColor: defaultAccentColor,
       title: defaultTitle,
       description: defaultDescription,
-      keywords: defaultKeywords,
       author: defaultAuthor,
       robots: defaultRobots,
       cache: defaultCache,
@@ -70,22 +75,6 @@ class MetaService {
       title: appTitle,
       description:
         "Dies ist meine Portfolio Seite. Hier erfährst du wie ich dir bei deinem nächsten Projekt helfen kann." /* Max 160 Characters */,
-      keywords: [
-        "portfolio",
-        "web design",
-        "web development",
-        "programming",
-        "java",
-        "css",
-        "html",
-        "javascript",
-        "typescript",
-        "electron",
-        "adobe xd",
-        "figma",
-        "affinity designer",
-        "affinity photo",
-      ],
       author: "Jannik Will",
       language: "de",
       robots: {
@@ -104,7 +93,6 @@ class MetaService {
       accentColor = defaultAccentColor,
       title = defaultTitle,
       description = defaultDescription,
-      keywords = defaultKeywords,
       author = defaultAuthor,
       robots = defaultRobots,
       cache = defaultCache,
@@ -115,43 +103,45 @@ class MetaService {
 
     return [
       <meta
+        key="theme-color"
         name="theme-color"
         content={accentColor}
       />,
       title ? (
-        <title>{title}</title>
+        <title key="title">
+          {title}
+        </title>
       ) : undefined,
       title ? (
         <meta
+          key="apple-mobile-web-app-title"
           name="apple-mobile-web-app-title"
           content={title}
         />
       ) : undefined,
       title ? (
         <meta
+          key="subject"
           name="subject"
           content={title}
         />
       ) : undefined,
       description ? (
         <meta
+          key="description"
           name="description"
           content={description}
-        />
-      ) : undefined,
-      keywords ? (
-        <meta
-          name="keywords"
-          content={keywords?.join()}
         />
       ) : undefined,
       author
         ? [
             <meta
+              key="author"
               name="author"
               content={author}
             />,
             <meta
+              key="copyright"
               name="copyright"
               content={author}
             />,
@@ -159,12 +149,14 @@ class MetaService {
         : undefined,
       language ? (
         <meta
+          key="language"
           name="language"
           content={language}
         />
       ) : undefined,
       robots ? (
         <meta
+          key="robots"
           name="robots"
           content={Object.values({
             ...defaultRobots,
@@ -174,18 +166,21 @@ class MetaService {
       ) : undefined,
       cache ? undefined : (
         <meta
+          key="cache-control=no-cache"
           httpEquiv="cache-control"
           content="no-cache"
         />
       ),
       revisedTime ? (
         <meta
+          key="revised"
           name="revised"
           content={revisedTime}
         />
       ) : undefined,
       expiresIn ? (
         <meta
+          key="expires"
           httpEquiv="expires"
           content={String(expiresIn)}
         />
@@ -199,46 +194,55 @@ class MetaService {
     iconName = basePath + iconName;
     return [
       <link
+        key="favicon"
         rel="shortcut icon"
         type="image/x-icon"
         href={`${basePath}/favicon.png`}
       />,
       <link
+        key="apple-touch-icon-default"
         rel="apple-touch-icon"
         href={`${iconName}-512x512.png`}
       />,
       <link
+        key="apple-touch-icon-60x60"
         rel="apple-touch-icon"
         sizes="60x60"
         href={`${iconName}-60x60.png`}
       />,
       <link
+        key="apple-touch-icon-76x76"
         rel="apple-touch-icon"
         sizes="76x76"
         href={`${iconName}-76x76.png`}
       />,
       <link
+        key="apple-touch-icon-83.5x83.5"
         rel="apple-touch-icon"
         sizes="83.5x83.5"
         href={`${iconName}-83.5x83.5.png`}
       />,
       <link
+        key="apple-touch-icon-120x120"
         rel="apple-touch-icon"
         sizes="120x120"
         href={`${iconName}-120x120.png`}
       />,
       <link
+        key="apple-touch-icon-152x152"
         rel="apple-touch-icon"
         sizes="152x152"
         href={`${iconName}-152x152.png`}
       />,
 
       <link
+        key="apple-touch-icon-167x167"
         rel="apple-touch-icon"
         sizes="167x167"
         href={`${iconName}-167x167.png`}
       />,
       <link
+        key="apple-touch-icon-180x180"
         rel="apple-touch-icon"
         sizes="180x180"
         href={`${iconName}-180x180.png`}
