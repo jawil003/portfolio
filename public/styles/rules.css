@@ -1,4 +1,3 @@
-
 body {
   font-family: "Source Sans Pro",
     sans-serif;
@@ -11,11 +10,12 @@ body {
 
 * {
   box-sizing: border-box;
-  
 }
 
-*:not(body):not(body > div):not(body > div > div) {
-overflow: hidden;
+*:not(body):not(body > div):not(body
+    > div
+    > div) {
+  overflow: hidden;
 }
 
 a {

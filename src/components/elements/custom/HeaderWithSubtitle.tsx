@@ -4,6 +4,7 @@ import Typography from "../generic/Typography";
 interface Props {
   heading: string;
   description: string;
+  className?: string;
 }
 
 /**
@@ -15,15 +16,18 @@ const HeaderWithSubtitle: React.FC<Props> = ({
   heading,
   description,
   children,
+  className,
 }) => {
   return (
-    <div className="container">
+    <div
+      className={`container ${className}`}
+    >
       <style jsx>{`
         .container {
           display: inline-block;
         }
         .container
-          > :global(*):not(:first) {
+          > :global(*):not(:first-child) {
           width: 0;
           min-width: 100%;
         }

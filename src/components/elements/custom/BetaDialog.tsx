@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  useEffect,
+  useState,
+} from "react";
 import Button from "../generic/Button";
 import FlexContainer from "../generic/FlexContainer";
 import Typography from "../generic/Typography";
@@ -9,28 +12,28 @@ const DIALOG_SHOWN_KEY =
 interface Props {}
 
 /**
-* An BetaDialog React Component.
+ * An BetaDialog React Component.
  * @author Jannik Will
-* @version 0.1
-*/
+ * @version 0.1
+ */
 const BetaDialog: React.FC<Props> = () => {
-    const [
-      showDialog,
-      setShowDialog,
-    ] = useState(false);
-    useEffect(() => {
-      const shown =
-        localStorage.getItem(
-          DIALOG_SHOWN_KEY,
-        ) === "1";
+  const [
+    showDialog,
+    setShowDialog,
+  ] = useState(false);
+  useEffect(() => {
+    const shown =
+      localStorage.getItem(
+        DIALOG_SHOWN_KEY,
+      ) === "1";
 
-      if (
-        !shown &&
-        process.env.NEXT_PUBLIC_BETA ===
-          "1"
-      )
-        setShowDialog(true);
-    }, []);
+    if (
+      !shown &&
+      process.env.NEXT_PUBLIC_BETA ===
+        "1"
+    )
+      setShowDialog(true);
+  }, []);
   return (
     <>
       {showDialog ? (

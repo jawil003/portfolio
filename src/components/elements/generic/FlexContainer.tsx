@@ -1,4 +1,6 @@
-import React, { CSSProperties } from "react";
+import React, {
+  CSSProperties,
+} from "react";
 
 interface Props {
   direction?: "row" | "column";
@@ -38,10 +40,14 @@ const FlexContainer: React.FC<Props> = ({
   alignItems,
   alignContent,
   wrap,
-  children, style
+  children,
+  style,
 }) => {
   return (
-    <div className="flexContainer" style={{...style}}>
+    <div
+      className="flexContainer"
+      style={{ ...style }}
+    >
       <style jsx>{`
         .flexContainer {
           min-width: 100%;
@@ -58,7 +64,8 @@ const FlexContainer: React.FC<Props> = ({
             calc(${columnGap} / -2);
         }
         .flexContainer > :global(*) {
-          margin: calc(${rowGap} / 2) calc(${columnGap} / 2);
+          margin: calc(${rowGap} / 2)
+            calc(${columnGap} / 2);
         }
       `}</style>
       {children}

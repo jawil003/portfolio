@@ -27,7 +27,11 @@ const items = [
   },
 ];
 
-const getIconForName = (name: string, color: string, width: string) => {
+const getIconForName = (
+  name: string,
+  color: string,
+  width: string,
+) => {
   switch (name) {
     case "Start": {
       return (
@@ -62,7 +66,7 @@ const getIconForName = (name: string, color: string, width: string) => {
       );
     }
   }
-}
+};
 
 interface Props {
   elementsColor?: string | string[];
@@ -76,7 +80,7 @@ interface Props {
  */
 const NavigationBar: React.FC<Props> = ({
   elementsColor,
-  mobileMenuColor
+  mobileMenuColor,
 }) => {
   const scaleX = useSpring(0, {
     duration: 120,
@@ -181,7 +185,8 @@ const NavigationBar: React.FC<Props> = ({
 
 NavigationBar.defaultProps = {
   elementsColor: "var(--secondaryText)",
-
 };
 
-export default React.memo(NavigationBar);
+export default React.memo(
+  NavigationBar,
+);

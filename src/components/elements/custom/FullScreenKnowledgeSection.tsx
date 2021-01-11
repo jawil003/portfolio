@@ -39,7 +39,14 @@ const FullScreenKnowledgeSection = forwardRef<
   Props
 >(
   (
-    { children, latest, style, first, columnGap, rowGap },
+    {
+      children,
+      latest,
+      style,
+      first,
+      columnGap,
+      rowGap,
+    },
     ref,
   ) => {
     return (

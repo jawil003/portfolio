@@ -23,14 +23,13 @@ const CategoryHeader: React.FC<Props> = ({
         alignItems: "center",
         flexDirection: "column",
         maxWidth: "100vw",
-        padding: "0px 20px"
+        padding: "0px 20px",
       }}
     >
       <Typography
         align="center"
         variant="h4"
         wrap
-       
       >
         {title}
       </Typography>
@@ -38,7 +37,6 @@ const CategoryHeader: React.FC<Props> = ({
         wrap
         align="center"
         italic
-        
       >
         {description}
       </Typography>

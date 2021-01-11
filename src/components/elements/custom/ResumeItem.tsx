@@ -115,7 +115,8 @@ const ResumeItem: React.FC<Props> = ({
               height: "25px",
               border: `5px solid ${"var(--darkwhite)"}`,
               borderRadius: "100%",
-              backgroundColor: "var(--secondary)",
+              backgroundColor:
+                "var(--secondary)",
             }}
           />
         </div>

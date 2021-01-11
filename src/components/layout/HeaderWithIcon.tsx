@@ -71,7 +71,8 @@ const HeaderWithIcon = forwardRef<
               grid-template-rows: 100%;
             }
 
-            .header > :global(div):first-child {
+            .header
+              > :global(div):first-child {
               align-items: center;
               align-content: center;
               flex: 1;
@@ -81,7 +82,8 @@ const HeaderWithIcon = forwardRef<
               justify-content: center;
               padding: 105px;
             }
-            .header > :global(div):last-child {
+            .header
+              > :global(div):last-child {
               display: flex;
               justify-content: center;
             }
@@ -91,7 +93,8 @@ const HeaderWithIcon = forwardRef<
             .header {
             }
 
-            .header > :global(div):first-child {
+            .header
+              > :global(div):first-child {
               position: absolute;
               top: 100px;
               left: 0;
@@ -120,7 +123,8 @@ const HeaderWithIcon = forwardRef<
           }
 
           @media (min-width: 500px) and (max-width: 819px) {
-            .header > :global(div):last-child {
+            .header
+              > :global(div):last-child {
               min-height: 100%;
               display: flex;
               justify-content: center;
@@ -129,7 +133,8 @@ const HeaderWithIcon = forwardRef<
           }
 
           @media (max-width: 499px) {
-            .header > :global(div):last-child {
+            .header
+              > :global(div):last-child {
               display: none;
             }
           }

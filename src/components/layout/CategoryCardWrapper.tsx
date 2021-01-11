@@ -11,8 +11,10 @@ interface Props {}
 const CategoryCardWrapper: React.FC<Props> = ({
   children,
 }) => {
-  const {width} = useBreakpoint();
-  const elementsWidth = Children.toArray(children).length * 310;
+  const { width } = useBreakpoint();
+  const elementsWidth =
+    Children.toArray(children).length *
+    310;
   return (
     <div className="container">
       <style jsx>{`

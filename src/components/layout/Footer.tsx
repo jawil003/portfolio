@@ -40,11 +40,13 @@ const getIconForName = (
       );
     }
     default: {
-      return <WorldWideIcon
-        color={options.color}
-        height={options.height}
-        width={options.width}
-      />;
+      return (
+        <WorldWideIcon
+          color={options.color}
+          height={options.height}
+          width={options.width}
+        />
+      );
     }
   }
 };
