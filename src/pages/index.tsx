@@ -20,12 +20,23 @@ import FlexContainer from "src/components/elements/generic/FlexContainer";
 import BlobDesktopDesign from "src/components/designs/blobDesktop.design";
 import { generateIndividualTags } from "src/services/meta.service";
 import HeaderWithSubtitle from "../components/elements/custom/HeaderWithSubtitle";
+import HeaderService, {
+  IndexHeader,
+} from "src/services/header.service";
+import { GetStaticProps } from "next";
+
+interface ServerSideProps {
+  indexHeader: IndexHeader;
+}
+
 /**
  * An Index React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const Index: React.FC = () => {
+const Index: React.FC<ServerSideProps> = ({
+  indexHeader: { title, subtitle },
+}) => {
   const x = useSpring(200);
   const handleImageLoaded: () => void = () =>
     x.set(0);
@@ -72,13 +83,8 @@ const Index: React.FC = () => {
       >
         <HeaderWithSpacer first latest>
           <HeaderWithSubtitle
-            heading="Hallo, ich bin Jannik"
-            description="ein leidenschaftlicher
-            Softwareentwickler und
-            Designer aus Dortmund und
-            spezialisiert auf Frontend
-            und Backend Lösungen aller
-            Art"
+            heading={title}
+            description={subtitle}
           >
             {/*<Typography
             variant="h3"
@@ -206,6 +212,14 @@ const Index: React.FC = () => {
       />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      indexHeader: await HeaderService.getIndex(),
+    },
+  };
 };
 
 export default Index;

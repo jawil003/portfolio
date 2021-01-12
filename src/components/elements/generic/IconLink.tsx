@@ -29,8 +29,11 @@ const IconLink: React.FC<Props> = ({
 }) => {
   const scale = useSpring(1);
   return (
-    <div
-      style={{ position: "relative" }}
+    <motion.div
+      style={{
+        position: "relative",
+        scale,
+      }}
     >
       {external ? (
         <motion.a
@@ -45,7 +48,6 @@ const IconLink: React.FC<Props> = ({
           style={{
             backgroundColor: background,
             borderRadius: "100%",
-            scale,
             width: size,
             height: size,
             ...styles.container,
@@ -64,7 +66,6 @@ const IconLink: React.FC<Props> = ({
             }}
             style={{
               backgroundColor: background,
-              scale,
               width: size,
               height: size,
               ...styles.container,
@@ -74,7 +75,7 @@ const IconLink: React.FC<Props> = ({
           </motion.a>
         </Link>
       )}
-    </div>
+    </motion.div>
   );
 };
 

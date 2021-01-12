@@ -159,6 +159,18 @@ const DropIcon = dynamic(
       "../components/icons/drop.icon"
     ),
 );
+const MailIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/mail.icon"
+    ),
+);
+const WorldWideIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/worldwide.icon"
+    ),
+);
 
 const useIcons = () => {
   return (
@@ -361,6 +373,22 @@ const useIcons = () => {
       case "DropIcon": {
         return (
           <DropIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "WorldWideIcon": {
+        return (
+          <WorldWideIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "MailIcon": {
+        return (
+          <MailIcon
             height={height}
             width={width}
           />
