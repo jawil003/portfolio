@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, {
   useEffect,
 } from "react";
@@ -98,7 +100,7 @@ const NavigationBar: React.FC<Props> = ({
     else {
       scaleX.set(1);
     }
-  }, [width]);
+  }, [scaleX, width]);
 
   return (
     <>
@@ -120,6 +122,9 @@ const NavigationBar: React.FC<Props> = ({
             ? elementsColor.map(
                 (color, index) => (
                   <NavigationBarItem
+                    key={
+                      items[index].name
+                    }
                     color={color}
                     href={
                       items[index].href
@@ -137,6 +142,7 @@ const NavigationBar: React.FC<Props> = ({
             : items.map(
                 ({ href, name }) => (
                   <NavigationBarItem
+                    key={name}
                     color={
                       elementsColor
                     }

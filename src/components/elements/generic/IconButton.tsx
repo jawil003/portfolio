@@ -19,7 +19,7 @@ export interface Props {
     | "top"
     | "bottom";
   tooltipText: string;
-  children: any;
+  children?: any;
 }
 
 /**

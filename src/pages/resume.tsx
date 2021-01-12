@@ -1,8 +1,6 @@
 import Head from "next/head";
 import React, { useRef } from "react";
 import DesigningDesign from "../components/designs/designing.design";
-import Spacer from "../components/elements/generic/Spacer";
-import Typography from "../components/elements/generic/Typography";
 import Footer from "../components/layout/Footer";
 import NavigationBar from "../components/layout/NavigationBar";
 import ColorContainer from "src/components/elements/generic/ColorContainer";
@@ -18,9 +16,14 @@ import useBreakpoint, {
 } from "src/hooks/useBreakpoints.hook";
 import { generateIndividualTags } from "src/services/meta.service";
 import { title } from "../../package.json";
+import HeaderService, {
+  Header,
+} from "src/services/header.service";
+import HeaderWithSubtitle from "src/components/elements/custom/HeaderWithSubtitle";
 
 interface ServerSideProps {
   resumeItems: ResumeItemType[];
+  resumeIndex: Header;
 }
 
 /**
@@ -30,6 +33,10 @@ interface ServerSideProps {
  */
 const Contact: React.FC<ServerSideProps> = ({
   resumeItems,
+  resumeIndex: {
+    title: resumeTitle,
+    subtitle: resumeSubTitle,
+  },
 }) => {
   const _paragraphs = [
     useRef<HTMLDivElement>(null),
@@ -82,7 +89,11 @@ const Contact: React.FC<ServerSideProps> = ({
           first
           ref={_paragraphs[0]}
         >
-          <Typography
+          <HeaderWithSubtitle
+            heading={resumeTitle}
+            description={resumeSubTitle}
+          />
+          {/*<Typography
             variant="h3"
             align="center"
           >
@@ -99,7 +110,7 @@ const Contact: React.FC<ServerSideProps> = ({
             Warum stehen bleiben wenn
             Weiterentwicklung möglich
             ist
-          </Typography>
+          </Typography>*/}
         </HeaderWithSpacer>
       </BackgroundWrapper>
       <ColorContainer color="var(--secondary)">
@@ -174,6 +185,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       resumeItems: await ResumeService.getAllResumeItems(),
+      resumeIndex: await HeaderService.getResume(),
     },
   };
 };

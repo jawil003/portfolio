@@ -183,6 +183,18 @@ const GitHubIcon = dynamic(
       "../components/icons/github.icon"
     ),
 );
+const MailIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/mail.icon"
+    ),
+);
+const WorldWideIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/worldwide.icon"
+    ),
+);
 
 const useIcons = () => {
   return (
@@ -398,6 +410,14 @@ const useIcons = () => {
           />
         );
       }
+      case "WorldWideIcon": {
+        return (
+          <WorldWideIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
       case "GitHubIcon": {
         return (
           <GitHubIcon
@@ -417,6 +437,14 @@ const useIcons = () => {
       case "LinkedInIcon": {
         return (
           <LinkedInIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "MailIcon": {
+        return (
+          <MailIcon
             height={height}
             width={width}
           />

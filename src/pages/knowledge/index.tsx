@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import React, {
   useRef,
   useState,
@@ -8,10 +7,7 @@ import CategoryCard from "../../components/elements/custom/CategoryCard";
 import CategoryCardWrapper from "../../components/layout/CategoryCardWrapper";
 import CategoryHeader from "../../components/elements/custom/CategoryHeader";
 import FullScreenKnowledgeSection from "../../components/elements/custom/FullScreenKnowledgeSection";
-import FlaskDesign from "../../components/designs/flask.design";
 import IconButton from "../../components/elements/generic/IconButton";
-import Spacer from "../../components/elements/generic/Spacer";
-import Typography from "../../components/elements/generic/Typography";
 import DatabaseIcon from "../../components/icons/database.icon";
 import DesktopIcon from "../../components/icons/desktop.icon";
 import DisplayAndWebpageIcon from "../../components/icons/displayAndWebpage.icon";
@@ -29,146 +25,21 @@ import useBreakpoint, {
 import { GetStaticProps } from "next";
 import KnowledgeService from "src/services/knowledge.service";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
-import dynamic from "next/dynamic";
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 import ReactDesign from "src/components/designs/react.design";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 import { generateIndividualTags } from "src/services/meta.service";
 import { title } from "../../../package.json";
-
-const AdobeXdIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/adobeXd.icon"
-    ),
-);
-const ElectronIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/electron.icon"
-    ),
-);
-const TypescriptIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/typescript.icon"
-    ),
-);
-const ReactIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/react.icon"
-    ),
-);
-const NodeIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/nodejs.icon"
-    ),
-);
-const JavaIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/java.icon"
-    ),
-);
-const AndroidIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/android.icon"
-    ),
-);
-const SettingsPageDesign = dynamic(
-  () =>
-    import(
-      "../../components/designs/settingsPage.design"
-    ),
-);
-const PrototypeDesign = dynamic(
-  () =>
-    import(
-      "../../components/designs/prototype.design"
-    ),
-);
-const AffinityDesignerIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/affinityDesigner.icon"
-    ),
-);
-const AffinityPhotoIcon = dynamic(
-  () =>
-    import(
-      "../../components/icons/affinityPhoto.icon"
-    ),
-);
-
-const getIconForName = (
-  name?: string,
-) => {
-  switch (name) {
-    case "ElectronIcon": {
-      return (
-        <ElectronIcon height="100%" />
-      );
-    }
-    case "AdobeXdIcon": {
-      return (
-        <AdobeXdIcon height="100%" />
-      );
-    }
-    case "TypescriptIcon": {
-      return (
-        <TypescriptIcon height="100%" />
-      );
-    }
-    case "ReactIcon": {
-      return (
-        <ReactIcon height="100%" />
-      );
-    }
-    case "NodeIcon": {
-      return <NodeIcon height="100%" />;
-    }
-    case "JavaIcon": {
-      return <JavaIcon height="100%" />;
-    }
-    case "AndroidIcon": {
-      return (
-        <AndroidIcon height="100%" />
-      );
-    }
-    case "SettingsPageDesign": {
-      return (
-        <SettingsPageDesign height="100%" />
-      );
-    }
-    case "PrototypeDesign": {
-      return (
-        <PrototypeDesign height="100%" />
-      );
-    }
-    case "AffinityDesignerIcon": {
-      return (
-        <AffinityDesignerIcon height="100%" />
-      );
-    }
-    case "AffinityPhotoIcon": {
-      return (
-        <AffinityPhotoIcon height="100%" />
-      );
-    }
-    default: {
-      return (
-        <FlaskDesign height="100%" />
-      );
-    }
-  }
-};
+import HeaderService, {
+  Header,
+} from "src/services/header.service";
+import HeaderWithSubtitle from "src/components/elements/custom/HeaderWithSubtitle";
+import useIcons from "src/hooks/useIcons.hook";
 
 interface StaticProps {
   knowledgeCategories: KnowledgeCategory[];
+  knowledgeHeader: Header;
 }
 
 /**
@@ -178,12 +49,17 @@ interface StaticProps {
  */
 const Contact: React.FC<StaticProps> = ({
   knowledgeCategories,
+  knowledgeHeader: {
+    title: knowledgeTitle,
+    subtitle: knowledgeSubTitle,
+  },
 }) => {
   const {
     palette: {
       color: { primary, secondaryText },
     },
   } = useTheme();
+  const getIcon = useIcons();
 
   const [
     hideButton,
@@ -269,7 +145,13 @@ const Contact: React.FC<StaticProps> = ({
         }
       >
         <HeaderWithSpacer first>
-          <Typography
+          <HeaderWithSubtitle
+            heading={knowledgeTitle}
+            description={
+              knowledgeSubTitle
+            }
+          >
+            {/*<Typography
             variant="h3"
             align={
               width > breakpoints.lg
@@ -300,116 +182,122 @@ const Contact: React.FC<StaticProps> = ({
             </Typography>{" "}
             mich gerne
           </Typography>
-          <Spacer height="12px" />
-          <FlexContainer
-            justifyContent="center"
-            columnGap="10px"
-            rowGap="10px"
-            wrap
-          >
-            <IconButton
-              key="Backend"
-              tooltipText="Backend"
-              tooltipOrientation="left"
-              onClick={() =>
-                paragraphs[2].current?.scrollIntoView(
-                  {
-                    behavior: "smooth",
-                    block: "start",
-                  },
-                )
-              }
+          <Spacer height="12px" />*/}
+            <FlexContainer
+              justifyContent="center"
+              columnGap="10px"
+              rowGap="10px"
+              wrap
             >
-              <DatabaseIcon height="50%" />
-            </IconButton>
+              <IconButton
+                key="Backend"
+                tooltipText="Backend"
+                tooltipOrientation="left"
+                onClick={() =>
+                  paragraphs[2].current?.scrollIntoView(
+                    {
+                      behavior:
+                        "smooth",
+                      block: "start",
+                    },
+                  )
+                }
+              >
+                <DatabaseIcon height="50%" />
+              </IconButton>
 
-            <IconButton
-              key="Web"
-              tooltipText="Web"
-              tooltipOrientation={
-                width > 1350
-                  ? "bottom"
-                  : "top"
-              }
-              onClick={() =>
-                paragraphs[3].current?.scrollIntoView(
-                  {
-                    behavior: "smooth",
-                    block: "start",
-                  },
-                )
-              }
-              color="var(--yellow)"
-            >
-              <DisplayAndWebpageIcon height="60%" />
-            </IconButton>
+              <IconButton
+                key="Web"
+                tooltipText="Web"
+                tooltipOrientation={
+                  width > 1350
+                    ? "bottom"
+                    : "top"
+                }
+                onClick={() =>
+                  paragraphs[3].current?.scrollIntoView(
+                    {
+                      behavior:
+                        "smooth",
+                      block: "start",
+                    },
+                  )
+                }
+                color="var(--yellow)"
+              >
+                <DisplayAndWebpageIcon height="60%" />
+              </IconButton>
 
-            <IconButton
-              key="Mobile"
-              tooltipText="Mobile"
-              tooltipOrientation={
-                width > 1350
-                  ? "bottom"
-                  : width > 1160
-                  ? "top"
-                  : "right"
-              }
-              onClick={() =>
-                paragraphs[4].current?.scrollIntoView(
-                  {
-                    behavior: "smooth",
-                    block: "start",
-                  },
-                )
-              }
-              color="var(--red)"
-            >
-              <SmartphoneIcon height="50%" />
-            </IconButton>
+              <IconButton
+                key="Mobile"
+                tooltipText="Mobile"
+                tooltipOrientation={
+                  width > 1350
+                    ? "bottom"
+                    : width > 1160
+                    ? "top"
+                    : "right"
+                }
+                onClick={() =>
+                  paragraphs[4].current?.scrollIntoView(
+                    {
+                      behavior:
+                        "smooth",
+                      block: "start",
+                    },
+                  )
+                }
+                color="var(--red)"
+              >
+                <SmartphoneIcon height="50%" />
+              </IconButton>
 
-            <IconButton
-              key="Desktop"
-              tooltipOrientation={
-                width > 1350
-                  ? "bottom"
-                  : width > 1160
-                  ? "right"
-                  : "bottom"
-              }
-              tooltipText="Desktop"
-              onClick={() =>
-                paragraphs[5].current?.scrollIntoView(
-                  {
-                    behavior: "smooth",
-                    block: "start",
-                  },
-                )
-              }
-              color="var(--green)"
-            >
-              <DesktopIcon height="50%" />
-            </IconButton>
-            <IconButton
-              key="Design"
-              tooltipText="Design"
-              tooltipOrientation={
-                width > 1350
-                  ? "right"
-                  : "bottom"
-              }
-              onClick={() =>
-                paragraphs[6].current?.scrollIntoView(
-                  {
-                    behavior: "smooth",
-                    block: "start",
-                  },
-                )
-              }
-              color="var(--orange)"
-            >
-              <DropIcon height="27px" />
-            </IconButton>
-          </FlexContainer>
+              <IconButton
+                key="Desktop"
+                tooltipOrientation={
+                  width > 1350
+                    ? "bottom"
+                    : width > 1160
+                    ? "right"
+                    : "bottom"
+                }
+                tooltipText="Desktop"
+                onClick={() =>
+                  paragraphs[5].current?.scrollIntoView(
+                    {
+                      behavior:
+                        "smooth",
+                      block: "start",
+                    },
+                  )
+                }
+                color="var(--green)"
+              >
+                <DesktopIcon height="50%" />
+              </IconButton>
+              <IconButton
+                key="Design"
+                tooltipText="Design"
+                tooltipOrientation={
+                  width > 1350
+                    ? "right"
+                    : "bottom"
+                }
+                onClick={() =>
+                  paragraphs[6].current?.scrollIntoView(
+                    {
+                      behavior:
+                        "smooth",
+                      block: "start",
+                    },
+                  )
+                }
+                color="var(--orange)"
+              >
+                <DropIcon height="27px" />
+              </IconButton>
+            </FlexContainer>
+          </HeaderWithSubtitle>
         </HeaderWithSpacer>
       </BackgroundWrapper>
       {/* TODO: Find Out why Page becomes more than 100vw on Mobile Devices*/}
@@ -479,8 +367,8 @@ const Contact: React.FC<StaticProps> = ({
                           description={
                             description
                           }
-                          icon={getIconForName(
-                            icon?.title,
+                          icon={getIcon(
+                            icon?.title as string,
                           )}
                         />
                       ),
@@ -534,8 +422,8 @@ const Contact: React.FC<StaticProps> = ({
                           description={
                             description
                           }
-                          icon={getIconForName(
-                            icon?.title,
+                          icon={getIcon(
+                            icon?.title as string,
                           )}
                         />
                       ),
@@ -588,6 +476,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       knowledgeCategories: await KnowledgeService.getAllKnowledgeCategoriesWithItems(),
+      knowledgeHeader: await HeaderService.getKnowledge(),
     },
   };
 };

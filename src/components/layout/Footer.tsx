@@ -1,61 +1,24 @@
 import React from "react";
-import MailIcon from "../icons/mail.icon";
-import WorldWideIcon from "../icons/worldwide.icon";
 import NavigationBarItem from "../elements/custom/NavigationBarItem";
 import useBreakpoint from "src/hooks/useBreakpoints.hook";
+import useIcons from "src/hooks/useIcons.hook";
 
 const items = [
-  { href: "/contact", name: "Kontakt" },
+  {
+    href: "/contact",
+    name: "Kontakt",
+    icon: "MailIcon",
+  },
   {
     href: "/impressum",
     name: "Impressum",
+    icon: "WorldWideIcon",
   },
 ];
-
-const getIconForName = (
-  name: string,
-  options: {
-    color: string;
-    width?: string;
-    height?: string;
-  },
-) => {
-  switch (name) {
-    case "Kontakt": {
-      return (
-        <MailIcon
-          color={options.color}
-          height={options.height}
-          width={options.width}
-        />
-      );
-    }
-    case "Impressum": {
-      return (
-        <WorldWideIcon
-          color={options.color}
-          height={options.height}
-          width={options.width}
-        />
-      );
-    }
-    default: {
-      return (
-        <WorldWideIcon
-          color={options.color}
-          height={options.height}
-          width={options.width}
-        />
-      );
-    }
-  }
-};
 
 interface Props {
   color?: string | string[];
 }
-
-//TODO: Complete Color Mechanism
 
 /**
  * An Footer React Component.
@@ -66,27 +29,27 @@ const Footer: React.FC<Props> = ({
   color,
 }) => {
   const { width } = useBreakpoint();
+  const getIcon = useIcons();
   return (
-    <footer
-      style={{
-        height: "70px",
-        padding: "5px",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-      }}
-    >
+    <footer className="footer">
+      <style jsx>{`
+        .footer {
+          height: 70px;
+          padding: 5px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+      `}</style>
       {color instanceof Array
         ? color.map((c, index) => (
             <NavigationBarItem
+              key={items[index].name}
               color={c}
               href={items[index].href}
-              icon={getIconForName(
-                items[index].name,
-                {
-                  color: c,
-                  height: "23px",
-                },
+              icon={getIcon(
+                items[index].icon,
+                "23px",
               )}
             >
               {width > 466
@@ -96,14 +59,12 @@ const Footer: React.FC<Props> = ({
           ))
         : items.map((i) => (
             <NavigationBarItem
+              key={i.name}
               color={color}
               href={i.href}
-              icon={getIconForName(
-                i.name,
-                {
-                  color: color as string,
-                  height: "23px",
-                },
+              icon={getIcon(
+                i.icon,
+                "23px",
               )}
             >
               {width > 466

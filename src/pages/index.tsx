@@ -21,11 +21,14 @@ import SocialItemsService, {
   SocialItem,
 } from "src/services/SocialItems.service";
 import useIcons from "src/hooks/useIcons.hook";
+import HeaderService, {
+  Header,
+} from "src/services/header.service";
 
 interface ServerSideProps {
+  indexHeader: Header;
   socialItems: SocialItem[];
 }
-
 /**
  * An Index React Component.
  * @author Jannik Will
@@ -33,6 +36,7 @@ interface ServerSideProps {
  */
 const Index: React.FC<ServerSideProps> = ({
   socialItems,
+  indexHeader: { title, subtitle },
 }) => {
   const x = useSpring(200);
   const handleImageLoaded: () => void = () =>
@@ -81,13 +85,8 @@ const Index: React.FC<ServerSideProps> = ({
       >
         <HeaderWithSpacer first latest>
           <HeaderWithSubtitle
-            heading="Hallo, ich bin Jannik"
-            description="ein leidenschaftlicher
-            Softwareentwickler und
-            Designer aus Dortmund und
-            spezialisiert auf Frontend
-            und Backend Lösungen aller
-            Art"
+            heading={title}
+            description={subtitle}
           >
             {/*<Typography
             variant="h3"
@@ -236,6 +235,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       socialItems: await SocialItemsService.getAll(),
+      indexHeader: await HeaderService.getIndex(),
     },
   };
 };
