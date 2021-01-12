@@ -30,7 +30,10 @@ const IconLink: React.FC<Props> = ({
   const scale = useSpring(1);
   return (
     <div
-      style={{ position: "relative" }}
+      style={{
+        position: "relative",
+        overflow: "visible",
+      }}
     >
       {external ? (
         <motion.a
@@ -44,7 +47,6 @@ const IconLink: React.FC<Props> = ({
           target="_blank"
           style={{
             backgroundColor: background,
-            borderRadius: "100%",
             scale,
             width: size,
             height: size,

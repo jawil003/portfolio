@@ -159,6 +159,30 @@ const DropIcon = dynamic(
       "../components/icons/drop.icon"
     ),
 );
+const HamburgerMenuIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/hamburgerMenu.icon"
+    ),
+);
+const TwitterIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/twitter.icon"
+    ),
+);
+const LinkedInIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/linkedin.icon"
+    ),
+);
+const GitHubIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/github.icon"
+    ),
+);
 
 const useIcons = () => {
   return (
@@ -361,6 +385,38 @@ const useIcons = () => {
       case "DropIcon": {
         return (
           <DropIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "HamburgerMenuIcon": {
+        return (
+          <HamburgerMenuIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "GitHubIcon": {
+        return (
+          <GitHubIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "TwitterIcon": {
+        return (
+          <TwitterIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "LinkedInIcon": {
+        return (
+          <LinkedInIcon
             height={height}
             width={width}
           />
