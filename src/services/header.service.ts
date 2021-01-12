@@ -6,7 +6,7 @@ export default class HeaderService {
     const {
       data: { indexHeader },
     } = await cmsClient.query<{
-      indexHeader: IndexHeader;
+      indexHeader: Header;
     }>({
       query: gql`
         {
@@ -19,9 +19,43 @@ export default class HeaderService {
     });
     return indexHeader;
   }
+  public static async getKnowledge() {
+    const {
+      data: { knowledgeHeader },
+    } = await cmsClient.query<{
+      knowledgeHeader: Header;
+    }>({
+      query: gql`
+        {
+          knowledgeHeader {
+            title
+            subtitle
+          }
+        }
+      `,
+    });
+    return knowledgeHeader;
+  }
+  public static async getResume() {
+    const {
+      data: { resumeHeader },
+    } = await cmsClient.query<{
+      resumeHeader: Header;
+    }>({
+      query: gql`
+        {
+          resumeHeader {
+            title
+            subtitle
+          }
+        }
+      `,
+    });
+    return resumeHeader;
+  }
 }
 
-export interface IndexHeader {
+export interface Header {
   title: string;
   subtitle: string;
 }

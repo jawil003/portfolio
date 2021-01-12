@@ -21,12 +21,12 @@ import BlobDesktopDesign from "src/components/designs/blobDesktop.design";
 import { generateIndividualTags } from "src/services/meta.service";
 import HeaderWithSubtitle from "../components/elements/custom/HeaderWithSubtitle";
 import HeaderService, {
-  IndexHeader,
+  Header,
 } from "src/services/header.service";
 import { GetStaticProps } from "next";
 
 interface ServerSideProps {
-  indexHeader: IndexHeader;
+  indexHeader: Header;
 }
 
 /**
