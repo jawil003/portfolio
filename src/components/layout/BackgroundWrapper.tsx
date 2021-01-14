@@ -15,33 +15,38 @@ const BackgroundWrapper: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <div>
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          {background}
-        </div>
+    <div className="backgroundWrapper">
+      <style jsx>{`
+        .backgroundWrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          height: 100vh;
+          width: 100vw;
+        }
+
+        .backgroundWrapper
+          :global(.backgroundWrapper-backgroundContainer) {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+        .backgroundWrapper
+          :global(.backgroundWrapper-childrenContainer) {
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          min-height: 100vh;
+        }
+      `}</style>
+
+      <div className="backgroundWrapper-backgroundContainer">
+        {background}
       </div>
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-        }}
-      >
+      <div className="backgroundWrapper-childrenContainer">
         {children}
       </div>
     </div>

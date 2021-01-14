@@ -186,28 +186,88 @@ const GitHubIcon = dynamic(
 const MailIcon = dynamic(
   () =>
     import(
-      "../components/icons/mail.icon"
+      "@material-ui/icons/MailRounded"
     ),
 );
 const WorldWideIcon = dynamic(
   () =>
     import(
-      "../components/icons/worldwide.icon"
+      "@material-ui/icons/PublicRounded"
+    ),
+);
+const LocalLibraryRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/LocalLibraryRounded"
+    ),
+);
+const EmailRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/EmailRounded"
+    ),
+);
+const EmojiObjectsRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/EmojiObjectsRounded"
+    ),
+);
+const HomeRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/HomeRounded"
+    ),
+);
+
+const AddPhotoAlteredIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/AddPhotoAlternateRounded"
+    ),
+);
+
+const DescriptionRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/DescriptionRounded"
+    ),
+);
+
+const InfoRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/InfoRounded"
+    ),
+);
+
+const LinkRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/LinkRounded"
     ),
 );
 
 const useIcons = () => {
-  return (
-    name: string,
-    height?: string,
-    width?: string,
-  ) => {
+  return (data: {
+    name: string;
+    height?: string;
+    width?: string;
+    color?: string;
+  }) => {
+    const {
+      name,
+      width,
+      height,
+      color,
+    } = data;
     switch (name) {
       case "ElectronIcon": {
         return (
           <ElectronIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -216,6 +276,7 @@ const useIcons = () => {
           <AdobeXdIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -224,6 +285,7 @@ const useIcons = () => {
           <TypescriptIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -232,22 +294,35 @@ const useIcons = () => {
           <ReactIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
       case "NodeIcon": {
         return (
-          <NodeIcon height="100%" />
+          <NodeIcon
+            height={height}
+            width={width}
+            color={color}
+          />
         );
       }
       case "JavaIcon": {
         return (
-          <JavaIcon height="100%" />
+          <JavaIcon
+            height={height}
+            width={width}
+            color={color}
+          />
         );
       }
       case "AndroidIcon": {
         return (
-          <AndroidIcon height="100%" />
+          <AndroidIcon
+            height={height}
+            width={width}
+            color={color}
+          />
         );
       }
       case "SettingsPageDesign": {
@@ -255,6 +330,7 @@ const useIcons = () => {
           <SettingsPageDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -263,6 +339,7 @@ const useIcons = () => {
           <PrototypeDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -279,6 +356,7 @@ const useIcons = () => {
           <AffinityPhotoIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -287,6 +365,7 @@ const useIcons = () => {
           <FlaskDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -295,6 +374,7 @@ const useIcons = () => {
           <AtHomeDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -303,6 +383,7 @@ const useIcons = () => {
           <BlobDesktopDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -311,6 +392,7 @@ const useIcons = () => {
           <ContactMeDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -319,6 +401,7 @@ const useIcons = () => {
           <DesigningDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -327,6 +410,7 @@ const useIcons = () => {
           <KnowledgeDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -335,6 +419,7 @@ const useIcons = () => {
           <ReactDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -343,6 +428,7 @@ const useIcons = () => {
           <SienceDesign
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -351,6 +437,7 @@ const useIcons = () => {
           <BookIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -359,6 +446,7 @@ const useIcons = () => {
           <DatabaseIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -367,6 +455,7 @@ const useIcons = () => {
           <DesktopIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -374,6 +463,7 @@ const useIcons = () => {
         return (
           <DeveloperIcon
             height={height}
+            color={color}
             width={width}
           />
         );
@@ -383,6 +473,7 @@ const useIcons = () => {
           <DisplayAndWebpageIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -391,6 +482,7 @@ const useIcons = () => {
           <DribbbleIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -399,6 +491,7 @@ const useIcons = () => {
           <DropIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -407,30 +500,22 @@ const useIcons = () => {
           <HamburgerMenuIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
       case "WorldWideIcon": {
-        return (
-          <WorldWideIcon
-            height={height}
-            width={width}
-          />
-        );
+        return <WorldWideIcon />;
       }
       case "GitHubIcon": {
-        return (
-          <GitHubIcon
-            height={height}
-            width={width}
-          />
-        );
+        return <GitHubIcon />;
       }
       case "TwitterIcon": {
         return (
           <TwitterIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
@@ -439,20 +524,43 @@ const useIcons = () => {
           <LinkedInIcon
             height={height}
             width={width}
+            color={color}
           />
         );
       }
       case "MailIcon": {
+        return <MailIcon />;
+      }
+      case "LocalLibraryRoundedIcon": {
         return (
-          <MailIcon
-            height={height}
-            width={width}
-          />
+          <LocalLibraryRoundedIcon />
         );
+      }
+      case "LinkRoundedIcon": {
+        return <LinkRoundedIcon />;
+      }
+      case "HomeRoundedIcon": {
+        return <HomeRoundedIcon />;
+      }
+      case "DescriptionRoundedIcon": {
+        return (
+          <DescriptionRoundedIcon />
+        );
+      }
+      case "EmojiObjectsRoundedIcon": {
+        return (
+          <EmojiObjectsRoundedIcon />
+        );
+      }
+      case "EmailRoundedIcon": {
+        return <EmailRoundedIcon />;
+      }
+      case "InfoRoundedIcon": {
+        return <InfoRoundedIcon />;
       }
       default: {
         return (
-          <FlaskDesign
+          <AddPhotoAlteredIcon
             height={height}
             width={width}
           />

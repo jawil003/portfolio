@@ -12,12 +12,6 @@ body {
   box-sizing: border-box;
 }
 
-*:not(body):not(body > div):not(body
-    > div
-    > div) {
-  overflow: hidden;
-}
-
 a {
   text-decoration: none;
   color: initial;

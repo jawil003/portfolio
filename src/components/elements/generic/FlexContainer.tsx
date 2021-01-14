@@ -23,6 +23,16 @@ interface Props {
     | "flex-start"
     | "flex-end"
     | "stretch";
+  alignSelf?:
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "stretch";
+  justifySelf?:
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "stretch";
   wrap?: boolean;
   style?: CSSProperties;
 }
@@ -42,6 +52,8 @@ const FlexContainer: React.FC<Props> = ({
   wrap,
   children,
   style,
+  alignSelf,
+  justifySelf,
 }) => {
   return (
     <div
@@ -50,9 +62,9 @@ const FlexContainer: React.FC<Props> = ({
     >
       <style jsx>{`
         .flexContainer {
-          min-width: 100%;
-          min-height: 100%;
           display: flex;
+          align-self: ${alignSelf};
+          justify-self: ${justifySelf};
           flex-direction: ${direction};
           align-content: ${alignContent};
           justify-content: ${justifyContent};

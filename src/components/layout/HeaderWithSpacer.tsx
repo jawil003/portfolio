@@ -145,15 +145,9 @@ const HeaderWithSpacer = forwardRef<
           initial="initial"
           animate="animate"
         >
-          {align === "right" ? (
-            <div
-              style={{
-                alignSelf: "center",
-              }}
-            >
-              {children}
-            </div>
-          ) : undefined}
+          {align === "right"
+            ? children
+            : undefined}
         </motion.div>
         <motion.div>
           {align === "left" ? (

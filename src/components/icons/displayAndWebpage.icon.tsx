@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -13,6 +14,7 @@ interface Props {
 const DisplayAndWebpageIcon: React.FC<Props> = ({
   width,
   height,
+  color,
 }) => {
   return (
     <svg
@@ -21,6 +23,7 @@ const DisplayAndWebpageIcon: React.FC<Props> = ({
       height={height}
       enableBackground="new 0 0 512 512"
       viewBox="0 0 512 512"
+      fill={color}
     >
       <path
         xmlns="http://www.w3.org/2000/svg"

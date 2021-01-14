@@ -3,8 +3,7 @@ import React from "react";
 import AtHomeDesign from "../components/designs/atHome.design";
 import Spacer from "../components/elements/generic/Spacer";
 import Typography from "../components/elements/generic/Typography";
-import NavigationBar from "../components/layout/NavigationBar";
-import Footer from "../components/layout/Footer";
+import NavigationBar from "../components/layout/DesktopNavigationBar";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import useBreakpoint, {
@@ -73,7 +72,6 @@ const Contact: React.FC<Props> = () => {
           </Typography>
         </HeaderWithSpacer>
       </BackgroundWrapper>
-      <Footer />
     </>
   );
 };

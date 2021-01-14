@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -13,9 +14,11 @@ interface Props {
 const NodeIcon: React.FC<Props> = ({
   width,
   height,
+  color,
 }) => {
   return (
     <svg
+      fill={color}
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}

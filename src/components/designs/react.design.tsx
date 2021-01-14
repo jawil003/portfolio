@@ -4,6 +4,7 @@ interface Props {
   minWidth?: string;
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -15,6 +16,7 @@ const ReactDesign: React.FC<Props> = ({
   minWidth,
   width,
   height,
+  color,
 }) => {
   return (
     <svg
@@ -22,7 +24,7 @@ const ReactDesign: React.FC<Props> = ({
       style={{ minWidth }}
       width={width}
       height={height}
-      fill="none"
+      fill={color}
       viewBox="0 0 842 630"
     >
       <path d="M0 0H842V630H0z"></path>

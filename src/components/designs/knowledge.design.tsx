@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -13,6 +14,7 @@ interface Props {
 const KnowledgeDesign: React.FC<Props> = ({
   width,
   height,
+  color,
 }) => {
   return (
     <svg
@@ -21,6 +23,7 @@ const KnowledgeDesign: React.FC<Props> = ({
       height={height}
       data-name="Layer 1"
       viewBox="0 0 787.067 428.128"
+      fill={color}
     >
       <path
         fill="#f2f2f2"

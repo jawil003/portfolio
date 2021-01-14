@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -13,6 +14,7 @@ interface Props {
 const FlaskDesign: React.FC<Props> = ({
   width,
   height,
+  color,
 }) => {
   return (
     <svg
@@ -20,6 +22,7 @@ const FlaskDesign: React.FC<Props> = ({
       width={width}
       height={height}
       viewBox="0 0 512 512"
+      fill={color}
     >
       <path
         fill="#f9f7f8"

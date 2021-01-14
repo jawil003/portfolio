@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -13,9 +14,11 @@ interface Props {
 const ReactIcon: React.FC<Props> = ({
   width,
   height,
+  color,
 }) => {
   return (
     <svg
+      fill={color}
       viewBox="175.7 78 490.6 436.9"
       xmlns="http://www.w3.org/2000/svg"
       width={width}

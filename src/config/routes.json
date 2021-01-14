@@ -1,0 +1,41 @@
+{
+  "header": [
+    {
+      "href": "/",
+      "name": "Willkommen",
+      "icon": "HomeRoundedIcon"
+    },
+    {
+      "href": "/knowledge",
+      "name": "Was ich kann",
+      "icon": "EmojiObjectsRoundedIcon"
+    },
+    {
+      "href": "/resume",
+      "name": "Was ich gelernt habe",
+      "icon": "LocalLibraryRoundedIcon"
+    },
+    {
+      "href": "/articles",
+      "name": "Veröffentlichungen",
+      "icon": "DescriptionRoundedIcon"
+    },
+    {
+      "href": "/links",
+      "name": "Linksammlung",
+      "icon": "LinkRoundedIcon"
+    }
+  ],
+  "footer": [
+    {
+      "href": "/contact",
+      "name": "Kontakt",
+      "icon": "EmailRoundedIcon"
+    },
+    {
+      "href": "/impressum",
+      "name": "Impressum",
+      "icon": "InfoRoundedIcon"
+    }
+  ]
+}

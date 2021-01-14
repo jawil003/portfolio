@@ -13,8 +13,7 @@ import DesktopIcon from "../../components/icons/desktop.icon";
 import DisplayAndWebpageIcon from "../../components/icons/displayAndWebpage.icon";
 import SmartphoneIcon from "../../components/icons/smartphone.icon";
 import useTheme from "../../hooks/useTheme.hook";
-import NavigationBar from "../../components/layout/NavigationBar";
-import Footer from "../../components/layout/Footer";
+import NavigationBar from "../../components/layout/DesktopNavigationBar";
 import ScrollSnapParagraph from "../../components/elements/generic/SnapScrollParagraph";
 import BackTopButton from "../../components/elements/custom/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
@@ -368,7 +367,9 @@ const Contact: React.FC<StaticProps> = ({
                             description
                           }
                           icon={getIcon(
-                            icon?.title as string,
+                            {
+                              name: icon?.title as string,
+                            },
                           )}
                         />
                       ),
@@ -423,7 +424,9 @@ const Contact: React.FC<StaticProps> = ({
                             description
                           }
                           icon={getIcon(
-                            icon?.title as string,
+                            {
+                              name: icon?.title as string,
+                            },
                           )}
                         />
                       ),
@@ -435,20 +438,7 @@ const Contact: React.FC<StaticProps> = ({
           },
         )}
       </main>
-      {width < breakpoints.lg ? (
-        <Footer />
-      ) : (
-        <ScrollSnapParagraph
-          ref={
-            paragraphs[
-              knowledgeCategories.length
-            ]
-          }
-          align="end"
-        >
-          <Footer />
-        </ScrollSnapParagraph>
-      )}
+
       {width >= breakpoints.lg ? (
         <BackTopButton
           hidden={hideButton}

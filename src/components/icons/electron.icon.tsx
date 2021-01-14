@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -13,6 +14,7 @@ interface Props {
 const ElectronIcon: React.FC<Props> = ({
   width,
   height,
+  color,
 }) => {
   return (
     <svg
@@ -24,6 +26,7 @@ const ElectronIcon: React.FC<Props> = ({
       viewBox="0 0 405 405"
       width={width}
       height={height}
+      fill={color}
     >
       <g
         fill="#47848F"

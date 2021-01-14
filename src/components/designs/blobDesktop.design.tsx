@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -10,14 +11,19 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const BlobDesktopDesign: React.FC<Props> = () => {
+const BlobDesktopDesign: React.FC<Props> = ({
+  width,
+  height,
+  color,
+}) => {
   return (
     <svg
+      className="blobDesktopDesign"
       xmlns="http://www.w3.org/2000/svg"
-      width="663"
-      height="539"
-      fill="none"
+      width={width}
+      height={height}
       viewBox="0 0 663 539"
+      fill={color}
     >
       <g clipPath="url(#clip0)">
         <path
@@ -41,6 +47,11 @@ const BlobDesktopDesign: React.FC<Props> = () => {
       </defs>
     </svg>
   );
+};
+
+BlobDesktopDesign.defaultProps = {
+  width: "663",
+  height: "539",
 };
 
 export default BlobDesktopDesign;

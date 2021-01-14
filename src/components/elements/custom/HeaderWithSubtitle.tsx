@@ -25,6 +25,8 @@ const HeaderWithSubtitle: React.FC<Props> = ({
       <style jsx>{`
         .container {
           display: inline-block;
+          margin: 0px 10% 0px
+            calc(10% - 20px);
         }
         .container
           > :global(*):not(:first-child) {

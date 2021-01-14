@@ -47,8 +47,7 @@ const IconLink: React.FC<Props> = ({
           target="_blank"
           style={{
             backgroundColor: background,
-            scale,
-            borderRadius: "100%",
+
             width: size,
             height: size,
             ...styles.container,
@@ -86,7 +85,6 @@ const styles: {
   container: {
     margin: "10px 0px",
 
-    borderRadius: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

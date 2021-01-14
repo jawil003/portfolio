@@ -5,8 +5,7 @@ import Button from "../components/elements/generic/Button";
 import Spacer from "../components/elements/generic/Spacer";
 import TextField from "../components/elements/generic/TextField";
 import useTheme from "../hooks/useTheme.hook";
-import NavigationBar from "../components/layout/NavigationBar";
-import Footer from "../components/layout/Footer";
+import NavigationBar from "../components/layout/DesktopNavigationBar";
 import Form from "src/components/elements/generic/Form";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
@@ -184,7 +183,6 @@ const Contact: React.FC = () => {
           </Form>
         </HeaderWithSpacer>
       </BackgroundWrapper>
-      <Footer />
     </>
   );
 };

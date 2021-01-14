@@ -1,17 +1,10 @@
 import Head from "next/head";
-import React, {
-  useEffect,
-} from "react";
+import React from "react";
 import Spacer from "../components/elements/generic/Spacer";
 import IconLink from "../components/elements/generic/IconLink";
-import { useSpring } from "framer-motion";
 import HeaderWithSpacer from "../components/layout/HeaderWithSpacer";
-import NavigationBar from "../components/layout/NavigationBar";
-import Footer from "../components/layout/Footer";
+import NavigationBar from "../components/layout/DesktopNavigationBar";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
-import useBreakpoint, {
-  breakpoints,
-} from "src/hooks/useBreakpoints.hook";
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 import BlobDesktopDesign from "src/components/designs/blobDesktop.design";
 import { generateIndividualTags } from "src/services/meta.service";
@@ -24,6 +17,7 @@ import useIcons from "src/hooks/useIcons.hook";
 import HeaderService, {
   Header,
 } from "src/services/header.service";
+import { breakpoints } from "src/hooks/useBreakpoints.hook";
 
 interface ServerSideProps {
   indexHeader: Header;
@@ -38,57 +32,67 @@ const Index: React.FC<ServerSideProps> = ({
   socialItems,
   indexHeader: { title, subtitle },
 }) => {
-  const x = useSpring(200);
-  const handleImageLoaded: () => void = () =>
-    x.set(0);
-  useEffect(() => {
-    handleImageLoaded();
-  }, []);
-  const { width } = useBreakpoint();
   const getIcon = useIcons();
   return (
-    <>
+    <div id="index">
+      <style jsx>{`
+        #index {
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+        }
+        #index
+          :global(#blobDesktopDesignContainer) {
+          height: 100%;
+        }
+        @media (max-width: ${breakpoints.lg -
+          1}px) {
+          #index
+            :global(#blobContainer) {
+            width: 100%;
+            height: 100%;
+            background-color: var(
+              --blue
+            );
+          }
+          #index
+            :global(.blobDesktopDesign) {
+            display: none;
+          }
+          #index
+            :global(#blobDesktopDesignContainer) {
+            background-color: #000;
+          }
+        }
+        @media (min-width: ${breakpoints.lg}px) {
+          #index
+            :global(#blobContainer) {
+            display: inline-block;
+            float: right;
+          }
+          #index
+            :global(.blobDesktopDesign) {
+          }
+        }
+      `}</style>
       <Head>
         {generateIndividualTags()}
       </Head>
-      <NavigationBar
-        mobileMenuColor="var(--primary)"
-        elementsColor={
-          width <= breakpoints.lg
-            ? "var(--secondaryText)"
-            : "var(--primary)"
-        }
-      />
+      <NavigationBar />
       <BackgroundWrapper
         background={
-          <div
-            style={
-              width > breakpoints.lg
-                ? {
-                    position:
-                      "absolute",
-                    right: 0,
-                    top: 0,
-                  }
-                : {
-                    height: "100%",
-                    backgroundColor:
-                      "var(--blue)",
-                  }
-            }
-          >
-            {width > breakpoints.lg ? (
-              <BlobDesktopDesign />
-            ) : undefined}
+          <div id="blobContainer">
+            <BlobDesktopDesign />
           </div>
         }
       >
-        <HeaderWithSpacer first latest>
-          <HeaderWithSubtitle
-            heading={title}
-            description={subtitle}
-          >
-            {/*<Typography
+        <HeaderWithSpacer first>
+          <FlexContainer>
+            <HeaderWithSubtitle
+              heading={title}
+              description={subtitle}
+            >
+              {/*<Typography
             variant="h3"
             align={
               width > breakpoints.lg
@@ -125,27 +129,30 @@ const Index: React.FC<ServerSideProps> = ({
             und Backend Lösungen aller
             Art
           </Typography>*/}
-            <Spacer height="8px" />
-            <FlexContainer
-              justifyContent="center"
-              columnGap="8px"
-            >
-              {socialItems.map(
-                ({
-                  href,
-                  name,
-                  icon: { title },
-                }) => (
-                  <IconLink
-                    key={name}
-                    external
-                    href={href}
-                  >
-                    {getIcon(title)}
-                  </IconLink>
-                ),
-              )}
-              {/*<IconLink
+              <Spacer height="8px" />
+              <FlexContainer
+                justifyContent="center"
+                columnGap="8px"
+              >
+                {socialItems.map(
+                  ({
+                    href,
+                    name,
+                    icon: { title },
+                  }) => (
+                    <IconLink
+                      key={name}
+                      external
+                      href={href}
+                    >
+                      {getIcon({
+                        name: title,
+                        height: "100%",
+                      })}
+                    </IconLink>
+                  ),
+                )}
+                {/*<IconLink
                 external
                 href="https://twitter.com/willey3x37"
               >
@@ -215,19 +222,12 @@ const Index: React.FC<ServerSideProps> = ({
                   height="100%"
                 />
               </IconLink>*/}
-            </FlexContainer>
-          </HeaderWithSubtitle>
+              </FlexContainer>
+            </HeaderWithSubtitle>
+          </FlexContainer>
         </HeaderWithSpacer>
       </BackgroundWrapper>
-
-      <Footer
-        color={
-          width <= breakpoints.lg
-            ? "var(--primary)"
-            : undefined
-        }
-      />
-    </>
+    </div>
   );
 };
 

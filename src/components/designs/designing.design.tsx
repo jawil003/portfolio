@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -13,6 +14,7 @@ interface Props {
 const DesigningDesign: React.FC<Props> = ({
   width,
   height,
+  color,
 }) => {
   return (
     <svg
@@ -22,6 +24,7 @@ const DesigningDesign: React.FC<Props> = ({
       height={height}
       data-name="Layer 1"
       viewBox="0 0 1164.07 555.93"
+      fill={color}
     >
       <defs>
         <linearGradient

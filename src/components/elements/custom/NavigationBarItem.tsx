@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React from "react";
+import Spacer from "../generic/Spacer";
 import Typography from "../generic/Typography";
-import styles from "./NavigationBarItem.module.css";
 
 interface Props {
-  icon: JSX.Element;
+  icon?: JSX.Element;
   href: string;
   color?: string;
 }
@@ -23,14 +23,48 @@ const NavigationBarItem: React.FC<Props> = ({
   return (
     <Link href={href}>
       <a
-        className={
-          styles.navigationBarItem
-        }
+        className={"navigationBarItem"}
       >
-        <div style={{ height: "100%" }}>
-          {icon}
-        </div>
+        <style jsx>{`
+          .navigationBarItem {
+            padding: 10px 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+          }
+          .navigationBarItem:hover {
+            background-color: rgba(
+              0,
+              0,
+              0,
+              0.35
+            );
+          }
+          .navigationBarItem
+            > :global(*) {
+            display: inline-block;
+          }
+        `}</style>
+        {icon
+          ? [
+              <div
+                key="iconContainer"
+                style={{
+                  display:
+                    "inline-flex",
+                  alignItems: "center",
+                }}
+              >
+                {icon}
+              </div>,
+              <Spacer
+                key="iconTextSpacer"
+                width="10px"
+              />,
+            ]
+          : undefined}
         <Typography
+          inline
           variant="b1"
           bold="semi-bold"
           color={color}

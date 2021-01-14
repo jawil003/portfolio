@@ -1,8 +1,7 @@
 import Head from "next/head";
 import React, { useRef } from "react";
 import DesigningDesign from "../components/designs/designing.design";
-import Footer from "../components/layout/Footer";
-import NavigationBar from "../components/layout/NavigationBar";
+import NavigationBar from "../components/layout/DesktopNavigationBar";
 import ColorContainer from "src/components/elements/generic/ColorContainer";
 import ResumeContainer from "src/components/elements/custom/ResumeContainer";
 import { GetStaticProps } from "next";
@@ -175,7 +174,6 @@ const Contact: React.FC<ServerSideProps> = ({
             )}
           </ResumeContainer>
         </main>
-        <Footer color="var(--primary)" />
       </ColorContainer>
     </>
   );

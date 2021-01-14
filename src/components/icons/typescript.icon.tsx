@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
+  color?: string;
 }
 
 /**
@@ -13,6 +14,7 @@ interface Props {
 const TypescriptIcon: React.FC<Props> = ({
   width,
   height,
+  color,
 }) => {
   return (
     <svg
@@ -20,6 +22,7 @@ const TypescriptIcon: React.FC<Props> = ({
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
+      fill={color}
     >
       <path
         d="M0 200V0h400v400H0"

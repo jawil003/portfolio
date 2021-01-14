@@ -35,10 +35,13 @@ const IconButton: React.FC<Props> = ({
 }) => {
   const scale = useSpring(1);
   return (
-    <div
-      style={{ position: "relative" }}
+    <motion.div
+      style={{
+        position: "relative",
+        scale,
+      }}
     >
-      <motion.div
+      <div
         onMouseOver={() => {
           scale.set(1.2);
         }}
@@ -47,7 +50,6 @@ const IconButton: React.FC<Props> = ({
         }}
         onClick={onClick}
         style={{
-          scale,
           height: size,
           width: size,
           backgroundColor: color,
@@ -58,8 +60,8 @@ const IconButton: React.FC<Props> = ({
         }}
       >
         {children}
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 };
 
