@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./TextField.module.css";
 import Typography from "./Typography";
 
 export interface Props {
@@ -30,21 +29,44 @@ const TextField: React.FC<Props> = ({
   value,
 }) => {
   return (
-    <div className={styles.inputRoot}>
+    <div className={"inputRoot"}>
+      <style jsx>{`
+        .input {
+          font-size: 1.15em;
+          width: 100%;
+          border: none;
+          resize: none;
+          background: transparent;
+        }
+        .inputRoot {
+          display: grid;
+          grid-template-rows: auto auto;
+          display: inline-block;
+        }
+
+        .input:hover,
+        .input:focus {
+          border: none;
+          outline: none;
+        }
+
+        .inputContainer {
+          padding: 10px 15px;
+          background: var(--lightgrey);
+          border-radius: 5px;
+          width: 100%;
+        }
+      `}</style>
       <Typography variant="b1">
         {title}
       </Typography>
-      <div
-        className={
-          styles.inputContainer
-        }
-      >
+      <div className={"inputContainer"}>
         {area ? (
           <textarea
             onChange={onChange}
             value={value}
             placeholder={placeholder}
-            className={styles.input}
+            className={"input"}
             cols={23}
             rows={rows}
           ></textarea>
@@ -53,7 +75,7 @@ const TextField: React.FC<Props> = ({
             value={value}
             onChange={onChange}
             placeholder={placeholder}
-            className={styles.input}
+            className={"input"}
           />
         )}
       </div>

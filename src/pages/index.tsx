@@ -35,7 +35,7 @@ const Index: React.FC<ServerSideProps> = ({
   const getIcon = useSocialLogos();
   return (
     <div id="index">
-      <style jsx>{`
+      <style jsx global>{`
         #index {
           width: 100%;
           height: 100vh;
@@ -47,31 +47,34 @@ const Index: React.FC<ServerSideProps> = ({
         }
         @media (max-width: ${breakpoints.lg -
           1}px) {
-          #index
-            :global(#blobContainer) {
+          #blobContainer {
             width: 100%;
             height: 100%;
             background-color: var(
               --blue
             );
           }
-          #index
-            :global(.blobDesktopDesign) {
+          .blobDesktopDesign {
             display: none;
           }
-          #index
-            :global(#blobDesktopDesignContainer) {
+          #blobDesktopDesignContainer {
             background-color: #000;
+          }
+          nav > div > svg > path {
+            fill: var(--primary);
+          }
+
+          h3,
+          p {
+            color: var(--primary);
           }
         }
         @media (min-width: ${breakpoints.lg}px) {
-          #index
-            :global(#blobContainer) {
+          #blobContainer {
             display: inline-block;
             float: right;
           }
-          #index
-            :global(.blobDesktopDesign) {
+          .blobDesktopDesign {
           }
         }
       `}</style>

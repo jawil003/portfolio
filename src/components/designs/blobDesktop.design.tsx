@@ -14,7 +14,6 @@ interface Props {
 const BlobDesktopDesign: React.FC<Props> = ({
   width,
   height,
-  color,
 }) => {
   return (
     <svg
@@ -23,11 +22,10 @@ const BlobDesktopDesign: React.FC<Props> = ({
       width={width}
       height={height}
       viewBox="0 0 663 539"
-      fill={color}
     >
       <g clipPath="url(#clip0)">
         <path
-          fill="#fff"
+          fill="none"
           d="M0 0H663V539H0z"
         ></path>
         <path

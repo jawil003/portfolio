@@ -31,6 +31,13 @@ const NavigationBarItem: React.FC<Props> = ({
             height: 100%;
             display: flex;
             align-items: center;
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+          }
+          .navigationBarItem
+            :global(svg) {
+            fill: #000;
           }
           .navigationBarItem:hover {
             background-color: rgba(
