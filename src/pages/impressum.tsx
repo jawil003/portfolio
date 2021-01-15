@@ -58,7 +58,7 @@ const Contact: React.FC<Props> = () => {
           </div>
         }
       >
-        <HeaderWithSpacer first latest>
+        <HeaderWithSpacer first>
           <Typography
             variant="h3"
             align="center"

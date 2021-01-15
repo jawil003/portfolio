@@ -13,7 +13,7 @@ import { GetStaticProps } from "next";
 import SocialItemsService, {
   SocialItem,
 } from "src/services/SocialItems.service";
-import useIcons from "src/hooks/useIcons.hook";
+import { useSocialLogos } from "src/hooks/useIcons.hook";
 import HeaderService, {
   Header,
 } from "src/services/header.service";
@@ -32,7 +32,7 @@ const Index: React.FC<ServerSideProps> = ({
   socialItems,
   indexHeader: { title, subtitle },
 }) => {
-  const getIcon = useIcons();
+  const getIcon = useSocialLogos();
   return (
     <div id="index">
       <style jsx>{`
@@ -87,7 +87,7 @@ const Index: React.FC<ServerSideProps> = ({
         }
       >
         <HeaderWithSpacer first>
-          <FlexContainer>
+          <FlexContainer justifyContent="center">
             <HeaderWithSubtitle
               heading={title}
               description={subtitle}

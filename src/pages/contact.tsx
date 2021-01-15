@@ -89,11 +89,7 @@ const Contact: React.FC = () => {
           </div>
         }
       >
-        <HeaderWithSpacer
-          first
-          latest
-          forceHeight={false}
-        >
+        <HeaderWithSpacer first>
           <Form>
             <TextField
               value={name}

@@ -18,12 +18,7 @@ import {
 class MyDocument extends Document {
   render() {
     return (
-      <Html
-        lang="de"
-        style={{
-          scrollSnapType: "y mandatory",
-        }}
-      >
+      <Html lang="de">
         <Head>
           <link
             rel="stylesheet"

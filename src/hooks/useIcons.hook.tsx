@@ -117,7 +117,7 @@ const SienceDesign = dynamic(
       "../components/designs/science.design"
     ),
 );
-const BookIcon = dynamic(
+/*const BookIcon = dynamic(
   () =>
     import(
       "../components/icons/book.icon"
@@ -146,14 +146,14 @@ const DisplayAndWebpageIcon = dynamic(
     import(
       "../components/icons/displayAndWebpage.icon"
     ),
-);
+);*/
 const DribbbleIcon = dynamic(
   () =>
     import(
       "../components/icons/dribble.icon"
     ),
 );
-const DropIcon = dynamic(
+/*const DropIcon = dynamic(
   () =>
     import(
       "../components/icons/drop.icon"
@@ -164,7 +164,7 @@ const HamburgerMenuIcon = dynamic(
     import(
       "../components/icons/hamburgerMenu.icon"
     ),
-);
+);*/
 const TwitterIcon = dynamic(
   () =>
     import(
@@ -248,44 +248,26 @@ const LinkRoundedIcon = dynamic(
     ),
 );
 
-const useIcons = () => {
+export const useKnowledgeIcons = () => {
   return (data: {
     name: string;
-    height?: string;
     width?: string;
-    color?: string;
+    height?: string;
   }) => {
     const {
       name,
       width,
       height,
-      color,
     } = data;
     switch (name) {
-      case "ElectronIcon": {
-        return (
-          <ElectronIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
       case "AdobeXdIcon": {
-        return (
-          <AdobeXdIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
+        return <AdobeXdIcon />;
       }
       case "TypescriptIcon": {
         return (
           <TypescriptIcon
             height={height}
             width={width}
-            color={color}
           />
         );
       }
@@ -294,7 +276,6 @@ const useIcons = () => {
           <ReactIcon
             height={height}
             width={width}
-            color={color}
           />
         );
       }
@@ -303,7 +284,6 @@ const useIcons = () => {
           <NodeIcon
             height={height}
             width={width}
-            color={color}
           />
         );
       }
@@ -312,7 +292,6 @@ const useIcons = () => {
           <JavaIcon
             height={height}
             width={width}
-            color={color}
           />
         );
       }
@@ -321,7 +300,14 @@ const useIcons = () => {
           <AndroidIcon
             height={height}
             width={width}
-            color={color}
+          />
+        );
+      }
+      case "ElectronIcon": {
+        return (
+          <ElectronIcon
+            height={height}
+            width={width}
           />
         );
       }
@@ -330,7 +316,6 @@ const useIcons = () => {
           <SettingsPageDesign
             height={height}
             width={width}
-            color={color}
           />
         );
       }
@@ -339,7 +324,6 @@ const useIcons = () => {
           <PrototypeDesign
             height={height}
             width={width}
-            color={color}
           />
         );
       }
@@ -356,178 +340,29 @@ const useIcons = () => {
           <AffinityPhotoIcon
             height={height}
             width={width}
-            color={color}
           />
         );
       }
-      case "FlaskDesign": {
+      default: {
         return (
           <FlaskDesign
             height={height}
             width={width}
-            color={color}
           />
         );
       }
-      case "AtHomeDesign": {
-        return (
-          <AtHomeDesign
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "BlobDesktopDesign": {
-        return (
-          <BlobDesktopDesign
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "ContactMeDesign": {
-        return (
-          <ContactMeDesign
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "DesigningDesign": {
-        return (
-          <DesigningDesign
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "KnowledgeDesign": {
-        return (
-          <KnowledgeDesign
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "ReactDesign": {
-        return (
-          <ReactDesign
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "SienceDesign": {
-        return (
-          <SienceDesign
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "BookIcon": {
-        return (
-          <BookIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "DatabaseIcon": {
-        return (
-          <DatabaseIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "DesktopIcon": {
-        return (
-          <DesktopIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "DeveloperIcon": {
-        return (
-          <DeveloperIcon
-            height={height}
-            color={color}
-            width={width}
-          />
-        );
-      }
-      case "DisplayAndWebpageIcon": {
-        return (
-          <DisplayAndWebpageIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "DribbbleIcon": {
-        return (
-          <DribbbleIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "DropIcon": {
-        return (
-          <DropIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "HamburgerMenuIcon": {
-        return (
-          <HamburgerMenuIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
+    }
+  };
+};
+
+export const useNavigationIcons = () => {
+  return (data: { name: string }) => {
+    const { name } = data;
+    switch (name) {
       case "WorldWideIcon": {
         return <WorldWideIcon />;
       }
-      case "GitHubIcon": {
-        return <GitHubIcon />;
-      }
-      case "TwitterIcon": {
-        return (
-          <TwitterIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
-      case "LinkedInIcon": {
-        return (
-          <LinkedInIcon
-            height={height}
-            width={width}
-            color={color}
-          />
-        );
-      }
+
       case "MailIcon": {
         return <MailIcon />;
       }
@@ -559,8 +394,131 @@ const useIcons = () => {
         return <InfoRoundedIcon />;
       }
       default: {
+        return <AddPhotoAlteredIcon />;
+      }
+    }
+  };
+};
+
+export const useSocialLogos = () => {
+  return (data: {
+    name: string;
+    width?: string;
+    height?: string;
+  }) => {
+    const {
+      name,
+      width,
+      height,
+    } = data;
+    switch (name) {
+      case "GitHubIcon": {
         return (
-          <AddPhotoAlteredIcon
+          <GitHubIcon
+            width={width}
+            height={height}
+          />
+        );
+      }
+      case "LinkedInIcon": {
+        return (
+          <LinkedInIcon
+            width={width}
+            height={height}
+          />
+        );
+      }
+      case "TwitterIcon": {
+        return (
+          <TwitterIcon
+            width={width}
+            height={height}
+          />
+        );
+      }
+      case "DribbbleIcon": {
+        return (
+          <DribbbleIcon
+            width={width}
+            height={height}
+          />
+        );
+      }
+    }
+  };
+};
+
+export const useHeaderDesign = () => {
+  return (data: {
+    name: string;
+    width?: string;
+    height?: string;
+  }) => {
+    const {
+      name,
+      width,
+      height,
+    } = data;
+    switch (name) {
+      case "FlaskDesign": {
+        return (
+          <FlaskDesign
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "AtHomeDesign": {
+        return (
+          <AtHomeDesign
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "BlobDesktopDesign": {
+        return (
+          <BlobDesktopDesign
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "ContactMeDesign": {
+        return (
+          <ContactMeDesign
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "DesigningDesign": {
+        return (
+          <DesigningDesign
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "KnowledgeDesign": {
+        return (
+          <KnowledgeDesign
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "ReactDesign": {
+        return (
+          <ReactDesign
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "SienceDesign": {
+        return (
+          <SienceDesign
             height={height}
             width={width}
           />
@@ -569,5 +527,3 @@ const useIcons = () => {
     }
   };
 };
-
-export default useIcons;

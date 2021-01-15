@@ -19,6 +19,7 @@ import HeaderService, {
   Header,
 } from "src/services/header.service";
 import HeaderWithSubtitle from "src/components/elements/custom/HeaderWithSubtitle";
+import FlexContainer from "src/components/elements/generic/FlexContainer";
 
 interface ServerSideProps {
   resumeItems: ResumeItemType[];
@@ -84,14 +85,17 @@ const Contact: React.FC<ServerSideProps> = ({
         }
       >
         <HeaderWithSpacer
-          latest
           first
           ref={_paragraphs[0]}
         >
-          <HeaderWithSubtitle
-            heading={resumeTitle}
-            description={resumeSubTitle}
-          />
+          <FlexContainer justifyContent="center">
+            <HeaderWithSubtitle
+              heading={resumeTitle}
+              description={
+                resumeSubTitle
+              }
+            />
+          </FlexContainer>
           {/*<Typography
             variant="h3"
             align="center"
@@ -143,24 +147,15 @@ const Contact: React.FC<ServerSideProps> = ({
           </div>
           <ResumeContainer>
             {resumeItems.map(
-              (
-                {
-                  title,
-                  description,
-                  start_year,
-                  end_year,
-                },
-                index,
-              ) => (
+              ({
+                title,
+                description,
+                start_year,
+                end_year,
+              }) => (
                 <ResumeItem
                   key={title}
-                  latest={
-                    index ===
-                    resumeItems.length -
-                      1
-                      ? true
-                      : false
-                  }
+                  latest={false}
                   start_year={
                     start_year
                   }

@@ -18,28 +18,26 @@ const BackgroundWrapper: React.FC<Props> = ({
     <div className="backgroundWrapper">
       <style jsx>{`
         .backgroundWrapper {
+          height: calc(100vh - 120px);
+        }
+
+        .backgroundWrapper-backgroundContainer {
           position: absolute;
           top: 0;
           left: 0;
           z-index: -1;
-          height: 100vh;
-          width: 100vw;
-        }
-
-        .backgroundWrapper
-          :global(.backgroundWrapper-backgroundContainer) {
-          position: relative;
-          width: 100%;
           height: 100%;
+          width: 100%;
         }
-        .backgroundWrapper
-          :global(.backgroundWrapper-childrenContainer) {
-          position: absolute;
+        .backgroundWrapper-childrenContainer {
+          position: relative;
           z-index: 2;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          min-height: 100vh;
+          height: 100%;
+          display: flex;
+        }
+        .backgroundWrapper-childrenContainer-relative {
+          flex: 1;
+          position: relative;
         }
       `}</style>
 
@@ -47,7 +45,9 @@ const BackgroundWrapper: React.FC<Props> = ({
         {background}
       </div>
       <div className="backgroundWrapper-childrenContainer">
-        {children}
+        <div className="backgroundWrapper-childrenContainer-relative">
+          {children}
+        </div>
       </div>
     </div>
   );

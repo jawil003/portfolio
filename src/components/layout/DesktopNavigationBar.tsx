@@ -1,12 +1,12 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import {
   motion,
-  useMotionValue,
-  useTransform,
+  useAnimation,
 } from "framer-motion";
-import React from "react";
-import useIcons from "src/hooks/useIcons.hook";
+import React, { useState } from "react";
+import { useNavigationIcons } from "src/hooks/useIcons.hook";
 import Logo from "../elements/custom/Logo";
 import NavigationBarItem from "../elements/custom/NavigationBarItem";
 import FlexContainer from "../elements/generic/FlexContainer";
@@ -23,18 +23,18 @@ import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
  * @version 0.1
  */
 const NavigationBar: React.FC = () => {
-  const getIcon = useIcons();
-  const scaleX = useMotionValue(0);
-  const display = useTransform(
-    scaleX,
-    [0, 1],
-    ["none", "block"],
-  );
+  const getIcon = useNavigationIcons();
+  const navBar = useAnimation();
+  const [show, setShow] = useState<
+    "none" | "block"
+  >("none");
 
   return (
     <>
       <nav
         style={{
+          position: "relative",
+          zIndex: 9998,
           marginTop: "10px",
           height: "100px",
           padding: "15px",
@@ -42,17 +42,38 @@ const NavigationBar: React.FC = () => {
       >
         <div
           style={{ height: "100%" }}
-          onClick={() => scaleX.set(1)}
+          onClick={() => {
+            setShow("block");
+            navBar.start({
+              x: 0,
+              transition: {
+                duration: 0.6,
+                ease: "easeOut",
+              },
+            });
+          }}
         >
           <HamburgerMenuIcon height="100%" />
         </div>
       </nav>
-      <motion.nav
-        onClick={() => scaleX.set(0)}
+      <nav
+        onClick={() => {
+          navBar
+            .start({
+              x: -200,
+              transition: {
+                duration: 0.8,
+                ease: "easeOut",
+              },
+            })
+            .then(() => {
+              setShow("none");
+            });
+        }}
         style={{
-          display,
-          scaleX,
+          display: show,
           position: "fixed",
+          zIndex: 9999,
           top: 0,
           left: 0,
           width: "100vw",
@@ -63,8 +84,10 @@ const NavigationBar: React.FC = () => {
             "rgba(0,0,0,0.35)",
         }}
       >
-        <div
+        <motion.div
+          animate={navBar}
           style={{
+            x: -200,
             display: "grid",
             justifyContent: "start",
             padding: "10px 0px",
@@ -103,7 +126,6 @@ const NavigationBar: React.FC = () => {
                   href={href}
                   icon={getIcon({
                     name: icon,
-                    height: "25px",
                   })}
                 >
                   {name}
@@ -127,7 +149,6 @@ const NavigationBar: React.FC = () => {
                   href={href}
                   icon={getIcon({
                     name: icon,
-                    height: "25px",
                   })}
                 >
                   {name}
@@ -135,8 +156,8 @@ const NavigationBar: React.FC = () => {
               ),
             )}
           </FlexContainer>
-        </div>
-      </motion.nav>
+        </motion.div>
+      </nav>
     </>
   );
 };
