@@ -3,6 +3,37 @@ import React, {
   forwardRef,
   PropsWithChildren,
 } from "react";
+import css from "styled-jsx/css";
+
+export const typographyClasses = css`
+  .bold {
+    font-weight: 700;
+  }
+  .semi-bold {
+    font-weight: 600;
+  }
+  .bolder {
+    font-weight: 600;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .underline {
+    text-decoration: underline;
+  }
+  .align-left {
+    text-align: left;
+  }
+  .align-center {
+    text-align: center;
+  }
+  .align-right {
+    text-align: right;
+  }
+  .align-justify {
+    text-align: justify;
+  }
+`;
 
 const generateStyle = (
   fontSize: number,
@@ -120,26 +151,17 @@ const Typography: React.FC<Props> = forwardRef<
     if (variant?.includes("b")) {
       if (inline)
         return (
-          <span
-            ref={ref}
-            style={generateStyle(
-              variant === "b1"
-                ? 1
-                : variant === "b2"
-                ? 0.8
-                : 0.6,
-              color,
-              fontFamily,
-              align,
-              bold,
-              italic,
-              underline,
-              maxLength,
-              letterSpacing,
-              wordSpacing,
-              wrap,
-            )}
-          >
+          <span ref={ref}>
+            <style jsx>{`
+              ${typographyClasses}
+              span {
+                color: ${color};
+                max-width: ${maxLength};
+                font-family: ${fontFamily};
+                letter-spacing: ${letterSpacing};
+                word-spacing: ${wordSpacing};
+              }
+            `}</style>
             {children}
           </span>
         );
@@ -164,6 +186,16 @@ const Typography: React.FC<Props> = forwardRef<
             wrap,
           )}
         >
+          <style jsx>{`
+            ${typographyClasses}
+            p {
+              color: ${color};
+              max-width: ${maxLength};
+              font-family: ${fontFamily};
+              letter-spacing: ${letterSpacing};
+              word-spacing: ${wordSpacing};
+            }
+          `}</style>
           {children}
         </p>
       );
@@ -187,6 +219,16 @@ const Typography: React.FC<Props> = forwardRef<
               wrap,
             )}
           >
+            <style jsx>{`
+              ${typographyClasses}
+              h1 {
+                color: ${color};
+                max-width: ${maxLength};
+                font-family: ${fontFamily};
+                letter-spacing: ${letterSpacing};
+                word-spacing: ${wordSpacing};
+              }
+            `}</style>
             {children}
           </h1>
         );
@@ -209,28 +251,37 @@ const Typography: React.FC<Props> = forwardRef<
               wrap,
             )}
           >
+            <style jsx>{`
+              h2 {
+                color: ${color};
+                max-width: ${maxLength};
+                font-family: ${fontFamily ||
+                ""};
+                letter-spacing: ${letterSpacing};
+                word-spacing: ${wordSpacing};
+              }
+              ${typographyClasses}
+            `}</style>
             {children}
           </h2>
         );
       }
       case "h3": {
         return (
-          <h3
-            ref={ref}
-            style={generateStyle(
-              3,
-              color,
-              fontFamily,
-              align,
-              bold,
-              italic,
-              underline,
-              maxLength,
-              letterSpacing,
-              wordSpacing,
-              wrap,
-            )}
-          >
+          <h3 ref={ref}>
+            <style
+              global
+              jsx
+            >{``}</style>
+            <style jsx>{`
+              h3 {
+                color: ${color};
+                max-width: ${maxLength};
+                font-family: ${fontFamily};
+                letter-spacing: ${letterSpacing};
+                word-spacing: ${wordSpacing};
+              }
+            `}</style>
             {children}
           </h3>
         );
@@ -253,6 +304,16 @@ const Typography: React.FC<Props> = forwardRef<
               wrap,
             )}
           >
+            <style jsx>{`
+              ${typographyClasses}
+              h4 {
+                color: ${color};
+                max-width: ${maxLength};
+                font-family: ${fontFamily};
+                letter-spacing: ${letterSpacing};
+                word-spacing: ${wordSpacing};
+              }
+            `}</style>
             {children}
           </h4>
         );
@@ -275,6 +336,16 @@ const Typography: React.FC<Props> = forwardRef<
               wrap,
             )}
           >
+            <style jsx>{`
+              ${typographyClasses}
+              h5 {
+                color: ${color};
+                max-width: ${maxLength};
+                font-family: ${fontFamily};
+                letter-spacing: ${letterSpacing};
+                word-spacing: ${wordSpacing};
+              }
+            `}</style>
             {children}
           </h5>
         );
@@ -297,6 +368,16 @@ const Typography: React.FC<Props> = forwardRef<
               wrap,
             )}
           >
+            <style jsx>{`
+              ${typographyClasses}
+              h6 {
+                color: ${color};
+                max-width: ${maxLength};
+                font-family: ${fontFamily};
+                letter-spacing: ${letterSpacing};
+                word-spacing: ${wordSpacing};
+              }
+            `}</style>
             {children}
           </h6>
         );
