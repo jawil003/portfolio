@@ -1,5 +1,4 @@
 import React, {
-  CSSProperties,
   forwardRef,
   PropsWithChildren,
 } from "react";
@@ -16,7 +15,7 @@ export const typographyClasses = css`
     font-weight: 600;
   }
   .italic {
-    font-style: italic;
+    font-styles: italic;
   }
   .underline {
     text-decoration: underline;
@@ -35,7 +34,7 @@ export const typographyClasses = css`
   }
 `;
 
-const generateStyle = (
+const generatestyles = (
   fontSize: number,
   color?: string,
   fontFamily?: string,
@@ -55,11 +54,11 @@ const generateStyle = (
   wordSpacing?: number,
   wrap?: boolean,
 ) => {
-  const style: CSSProperties = {
-    overflow: "visible",
-    fontSize: `${fontSize}rem`,
-    fontWeight:
-      bold === "semi-bold"
+  return css.resolve`
+    .root {
+      font-size: ${fontSize}rem;
+      font-weight: ${bold ===
+      "semi-bold"
         ? 600
         : bold === "bold"
         ? 700
@@ -67,24 +66,24 @@ const generateStyle = (
         ? 900
         : fontSize > 1
         ? 700
-        : 400,
-    color,
-    fontFamily,
-    textAlign: align,
-    fontStyle: italic
-      ? "italic"
-      : "normal",
-    textDecoration: underline
-      ? "underline"
-      : "normal",
-    maxWidth: maxLength,
-    letterSpacing,
-    wordSpacing,
-    wordWrap: wrap
-      ? "break-word"
-      : "normal",
-  };
-  return style;
+        : 400};
+      color: ${color};
+      font-family: ${fontFamily};
+      text-align: ${align};
+      font-style: ${italic
+        ? "italic"
+        : "normal"};
+      text-decoration: ${underline
+        ? "underline"
+        : "normal"};
+      max-width: ${maxLength};
+      letter-spacing: ${letterSpacing};
+      word-spacing: ${wordSpacing};
+      word-wrap: ${wrap
+        ? "break-word"
+        : "normal"};
+    }
+  `;
 };
 
 export interface Props {
@@ -148,6 +147,26 @@ const Typography: React.FC<Props> = forwardRef<
     },
     ref,
   ) => {
+    const {
+      className,
+      styles,
+    } = generatestyles(
+      variant === "b1"
+        ? 1
+        : variant === "b2"
+        ? 0.8
+        : 0.6,
+      color,
+      fontFamily,
+      align,
+      bold,
+      italic,
+      underline,
+      maxLength,
+      letterSpacing,
+      wordSpacing,
+      wrap,
+    );
     if (variant?.includes("b")) {
       if (inline)
         return (
@@ -166,26 +185,7 @@ const Typography: React.FC<Props> = forwardRef<
           </span>
         );
       return (
-        <p
-          ref={ref}
-          style={generateStyle(
-            variant === "b1"
-              ? 1
-              : variant === "b2"
-              ? 0.8
-              : 0.6,
-            color,
-            fontFamily,
-            align,
-            bold,
-            italic,
-            underline,
-            maxLength,
-            letterSpacing,
-            wordSpacing,
-            wrap,
-          )}
-        >
+        <p ref={ref}>
           <style jsx>{`
             ${typographyClasses}
             p {
@@ -203,117 +203,48 @@ const Typography: React.FC<Props> = forwardRef<
     switch (variant) {
       case "h1": {
         return (
-          <h1
-            ref={ref}
-            style={generateStyle(
-              5,
-              color,
-              fontFamily,
-              align,
-              bold,
-              italic,
-              underline,
-              maxLength,
-              letterSpacing,
-              wordSpacing,
-              wrap,
-            )}
-          >
-            <style jsx>{`
-              ${typographyClasses}
-              h1 {
-                color: ${color};
-                max-width: ${maxLength};
-                font-family: ${fontFamily};
-                letter-spacing: ${letterSpacing};
-                word-spacing: ${wordSpacing};
-              }
-            `}</style>
-            {children}
-          </h1>
+          <>
+            <h1
+              ref={ref}
+              className={`${className}`}
+            >
+              {children}
+            </h1>
+            {styles}
+          </>
         );
       }
       case "h2": {
         return (
           <h2
             ref={ref}
-            style={generateStyle(
-              4,
-              color,
-              fontFamily,
-              align,
-              bold,
-              italic,
-              underline,
-              maxLength,
-              letterSpacing,
-              wordSpacing,
-              wrap,
-            )}
+            className={`${className} root`}
           >
-            <style jsx>{`
-              h2 {
-                color: ${color};
-                max-width: ${maxLength};
-                font-family: ${fontFamily ||
-                ""};
-                letter-spacing: ${letterSpacing};
-                word-spacing: ${wordSpacing};
-              }
-              ${typographyClasses}
-            `}</style>
+            {styles}
             {children}
           </h2>
         );
       }
       case "h3": {
         return (
-          <h3 ref={ref}>
-            <style
-              global
-              jsx
-            >{``}</style>
-            <style jsx>{`
-              h3 {
-                color: ${color};
-                max-width: ${maxLength};
-                font-family: ${fontFamily};
-                letter-spacing: ${letterSpacing};
-                word-spacing: ${wordSpacing};
-              }
-            `}</style>
-            {children}
-          </h3>
+          <>
+            <h3
+              ref={ref}
+              className={`${className} root`}
+            >
+              {children}
+            </h3>
+            {styles}
+          </>
         );
       }
       case "h4": {
         return (
           <h4
             ref={ref}
-            style={generateStyle(
-              2,
-              color,
-              fontFamily,
-              align,
-              bold,
-              italic,
-              underline,
-              maxLength,
-              letterSpacing,
-              wordSpacing,
-              wrap,
-            )}
+            className={`${className} root`}
           >
-            <style jsx>{`
-              ${typographyClasses}
-              h4 {
-                color: ${color};
-                max-width: ${maxLength};
-                font-family: ${fontFamily};
-                letter-spacing: ${letterSpacing};
-                word-spacing: ${wordSpacing};
-              }
-            `}</style>
+            {styles}
             {children}
           </h4>
         );
@@ -322,30 +253,9 @@ const Typography: React.FC<Props> = forwardRef<
         return (
           <h5
             ref={ref}
-            style={generateStyle(
-              1.5,
-              color,
-              fontFamily,
-              align,
-              bold,
-              italic,
-              underline,
-              maxLength,
-              letterSpacing,
-              wordSpacing,
-              wrap,
-            )}
+            className={`${className} root`}
           >
-            <style jsx>{`
-              ${typographyClasses}
-              h5 {
-                color: ${color};
-                max-width: ${maxLength};
-                font-family: ${fontFamily};
-                letter-spacing: ${letterSpacing};
-                word-spacing: ${wordSpacing};
-              }
-            `}</style>
+            {styles}
             {children}
           </h5>
         );
@@ -354,30 +264,9 @@ const Typography: React.FC<Props> = forwardRef<
         return (
           <h6
             ref={ref}
-            style={generateStyle(
-              1.1,
-              color,
-              fontFamily,
-              align,
-              bold,
-              italic,
-              underline,
-              maxLength,
-              letterSpacing,
-              wordSpacing,
-              wrap,
-            )}
+            className={`${className} root`}
           >
-            <style jsx>{`
-              ${typographyClasses}
-              h6 {
-                color: ${color};
-                max-width: ${maxLength};
-                font-family: ${fontFamily};
-                letter-spacing: ${letterSpacing};
-                word-spacing: ${wordSpacing};
-              }
-            `}</style>
+            {styles}
             {children}
           </h6>
         );
