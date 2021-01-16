@@ -34,6 +34,51 @@ export const typographyClasses = css`
   }
 `;
 
+const getFontSizeForVariant = (
+  variant:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "b1"
+    | "b2"
+    | "b3"
+    | "custom",
+) => {
+  switch (variant) {
+    case "h1": {
+      return 5;
+    }
+    case "h2": {
+      return 4;
+    }
+    case "h3": {
+      return 3;
+    }
+    case "h4": {
+      return 2;
+    }
+    case "h5": {
+      return 1.5;
+    }
+    case "h6": {
+      return 1.1;
+    }
+
+    case "b2": {
+      return 0.8;
+    }
+    case "b3": {
+      return 0.6;
+    }
+    default: {
+      return 1;
+    }
+  }
+};
+
 const generatestyles = (
   fontSize: number,
   color?: string,
@@ -151,11 +196,7 @@ const Typography: React.FC<Props> = forwardRef<
       className,
       styles,
     } = generatestyles(
-      variant === "b1"
-        ? 1
-        : variant === "b2"
-        ? 0.8
-        : 0.6,
+      getFontSizeForVariant(variant),
       color,
       fontFamily,
       align,
