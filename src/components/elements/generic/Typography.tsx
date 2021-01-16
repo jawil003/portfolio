@@ -35,7 +35,7 @@ export const typographyClasses = css`
 `;
 
 const getFontSizeForVariant = (
-  variant:
+  variant?:
     | "h1"
     | "h2"
     | "h3"
