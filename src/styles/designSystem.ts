@@ -23,6 +23,7 @@ const designSystem = {
       grey: {
         light: "rgb(247, 247, 247)",
         lightdark: "rgb(172, 171, 171)",
+        dark: "#444C4C",
       },
       red: { base: "red" },
       orange: { base: "#e67e22" },

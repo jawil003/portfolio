@@ -17,6 +17,7 @@ import {
 } from "../../config/routes.json";
 import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
 import designSystem from "@style/designSystem";
+import { css } from "@emotion/react";
 
 interface Props {
   className?: string;
@@ -39,17 +40,23 @@ const NavigationBar: React.FC<Props> = ({
   return (
     <>
       <nav
-        className={className}
-        style={{
-          position: "relative",
-          zIndex: 9998,
-          marginTop: "10px",
-          height: "100px",
-          padding: "15px",
-        }}
+        className={`desktop-navigation-bar-menu-container ${className}`}
+        css={css`
+          & {
+            position: relative;
+            z-index: 9998;
+            margin-top: 10px;
+            height: 100px;
+            padding: 15px;
+          }
+          &
+            > .desktop-navigation-bar-hamburger-menu-container {
+            height: 100%;
+          }
+        `}
       >
         <div
-          style={{ height: "100%" }}
+          className="desktop-navigation-bar-hamburger-menu-container"
           onClick={() => {
             setShow("block");
             navBar.start({
@@ -65,7 +72,50 @@ const NavigationBar: React.FC<Props> = ({
         </div>
       </nav>
       <nav
-        className={className}
+        css={css`
+          & {
+            display: ${show};
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            transform-origin: left
+              center;
+            background: rgba(
+              0,
+              0,
+              0,
+              0.35
+            );
+          }
+
+          &
+            > .desktop-navigation-bar-sidebar-container {
+            display: grid;
+            justify-content: start;
+            padding: 10px 0px;
+            align-content: start;
+            align-items: start;
+            grid-template-rows:
+              repeat(3, auto)
+              1fr auto;
+            float: left;
+            height: 100%;
+            background: ${designSystem
+              .colors.brand.primary};
+          }
+          &
+            .desktop-navigation-bar-logo-container {
+            display: flex;
+            justify-content: center;
+            padding: 0px 20px;
+          }
+        `}
+        className={`desktop-navigation-bar-sidebar-container-background ${
+          className || ""
+        }`}
         onClick={() => {
           navBar
             .start({
@@ -79,45 +129,15 @@ const NavigationBar: React.FC<Props> = ({
               setShow("none");
             });
         }}
-        style={{
-          display: show,
-          position: "fixed",
-          zIndex: 9999,
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-          transformOrigin:
-            "left center",
-          background:
-            "rgba(0,0,0,0.35)",
-        }}
       >
         <motion.div
+          className="desktop-navigation-bar-sidebar-container"
           animate={navBar}
           style={{
             x: -200,
-            display: "grid",
-            justifyContent: "start",
-            padding: "10px 0px",
-            alignContent: "start",
-            alignItems: "start",
-            gridTemplateRows:
-              "repeat(3, auto) 1fr auto",
-            float: "left",
-            height: "100%",
-            background:
-              designSystem.colors.brand
-                .primary,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              padding: "0px 20px",
-            }}
-          >
+          <div className="desktop-navigation-bar-logo-container">
             <Logo />
           </div>
           <Spacer height="40px" />
