@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import React from "react";
 
 interface Props {
@@ -35,7 +36,8 @@ const DeveloperIcon: React.FC<Props> = ({
 };
 
 DeveloperIcon.defaultProps = {
-  color: "var(--secondary)",
+  color:
+    designSystem.colors.brand.secondary,
 };
 
 export default DeveloperIcon;

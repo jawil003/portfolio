@@ -791,7 +791,8 @@ const ContactMeDesign: React.FC<Props> = ({
 };
 
 ContactMeDesign.defaultProps = {
-  color: designSystem.brand("primary"),
+  color:
+    designSystem.colors.brand.primary,
 };
 
 export default ContactMeDesign;

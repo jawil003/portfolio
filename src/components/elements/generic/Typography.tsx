@@ -105,24 +105,19 @@ const generatestyles = (
       font-size: ${fontSize}rem;
       font-weight: ${bold ===
       "semi-bold"
-        ? designSystem.get(
-            "fontWeight.semiBold",
-          )
+        ? designSystem.font.fontWeight
+            .semiBold
         : bold === "bold"
-        ? designSystem.get(
-            "fontWeight.bold",
-          )
+        ? designSystem.font.fontWeight
+            .bold
         : bold === "bolder"
-        ? designSystem.get(
-            "fontWeight.bolder",
-          )
+        ? designSystem.font.fontWeight
+            .bold
         : fontSize > 1
-        ? designSystem.get(
-            "fontWeight.semiBold",
-          )
-        : designSystem.get(
-            "fontWeight.light",
-          )};
+        ? designSystem.font.fontWeight
+            .semiBold
+        : designSystem.font.fontWeight
+            .light};
       ${color
         ? `color: ${color}`
         : undefined};
@@ -330,7 +325,9 @@ Typography.displayName = "Typography";
 
 Typography.defaultProps = {
   variant: "b1",
-  color: "var(--secondaryText)",
+  color:
+    designSystem.colors.brand
+      .secondaryText,
   align: "left",
   italic: false,
   underline: false,

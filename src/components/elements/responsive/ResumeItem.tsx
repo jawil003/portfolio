@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import React from "react";
 import Spacer from "../generic/Spacer";
 import Typography from "../generic/Typography";
@@ -40,7 +41,8 @@ const ResumeItem: React.FC<Props> = ({
         <div
           style={{
             backgroundColor:
-              "var(--darkwhite)",
+              designSystem.colors
+                .palette.white.dark,
             width: "3.5px",
             height: latest
               ? "calc(100% + 70px)"
@@ -65,7 +67,9 @@ const ResumeItem: React.FC<Props> = ({
             justifyContent: "flex-end",
             alignItems: "flex-start",
             alignContent: "flex-start",
-            color: "var(--darkwhite)",
+            color:
+              designSystem.colors.brand
+                .primary,
           }}
         >
           {start_year ? (
@@ -74,7 +78,10 @@ const ResumeItem: React.FC<Props> = ({
                 key="start_year"
                 align="center"
                 variant="h6"
-                color="var(--darkwhite)"
+                color={
+                  designSystem.colors
+                    .brand.primary
+                }
               >
                 {start_year}
               </Typography>,
@@ -82,7 +89,10 @@ const ResumeItem: React.FC<Props> = ({
                 key="end_year"
                 align="center"
                 variant="h6"
-                color="var(--darkwhite)"
+                color={
+                  designSystem.colors
+                    .brand.primary
+                }
               >
                 {end_year
                   ? end_year
@@ -94,7 +104,10 @@ const ResumeItem: React.FC<Props> = ({
               key="end_year"
               align="center"
               variant="h6"
-              color="var(--darkwhite)"
+              color={
+                designSystem.colors
+                  .brand.primary
+              }
             >
               {end_year}
             </Typography>
@@ -113,10 +126,11 @@ const ResumeItem: React.FC<Props> = ({
           <div
             style={{
               height: "25px",
-              border: `5px solid ${"var(--darkwhite)"}`,
+              border: `5px solid ${designSystem.colors.brand.primary}`,
               borderRadius: "100%",
               backgroundColor:
-                "var(--secondary)",
+                designSystem.colors
+                  .brand.secondary,
             }}
           />
         </div>
@@ -128,13 +142,18 @@ const ResumeItem: React.FC<Props> = ({
             justifyContent:
               "flex-start",
             alignItems: "flex-start",
-            color: "var(--darkwhite)",
+            color:
+              designSystem.colors.brand
+                .primary,
           }}
         >
           <Typography
             maxLength="100px"
             bold="semi-bold"
-            color={"var(--darkwhite)"}
+            color={
+              designSystem.colors.brand
+                .primary
+            }
             variant="h6"
           >
             {title}
@@ -143,7 +162,10 @@ const ResumeItem: React.FC<Props> = ({
           <Typography
             maxLength="150px"
             variant="b2"
-            color={"var(--darkwhite)"}
+            color={
+              designSystem.colors.brand
+                .primary
+            }
             italic
           >
             {description}

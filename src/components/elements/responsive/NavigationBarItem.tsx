@@ -3,6 +3,7 @@ import React from "react";
 import Spacer from "../generic/Spacer";
 import Typography from "../generic/Typography";
 import { css } from "@emotion/react";
+import designSystem from "@style/designSystem";
 interface Props {
   icon?: JSX.Element;
   href: string;
@@ -82,7 +83,9 @@ const NavigationBarItem: React.FC<Props> = ({
 };
 
 NavigationBarItem.defaultProps = {
-  color: "var(--secondaryText)",
+  color:
+    designSystem.colors.brand
+      .secondaryText,
 };
 
 export default NavigationBarItem;

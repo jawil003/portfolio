@@ -42,15 +42,15 @@ const Index: React.FC<ServerSideProps> = ({
       </Head>
       <NavigationBar
         css={css`
-          @media (max-width: ${designSystem.bp(
-              "tabletPortraitUp",
-            )}) {
+          @media (max-width: ${designSystem
+              .breakpoints
+              .tabletPortraitUp}) {
             &
               svg.hamburger-menu-icon
               > * {
-              fill: ${designSystem.brand(
-                "primary",
-              )};
+              fill: ${designSystem
+                .colors.brand
+                .secondary};
             }
           }
         `}
@@ -59,24 +59,24 @@ const Index: React.FC<ServerSideProps> = ({
         background={
           <div
             css={css`
-              @media (max-width: ${designSystem.bp(
-                  "tabletPortraitUp",
-                )}) {
+              @media (max-width: ${designSystem
+                  .breakpoints
+                  .tabletPortraitUp}) {
                 & {
                   width: 100%;
                   height: 100%;
-                  background-color: ${designSystem.brand(
-                    "secondary",
-                  )};
+                  background-color: ${designSystem
+                    .breakpoints
+                    .tabletPortraitUp};
                 }
 
                 & > svg {
                   display: none;
                 }
               }
-              @media (min-width: ${designSystem.bp(
-                  "tabletPortraitUp",
-                )}) {
+              @media (min-width: ${designSystem
+                  .breakpoints
+                  .tabletPortraitUp}) {
                 & {
                 }
               }
@@ -94,9 +94,9 @@ const Index: React.FC<ServerSideProps> = ({
           <FlexContainer justifyContent="center">
             <TitleWithSubtitle
               css={css`
-                @media (max-width: ${designSystem.bp(
-                    "tabletPortraitUp",
-                  )}) {
+                @media (max-width: ${designSystem
+                    .breakpoints
+                    .tabletPortraitUp}) {
                   & > h3,
                   p {
                     color: white;
@@ -119,17 +119,21 @@ const Index: React.FC<ServerSideProps> = ({
                   }) => (
                     <IconLink
                       css={css`
-                        @media (max-width: ${designSystem.bp(
-                          "tabletPortraitUp",
-                        )}) {
+                        @media (max-width: ${designSystem
+                            .breakpoints
+                            .tabletPortraitUp}) {
                           & .accent {
-                            fill: ${designSystem.brand(
-                              "secondary",
-                            )};
+                            fill: ${designSystem
+                              .colors
+                              .brand
+                              .secondary};
                           }
-                          & .main {fill: ${designSystem.brand(
-                            "primary",
-                          )}
+                          & .main {
+                            fill: ${designSystem
+                              .colors
+                              .brand
+                              .primary};
+                          }
                         }
                       `}
                       key={name}

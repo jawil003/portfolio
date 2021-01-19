@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import React from "react";
 
 interface Props {
@@ -36,7 +37,9 @@ const MailIcon: React.FC<Props> = ({
 };
 
 MailIcon.defaultProps = {
-  color: "var(--secondaryText)",
+  color:
+    designSystem.colors.brand
+      .secondaryText,
 };
 
 export default MailIcon;

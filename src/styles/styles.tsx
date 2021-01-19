@@ -273,13 +273,11 @@ const fonts = css`
 
 const rules = css`
   body {
-    font-family: ${designSystem.get(
-      "fontFamily.base",
-    )};
+    font-family: ${designSystem.font
+      .base.family};
     margin: 0px;
-    font-size: ${designSystem.get(
-      "type.baseFontSize",
-    )};
+    font-size: ${designSystem.font.base
+      .size};
     overflow-x: hidden;
     padding: 0px 20px;
     min-height: 100%;

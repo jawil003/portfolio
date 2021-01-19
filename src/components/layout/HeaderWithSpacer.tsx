@@ -34,9 +34,9 @@ const HeaderWithSpacer = forwardRef<
         }
 
         /* desktop/tablet */
-        @media (min-width: ${designSystem.bp(
-            "tabletPortraitUp",
-          )}) {
+        @media (min-width: ${designSystem
+            .breakpoints
+            .tabletPortraitUp}) {
           & {
             flex-direction: row;
           }
@@ -51,9 +51,9 @@ const HeaderWithSpacer = forwardRef<
         }
 
         /* mobile */
-        @media (max-width: ${designSystem.bp(
-            "tabletPortraitUp",
-          )}) {
+        @media (max-width: ${designSystem
+            .breakpoints
+            .tabletPortraitUp}) {
           & {
             flex-direction: column;
             align-items: center;

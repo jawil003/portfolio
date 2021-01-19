@@ -25,12 +25,10 @@ const Logo: React.FC = () => {
         }
 
         & > .logo-beta-label {
-          background-color: ${designSystem.brand(
-            "secondary",
-          )};
-          color: ${designSystem.brand(
-            "primary",
-          )};
+          background-color: ${designSystem
+            .colors.brand.secondary};
+          color: ${designSystem.colors
+            .brand.primary};
           padding: 10px;
           font-size: ${fontSizeToRelativeValue(
             "18px",

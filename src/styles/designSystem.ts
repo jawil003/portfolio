@@ -1,13 +1,21 @@
-import DesignSystem, {
-  System,
-  pxTo,
-} from "design-system-utils";
-const designTokens: System = {
-  type: {
-    baseFontSize: "16px",
+const designSystem = {
+  font: {
+    base: {
+      size: "16px",
+      family:
+        "'Source Sans Pro', sans-serif",
+    },
+    fontWeight: {
+      lighter: 200,
+      light: 300,
+      normal: 400,
+      semiBold: 600,
+      bold: 700,
+      bolder: 900,
+    },
   },
   colors: {
-    colorPalette: {
+    palette: {
       white: {
         base: "#f3f3f3",
         dark: "#f0f0f0",
@@ -34,18 +42,6 @@ const designTokens: System = {
       secondaryText: "#000", // black
     },
   },
-  fontFamily: {
-    base:
-      "'Source Sans Pro', sans-serif",
-  },
-  fontWeight: {
-    lighter: 200,
-    light: 300,
-    normal: 400,
-    semiBold: 600,
-    bold: 700,
-    bolder: 900,
-  },
   breakpoints: {
     phoneOnly: "599px",
     tabletPortraitUp: "600px",
@@ -54,20 +50,27 @@ const designTokens: System = {
     bigDesktopUp: "1800px",
   },
 };
-const designSystem = new DesignSystem(
-  designTokens,
-  { fontSizeUnit: "rem" },
-);
+
+export default designSystem;
 
 export const fontSizeToRelativeValue = (
   fontSizePx: string,
-) =>
-  pxTo(
-    fontSizePx,
-    designSystem.get(
-      "type.fontSizeBase",
+) => {
+  const fontSize = Number(
+    fontSizePx.slice(
+      0,
+      fontSizePx.length - 2,
     ),
-    "rem",
   );
 
-export default designSystem;
+  return `${
+    (1 /
+      Number(
+        designSystem.font.base.size.slice(
+          0,
+          fontSizePx.length - 2,
+        ),
+      )) *
+    fontSize
+  }rem`;
+};

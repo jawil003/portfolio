@@ -16,9 +16,10 @@ const ResumeHeader: React.FC<Props> = ({
     <Typography
       variant="h4"
       italic
-      color={designSystem.brand(
-        "primary",
-      )}
+      color={
+        designSystem.colors.brand
+          .secondaryText
+      }
     >
       {children}
     </Typography>

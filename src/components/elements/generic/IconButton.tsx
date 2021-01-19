@@ -78,10 +78,9 @@ const IconButton: React.FC<Props> = ({
 };
 
 IconButton.defaultProps = {
-  color: designSystem.color(
-    "blue",
-    "base",
-  ),
+  color:
+    designSystem.colors.palette.blue
+      .base,
   size: "48px",
 };
 

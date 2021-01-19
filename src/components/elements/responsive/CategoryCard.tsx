@@ -38,11 +38,12 @@ const CategoryCard: React.FC<Props> = ({
         style={{
           width: "270px",
           height: "405px",
-          backgroundColor: designSystem.brand(
-            "primary",
-          ),
+          backgroundColor:
+            designSystem.colors.brand
+              .primary,
           background:
-            "var(--lightgrey)",
+            designSystem.colors.palette
+              .grey.light,
           boxShadow:
             "0px 0px 2px 0px rgba(50, 50, 50, 0.25)",
           padding: "20%",
@@ -89,10 +90,25 @@ const CategoryCard: React.FC<Props> = ({
             {description}
             {href
               ? [
-                  <Spacer height="10px" />,
-                  <Link href="knowledge/testDrivenDevelopment">
-                    <a>
+                  <Spacer
+                    key={
+                      href + "-spacer"
+                    }
+                    height="10px"
+                  />,
+                  <Link
+                    key={href + "-link"}
+                    href="knowledge/testDrivenDevelopment"
+                  >
+                    <a
+                      key={
+                        href + "-anchor"
+                      }
+                    >
                       <Typography
+                        key={
+                          href + "-text"
+                        }
                         align="center"
                         underline
                       >

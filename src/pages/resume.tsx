@@ -10,9 +10,6 @@ import ResumeItemType from "src/model/ResumeItem.model";
 import ResumeItem from "src/components/elements/responsive/ResumeItem";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
-import useViewportSize, {
-  breakpoints,
-} from "src/hooks/useViewportSize.hook";
 import { generateIndividualTags } from "src/services/meta.service";
 import { title } from "../../package.json";
 import HeaderService, {
@@ -20,6 +17,8 @@ import HeaderService, {
 } from "src/services/header.service";
 import TitleWithSubtitle from "src/components/elements/responsive/TitleWithSubtitle";
 import FlexContainer from "src/components/elements/generic/FlexContainer";
+import designSystem from "@style/designSystem";
+import { css } from "@emotion/react";
 
 interface ServerSideProps {
   resumeItems: ResumeItemType[];
@@ -46,7 +45,6 @@ const Contact: React.FC<ServerSideProps> = ({
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
   ];
-  const { width } = useViewportSize();
   return (
     <>
       <Head>
@@ -61,24 +59,31 @@ const Contact: React.FC<ServerSideProps> = ({
       <BackgroundWrapper
         background={
           <div
-            style={{
-              marginLeft:
-                width >= breakpoints.lg
-                  ? "50%"
-                  : undefined,
-              width:
-                width >= breakpoints.lg
-                  ? "50%"
-                  : "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",
-              opacity:
-                width >= breakpoints.lg
-                  ? 1
-                  : 0.3,
-            }}
+            css={css`
+              & {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+              }
+              @media (min-width: ${designSystem
+                  .breakpoints
+                  .tabletPortraitUp}) {
+                & {
+                  margin-left: 50%;
+                  width: 50%;
+                  opacity: 1;
+                }
+              }
+              @media (max-width: ${designSystem
+                  .breakpoints
+                  .tabletPortraitUp}) {
+                & {
+                  width: 100%;
+                  opacity: 0.3;
+                }
+              }
+            `}
           >
             <DesigningDesign width="100%" />
           </div>
@@ -116,7 +121,12 @@ const Contact: React.FC<ServerSideProps> = ({
           </Typography>*/}
         </HeaderWithSpacer>
       </BackgroundWrapper>
-      <ColorContainer color="var(--secondary)">
+      <ColorContainer
+        color={
+          designSystem.colors.brand
+            .secondary
+        }
+      >
         <main
           style={{
             flex: 1,

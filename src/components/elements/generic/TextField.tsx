@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import designSystem from "@style/designSystem";
 import React from "react";
 import Typography from "./Typography";
 
@@ -62,9 +63,9 @@ const TextField: React.FC<Props> = ({
         css={css`
           & {
             padding: 10px 15px;
-            background: var(
-              --lightgrey
-            );
+            background: ${designSystem
+              .colors.palette.grey
+              .light};
             border-radius: 5px;
             width: 100%;
           }

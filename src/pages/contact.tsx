@@ -62,18 +62,18 @@ const Contact: React.FC = () => {
                 align-items: center;
                 height: 100%;
               }
-              @media (min-width: ${designSystem.bp(
-                  "tabletPortraitUp",
-                )}) {
+              @media (min-width: ${designSystem
+                  .breakpoints
+                  .tabletPortraitUp}) {
                 & {
                   margin-left: 50%;
                   width: 50%;
                   opacity: 1;
                 }
               }
-              @media (max-width: ${designSystem.bp(
-                  "tabletPortraitUp",
-                )}) {
+              @media (max-width: ${designSystem
+                  .breakpoints
+                  .tabletPortraitUp}) {
                 & {
                   width: 100%;
                   opacity: 0.3;
@@ -82,9 +82,10 @@ const Contact: React.FC = () => {
             `}
           >
             <ContactMeDesign
-              color={designSystem.brand(
-                "secondary",
-              )}
+              color={
+                designSystem.colors
+                  .brand.secondary
+              }
               width="100%"
             />
           </div>

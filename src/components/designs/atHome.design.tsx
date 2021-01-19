@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import React from "react";
 
 interface Props {
@@ -158,7 +159,8 @@ const AtHomeDesign: React.FC<Props> = ({
 };
 
 AtHomeDesign.defaultProps = {
-  color: "var(--secondary)",
+  color:
+    designSystem.colors.brand.secondary,
 };
 
 export default AtHomeDesign;

@@ -102,17 +102,17 @@ const Contact: React.FC<StaticProps> = ({
                 height: 100%;
                 grid-template-rows: 100%;
               }
-              @media (min-width: ${designSystem.bp(
-                  "tabletPortraitUp",
-                )}) {
+              @media (min-width: ${designSystem
+                  .breakpoints
+                  .tabletPortraitUp}) {
                 & {
                   justify-content: end;
                   grid-template-columns: 50%;
                 }
               }
-              @media (max-width: ${designSystem.bp(
-                  "tabletPortraitUp",
-                )}) {
+              @media (max-width: ${designSystem
+                  .breakpoints
+                  .tabletPortraitUp}) {
                 & {
                   justify-items: center;
                   justify-content: center;
@@ -179,10 +179,11 @@ const Contact: React.FC<StaticProps> = ({
                       },
                     )
                   }
-                  color={designSystem.color(
-                    "yellow",
-                    "base",
-                  )}
+                  color={
+                    designSystem.colors
+                      .palette.yellow
+                      .base
+                  }
                 >
                   <DisplayAndWebpageIcon height="60%" />
                 </IconButton>
@@ -206,10 +207,10 @@ const Contact: React.FC<StaticProps> = ({
                       },
                     )
                   }
-                  color={designSystem.color(
-                    "red",
-                    "base",
-                  )}
+                  color={
+                    designSystem.colors
+                      .palette.red.base
+                  }
                 >
                   <SmartphoneIcon height="50%" />
                 </IconButton>
@@ -233,10 +234,11 @@ const Contact: React.FC<StaticProps> = ({
                       },
                     )
                   }
-                  color={designSystem.color(
-                    "green",
-                    "base",
-                  )}
+                  color={
+                    designSystem.colors
+                      .palette.green
+                      .base
+                  }
                 >
                   <DesktopIcon height="50%" />
                 </IconButton>
@@ -257,10 +259,11 @@ const Contact: React.FC<StaticProps> = ({
                       },
                     )
                   }
-                  color={designSystem.color(
-                    "orange",
-                    "base",
-                  )}
+                  color={
+                    designSystem.colors
+                      .palette.orange
+                      .base
+                  }
                 >
                   <DropIcon height="27px" />
                 </IconButton>
@@ -346,18 +349,10 @@ const Contact: React.FC<StaticProps> = ({
       <BackTopButton
         hidden={hideButton}
         onClick={() => {
-          if (width < breakpoints.lg)
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          else
-            paragraphs[0].current?.scrollIntoView(
-              {
-                behavior: "smooth",
-                block: "start",
-              },
-            );
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
         }}
       />
     </>

@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import {
   motion,
   useSpring,
@@ -53,7 +54,8 @@ const BackTopButton: React.FC<Props> = ({
         width: "52px",
         height: "52px",
         backgroundColor:
-          "var(--darkblue)",
+          designSystem.colors.palette
+            .blue.dark,
         justifyContent: "center",
         alignItems: "center",
         position: "fixed",

@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import React from "react";
 
 interface Props {
@@ -34,7 +35,9 @@ const WorldWideIcon: React.FC<Props> = ({
 };
 
 WorldWideIcon.defaultProps = {
-  color: "var(--secondaryText)",
+  color:
+    designSystem.colors.brand
+      .secondaryText,
 };
 
 export default WorldWideIcon;

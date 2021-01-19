@@ -106,9 +106,9 @@ const NavigationBar: React.FC<Props> = ({
               "repeat(3, auto) 1fr auto",
             float: "left",
             height: "100%",
-            background: designSystem.brand(
-              "primary",
-            ),
+            background:
+              designSystem.colors.brand
+                .primary,
           }}
         >
           <div
