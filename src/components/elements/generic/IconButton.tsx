@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import {
   motion,
   useSpring,
@@ -36,16 +37,20 @@ const IconButton: React.FC<Props> = ({
   const scale = useSpring(1);
   return (
     <motion.div
+      css={css`
+        & {
+          position: relative;
+        }
+      `}
       style={{
-        position: "relative",
         scale,
       }}
     >
       <div
-        onMouseOver={() => {
+        onFocus={() => {
           scale.set(1.2);
         }}
-        onMouseOut={() => {
+        onBlur={() => {
           scale.set(1);
         }}
         onClick={onClick}

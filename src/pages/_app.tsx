@@ -1,8 +1,8 @@
 import React from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import ThemeProvider from "../components/context/ThemeProvider";
-import BetaDialog from "src/components/elements/custom/BetaDialog";
+import BetaDialog from "src/components/elements/responsive/BetaDialog";
+import globalStyles from "../styles/styles";
 /**
  * An App React Component.
  * @author Jannik Will
@@ -13,11 +13,8 @@ const MyApp: React.FC<AppProps> = ({
   pageProps,
 }) => {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-      }}
-    >
+    <>
+      {globalStyles}
       <Head>
         <meta
           name="viewport"
@@ -25,11 +22,9 @@ const MyApp: React.FC<AppProps> = ({
         />
       </Head>
 
-      <ThemeProvider>
-        <Component {...pageProps} />
-        <BetaDialog />
-      </ThemeProvider>
-    </div>
+      <Component {...pageProps} />
+      <BetaDialog />
+    </>
   );
 };
 

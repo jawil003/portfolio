@@ -1,9 +1,15 @@
+import { css } from "@emotion/react";
 import React from "react";
 import Typography from "../generic/Typography";
 
 interface Props {
   heading: string;
   description: string;
+  css?: {
+    root?: any;
+    title?: any;
+    subtitle?: any;
+  };
   className?: string;
 }
 
@@ -12,7 +18,7 @@ interface Props {
  * @author
  * @version 0.1
  */
-const HeaderWithSubtitle: React.FC<Props> = ({
+const TitleWithSubtitle: React.FC<Props> = ({
   heading,
   description,
   children,
@@ -20,20 +26,21 @@ const HeaderWithSubtitle: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`container ${className}`}
+      className={className}
+      css={[
+        css`
+          & {
+            display: inline-block;
+            margin: 0px 10% 0px
+              calc(10% - 20px);
+          }
+          & > *:not(:first-of-type) {
+            width: 0;
+            min-width: 100%;
+          }
+        `,
+      ]}
     >
-      <style jsx>{`
-        .container {
-          display: inline-block;
-          margin: 0px 10% 0px
-            calc(10% - 20px);
-        }
-        .container
-          > :global(*):not(:first-child) {
-          width: 0;
-          min-width: 100%;
-        }
-      `}</style>
       <Typography variant="h3">
         {heading}
       </Typography>
@@ -48,4 +55,4 @@ const HeaderWithSubtitle: React.FC<Props> = ({
   );
 };
 
-export default HeaderWithSubtitle;
+export default TitleWithSubtitle;

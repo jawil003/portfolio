@@ -3,11 +3,11 @@ import React, { useRef } from "react";
 import DesigningDesign from "../components/designs/designing.design";
 import NavigationBar from "../components/layout/DesktopNavigationBar";
 import ColorContainer from "src/components/elements/generic/ColorContainer";
-import ResumeContainer from "src/components/elements/custom/ResumeContainer";
+import ResumeContainer from "src/components/elements/responsive/ResumeContainer";
 import { GetStaticProps } from "next";
 import ResumeService from "src/services/resume.service";
 import ResumeItemType from "src/model/ResumeItem.model";
-import ResumeItem from "src/components/elements/custom/ResumeItem";
+import ResumeItem from "src/components/elements/responsive/ResumeItem";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 import useBreakpoint, {
@@ -18,7 +18,7 @@ import { title } from "../../package.json";
 import HeaderService, {
   Header,
 } from "src/services/header.service";
-import HeaderWithSubtitle from "src/components/elements/custom/HeaderWithSubtitle";
+import TitleWithSubtitle from "src/components/elements/responsive/TitleWithSubtitle";
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 
 interface ServerSideProps {
@@ -89,7 +89,7 @@ const Contact: React.FC<ServerSideProps> = ({
           ref={_paragraphs[0]}
         >
           <FlexContainer justifyContent="center">
-            <HeaderWithSubtitle
+            <TitleWithSubtitle
               heading={resumeTitle}
               description={
                 resumeSubTitle

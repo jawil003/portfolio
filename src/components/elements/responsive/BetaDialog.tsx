@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import React, {
   useEffect,
   useState,
@@ -9,14 +10,12 @@ import Typography from "../generic/Typography";
 const DIALOG_SHOWN_KEY =
   "beta_dialog_shown";
 
-interface Props {}
-
 /**
  * An BetaDialog React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const BetaDialog: React.FC<Props> = () => {
+const BetaDialog: React.FC = () => {
   const [
     showDialog,
     setShowDialog,
@@ -40,16 +39,20 @@ const BetaDialog: React.FC<Props> = () => {
         <FlexContainer
           justifyContent="center"
           alignItems="center"
-          style={{
-            position: "absolute",
-            zIndex: 300,
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            backgroundColor:
-              "rgba(0,0,0, 0.53)",
-          }}
+          css={css`
+            position: absolute;
+            z-index: 300;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(
+              0,
+              0,
+              0,
+              0.53
+            );
+          `}
         >
           <div>
             <FlexContainer
@@ -57,12 +60,13 @@ const BetaDialog: React.FC<Props> = () => {
               alignItems="center"
               rowGap="30px"
               direction="column"
-              style={{
-                padding: "40px 80px",
-                backgroundColor:
-                  "white",
-                borderRadius: "30px",
-              }}
+              css={css`
+                & {
+                  padding: 40px 80px;
+                  background-color: white;
+                  border-radius: 30px;
+                }
+              `}
             >
               <Typography
                 variant="b1"

@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import React from "react";
 
 interface Props {
@@ -41,24 +42,22 @@ const GridContainer: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <div>
-      <style jsx>
-        {`
-          .gridContainer {
-            display: grid;
-            align-content: ${alignContent};
-            justify-content: ${justifyContent};
-            align-items: ${alignItems};
-            column-gap: ${columnGap};
-            row-gap: ${rowGap};
-          }
-          .gridcontainer > :global(*) {
-              width: 100%;
-              height 100%;
-          }
-        `}
-        å
-      </style>
+    <div
+      css={css`
+        & {
+          display: grid;
+          align-content: ${alignContent};
+          justify-content: ${justifyContent};
+          align-items: ${alignItems};
+          column-gap: ${columnGap};
+          row-gap: ${rowGap};
+        }
+        & > * {
+          width: 100%;
+          height: 100%;
+        }
+      `}
+    >
       {children}
     </div>
   );

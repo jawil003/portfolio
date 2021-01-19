@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import React from "react";
 import Typography from "../generic/Typography";
 
@@ -15,7 +16,9 @@ const ResumeHeader: React.FC<Props> = ({
     <Typography
       variant="h4"
       italic
-      color="var(--primary)"
+      color={designSystem.brand(
+        "primary",
+      )}
     >
       {children}
     </Typography>

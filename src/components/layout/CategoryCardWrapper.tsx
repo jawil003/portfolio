@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import React, { Children } from "react";
 import useBreakpoint from "src/hooks/useBreakpoints.hook";
 
@@ -16,9 +17,9 @@ const CategoryCardWrapper: React.FC<Props> = ({
     Children.toArray(children).length *
     310;
   return (
-    <div className="container">
-      <style jsx>{`
-        .container {
+    <div
+      css={css`
+        & {
           position: relative;
           left: 0px;
           width: 100vw;
@@ -38,15 +39,14 @@ const CategoryCardWrapper: React.FC<Props> = ({
             calc(10px / -2);*/
         }
         /* Hide scrollbar for Chrome, Safari and Opera */
-        .container::-webkit-scrollbar {
+        &::-webkit-scrollbar {
           display: none;
         }
-        .container
-          > :global(*):not(.spacer) {
+        & > :global(*):not(.spacer) {
           margin: calc(0px / 2)
             calc(var(--gap) / 2);
         }
-        .container > .spacer {
+        & > .spacer {
           padding-right: calc(
             calc(
               calc(100% / 2) -
@@ -55,7 +55,9 @@ const CategoryCardWrapper: React.FC<Props> = ({
             )
           );
         }
-      `}</style>
+      `}
+      className="container"
+    >
       {width < elementsWidth ? (
         <div className="spacer" />
       ) : undefined}

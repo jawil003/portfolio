@@ -8,7 +8,7 @@ import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 import BlobDesktopDesign from "src/components/designs/blobDesktop.design";
 import { generateIndividualTags } from "src/services/meta.service";
-import HeaderWithSubtitle from "../components/elements/custom/HeaderWithSubtitle";
+import TitleWithSubtitle from "../components/elements/responsive/TitleWithSubtitle";
 import { GetStaticProps } from "next";
 import SocialItemsService, {
   SocialItem,
@@ -17,7 +17,8 @@ import { useSocialLogos } from "src/hooks/useIcons.hook";
 import HeaderService, {
   Header,
 } from "src/services/header.service";
-import { breakpoints } from "src/hooks/useBreakpoints.hook";
+import designSystem from "@style/designSystem";
+import { css } from "@emotion/react";
 
 interface ServerSideProps {
   indexHeader: Header;
@@ -33,105 +34,78 @@ const Index: React.FC<ServerSideProps> = ({
   indexHeader: { title, subtitle },
 }) => {
   const getIcon = useSocialLogos();
-  return (
-    <div id="index">
-      <style jsx global>{`
-        #index {
-          width: 100%;
-          height: 100vh;
-          overflow: hidden;
-        }
-        #index
-          :global(#blobDesktopDesignContainer) {
-          height: 100%;
-        }
-        @media (max-width: ${breakpoints.lg -
-          1}px) {
-          #blobContainer {
-            width: 100%;
-            height: 100%;
-            background-color: var(
-              --blue
-            );
-          }
-          .blobDesktopDesign {
-            display: none;
-          }
-          #blobDesktopDesignContainer {
-            background-color: #000;
-          }
-          nav > div > svg > path {
-            fill: var(--primary);
-          }
 
-          h3,
-          p {
-            color: var(--primary);
-          }
-        }
-        @media (min-width: ${breakpoints.lg}px) {
-          #blobContainer {
-            display: inline-block;
-            float: right;
-          }
-          .blobDesktopDesign {
-          }
-        }
-      `}</style>
+  return (
+    <>
       <Head>
         {generateIndividualTags()}
       </Head>
-      <NavigationBar />
+      <NavigationBar
+        css={css`
+          @media (max-width: ${designSystem.bp(
+              "tabletPortraitUp",
+            )}) {
+            &
+              svg.hamburger-menu-icon
+              > * {
+              fill: ${designSystem.brand(
+                "primary",
+              )};
+            }
+          }
+        `}
+      />
       <BackgroundWrapper
         background={
-          <div id="blobContainer">
+          <div
+            css={css`
+              @media (max-width: ${designSystem.bp(
+                  "tabletPortraitUp",
+                )}) {
+                & {
+                  width: 100%;
+                  height: 100%;
+                  background-color: ${designSystem.brand(
+                    "secondary",
+                  )};
+                }
+
+                & > svg {
+                  display: none;
+                }
+              }
+              @media (min-width: ${designSystem.bp(
+                  "tabletPortraitUp",
+                )}) {
+                & {
+                }
+              }
+            `}
+            style={{
+              display: "inline-block",
+              float: "right",
+            }}
+          >
             <BlobDesktopDesign />
           </div>
         }
       >
         <HeaderWithSpacer first>
           <FlexContainer justifyContent="center">
-            <HeaderWithSubtitle
+            <TitleWithSubtitle
+              css={css`
+                @media (max-width: ${designSystem.bp(
+                    "tabletPortraitUp",
+                  )}) {
+                  & > h3,
+                  p {
+                    color: white;
+                  }
+                }
+              `}
               heading={title}
               description={subtitle}
             >
-              {/*<Typography
-            variant="h3"
-            align={
-              width > breakpoints.lg
-                ? "left"
-                : "center"
-            }
-            color={
-              width <= breakpoints.lg
-                ? "var(--primary)"
-                : undefined
-            }
-          >
-            Hallo, ich bin Jannik
-          </Typography>
-          <Spacer height="0.4em" />
-          <Typography
-            align={
-              width > breakpoints.lg
-                ? "left"
-                : "center"
-            }
-            italic
-            wordSpacing={11}
-            color={
-              width <= breakpoints.lg
-                ? "var(--primary)"
-                : undefined
-            }
-          >
-            ein leidenschaftlicher
-            Softwareentwickler und
-            Designer aus Dortmund und
-            spezialisiert auf Frontend
-            und Backend Lösungen aller
-            Art
-          </Typography>*/}
               <Spacer height="8px" />
               <FlexContainer
                 justifyContent="center"
@@ -144,6 +118,20 @@ const Index: React.FC<ServerSideProps> = ({
                     icon: { title },
                   }) => (
                     <IconLink
+                      css={css`
+                        @media (max-width: ${designSystem.bp(
+                          "tabletPortraitUp",
+                        )}) {
+                          & .accent {
+                            fill: ${designSystem.brand(
+                              "secondary",
+                            )};
+                          }
+                          & .main {fill: ${designSystem.brand(
+                            "primary",
+                          )}
+                        }
+                      `}
                       key={name}
                       external
                       href={href}
@@ -155,82 +143,12 @@ const Index: React.FC<ServerSideProps> = ({
                     </IconLink>
                   ),
                 )}
-                {/*<IconLink
-                external
-                href="https://twitter.com/willey3x37"
-              >
-                <TwitterIcon
-                  color={
-                    width <=
-                    breakpoints.lg
-                      ? "var(--primary)"
-                      : undefined
-                  }
-                  height="100%"
-                />
-              </IconLink>
-              <IconLink
-                external
-                href="https://linkedin.com/willey3x37"
-              >
-                <LinkedInIcon
-                  color={
-                    width <=
-                    breakpoints.lg
-                      ? "var(--primary)"
-                      : undefined
-                  }
-                  textColor={
-                    width <=
-                    breakpoints.lg
-                      ? "var(--secondary"
-                      : undefined
-                  }
-                  height="100%"
-                />
-              </IconLink>
-
-              <IconLink
-                external
-                href="https://github.com/jawil003"
-              >
-                <GithubIcon
-                  color={
-                    width <=
-                    breakpoints.lg
-                      ? "var(--primary)"
-                      : undefined
-                  }
-                  height="100%"
-                />
-              </IconLink>
-
-              <IconLink
-                external
-                href="https://dribbble.com/willey3x37"
-              >
-                <DribbleIcon
-                  color={
-                    width <=
-                    breakpoints.lg
-                      ? "var(--primary)"
-                      : undefined
-                  }
-                  accentColor={
-                    width <=
-                    breakpoints.lg
-                      ? "var(--secondary)"
-                      : undefined
-                  }
-                  height="100%"
-                />
-              </IconLink>*/}
               </FlexContainer>
-            </HeaderWithSubtitle>
+            </TitleWithSubtitle>
           </FlexContainer>
         </HeaderWithSpacer>
       </BackgroundWrapper>
-    </div>
+    </>
   );
 };
 

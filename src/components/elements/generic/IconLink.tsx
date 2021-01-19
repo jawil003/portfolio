@@ -13,6 +13,7 @@ export interface Props {
   external?: boolean;
   background?: string;
   children?: any;
+  className?: string;
 }
 
 /**
@@ -26,10 +27,12 @@ const IconLink: React.FC<Props> = ({
   external,
   size,
   background,
+  className,
 }) => {
   const scale = useSpring(1);
   return (
     <motion.div
+      className={className}
       style={{
         position: "relative",
         scale,

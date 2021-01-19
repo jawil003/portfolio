@@ -1,3 +1,5 @@
+import { css } from "@emotion/react";
+import designSystem from "@style/designSystem";
 import { motion } from "framer-motion";
 import React, {
   forwardRef,
@@ -20,83 +22,59 @@ const HeaderWithSpacer = forwardRef<
   PropsWithChildren<Props>
 >(({ children, align }, ref) => {
   return (
-    <header ref={ref}>
-      <style jsx>{`
-        header {
+    <header
+      css={css`
+        & {
           overflow: hidden;
           height: 100%;
           width: 100%;
+          flex: 1;
+          display: flex;
+          justify-content: center;
         }
-        @media (min-width: 1100px) {
-          header {
-            flex: 1;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 100%;
-          }
 
-          header
-            > :global(div:first-child) {
+        /* desktop/tablet */
+        @media (min-width: ${designSystem.bp(
+            "tabletPortraitUp",
+          )}) {
+          & {
+            flex-direction: row;
+          }
+          & > * {
+            flex: 1;
+          }
+          & > :first-of-type {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        /* mobile */
+        @media (max-width: ${designSystem.bp(
+            "tabletPortraitUp",
+          )}) {
+          & {
+            flex-direction: column;
+            align-items: center;
+          }
+          & > * {
+            flex: 1;
+          }
+          & > :first-of-type {
             flex: 1;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
           }
-          header
-            > :global(div:last-child) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-
-        @media (max-width: 1099px) {
-          header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-
-          header
-            > :global(div):first-child {
-            height: calc(
-              100% - calc(100px + 70px)
-            );
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-          }
-
-          header
-            > :global(div:first-child)
-            > :global(h3),
-          header
-            > :global(div:first-child)
-            > :global(p),
-          header
-            > :global(div:first-child)
-            > :global(div) {
-          }
-        }
-
-        @media (min-width: 500px) and (max-width: 819px) {
-          header > div:last-child {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-
-        @media (max-width: 499px) {
-          header > div:last-child {
+          & > :last-child {
             display: none;
           }
         }
-      `}</style>
+      `}
+      ref={ref}
+    >
       <motion.div
         variants={flyFromTop}
         initial="initial"

@@ -1,6 +1,5 @@
-import React, {
-  CSSProperties,
-} from "react";
+import { css } from "@emotion/react";
+import React from "react";
 
 interface Props {
   direction?: "row" | "column";
@@ -34,7 +33,7 @@ interface Props {
     | "flex-end"
     | "stretch";
   wrap?: boolean;
-  style?: CSSProperties;
+  className?: string;
 }
 
 /**
@@ -51,17 +50,14 @@ const FlexContainer: React.FC<Props> = ({
   alignContent,
   wrap,
   children,
-  style,
   alignSelf,
   justifySelf,
+  className,
 }) => {
   return (
     <div
-      className="flexContainer"
-      style={{ ...style }}
-    >
-      <style jsx>{`
-        .flexContainer {
+      css={css`
+        & {
           display: flex;
           align-self: ${alignSelf};
           justify-self: ${justifySelf};
@@ -75,11 +71,13 @@ const FlexContainer: React.FC<Props> = ({
           margin: calc(${rowGap} / -2)
             calc(${columnGap} / -2);
         }
-        .flexContainer > :global(*) {
+        & > * {
           margin: calc(${rowGap} / 2)
             calc(${columnGap} / 2);
         }
-      `}</style>
+      `}
+      className={className}
+    >
       {children}
     </div>
   );

@@ -3,18 +3,17 @@ import React, {
   useRef,
   useState,
 } from "react";
-import CategoryCard from "../../components/elements/custom/CategoryCard";
+import CategoryCard from "../../components/elements/responsive/CategoryCard";
 import CategoryCardWrapper from "../../components/layout/CategoryCardWrapper";
-import CategoryHeader from "../../components/elements/custom/CategoryHeader";
-import FullScreenKnowledgeSection from "../../components/elements/custom/FullScreenKnowledgeSection";
+import CategoryHeader from "../../components/elements/responsive/CategoryHeader";
+import FullScreenKnowledgeSection from "../../components/elements/responsive/FullScreenKnowledgeSection";
 import IconButton from "../../components/elements/generic/IconButton";
 import DatabaseIcon from "../../components/icons/database.icon";
 import DesktopIcon from "../../components/icons/desktop.icon";
 import DisplayAndWebpageIcon from "../../components/icons/displayAndWebpage.icon";
 import SmartphoneIcon from "../../components/icons/smartphone.icon";
-import useTheme from "../../hooks/useTheme.hook";
 import NavigationBar from "../../components/layout/DesktopNavigationBar";
-import BackTopButton from "../../components/elements/custom/BackTopButton";
+import BackTopButton from "../../components/elements/responsive/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
 import useBreakpoint, {
@@ -32,7 +31,7 @@ import { title } from "../../../package.json";
 import HeaderService, {
   Header,
 } from "src/services/header.service";
-import HeaderWithSubtitle from "src/components/elements/custom/HeaderWithSubtitle";
+import TitleWithSubtitle from "src/components/elements/responsive/TitleWithSubtitle";
 import { useKnowledgeIcons } from "src/hooks/useIcons.hook";
 
 interface StaticProps {
@@ -52,11 +51,6 @@ const Contact: React.FC<StaticProps> = ({
     subtitle: knowledgeSubTitle,
   },
 }) => {
-  const {
-    palette: {
-      color: { primary, secondaryText },
-    },
-  } = useTheme();
   const getIcon = useKnowledgeIcons();
 
   const [
@@ -135,7 +129,7 @@ const Contact: React.FC<StaticProps> = ({
       >
         <HeaderWithSpacer first>
           <FlexContainer justifyContent="center">
-            <HeaderWithSubtitle
+            <TitleWithSubtitle
               heading={knowledgeTitle}
               description={
                 knowledgeSubTitle
@@ -287,7 +281,7 @@ const Contact: React.FC<StaticProps> = ({
                   <DropIcon height="27px" />
                 </IconButton>
               </FlexContainer>
-            </HeaderWithSubtitle>
+            </TitleWithSubtitle>
           </FlexContainer>
         </HeaderWithSpacer>
       </BackgroundWrapper>
@@ -297,8 +291,6 @@ const Contact: React.FC<StaticProps> = ({
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          backgroundColor: primary,
-          color: secondaryText,
         }}
       >
         {knowledgeCategories.map(

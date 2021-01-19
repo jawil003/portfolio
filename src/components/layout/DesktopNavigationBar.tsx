@@ -7,8 +7,8 @@ import {
 } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigationIcons } from "src/hooks/useIcons.hook";
-import Logo from "../elements/custom/Logo";
-import NavigationBarItem from "../elements/custom/NavigationBarItem";
+import Logo from "../elements/responsive/Logo";
+import NavigationBarItem from "../elements/responsive/NavigationBarItem";
 import FlexContainer from "../elements/generic/FlexContainer";
 import Spacer from "../elements/generic/Spacer";
 import {
@@ -16,13 +16,20 @@ import {
   footer as footerItems,
 } from "../../config/routes.json";
 import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
+import designSystem from "@style/designSystem";
+
+interface Props {
+  className?: string;
+}
 
 /**
  * An NavigationBar React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const NavigationBar: React.FC = () => {
+const NavigationBar: React.FC<Props> = ({
+  className,
+}) => {
   const getIcon = useNavigationIcons();
   const navBar = useAnimation();
   const [show, setShow] = useState<
@@ -32,6 +39,7 @@ const NavigationBar: React.FC = () => {
   return (
     <>
       <nav
+        className={className}
         style={{
           position: "relative",
           zIndex: 9998,
@@ -57,6 +65,7 @@ const NavigationBar: React.FC = () => {
         </div>
       </nav>
       <nav
+        className={className}
         onClick={() => {
           navBar
             .start({
@@ -97,8 +106,9 @@ const NavigationBar: React.FC = () => {
               "repeat(3, auto) 1fr auto",
             float: "left",
             height: "100%",
-            background:
-              "var(--primary)",
+            background: designSystem.brand(
+              "primary",
+            ),
           }}
         >
           <div

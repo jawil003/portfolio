@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import React from "react";
 
 interface Props {
@@ -790,7 +791,7 @@ const ContactMeDesign: React.FC<Props> = ({
 };
 
 ContactMeDesign.defaultProps = {
-  color: "var(--primary)",
+  color: designSystem.brand("primary"),
 };
 
 export default ContactMeDesign;

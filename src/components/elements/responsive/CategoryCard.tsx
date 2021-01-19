@@ -1,3 +1,4 @@
+import designSystem from "@style/designSystem";
 import {
   motion,
   MotionStyle,
@@ -37,8 +38,9 @@ const CategoryCard: React.FC<Props> = ({
         style={{
           width: "270px",
           height: "405px",
-          backgroundColor:
-            "var(--primary)",
+          backgroundColor: designSystem.brand(
+            "primary",
+          ),
           background:
             "var(--lightgrey)",
           boxShadow:

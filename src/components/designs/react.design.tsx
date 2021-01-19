@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import React from "react";
 
 interface Props {
@@ -19,11 +20,17 @@ const ReactDesign: React.FC<Props> = ({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      style={{ minWidth }}
       width={width}
       height={height}
       viewBox="0 0 842 630"
       fill="#fff"
+      css={css`
+        & {
+          ${minWidth
+            ? `min-width: ${minWidth}`
+            : undefined}
+        }
+      `}
     >
       <path d="M0 0H842V630H0z"></path>
       <path

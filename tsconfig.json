@@ -23,6 +23,12 @@
     "paths": {
       "@apollo/myclient": [
         "src/config/client.ts"
+      ],
+      "@style/breakpoints": [
+        "src/styles/breakpoints.ts"
+      ],
+      "@style/designSystem": [
+        "src/styles/designSystem.ts"
       ]
     }
   },

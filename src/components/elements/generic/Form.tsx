@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import React from "react";
 
 interface Props {
@@ -14,13 +15,16 @@ const Form: React.FC<Props> = ({
 }) => {
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        flex: 1,
-        width: "100%",
-        maxWidth: "450px",
-      }}
+      css={css`
+        & {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          width: 100%;
+          max-width: 450px;
+        }
+      `}
+      className="form"
     >
       {children}
     </div>

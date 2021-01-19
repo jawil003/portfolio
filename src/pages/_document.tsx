@@ -21,10 +21,6 @@ class MyDocument extends Document {
       <Html lang="de">
         <Head>
           <link
-            rel="stylesheet"
-            href="/styles/index.css"
-          />
-          <link
             rel="shortcut icon"
             href="img/favicon.png"
             type="image/x-icon"
@@ -36,11 +32,7 @@ class MyDocument extends Document {
           )}
         </Head>
 
-        <body
-          style={{
-            minHeight: "100vh",
-          }}
-        >
+        <body>
           <Main />
           <NextScript />
         </body>

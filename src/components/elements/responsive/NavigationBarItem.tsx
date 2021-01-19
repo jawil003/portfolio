@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Spacer from "../generic/Spacer";
 import Typography from "../generic/Typography";
-
+import { css } from "@emotion/react";
 interface Props {
   icon?: JSX.Element;
   href: string;
@@ -23,10 +23,8 @@ const NavigationBarItem: React.FC<Props> = ({
   return (
     <Link href={href}>
       <a
-        className={"navigationBarItem"}
-      >
-        <style jsx>{`
-          .navigationBarItem {
+        css={css`
+          & {
             padding: 10px 20px;
             height: 100%;
             display: flex;
@@ -35,11 +33,11 @@ const NavigationBarItem: React.FC<Props> = ({
             color: #000;
             cursor: pointer;
           }
-          .navigationBarItem
-            :global(svg) {
+          & > svg {
             fill: #000;
           }
-          .navigationBarItem:hover {
+
+          &:hover {
             background-color: rgba(
               0,
               0,
@@ -47,11 +45,11 @@ const NavigationBarItem: React.FC<Props> = ({
               0.35
             );
           }
-          .navigationBarItem
-            > :global(*) {
+          & > * {
             display: inline-block;
           }
-        `}</style>
+        `}
+      >
         {icon
           ? [
               <div

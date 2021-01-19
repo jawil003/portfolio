@@ -2,7 +2,7 @@
   overflow: hidden;
 }
 
-.header > div:first-child {
+.header > div:first-of-type {
   width: 100%;
 }
 @media (min-width: 820px) {
@@ -13,7 +13,7 @@
     grid-template-rows: 100%;
   }
 
-  .header > div:first-child {
+  .header > div:first-of-type {
     align-items: center;
     align-content: center;
     flex: 1;
@@ -33,7 +33,7 @@
   .header {
   }
 
-  .header > div:first-child {
+  .header > div:first-of-type {
     position: absolute;
     top: 100px;
     left: 0;
@@ -47,9 +47,9 @@
     flex-direction: column;
   }
 
-  .header > div:first-child > h3,
-  .header > div:first-child > p,
-  .header > div:first-child > div {
+  .header > div:first-of-type > h3,
+  .header > div:first-of-type > p,
+  .header > div:first-of-type > div {
     background-color: #fff;
   }
 }

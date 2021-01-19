@@ -1,5 +1,22 @@
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import React from "react";
 import Typography from "./Typography";
+
+const Input = styled.textarea`
+  & {
+    font-size: 1.15em;
+    width: 100%;
+    border: none;
+    resize: none;
+    background: transparent;
+  }
+  &:hover,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+`;
 
 export interface Props {
   title?: string;
@@ -29,53 +46,44 @@ const TextField: React.FC<Props> = ({
   value,
 }) => {
   return (
-    <div className={"inputRoot"}>
-      <style jsx>{`
-        .input {
-          font-size: 1.15em;
-          width: 100%;
-          border: none;
-          resize: none;
-          background: transparent;
-        }
-        .inputRoot {
+    <div
+      css={css`
+        & {
           display: grid;
           grid-template-rows: auto auto;
           display: inline-block;
         }
-
-        .input:hover,
-        .input:focus {
-          border: none;
-          outline: none;
-        }
-
-        .inputContainer {
-          padding: 10px 15px;
-          background: var(--lightgrey);
-          border-radius: 5px;
-          width: 100%;
-        }
-      `}</style>
+      `}
+    >
       <Typography variant="b1">
         {title}
       </Typography>
-      <div className={"inputContainer"}>
+      <div
+        css={css`
+          & {
+            padding: 10px 15px;
+            background: var(
+              --lightgrey
+            );
+            border-radius: 5px;
+            width: 100%;
+          }
+        `}
+      >
         {area ? (
-          <textarea
+          <Input
             onChange={onChange}
             value={value}
             placeholder={placeholder}
-            className={"input"}
             cols={23}
             rows={rows}
-          ></textarea>
+          ></Input>
         ) : (
-          <input
+          <Input
+            as="input"
             value={value}
             onChange={onChange}
             placeholder={placeholder}
-            className={"input"}
           />
         )}
       </div>

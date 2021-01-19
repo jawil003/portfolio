@@ -2,7 +2,8 @@ import React, {
   forwardRef,
   PropsWithChildren,
 } from "react";
-import css from "styled-jsx/css";
+import { css } from "@emotion/react";
+import designSystem from "src/styles/designSystem";
 
 export const typographyClasses = css`
   .bold {
@@ -99,21 +100,35 @@ const generatestyles = (
   wordSpacing?: number,
   wrap?: boolean,
 ) => {
-  return css.resolve`
-    .root {
+  return css`
+    & {
       font-size: ${fontSize}rem;
       font-weight: ${bold ===
       "semi-bold"
-        ? 600
+        ? designSystem.get(
+            "fontWeight.semiBold",
+          )
         : bold === "bold"
-        ? 700
+        ? designSystem.get(
+            "fontWeight.bold",
+          )
         : bold === "bolder"
-        ? 900
+        ? designSystem.get(
+            "fontWeight.bolder",
+          )
         : fontSize > 1
-        ? 700
-        : 400};
-      color: ${color};
-      font-family: ${fontFamily};
+        ? designSystem.get(
+            "fontWeight.semiBold",
+          )
+        : designSystem.get(
+            "fontWeight.light",
+          )};
+      ${color
+        ? `color: ${color}`
+        : undefined};
+      ${fontFamily
+        ? `font-family: ${fontFamily}`
+        : undefined};
       text-align: ${align};
       font-style: ${italic
         ? "italic"
@@ -162,6 +177,7 @@ export interface Props {
   letterSpacing?: number;
   wordSpacing?: number;
   wrap?: boolean;
+  className?: string;
 }
 
 /**
@@ -189,13 +205,11 @@ const Typography: React.FC<Props> = forwardRef<
       letterSpacing,
       wordSpacing,
       wrap,
+      className,
     },
     ref,
   ) => {
-    const {
-      className,
-      styles,
-    } = generatestyles(
+    const styles = generatestyles(
       getFontSizeForVariant(variant),
       color,
       fontFamily,
@@ -211,34 +225,26 @@ const Typography: React.FC<Props> = forwardRef<
     if (variant?.includes("b")) {
       if (inline)
         return (
-          <span ref={ref}>
-            <style jsx>{`
-              ${typographyClasses}
-              span {
-                color: ${color};
-                max-width: ${maxLength};
-                font-family: ${fontFamily};
-                letter-spacing: ${letterSpacing};
-                word-spacing: ${wordSpacing};
-              }
-            `}</style>
-            {children}
-          </span>
+          <>
+            <span
+              className={className}
+              ref={ref}
+              css={[styles]}
+            >
+              {children}
+            </span>
+          </>
         );
       return (
-        <p ref={ref}>
-          <style jsx>{`
-            ${typographyClasses}
-            p {
-              color: ${color};
-              max-width: ${maxLength};
-              font-family: ${fontFamily};
-              letter-spacing: ${letterSpacing};
-              word-spacing: ${wordSpacing};
-            }
-          `}</style>
-          {children}
-        </p>
+        <>
+          <p
+            ref={ref}
+            className={className}
+            css={[styles]}
+          >
+            {children}
+          </p>
+        </>
       );
     }
     switch (variant) {
@@ -247,56 +253,60 @@ const Typography: React.FC<Props> = forwardRef<
           <>
             <h1
               ref={ref}
-              className={`${className}`}
+              className={className}
+              css={[styles]}
             >
               {children}
             </h1>
-            {styles}
           </>
         );
       }
       case "h2": {
         return (
-          <h2
-            ref={ref}
-            className={`${className} root`}
-          >
-            {styles}
-            {children}
-          </h2>
+          <>
+            <h2
+              ref={ref}
+              className={className}
+              css={[styles]}
+            >
+              {children}
+            </h2>
+          </>
         );
       }
       case "h3": {
         return (
           <>
             <h3
+              className={className}
               ref={ref}
-              className={`${className} root`}
+              css={styles}
             >
               {children}
             </h3>
-            {styles}
           </>
         );
       }
       case "h4": {
         return (
-          <h4
-            ref={ref}
-            className={`${className} root`}
-          >
-            {styles}
-            {children}
-          </h4>
+          <>
+            <h4
+              className={className}
+              ref={ref}
+              css={[styles]}
+            >
+              {children}
+            </h4>
+          </>
         );
       }
       case "h5": {
         return (
           <h5
+            className={className}
             ref={ref}
-            className={`${className} root`}
+            css={styles}
           >
-            {styles}
             {children}
           </h5>
         );
@@ -304,10 +314,10 @@ const Typography: React.FC<Props> = forwardRef<
       default: {
         return (
           <h6
+            className={className}
             ref={ref}
-            className={`${className} root`}
+            css={[styles]}
           >
-            {styles}
             {children}
           </h6>
         );

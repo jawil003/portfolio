@@ -4,7 +4,6 @@ import ContactMeDesign from "../components/designs/contactMe.design";
 import Button from "../components/elements/generic/Button";
 import Spacer from "../components/elements/generic/Spacer";
 import TextField from "../components/elements/generic/TextField";
-import useTheme from "../hooks/useTheme.hook";
 import NavigationBar from "../components/layout/DesktopNavigationBar";
 import Form from "src/components/elements/generic/Form";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
@@ -15,6 +14,7 @@ import useBreakpoint, {
 import { generateIndividualTags } from "src/services/meta.service";
 import ContactRequestService from "src/services/backend/contactRequest.service";
 import { title as appTitle } from "../../package.json";
+import designSystem from "@style/designSystem";
 
 interface UserMessage {
   name: string;
@@ -29,11 +29,6 @@ interface UserMessage {
  * @version 0.1
  */
 const Contact: React.FC = () => {
-  const {
-    palette: {
-      color: { secondary },
-    },
-  } = useTheme();
   const { width } = useBreakpoint();
   const [
     {
@@ -83,7 +78,9 @@ const Contact: React.FC = () => {
             }}
           >
             <ContactMeDesign
-              color={secondary}
+              color={designSystem.brand(
+                "secondary",
+              )}
               width="100%"
             />
           </div>
