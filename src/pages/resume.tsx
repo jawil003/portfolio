@@ -10,9 +10,9 @@ import ResumeItemType from "src/model/ResumeItem.model";
 import ResumeItem from "src/components/elements/responsive/ResumeItem";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
-import useBreakpoint, {
+import useViewportSize, {
   breakpoints,
-} from "src/hooks/useBreakpoints.hook";
+} from "src/hooks/useViewportSize.hook";
 import { generateIndividualTags } from "src/services/meta.service";
 import { title } from "../../package.json";
 import HeaderService, {
@@ -46,7 +46,7 @@ const Contact: React.FC<ServerSideProps> = ({
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
   ];
-  const { width } = useBreakpoint();
+  const { width } = useViewportSize();
   return (
     <>
       <Head>

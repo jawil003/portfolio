@@ -1,18 +1,16 @@
 import { css } from "@emotion/react";
 import React, { Children } from "react";
-import useBreakpoint from "src/hooks/useBreakpoints.hook";
-
-interface Props {}
+import useViewportSize from "src/hooks/useViewportSize.hook";
 
 /**
  * An CategoryCardWrapper React Component.
  * @author
  * @version 0.1
  */
-const CategoryCardWrapper: React.FC<Props> = ({
+const CategoryCardWrapper: React.FC = ({
   children,
 }) => {
-  const { width } = useBreakpoint();
+  const { width } = useViewportSize();
   const elementsWidth =
     Children.toArray(children).length *
     310;

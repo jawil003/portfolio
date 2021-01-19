@@ -3,13 +3,7 @@ import {
   useEffect,
 } from "react";
 
-export const breakpoints = {
-  sm: 400,
-  md: 780,
-  lg: 1100,
-};
-
-const useBreakpoint = () => {
+const useViewportSize = () => {
   const [brkPnt, setBrkPnt] = useState<{
     width: number;
     height: number;
@@ -37,4 +31,4 @@ const useBreakpoint = () => {
 
   return brkPnt;
 };
-export default useBreakpoint;
+export default useViewportSize;

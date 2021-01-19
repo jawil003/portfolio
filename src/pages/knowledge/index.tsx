@@ -16,9 +16,7 @@ import NavigationBar from "../../components/layout/DesktopNavigationBar";
 import BackTopButton from "../../components/elements/responsive/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
-import useBreakpoint, {
-  breakpoints,
-} from "../../hooks/useBreakpoints.hook";
+import useViewportSize from "../../hooks/useViewportSize.hook";
 import { GetStaticProps } from "next";
 import KnowledgeService from "src/services/knowledge.service";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
@@ -33,6 +31,8 @@ import HeaderService, {
 } from "src/services/header.service";
 import TitleWithSubtitle from "src/components/elements/responsive/TitleWithSubtitle";
 import { useKnowledgeIcons } from "src/hooks/useIcons.hook";
+import { css } from "@emotion/react";
+import designSystem from "@style/designSystem";
 
 interface StaticProps {
   knowledgeCategories: KnowledgeCategory[];
@@ -68,7 +68,7 @@ const Contact: React.FC<StaticProps> = ({
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
   );
-  const { width } = useBreakpoint();
+  const { width } = useViewportSize();
   useScrollPosition(
     ({ currPos }) => {
       if (currPos.y === 0)
@@ -94,29 +94,33 @@ const Contact: React.FC<StaticProps> = ({
       <BackgroundWrapper
         background={
           <div
-            style={{
-              display: "grid",
-              justifyItems:
-                width < breakpoints.lg
-                  ? "center"
-                  : undefined,
-              justifyContent:
-                width >= breakpoints.lg
-                  ? "end"
-                  : "center",
-              alignItems: "center",
-              width: "100%",
-              height: "100%",
-              gridTemplateRows: "100%",
-              gridTemplateColumns:
-                width >= breakpoints.lg
-                  ? "50%"
-                  : "100%",
-              opacity:
-                width < breakpoints.lg
-                  ? 0.3
-                  : undefined,
-            }}
+            css={css`
+              & {
+                display: grid;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                grid-template-rows: 100%;
+              }
+              @media (min-width: ${designSystem.bp(
+                  "tabletPortraitUp",
+                )}) {
+                & {
+                  justify-content: end;
+                  grid-template-columns: 50%;
+                }
+              }
+              @media (max-width: ${designSystem.bp(
+                  "tabletPortraitUp",
+                )}) {
+                & {
+                  justify-items: center;
+                  justify-content: center;
+                  grid-template-columns: 100%;
+                  opacity: 0.3;
+                }
+              }
+            `}
           >
             <div>
               <ReactDesign
@@ -135,38 +139,6 @@ const Contact: React.FC<StaticProps> = ({
                 knowledgeSubTitle
               }
             >
-              {/*<Typography
-            variant="h3"
-            align={
-              width > breakpoints.lg
-                ? "left"
-                : "center"
-            }
-          >
-            Wie kann ich dir helfen?
-          </Typography>
-          <Spacer height="0.4em" />
-          <Typography
-            wordSpacing={11}
-            align={
-              width > breakpoints.lg
-                ? "left"
-                : "center"
-            }
-          >
-            Vielleicht sagt dir ja eines
-            meiner Fachgebiete zu, dann{" "}
-            <Typography
-              underline
-              inline
-            >
-              <Link href="/contact">
-                <a>kontaktiere</a>
-              </Link>
-            </Typography>{" "}
-            mich gerne
-          </Typography>
-          <Spacer height="12px" />*/}
               <FlexContainer
                 justifyContent="center"
                 columnGap="10px"
@@ -207,7 +179,10 @@ const Contact: React.FC<StaticProps> = ({
                       },
                     )
                   }
-                  color="var(--yellow)"
+                  color={designSystem.color(
+                    "yellow",
+                    "base",
+                  )}
                 >
                   <DisplayAndWebpageIcon height="60%" />
                 </IconButton>
@@ -231,7 +206,10 @@ const Contact: React.FC<StaticProps> = ({
                       },
                     )
                   }
-                  color="var(--red)"
+                  color={designSystem.color(
+                    "red",
+                    "base",
+                  )}
                 >
                   <SmartphoneIcon height="50%" />
                 </IconButton>
@@ -255,7 +233,10 @@ const Contact: React.FC<StaticProps> = ({
                       },
                     )
                   }
-                  color="var(--green)"
+                  color={designSystem.color(
+                    "green",
+                    "base",
+                  )}
                 >
                   <DesktopIcon height="50%" />
                 </IconButton>
@@ -276,7 +257,10 @@ const Contact: React.FC<StaticProps> = ({
                       },
                     )
                   }
-                  color="var(--orange)"
+                  color={designSystem.color(
+                    "orange",
+                    "base",
+                  )}
                 >
                   <DropIcon height="27px" />
                 </IconButton>

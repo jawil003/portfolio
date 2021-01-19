@@ -8,13 +8,11 @@ import NavigationBar from "../components/layout/DesktopNavigationBar";
 import Form from "src/components/elements/generic/Form";
 import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
 import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
-import useBreakpoint, {
-  breakpoints,
-} from "src/hooks/useBreakpoints.hook";
 import { generateIndividualTags } from "src/services/meta.service";
 import ContactRequestService from "src/services/backend/contactRequest.service";
 import { title as appTitle } from "../../package.json";
 import designSystem from "@style/designSystem";
+import { css } from "@emotion/react";
 
 interface UserMessage {
   name: string;
@@ -29,7 +27,6 @@ interface UserMessage {
  * @version 0.1
  */
 const Contact: React.FC = () => {
-  const { width } = useBreakpoint();
   const [
     {
       name,
@@ -58,24 +55,31 @@ const Contact: React.FC = () => {
       <BackgroundWrapper
         background={
           <div
-            style={{
-              marginLeft:
-                width >= breakpoints.lg
-                  ? "50%"
-                  : undefined,
-              width:
-                width >= breakpoints.lg
-                  ? "50%"
-                  : "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",
-              opacity:
-                width >= breakpoints.lg
-                  ? 1
-                  : 0.3,
-            }}
+            css={css`
+              & {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+              }
+              @media (min-width: ${designSystem.bp(
+                  "tabletPortraitUp",
+                )}) {
+                & {
+                  margin-left: 50%;
+                  width: 50%;
+                  opacity: 1;
+                }
+              }
+              @media (max-width: ${designSystem.bp(
+                  "tabletPortraitUp",
+                )}) {
+                & {
+                  width: 100%;
+                  opacity: 0.3;
+                }
+              }
+            `}
           >
             <ContactMeDesign
               color={designSystem.brand(

@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import designSystem from "@style/designSystem";
 import {
   motion,
   useSpring,
@@ -21,6 +22,7 @@ export interface Props {
     | "bottom";
   tooltipText: string;
   children?: any;
+  className?: string;
 }
 
 /**
@@ -33,10 +35,14 @@ const IconButton: React.FC<Props> = ({
   children,
   color,
   onClick,
+  className,
 }) => {
   const scale = useSpring(1);
   return (
     <motion.div
+      className={`icon-button-container ${
+        className || ""
+      }`}
       css={css`
         & {
           position: relative;
@@ -47,6 +53,7 @@ const IconButton: React.FC<Props> = ({
       }}
     >
       <div
+        className="icon-button-icon-container"
         onFocus={() => {
           scale.set(1.2);
         }}
@@ -71,7 +78,10 @@ const IconButton: React.FC<Props> = ({
 };
 
 IconButton.defaultProps = {
-  color: "var(--blue)",
+  color: designSystem.color(
+    "blue",
+    "base",
+  ),
   size: "48px",
 };
 
