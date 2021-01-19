@@ -12,7 +12,6 @@ export default class HashnodeService {
             publication {
               posts {
                 title
-                type
                 cuid
                 coverImage
               }
@@ -33,7 +32,6 @@ interface User {
   publication: {
     posts: {
       title: string;
-      type: string;
       cuid: string;
       coverImage: string;
     }[];
