@@ -4,15 +4,15 @@ import React, {
   useState,
 } from "react";
 import CategoryCard from "../../components/elements/responsive/CategoryCard";
-import CategoryCardWrapper from "../../components/layout/CategoryCardWrapper";
+import CategoryCardWrapper from "../../components/elements/responsive/CategoryCardWrapper";
 import CategoryHeader from "../../components/elements/responsive/CategoryHeader";
-import FullScreenKnowledgeSection from "../../components/elements/responsive/FullScreenKnowledgeSection";
+import FullScreenKnowledgeSection from "../../components/elements/generic/FullScreenKnowledgeSection";
 import IconButton from "../../components/elements/generic/IconButton";
 import DatabaseIcon from "../../components/icons/database.icon";
 import DesktopIcon from "../../components/icons/desktop.icon";
 import DisplayAndWebpageIcon from "../../components/icons/displayAndWebpage.icon";
 import SmartphoneIcon from "../../components/icons/smartphone.icon";
-import NavigationBar from "../../components/layout/DesktopNavigationBar";
+import NavigationBar from "../../components/elements/generic/DesktopNavigationBar";
 import BackTopButton from "../../components/elements/responsive/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
@@ -22,14 +22,14 @@ import KnowledgeService from "src/services/knowledge.service";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 import ReactDesign from "src/components/designs/react.design";
-import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
-import HeaderWithSpacer from "src/components/layout/HeaderWithSpacer";
+import BackgroundWrapper from "src/components/elements/generic/BackgroundWrapper";
+import HeaderWithSpacer from "src/components/elements/responsive/HeaderWithSpacer";
 import { generateIndividualTags } from "src/services/meta.service";
 import { title } from "../../../package.json";
 import HeaderService, {
   Header,
 } from "src/services/header.service";
-import TitleWithSubtitle from "src/components/elements/responsive/TitleWithSubtitle";
+import TitleWithSubtitle from "src/components/elements/generic/TitleWithSubtitle";
 import { useKnowledgeIcons } from "src/hooks/useIcons.hook";
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
@@ -75,7 +75,7 @@ const Contact: React.FC<StaticProps> = ({
         setHideButton(true);
       else setHideButton(false);
     },
-    [hideButton],
+    [],
     undefined,
     false,
     300,
@@ -150,7 +150,7 @@ const Contact: React.FC<StaticProps> = ({
                   tooltipText="Backend"
                   tooltipOrientation="left"
                   onClick={() =>
-                    paragraphs[2].current?.scrollIntoView(
+                    paragraphs[1].current?.scrollIntoView(
                       {
                         behavior:
                           "smooth",
@@ -171,7 +171,7 @@ const Contact: React.FC<StaticProps> = ({
                       : "top"
                   }
                   onClick={() =>
-                    paragraphs[3].current?.scrollIntoView(
+                    paragraphs[2].current?.scrollIntoView(
                       {
                         behavior:
                           "smooth",
@@ -199,7 +199,7 @@ const Contact: React.FC<StaticProps> = ({
                       : "right"
                   }
                   onClick={() =>
-                    paragraphs[4].current?.scrollIntoView(
+                    paragraphs[3].current?.scrollIntoView(
                       {
                         behavior:
                           "smooth",
@@ -226,7 +226,7 @@ const Contact: React.FC<StaticProps> = ({
                   }
                   tooltipText="Desktop"
                   onClick={() =>
-                    paragraphs[5].current?.scrollIntoView(
+                    paragraphs[4].current?.scrollIntoView(
                       {
                         behavior:
                           "smooth",
@@ -251,7 +251,7 @@ const Contact: React.FC<StaticProps> = ({
                       : "bottom"
                   }
                   onClick={() =>
-                    paragraphs[6].current?.scrollIntoView(
+                    paragraphs[5].current?.scrollIntoView(
                       {
                         behavior:
                           "smooth",
@@ -291,6 +291,7 @@ const Contact: React.FC<StaticProps> = ({
           ) => {
             return (
               <FullScreenKnowledgeSection
+                ref={paragraphs[index]}
                 rowGap="30px"
                 key={title + "-snap"}
                 latest={

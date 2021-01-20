@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import Spacer from "../generic/Spacer";
-import Typography from "../generic/Typography";
+import Spacer from "./Spacer";
+import Typography from "./Typography";
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
 interface Props {

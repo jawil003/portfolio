@@ -3,11 +3,13 @@ import { hashnodeClient } from "@apollo/myclient";
 
 export default class HashnodeService {
   public static async getMyPosts() {
-    hashnodeClient.query<{
+    const {
+      data,
+    } = await hashnodeClient.query<{
       user: User;
     }>({
       query: gql`
-        {
+        query Me($username: String!) {
           user(username: $username) {
             publication {
               posts {
@@ -25,6 +27,7 @@ export default class HashnodeService {
             .HASHNODE_API_USERNAME,
       },
     });
+    return data;
   }
 }
 

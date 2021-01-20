@@ -1,7 +1,7 @@
 import React from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import BetaDialog from "src/components/elements/responsive/BetaDialog";
+import BetaDialog from "src/components/elements/generic/BetaDialog";
 import globalStyles from "../styles/styles";
 /**
  * An App React Component.

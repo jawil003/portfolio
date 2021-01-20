@@ -16,7 +16,8 @@
       "icon": "LocalLibraryRoundedIcon"
     },
     {
-      "href": "/articles",
+      "href": "https://willey3x37.hashnode.dev",
+      "external": true,
       "name": "Veröffentlichungen",
       "icon": "DescriptionRoundedIcon"
     },

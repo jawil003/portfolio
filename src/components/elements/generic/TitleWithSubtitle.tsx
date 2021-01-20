@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import React from "react";
-import Typography from "../generic/Typography";
+import Typography from "./Typography";
 
 interface Props {
   heading: string;

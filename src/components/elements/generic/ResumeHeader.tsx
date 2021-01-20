@@ -1,6 +1,6 @@
 import designSystem from "@style/designSystem";
 import React from "react";
-import Typography from "../generic/Typography";
+import Typography from "./Typography";
 
 interface Props {}
 

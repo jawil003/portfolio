@@ -3,9 +3,9 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import Button from "../generic/Button";
-import FlexContainer from "../generic/FlexContainer";
-import Typography from "../generic/Typography";
+import Button from "./Button";
+import FlexContainer from "./FlexContainer";
+import Typography from "./Typography";
 
 const DIALOG_SHOWN_KEY =
   "beta_dialog_shown";

@@ -2,13 +2,13 @@ import Head from "next/head";
 import React from "react";
 import Spacer from "../components/elements/generic/Spacer";
 import IconLink from "../components/elements/generic/IconLink";
-import HeaderWithSpacer from "../components/layout/HeaderWithSpacer";
-import NavigationBar from "../components/layout/DesktopNavigationBar";
-import BackgroundWrapper from "src/components/layout/BackgroundWrapper";
+import HeaderWithSpacer from "../components/elements/responsive/HeaderWithSpacer";
+import NavigationBar from "../components/elements/generic/DesktopNavigationBar";
+import BackgroundWrapper from "src/components/elements/generic/BackgroundWrapper";
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 import BlobDesktopDesign from "src/components/designs/blobDesktop.design";
 import { generateIndividualTags } from "src/services/meta.service";
-import TitleWithSubtitle from "../components/elements/responsive/TitleWithSubtitle";
+import TitleWithSubtitle from "../components/elements/generic/TitleWithSubtitle";
 import { GetStaticProps } from "next";
 import SocialItemsService, {
   SocialItem,
@@ -49,8 +49,7 @@ const Index: React.FC<ServerSideProps> = ({
               svg.hamburger-menu-icon
               > * {
               fill: ${designSystem
-                .colors.brand
-                .secondary};
+                .colors.brand.primary};
             }
           }
         `}
@@ -66,8 +65,8 @@ const Index: React.FC<ServerSideProps> = ({
                   width: 100%;
                   height: 100%;
                   background-color: ${designSystem
-                    .breakpoints
-                    .tabletPortraitUp};
+                    .colors.brand
+                    .secondary};
                 }
 
                 & > svg {
