@@ -248,6 +248,13 @@ const LinkRoundedIcon = dynamic(
     ),
 );
 
+const FigmaIcon = dynamic(
+  () =>
+    import(
+      "../components/icons/figma.icon"
+    ),
+);
+
 export const useKnowledgeIcons = () => {
   return (data: {
     name: string;
@@ -261,7 +268,20 @@ export const useKnowledgeIcons = () => {
     } = data;
     switch (name) {
       case "AdobeXdIcon": {
-        return <AdobeXdIcon />;
+        return (
+          <AdobeXdIcon
+            height={height}
+            width={width}
+          />
+        );
+      }
+      case "FigmaIcon": {
+        return (
+          <FigmaIcon
+            height={height}
+            width={width}
+          />
+        );
       }
       case "TypescriptIcon": {
         return (

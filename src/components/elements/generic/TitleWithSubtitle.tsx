@@ -31,10 +31,9 @@ const TitleWithSubtitle: React.FC<Props> = ({
         css`
           & {
             display: inline-block;
-            margin: 0px 10% 0px
-              calc(10% - 20px);
+            margin: 0;
           }
-          & > *:not(:first-of-type) {
+          & > .subtitle {
             width: 0;
             min-width: 100%;
           }
@@ -45,6 +44,7 @@ const TitleWithSubtitle: React.FC<Props> = ({
         {heading}
       </Typography>
       <Typography
+        className="subtitle"
         italic
         wordSpacing={11}
       >

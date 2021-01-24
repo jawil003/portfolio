@@ -53,6 +53,9 @@ const CategoryCardWrapper: React.FC = ({
             )
           );
         }
+        & > * {
+          margin: 0 calc(var(--gap) / 2);
+        }
       `}
       className="container"
     >
