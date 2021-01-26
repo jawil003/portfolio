@@ -150,8 +150,10 @@ const NavigationBar: React.FC<Props> = ({
                 name,
                 href,
                 icon,
+                external,
               }) => (
                 <NavigationBarItem
+                  external={external}
                   key={name}
                   href={href}
                   icon={getIcon({

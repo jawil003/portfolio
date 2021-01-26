@@ -8,6 +8,7 @@ interface Props {
   icon?: JSX.Element;
   href: string;
   color?: string;
+  external?: boolean;
 }
 
 /**
@@ -20,10 +21,12 @@ const NavigationBarItem: React.FC<Props> = ({
   icon,
   href,
   color,
+  external,
 }) => {
-  return (
-    <Link href={href}>
+  if (external)
+    return (
       <a
+        href={href}
         css={css`
           & {
             padding: 10px 20px;
@@ -78,14 +81,75 @@ const NavigationBarItem: React.FC<Props> = ({
           {children}
         </Typography>
       </a>
-    </Link>
-  );
+    );
+  else
+    return (
+      <Link href={href}>
+        <a
+          css={css`
+            & {
+              padding: 10px 20px;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              color: #000;
+              cursor: pointer;
+            }
+            & > svg {
+              fill: #000;
+            }
+
+            &:hover {
+              background-color: rgba(
+                0,
+                0,
+                0,
+                0.35
+              );
+            }
+            & > * {
+              display: inline-block;
+            }
+          `}
+        >
+          {icon
+            ? [
+                <div
+                  key="iconContainer"
+                  style={{
+                    display:
+                      "inline-flex",
+                    alignItems:
+                      "center",
+                  }}
+                >
+                  {icon}
+                </div>,
+                <Spacer
+                  key="iconTextSpacer"
+                  width="10px"
+                />,
+              ]
+            : undefined}
+          <Typography
+            inline
+            variant="b1"
+            bold="semi-bold"
+            color={color}
+          >
+            {children}
+          </Typography>
+        </a>
+      </Link>
+    );
 };
 
 NavigationBarItem.defaultProps = {
   color:
     designSystem.colors.brand
       .secondaryText,
+  external: false,
 };
 
 export default NavigationBarItem;

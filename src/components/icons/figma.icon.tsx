@@ -16,7 +16,20 @@ const FigmaIcon: React.FC<Props> = ({
       height={height}
       viewBox="0 0 200 300"
       css={css`
-        & {
+        .st0 {
+          fill: #0acf83;
+        }
+        .st1 {
+          fill: #a259ff;
+        }
+        .st2 {
+          fill: #f24e1e;
+        }
+        .st3 {
+          fill: #ff7262;
+        }
+        .st4 {
+          fill: #1abcfe;
         }
       `}
     >
