@@ -4,6 +4,7 @@ import Spacer from "./Spacer";
 import Typography from "./Typography";
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
+import useDesktopNavigationBarContext from "src/hooks/useDesktopNavigationBarContext.hook";
 interface Props {
   icon?: JSX.Element;
   href: string;
@@ -23,9 +24,13 @@ const NavigationBarItem: React.FC<Props> = ({
   color,
   external,
 }) => {
-  if (external)
+  const {
+    setOpen,
+  } = useDesktopNavigationBarContext();
+  if (external) {
     return (
       <a
+        onClick={() => setOpen(false)}
         href={href}
         target="_blank"
         rel="noreferrer"
@@ -84,10 +89,11 @@ const NavigationBarItem: React.FC<Props> = ({
         </Typography>
       </a>
     );
-  else
+  } else {
     return (
       <Link href={href}>
         <a
+          onClick={() => setOpen(false)}
           css={css`
             & {
               padding: 10px 20px;
@@ -145,6 +151,7 @@ const NavigationBarItem: React.FC<Props> = ({
         </a>
       </Link>
     );
+  }
 };
 
 NavigationBarItem.defaultProps = {

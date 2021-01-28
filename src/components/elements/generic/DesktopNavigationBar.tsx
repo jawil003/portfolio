@@ -5,7 +5,7 @@ import {
   motion,
   useAnimation,
 } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigationIcons } from "src/hooks/useIcons.hook";
 import Logo from "../responsive/Logo";
 import NavigationBarItem from "./NavigationBarItem";
@@ -18,8 +18,7 @@ import {
 import HamburgerMenuIcon from "../../icons/hamburgerMenu.icon";
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
-import DesktopNavigationBarContextElement from "../contexts/DesktopNavigationBarContext";
-import useDesktopNavigationBarContext from "src/hooks/useDesktopNavigationBarContext.hook";
+import DesktopNavigationBarContext from "../../contexts/DesktopNavigationBarContext";
 
 interface Props {
   className?: string;
@@ -35,20 +34,27 @@ const NavigationBar: React.FC<Props> = ({
 }) => {
   const getIcon = useNavigationIcons();
   const navBar = useAnimation();
-  const {
-    open,
-    setOpen,
-  } = useDesktopNavigationBarContext();
+  const [open, setOpen] = useState(
+    false,
+  );
 
   return (
     <>
-      <DesktopNavigationBarContextElement>
+      <DesktopNavigationBarContext.Provider
+        value={{
+          open,
+          setOpen: (open: boolean) =>
+            setOpen(open),
+        }}
+      >
         <nav
           className={`desktop-navigation-bar-menu-container ${className}`}
           css={css`
             & {
               position: relative;
-              z-index: 9998;
+              z-index: ${designSystem
+                .positioning
+                .behindBehindFirst};
               margin-top: 10px;
               height: 100px;
               padding: 15px;
@@ -82,7 +88,9 @@ const NavigationBar: React.FC<Props> = ({
                 ? "block"
                 : "none"};
               position: fixed;
-              z-index: 9999;
+              z-index: ${designSystem
+                .positioning
+                .behindFirst};
               top: 0;
               left: 0;
               width: 100vw;
@@ -99,6 +107,9 @@ const NavigationBar: React.FC<Props> = ({
 
             &
               > .desktop-navigation-bar-sidebar-container {
+              position: relative;
+              z-index: ${designSystem
+                .positioning.first};
               display: grid;
               justify-content: start;
               padding: 10px 0px;
@@ -196,7 +207,7 @@ const NavigationBar: React.FC<Props> = ({
             </FlexContainer>
           </motion.div>
         </nav>
-      </DesktopNavigationBarContextElement>
+      </DesktopNavigationBarContext.Provider>
     </>
   );
 };

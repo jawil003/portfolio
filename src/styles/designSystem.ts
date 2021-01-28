@@ -50,6 +50,12 @@ const designSystem = {
     desktopUp: "1200px",
     bigDesktopUp: "1800px",
   },
+  positioning: {
+    behindBehindBehindFirst: 997,
+    behindBehindFirst: 998,
+    behindFirst: 999,
+    first: 1000,
+  },
 };
 
 export default designSystem;
