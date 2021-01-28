@@ -22,9 +22,10 @@
       "icon": "DescriptionRoundedIcon"
     },
     {
-      "href": "/links",
-      "name": "Linksammlung",
-      "icon": "LinkRoundedIcon"
+      "href": "https://dribbble.com/willey3x37",
+      "external": true,
+      "name": "Designs",
+      "icon": "BubbleChartIcon"
     }
   ],
   "footer": [

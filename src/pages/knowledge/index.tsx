@@ -147,6 +147,7 @@ const Contact: React.FC<StaticProps> = ({
               >
                 <IconButton
                   key="Backend"
+                  keyCode="1"
                   tooltipText="Backend"
                   tooltipOrientation="left"
                   onClick={() =>
@@ -163,6 +164,7 @@ const Contact: React.FC<StaticProps> = ({
                 </IconButton>
 
                 <IconButton
+                  keyCode="3"
                   key="Web"
                   tooltipText="Web"
                   tooltipOrientation={
@@ -189,6 +191,7 @@ const Contact: React.FC<StaticProps> = ({
                 </IconButton>
 
                 <IconButton
+                  keyCode="2"
                   key="Mobile"
                   tooltipText="Mobile"
                   tooltipOrientation={
@@ -217,6 +220,7 @@ const Contact: React.FC<StaticProps> = ({
 
                 <IconButton
                   key="Desktop"
+                  keyCode="2"
                   tooltipOrientation={
                     width > 1350
                       ? "bottom"
@@ -243,6 +247,7 @@ const Contact: React.FC<StaticProps> = ({
                   <DesktopIcon height="50%" />
                 </IconButton>
                 <IconButton
+                  keyCode="1"
                   key="Design"
                   tooltipText="Design"
                   tooltipOrientation={

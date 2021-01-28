@@ -27,6 +27,8 @@ const NavigationBarItem: React.FC<Props> = ({
     return (
       <a
         href={href}
+        target="_blank"
+        rel="noreferrer"
         css={css`
           & {
             padding: 10px 20px;

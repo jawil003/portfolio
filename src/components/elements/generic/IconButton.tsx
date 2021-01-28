@@ -4,24 +4,28 @@ import {
   motion,
   useSpring,
 } from "framer-motion";
-import React from "react";
+import React, {
+  PropsWithChildren,
+} from "react";
 
 export interface Props {
   size?: string;
   color?: string;
-  onClick?: (
-    event: React.MouseEvent<
-      HTMLDivElement,
-      MouseEvent
-    >,
+  onClick: (
+    event:
+      | React.MouseEvent<
+          HTMLDivElement,
+          MouseEvent
+        >
+      | React.KeyboardEvent<HTMLDivElement>,
   ) => void;
+  keyCode: string;
   tooltipOrientation?:
     | "left"
     | "right"
     | "top"
     | "bottom";
   tooltipText: string;
-  children?: any;
   className?: string;
 }
 
@@ -30,22 +34,42 @@ export interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const IconButton: React.FC<Props> = ({
+const IconButton: React.FC<
+  PropsWithChildren<Props>
+> = ({
   size,
   children,
   color,
   onClick,
+  keyCode,
   className,
 }) => {
   const scale = useSpring(1);
   return (
     <motion.div
+      onHoverStart={() => {
+        scale.set(1.2);
+      }}
+      onHoverEnd={() => {
+        scale.set(1);
+      }}
       className={`icon-button-container ${
         className || ""
       }`}
       css={css`
         & {
           position: relative;
+          width: ${size};
+          height: ${size};
+        }
+        & > div {
+          height: 100%;
+          width: 100%;
+          background-color: ${color};
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       `}
       style={{
@@ -54,22 +78,13 @@ const IconButton: React.FC<Props> = ({
     >
       <div
         className="icon-button-icon-container"
-        onFocus={() => {
-          scale.set(1.2);
-        }}
-        onBlur={() => {
-          scale.set(1);
+        tabIndex={0}
+        role="button"
+        onKeyPress={(event) => {
+          if (keyCode === event.code)
+            onClick(event);
         }}
         onClick={onClick}
-        style={{
-          height: size,
-          width: size,
-          backgroundColor: color,
-          borderRadius: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
       >
         {children}
       </div>

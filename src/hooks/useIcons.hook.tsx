@@ -241,17 +241,17 @@ const InfoRoundedIcon = dynamic(
     ),
 );
 
-const LinkRoundedIcon = dynamic(
-  () =>
-    import(
-      "@material-ui/icons/LinkRounded"
-    ),
-);
-
 const FigmaIcon = dynamic(
   () =>
     import(
       "../components/icons/figma.icon"
+    ),
+);
+
+const BubbleChartIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/BubbleChart"
     ),
 );
 
@@ -391,8 +391,8 @@ export const useNavigationIcons = () => {
           <LocalLibraryRoundedIcon />
         );
       }
-      case "LinkRoundedIcon": {
-        return <LinkRoundedIcon />;
+      case "BubbleChartIcon": {
+        return <BubbleChartIcon />;
       }
       case "HomeRoundedIcon": {
         return <HomeRoundedIcon />;

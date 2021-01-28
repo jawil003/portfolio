@@ -31,15 +31,10 @@ const IconLink: React.FC<Props> = ({
 }) => {
   const scale = useSpring(1);
   return (
-    <motion.div
-      className={className}
-      style={{
-        position: "relative",
-        scale,
-      }}
-    >
+    <>
       {external ? (
         <motion.a
+          className={className}
           onMouseOver={() => {
             scale.set(1.2);
           }}
@@ -50,7 +45,7 @@ const IconLink: React.FC<Props> = ({
           target="_blank"
           style={{
             backgroundColor: background,
-
+            scale,
             width: size,
             height: size,
             ...styles.container,
@@ -61,6 +56,7 @@ const IconLink: React.FC<Props> = ({
       ) : (
         <Link href={href}>
           <motion.a
+            className={className}
             onMouseOver={() => {
               scale.set(1.2);
             }}
@@ -78,7 +74,7 @@ const IconLink: React.FC<Props> = ({
           </motion.a>
         </Link>
       )}
-    </motion.div>
+    </>
   );
 };
 
@@ -86,8 +82,6 @@ const styles: {
   [x: string]: CSSProperties;
 } = {
   container: {
-    margin: "10px 0px",
-
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
