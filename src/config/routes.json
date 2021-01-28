@@ -7,13 +7,18 @@
     },
     {
       "href": "/knowledge",
-      "name": "Was ich kann",
+      "name": "Kenntnisse",
       "icon": "EmojiObjectsRoundedIcon"
     },
     {
       "href": "/resume",
-      "name": "Was ich gelernt habe",
-      "icon": "LocalLibraryRoundedIcon"
+      "name": "Erfahrungen",
+      "icon": "WorkRoundedIcon"
+    },
+    {
+      "href": "/projects",
+      "name": "Projekte",
+      "icon": "CodeRoundedIcon"
     },
     {
       "href": "https://willey3x37.hashnode.dev",

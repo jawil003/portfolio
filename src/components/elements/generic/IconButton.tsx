@@ -14,7 +14,7 @@ export interface Props {
   onClick: (
     event:
       | React.MouseEvent<
-          HTMLDivElement,
+          HTMLButtonElement,
           MouseEvent
         >
       | React.KeyboardEvent<HTMLDivElement>,
@@ -46,7 +46,7 @@ const IconButton: React.FC<
 }) => {
   const scale = useSpring(1);
   return (
-    <motion.div
+    <motion.button
       onHoverStart={() => {
         scale.set(1.2);
       }}
@@ -59,12 +59,12 @@ const IconButton: React.FC<
       css={css`
         & {
           position: relative;
+          display: block;
+          background: none;
+          outline: none;
+          border: none;
           width: ${size};
           height: ${size};
-        }
-        & > div {
-          height: 100%;
-          width: 100%;
           background-color: ${color};
           border-radius: 100%;
           display: flex;
@@ -75,20 +75,15 @@ const IconButton: React.FC<
       style={{
         scale,
       }}
+      onKeyPress={(event) => {
+        if (keyCode === event.code)
+          onClick(event as any);
+      }}
+      onClick={onClick}
+      tabIndex={0}
     >
-      <div
-        className="icon-button-icon-container"
-        tabIndex={0}
-        role="button"
-        onKeyPress={(event) => {
-          if (keyCode === event.code)
-            onClick(event);
-        }}
-        onClick={onClick}
-      >
-        {children}
-      </div>
-    </motion.div>
+      {children}
+    </motion.button>
   );
 };
 

@@ -20,7 +20,9 @@ const CategoryCardWrapper: React.FC = ({
         & {
           position: relative;
           left: 0px;
-          width: 100vw;
+          width: 80%;
+          margin: auto;
+          flex-wrap: wrap;
           --gap: 40px;
           overflow-x: ${width >=
           elementsWidth
@@ -40,8 +42,8 @@ const CategoryCardWrapper: React.FC = ({
         &::-webkit-scrollbar {
           display: none;
         }
-        & > :global(*):not(.spacer) {
-          margin: calc(0px / 2)
+        & > *:not(.spacer) {
+          margin: calc(var(--gap) / 2)
             calc(var(--gap) / 2);
         }
         & > .spacer {
@@ -53,19 +55,10 @@ const CategoryCardWrapper: React.FC = ({
             )
           );
         }
-        & > * {
-          margin: 0 calc(var(--gap) / 2);
-        }
       `}
       className="container"
     >
-      {width < elementsWidth ? (
-        <div className="spacer" />
-      ) : undefined}
       {children}
-      {width < elementsWidth ? (
-        <div className="spacer" />
-      ) : undefined}
     </div>
   );
 };

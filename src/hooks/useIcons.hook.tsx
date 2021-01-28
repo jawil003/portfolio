@@ -201,6 +201,12 @@ const LocalLibraryRoundedIcon = dynamic(
       "@material-ui/icons/LocalLibraryRounded"
     ),
 );
+const WorkRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/WorkRounded"
+    ),
+);
 const EmailRoundedIcon = dynamic(
   () =>
     import(
@@ -211,6 +217,12 @@ const EmojiObjectsRoundedIcon = dynamic(
   () =>
     import(
       "@material-ui/icons/EmojiObjectsRounded"
+    ),
+);
+const CodeRoundedIcon = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/CodeRounded"
     ),
 );
 const HomeRoundedIcon = dynamic(
@@ -409,6 +421,12 @@ export const useNavigationIcons = () => {
       }
       case "EmailRoundedIcon": {
         return <EmailRoundedIcon />;
+      }
+      case "WorkRoundedIcon": {
+        return <WorkRoundedIcon />;
+      }
+      case "CodeRoundedIcon": {
+        return <CodeRoundedIcon />;
       }
       case "InfoRoundedIcon": {
         return <InfoRoundedIcon />;

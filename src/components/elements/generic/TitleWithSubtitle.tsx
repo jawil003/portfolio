@@ -32,6 +32,7 @@ const TitleWithSubtitle: React.FC<Props> = ({
           & {
             display: inline-block;
             margin: 0;
+            max-width: 500px;
           }
           & > .subtitle {
             width: 0;
