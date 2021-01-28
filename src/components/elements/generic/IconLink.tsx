@@ -42,6 +42,7 @@ const IconLink: React.FC<Props> = ({
             scale.set(1);
           }}
           href={href}
+          rel="noreferrer"
           target="_blank"
           style={{
             backgroundColor: background,

@@ -13,6 +13,7 @@ import ContactRequestService from "src/services/backend/contactRequest.service";
 import { title as appTitle } from "../../package.json";
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
+import Typography from "src/components/elements/generic/Typography";
 
 interface UserMessage {
   name: string;
@@ -93,6 +94,9 @@ const Contact: React.FC = () => {
       >
         <HeaderWithSpacer first>
           <Form>
+            <Typography variant="h3">
+              Kontakt
+            </Typography>
             <TextField
               value={name}
               title="Name"

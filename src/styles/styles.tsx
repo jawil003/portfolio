@@ -10,6 +10,7 @@ const fonts = css`
     font-family: "Source Sans Pro";
     font-style: normal;
     font-weight: 200;
+    font-display: swap;
     src: url("../fonts/source/source-sans-pro-v14-latin-200.eot"); /* IE9 Compat Modes */
     src: local(""),
       url("../fonts/source/source-sans-pro-v14-latin-200.eot?#iefix")
@@ -31,6 +32,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: italic;
+    font-display: swap;
     font-weight: 200;
     src: url("../fonts/source/source-sans-pro-v14-latin-200italic.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -53,6 +55,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: normal;
+    font-display: swap;
     font-weight: 300;
     src: url("../fonts/source/source-sans-pro-v14-latin-300.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -75,6 +78,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: italic;
+    font-display: swap;
     font-weight: 300;
     src: url("../fonts/source/source-sans-pro-v14-latin-300italic.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -97,6 +101,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: normal;
+    font-display: swap;
     font-weight: 400;
     src: url("../fonts/source/source-sans-pro-v14-latin-regular.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -119,6 +124,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: italic;
+    font-display: swap;
     font-weight: 400;
     src: url("../fonts/source/source-sans-pro-v14-latin-italic.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -141,6 +147,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: normal;
+    font-display: swap;
     font-weight: 600;
     src: url("../fonts/source/source-sans-pro-v14-latin-600.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -163,6 +170,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: italic;
+    font-display: swap;
     font-weight: 600;
     src: url("../fonts/source/source-sans-pro-v14-latin-600italic.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -185,6 +193,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: italic;
+    font-display: swap;
     font-weight: 700;
     src: url("../fonts/source/source-sans-pro-v14-latin-700italic.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -207,6 +216,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: normal;
+    font-display: swap;
     font-weight: 700;
     src: url("../fonts/source/source-sans-pro-v14-latin-700.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -229,6 +239,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: normal;
+    font-display: swap;
     font-weight: 900;
     src: url("../fonts/source/source-sans-pro-v14-latin-900.eot"); /* IE9 Compat Modes */
     src: local(""),
@@ -251,6 +262,7 @@ const fonts = css`
   @font-face {
     font-family: "Source Sans Pro";
     font-style: italic;
+    font-display: swap;
     font-weight: 900;
     src: url("../fonts/source/source-sans-pro-v14-latin-900italic.eot"); /* IE9 Compat Modes */
     src: local(""),

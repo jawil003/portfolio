@@ -16,7 +16,6 @@ import NavigationBar from "../../components/elements/generic/DesktopNavigationBa
 import BackTopButton from "../../components/elements/responsive/BackTopButton";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import DropIcon from "../../components/icons/drop.icon";
-import useViewportSize from "../../hooks/useViewportSize.hook";
 import { GetStaticProps } from "next";
 import KnowledgeService from "src/services/knowledge.service";
 import KnowledgeCategory from "src/model/KnowledgeCategory.model";
@@ -68,10 +67,9 @@ const Contact: React.FC<StaticProps> = ({
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
   );
-  const { width } = useViewportSize();
   useScrollPosition(
     ({ currPos }) => {
-      if (currPos.y === 0)
+      if (currPos.y >= 0)
         setHideButton(true);
       else setHideButton(false);
     },
@@ -167,11 +165,6 @@ const Contact: React.FC<StaticProps> = ({
                   keyCode="3"
                   key="Web"
                   tooltipText="Web"
-                  tooltipOrientation={
-                    width > 1350
-                      ? "bottom"
-                      : "top"
-                  }
                   onClick={() =>
                     paragraphs[2].current?.scrollIntoView(
                       {
@@ -194,13 +187,6 @@ const Contact: React.FC<StaticProps> = ({
                   keyCode="2"
                   key="Mobile"
                   tooltipText="Mobile"
-                  tooltipOrientation={
-                    width > 1350
-                      ? "bottom"
-                      : width > 1160
-                      ? "top"
-                      : "right"
-                  }
                   onClick={() =>
                     paragraphs[3].current?.scrollIntoView(
                       {
@@ -221,13 +207,6 @@ const Contact: React.FC<StaticProps> = ({
                 <IconButton
                   key="Desktop"
                   keyCode="2"
-                  tooltipOrientation={
-                    width > 1350
-                      ? "bottom"
-                      : width > 1160
-                      ? "right"
-                      : "bottom"
-                  }
                   tooltipText="Desktop"
                   onClick={() =>
                     paragraphs[4].current?.scrollIntoView(
@@ -250,11 +229,6 @@ const Contact: React.FC<StaticProps> = ({
                   keyCode="1"
                   key="Design"
                   tooltipText="Design"
-                  tooltipOrientation={
-                    width > 1350
-                      ? "right"
-                      : "bottom"
-                  }
                   onClick={() =>
                     paragraphs[5].current?.scrollIntoView(
                       {
