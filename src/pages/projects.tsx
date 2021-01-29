@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React, { useRef } from "react";
-import DesigningDesign from "../components/designs/designing.design";
 import NavigationBar from "../components/elements/generic/DesktopNavigationBar";
 import { GetStaticProps } from "next";
 import BackgroundWrapper from "src/components/elements/generic/BackgroundWrapper";
@@ -14,6 +13,7 @@ import TitleWithSubtitle from "src/components/elements/generic/TitleWithSubtitle
 import FlexContainer from "src/components/elements/generic/FlexContainer";
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
+import CodeTypingDesign from "src/components/designs/codeTyping.design";
 
 interface ServerSideProps {
   projectIndex: Header;
@@ -78,7 +78,7 @@ const Project: React.FC<ServerSideProps> = ({
               }
             `}
           >
-            <DesigningDesign width="100%" />
+            <CodeTypingDesign width="100%" />
           </div>
         }
       >
