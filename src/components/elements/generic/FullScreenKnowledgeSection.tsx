@@ -55,7 +55,7 @@ const FullScreenKnowledgeSection = forwardRef<
         style={{
           ...style,
           overflow: "hidden",
-          height: getHeightForSection(
+          minHeight: getHeightForSection(
             first,
             latest,
           ),
@@ -71,6 +71,9 @@ const FullScreenKnowledgeSection = forwardRef<
     );
   },
 );
+
+FullScreenKnowledgeSection.displayName =
+  "FullScreenKnowledgeSection";
 
 FullScreenKnowledgeSection.defaultProps = {
   latest: false,

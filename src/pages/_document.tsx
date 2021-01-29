@@ -20,12 +20,12 @@ class MyDocument extends Document {
     return (
       <Html lang="de">
         <Head>
+          {generateGeneralTags(true)}
           <link
             rel="shortcut icon"
             href="img/favicon.png"
             type="image/x-icon"
           />
-          {generateGeneralTags(true)}
           {provideImages(
             "./img/icons",
             "icon",

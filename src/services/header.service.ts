@@ -53,6 +53,23 @@ export default class HeaderService {
     });
     return resumeHeader;
   }
+  public static async getProject() {
+    const {
+      data: { projectsHeader },
+    } = await cmsClient.query<{
+      projectsHeader: Header;
+    }>({
+      query: gql`
+        {
+          projectsHeader {
+            title
+            subtitle
+          }
+        }
+      `,
+    });
+    return projectsHeader;
+  }
 }
 
 export interface Header {

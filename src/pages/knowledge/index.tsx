@@ -32,6 +32,7 @@ import TitleWithSubtitle from "src/components/elements/generic/TitleWithSubtitle
 import { useKnowledgeIcons } from "src/hooks/useIcons.hook";
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
+import Spacer from "src/components/elements/generic/Spacer";
 
 interface StaticProps {
   knowledgeCategories: KnowledgeCategory[];
@@ -268,7 +269,7 @@ const Contact: React.FC<StaticProps> = ({
             },
             index,
           ) => {
-            return (
+            return [
               <FullScreenKnowledgeSection
                 ref={paragraphs[index]}
                 rowGap="30px"
@@ -320,8 +321,18 @@ const Contact: React.FC<StaticProps> = ({
                     ),
                   )}
                 </CategoryCardWrapper>
-              </FullScreenKnowledgeSection>
-            );
+              </FullScreenKnowledgeSection>,
+              index ===
+              knowledgeCategories.length -
+                1 ? undefined : (
+                <Spacer
+                  key={
+                    title + "-spacer"
+                  }
+                  height="100px"
+                />
+              ),
+            ];
           },
         )}
       </main>

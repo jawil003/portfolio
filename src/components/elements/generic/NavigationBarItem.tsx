@@ -30,6 +30,8 @@ const NavigationBarItem: React.FC<Props> = ({
   if (external) {
     return (
       <a
+        aria-hidden="true"
+        tabIndex={0}
         onClick={() => setOpen(false)}
         href={href}
         target="_blank"
@@ -93,7 +95,6 @@ const NavigationBarItem: React.FC<Props> = ({
     return (
       <Link href={href}>
         <a
-          onClick={() => setOpen(false)}
           css={css`
             & {
               padding: 10px 20px;

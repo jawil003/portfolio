@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
-import React, { Children } from "react";
-import useViewportSize from "src/hooks/useViewportSize.hook";
+import React from "react";
 
 /**
  * An CategoryCardWrapper React Component.
@@ -10,29 +9,18 @@ import useViewportSize from "src/hooks/useViewportSize.hook";
 const CategoryCardWrapper: React.FC = ({
   children,
 }) => {
-  const { width } = useViewportSize();
-  const elementsWidth =
-    Children.toArray(children).length *
-    310;
   return (
     <div
       css={css`
         & {
           position: relative;
           left: 0px;
-          width: 80%;
-          margin: auto;
+          width: 100%;
+          padding: 20px;
           flex-wrap: wrap;
           --gap: 40px;
-          overflow-x: ${width >=
-          elementsWidth
-            ? "hidden"
-            : "scroll"};
           display: flex;
-          justify-content: ${width >=
-          elementsWidth
-            ? "center"
-            : "flex-start"};
+          justify-content: center;
           -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
           /*margin: calc(10px / -2)
