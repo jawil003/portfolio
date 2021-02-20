@@ -3,9 +3,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import CategoryCard from "../../components/elements/responsive/CategoryCard";
-import CategoryCardWrapper from "../../components/elements/responsive/CategoryCardWrapper";
-import CategoryHeader from "../../components/elements/responsive/CategoryHeader";
 import FullScreenKnowledgeSection from "../../components/elements/generic/FullScreenKnowledgeSection";
 import IconButton from "../../components/elements/generic/IconButton";
 import DatabaseIcon from "../../components/icons/database.icon";
@@ -29,7 +26,6 @@ import HeaderService, {
   Header,
 } from "src/services/header.service";
 import TitleWithSubtitle from "src/components/elements/generic/TitleWithSubtitle";
-import { useKnowledgeIcons } from "src/hooks/useIcons.hook";
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
 import Spacer from "src/components/elements/generic/Spacer";
@@ -51,8 +47,6 @@ const Contact: React.FC<StaticProps> = ({
     subtitle: knowledgeSubTitle,
   },
 }) => {
-  const getIcon = useKnowledgeIcons();
-
   const [
     hideButton,
     setHideButton,
@@ -271,7 +265,11 @@ const Contact: React.FC<StaticProps> = ({
           ) => {
             return [
               <FullScreenKnowledgeSection
-                ref={paragraphs[index]}
+                title={title}
+                description={
+                  description
+                }
+                items={items}
                 rowGap="30px"
                 key={title + "-snap"}
                 latest={
@@ -281,47 +279,7 @@ const Contact: React.FC<StaticProps> = ({
                     ? true
                     : false
                 }
-              >
-                <CategoryHeader
-                  key={
-                    title + "-header"
-                  }
-                  title={title}
-                  description={
-                    description
-                  }
-                />
-
-                <CategoryCardWrapper
-                  key={
-                    title + "-wrapper"
-                  }
-                >
-                  {items.map(
-                    ({
-                      title,
-                      description,
-                      icon,
-                    }) => (
-                      <CategoryCard
-                        key={
-                          title +
-                          "-card"
-                        }
-                        title={title}
-                        description={
-                          description
-                        }
-                        icon={getIcon({
-                          name: icon?.title as string,
-                          height:
-                            "100%",
-                        })}
-                      />
-                    ),
-                  )}
-                </CategoryCardWrapper>
-              </FullScreenKnowledgeSection>,
+              />,
               index ===
               knowledgeCategories.length -
                 1 ? undefined : (

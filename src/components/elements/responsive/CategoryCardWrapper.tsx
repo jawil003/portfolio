@@ -1,26 +1,31 @@
 import { css } from "@emotion/react";
-import React from "react";
+import React, {
+  forwardRef,
+} from "react";
 
 /**
  * An CategoryCardWrapper React Component.
  * @author
  * @version 0.1
  */
-const CategoryCardWrapper: React.FC = ({
-  children,
-}) => {
+const CategoryCardWrapper = forwardRef<
+  HTMLDivElement,
+  { children: any }
+>(({ children }, ref) => {
   return (
     <div
+      ref={ref}
       css={css`
         & {
           position: relative;
           left: 0px;
           width: 100%;
+          max-width: 970px;
           padding: 20px;
-          flex-wrap: wrap;
+          overflow-x: scroll;
           --gap: 40px;
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
           /*margin: calc(10px / -2)
@@ -49,6 +54,9 @@ const CategoryCardWrapper: React.FC = ({
       {children}
     </div>
   );
-};
+});
+
+CategoryCardWrapper.displayName =
+  "CategoryCardWrapper";
 
 export default CategoryCardWrapper;
