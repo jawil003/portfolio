@@ -1,19 +1,19 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import ContactMeDesign from "../components/designs/contactMe.design";
-import Button from "../components/elements/generic/Button";
-import Spacer from "../components/elements/generic/Spacer";
-import TextField from "../components/elements/generic/TextField";
-import NavigationBar from "../components/elements/generic/DesktopNavigationBar";
-import Form from "src/components/elements/generic/Form";
-import HeaderWithSpacer from "src/components/elements/responsive/HeaderWithSpacer";
-import BackgroundWrapper from "src/components/elements/generic/BackgroundWrapper";
+import Button from "../components/elements/Button";
+import Spacer from "../components/elements/Spacer";
+import TextField from "../components/elements/TextField";
+import NavigationBar from "../components/elements/DesktopNavigationBar";
+import Form from "src/components/elements/Form";
+import HeaderWithSpacer from "src/components/elements/HeaderWithSpacer";
+import BackgroundWrapper from "src/components/elements/BackgroundWrapper";
 import { generateIndividualTags } from "src/services/meta.service";
 import ContactRequestService from "src/services/backend/contactRequest.service";
 import { title as appTitle } from "../../package.json";
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
-import Typography from "src/components/elements/generic/Typography";
+import Typography from "src/components/elements/Typography";
 
 interface UserMessage {
   name: string;

@@ -1,14 +1,14 @@
 import Head from "next/head";
 import React from "react";
 import AtHomeDesign from "../components/designs/atHome.design";
-import Spacer from "../components/elements/generic/Spacer";
-import Typography from "../components/elements/generic/Typography";
-import NavigationBar from "../components/elements/generic/DesktopNavigationBar";
-import HeaderWithSpacer from "src/components/elements/responsive/HeaderWithSpacer";
-import BackgroundWrapper from "src/components/elements/generic/BackgroundWrapper";
+import Spacer from "../components/elements/Spacer";
+import Typography from "../components/elements/Typography";
+import NavigationBar from "../components/elements/DesktopNavigationBar";
+import HeaderWithSpacer from "src/components/elements/HeaderWithSpacer";
+import BackgroundWrapper from "src/components/elements/BackgroundWrapper";
 import { title } from "../../package.json";
 import { generateIndividualTags } from "src/services/meta.service";
-import FlexContainer from "src/components/elements/generic/FlexContainer";
+import FlexContainer from "src/components/elements/FlexContainer";
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
 

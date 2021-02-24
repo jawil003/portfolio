@@ -4,7 +4,7 @@ import {
 } from "@storybook/react/types-6-0";
 import TextField, {
   Props as TextFieldProps,
-} from "../components/elements/generic/TextField";
+} from "../components/elements/TextField";
 import {
   State,
   Store,

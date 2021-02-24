@@ -1,14 +1,14 @@
 import Head from "next/head";
 import React from "react";
-import Spacer from "../components/elements/generic/Spacer";
-import IconLink from "../components/elements/generic/IconLink";
-import HeaderWithSpacer from "../components/elements/responsive/HeaderWithSpacer";
-import NavigationBar from "../components/elements/generic/DesktopNavigationBar";
-import BackgroundWrapper from "src/components/elements/generic/BackgroundWrapper";
-import FlexContainer from "src/components/elements/generic/FlexContainer";
+import Spacer from "../components/elements/Spacer";
+import IconLink from "../components/elements/IconLink";
+import HeaderWithSpacer from "../components/elements/HeaderWithSpacer";
+import NavigationBar from "../components/elements/DesktopNavigationBar";
+import BackgroundWrapper from "src/components/elements/BackgroundWrapper";
+import FlexContainer from "src/components/elements/FlexContainer";
 import BlobDesktopDesign from "src/components/designs/blobDesktop.design";
 import { generateIndividualTags } from "src/services/meta.service";
-import TitleWithSubtitle from "../components/elements/generic/TitleWithSubtitle";
+import TitleWithSubtitle from "../components/elements/TitleWithSubtitle";
 import { GetStaticProps } from "next";
 import SocialItemsService, {
   SocialItem,

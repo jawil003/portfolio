@@ -5,7 +5,7 @@ import {
 import React from "react";
 import Button, {
   Props as ButtonProps,
-} from "../components/elements/generic/Button";
+} from "../components/elements/Button";
 
 export default {
   title: "Elements/Button",

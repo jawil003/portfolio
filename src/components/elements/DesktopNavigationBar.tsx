@@ -7,18 +7,18 @@ import {
 } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigationIcons } from "src/hooks/useIcons.hook";
-import Logo from "../responsive/Logo";
+import Logo from "./Logo";
 import NavigationBarItem from "./NavigationBarItem";
 import FlexContainer from "./FlexContainer";
 import Spacer from "./Spacer";
 import {
   header as items,
   footer as footerItems,
-} from "../../../config/routes.json";
-import HamburgerMenuIcon from "../../icons/hamburgerMenu.icon";
+} from "../../config/routes.json";
+import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
-import DesktopNavigationBarContext from "../../contexts/DesktopNavigationBarContext";
+import DesktopNavigationBarContext from "../contexts/DesktopNavigationBarContext";
 
 interface Props {
   className?: string;

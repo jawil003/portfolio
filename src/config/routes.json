@@ -6,21 +6,6 @@
       "icon": "HomeRoundedIcon"
     },
     {
-      "href": "/knowledge",
-      "name": "Kenntnisse",
-      "icon": "EmojiObjectsRoundedIcon"
-    },
-    {
-      "href": "/resume",
-      "name": "Erfahrungen",
-      "icon": "WorkRoundedIcon"
-    },
-    {
-      "href": "/projects",
-      "name": "Projekte",
-      "icon": "CodeRoundedIcon"
-    },
-    {
       "href": "https://willey3x37.hashnode.dev",
       "external": true,
       "name": "Veröffentlichungen",

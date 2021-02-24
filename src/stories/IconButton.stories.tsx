@@ -7,7 +7,7 @@ import {
 
 import IconButton, {
   Props as IconButtonProps,
-} from "../components/elements/generic/IconButton";
+} from "../components/elements/IconButton";
 import DatabaseIcon from "../components/icons/database.icon";
 
 export default {

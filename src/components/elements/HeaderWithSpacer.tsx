@@ -5,7 +5,7 @@ import React, {
   forwardRef,
   PropsWithChildren,
 } from "react";
-import flyFromTop from "../../../variants/flyFromTop";
+import flyFromTop from "../../variants/flyFromTop";
 
 interface Props {
   align?: "left" | "right";

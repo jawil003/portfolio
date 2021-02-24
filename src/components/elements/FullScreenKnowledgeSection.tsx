@@ -6,9 +6,9 @@ import React from "react";
 import { useKnowledgeIcons } from "src/hooks/useIcons.hook";
 import useIsElementInViewPort from "src/hooks/useIsElementInViewPort.hook";
 import KnowledgeItem from "src/model/KnowledgeItem.model";
-import CategoryCard from "../responsive/CategoryCard";
-import CategoryCardWrapper from "../responsive/CategoryCardWrapper";
-import CategoryHeader from "../responsive/CategoryHeader";
+import CategoryCard from "./CategoryCard";
+import CategoryCardWrapper from "./CategoryCardWrapper";
+import CategoryHeader from "./CategoryHeader";
 
 const getHeightForSection = (
   first?: boolean,
@@ -155,6 +155,9 @@ const FullScreenKnowledgeSection: React.FC<Props> = ({
           ),
         )}
       </CategoryCardWrapper>
+      {items.length > 3
+        ? "->"
+        : undefined}
     </motion.section>
   );
 };

@@ -1,7 +1,7 @@
 import { Story } from "@storybook/react/types-6-0";
 import Typography, {
   Props as TypographyProps,
-} from "../components/elements/generic/Typography";
+} from "../components/elements/Typography";
 
 export default {
   title: "Elements/Typography",

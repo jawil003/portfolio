@@ -33,9 +33,13 @@ const designSystem = {
         darklight: "#2d6c7d",
         light: "#d0dee2",
       },
-      green: { base: "#28b463" },
+      green: {
+        base: "#28b463",
+        dark: "#006F4C",
+      },
       yellow: { base: "#f4d03f" },
       black: { base: "#000" },
+      brown: { base: "#A23F40" },
     },
     brand: {
       primary: "#f3f3f3", // white

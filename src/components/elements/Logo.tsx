@@ -3,7 +3,7 @@ import designSystem, {
   fontSizeToRelativeValue,
 } from "@style/designSystem";
 import React from "react";
-import LogoIcon from "../../icons/logo.icon";
+import LogoIcon from "../icons/logo.icon";
 
 /**
  * An Logo React Component.

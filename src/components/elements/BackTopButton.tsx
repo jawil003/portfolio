@@ -7,7 +7,7 @@ import {
 import React, {
   useEffect,
 } from "react";
-import TopArrowIcon from "../../icons/topArrow.icon";
+import TopArrowIcon from "../icons/topArrow.icon";
 
 interface Props {
   hidden?: boolean;

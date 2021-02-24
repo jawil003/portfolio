@@ -1,7 +1,7 @@
 import { Story } from "@storybook/react/types-6-0";
 import Tooltip, {
   Props as TooltipProps,
-} from "../components/elements/generic/Tooltip";
+} from "../components/elements/Tooltip";
 
 export default {
   title: "Elements/Tooltip",
