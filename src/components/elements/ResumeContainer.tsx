@@ -1,6 +1,11 @@
+import { css } from "@emotion/react";
+import designSystem from "@style/designSystem";
 import React from "react";
+import Typography from "./Typography";
 
-interface Props {}
+interface Props {
+  title: string;
+}
 
 /**
  * An ResumeContainer React Component.
@@ -9,17 +14,47 @@ interface Props {}
  */
 const ResumeContainer: React.FC<Props> = ({
   children,
+  title,
 }) => {
   return (
     <div
       style={{
         display: "flex",
-        flexDirection: "column",
+
         justifyContent: "center",
         paddingTop: "100px",
       }}
     >
-      {children}
+      <div
+        css={css`
+          & {
+            min-width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        `}
+      >
+        <Typography
+          variant="h5"
+          color={
+            designSystem.colors.brand
+              .primary
+          }
+          align="center"
+        >
+          {title}
+        </Typography>
+      </div>
+      <div
+        css={css`
+          & {
+            flex: 1;
+          }
+        `}
+      >
+        {children}
+      </div>
     </div>
   );
 };
