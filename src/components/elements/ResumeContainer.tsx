@@ -19,8 +19,8 @@ const ResumeContainer: React.FC<Props> = ({
   return (
     <div
       style={{
+        width: "100vw",
         display: "flex",
-
         justifyContent: "center",
         paddingTop: "100px",
       }}
@@ -28,7 +28,9 @@ const ResumeContainer: React.FC<Props> = ({
       <div
         css={css`
           & {
-            min-width: 40%;
+            padding: 0px 50px;
+            position: relative;
+            left: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -49,6 +51,8 @@ const ResumeContainer: React.FC<Props> = ({
       <div
         css={css`
           & {
+            position: relative;
+            left: 20px;
             flex: 1;
           }
         `}

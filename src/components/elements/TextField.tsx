@@ -11,6 +11,8 @@ const Input = styled.textarea`
     border: none;
     resize: none;
     background: transparent;
+    color: ${designSystem.colors.brand
+      .secondaryText};
   }
   &:hover,
   &:focus {
@@ -20,7 +22,9 @@ const Input = styled.textarea`
 `;
 
 export interface Props {
+  error?: string;
   title?: string;
+  name?: string;
   placeholder?: string;
   area?: boolean;
   rows?: number;
@@ -45,6 +49,8 @@ const TextField: React.FC<Props> = ({
   area,
   onChange,
   value,
+  name,
+  error,
 }) => {
   return (
     <div
@@ -56,23 +62,40 @@ const TextField: React.FC<Props> = ({
         }
       `}
     >
-      <Typography variant="b1">
+      <Typography
+        css={css`
+          & {
+            margin: 0px;
+            margin-left: 5px;
+            margin-bottom: 8px;
+          }
+        `}
+        color={
+          designSystem.colors.brand
+            .secondaryText
+        }
+        variant="b1"
+        bold="semi-bold"
+      >
         {title}
       </Typography>
       <div
         css={css`
           & {
             padding: 10px 15px;
-            background: ${designSystem
-              .colors.palette.grey
-              .light};
-            border-radius: 5px;
+            border: 4px solid
+              ${designSystem.colors
+                .brand.secondaryText};
+            border-radius: 20px;
             width: 100%;
+            max-width: 450px;
           }
         `}
       >
         {area ? (
           <Input
+            id={name}
+            name={name}
             onChange={onChange}
             value={value}
             placeholder={placeholder}
@@ -81,6 +104,8 @@ const TextField: React.FC<Props> = ({
           ></Input>
         ) : (
           <Input
+            id={name}
+            name={name}
             as="input"
             value={value}
             onChange={onChange}
@@ -88,6 +113,7 @@ const TextField: React.FC<Props> = ({
           />
         )}
       </div>
+      <span>{error}</span>
     </div>
   );
 };
@@ -98,8 +124,4 @@ TextField.defaultProps = {
   value: "",
 };
 
-export default React.memo(
-  TextField,
-  (prev, next) =>
-    prev.value === next.value,
-);
+export default TextField;

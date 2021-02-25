@@ -20,10 +20,3 @@ export const Filled = ButtonElement.bind(
   {},
 );
 Filled.args = {};
-
-export const Outlined = ButtonElement.bind(
-  {},
-);
-Outlined.args = {
-  variant: "outlined",
-};

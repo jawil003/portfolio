@@ -153,7 +153,7 @@ export interface Props {
     | "b2"
     | "b3"
     | "custom";
-  size?: "string";
+  size?: string;
   color?: string;
   fontFamily?: string;
   align?:

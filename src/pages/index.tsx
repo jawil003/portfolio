@@ -5,7 +5,6 @@ import IconLink from "../components/elements/IconLink";
 import HeaderWithSpacer from "../components/elements/HeaderWithSpacer";
 import NavigationBar from "../components/elements/DesktopNavigationBar";
 import BackgroundWrapper from "src/components/elements/BackgroundWrapper";
-import FlexContainer from "src/components/elements/FlexContainer";
 import { generateIndividualTags } from "src/services/meta.service";
 import TitleWithSubtitle from "../components/elements/TitleWithSubtitle";
 import { GetStaticProps } from "next";
@@ -26,7 +25,11 @@ import ResumeItemType from "src/model/ResumeItem.model";
 import ColorContainer from "src/components/elements/ColorContainer";
 import ResumeContainer from "src/components/elements/ResumeContainer";
 import ResumeItem from "src/components/elements/ResumeItem";
-
+import FlexContainer from "src/components/elements/FlexContainer";
+import TextField from "src/components/elements/TextField";
+import Button from "src/components/elements/Button";
+import PersonDesign from "src/components/designs/person.design";
+import { Formik } from "formik";
 interface ServerSideProps {
   indexHeader: Header;
   socialItems: SocialItem[];
@@ -219,7 +222,7 @@ const Index: React.FC<ServerSideProps> = ({
               .secondary
           }
         >
-          <main
+          <div
             style={{
               flex: 1,
               position: "relative",
@@ -271,8 +274,156 @@ const Index: React.FC<ServerSideProps> = ({
                 ),
               )}
             </ResumeContainer>
-          </main>
+            <div
+              style={{
+                backgroundColor: "#fff",
+                overflow: "hidden",
+                width:
+                  "calc(100vw + 20px)",
+              }}
+            >
+              <svg
+                preserveAspectRatio="none"
+                viewBox="0 0 1200 120"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{
+                  fill:
+                    designSystem.colors
+                      .brand.secondary,
+                  width: "282%",
+                  height: "137px",
+                  transform:
+                    "scaleX(-1)",
+                }}
+              >
+                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
+              </svg>
+            </div>
+          </div>
         </ColorContainer>
+        <Spacer height="120px" />
+        <FlexContainer>
+          <FlexContainer
+            css={css`
+              & {
+                flex: 1;
+              }
+            `}
+            direction="column"
+            rowGap="35px"
+          >
+            <Typography
+              variant="h5"
+              align="center"
+              color={
+                designSystem.colors
+                  .brand.secondaryText
+              }
+            >
+              Kontaktiere mich gerne
+            </Typography>
+            <Spacer height="20px" />
+
+            <FlexContainer
+              rowGap="15px"
+              direction="column"
+              alignItems="center"
+            >
+              <Formik
+                onSubmit={(
+                  _,
+                  { resetForm },
+                ) => {
+                  resetForm();
+                }}
+                initialValues={{
+                  email: "",
+                  name: "",
+                  message: "",
+                }}
+              >
+                {({
+                  values,
+                  handleChange,
+                  handleSubmit,
+                  isSubmitting,
+                  errors,
+                }) => [
+                  <TextField
+                    error={errors.email}
+                    name="email"
+                    value={values.email}
+                    key="email"
+                    onChange={
+                      handleChange
+                    }
+                    placeholder="maxine@mustermann.de"
+                    title="Email"
+                  />,
+                  <TextField
+                    error={errors.name}
+                    name="name"
+                    value={values.name}
+                    key="name"
+                    onChange={
+                      handleChange
+                    }
+                    placeholder="Maxine Mustermann"
+                    title="Name"
+                  />,
+                  <TextField
+                    error={
+                      errors.message
+                    }
+                    name="message"
+                    value={
+                      values.message
+                    }
+                    key="message"
+                    area
+                    onChange={
+                      handleChange
+                    }
+                    rows={4}
+                    title="Nachricht"
+                  />,
+                  <Spacer
+                    height="10px"
+                    key="form_spacer"
+                  />,
+                  <Button
+                    disabled={
+                      isSubmitting
+                    }
+                    onClick={
+                      handleSubmit
+                    }
+                    key="submit"
+                    backgroundColor={
+                      designSystem
+                        .colors.brand
+                        .secondary
+                    }
+                    text="Senden"
+                  />,
+                ]}
+              </Formik>
+            </FlexContainer>
+          </FlexContainer>
+          <div
+            css={css`
+              & {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                max-height: 500px;
+              }
+            `}
+          >
+            <PersonDesign height="100%" />
+          </div>
+        </FlexContainer>
+        <Spacer height="120px" />
       </BackgroundWrapper>
     </>
   );
