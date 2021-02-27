@@ -25,6 +25,7 @@ const HeaderWithSpacer = forwardRef<
     <header
       css={css`
         & {
+          margin-top: 100px;
           overflow: hidden;
           height: 100%;
           width: 100%;

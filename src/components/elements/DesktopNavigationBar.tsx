@@ -19,6 +19,7 @@ import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
 import DesktopNavigationBarContext from "../contexts/DesktopNavigationBarContext";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 interface Props {
   className?: string;
@@ -34,8 +35,27 @@ const NavigationBar: React.FC<Props> = ({
 }) => {
   const getIcon = useNavigationIcons();
   const navBar = useAnimation();
+  const headerBar = useAnimation();
   const [open, setOpen] = useState(
     false,
+  );
+  const [
+    showHeader,
+    setShowHeader,
+  ] = useState(true);
+  useScrollPosition(
+    ({
+      currPos: { y: currentY },
+      prevPos: { y: prevY },
+    }) => {
+      if (currentY > prevY) {
+        setShowHeader(false);
+      } else if (currentY < prevY)
+        setShowHeader(true);
+    },
+    [showHeader],
+    undefined,
+    true,
   );
 
   return (
@@ -47,11 +67,16 @@ const NavigationBar: React.FC<Props> = ({
             setOpen(open),
         }}
       >
-        <nav
+        <motion.nav
+          animate={headerBar}
           className={`desktop-navigation-bar-menu-container ${className}`}
           css={css`
             & {
-              position: relative;
+              position: fixed;
+              display: ${showHeader
+                ? "block"
+                : "none"};
+
               z-index: ${designSystem
                 .positioning
                 .behindBehindFirst};
@@ -80,7 +105,7 @@ const NavigationBar: React.FC<Props> = ({
           >
             <HamburgerMenuIcon height="100%" />
           </div>
-        </nav>
+        </motion.nav>
         <nav
           css={css`
             & {
