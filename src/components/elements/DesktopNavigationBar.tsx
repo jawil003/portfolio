@@ -19,10 +19,10 @@ import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
 import DesktopNavigationBarContext from "../contexts/DesktopNavigationBarContext";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 interface Props {
   className?: string;
+  backgroundIsWhite?: boolean;
 }
 
 /**
@@ -32,30 +32,13 @@ interface Props {
  */
 const NavigationBar: React.FC<Props> = ({
   className,
+  backgroundIsWhite,
 }) => {
   const getIcon = useNavigationIcons();
   const navBar = useAnimation();
   const headerBar = useAnimation();
   const [open, setOpen] = useState(
     false,
-  );
-  const [
-    showHeader,
-    setShowHeader,
-  ] = useState(true);
-  useScrollPosition(
-    ({
-      currPos: { y: currentY },
-      prevPos: { y: prevY },
-    }) => {
-      if (currentY > prevY) {
-        setShowHeader(false);
-      } else if (currentY < prevY)
-        setShowHeader(true);
-    },
-    [showHeader],
-    undefined,
-    true,
   );
 
   return (
@@ -73,10 +56,6 @@ const NavigationBar: React.FC<Props> = ({
           css={css`
             & {
               position: fixed;
-              display: ${showHeader
-                ? "block"
-                : "none"};
-
               z-index: ${designSystem
                 .positioning
                 .behindBehindFirst};
@@ -103,7 +82,15 @@ const NavigationBar: React.FC<Props> = ({
               });
             }}
           >
-            <HamburgerMenuIcon height="100%" />
+            <HamburgerMenuIcon
+              color={
+                backgroundIsWhite
+                  ? undefined
+                  : designSystem.colors
+                      .brand.primary
+              }
+              height="100%"
+            />
           </div>
         </motion.nav>
         <nav
@@ -237,7 +224,9 @@ const NavigationBar: React.FC<Props> = ({
   );
 };
 
-NavigationBar.defaultProps = {};
+NavigationBar.defaultProps = {
+  backgroundIsWhite: true,
+};
 
 export default React.memo(
   NavigationBar,

@@ -5,6 +5,7 @@ interface Props {
   width?: string;
   height?: string;
   color?: string;
+  className?: string;
 }
 
 /**
@@ -16,10 +17,11 @@ const HamburgerMenuIcon: React.FC<Props> = ({
   width,
   height,
   color,
+  className,
 }) => {
   return (
     <svg
-      className="hamburger-menu-icon"
+      className={`hamburger-menu-icon ${className}`}
       xmlns="http://www.w3.org/2000/svg"
       fillRule="evenodd"
       strokeLinejoin="round"

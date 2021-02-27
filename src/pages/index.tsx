@@ -30,6 +30,8 @@ import TextField from "src/components/elements/TextField";
 import Button from "src/components/elements/Button";
 import PersonDesign from "src/components/designs/person.design";
 import { Formik } from "formik";
+import { useInView } from "react-intersection-observer";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 interface ServerSideProps {
   indexHeader: Header;
   socialItems: SocialItem[];
@@ -46,13 +48,26 @@ const Index: React.FC<ServerSideProps> = ({
   resumeItems,
 }) => {
   const getIcon = useSocialLogos();
+  const {
+    ref,
+    inView,
+    entry,
+  } = useInView({
+    trackVisibility: true,
+  });
+  useScrollPosition(() => {
+    if (!inView) return;
 
+    //TODO: Implement a mechanism that checks if header of navigation position matches the observed elements position in view
+    entry?.target.getBoundingClientRect();
+  }, [inView, entry]);
   return (
     <>
       <Head>
         {generateIndividualTags()}
       </Head>
       <NavigationBar
+        backgroundIsWhite={!inView}
         css={css`
           @media (max-width: ${designSystem
               .breakpoints
@@ -217,6 +232,7 @@ const Index: React.FC<ServerSideProps> = ({
         </FlexContainer>
         <Spacer height="120px" />
         <ColorContainer
+          ref={ref}
           color={
             designSystem.colors.brand
               .secondary
