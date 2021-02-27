@@ -1,6 +1,9 @@
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
-import React from "react";
+import React, {
+  forwardRef,
+  PropsWithChildren,
+} from "react";
 import Typography from "./Typography";
 
 interface Props {
@@ -12,12 +15,13 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ResumeContainer: React.FC<Props> = ({
-  children,
-  title,
-}) => {
+const ResumeContainer = forwardRef<
+  HTMLDivElement,
+  PropsWithChildren<Props>
+>(({ children, title }, ref) => {
   return (
     <div
+      ref={ref}
       style={{
         width: "100vw",
         display: "flex",
@@ -61,6 +65,9 @@ const ResumeContainer: React.FC<Props> = ({
       </div>
     </div>
   );
-};
+});
+
+ResumeContainer.displayName =
+  "ResumeContainer";
 
 export default ResumeContainer;

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import Spacer from "../components/elements/Spacer";
 import IconLink from "../components/elements/IconLink";
 import HeaderWithSpacer from "../components/elements/HeaderWithSpacer";
@@ -30,7 +30,6 @@ import TextField from "src/components/elements/TextField";
 import Button from "src/components/elements/Button";
 import PersonDesign from "src/components/designs/person.design";
 import { Formik } from "formik";
-import { useInView } from "react-intersection-observer";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 interface ServerSideProps {
   indexHeader: Header;
@@ -48,26 +47,36 @@ const Index: React.FC<ServerSideProps> = ({
   resumeItems,
 }) => {
   const getIcon = useSocialLogos();
-  const {
-    ref,
-    inView,
-    entry,
-  } = useInView({
-    trackVisibility: true,
-  });
+  const resumeRef = React.createRef<HTMLDivElement>();
+  const [
+    backgroundIsWhite,
+    setBackgroundIsWhite,
+  ] = useState(true);
   useScrollPosition(() => {
-    if (!inView) return;
-
-    //TODO: Implement a mechanism that checks if header of navigation position matches the observed elements position in view
-    entry?.target.getBoundingClientRect();
-  }, [inView, entry]);
+    const pos = resumeRef.current?.getBoundingClientRect();
+    if (!pos) return;
+    const height = pos.bottom - pos.top;
+    if (
+      pos.top <= 50 &&
+      pos.top > height * -1
+    ) {
+      setBackgroundIsWhite(false);
+    } else {
+      setBackgroundIsWhite(true);
+    }
+    console.debug(
+      `Element is ${pos.top} and ${pos.bottom}`,
+    );
+  });
   return (
     <>
       <Head>
         {generateIndividualTags()}
       </Head>
       <NavigationBar
-        backgroundIsWhite={!inView}
+        backgroundIsWhite={
+          backgroundIsWhite
+        }
         css={css`
           @media (max-width: ${designSystem
               .breakpoints
@@ -232,7 +241,6 @@ const Index: React.FC<ServerSideProps> = ({
         </FlexContainer>
         <Spacer height="120px" />
         <ColorContainer
-          ref={ref}
           color={
             designSystem.colors.brand
               .secondary
@@ -267,7 +275,10 @@ const Index: React.FC<ServerSideProps> = ({
                 <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
               </svg>
             </div>
-            <ResumeContainer title="Und das meine praktischen Erfahrungen">
+            <ResumeContainer
+              ref={resumeRef}
+              title="Und das meine praktischen Erfahrungen"
+            >
               {resumeItems.map(
                 ({
                   title,
