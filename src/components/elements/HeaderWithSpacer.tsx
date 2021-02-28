@@ -1,10 +1,13 @@
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+} from "framer-motion";
 import React, {
-  forwardRef,
-  PropsWithChildren,
+  useEffect,
 } from "react";
+import { useInView } from "react-intersection-observer";
 import flyFromTop from "../../variants/flyFromTop";
 
 interface Props {
@@ -17,12 +20,19 @@ interface Props {
  * @author
  * @version 0.1
  */
-const HeaderWithSpacer = forwardRef<
-  HTMLDivElement,
-  PropsWithChildren<Props>
->(({ children, align }, ref) => {
+const HeaderWithSpacer: React.FC<Props> = ({
+  children,
+  align,
+}) => {
+  const { ref, inView } = useInView();
+  const textAnimation = useAnimation();
+  useEffect(() => {
+    if (inView)
+      textAnimation.start("animate");
+  }, [inView, textAnimation]);
   return (
     <header
+      ref={ref}
       css={css`
         & {
           margin-top: 100px;
@@ -74,18 +84,17 @@ const HeaderWithSpacer = forwardRef<
           }
         }
       `}
-      ref={ref}
     >
       <motion.div
         variants={flyFromTop}
         initial="initial"
-        animate="animate"
+        animate={textAnimation}
       >
         {align === "right"
           ? children
           : undefined}
       </motion.div>
-      <motion.div>
+      <div>
         {align === "left" ? (
           <div
             style={{
@@ -98,10 +107,10 @@ const HeaderWithSpacer = forwardRef<
             {children}{" "}
           </div>
         ) : undefined}
-      </motion.div>
+      </div>
     </header>
   );
-});
+};
 
 HeaderWithSpacer.displayName =
   "HeaderWithSpacer";

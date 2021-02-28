@@ -31,6 +31,13 @@ import Button from "src/components/elements/Button";
 import PersonDesign from "src/components/designs/person.design";
 import { Formik } from "formik";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import ArrowDownIcon from "src/components/icons/arrowDown.icon";
+import { motion } from "framer-motion";
+
+const AnimatedArrowDownIcon = motion.custom(
+  ArrowDownIcon,
+);
+
 interface ServerSideProps {
   indexHeader: Header;
   socialItems: SocialItem[];
@@ -47,27 +54,43 @@ const Index: React.FC<ServerSideProps> = ({
   resumeItems,
 }) => {
   const getIcon = useSocialLogos();
+  const [
+    showArrow,
+    setShowArrow,
+  ] = useState(true);
   const resumeRef = React.createRef<HTMLDivElement>();
   const [
     backgroundIsWhite,
     setBackgroundIsWhite,
   ] = useState(true);
-  useScrollPosition(() => {
-    const pos = resumeRef.current?.getBoundingClientRect();
-    if (!pos) return;
-    const height = pos.bottom - pos.top;
-    if (
-      pos.top <= 50 &&
-      pos.top > height * -1
-    ) {
-      setBackgroundIsWhite(false);
-    } else {
-      setBackgroundIsWhite(true);
-    }
-    console.debug(
-      `Element is ${pos.top} and ${pos.bottom}`,
-    );
-  });
+  useScrollPosition(
+    ({ currPos: { y } }) => {
+      if (y > 0) {
+        setShowArrow(false);
+      } else if (y === 0) {
+        setShowArrow(true);
+      }
+
+      const pos = resumeRef.current?.getBoundingClientRect();
+      if (!pos) return;
+      const height =
+        pos.bottom - pos.top;
+      if (
+        pos.top <= 50 &&
+        pos.top > height * -1
+      ) {
+        setBackgroundIsWhite(false);
+      } else {
+        setBackgroundIsWhite(true);
+      }
+      console.debug(
+        `Element is ${pos.top} and ${pos.bottom}`,
+      );
+    },
+    undefined,
+    undefined,
+    true,
+  );
   return (
     <>
       <Head>
@@ -94,6 +117,9 @@ const Index: React.FC<ServerSideProps> = ({
         background={
           <div
             css={css`
+              & {
+                position: relative;
+              }
               @media (max-width: ${designSystem
                   .breakpoints
                   .tabletPortraitUp}) {
@@ -124,6 +150,37 @@ const Index: React.FC<ServerSideProps> = ({
             `}
           >
             <PersonWithLaptop height="80%" />
+            <div
+              css={css`
+                & {
+                  display: ${showArrow
+                    ? "flex"
+                    : "none"};
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: 3;
+
+                  justify-content: center;
+                  align-items: flex-end;
+                  width: 100%;
+                  height: 100%;
+                }
+              `}
+            >
+              <AnimatedArrowDownIcon
+                initial={{ y: -10 }}
+                animate={{
+                  y: [-10, 0],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  duration: 0.75,
+                  type: "tween",
+                }}
+              />
+            </div>
           </div>
         }
       >
