@@ -5,10 +5,13 @@ import {
   useAnimation,
 } from "framer-motion";
 import React, {
+  forwardRef,
+  PropsWithChildren,
   useEffect,
 } from "react";
 import { useInView } from "react-intersection-observer";
 import flyFromTop from "../../variants/flyFromTop";
+import composeRefs from "@seznam/compose-react-refs";
 
 interface Props {
   align?: "left" | "right";
@@ -20,11 +23,14 @@ interface Props {
  * @author
  * @version 0.1
  */
-const HeaderWithSpacer: React.FC<Props> = ({
-  children,
-  align,
-}) => {
-  const { ref, inView } = useInView();
+const HeaderWithSpacer = forwardRef<
+  HTMLHeadingElement,
+  PropsWithChildren<Props>
+>(({ children, align }, ref) => {
+  const {
+    ref: listenerRef,
+    inView,
+  } = useInView();
   const textAnimation = useAnimation();
   useEffect(() => {
     if (inView)
@@ -32,7 +38,10 @@ const HeaderWithSpacer: React.FC<Props> = ({
   }, [inView, textAnimation]);
   return (
     <header
-      ref={ref}
+      ref={composeRefs<HTMLHeadingElement>(
+        ref,
+        listenerRef,
+      )}
       css={css`
         & {
           margin-top: 100px;
@@ -110,7 +119,7 @@ const HeaderWithSpacer: React.FC<Props> = ({
       </div>
     </header>
   );
-};
+});
 
 HeaderWithSpacer.displayName =
   "HeaderWithSpacer";

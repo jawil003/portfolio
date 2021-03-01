@@ -24,6 +24,7 @@
     "@material-ui/icons": "^4.11.2",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@sambego/storybook-state": "^2.0.1",
+    "@seznam/compose-react-refs": "^1.0.5",
     "apollo-link-http": "^1.5.17",
     "apollo-server-micro": "^2.19.1",
     "axios": "^0.21.1",

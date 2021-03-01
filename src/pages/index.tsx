@@ -1,5 +1,9 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React, {
+  RefObject,
+  useEffect,
+  useState,
+} from "react";
 import Spacer from "../components/elements/Spacer";
 import IconLink from "../components/elements/IconLink";
 import HeaderWithSpacer from "../components/elements/HeaderWithSpacer";
@@ -51,12 +55,35 @@ const Index: React.FC<ServerSideProps> = ({
   indexHeader: { title, subtitle },
   resumeItems,
 }) => {
+  const paragraphs: [
+    RefObject<HTMLHeadingElement>,
+    ...RefObject<HTMLDivElement>[]
+  ] = [
+    React.createRef<HTMLHeadingElement>(),
+    React.createRef(),
+    React.createRef(),
+  ];
+  //const paragraphIndex = 0;
+  const scrollToNextSection = () => {
+    //TODO: Add logic to jump to next Paragraph on Scroll
+  };
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      scrollToNextSection,
+    );
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        scrollToNextSection,
+      );
+  }, []);
   const getIcon = useSocialLogos();
   const [
     showArrow,
     setShowArrow,
   ] = useState(true);
-  const resumeRef = React.createRef<HTMLDivElement>();
   const [
     backgroundIsWhite,
     setBackgroundIsWhite,
@@ -69,7 +96,7 @@ const Index: React.FC<ServerSideProps> = ({
         setShowArrow(true);
       }
 
-      const pos = resumeRef.current?.getBoundingClientRect();
+      const pos = paragraphs?.[2].current?.getBoundingClientRect();
       if (!pos) return;
       const height =
         pos.bottom - pos.top;
@@ -182,7 +209,10 @@ const Index: React.FC<ServerSideProps> = ({
           </div>
         }
       >
-        <HeaderWithSpacer first>
+        <HeaderWithSpacer
+          ref={paragraphs[0]}
+          first
+        >
           <FlexContainer justifyContent="center">
             <TitleWithSubtitle
               css={css`
@@ -252,6 +282,7 @@ const Index: React.FC<ServerSideProps> = ({
         </Typography>
         <Spacer height="60px" />
         <KnowledgeSection
+          ref={paragraphs[1]}
           items={[
             {
               title: "Design",
@@ -332,8 +363,8 @@ const Index: React.FC<ServerSideProps> = ({
               </svg>
             </div>
             <ResumeContainer
+              ref={paragraphs[2]}
               items={resumeItems}
-              ref={resumeRef}
               title="Und das meine praktischen Erfahrungen"
             />
 
