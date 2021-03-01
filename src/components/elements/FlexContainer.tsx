@@ -1,5 +1,8 @@
 import { css } from "@emotion/react";
-import React from "react";
+import React, {
+  forwardRef,
+  PropsWithChildren,
+} from "react";
 
 interface Props {
   direction?: "row" | "column";
@@ -41,47 +44,56 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const FlexContainer: React.FC<Props> = ({
-  direction,
-  columnGap,
-  rowGap,
-  justifyContent,
-  alignItems,
-  alignContent,
-  wrap,
-  children,
-  alignSelf,
-  justifySelf,
-  className,
-}) => {
-  return (
-    <div
-      css={css`
-        & {
-          display: flex;
-          align-self: ${alignSelf};
-          justify-self: ${justifySelf};
-          flex-direction: ${direction};
-          align-content: ${alignContent};
-          justify-content: ${justifyContent};
-          align-items: ${alignItems};
-          flex-wrap: ${wrap
-            ? "wrap"
-            : "no-wrap"};
-          margin: calc(${rowGap} / -2)
-            calc(${columnGap} / -2);
-        }
-        & > * {
-          margin: calc(${rowGap} / 2)
-            calc(${columnGap} / 2);
-        }
-      `}
-      className={className}
-    >
-      {children}
-    </div>
-  );
-};
+const FlexContainer = forwardRef<
+  HTMLDivElement,
+  PropsWithChildren<Props>
+>(
+  (
+    {
+      direction,
+      columnGap,
+      rowGap,
+      justifyContent,
+      alignItems,
+      alignContent,
+      wrap,
+      children,
+      alignSelf,
+      justifySelf,
+      className,
+    },
+    ref,
+  ) => {
+    return (
+      <div
+        ref={ref}
+        css={css`
+          & {
+            display: flex;
+            align-self: ${alignSelf};
+            justify-self: ${justifySelf};
+            flex-direction: ${direction};
+            align-content: ${alignContent};
+            justify-content: ${justifyContent};
+            align-items: ${alignItems};
+            flex-wrap: ${wrap
+              ? "wrap"
+              : "no-wrap"};
+            margin: calc(${rowGap} / -2)
+              calc(${columnGap} / -2);
+          }
+          & > * {
+            margin: calc(${rowGap} / 2)
+              calc(${columnGap} / 2);
+          }
+        `}
+        className={className}
+      >
+        {children}
+      </div>
+    );
+  },
+);
 
 FlexContainer.defaultProps = {
   wrap: false,
@@ -89,5 +101,8 @@ FlexContainer.defaultProps = {
   columnGap: "0px",
   rowGap: "0px",
 };
+
+FlexContainer.displayName =
+  "FlexContainer";
 
 export default FlexContainer;

@@ -18,13 +18,11 @@ import HeaderService, {
 import designSystem from "@style/designSystem";
 import { css } from "@emotion/react";
 import PersonWithLaptop from "src/components/designs/personWithLaptop.design";
-import KnowledgeTable from "src/components/elements/KnowledgeTable";
 import Typography from "src/components/elements/Typography";
 import ResumeService from "src/services/resume.service";
 import ResumeItemType from "src/model/ResumeItem.model";
 import ColorContainer from "src/components/elements/ColorContainer";
 import ResumeContainer from "src/components/elements/ResumeContainer";
-import ResumeItem from "src/components/elements/ResumeItem";
 import FlexContainer from "src/components/elements/FlexContainer";
 import TextField from "src/components/elements/TextField";
 import Button from "src/components/elements/Button";
@@ -33,11 +31,11 @@ import { Formik } from "formik";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import ArrowDownIcon from "src/components/icons/arrowDown.icon";
 import { motion } from "framer-motion";
+import KnowledgeSection from "src/components/elements/KnowledgeSection";
 
 const AnimatedArrowDownIcon = motion.custom(
   ArrowDownIcon,
 );
-
 interface ServerSideProps {
   indexHeader: Header;
   socialItems: SocialItem[];
@@ -253,49 +251,50 @@ const Index: React.FC<ServerSideProps> = ({
           Das sind meine Kenntnisse
         </Typography>
         <Spacer height="60px" />
-        <FlexContainer
-          justifyContent="center"
-          columnGap="30px"
-        >
-          <KnowledgeTable
-            title="Design"
-            description="Meine Fähigkeiten im Bereich Web Design"
-            items={[
-              "Adobe XD",
-              "Figma",
-              "Affinity Suite",
-            ]}
-            color={
-              designSystem.colors
-                .palette.brown.base
-            }
-          />
-          <KnowledgeTable
-            title="Frontend"
-            description="Meine Fähigkeiten im Bereich der Frontend Softwareentwicklung"
-            items={[
-              "React",
-              "Javascript/Typescript",
-              "HTML5",
-              "CSS3",
-              "Electron.js",
-            ]}
-            color={
-              designSystem.colors
-                .palette.green.dark
-            }
-          />
-          <KnowledgeTable
-            title="Backend"
-            description="Meine Fähigkeiten im Bereich der Server Entwicklung"
-            items={[
-              "Node.js",
-              "Java",
-              "MongoDB",
-              "MySQL",
-            ]}
-          />
-        </FlexContainer>
+        <KnowledgeSection
+          items={[
+            {
+              title: "Design",
+              description:
+                "Meine Fähigkeiten im Bereich Web Design",
+              items: [
+                "Adobe XD",
+                "Figma",
+                "Affinity Suite",
+              ],
+              color:
+                designSystem.colors
+                  .palette.brown.base,
+            },
+            {
+              title: "Frontend",
+              description:
+                "Meine Fähigkeiten im Bereich der Frontend Softwareentwicklung",
+              items: [
+                "React",
+                "Javascript/Typescript",
+                "HTML5",
+                "CSS3",
+                "Electron.js",
+              ],
+              color:
+                designSystem.colors
+                  .palette.green.dark,
+            },
+            {
+              title: "Backend",
+              description:
+                "Meine Fähigkeiten im Bereich der Server Entwicklung",
+              items: [
+                "Node.js",
+                "Java",
+                "MongoDB",
+                "MySQL",
+              ],
+            },
+          ]}
+        />
+
         <Spacer height="120px" />
         <ColorContainer
           color={
@@ -333,31 +332,11 @@ const Index: React.FC<ServerSideProps> = ({
               </svg>
             </div>
             <ResumeContainer
+              items={resumeItems}
               ref={resumeRef}
               title="Und das meine praktischen Erfahrungen"
-            >
-              {resumeItems.map(
-                ({
-                  title,
-                  description,
-                  start_year,
-                  end_year,
-                }) => (
-                  <ResumeItem
-                    key={title}
-                    latest={false}
-                    start_year={
-                      start_year
-                    }
-                    end_year={end_year}
-                    title={title}
-                    description={
-                      description
-                    }
-                  />
-                ),
-              )}
-            </ResumeContainer>
+            />
+
             <div
               style={{
                 backgroundColor: "#fff",

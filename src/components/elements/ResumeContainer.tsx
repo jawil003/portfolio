@@ -1,13 +1,21 @@
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
+import {
+  motion,
+  useAnimation,
+} from "framer-motion";
 import React, {
   forwardRef,
-  PropsWithChildren,
+  useEffect,
 } from "react";
+import { useInView } from "react-intersection-observer";
+import ResumeItemType from "src/model/ResumeItem.model";
+import ResumeItem from "./ResumeItem";
 import Typography from "./Typography";
 
 interface Props {
   title: string;
+  items: ResumeItemType[];
 }
 
 /**
@@ -17,8 +25,19 @@ interface Props {
  */
 const ResumeContainer = forwardRef<
   HTMLDivElement,
-  PropsWithChildren<Props>
->(({ children, title }, ref) => {
+  Props
+>(({ title, items }, ref) => {
+  const animation = useAnimation();
+  const {
+    ref: observerRef,
+    inView,
+  } = useInView();
+  useEffect(() => {
+    if (inView)
+      animation.start({ opacity: 1 });
+    else
+      animation.start({ opacity: 0 });
+  }, [inView, animation]);
   return (
     <div
       ref={ref}
@@ -52,7 +71,11 @@ const ResumeContainer = forwardRef<
           {title}
         </Typography>
       </div>
-      <div
+      <motion.div
+        ref={observerRef}
+        initial={{ opacity: 0 }}
+        animate={animation}
+        transition={{ duration: 1 }}
         css={css`
           & {
             position: relative;
@@ -61,8 +84,24 @@ const ResumeContainer = forwardRef<
           }
         `}
       >
-        {children}
-      </div>
+        {items.map(
+          ({
+            title,
+            description,
+            start_year,
+            end_year,
+          }) => (
+            <ResumeItem
+              key={title}
+              latest={false}
+              start_year={start_year}
+              end_year={end_year}
+              title={title}
+              description={description}
+            />
+          ),
+        )}
+      </motion.div>
     </div>
   );
 });
