@@ -22,13 +22,13 @@
     "emitDecoratorMetadata": true,
     "paths": {
       "@apollo/myclient": [
-        "src/config/client.ts"
+        "config/client.ts"
       ],
       "@style/breakpoints": [
-        "src/styles/breakpoints.ts"
+        "styles/breakpoints.ts"
       ],
       "@style/designSystem": [
-        "src/styles/designSystem.ts"
+        "styles/designSystem.ts"
       ]
     }
   },
