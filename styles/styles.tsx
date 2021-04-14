@@ -8,21 +8,9 @@ const rules = css`
   body {
     font-family: ${designSystem.font
       .base.family};
-    margin: 0px;
+
     font-size: ${designSystem.font.base
       .size};
-    overflow-x: hidden;
-    padding: 0px 20px;
-    min-height: 100%;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  a {
-    text-decoration: none;
-    color: initial;
   }
 
   h1,

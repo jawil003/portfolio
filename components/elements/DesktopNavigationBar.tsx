@@ -56,6 +56,7 @@ const NavigationBar: React.FC<Props> = ({
           css={css`
             & {
               position: fixed;
+              top: 0;
               z-index: ${designSystem
                 .positioning
                 .behindBehindFirst};
