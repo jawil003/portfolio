@@ -1,0 +1,15 @@
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 0px 20px;
+}
+
+#__next {
+  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}

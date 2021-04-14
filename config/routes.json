@@ -1,0 +1,22 @@
+{
+  "header": [
+    {
+      "href": "/",
+      "name": "Willkommen",
+      "icon": "HomeRoundedIcon"
+    },
+    {
+      "href": "https://willey3x37.hashnode.dev",
+      "external": true,
+      "name": "Veröffentlichungen",
+      "icon": "DescriptionRoundedIcon"
+    },
+    {
+      "href": "https://dribbble.com/willey3x37",
+      "external": true,
+      "name": "Designs",
+      "icon": "BubbleChartIcon"
+    }
+  ],
+  "footer": []
+}
