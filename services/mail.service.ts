@@ -1,4 +1,4 @@
-import { ContactRequestType } from "src/types/typeDefs/contactRequest.type";
+import { ContactRequestType } from "types/typeDefs/contactRequest.type";
 import { createTransport } from "nodemailer";
 
 const {

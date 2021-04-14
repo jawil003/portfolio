@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 import { cmsClient } from "@apollo/myclient";
-import KnowledgeCategory from "src/model/KnowledgeCategory.model";
+import KnowledgeCategory from "model/KnowledgeCategory.model";
 
 export default class KnowledgeService {
   public static async getAllKnowledgeCategoriesWithItems() {

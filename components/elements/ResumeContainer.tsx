@@ -9,7 +9,7 @@ import React, {
   useEffect,
 } from "react";
 import { useInView } from "react-intersection-observer";
-import ResumeItemType from "src/model/ResumeItem.model";
+import ResumeItemType from "model/ResumeItem.model";
 import ResumeItem from "./ResumeItem";
 import Typography from "./Typography";
 
