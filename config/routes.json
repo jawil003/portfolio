@@ -18,16 +18,5 @@
       "icon": "BubbleChartIcon"
     }
   ],
-  "footer": [
-    {
-      "href": "/contact",
-      "name": "Kontakt",
-      "icon": "EmailRoundedIcon"
-    },
-    {
-      "href": "/impressum",
-      "name": "Impressum",
-      "icon": "InfoRoundedIcon"
-    }
-  ]
+  "footer": []
 }
