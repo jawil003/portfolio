@@ -1,22 +1,9 @@
 import { gql } from "@apollo/client";
 import { cmsClient } from "@apollo/myclient";
+import { indexHeader } from "../config/headers";
 
 export default class HeaderService {
-  public static async getIndex() {
-    const {
-      data: { indexHeader },
-    } = await cmsClient.query<{
-      indexHeader: Header;
-    }>({
-      query: gql`
-        {
-          indexHeader {
-            title
-            subtitle
-          }
-        }
-      `,
-    });
+  public static getIndex() {
     return indexHeader;
   }
   public static async getKnowledge() {
