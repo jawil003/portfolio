@@ -22,7 +22,6 @@ const AnimatedArrowDownIcon = motion.custom(
 );
 
 interface Props {
-  align?: "left" | "right";
   first?: boolean;
   icon: React.ReactNode;
 }
@@ -35,7 +34,7 @@ interface Props {
 const HeaderWithIcon = forwardRef<
   HTMLHeadingElement,
   PropsWithChildren<Props>
->(({ children, align, icon }, ref) => {
+>(({ children, icon }, ref) => {
   const {
     ref: listenerRef,
     inView,
@@ -127,25 +126,20 @@ const HeaderWithIcon = forwardRef<
           initial="initial"
           animate={textAnimation}
         >
-          {align === "right"
-            ? children
-            : icon}
+          {children}
         </motion.div>
-        <div>
-          {align === "left" ? (
-            <div
-              style={{
-                alignSelf: "center",
-                display: "flex",
-                flexDirection: "column",
-                maxWidth: "500px",
-              }}
-            >
-              {children}
-            </div>
-          ) : (
-            icon
-          )}
+
+        <div
+          css={css`
+            & {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding-bottom: 100px;
+            }
+          `}
+        >
+          {icon}
         </div>
       </header>
       <FlexContainer
@@ -183,7 +177,6 @@ HeaderWithIcon.displayName =
   "HeaderWithIcon";
 
 HeaderWithIcon.defaultProps = {
-  align: "right",
   first: false,
 };
 
