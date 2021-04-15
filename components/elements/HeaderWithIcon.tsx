@@ -72,7 +72,7 @@ const HeaderWithIcon = forwardRef<
         css={css`
           & {
             margin-top: 100px;
-            overflow: hidden;
+            overflow-x: hidden;
             height: calc(100% - 100px);
             width: 100%;
             flex: 1;
