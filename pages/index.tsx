@@ -19,7 +19,6 @@ import HeaderService, {
   Header,
 } from "services/header.service";
 import designSystem from "@style/designSystem";
-import { css } from "@emotion/react";
 import PersonWithLaptop from "components/designs/personWithLaptop.design";
 import Typography from "components/elements/Typography";
 import ResumeService from "services/resume.service";
@@ -110,18 +109,6 @@ const Index: React.FC<ServerSideProps> = ({
         backgroundIsWhite={
           backgroundIsWhite
         }
-        css={css`
-          @media (max-width: ${designSystem
-              .breakpoints
-              .tabletPortraitUp}) {
-            &
-              svg.hamburger-menu-icon
-              > * {
-              fill: ${designSystem
-                .colors.brand.primary};
-            }
-          }
-        `}
       />
 
       <HeaderWithIcon
@@ -133,16 +120,6 @@ const Index: React.FC<ServerSideProps> = ({
       >
         <FlexContainer justifyContent="center">
           <TitleWithSubtitle
-            css={css`
-              @media (max-width: ${designSystem
-                  .breakpoints
-                  .tabletPortraitUp}) {
-                & > h3,
-                p {
-                  color: white;
-                }
-              }
-            `}
             heading={title}
             description={subtitle}
           >
@@ -158,24 +135,6 @@ const Index: React.FC<ServerSideProps> = ({
                   icon: { title },
                 }) => (
                   <IconLink
-                    css={css`
-                      @media (max-width: ${designSystem
-                          .breakpoints
-                          .tabletPortraitUp}) {
-                        & .accent {
-                          fill: ${designSystem
-                            .colors
-                            .brand
-                            .secondary};
-                        }
-                        & .main {
-                          fill: ${designSystem
-                            .colors
-                            .brand
-                            .primary};
-                        }
-                      }
-                    `}
                     key={name}
                     external
                     href={href}
