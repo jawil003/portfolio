@@ -29,11 +29,14 @@ import ResumeContainer from "components/elements/ResumeContainer";
 import FlexContainer from "components/elements/FlexContainer";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import KnowledgeSection from "components/elements/KnowledgeSection";
+import KnowledgeService from "services/knowledge.service";
+import KnowledgeItem from "model/KnowledgeItem.model";
 
 interface ServerSideProps {
   indexHeader: Header;
   socialItems: SocialItem[];
   resumeItems: ResumeItemType[];
+  knowledgeItems: KnowledgeItem[];
 }
 /**
  * An Index React Component.
@@ -44,6 +47,7 @@ const Index: React.FC<ServerSideProps> = ({
   socialItems,
   indexHeader: { title, subtitle },
   resumeItems,
+  knowledgeItems,
 }) => {
   const paragraphs: [
     RefObject<HTMLHeadingElement>,
@@ -197,47 +201,7 @@ const Index: React.FC<ServerSideProps> = ({
       <Spacer height="60px" />
       <KnowledgeSection
         ref={paragraphs[1]}
-        items={[
-          {
-            title: "Design",
-            description:
-              "Meine Fähigkeiten im Bereich Web Design",
-            items: [
-              "Adobe XD",
-              "Figma",
-              "Affinity Suite",
-            ],
-            color:
-              designSystem.colors
-                .palette.brown.base,
-          },
-          {
-            title: "Frontend",
-            description:
-              "Meine Fähigkeiten im Bereich der Frontend Softwareentwicklung",
-            items: [
-              "React",
-              "Javascript/Typescript",
-              "HTML5",
-              "CSS3",
-              "Electron.js",
-            ],
-            color:
-              designSystem.colors
-                .palette.green.dark,
-          },
-          {
-            title: "Backend",
-            description:
-              "Meine Fähigkeiten im Bereich der Server Entwicklung",
-            items: [
-              "Node.js",
-              "Java",
-              "MongoDB",
-              "MySQL",
-            ],
-          },
-        ]}
+        items={knowledgeItems}
       />
 
       <Spacer height="120px" />
@@ -314,9 +278,10 @@ const Index: React.FC<ServerSideProps> = ({
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
-      socialItems: await SocialItemsService.getAll(),
-      indexHeader: await HeaderService.getIndex(),
-      resumeItems: await ResumeService.getAllResumeItems(),
+      socialItems: SocialItemsService.getAll(),
+      indexHeader: HeaderService.getIndex(),
+      resumeItems: ResumeService.getAllResumeItems(),
+      knowledgeItems: KnowledgeService.getAll(),
     },
   };
 };

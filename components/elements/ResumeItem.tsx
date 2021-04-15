@@ -7,8 +7,8 @@ interface Props {
   title: string;
   description: string;
   latest?: boolean;
-  start_year?: number;
-  end_year?: number;
+  start_year: number | null;
+  end_year: number | null;
 }
 
 /**

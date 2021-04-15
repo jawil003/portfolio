@@ -1,25 +1,6 @@
-import { gql } from "@apollo/client";
-import { cmsClient } from "@apollo/myclient";
-
+import { socialItems } from "../config/socialItems";
 export default class SocialItemsService {
-  public static async getAll() {
-    const {
-      data: { socialItems },
-    } = await cmsClient.query<{
-      socialItems: SocialItem[];
-    }>({
-      query: gql`
-        {
-          socialItems {
-            name
-            href
-            icon {
-              title
-            }
-          }
-        }
-      `,
-    });
+  public static getAll() {
     return socialItems;
   }
 }
