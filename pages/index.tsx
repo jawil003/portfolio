@@ -101,10 +101,7 @@ const Index: React.FC<ServerSideProps> = ({
   );
   return (
     <>
-      <NextSeo
-        title="Jannik Wills Softwareentwicklung Kenntnisse "
-        description="Meine Kenntnisse im Bereich der Softwareentwicklung"
-      />
+      <NextSeo title="Kenntnisse" />
       <NavigationBar
         backgroundIsWhite={
           backgroundIsWhite

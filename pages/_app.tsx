@@ -33,8 +33,45 @@ const MyApp: React.FC<AppProps> = ({
     <>
       {globalStyles}
       <DefaultSeo
-        title="Jannik Will: Erfahrungen Softwareentwicklung"
-        description="Meine Erfahrungen im Bereich der Softwareentwicklung"
+        defaultTitle="Jannik Will"
+        titleTemplate="Jannik Will | %s"
+        title={undefined}
+        description="Lerne mich und meine Fähigkeiten, sowie meine Erfahrungen im Bereich Softwareentwicklung kennen"
+        openGraph={{
+          type: "website",
+          locale: "de",
+          url: process.env.HOST_URL,
+          images: [
+            {
+              url: `${process.env.HOST_URL}/og-image.jpg`,
+              width: 2130,
+              height: 1118.25,
+              alt:
+                "Cover mit Text Lerne mich und meine Fähigkeiten, sowie meine Erfahrungen im Bereich Softwareentwicklung kennen",
+            },
+          ],
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType:
+            "summary_large_image",
+        }}
+        additionalLinkTags={[
+          {
+            rel: "icon",
+            href:
+              "img/icons/favicon.png",
+          },
+        ]}
+        robotsProps={{
+          nosnippet: true,
+          noimageindex: true,
+          noarchive: true,
+          maxSnippet: -1,
+          maxImagePreview: "none",
+          maxVideoPreview: -1,
+        }}
       />
 
       {vpWidth >=
