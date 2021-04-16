@@ -1,35 +1,46 @@
 import { ContactRequestType } from "types/typeDefs/contactRequest.type";
-import { createTransport } from "nodemailer";
+import axios from "axios";
 
 const {
-  EMAIL_USERNAME: user,
-  EMAIL_PASSWORD: pass,
-  EMAIL_SERVICE: service,
+  SEND_IN_BLUE_API_KEY_V3: api_key,
+  SEND_IN_BLUE_SENDER_NAME: sender_name,
+  SEND_IN_BLUE_SENDER_EMAIL: sender_email,
 } = process.env;
-
-const transporter = createTransport({
-  service,
-  auth: {
-    user,
-    pass,
-  },
-});
-
 export default class MailService {
-  public static async send(
-    mail: ContactRequestType,
-  ) {
-    const {
-      description,
-      emailAdress,
-      name,
-      title,
-    } = mail;
-    await transporter.sendMail({
-      from: `"${name}" <${emailAdress}>`,
-      to: user,
-      subject: title,
-      html: description,
-    });
+  public static async send({
+    title,
+    description,
+    emailAdress: email,
+    name,
+  }: ContactRequestType) {
+    await axios.post(
+      "https://api.sendinblue.com/v3/smtp/email",
+      JSON.stringify({
+        sender: {
+          name,
+          email,
+        },
+        to: [
+          {
+            email: sender_email,
+            name: sender_name,
+          },
+        ],
+        subject: `Willey3x37.de Anfrage: ${title}`,
+        textContent: description,
+        replyTo: {
+          name,
+          email,
+        },
+      }),
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type":
+            "application/json",
+          "api-key": api_key,
+        },
+      },
+    );
   }
 }
