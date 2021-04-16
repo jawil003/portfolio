@@ -45,8 +45,8 @@ const MyApp: React.FC<AppProps> = ({
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_HOST_URL}/img/Og_Preview.png`,
-              width: 2130,
-              height: 1118.25,
+              width: 1200,
+              height: 630,
               alt:
                 "Cover mit Text Lerne mich und meine Fähigkeiten, sowie meine Erfahrungen im Bereich Softwareentwicklung kennen",
             },
