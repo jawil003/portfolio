@@ -8,6 +8,7 @@ import globalStyles from "../styles/styles";
 import useViewportSizes from "use-viewport-sizes";
 import designSystem from "@style/designSystem";
 import { NotOptimized } from "components/elements/NotOptimized";
+import { DefaultSeo } from "next-seo";
 /**
  * An App React Component.
  * @author Jannik Will
@@ -31,12 +32,10 @@ const MyApp: React.FC<AppProps> = ({
   return (
     <>
       {globalStyles}
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
-      </Head>
+      <DefaultSeo
+        title="Jannik Will: Erfahrungen Softwareentwicklung"
+        description="Meine Erfahrungen im Bereich der Softwareentwicklung"
+      />
 
       {vpWidth >=
       designSystem.breakpoints
