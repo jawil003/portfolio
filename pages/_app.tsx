@@ -45,7 +45,7 @@ const MyApp: React.FC<AppProps> = ({
               .NEXT_PUBLIC_HOST_URL,
           images: [
             {
-              url: `${process.env.NEXT_PUBLIC_HOST_URL}/og-image.jpg`,
+              url: `${process.env.NEXT_PUBLIC_HOST_URL}/og_Preview.png`,
               width: 2130,
               height: 1118.25,
               alt:
