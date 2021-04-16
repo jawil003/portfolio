@@ -48,10 +48,15 @@ const designSystem = {
   },
   breakpoints: {
     phoneOnly: "599px",
+    phoneOnlyNumber: 599,
     tabletPortraitUp: "600px",
+    tabletPortraitUpNumber: 600,
     tabletLandscapeUp: "900px",
+    tabletLandscapeUpNumber: 900,
     desktopUp: "1200px",
+    desktopUpNumber: 1200,
     bigDesktopUp: "1800px",
+    bigDesktopUpNumber: 1800,
   },
   positioning: {
     behindBehindBehindFirst: 997,
