@@ -8,7 +8,7 @@ import axios from "axios";
 import { createHttpLink } from "apollo-link-http";
 
 const localLink = createHttpLink({
-  uri: `${process.env.HOST_URL}/api/graphql`,
+  uri: `${process.env.NEXT_PUBLIC_HOST_URL}/api/graphql`,
   fetch: buildAxiosFetch(
     axios as any,
   ) as any,
