@@ -2,7 +2,6 @@ import React, {
   useEffect,
 } from "react";
 import { AppProps } from "next/app";
-import Head from "next/head";
 import BetaDialog from "../components/elements/BetaDialog";
 import globalStyles from "../styles/styles";
 import useViewportSizes from "use-viewport-sizes";
