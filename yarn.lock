@@ -16455,6 +16455,11 @@ use-subscription@1.5.1:
   dependencies:
     object-assign "^4.1.1"
 
+use-viewport-sizes@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/use-viewport-sizes/-/use-viewport-sizes-0.4.0.tgz#b9ad7f7cac796c1e3443a99f35f16d71a4bfaeb1"
+  integrity sha512-GIAkrkcNMaJfKyfFacaew3w4kmO/0Yu7n+rqPSWypyuMWyAV97ZLFtueAMQKhW+0cmlNiL1C8EpEnhEx/E3j3g==
+
 use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
