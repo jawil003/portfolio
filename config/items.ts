@@ -24,6 +24,13 @@ export const resumeItems: ResumeItem[] = [
     description:
       "Erlernen von UML Modellierung, Best Practice und Java, sowie den Web Grundlagen (HTML5, CSS3, JS) ",
   },
+  {
+    title: "Bookwire GmbH",
+    start_year: 2021,
+    end_year: null,
+    description:
+      "Mitarbeit an React basierten Webapplikationen",
+  },
 ];
 
 export const knowledgeItems: KnowledgeItem[] = [
