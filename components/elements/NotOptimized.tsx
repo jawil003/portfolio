@@ -21,6 +21,7 @@ export const NotOptimized: React.FC = () => {
         rowGap="50px"
         css={css`
           & {
+            margin: 0px;
             padding: 50px;
             width: 100%;
             height: 100%;
