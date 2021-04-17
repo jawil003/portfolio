@@ -3,44 +3,46 @@ import { MobileApplicationDesign } from "components/designs/mobileApplication.de
 import React from "react";
 import FlexContainer from "./FlexContainer";
 import Typography from "./Typography";
-
-export interface Props {}
+import NavigationBar from "components/elements/DesktopNavigationBar";
 
 /**
  * An NotOptimized React Component.
  * @author Jannik Will
  * @version 0.1
  */
-export const NotOptimized: React.FC<Props> = () => {
+export const NotOptimized: React.FC = () => {
   return (
-    <FlexContainer
-      direction="column"
-      justifyContent="center"
-      alignItems="center"
-      rowGap="50px"
-      css={css`
-        & {
-          padding: 50px;
-          width: 100%;
-          height: 100%;
-        }
-      `}
-    >
-      <MobileApplicationDesign width="100%" />
-      <Typography
+    <>
+      <NavigationBar />
+      <FlexContainer
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        rowGap="50px"
         css={css`
           & {
-            font-size: 20px;
+            padding: 50px;
+            width: 100%;
+            height: 100%;
           }
         `}
-        align="center"
-        variant="b1"
-        bold="semi-bold"
       >
-        Diese Seite ist zurzeit noch
-        nicht vollständig für mobile
-        Geräte optimiert
-      </Typography>
-    </FlexContainer>
+        <MobileApplicationDesign width="100%" />
+        <Typography
+          css={css`
+            & {
+              font-size: 20px;
+            }
+          `}
+          align="center"
+          variant="b1"
+          bold="semi-bold"
+        >
+          Diese Seite ist zurzeit noch
+          nicht vollständig für mobile
+          Geräte optimiert
+        </Typography>
+      </FlexContainer>
+    </>
   );
 };
