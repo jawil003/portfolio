@@ -1,7 +1,7 @@
 export const indexHeader = {
   title: "Hallo, ich bin Jannik",
   subtitle:
-    "ein leidenschaftlicher Softwareentwickler und Designer aus Dortmund und spezialisiert auf Frontend und Backend Lösungen aller Art",
+    "ich bin Student der Wirtschaftsinformatik, komme aus Dortmund und kenne mich im Feld von Desktop, Mobile und Web mit den neusten Technologien aus",
 };
 
 export const errorHeader = {
