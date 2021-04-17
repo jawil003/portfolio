@@ -109,6 +109,7 @@ const Index: React.FC<ServerSideProps> = ({
       />
 
       <HeaderWithIcon
+        arrow
         icon={
           <PersonWithLaptop width="100%" />
         }

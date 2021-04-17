@@ -23,7 +23,9 @@ const AnimatedArrowDownIcon = motion.custom(
 
 interface Props {
   first?: boolean;
+  arrow?: boolean;
   icon: React.ReactNode;
+  className?: string;
 }
 
 /**
@@ -34,150 +36,166 @@ interface Props {
 const HeaderWithIcon = forwardRef<
   HTMLHeadingElement,
   PropsWithChildren<Props>
->(({ children, icon }, ref) => {
-  const {
-    ref: listenerRef,
-    inView,
-  } = useInView();
-  const textAnimation = useAnimation();
-  useEffect(() => {
-    if (inView)
-      textAnimation.start("animate");
-  }, [inView, textAnimation]);
-  const [
-    showArrow,
-    setShowArrow,
-  ] = useState(true);
-
-  useScrollPosition(
-    ({ currPos: { y } }) => {
-      console.log(y);
-      if (y > 0) {
-        setShowArrow(false);
-      } else if (y === 0) {
-        setShowArrow(true);
-      }
+>(
+  (
+    {
+      children,
+      icon,
+      arrow,
+      className,
     },
-    undefined,
-    undefined,
-    true,
-  );
-  return (
-    <>
-      <header
-        ref={composeRefs<HTMLHeadingElement>(
-          ref,
-          listenerRef,
-        )}
-        css={css`
-          & {
-            margin-top: 100px;
+    ref,
+  ) => {
+    const {
+      ref: listenerRef,
+      inView,
+    } = useInView();
+    const textAnimation = useAnimation();
+    useEffect(() => {
+      if (inView)
+        textAnimation.start("animate");
+    }, [inView, textAnimation]);
+    const [
+      showArrow,
+      setShowArrow,
+    ] = useState(true);
 
-            height: calc(100% - 100px);
-            width: 100%;
-            flex: 1;
-            display: flex;
-            justify-content: center;
-          }
-
-          /* desktop/tablet */
-          @media (min-width: ${designSystem
-              .breakpoints
-              .tabletPortraitUp}) {
-            & {
-              flex-direction: row;
-            }
-            & > * {
-              flex: 1;
-            }
-            & > :first-of-type {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-          }
-
-          /* mobile */
-          @media (max-width: ${designSystem
-              .breakpoints
-              .tabletPortraitUp}) {
-            & {
-              flex-direction: column;
-              align-items: center;
-            }
-            & > * {
-              flex: 1;
-            }
-            & > :first-of-type {
-              flex: 1;
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-            }
-            & > :last-child {
-              display: none;
-            }
-          }
-        `}
-      >
-        <motion.div
-          variants={flyFromTop}
-          initial="initial"
-          animate={textAnimation}
-        >
-          {children}
-        </motion.div>
-
-        <div
+    useScrollPosition(
+      ({ currPos: { y } }) => {
+        console.log(y);
+        if (y > 0) {
+          setShowArrow(false);
+        } else if (y === 0) {
+          setShowArrow(true);
+        }
+      },
+      undefined,
+      undefined,
+      true,
+    );
+    return (
+      <>
+        <header
+          className={className}
+          ref={composeRefs<HTMLHeadingElement>(
+            ref,
+            listenerRef,
+          )}
           css={css`
             & {
+              margin-top: 100px;
+
+              height: calc(
+                100% - 100px
+              );
+              width: 100%;
+              flex: 1;
               display: flex;
               justify-content: center;
-              align-items: center;
-              padding-bottom: 100px;
+            }
+
+            /* desktop/tablet */
+            @media (min-width: ${designSystem
+                .breakpoints
+                .tabletPortraitUp}) {
+              & {
+                flex-direction: row;
+              }
+              & > * {
+                flex: 1;
+              }
+              & > :first-of-type {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+
+            /* mobile */
+            @media (max-width: ${designSystem
+                .breakpoints
+                .tabletPortraitUp}) {
+              & {
+                flex-direction: column;
+                align-items: center;
+              }
+              & > * {
+                flex: 1;
+              }
+              & > :first-of-type {
+                flex: 1;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              }
+              & > :last-child {
+                display: none;
+              }
             }
           `}
         >
-          {icon}
-        </div>
-      </header>
-      <FlexContainer
-        css={css`
-          & {
-            display: ${showArrow
-              ? "flex"
-              : "none"};
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-          }
-        `}
-        justifyContent="center"
-      >
-        <AnimatedArrowDownIcon
-          initial={{ y: -10 }}
-          animate={{
-            y: [-10, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "mirror",
-            duration: 0.75,
-            type: "tween",
-          }}
-        />
-      </FlexContainer>
-    </>
-  );
-});
+          <motion.div
+            variants={flyFromTop}
+            initial="initial"
+            animate={textAnimation}
+          >
+            {children}
+          </motion.div>
+
+          <div
+            css={css`
+              & {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 100px;
+              }
+            `}
+          >
+            {icon}
+          </div>
+        </header>
+        {arrow ? (
+          <FlexContainer
+            css={css`
+              & {
+                display: ${showArrow
+                  ? "flex"
+                  : "none"};
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+              }
+            `}
+            justifyContent="center"
+          >
+            <AnimatedArrowDownIcon
+              initial={{ y: -10 }}
+              animate={{
+                y: [-10, 0],
+              }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 0.75,
+                type: "tween",
+              }}
+            />
+          </FlexContainer>
+        ) : undefined}
+      </>
+    );
+  },
+);
 
 HeaderWithIcon.displayName =
   "HeaderWithIcon";
 
 HeaderWithIcon.defaultProps = {
   first: false,
+  arrow: false,
 };
 
 export default HeaderWithIcon;
