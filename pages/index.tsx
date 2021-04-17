@@ -1,4 +1,3 @@
-import Head from "next/head";
 import React, {
   RefObject,
   useEffect,
@@ -8,7 +7,6 @@ import Spacer from "../components/elements/Spacer";
 import IconLink from "../components/elements/IconLink";
 import HeaderWithIcon from "../components/elements/HeaderWithIcon";
 import NavigationBar from "../components/elements/DesktopNavigationBar";
-import { generateIndividualTags } from "services/meta.service";
 import TitleWithSubtitle from "../components/elements/TitleWithSubtitle";
 import { GetStaticProps } from "next";
 import SocialItemsService, {
@@ -30,6 +28,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import KnowledgeSection from "components/elements/KnowledgeSection";
 import KnowledgeService from "services/knowledge.service";
 import KnowledgeItem from "model/KnowledgeItem.model";
+import { NextSeo } from "next-seo";
 
 interface ServerSideProps {
   indexHeader: Header;
@@ -102,9 +101,7 @@ const Index: React.FC<ServerSideProps> = ({
   );
   return (
     <>
-      <Head>
-        {generateIndividualTags()}
-      </Head>
+      <NextSeo title="Kenntnisse" />
       <NavigationBar
         backgroundIsWhite={
           backgroundIsWhite
@@ -112,6 +109,7 @@ const Index: React.FC<ServerSideProps> = ({
       />
 
       <HeaderWithIcon
+        arrow
         icon={
           <PersonWithLaptop width="100%" />
         }
