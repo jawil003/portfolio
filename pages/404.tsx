@@ -29,7 +29,10 @@ const ErrorPage: React.FC<ServerSideProps> = ({
 }) => {
   return (
     <>
-      <NextSeo title="Nicht gefunden" />
+      <NextSeo
+        title="Nicht gefunden"
+        noindex={true}
+      />
       <Global
         styles={css`
           #__next {
