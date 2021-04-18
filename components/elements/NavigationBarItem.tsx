@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Spacer from "./Spacer";
-import Typography from "./Typography";
+import { Typography } from "./Typography";
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
 import useDesktopNavigationBarContext from "hooks/useDesktopNavigationBarContext.hook";
@@ -82,8 +82,7 @@ const NavigationBarItem: React.FC<Props> = ({
             ]
           : undefined}
         <Typography
-          inline
-          variant="b1"
+          variant="s1"
           bold="semi-bold"
           color={color}
         >
@@ -142,8 +141,7 @@ const NavigationBarItem: React.FC<Props> = ({
               ]
             : undefined}
           <Typography
-            inline
-            variant="b1"
+            variant="s1"
             bold="semi-bold"
             color={color}
           >

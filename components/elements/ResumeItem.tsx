@@ -1,7 +1,7 @@
 import designSystem from "@style/designSystem";
 import React from "react";
 import Spacer from "./Spacer";
-import Typography from "./Typography";
+import { Typography } from "./Typography";
 
 interface Props {
   title: string;

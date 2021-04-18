@@ -5,7 +5,7 @@ import React, {
 } from "react";
 import Button from "./Button";
 import FlexContainer from "./FlexContainer";
-import Typography from "./Typography";
+import { Typography } from "./Typography";
 
 const DIALOG_SHOWN_KEY =
   "beta_dialog_shown";
