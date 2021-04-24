@@ -238,6 +238,7 @@ const resolveVariant = (
     case "h1": {
       return (
         <H1
+          id="heading1"
           color={color}
           align={align}
           weight={weight}
@@ -259,6 +260,7 @@ const resolveVariant = (
     case "h2": {
       return (
         <H2
+          id="heading2"
           color={color}
           align={align}
           weight={weight}
@@ -280,6 +282,7 @@ const resolveVariant = (
     case "h3": {
       return (
         <H3
+          id="heading3"
           color={color}
           align={align}
           weight={weight}
@@ -301,6 +304,7 @@ const resolveVariant = (
     case "h4": {
       return (
         <H4
+          id="heading4"
           color={color}
           align={align}
           weight={weight}
@@ -322,6 +326,7 @@ const resolveVariant = (
     case "h5": {
       return (
         <H5
+          id="heading5"
           color={color}
           align={align}
           italic={italic}
@@ -344,6 +349,7 @@ const resolveVariant = (
     case "h6": {
       return (
         <H6
+          id="heading6"
           color={color}
           align={align}
           weight={weight}
@@ -365,6 +371,7 @@ const resolveVariant = (
     case "b1": {
       return (
         <B1
+          id="body1"
           color={color}
           align={align}
           weight={weight}
@@ -386,6 +393,7 @@ const resolveVariant = (
     case "b2": {
       return (
         <B2
+          id="body2"
           color={color}
           align={align}
           weight={weight}
@@ -407,6 +415,7 @@ const resolveVariant = (
     case "s1": {
       return (
         <S1
+          id="subtitle1"
           color={color}
           align={align}
           weight={weight}
@@ -428,6 +437,7 @@ const resolveVariant = (
     case "s2": {
       return (
         <S2
+          id="subtitle2"
           color={color}
           align={align}
           weight={weight}
@@ -507,6 +517,7 @@ export const Typography: React.FC<Props> = ({
           maxLength,
           wordWrap,
           fontFamily,
+          wordBreak,
         ],
       )}
     </>

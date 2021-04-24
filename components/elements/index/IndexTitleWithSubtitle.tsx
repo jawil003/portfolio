@@ -27,7 +27,7 @@ export const IndexTitleWithSubtitle: React.FC<Props> = ({
 }) => {
   return (
     <FlexContainer
-      rowGap="20px"
+      rowGap="1em"
       className={className}
       css={[
         css`

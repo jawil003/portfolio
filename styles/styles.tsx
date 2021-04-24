@@ -10,24 +10,29 @@ const rules = css`
       .size};
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    display: block;
-    margin: 0px;
-    font-family: ${designSystem.font
-        .base.family.title},
-      ${designSystem.font.base.family
-        .fallback};
-  }
+  #body1,
+  #body2,
   * {
     font-family: ${designSystem.font
         .base.family.paragraph},
       ${designSystem.font.base.family
         .fallback};
+  }
+
+  #heading1,
+  #heading2,
+  #heading3,
+  #heading4,
+  #heading5,
+  #heading6,
+  #subtitle1,
+  #subtitle2 {
+    font-family: ${designSystem.font
+        .base.family.title},
+      ${designSystem.font.base.family
+        .fallback};
+    display: block;
+    margin: 0px;
   }
 `;
 
