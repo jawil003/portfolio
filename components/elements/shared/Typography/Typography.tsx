@@ -49,7 +49,6 @@ const H1 = styled.h1<StyledComponents>`
       weight?: number;
     }) => weight ?? 300};
     font-size: 6em;
-    font-style: normal;
   }
 `;
 
@@ -201,6 +200,7 @@ const resolveVariant = (
   className: Props["className"],
   bold: Props["bold"],
   align: Props["align"],
+  italic: Props["italic"],
   color?: Props["color"],
 ) => {
   const weight =
@@ -222,6 +222,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -235,6 +236,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -248,6 +250,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -261,6 +264,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -273,6 +277,7 @@ const resolveVariant = (
         <H5
           color={color}
           align={align}
+          italic={italic}
           weight={weight}
           className={className}
           as={component}
@@ -288,6 +293,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -301,6 +307,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -314,6 +321,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -327,6 +335,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -340,6 +349,7 @@ const resolveVariant = (
           color={color}
           align={align}
           weight={weight}
+          italic={italic}
           className={className}
           as={component}
         >
@@ -362,6 +372,8 @@ export const Typography: React.FC<Props> = ({
   className,
   bold,
   align,
+  italic,
+  color,
 }) => {
   return (
     <>
@@ -374,6 +386,9 @@ export const Typography: React.FC<Props> = ({
             className,
             bold,
             align,
+
+            italic,
+            color,
           ),
         [
           align,
@@ -382,6 +397,8 @@ export const Typography: React.FC<Props> = ({
           className,
           component,
           variant,
+          italic,
+          color,
         ],
       )}
     </>
