@@ -11,6 +11,8 @@ import { FlexContainer } from "./shared/FlexContainer/FlexContainer";
 import KnowledgeTable from "./KnowledgeTable";
 import { useInView } from "react-intersection-observer";
 import composeRefs from "@seznam/compose-react-refs";
+import designSystem from "../../styles/designSystem";
+import { css } from "@emotion/react";
 const AnimatedFlexContainer = motion.custom(
   FlexContainer,
 );
@@ -52,6 +54,16 @@ const KnowledgeSection = forwardRef<
     }, [inView, animation]);
     return (
       <AnimatedFlexContainer
+        css={css`
+          @media (max-width: ${designSystem
+              .breakpoints
+              .tabletPortraitUp}) {
+            & {
+              flex-direction: column;
+              align-items: center;
+            }
+          }
+        `}
         initial={{ opacity: 0 }}
         animate={animation}
         className={className}
@@ -63,6 +75,7 @@ const KnowledgeSection = forwardRef<
         )}
         justifyContent="center"
         columnGap="30px"
+        rowGap="30px"
       >
         {items.map(
           ({
