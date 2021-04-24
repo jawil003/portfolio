@@ -29,3 +29,148 @@ exports[`Typography Create H1 Element 1`] = `
   </div>
 </body>
 `;
+
+exports[`Typography Create H2 Element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: ;
+  letter-spacing: ;
+  word-spacing: ;
+  color: ;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create H3 Element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: ;
+  letter-spacing: ;
+  word-spacing: ;
+  color: ;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create H4 Element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: ;
+  letter-spacing: ;
+  word-spacing: ;
+  color: ;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create H5 Element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: ;
+  letter-spacing: ;
+  word-spacing: ;
+  color: ;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create H6 Element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: ;
+  letter-spacing: ;
+  word-spacing: ;
+  color: ;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+    />
+  </div>
+</body>
+`;
