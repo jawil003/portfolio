@@ -6,7 +6,7 @@ import { BlankCanvasDesign } from "../components/designs/blankCanvas.design";
 import FlexContainer from "../components/elements/FlexContainer";
 import HeaderWithIcon from "../components/elements/HeaderWithIcon";
 import Spacer from "../components/elements/Spacer";
-import TitleWithSubtitle from "../components/elements/TitleWithSubtitle";
+import { IndexTitleWithSubtitle } from "../components/elements/index/IndexTitleWithSubtitle";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import React from "react";
@@ -59,12 +59,12 @@ const ErrorPage: React.FC<ServerSideProps> = ({
         }
       >
         <FlexContainer justifyContent="center">
-          <TitleWithSubtitle
+          <IndexTitleWithSubtitle
             heading={title}
             description={subtitle}
           >
             <Spacer height="8px" />
-          </TitleWithSubtitle>
+          </IndexTitleWithSubtitle>
         </FlexContainer>
       </HeaderWithIcon>
     </>

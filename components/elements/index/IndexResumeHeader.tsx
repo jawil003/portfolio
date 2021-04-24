@@ -1,20 +1,19 @@
-import designSystem from "../../styles/designSystem";
+import designSystem from "../../../styles/designSystem";
 import React from "react";
-import { Typography } from "./shared/Typography";
-
-interface Props {}
+import { Typography } from "../shared/Typography";
 
 /**
  * An ResumeHeader React Component.
  * @author Jannik Will
  * @version 0.1
  */
-const ResumeHeader: React.FC<Props> = ({
+export const ResumeHeader: React.FC = ({
   children,
 }) => {
   return (
     <Typography
       variant="h4"
+      bold="semi-bold"
       italic
       color={
         designSystem.colors.brand
@@ -25,5 +24,3 @@ const ResumeHeader: React.FC<Props> = ({
     </Typography>
   );
 };
-
-export default ResumeHeader;

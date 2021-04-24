@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import React from "react";
-import { Typography } from "./shared/Typography";
+import FlexContainer from "../FlexContainer";
+import { Typography } from "../shared/Typography";
 
 interface Props {
   heading: string;
@@ -18,14 +19,15 @@ interface Props {
  * @author
  * @version 0.1
  */
-const TitleWithSubtitle: React.FC<Props> = ({
+export const IndexTitleWithSubtitle: React.FC<Props> = ({
   heading,
   description,
   children,
   className,
 }) => {
   return (
-    <div
+    <FlexContainer
+      rowGap="20px"
       className={className}
       css={[
         css`
@@ -41,7 +43,10 @@ const TitleWithSubtitle: React.FC<Props> = ({
         `,
       ]}
     >
-      <Typography variant="h3">
+      <Typography
+        bold="semi-bold"
+        variant="h3"
+      >
         {heading}
       </Typography>
       <Typography
@@ -52,8 +57,6 @@ const TitleWithSubtitle: React.FC<Props> = ({
         {description}
       </Typography>
       {children}
-    </div>
+    </FlexContainer>
   );
 };
-
-export default TitleWithSubtitle;

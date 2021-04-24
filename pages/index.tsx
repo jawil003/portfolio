@@ -7,7 +7,7 @@ import Spacer from "../components/elements/Spacer";
 import IconLink from "../components/elements/IconLink";
 import HeaderWithIcon from "../components/elements/HeaderWithIcon";
 import NavigationBar from "../components/elements/DesktopNavigationBar";
-import TitleWithSubtitle from "../components/elements/TitleWithSubtitle";
+import { IndexTitleWithSubtitle } from "../components/elements/index/IndexTitleWithSubtitle";
 import { GetStaticProps } from "next";
 import SocialItemsService, {
   SocialItem,
@@ -22,7 +22,7 @@ import { Typography } from "../components/elements/shared/Typography";
 import ResumeService from "../services/resume.service";
 import ResumeItemType from "../model/ResumeItem.model";
 import ColorContainer from "../components/elements/ColorContainer";
-import ResumeContainer from "../components/elements/ResumeContainer";
+import { IndexResumeContainer } from "../components/elements/index/IndexResumeContainer";
 import FlexContainer from "../components/elements/FlexContainer";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import KnowledgeSection from "../components/elements/KnowledgeSection";
@@ -117,7 +117,7 @@ const Index: React.FC<ServerSideProps> = ({
         first
       >
         <FlexContainer justifyContent="center">
-          <TitleWithSubtitle
+          <IndexTitleWithSubtitle
             heading={title}
             description={subtitle}
           >
@@ -145,11 +145,12 @@ const Index: React.FC<ServerSideProps> = ({
                 ),
               )}
             </FlexContainer>
-          </TitleWithSubtitle>
+          </IndexTitleWithSubtitle>
         </FlexContainer>
       </HeaderWithIcon>
       <Spacer height="120px" />
       <Typography
+        bold="semi-bold"
         variant="h4"
         align="center"
       >
@@ -196,7 +197,7 @@ const Index: React.FC<ServerSideProps> = ({
               <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
             </svg>
           </div>
-          <ResumeContainer
+          <IndexResumeContainer
             ref={paragraphs[2]}
             items={resumeItems}
             title="Und das meine praktischen Erfahrungen"

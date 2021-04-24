@@ -1,7 +1,7 @@
-import designSystem from "../../styles/designSystem";
+import designSystem from "../../../styles/designSystem";
 import React from "react";
-import Spacer from "./Spacer";
-import { Typography } from "./shared/Typography";
+import Spacer from "../Spacer";
+import { Typography } from "../shared/Typography";
 
 interface Props {
   title: string;
@@ -16,7 +16,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ResumeItem: React.FC<Props> = ({
+export const ResumeItem: React.FC<Props> = ({
   description,
   title,
   start_year,
@@ -179,5 +179,3 @@ const ResumeItem: React.FC<Props> = ({
 ResumeItem.defaultProps = {
   latest: false,
 };
-
-export default ResumeItem;

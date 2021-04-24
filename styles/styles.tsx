@@ -21,8 +21,7 @@ const rules = css`
     font-family: ${designSystem.font
       .base.family.title};
   }
-  span,
-  p {
+  * {
     font-family: ${designSystem.font
       .base.family.paragraph};
   }

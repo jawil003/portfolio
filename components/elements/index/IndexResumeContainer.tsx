@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import designSystem from "../../styles/designSystem";
+import designSystem from "../../../styles/designSystem";
 import {
   motion,
   useAnimation,
@@ -9,9 +9,9 @@ import React, {
   useEffect,
 } from "react";
 import { useInView } from "react-intersection-observer";
-import ResumeItemType from "../../model/ResumeItem.model";
-import ResumeItem from "./ResumeItem";
-import { Typography } from "./shared/Typography";
+import ResumeItemType from "../../../model/ResumeItem.model";
+import { ResumeItem } from "./IndexResumeItem";
+import { Typography } from "../shared/Typography";
 
 interface Props {
   title: string;
@@ -23,7 +23,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ResumeContainer = forwardRef<
+export const IndexResumeContainer = forwardRef<
   HTMLDivElement,
   Props
 >(({ title, items }, ref) => {
@@ -106,7 +106,5 @@ const ResumeContainer = forwardRef<
   );
 });
 
-ResumeContainer.displayName =
-  "ResumeContainer";
-
-export default ResumeContainer;
+IndexResumeContainer.displayName =
+  "IndexResumeContainer";
