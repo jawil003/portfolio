@@ -24,10 +24,11 @@ const BaseStyle = (props: any) => css`
     word-spacing: ${props?.wordSpacing ??
     "normal"};
     color: ${props?.color};
-    word-wrap: ${props?.wrap
+    word-wrap: ${props?.wordWrap
       ? "break-word"
       : "unset"};
     padding: unset;
+    word-break: ${props.wordBreak as Props["wordBreak"]};
   }
 `;
 
@@ -39,7 +40,8 @@ type StyledComponents = {
   maxLength?: Props["maxLength"];
   letterSpacing?: Props["letterSpacing"];
   wordSpacing?: Props["wordSpacing"];
-  wrap?: Props["wrap"];
+  wordWrap?: Props["wordWrap"];
+  wordBreak?: Props["wordBreak"];
   fontFamily: Props["fontFamily"];
   color?: Props["color"];
 };
@@ -194,7 +196,11 @@ export interface Props
   maxLength?: string;
   letterSpacing?: string;
   wordSpacing?: string;
-  wrap?: boolean;
+  wordWrap?: boolean;
+  wordBreak?:
+    | "break-all"
+    | "keep-all"
+    | "normal";
   color?: string;
   fontFamily?: string;
 }
@@ -210,9 +216,10 @@ const resolveVariant = (
   underline: Props["underline"],
   letterSpacing: Props["letterSpacing"],
   wordSpacing: Props["wordSpacing"],
-  wrap: Props["wrap"],
+  wordWrap: Props["wordWrap"],
   maxLength: Props["maxLength"],
   fontFamily: Props["fontFamily"],
+  wordBreak: Props["wordBreak"],
   color?: Props["color"],
 ) => {
   const weight =
@@ -239,9 +246,10 @@ const resolveVariant = (
           className={className}
           letterSpacing={letterSpacing}
           wordSpacing={wordSpacing}
-          wrap={wrap}
+          wordWrap={wordWrap}
           fontFamily={fontFamily}
           maxLength={maxLength}
+          wordBreak={wordBreak}
           as={component}
         >
           {text}
@@ -259,9 +267,10 @@ const resolveVariant = (
           className={className}
           letterSpacing={letterSpacing}
           wordSpacing={wordSpacing}
-          wrap={wrap}
+          wordWrap={wordWrap}
           maxLength={maxLength}
           fontFamily={fontFamily}
+          wordBreak={wordBreak}
           as={component}
         >
           {text}
@@ -279,9 +288,10 @@ const resolveVariant = (
           className={className}
           wordSpacing={wordSpacing}
           letterSpacing={letterSpacing}
+          wordBreak={wordBreak}
           maxLength={maxLength}
           fontFamily={fontFamily}
-          wrap={wrap}
+          wordWrap={wordWrap}
           as={component}
         >
           {text}
@@ -298,10 +308,11 @@ const resolveVariant = (
           italic={italic}
           className={className}
           wordSpacing={wordSpacing}
+          wordBreak={wordBreak}
           letterSpacing={letterSpacing}
           fontFamily={fontFamily}
           maxLength={maxLength}
-          wrap={wrap}
+          wordWrap={wordWrap}
           as={component}
         >
           {text}
@@ -318,10 +329,11 @@ const resolveVariant = (
           underline={underline}
           className={className}
           wordSpacing={wordSpacing}
+          wordBreak={wordBreak}
           fontFamily={fontFamily}
           letterSpacing={letterSpacing}
           maxLength={maxLength}
-          wrap={wrap}
+          wordWrap={wordWrap}
           as={component}
         >
           {text}
@@ -339,10 +351,11 @@ const resolveVariant = (
           underline={underline}
           className={className}
           fontFamily={fontFamily}
+          wordBreak={wordBreak}
           wordSpacing={wordSpacing}
           letterSpacing={letterSpacing}
           maxLength={maxLength}
-          wrap={wrap}
+          wordWrap={wordWrap}
           as={component}
         >
           {text}
@@ -360,9 +373,10 @@ const resolveVariant = (
           className={className}
           wordSpacing={wordSpacing}
           fontFamily={fontFamily}
+          wordBreak={wordBreak}
           letterSpacing={letterSpacing}
           maxLength={maxLength}
-          wrap={wrap}
+          wordWrap={wordWrap}
           as={component}
         >
           {text}
@@ -380,9 +394,10 @@ const resolveVariant = (
           className={className}
           wordSpacing={wordSpacing}
           fontFamily={fontFamily}
+          wordBreak={wordBreak}
           letterSpacing={letterSpacing}
           maxLength={maxLength}
-          wrap={wrap}
+          wordWrap={wordWrap}
           as={component}
         >
           {text}
@@ -399,10 +414,11 @@ const resolveVariant = (
           underline={underline}
           className={className}
           wordSpacing={wordSpacing}
+          wordBreak={wordBreak}
           fontFamily={fontFamily}
           letterSpacing={letterSpacing}
           maxLength={maxLength}
-          wrap={wrap}
+          wordWrap={wordWrap}
           as={component}
         >
           {text}
@@ -419,10 +435,11 @@ const resolveVariant = (
           italic={italic}
           className={className}
           wordSpacing={wordSpacing}
+          wordBreak={wordBreak}
           fontFamily={fontFamily}
           letterSpacing={letterSpacing}
           maxLength={maxLength}
-          wrap={wrap}
+          wordWrap={wordWrap}
           as={component}
         >
           {text}
@@ -450,8 +467,9 @@ export const Typography: React.FC<Props> = ({
   letterSpacing,
   maxLength,
   wordSpacing,
-  wrap,
+  wordWrap,
   fontFamily,
+  wordBreak,
 }) => {
   return (
     <>
@@ -468,9 +486,10 @@ export const Typography: React.FC<Props> = ({
             underline,
             letterSpacing,
             wordSpacing,
-            wrap,
+            wordWrap,
             maxLength,
             fontFamily,
+            wordBreak,
             color,
           ),
         [
@@ -486,7 +505,7 @@ export const Typography: React.FC<Props> = ({
           letterSpacing,
           wordSpacing,
           maxLength,
-          wrap,
+          wordWrap,
           fontFamily,
         ],
       )}
@@ -495,10 +514,11 @@ export const Typography: React.FC<Props> = ({
 };
 
 Typography.defaultProps = {
-  wrap: false,
+  wordWrap: false,
   variant: "b1",
   align: "start",
   color:
     designSystem.colors.brand
       .secondaryText,
+  wordBreak: "normal",
 };

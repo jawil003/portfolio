@@ -162,7 +162,7 @@ describe("Typography", () => {
         <Typography
           variant={variant}
           maxLength="20px"
-          wrap
+          wordWrap
         />,
       );
       expect(
