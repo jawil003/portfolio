@@ -6,9 +6,6 @@ import designSystem from "./designSystem";
 
 const rules = css`
   body {
-    font-family: ${designSystem.font
-      .base.family};
-
     font-size: ${designSystem.font.base
       .size};
   }
@@ -21,6 +18,13 @@ const rules = css`
   h6 {
     display: block;
     margin: 0px;
+    font-family: ${designSystem.font
+      .base.family.title};
+  }
+  span,
+  p {
+    font-family: ${designSystem.font
+      .base.family.paragraph};
   }
 `;
 

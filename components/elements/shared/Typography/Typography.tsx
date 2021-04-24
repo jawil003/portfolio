@@ -4,6 +4,7 @@ import React, {
 } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
+import designSystem from "../../../../styles/designSystem";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const BaseStyle = (props: any) => css`
@@ -204,11 +205,14 @@ const resolveVariant = (
 ) => {
   const weight =
     bold === "bold"
-      ? 700
+      ? designSystem.font.fontWeight
+          .bold
       : bold === "semi-bold"
-      ? 600
+      ? designSystem.font.fontWeight
+          .semiBold
       : bold === "bolder"
-      ? 600
+      ? designSystem.font.fontWeight
+          .bolder
       : undefined;
 
   switch (variant) {
