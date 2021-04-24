@@ -3,7 +3,7 @@ import {
   Global,
 } from "@emotion/react";
 import { BlankCanvasDesign } from "../components/designs/blankCanvas.design";
-import FlexContainer from "../components/elements/FlexContainer";
+import { FlexContainer } from "../components/elements/shared/FlexContainer/FlexContainer";
 import HeaderWithIcon from "../components/elements/HeaderWithIcon";
 import Spacer from "../components/elements/Spacer";
 import { IndexTitleWithSubtitle } from "../components/elements/index/IndexTitleWithSubtitle";

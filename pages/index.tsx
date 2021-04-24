@@ -23,7 +23,7 @@ import ResumeService from "../services/resume.service";
 import ResumeItemType from "../model/ResumeItem.model";
 import ColorContainer from "../components/elements/ColorContainer";
 import { IndexResumeContainer } from "../components/elements/index/IndexResumeContainer";
-import FlexContainer from "../components/elements/FlexContainer";
+import { FlexContainer } from "../components/elements/shared/FlexContainer/FlexContainer";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import KnowledgeSection from "../components/elements/KnowledgeSection";
 import KnowledgeService from "../services/knowledge.service";

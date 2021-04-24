@@ -7,7 +7,7 @@ import React, {
   forwardRef,
   useEffect,
 } from "react";
-import FlexContainer from "./FlexContainer";
+import { FlexContainer } from "./shared/FlexContainer/FlexContainer";
 import KnowledgeTable from "./KnowledgeTable";
 import { useInView } from "react-intersection-observer";
 import composeRefs from "@seznam/compose-react-refs";

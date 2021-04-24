@@ -15,7 +15,7 @@ export interface Props {
  * @author Jannik will
  * @version 0.1
  */
-const Button: React.FC<Props> = ({
+export const Button: React.FC<Props> = ({
   text,
   backgroundColor,
   color,
@@ -64,5 +64,3 @@ Button.defaultProps = {
   color: "#fff",
   text: "Bitte Text eingeben",
 };
-
-export default Button;

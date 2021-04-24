@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import { useNavigationIcons } from "../../hooks/useIcons.hook";
 import Logo from "./Logo";
 import NavigationBarItem from "./NavigationBarItem";
-import FlexContainer from "./FlexContainer";
+import { FlexContainer } from "./shared/FlexContainer/FlexContainer";
 import Spacer from "./Spacer";
 import {
   header as items,

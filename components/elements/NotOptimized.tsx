@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { MobileApplicationDesign } from "../../components/designs/mobileApplication.design";
 import React from "react";
-import FlexContainer from "./FlexContainer";
+import { FlexContainer } from "./shared/FlexContainer/FlexContainer";
 import { Typography } from "./shared/Typography";
 import NavigationBar from "../../components/elements/DesktopNavigationBar";
 

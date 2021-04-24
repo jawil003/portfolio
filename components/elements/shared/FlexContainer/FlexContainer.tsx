@@ -4,7 +4,7 @@ import React, {
   PropsWithChildren,
 } from "react";
 
-interface Props {
+export interface Props {
   direction?: "row" | "column";
   columnGap?: string;
   rowGap?: string;
@@ -44,7 +44,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const FlexContainer = forwardRef<
+export const FlexContainer = forwardRef<
   HTMLDivElement,
   PropsWithChildren<Props>
 >(
@@ -104,5 +104,3 @@ FlexContainer.defaultProps = {
 
 FlexContainer.displayName =
   "FlexContainer";
-
-export default FlexContainer;

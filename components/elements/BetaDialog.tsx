@@ -3,8 +3,8 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import Button from "./Button";
-import FlexContainer from "./FlexContainer";
+import { Button } from "./shared/Button/Button";
+import { FlexContainer } from "./shared/FlexContainer/FlexContainer";
 import { Typography } from "./shared/Typography";
 
 const DIALOG_SHOWN_KEY =

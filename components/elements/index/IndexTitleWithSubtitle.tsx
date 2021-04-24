@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import React from "react";
-import FlexContainer from "../FlexContainer";
+import { FlexContainer } from "../shared/FlexContainer/FlexContainer";
 import { Typography } from "../shared/Typography";
 
 interface Props {
