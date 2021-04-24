@@ -1,4 +1,4 @@
-import { SocialItem } from "services/SocialItems.service";
+import { SocialItem } from "../services/SocialItems.service";
 
 export const socialItems: SocialItem[] = [
   {

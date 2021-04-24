@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import designSystem from "@style/designSystem";
+import designSystem from "../../styles/designSystem";
 import {
   motion,
   useAnimation,
@@ -9,7 +9,7 @@ import React, {
   useEffect,
 } from "react";
 import { useInView } from "react-intersection-observer";
-import ResumeItemType from "model/ResumeItem.model";
+import ResumeItemType from "../../model/ResumeItem.model";
 import ResumeItem from "./ResumeItem";
 import { Typography } from "./shared/Typography";
 

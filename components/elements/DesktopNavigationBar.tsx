@@ -6,7 +6,7 @@ import {
   useAnimation,
 } from "framer-motion";
 import React, { useState } from "react";
-import { useNavigationIcons } from "hooks/useIcons.hook";
+import { useNavigationIcons } from "../../hooks/useIcons.hook";
 import Logo from "./Logo";
 import NavigationBarItem from "./NavigationBarItem";
 import FlexContainer from "./FlexContainer";
@@ -16,7 +16,7 @@ import {
   footer as footerItems,
 } from "../../config/routes.json";
 import HamburgerMenuIcon from "../icons/hamburgerMenu.icon";
-import designSystem from "@style/designSystem";
+import designSystem from "../../styles/designSystem";
 import { css } from "@emotion/react";
 import DesktopNavigationBarContext from "../contexts/DesktopNavigationBarContext";
 

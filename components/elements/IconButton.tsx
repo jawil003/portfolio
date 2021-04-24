@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import designSystem from "@style/designSystem";
+import designSystem from "../../styles/designSystem";
 import {
   motion,
   useSpring,

@@ -1,5 +1,5 @@
-import MailService from "services/mail.service";
-import { ContactRequestType } from "types/typeDefs/contactRequest.type";
+import MailService from "../services/mail.service";
+import { ContactRequestType } from "../types/typeDefs/contactRequest.type";
 
 const ContactRequestResolver = {
   Mutation: {

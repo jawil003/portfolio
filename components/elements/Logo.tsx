@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import designSystem, {
   fontSizeToRelativeValue,
-} from "@style/designSystem";
+} from "../../styles/designSystem";
 import React from "react";
 import LogoIcon from "../icons/logo.icon";
 

@@ -14,7 +14,7 @@ import { useInView } from "react-intersection-observer";
 import flyFromTop from "../../variants/flyFromTop";
 import composeRefs from "@seznam/compose-react-refs";
 import FlexContainer from "./FlexContainer";
-import ArrowDownIcon from "components/icons/arrowDown.icon";
+import ArrowDownIcon from "../../components/icons/arrowDown.icon";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 const AnimatedArrowDownIcon = motion.custom(

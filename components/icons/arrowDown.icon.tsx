@@ -1,4 +1,4 @@
-import designSystem from "@style/designSystem";
+import designSystem from "../../styles/designSystem";
 import React, {
   forwardRef,
 } from "react";

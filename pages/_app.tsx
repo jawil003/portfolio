@@ -5,8 +5,8 @@ import { AppProps } from "next/app";
 import BetaDialog from "../components/elements/BetaDialog";
 import globalStyles from "../styles/styles";
 import useViewportSizes from "use-viewport-sizes";
-import designSystem from "@style/designSystem";
-import { NotOptimized } from "components/elements/NotOptimized";
+import designSystem from "../styles/designSystem";
+import { NotOptimized } from "../components/elements/NotOptimized";
 import { DefaultSeo } from "next-seo";
 /**
  * An App React Component.

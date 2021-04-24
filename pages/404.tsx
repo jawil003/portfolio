@@ -2,17 +2,17 @@ import {
   css,
   Global,
 } from "@emotion/react";
-import { BlankCanvasDesign } from "components/designs/blankCanvas.design";
-import FlexContainer from "components/elements/FlexContainer";
-import HeaderWithIcon from "components/elements/HeaderWithIcon";
-import Spacer from "components/elements/Spacer";
-import TitleWithSubtitle from "components/elements/TitleWithSubtitle";
+import { BlankCanvasDesign } from "../components/designs/blankCanvas.design";
+import FlexContainer from "../components/elements/FlexContainer";
+import HeaderWithIcon from "../components/elements/HeaderWithIcon";
+import Spacer from "../components/elements/Spacer";
+import TitleWithSubtitle from "../components/elements/TitleWithSubtitle";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import React from "react";
 import HeaderService, {
   Header,
-} from "services/header.service";
+} from "../services/header.service";
 import NavigationBar from "../components/elements/DesktopNavigationBar";
 
 interface ServerSideProps {

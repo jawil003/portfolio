@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
-import { MobileApplicationDesign } from "components/designs/mobileApplication.design";
+import { MobileApplicationDesign } from "../../components/designs/mobileApplication.design";
 import React from "react";
 import FlexContainer from "./FlexContainer";
 import { Typography } from "./shared/Typography";
-import NavigationBar from "components/elements/DesktopNavigationBar";
+import NavigationBar from "../../components/elements/DesktopNavigationBar";
 
 /**
  * An NotOptimized React Component.

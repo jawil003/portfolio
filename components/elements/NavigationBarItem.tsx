@@ -3,8 +3,8 @@ import React from "react";
 import Spacer from "./Spacer";
 import { Typography } from "./shared/Typography";
 import { css } from "@emotion/react";
-import designSystem from "@style/designSystem";
-import useDesktopNavigationBarContext from "hooks/useDesktopNavigationBarContext.hook";
+import designSystem from "../../styles/designSystem";
+import useDesktopNavigationBarContext from "../../hooks/useDesktopNavigationBarContext.hook";
 interface Props {
   icon?: JSX.Element;
   href: string;

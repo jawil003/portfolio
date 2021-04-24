@@ -11,23 +11,23 @@ import TitleWithSubtitle from "../components/elements/TitleWithSubtitle";
 import { GetStaticProps } from "next";
 import SocialItemsService, {
   SocialItem,
-} from "services/SocialItems.service";
-import { useSocialLogos } from "hooks/useIcons.hook";
+} from "../services/SocialItems.service";
+import { useSocialLogos } from "../hooks/useIcons.hook";
 import HeaderService, {
   Header,
-} from "services/header.service";
-import designSystem from "@style/designSystem";
-import PersonWithLaptop from "components/designs/personWithLaptop.design";
-import { Typography } from "components/elements/shared/Typography";
-import ResumeService from "services/resume.service";
-import ResumeItemType from "model/ResumeItem.model";
-import ColorContainer from "components/elements/ColorContainer";
-import ResumeContainer from "components/elements/ResumeContainer";
-import FlexContainer from "components/elements/FlexContainer";
+} from "../services/header.service";
+import designSystem from "../styles/designSystem";
+import PersonWithLaptop from "../components/designs/personWithLaptop.design";
+import { Typography } from "../components/elements/shared/Typography";
+import ResumeService from "../services/resume.service";
+import ResumeItemType from "../model/ResumeItem.model";
+import ColorContainer from "../components/elements/ColorContainer";
+import ResumeContainer from "../components/elements/ResumeContainer";
+import FlexContainer from "../components/elements/FlexContainer";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import KnowledgeSection from "components/elements/KnowledgeSection";
-import KnowledgeService from "services/knowledge.service";
-import KnowledgeItem from "model/KnowledgeItem.model";
+import KnowledgeSection from "../components/elements/KnowledgeSection";
+import KnowledgeService from "../services/knowledge.service";
+import KnowledgeItem from "../model/KnowledgeItem.model";
 import { NextSeo } from "next-seo";
 
 interface ServerSideProps {

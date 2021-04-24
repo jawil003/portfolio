@@ -1,5 +1,5 @@
-import { ContactRequestType } from "types/typeDefs/contactRequest.type";
-import { localClient } from "@apollo/myclient";
+import { ContactRequestType } from "../../types/typeDefs/contactRequest.type";
+import { localClient } from "../../config/client";
 import { gql } from "@apollo/client";
 
 export default class ContactRequestService {

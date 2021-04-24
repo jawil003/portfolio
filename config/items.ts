@@ -1,5 +1,5 @@
-import designSystem from "@style/designSystem";
-import KnowledgeItem from "model/KnowledgeItem.model";
+import designSystem from "../styles/designSystem";
+import KnowledgeItem from "../model/KnowledgeItem.model";
 import ResumeItem from "../model/ResumeItem.model";
 
 export const resumeItems: ResumeItem[] = [

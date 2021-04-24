@@ -18,19 +18,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": ".",
-    "emitDecoratorMetadata": true,
-    "paths": {
-      "@apollo/myclient": [
-        "config/client.ts"
-      ],
-      "@style/breakpoints": [
-        "styles/breakpoints.ts"
-      ],
-      "@style/designSystem": [
-        "styles/designSystem.ts"
-      ]
-    }
+    "emitDecoratorMetadata": true
   },
   "exclude": ["node_modules"],
   "include": [

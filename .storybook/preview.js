@@ -1,4 +1,4 @@
-import "../public/styles/index.css";
+import "../public/index.css";
 
 export const parameters = {
   actions: {
