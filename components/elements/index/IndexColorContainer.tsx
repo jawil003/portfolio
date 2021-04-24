@@ -14,7 +14,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const ColorContainer = forwardRef<
+export const IndexColorContainer = forwardRef<
   HTMLDivElement,
   PropsWithChildren<Props>
 >(
@@ -43,7 +43,5 @@ const ColorContainer = forwardRef<
   },
 );
 
-ColorContainer.displayName =
+IndexColorContainer.displayName =
   "ColorContainer";
-
-export default ColorContainer;

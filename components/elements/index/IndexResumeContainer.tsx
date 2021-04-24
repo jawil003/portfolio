@@ -50,6 +50,13 @@ export const IndexResumeContainer = forwardRef<
     >
       <div
         css={css`
+          @media (max-width: ${designSystem
+              .breakpoints
+              .tabletPortraitUp}) {
+            && {
+              display: none;
+            }
+          }
           & {
             padding: 0px 50px;
             position: relative;

@@ -21,7 +21,7 @@ import PersonWithLaptop from "../components/designs/personWithLaptop.design";
 import { Typography } from "../components/elements/shared/Typography";
 import ResumeService from "../services/resume.service";
 import ResumeItemType from "../model/ResumeItem.model";
-import ColorContainer from "../components/elements/ColorContainer";
+import { IndexColorContainer } from "../components/elements/index/IndexColorContainer";
 import { IndexResumeContainer } from "../components/elements/index/IndexResumeContainer";
 import { FlexContainer } from "../components/elements/shared/FlexContainer/FlexContainer";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
@@ -163,7 +163,7 @@ const Index: React.FC<ServerSideProps> = ({
       />
 
       <Spacer height="120px" />
-      <ColorContainer
+      <IndexColorContainer
         color={
           designSystem.colors.brand
             .secondary
@@ -228,7 +228,7 @@ const Index: React.FC<ServerSideProps> = ({
             </svg>
           </div>
         </div>
-      </ColorContainer>
+      </IndexColorContainer>
     </>
   );
 };
