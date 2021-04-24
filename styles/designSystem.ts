@@ -3,10 +3,9 @@ const designSystem = {
     base: {
       size: "16px",
       family: {
-        paragraph:
-          "'Open Sans', sans-serif",
-        title:
-          "'Source Sans Pro', sans-serif",
+        paragraph: "'Open Sans'",
+        title: "'Source Sans Pro'",
+        fallback: "Arial, Helvetica",
       },
     },
     fontWeight: {

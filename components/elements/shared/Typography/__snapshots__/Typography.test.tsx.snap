@@ -1,16 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Typography Create H1 Element 1`] = `
+exports[`Typography Create "b1" element 1`] = `
 .emotion-0 {
   text-align: start;
   font-style: normal;
   margin: unset;
   -webkit-text-decoration: none;
   text-decoration: none;
-  max-width: ;
-  letter-spacing: ;
-  word-spacing: ;
-  color: ;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
   word-wrap: unset;
   padding: unset;
 }
@@ -18,29 +17,1085 @@ exports[`Typography Create H1 Element 1`] = `
 .emotion-0 {
   font-weight: 300;
   font-size: 6em;
-  font-style: normal;
 }
 
 <body>
   <div>
     <h1
       class="emotion-0 emotion-1"
+      color="#000"
     />
   </div>
 </body>
 `;
 
-exports[`Typography Create H2 Element 1`] = `
+exports[`Typography Create "b1" element as p element 1`] = `
 .emotion-0 {
   text-align: start;
   font-style: normal;
   margin: unset;
   -webkit-text-decoration: none;
   text-decoration: none;
-  max-width: ;
-  letter-spacing: ;
-  word-spacing: ;
-  color: ;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element in semi-bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b1" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element in semi-bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "b2" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element in semi-bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h1" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
   word-wrap: unset;
   padding: unset;
 }
@@ -54,22 +1109,316 @@ exports[`Typography Create H2 Element 1`] = `
   <div>
     <h2
       class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
     />
   </div>
 </body>
 `;
 
-exports[`Typography Create H3 Element 1`] = `
+exports[`Typography Create "h2" element in semi-bold 1`] = `
 .emotion-0 {
   text-align: start;
   font-style: normal;
   margin: unset;
   -webkit-text-decoration: none;
   text-decoration: none;
-  max-width: ;
-  letter-spacing: ;
-  word-spacing: ;
-  color: ;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h2" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 3.75em;
+}
+
+<body>
+  <div>
+    <h2
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
   word-wrap: unset;
   padding: unset;
 }
@@ -83,22 +1432,316 @@ exports[`Typography Create H3 Element 1`] = `
   <div>
     <h3
       class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
     />
   </div>
 </body>
 `;
 
-exports[`Typography Create H4 Element 1`] = `
+exports[`Typography Create "h3" element in semi-bold 1`] = `
 .emotion-0 {
   text-align: start;
   font-style: normal;
   margin: unset;
   -webkit-text-decoration: none;
   text-decoration: none;
-  max-width: ;
-  letter-spacing: ;
-  word-spacing: ;
-  color: ;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h3" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+<body>
+  <div>
+    <h3
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
   word-wrap: unset;
   padding: unset;
 }
@@ -112,22 +1755,316 @@ exports[`Typography Create H4 Element 1`] = `
   <div>
     <h4
       class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
     />
   </div>
 </body>
 `;
 
-exports[`Typography Create H5 Element 1`] = `
+exports[`Typography Create "h4" element in semi-bold 1`] = `
 .emotion-0 {
   text-align: start;
   font-style: normal;
   margin: unset;
   -webkit-text-decoration: none;
   text-decoration: none;
-  max-width: ;
-  letter-spacing: ;
-  word-spacing: ;
-  color: ;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h4" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
   word-wrap: unset;
   padding: unset;
 }
@@ -141,22 +2078,316 @@ exports[`Typography Create H5 Element 1`] = `
   <div>
     <h5
       class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
     />
   </div>
 </body>
 `;
 
-exports[`Typography Create H6 Element 1`] = `
+exports[`Typography Create "h5" element in semi-bold 1`] = `
 .emotion-0 {
   text-align: start;
   font-style: normal;
   margin: unset;
   -webkit-text-decoration: none;
   text-decoration: none;
-  max-width: ;
-  letter-spacing: ;
-  word-spacing: ;
-  color: ;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h5" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+<body>
+  <div>
+    <h5
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
   word-wrap: unset;
   padding: unset;
 }
@@ -170,6 +2401,830 @@ exports[`Typography Create H6 Element 1`] = `
   <div>
     <h6
       class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element in semi-bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "h6" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+<body>
+  <div>
+    <h6
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element in semi-bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s1" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element as p element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <p
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element in bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 700;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element in bolder 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 900;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element in sans-serif 1`] = `
+.emotion-0 {
+  font-family: sans-serif;
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+      font-family="sans-serif"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element in semi-bold 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element italic 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element letter-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element underline 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element with maxLength 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: 20px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: break-word;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
+      maxlength="20px"
+    />
+  </div>
+</body>
+`;
+
+exports[`Typography Create "s2" element word-spacing 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 0.875em;
+}
+
+<body>
+  <div>
+    <span
+      class="emotion-0 emotion-1"
+      color="#000"
     />
   </div>
 </body>

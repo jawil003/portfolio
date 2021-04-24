@@ -19,11 +19,15 @@ const rules = css`
     display: block;
     margin: 0px;
     font-family: ${designSystem.font
-      .base.family.title};
+        .base.family.title},
+      ${designSystem.font.base.family
+        .fallback};
   }
   * {
     font-family: ${designSystem.font
-      .base.family.paragraph};
+        .base.family.paragraph},
+      ${designSystem.font.base.family
+        .fallback};
   }
 `;
 

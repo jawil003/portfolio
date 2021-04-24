@@ -1,53 +1,173 @@
-import { Typography } from "./Typography";
+import {
+  Typography,
+  Props,
+} from "./Typography";
 import { render } from "@testing-library/react";
 
+const variants: Props["variant"][] = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "b1",
+  "b2",
+  "s1",
+  "s2",
+];
+
 describe("Typography", () => {
-  test("Create H1 Element", () => {
-    const testH1Typography = render(
-      <Typography variant="h1" />,
-    );
-    expect(
-      testH1Typography.baseElement,
-    ).toMatchSnapshot();
-  });
-  test("Create H2 Element", () => {
-    const testH2Typography = render(
-      <Typography variant="h2" />,
-    );
-    expect(
-      testH2Typography.baseElement,
-    ).toMatchSnapshot();
-  });
-  test("Create H3 Element", () => {
-    const testH3Typography = render(
-      <Typography variant="h3" />,
-    );
-    expect(
-      testH3Typography.baseElement,
-    ).toMatchSnapshot();
-  });
-  test("Create H4 Element", () => {
-    const testH4Typography = render(
-      <Typography variant="h4" />,
-    );
-    expect(
-      testH4Typography.baseElement,
-    ).toMatchSnapshot();
-  });
-  test("Create H5 Element", () => {
-    const testH5Typography = render(
-      <Typography variant="h5" />,
-    );
-    expect(
-      testH5Typography.baseElement,
-    ).toMatchSnapshot();
-  });
-  test("Create H6 Element", () => {
-    const testH6Typography = render(
-      <Typography variant="h6" />,
-    );
-    expect(
-      testH6Typography.baseElement,
-    ).toMatchSnapshot();
-  });
+  test.each(variants)(
+    "Create %p element",
+    () => {
+      const testH1Typography = render(
+        <Typography variant="h1" />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element in semi-bold",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          bold="semi-bold"
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element in bold",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          bold="bold"
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element in bolder",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          bold="bolder"
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element underline",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          underline
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element letter-spacing",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          letter-spacing="20px"
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element word-spacing",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          word-spacing="20px"
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element italic",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          italic
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element as p element",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          component="p"
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element in sans-serif",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          fontFamily="sans-serif"
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+  test.each(variants)(
+    "Create %p element with maxLength",
+    (variant) => {
+      const testH1Typography = render(
+        <Typography
+          variant={variant}
+          maxLength="20px"
+          wrap
+        />,
+      );
+      expect(
+        testH1Typography.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
 });

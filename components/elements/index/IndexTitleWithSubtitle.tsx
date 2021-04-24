@@ -52,7 +52,7 @@ export const IndexTitleWithSubtitle: React.FC<Props> = ({
       <Typography
         className="subtitle"
         italic
-        wordSpacing={11}
+        wordSpacing={"0.6875em"}
       >
         {description}
       </Typography>

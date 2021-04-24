@@ -9,6 +9,7 @@ import designSystem from "../../../../styles/designSystem";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const BaseStyle = (props: any) => css`
   & {
+    font-family: ${props?.fontFamily as Props["fontFamily"]};
     text-align: ${props?.align as Props["align"]};
     font-style: ${(props?.italic as Props["italic"])
       ? "italic"
@@ -18,8 +19,10 @@ const BaseStyle = (props: any) => css`
       ? "underline"
       : "none"};
     max-width: ${props?.maxLength};
-    letter-spacing: ${props?.letterSpacing};
-    word-spacing: ${props?.wordSpacing};
+    letter-spacing: ${props?.letterSpacing ??
+    "normal"};
+    word-spacing: ${props?.wordSpacing ??
+    "normal"};
     color: ${props?.color};
     word-wrap: ${props?.wrap
       ? "break-word"
@@ -37,6 +40,7 @@ type StyledComponents = {
   letterSpacing?: Props["letterSpacing"];
   wordSpacing?: Props["wordSpacing"];
   wrap?: Props["wrap"];
+  fontFamily: Props["fontFamily"];
   color?: Props["color"];
 };
 
@@ -173,7 +177,8 @@ export interface Props
     | "b2"
     | "s1"
     | "s2";
-  component?: React.ElementType<unknown>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  component?: React.ElementType<any>;
   className?: string;
   align?:
     | "start"
@@ -187,10 +192,11 @@ export interface Props
   italic?: boolean;
   underline?: boolean;
   maxLength?: string;
-  letterSpacing?: number;
-  wordSpacing?: number;
+  letterSpacing?: string;
+  wordSpacing?: string;
   wrap?: boolean;
   color?: string;
+  fontFamily?: string;
 }
 
 const resolveVariant = (
@@ -202,6 +208,11 @@ const resolveVariant = (
   align: Props["align"],
   italic: Props["italic"],
   underline: Props["underline"],
+  letterSpacing: Props["letterSpacing"],
+  wordSpacing: Props["wordSpacing"],
+  wrap: Props["wrap"],
+  maxLength: Props["maxLength"],
+  fontFamily: Props["fontFamily"],
   color?: Props["color"],
 ) => {
   const weight =
@@ -226,6 +237,11 @@ const resolveVariant = (
           italic={italic}
           underline={underline}
           className={className}
+          letterSpacing={letterSpacing}
+          wordSpacing={wordSpacing}
+          wrap={wrap}
+          fontFamily={fontFamily}
+          maxLength={maxLength}
           as={component}
         >
           {text}
@@ -241,6 +257,11 @@ const resolveVariant = (
           italic={italic}
           underline={underline}
           className={className}
+          letterSpacing={letterSpacing}
+          wordSpacing={wordSpacing}
+          wrap={wrap}
+          maxLength={maxLength}
+          fontFamily={fontFamily}
           as={component}
         >
           {text}
@@ -256,6 +277,11 @@ const resolveVariant = (
           italic={italic}
           underline={underline}
           className={className}
+          wordSpacing={wordSpacing}
+          letterSpacing={letterSpacing}
+          maxLength={maxLength}
+          fontFamily={fontFamily}
+          wrap={wrap}
           as={component}
         >
           {text}
@@ -271,6 +297,11 @@ const resolveVariant = (
           underline={underline}
           italic={italic}
           className={className}
+          wordSpacing={wordSpacing}
+          letterSpacing={letterSpacing}
+          fontFamily={fontFamily}
+          maxLength={maxLength}
+          wrap={wrap}
           as={component}
         >
           {text}
@@ -286,6 +317,11 @@ const resolveVariant = (
           weight={weight}
           underline={underline}
           className={className}
+          wordSpacing={wordSpacing}
+          fontFamily={fontFamily}
+          letterSpacing={letterSpacing}
+          maxLength={maxLength}
+          wrap={wrap}
           as={component}
         >
           {text}
@@ -302,6 +338,11 @@ const resolveVariant = (
           italic={italic}
           underline={underline}
           className={className}
+          fontFamily={fontFamily}
+          wordSpacing={wordSpacing}
+          letterSpacing={letterSpacing}
+          maxLength={maxLength}
+          wrap={wrap}
           as={component}
         >
           {text}
@@ -317,6 +358,11 @@ const resolveVariant = (
           italic={italic}
           underline={underline}
           className={className}
+          wordSpacing={wordSpacing}
+          fontFamily={fontFamily}
+          letterSpacing={letterSpacing}
+          maxLength={maxLength}
+          wrap={wrap}
           as={component}
         >
           {text}
@@ -332,6 +378,11 @@ const resolveVariant = (
           italic={italic}
           underline={underline}
           className={className}
+          wordSpacing={wordSpacing}
+          fontFamily={fontFamily}
+          letterSpacing={letterSpacing}
+          maxLength={maxLength}
+          wrap={wrap}
           as={component}
         >
           {text}
@@ -347,6 +398,11 @@ const resolveVariant = (
           italic={italic}
           underline={underline}
           className={className}
+          wordSpacing={wordSpacing}
+          fontFamily={fontFamily}
+          letterSpacing={letterSpacing}
+          maxLength={maxLength}
+          wrap={wrap}
           as={component}
         >
           {text}
@@ -362,6 +418,11 @@ const resolveVariant = (
           underline={underline}
           italic={italic}
           className={className}
+          wordSpacing={wordSpacing}
+          fontFamily={fontFamily}
+          letterSpacing={letterSpacing}
+          maxLength={maxLength}
+          wrap={wrap}
           as={component}
         >
           {text}
@@ -386,6 +447,11 @@ export const Typography: React.FC<Props> = ({
   italic,
   color,
   underline,
+  letterSpacing,
+  maxLength,
+  wordSpacing,
+  wrap,
+  fontFamily,
 }) => {
   return (
     <>
@@ -400,6 +466,11 @@ export const Typography: React.FC<Props> = ({
             align,
             italic,
             underline,
+            letterSpacing,
+            wordSpacing,
+            wrap,
+            maxLength,
+            fontFamily,
             color,
           ),
         [
@@ -412,6 +483,11 @@ export const Typography: React.FC<Props> = ({
           italic,
           color,
           underline,
+          letterSpacing,
+          wordSpacing,
+          maxLength,
+          wrap,
+          fontFamily,
         ],
       )}
     </>
@@ -419,6 +495,10 @@ export const Typography: React.FC<Props> = ({
 };
 
 Typography.defaultProps = {
+  wrap: false,
   variant: "b1",
   align: "start",
+  color:
+    designSystem.colors.brand
+      .secondaryText,
 };
