@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Spacer from "./Spacer";
-import { Typography } from "./Typography";
+import { Typography } from "./shared/Typography";
 import { css } from "@emotion/react";
 import designSystem from "@style/designSystem";
 import useDesktopNavigationBarContext from "hooks/useDesktopNavigationBarContext.hook";

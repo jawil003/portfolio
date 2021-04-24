@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography Create H1 Element 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  max-width: ;
+  letter-spacing: ;
+  word-spacing: ;
+  color: ;
+  word-wrap: unset;
+  padding: unset;
+}
+
+.emotion-0 {
+  font-weight: 300;
+  font-size: 6em;
+  font-style: normal;
+}
+
+<body>
+  <div>
+    <h1
+      class="emotion-0 emotion-1"
+    />
+  </div>
+</body>
+`;

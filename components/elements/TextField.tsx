@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import designSystem from "@style/designSystem";
 import React from "react";
-import { Typography } from "./Typography";
+import { Typography } from "./shared/Typography";
 
 const Input = styled.textarea`
   & {

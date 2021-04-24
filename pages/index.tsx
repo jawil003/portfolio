@@ -18,7 +18,7 @@ import HeaderService, {
 } from "services/header.service";
 import designSystem from "@style/designSystem";
 import PersonWithLaptop from "components/designs/personWithLaptop.design";
-import { Typography } from "components/elements/Typography";
+import { Typography } from "components/elements/shared/Typography";
 import ResumeService from "services/resume.service";
 import ResumeItemType from "model/ResumeItem.model";
 import ColorContainer from "components/elements/ColorContainer";

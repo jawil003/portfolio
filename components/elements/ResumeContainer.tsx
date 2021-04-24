@@ -11,7 +11,7 @@ import React, {
 import { useInView } from "react-intersection-observer";
 import ResumeItemType from "model/ResumeItem.model";
 import ResumeItem from "./ResumeItem";
-import { Typography } from "./Typography";
+import { Typography } from "./shared/Typography";
 
 interface Props {
   title: string;
