@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexKnowledgeTable Create IndexKnowledgeTable 1`] = `
+.emotion-0 {
+  padding: 40px;
+  min-height: 430px;
+  width: 300px;
+  background-color: #00739d;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.emotion-1 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #f3f3f3;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-1 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.emotion-3 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #f3f3f3;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-3 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+.emotion-3 {
+  margin: 0px;
+}
+
+.emotion-5 {
+  padding-left: 20px;
+}
+
+.emotion-6 {
+  color: #f3f3f3;
+}
+
+<body>
+  <div>
+    <div
+      class="emotion-0"
+    >
+      <div>
+        <h5
+          class="emotion-1 emotion-2"
+          color="#f3f3f3"
+          id="heading5"
+        >
+          test
+        </h5>
+        <p
+          class="emotion-3 emotion-4"
+          color="#f3f3f3"
+          id="body2"
+        >
+          Lorem ipsum
+        </p>
+      </div>
+      <ul
+        class="emotion-5"
+      >
+        <li
+          class="emotion-6"
+        >
+          test
+        </li>
+        <li
+          class="emotion-6"
+        >
+          test1
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+`;

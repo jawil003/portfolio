@@ -3,7 +3,7 @@ import React, {
   useState,
 } from "react";
 import Spacer from "../components/shared/Spacer/Spacer";
-import IconLink from "../components/index/IndexIconLink/IndexconLink";
+import { IndexIconLink } from "../components/index/IndexIconLink/IndexconLink";
 import HeaderWithIcon from "../components/shared/HeaderWithIcon/HeaderWithIcon";
 import NavigationBar from "../components/shared/NavigationBar/NavigationBar";
 import { TitleWithSubtitle } from "../components/shared/TitleWithSubtitle/TitleWithSubtitle";
@@ -24,7 +24,7 @@ import { IndexResumeColorContainer } from "../components/index/IndexResumeContai
 import { IndexResumeContainer } from "../components/index/IndexResumeContainer";
 import { FlexContainer } from "../components/shared/FlexContainer/FlexContainer";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import KnowledgeSection from "../components/index/IndexKnowledgeSection/KnowledgeSection";
+import { IndexKnowledgeSection } from "../components/index/IndexKnowledgeSection/IndexKnowledgeSection";
 import KnowledgeService from "../services/knowledge.service";
 import KnowledgeItem from "../model/KnowledgeItem.model";
 import { NextSeo } from "next-seo";
@@ -116,7 +116,7 @@ const Index: React.FC<ServerSideProps> = ({
                   name,
                   icon: { title },
                 }) => (
-                  <IconLink
+                  <IndexIconLink
                     key={name}
                     external
                     href={href}
@@ -125,7 +125,7 @@ const Index: React.FC<ServerSideProps> = ({
                       name: title,
                       height: "100%",
                     })}
-                  </IconLink>
+                  </IndexIconLink>
                 ),
               )}
             </FlexContainer>
@@ -141,7 +141,7 @@ const Index: React.FC<ServerSideProps> = ({
         Das sind meine Kenntnisse
       </Typography>
       <Spacer height="60px" />
-      <KnowledgeSection
+      <IndexKnowledgeSection
         ref={paragraphs[1]}
         items={knowledgeItems}
       />

@@ -8,7 +8,7 @@ import React, {
   useEffect,
 } from "react";
 import { FlexContainer } from "../../shared/FlexContainer/FlexContainer";
-import KnowledgeTable from "./KnowledgeTable";
+import { IndexKnowledgeTable } from "./IndexKnowledgeTable/IndexKnowledgeTable";
 import { useInView } from "react-intersection-observer";
 import composeRefs from "@seznam/compose-react-refs";
 import designSystem from "../../../styles/designSystem";
@@ -17,7 +17,7 @@ const AnimatedFlexContainer = motion.custom(
   FlexContainer,
 );
 
-interface Props {
+export interface Props {
   items: {
     title: string;
     description: string;
@@ -33,7 +33,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const KnowledgeSection = forwardRef<
+export const IndexKnowledgeSection = forwardRef<
   HTMLDivElement,
   Props
 >(
@@ -84,7 +84,7 @@ const KnowledgeSection = forwardRef<
             items,
             color,
           }) => (
-            <KnowledgeTable
+            <IndexKnowledgeTable
               key={title}
               title={title}
               description={description}
@@ -98,7 +98,5 @@ const KnowledgeSection = forwardRef<
   },
 );
 
-KnowledgeSection.displayName =
+IndexKnowledgeSection.displayName =
   "KnowledgeSection";
-
-export default KnowledgeSection;

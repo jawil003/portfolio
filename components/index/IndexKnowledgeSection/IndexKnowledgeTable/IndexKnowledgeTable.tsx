@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
-import designSystem from "../../../styles/designSystem";
+import designSystem from "../../../../styles/designSystem";
 import React from "react";
-import { Typography } from "../../shared/Typography";
+import { Typography } from "../../../shared/Typography";
 
-interface Props {
+export interface Props {
   title: string;
   description: string;
   items: string[];
@@ -15,7 +15,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const KnowledgeTable: React.FC<Props> = ({
+export const IndexKnowledgeTable: React.FC<Props> = ({
   title,
   description,
   items,
@@ -88,9 +88,7 @@ const KnowledgeTable: React.FC<Props> = ({
   );
 };
 
-KnowledgeTable.defaultProps = {
+IndexKnowledgeTable.defaultProps = {
   color:
     designSystem.colors.brand.secondary,
 };
-
-export default KnowledgeTable;

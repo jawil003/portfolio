@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexIconLink Check styling ability of IconLink 1`] = `
+<body>
+  <div>
+    <a
+      class="testname"
+      href="https://google.de"
+      rel="noreferrer"
+      style="background-color: white; width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; transform: none;"
+      target="_blank"
+    />
+  </div>
+</body>
+`;
+
+exports[`IndexIconLink Create IndexIconLink with {"background": "white", "external": true, "href": "https://google.de", "size": "20px"} 1`] = `
+<body>
+  <div>
+    <a
+      href="https://google.de"
+      rel="noreferrer"
+      style="background-color: white; width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; transform: none;"
+      target="_blank"
+    />
+  </div>
+</body>
+`;
+
+exports[`IndexIconLink Create IndexIconLink with {"background": "white", "href": "/test", "size": "20px"} 1`] = `
+<body>
+  <div>
+    <a
+      style="background-color: white; width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;"
+    />
+  </div>
+</body>
+`;

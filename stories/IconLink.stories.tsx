@@ -4,25 +4,26 @@ import {
   Story,
   Meta,
 } from "@storybook/react/types-6-0";
-import IconLink, {
+import {
+  IndexIconLink,
   Props as IconLinkProps,
 } from "../components/index/IndexIconLink/IndexconLink";
 import DribbleIcon from "../icons/dribble.icon";
 
 export default {
   title: "Elements/IconLink",
-  component: IconLink,
+  component: IndexIconLink,
 } as Meta;
 
-const IconLinkElement: Story<IconLinkProps> = (
+const IndexIconLinkElement: Story<IconLinkProps> = (
   args,
 ) => (
-  <IconLink {...args}>
+  <IndexIconLink {...args}>
     <DribbleIcon height="100%" />
-  </IconLink>
+  </IndexIconLink>
 );
 
-export const Top = IconLinkElement.bind(
+export const Top = IndexIconLinkElement.bind(
   {},
 );
 Top.args = {
@@ -30,7 +31,7 @@ Top.args = {
   external: true,
 };
 
-export const Left = IconLinkElement.bind(
+export const Left = IndexIconLinkElement.bind(
   {},
 );
 Left.args = {
@@ -38,7 +39,7 @@ Left.args = {
   external: true,
 };
 
-export const Right = IconLinkElement.bind(
+export const Right = IndexIconLinkElement.bind(
   {},
 );
 Right.args = {
@@ -46,7 +47,7 @@ Right.args = {
   external: true,
 };
 
-export const Bottom = IconLinkElement.bind(
+export const Bottom = IndexIconLinkElement.bind(
   {},
 );
 Bottom.args = {

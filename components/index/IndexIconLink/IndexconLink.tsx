@@ -21,41 +21,19 @@ export interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const IconLink: React.FC<Props> = ({
-  children,
-  href,
-  external,
-  size,
-  background,
-  className,
-}) => {
-  const scale = useSpring(1);
-  return (
-    <>
-      {external ? (
-        <motion.a
-          className={className}
-          onMouseOver={() => {
-            scale.set(1.2);
-          }}
-          onMouseOut={() => {
-            scale.set(1);
-          }}
-          href={href}
-          rel="noreferrer"
-          target="_blank"
-          style={{
-            backgroundColor: background,
-            scale,
-            width: size,
-            height: size,
-            ...styles.container,
-          }}
-        >
-          {children}
-        </motion.a>
-      ) : (
-        <Link href={href}>
+export const IndexIconLink: React.FC<Props> = React.memo(
+  ({
+    children,
+    href,
+    external,
+    size,
+    background,
+    className,
+  }) => {
+    const scale = useSpring(1);
+    return (
+      <>
+        {external ? (
           <motion.a
             className={className}
             onMouseOver={() => {
@@ -64,8 +42,12 @@ const IconLink: React.FC<Props> = ({
             onMouseOut={() => {
               scale.set(1);
             }}
+            href={href}
+            rel="noreferrer"
+            target="_blank"
             style={{
               backgroundColor: background,
+              scale,
               width: size,
               height: size,
               ...styles.container,
@@ -73,11 +55,31 @@ const IconLink: React.FC<Props> = ({
           >
             {children}
           </motion.a>
-        </Link>
-      )}
-    </>
-  );
-};
+        ) : (
+          <Link href={href}>
+            <motion.a
+              className={className}
+              onMouseOver={() => {
+                scale.set(1.2);
+              }}
+              onMouseOut={() => {
+                scale.set(1);
+              }}
+              style={{
+                backgroundColor: background,
+                width: size,
+                height: size,
+                ...styles.container,
+              }}
+            >
+              {children}
+            </motion.a>
+          </Link>
+        )}
+      </>
+    );
+  },
+);
 
 const styles: {
   [x: string]: CSSProperties;
@@ -89,8 +91,8 @@ const styles: {
   },
 };
 
-IconLink.defaultProps = {
+IndexIconLink.displayName = "IconLink";
+
+IndexIconLink.defaultProps = {
   size: "40px",
 };
-
-export default React.memo(IconLink);
