@@ -1,7 +1,8 @@
-import React from "react";
 import { AppProps } from "next/app";
 import globalStyles from "../styles/styles";
+import React from "react";
 import { DefaultSeo } from "next-seo";
+
 /**
  * An App React Component.
  * @author Jannik Will

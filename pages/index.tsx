@@ -1,33 +1,34 @@
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import React, {
   RefObject,
   useState,
 } from "react";
-import Spacer from "../components/shared/Spacer/Spacer";
+
 import { IndexIconLink } from "../components/index/IndexIconLink/IndexconLink";
+import { IndexKnowledgeSection } from "../components/index/IndexKnowledgeSection/IndexKnowledgeSection";
+import { IndexResumeContainer } from "../components/index/IndexResumeContainer";
+import { IndexResumeColorContainer } from "../components/index/IndexResumeContainer/IndexResumeColorContainer/IndexResumeColorContainer";
+import { FlexContainer } from "../components/shared/FlexContainer/FlexContainer";
 import HeaderWithIcon from "../components/shared/HeaderWithIcon/HeaderWithIcon";
 import NavigationBar from "../components/shared/NavigationBar/NavigationBar";
+import Spacer from "../components/shared/Spacer/Spacer";
 import { TitleWithSubtitle } from "../components/shared/TitleWithSubtitle/TitleWithSubtitle";
-import { GetStaticProps } from "next";
-import SocialItemsService, {
-  SocialItem,
-} from "../services/SocialItems.service";
+import { Typography } from "../components/shared/Typography";
+import PersonWithLaptop from "../designs/personWithLaptop.design";
 import { useSocialLogos } from "../hooks/useIcons.hook";
+import KnowledgeItem from "../model/KnowledgeItem.model";
+import ResumeItemType from "../model/ResumeItem.model";
 import HeaderService, {
   Header,
 } from "../services/header.service";
-import designSystem from "../styles/designSystem";
-import PersonWithLaptop from "../designs/personWithLaptop.design";
-import { Typography } from "../components/shared/Typography";
-import ResumeService from "../services/resume.service";
-import ResumeItemType from "../model/ResumeItem.model";
-import { IndexResumeColorContainer } from "../components/index/IndexResumeContainer/IndexResumeColorContainer/IndexResumeColorContainer";
-import { IndexResumeContainer } from "../components/index/IndexResumeContainer";
-import { FlexContainer } from "../components/shared/FlexContainer/FlexContainer";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import { IndexKnowledgeSection } from "../components/index/IndexKnowledgeSection/IndexKnowledgeSection";
 import KnowledgeService from "../services/knowledge.service";
-import KnowledgeItem from "../model/KnowledgeItem.model";
-import { NextSeo } from "next-seo";
+import ResumeService from "../services/resume.service";
+import SocialItemsService, {
+  SocialItem,
+} from "../services/SocialItems.service";
+import designSystem from "../styles/designSystem";
 
 interface ServerSideProps {
   indexHeader: Header;

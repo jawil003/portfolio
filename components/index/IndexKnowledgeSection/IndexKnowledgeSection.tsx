@@ -13,7 +13,7 @@ import { useInView } from "react-intersection-observer";
 import composeRefs from "@seznam/compose-react-refs";
 import designSystem from "../../../styles/designSystem";
 import { css } from "@emotion/react";
-const AnimatedFlexContainer = motion.custom(
+const AnimatedFlexContainer = motion(
   FlexContainer,
 );
 

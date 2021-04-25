@@ -17,7 +17,7 @@ import { FlexContainer } from "../FlexContainer/FlexContainer";
 import ArrowDownIcon from "../../../icons/arrowDown.icon";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
-const AnimatedArrowDownIcon = motion.custom(
+const AnimatedArrowDownIcon = motion(
   ArrowDownIcon,
 );
 
