@@ -1,6 +1,5 @@
 import React, {
   RefObject,
-  useEffect,
   useState,
 } from "react";
 import Spacer from "../components/shared/Spacer/Spacer";
@@ -55,22 +54,7 @@ const Index: React.FC<ServerSideProps> = ({
     React.createRef(),
     React.createRef(),
   ];
-  //const paragraphIndex = 0;
-  const scrollToNextSection = () => {
-    //TODO: Add logic to jump to next Paragraph on Scroll
-  };
 
-  useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      scrollToNextSection,
-    );
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        scrollToNextSection,
-      );
-  }, []);
   const getIcon = useSocialLogos();
 
   const [

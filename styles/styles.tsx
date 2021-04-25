@@ -34,6 +34,13 @@ const rules = css`
     display: block;
     margin: 0px;
   }
+
+  * {
+    font-family: ${designSystem.font
+        .base.family.base},
+      ${designSystem.font.base.family
+        .fallback};
+  }
 `;
 
 const globalStyles = (

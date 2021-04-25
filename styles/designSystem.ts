@@ -3,7 +3,8 @@ const designSystem = {
     base: {
       size: "16px",
       family: {
-        paragraph: "'Open Sans'",
+        base: "'Source Sans Pro'",
+        paragraph: "'Source Sans Pro'",
         title: "'Source Sans Pro'",
         fallback: "Arial, Helvetica",
       },
