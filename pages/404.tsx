@@ -2,18 +2,18 @@ import {
   css,
   Global,
 } from "@emotion/react";
-import { BlankCanvasDesign } from "../components/designs/blankCanvas.design";
-import { FlexContainer } from "../components/elements/shared/FlexContainer/FlexContainer";
-import HeaderWithIcon from "../components/elements/HeaderWithIcon";
-import Spacer from "../components/elements/Spacer";
-import { IndexTitleWithSubtitle } from "../components/elements/index/IndexTitleWithSubtitle";
+import { BlankCanvasDesign } from "../designs/blankCanvas.design";
+import { FlexContainer } from "../components/shared/FlexContainer/FlexContainer";
+import HeaderWithIcon from "../components/shared/HeaderWithIcon/HeaderWithIcon";
+import Spacer from "../components/shared/Spacer/Spacer";
+import { TitleWithSubtitle } from "../components/shared/TitleWithSubtitle/TitleWithSubtitle";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import React from "react";
 import HeaderService, {
   Header,
 } from "../services/header.service";
-import NavigationBar from "../components/elements/DesktopNavigationBar";
+import NavigationBar from "../components/shared/NavigationBar/NavigationBar";
 
 interface ServerSideProps {
   errorHeader: Header;
@@ -59,12 +59,12 @@ const ErrorPage: React.FC<ServerSideProps> = ({
         }
       >
         <FlexContainer justifyContent="center">
-          <IndexTitleWithSubtitle
+          <TitleWithSubtitle
             heading={title}
             description={subtitle}
           >
             <Spacer height="8px" />
-          </IndexTitleWithSubtitle>
+          </TitleWithSubtitle>
         </FlexContainer>
       </HeaderWithIcon>
     </>

@@ -3,11 +3,11 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import Spacer from "../components/elements/Spacer";
-import IconLink from "../components/elements/IconLink";
-import HeaderWithIcon from "../components/elements/HeaderWithIcon";
-import NavigationBar from "../components/elements/DesktopNavigationBar";
-import { IndexTitleWithSubtitle } from "../components/elements/index/IndexTitleWithSubtitle";
+import Spacer from "../components/shared/Spacer/Spacer";
+import IconLink from "../components/index/IndexIconLink/IndexconLink";
+import HeaderWithIcon from "../components/shared/HeaderWithIcon/HeaderWithIcon";
+import NavigationBar from "../components/shared/NavigationBar/NavigationBar";
+import { TitleWithSubtitle } from "../components/shared/TitleWithSubtitle/TitleWithSubtitle";
 import { GetStaticProps } from "next";
 import SocialItemsService, {
   SocialItem,
@@ -17,15 +17,15 @@ import HeaderService, {
   Header,
 } from "../services/header.service";
 import designSystem from "../styles/designSystem";
-import PersonWithLaptop from "../components/designs/personWithLaptop.design";
-import { Typography } from "../components/elements/shared/Typography";
+import PersonWithLaptop from "../designs/personWithLaptop.design";
+import { Typography } from "../components/shared/Typography";
 import ResumeService from "../services/resume.service";
 import ResumeItemType from "../model/ResumeItem.model";
-import { IndexColorContainer } from "../components/elements/index/IndexColorContainer";
-import { IndexResumeContainer } from "../components/elements/index/IndexResumeContainer";
-import { FlexContainer } from "../components/elements/shared/FlexContainer/FlexContainer";
+import { IndexResumeColorContainer } from "../components/index/IndexResumeContainer/IndexResumeColorContainer/IndexResumeColorContainer";
+import { IndexResumeContainer } from "../components/index/IndexResumeContainer";
+import { FlexContainer } from "../components/shared/FlexContainer/FlexContainer";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import KnowledgeSection from "../components/elements/KnowledgeSection";
+import KnowledgeSection from "../components/index/IndexKnowledgeSection/KnowledgeSection";
 import KnowledgeService from "../services/knowledge.service";
 import KnowledgeItem from "../model/KnowledgeItem.model";
 import { NextSeo } from "next-seo";
@@ -117,7 +117,7 @@ const Index: React.FC<ServerSideProps> = ({
         first
       >
         <FlexContainer justifyContent="center">
-          <IndexTitleWithSubtitle
+          <TitleWithSubtitle
             heading={title}
             description={subtitle}
           >
@@ -145,7 +145,7 @@ const Index: React.FC<ServerSideProps> = ({
                 ),
               )}
             </FlexContainer>
-          </IndexTitleWithSubtitle>
+          </TitleWithSubtitle>
         </FlexContainer>
       </HeaderWithIcon>
       <Spacer height="120px" />
@@ -163,7 +163,7 @@ const Index: React.FC<ServerSideProps> = ({
       />
 
       <Spacer height="120px" />
-      <IndexColorContainer
+      <IndexResumeColorContainer
         color={
           designSystem.colors.brand
             .secondary
@@ -228,7 +228,7 @@ const Index: React.FC<ServerSideProps> = ({
             </svg>
           </div>
         </div>
-      </IndexColorContainer>
+      </IndexResumeColorContainer>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import DesktopNavigationBarContext from "../components/contexts/DesktopNavigationBarContext";
+import DesktopNavigationBarContext from "../contexts/DesktopNavigationBarContext";
 
 const useDesktopNavigationBarContext = () =>
   useContext(

@@ -6,8 +6,8 @@ import {
 } from "@storybook/react/types-6-0";
 import IconLink, {
   Props as IconLinkProps,
-} from "../components/elements/IconLink";
-import DribbleIcon from "../components/icons/dribble.icon";
+} from "../components/index/IndexIconLink/IndexconLink";
+import DribbleIcon from "../icons/dribble.icon";
 
 export default {
   title: "Elements/IconLink",
