@@ -13,7 +13,7 @@ const variants: Props[] = [
 ];
 
 describe("Button", () => {
-  test.each(variants)("", (variant) => {
+  test.each(variants)("Create Button with %p", (variant) => {
     const testButton = render(
       <Button {...variant} />,
     );

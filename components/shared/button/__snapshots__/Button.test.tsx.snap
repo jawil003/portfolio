@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button  1`] = `
+exports[`Button Create Button with {"backgroundColor": "#fff", "color": "#000", "text": "Hello World"} 1`] = `
 .emotion-0 {
   position: relative;
   overflow: hidden;
