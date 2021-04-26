@@ -6,7 +6,7 @@ import React from "react";
 import {
   Button,
   Props as ButtonProps,
-} from "../components/shared/Button/Button";
+} from "../components/shared/button/button";
 
 export default {
   title: "Elements/Button",

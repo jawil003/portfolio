@@ -7,7 +7,7 @@ import {
 import {
   IndexIconLink,
   Props as IconLinkProps,
-} from "../components/index/IndexIconLink/IndexconLink";
+} from "../components/index/index-iconlink/index-iconlink";
 import DribbleIcon from "../icons/dribble.icon";
 
 export default {

@@ -3,17 +3,17 @@ import {
   Global,
 } from "@emotion/react";
 import { BlankCanvasDesign } from "../designs/blankCanvas.design";
-import { FlexContainer } from "../components/shared/FlexContainer/FlexContainer";
-import HeaderWithIcon from "../components/shared/HeaderWithIcon/HeaderWithIcon";
-import Spacer from "../components/shared/Spacer/Spacer";
-import { TitleWithSubtitle } from "../components/shared/TitleWithSubtitle/TitleWithSubtitle";
+import { FlexContainer } from "../components/shared/flexcontainer/flexcontainer";
+import HeaderWithIcon from "../components/shared/headerwithicon/headerwithicon";
+import Spacer from "../components/shared/spacer/spacer";
+import { TitleWithSubtitle } from "../components/shared/titlewithsubtitle/titlewithsubtitle";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import React from "react";
 import HeaderService, {
   Header,
 } from "../services/header.service";
-import NavigationBar from "../components/shared/NavigationBar/NavigationBar";
+import NavigationBar from "../components/shared/navigationbar/navigationbar";
 
 interface ServerSideProps {
   errorHeader: Header;

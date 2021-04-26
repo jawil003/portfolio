@@ -7,7 +7,7 @@ import {
 import {
   Typography,
   Props as TypographyProps,
-} from "../components/shared/Typography";
+} from "../components/shared/typography";
 
 export default {
   title: "Components/Typography",

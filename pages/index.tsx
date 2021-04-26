@@ -7,16 +7,16 @@ import React, {
   useState,
 } from "react";
 
-import { IndexIconLink } from "../components/index/IndexIconLink/IndexconLink";
-import { IndexKnowledgeSection } from "../components/index/IndexKnowledgeSection/IndexKnowledgeSection";
-import { IndexResumeContainer } from "../components/index/IndexResumeContainer";
-import { IndexResumeColorContainer } from "../components/index/IndexResumeContainer/IndexResumeColorContainer/IndexResumeColorContainer";
-import { FlexContainer } from "../components/shared/FlexContainer/FlexContainer";
-import HeaderWithIcon from "../components/shared/HeaderWithIcon/HeaderWithIcon";
-import NavigationBar from "../components/shared/NavigationBar/NavigationBar";
-import Spacer from "../components/shared/Spacer/Spacer";
-import { TitleWithSubtitle } from "../components/shared/TitleWithSubtitle/TitleWithSubtitle";
-import { Typography } from "../components/shared/Typography";
+import { IndexIconLink } from "../components/index/index-iconlink/index-iconlink";
+import { IndexKnowledgeSection } from "../components/index/index-knowledgesection/index-knowledgesection";
+import { IndexResumeContainer } from "../components/index/index-resumecontainer";
+import { IndexResumeColorContainer } from "../components/index/index-resumecontainer/index-resumecontainer-colorcontainer/index-resumecontainer-colorcontainer";
+import { FlexContainer } from "../components/shared/flexcontainer/flexcontainer";
+import HeaderWithIcon from "../components/shared/headerwithicon/headerwithicon";
+import NavigationBar from "../components/shared/navigationbar/navigationbar";
+import Spacer from "../components/shared/spacer/spacer";
+import { TitleWithSubtitle } from "../components/shared/titlewithsubtitle/titlewithsubtitle";
+import { Typography } from "../components/shared/typography";
 import PersonWithLaptop from "../designs/personWithLaptop.design";
 import { useSocialLogos } from "../hooks/useIcons.hook";
 import KnowledgeItem from "../model/KnowledgeItem.model";
