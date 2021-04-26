@@ -54,16 +54,7 @@ export const IndexKnowledgeSection = forwardRef<
     }, [inView, animation]);
     return (
       <AnimatedFlexContainer
-        css={css`
-          @media (max-width: ${designSystem
-              .breakpoints
-              .tabletPortraitUp}) {
-            & {
-              flex-direction: column;
-              align-items: center;
-            }
-          }
-        `}
+        
         initial={{ opacity: 0 }}
         animate={animation}
         className={className}
@@ -76,6 +67,7 @@ export const IndexKnowledgeSection = forwardRef<
         justifyContent="center"
         columnGap="30px"
         rowGap="30px"
+        wrap
       >
         {items.map(
           ({

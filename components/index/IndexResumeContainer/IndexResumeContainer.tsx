@@ -40,13 +40,24 @@ export const IndexResumeContainer = forwardRef<
   }, [inView, animation]);
   return (
     <div
+      css={css`
+        & {
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          padding-top: 100px;
+        }
+        @media (max-width: 900px) {
+          & {
+            flex-direction: column;
+          }
+
+          && h5#heading5 {
+            margin-bottom: 100px;
+          }
+        }
+      `}
       ref={ref}
-      style={{
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        paddingTop: "100px",
-      }}
     >
       <div
         css={css`

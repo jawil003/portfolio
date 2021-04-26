@@ -111,10 +111,19 @@ const HeaderWithIcon = forwardRef<
               }
             }
 
-            /* mobile */
-            @media (max-width: ${designSystem
-                .breakpoints
-                .tabletPortraitUp}) {
+            /* fix when desktop is smaller */
+            @media (max-width: 900px) {
+              & > :last-child {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                z-index: -1;
+                opacity: 0.3;
+                padding: 0px 25%;
+                height: 100%;
+              }
+
               & {
                 flex-direction: column;
                 align-items: center;
@@ -122,15 +131,21 @@ const HeaderWithIcon = forwardRef<
               & > * {
                 flex: 1;
               }
+              & h1,
+              h2,
+              h3.h4,
+              h5,
+              h6,
+              p,
+              span {
+                text-align: center;
+              }
               & > :first-of-type {
                 flex: 1;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-              }
-              & > :last-child {
-                display: none;
               }
             }
           `}

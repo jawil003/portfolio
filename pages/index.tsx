@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
@@ -96,7 +97,7 @@ const Index: React.FC<ServerSideProps> = ({
       <HeaderWithIcon
         arrow
         icon={
-          <PersonWithLaptop width="100%" />
+          <PersonWithLaptop css={css`&{min-width: 558px;}`} width="100%" />
         }
         ref={paragraphs[0]}
         first

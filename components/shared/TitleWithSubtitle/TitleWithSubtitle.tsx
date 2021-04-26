@@ -41,6 +41,7 @@ export const TitleWithSubtitle: React.FC<Props> = ({
       <Typography
         bold="semi-bold"
         variant="h3"
+        component="h1"
       >
         {heading}
       </Typography>
