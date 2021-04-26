@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import React from "react";
 
-interface Props {
+export interface Props {
   columnGap?: string;
   rowGap?: string;
   alignContent?:
@@ -33,7 +33,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const GridContainer: React.FC<Props> = ({
+export const GridContainer: React.FC<Props> = ({
   columnGap,
   rowGap,
   justifyContent,
@@ -62,5 +62,3 @@ const GridContainer: React.FC<Props> = ({
     </div>
   );
 };
-
-export default GridContainer;
