@@ -4,7 +4,7 @@ import React, {
   PropsWithChildren,
 } from "react";
 
-interface Props {
+export interface Props {
   color: string;
   className?: string;
 }

@@ -5,7 +5,7 @@ import { Typography } from "../typography";
 import { css } from "@emotion/react";
 import designSystem from "../../../styles/designSystem";
 import useDesktopNavigationBarContext from "../../../hooks/useDesktopNavigationBarContext.hook";
-interface Props {
+export interface Props {
   icon?: JSX.Element;
   href: string;
   color?: string;
@@ -17,7 +17,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const NavigationBarItem: React.FC<Props> = ({
+export const NavigationBarItem: React.FC<Props> = ({
   children,
   icon,
   href,
@@ -159,5 +159,3 @@ NavigationBarItem.defaultProps = {
       .secondaryText,
   external: false,
 };
-
-export default NavigationBarItem;

@@ -3,10 +3,10 @@ import React from "react";
 import reactIntersectionObserver from "react-intersection-observer";
 import {
   IndexResumeContainer,
-  Props,
+  IndexResumeContainerProps,
 } from ".";
 
-const variants: Props[] = [
+const variants: IndexResumeContainerProps[] = [
   {
     title: "test",
     items: [
@@ -52,13 +52,18 @@ jest.mock(
 );
 
 describe("IndexResumeContainer", () => {
-  test.each(variants)("Create IndexResumeContainer with %p", (variant) => {
-    const testIndexResumeContainer = render(
-      <IndexResumeContainer
-        {...variant}
-      />
-    );
+  test.each(variants)(
+    "Create IndexResumeContainer with %p",
+    (variant) => {
+      const testIndexResumeContainer = render(
+        <IndexResumeContainer
+          {...variant}
+        />,
+      );
 
-    expect(testIndexResumeContainer.baseElement).toMatchSnapshot();
-  });
+      expect(
+        testIndexResumeContainer.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
 });

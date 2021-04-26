@@ -21,7 +21,7 @@ const AnimatedArrowDownIcon = motion(
   ArrowDownIcon,
 );
 
-interface Props {
+export interface Props {
   first?: boolean;
   arrow?: boolean;
   icon: React.ReactNode;
@@ -33,7 +33,7 @@ interface Props {
  * @author
  * @version 0.1
  */
-const HeaderWithIcon = forwardRef<
+export const HeaderWithIcon = forwardRef<
   HTMLHeadingElement,
   PropsWithChildren<Props>
 >(
@@ -213,5 +213,3 @@ HeaderWithIcon.defaultProps = {
   first: false,
   arrow: false,
 };
-
-export default HeaderWithIcon;

@@ -4,7 +4,7 @@ import {
 } from "@emotion/react";
 import { BlankCanvasDesign } from "../designs/blankCanvas.design";
 import { FlexContainer } from "../components/shared/flexcontainer/flexcontainer";
-import HeaderWithIcon from "../components/shared/headerwithicon/headerwithicon";
+import { HeaderWithIcon } from "../components/shared/headerwithicon/headerwithicon";
 import Spacer from "../components/shared/spacer/spacer";
 import { TitleWithSubtitle } from "../components/shared/titlewithsubtitle/titlewithsubtitle";
 import { GetStaticProps } from "next";
@@ -13,7 +13,7 @@ import React from "react";
 import HeaderService, {
   Header,
 } from "../services/header.service";
-import NavigationBar from "../components/shared/navigationbar/navigationbar";
+import {NavigationBar} from "../components/shared/navigationbar/navigationbar";
 
 interface ServerSideProps {
   errorHeader: Header;

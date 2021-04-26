@@ -54,7 +54,6 @@ export const IndexKnowledgeSection = forwardRef<
     }, [inView, animation]);
     return (
       <AnimatedFlexContainer
-        
         initial={{ opacity: 0 }}
         animate={animation}
         className={className}

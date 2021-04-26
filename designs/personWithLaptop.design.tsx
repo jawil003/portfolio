@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   width?: string;
   height?: string;
-  className?:string;
+  className?: string;
 }
 
 /**
@@ -14,11 +14,11 @@ interface Props {
 const PersonWithLaptop: React.FC<Props> = ({
   width,
   height,
-  className
+  className,
 }) => {
   return (
     <svg
-     className={className}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}

@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 import {
   IndexIconLink,
-  Props,
-} from "./index-iconlink";
+  IndexIconLinkProps,
+} from "./";
 
-const variants: Props[] = [
+const variants: IndexIconLinkProps[] = [
   {
     size: "20px",
     href: "https://google.de",

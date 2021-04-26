@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 import {
   Button,
-  Props,
-} from "./button";
+  ButtonProps,
+} from "./";
 
-const variants: Props[] = [
+const variants: ButtonProps[] = [
   {
     backgroundColor: "#fff",
     color: "#000",
@@ -13,13 +13,16 @@ const variants: Props[] = [
 ];
 
 describe("Button", () => {
-  test.each(variants)("Create Button with %p", (variant) => {
-    const testButton = render(
-      <Button {...variant} />,
-    );
+  test.each(variants)(
+    "Create Button with %p",
+    (variant) => {
+      const testButton = render(
+        <Button {...variant} />,
+      );
 
-    expect(
-      testButton.baseElement,
-    ).toMatchSnapshot();
-  });
+      expect(
+        testButton.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
 });

@@ -2,12 +2,14 @@ import designSystem from "../../../../styles/designSystem";
 import React from "react";
 import { Typography } from "../../../shared/typography";
 
+export interface Props {}
+
 /**
  * An ResumeHeader React Component.
  * @author Jannik Will
  * @version 0.1
  */
-export const IndexResumeContainerHeader: React.FC = ({
+export const IndexResumeContainerHeader: React.FC<Props> = ({
   children,
 }) => {
   return (

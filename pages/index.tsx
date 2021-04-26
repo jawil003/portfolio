@@ -12,8 +12,8 @@ import { IndexKnowledgeSection } from "../components/index/index-knowledgesectio
 import { IndexResumeContainer } from "../components/index/index-resumecontainer";
 import { IndexResumeColorContainer } from "../components/index/index-resumecontainer/index-resumecontainer-colorcontainer/index-resumecontainer-colorcontainer";
 import { FlexContainer } from "../components/shared/flexcontainer/flexcontainer";
-import HeaderWithIcon from "../components/shared/headerwithicon/headerwithicon";
-import NavigationBar from "../components/shared/navigationbar/navigationbar";
+import { HeaderWithIcon } from "../components/shared/headerwithicon/headerwithicon";
+import { NavigationBar } from "../components/shared/navigationbar/navigationbar";
 import Spacer from "../components/shared/spacer/spacer";
 import { TitleWithSubtitle } from "../components/shared/titlewithsubtitle/titlewithsubtitle";
 import { Typography } from "../components/shared/typography";
@@ -97,7 +97,14 @@ const Index: React.FC<ServerSideProps> = ({
       <HeaderWithIcon
         arrow
         icon={
-          <PersonWithLaptop css={css`&{min-width: 558px;}`} width="100%" />
+          <PersonWithLaptop
+            css={css`
+              & {
+                min-width: 558px;
+              }
+            `}
+            width="100%"
+          />
         }
         ref={paragraphs[0]}
         first

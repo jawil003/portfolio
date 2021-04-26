@@ -1,10 +1,10 @@
 import {
   Typography,
-  Props,
-} from "./typography";
+  TypographyProps,
+} from "./";
 import { render } from "@testing-library/react";
 
-const variants: Props["variant"][] = [
+const variants: TypographyProps["variant"][] = [
   "h1",
   "h2",
   "h3",

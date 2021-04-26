@@ -1,7 +1,10 @@
 import { render } from "@testing-library/react";
-import {IndexResumeContainerItem, Props} from "./index-resumecontainer-item";
+import {
+  IndexResumeContainerItem,
+  IndexResumeContainerItemProps,
+} from "./";
 
-const variants: Props[] = [
+const variants: IndexResumeContainerItemProps[] = [
   {
     description: "Test",
     end_year: 2020,
@@ -22,14 +25,19 @@ const variants: Props[] = [
   },
 ];
 
-describe("IndexResumeContainerItem", ()=>{
-    test.each(variants)(
-      "Create IndexResumeContainerItem with %p", (variant)=>{
-          const testItem = render(
-            <IndexResumeContainerItem {...variant}/>,
-          );
+describe("IndexResumeContainerItem", () => {
+  test.each(variants)(
+    "Create IndexResumeContainerItem with %p",
+    (variant) => {
+      const testItem = render(
+        <IndexResumeContainerItem
+          {...variant}
+        />,
+      );
 
-          expect(testItem.baseElement).toMatchSnapshot();
-      }
-    );
-})
+      expect(
+        testItem.baseElement,
+      ).toMatchSnapshot();
+    },
+  );
+});

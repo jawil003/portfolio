@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 import {
   FlexContainer,
-  Props,
-} from "./flexcontainer";
+  FlexContainerProps,
+} from "./";
 
-const variants: Props[] = [
+const variants: FlexContainerProps[] = [
   {
     alignContent: "flex-start",
     justifyContent: "flex-start",

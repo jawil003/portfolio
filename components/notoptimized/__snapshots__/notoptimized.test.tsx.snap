@@ -24,11 +24,11 @@ exports[`NotOptimized Create NotOptimized 1`] = `
   height: 100vh;
   transform-origin: left center;
   background: rgba(
-                  0,
-                  0,
-                  0,
-                  0.35
-                );
+                    0,
+                    0,
+                    0,
+                    0.35
+                  );
 }
 
 .emotion-1>.desktop-navigation-bar-sidebar-container {

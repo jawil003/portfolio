@@ -24,7 +24,10 @@
     "target": "esnext",
     "emitDecoratorMetadata": true,
     "jsxImportSource": "@emotion/react",
-    "typeRoots": ["./typings", "./node_modules/@types"]
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types"
+    ]
   },
   "exclude": [
     "node_modules",

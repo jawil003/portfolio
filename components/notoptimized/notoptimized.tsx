@@ -3,7 +3,9 @@ import { MobileApplicationDesign } from "../../designs/mobileApplication.design"
 import React from "react";
 import { FlexContainer } from "../shared/flexcontainer/flexcontainer";
 import { Typography } from "../shared/typography";
-import NavigationBar from "../shared/navigationbar/navigationbar";
+import { NavigationBar } from "../shared/navigationbar/navigationbar";
+
+export interface Props {}
 
 /**
  * An NotOptimized React Component.
