@@ -3,6 +3,7 @@ const fs = require("fs");
 const {
   merge,
 } = require("webpack-merge");
+
 function resolveTsconfigPathsToAlias({
   tsconfigPath = "./tsconfig.json",
   webpackConfigBasePath = __dirname,
@@ -84,6 +85,30 @@ module.exports = {
             "@emotion/react",
           ),
         },
+      },
+      module: {
+        rules: [
+          {
+            test: /\.tsx?$/,
+            use: [
+              {
+                loader: require.resolve(
+                  "babel-loader",
+                ),
+                options: {
+                  rootMode: "upward",
+                },
+              },
+              require.resolve(
+                "react-docgen-typescript-loader",
+              ),
+            ],
+            include: path.resolve(
+              __dirname,
+              "../",
+            ),
+          },
+        ],
       },
     });
   },
