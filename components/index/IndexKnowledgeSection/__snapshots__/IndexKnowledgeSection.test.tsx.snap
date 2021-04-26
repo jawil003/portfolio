@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexKnowledgeSection Create IndexKnowledgeSection 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex-wrap: no-wrap;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  margin: calc(30px / -2) calc(30px / -2);
+}
+
+.emotion-0>* {
+  margin: calc(30px / 2) calc(30px / 2);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.emotion-1 {
+  padding: 40px;
+  min-height: 430px;
+  width: 300px;
+  background-color: #00739d;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.emotion-2 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #f3f3f3;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-2 {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.emotion-4 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #f3f3f3;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+.emotion-4 {
+  margin: 0px;
+}
+
+.emotion-6 {
+  padding-left: 20px;
+}
+
+.emotion-7 {
+  color: #f3f3f3;
+}
+
+<body>
+  <div>
+    <div
+      class="emotion-0"
+      style="opacity: 0;"
+    >
+      <div
+        class="emotion-1"
+      >
+        <div>
+          <h5
+            class="emotion-2 emotion-3"
+            color="#f3f3f3"
+            id="heading5"
+          >
+            test
+          </h5>
+          <p
+            class="emotion-4 emotion-5"
+            color="#f3f3f3"
+            id="body2"
+          />
+        </div>
+        <ul
+          class="emotion-6"
+        >
+          <li
+            class="emotion-7"
+          >
+            test
+          </li>
+          <li
+            class="emotion-7"
+          >
+            test1
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
