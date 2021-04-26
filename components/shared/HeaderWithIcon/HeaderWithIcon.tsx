@@ -122,6 +122,7 @@ const HeaderWithIcon = forwardRef<
                 opacity: 0.3;
                 padding: 0px 25%;
                 height: 100%;
+                overflow: hidden;
               }
 
               & {

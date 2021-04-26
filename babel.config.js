@@ -1,3 +1,15 @@
+const plugins = [
+  "@emotion/babel-plugin",
+];
+
+if (
+  process.env.NODE_ENV !== "production"
+) {
+  plugins.push(
+    "babel-plugin-typescript-to-proptypes",
+  );
+}
+
 module.exports = {
   presets: [
     [
@@ -11,5 +23,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: ["@emotion/babel-plugin"],
+  plugins,
 };
