@@ -3,7 +3,7 @@ import React from "react";
 import Spacer from "../../../shared/spacer/spacer";
 import { Typography } from "../../../shared/typography";
 
-interface Props {
+export interface Props {
   title: string;
   description: string;
   latest?: boolean;

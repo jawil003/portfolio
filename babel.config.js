@@ -1,5 +1,6 @@
 const plugins = [
   "@emotion/babel-plugin",
+  "babel-plugin-dynamic-import-node",
 ];
 
 if (
