@@ -13,7 +13,7 @@ import ResumeItemType from "../../../model/ResumeItem.model";
 import { IndexResumeContainerItem } from "./IndexResumeContainerItem/IndexResumeContainerItem";
 import { Typography } from "../../shared/Typography";
 
-interface Props {
+export interface Props {
   title: string;
   items: ResumeItemType[];
 }
