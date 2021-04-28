@@ -2,120 +2,93 @@ import dynamic from "next/dynamic";
 import React from "react";
 
 const AdobeXdIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/adobeXd.icon"
-    ),
+  () => import("../icons/adobeXd.icon"),
 );
 const ElectronIcon = dynamic(
   () =>
-    import(
-      "../components/icons/electron.icon"
-    ),
+    import("../icons/electron.icon"),
 );
 const TypescriptIcon = dynamic(
   () =>
-    import(
-      "../components/icons/typescript.icon"
-    ),
+    import("../icons/typescript.icon"),
 );
 const ReactIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/react.icon"
-    ),
+  () => import("../icons/react.icon"),
 );
 const NodeIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/nodejs.icon"
-    ),
+  () => import("../icons/nodejs.icon"),
 );
 const JavaIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/java.icon"
-    ),
+  () => import("../icons/java.icon"),
 );
 const AndroidIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/android.icon"
-    ),
+  () => import("../icons/android.icon"),
 );
 const SettingsPageDesign = dynamic(
   () =>
     import(
-      "../components/designs/settingsPage.design"
+      "../designs/settingsPage.design"
     ),
 );
 const PrototypeDesign = dynamic(
   () =>
     import(
-      "../components/designs/prototype.design"
+      "../designs/prototype.design"
     ),
 );
 const AffinityDesignerIcon = dynamic(
   () =>
     import(
-      "../components/icons/affinityDesigner.icon"
+      "../icons/affinityDesigner.icon"
     ),
 );
 const AffinityPhotoIcon = dynamic(
   () =>
     import(
-      "../components/icons/affinityPhoto.icon"
+      "../icons/affinityPhoto.icon"
     ),
 );
 
 const FlaskDesign = dynamic(
   () =>
-    import(
-      "../components/designs/flask.design"
-    ),
+    import("../designs/flask.design"),
 );
 
 const AtHomeDesign = dynamic(
   () =>
-    import(
-      "../components/designs/atHome.design"
-    ),
+    import("../designs/atHome.design"),
 );
 const BlobDesktopDesign = dynamic(
   () =>
     import(
-      "../components/designs/blobDesktop.design"
+      "../designs/blobDesktop.design"
     ),
 );
 const ContactMeDesign = dynamic(
   () =>
     import(
-      "../components/designs/contactMe.design"
+      "../designs/contactMe.design"
     ),
 );
 const DesigningDesign = dynamic(
   () =>
     import(
-      "../components/designs/designing.design"
+      "../designs/designing.design"
     ),
 );
 const KnowledgeDesign = dynamic(
   () =>
     import(
-      "../components/designs/knowledge.design"
+      "../designs/knowledge.design"
     ),
 );
 const ReactDesign = dynamic(
   () =>
-    import(
-      "../components/designs/react.design"
-    ),
+    import("../designs/react.design"),
 );
 const SienceDesign = dynamic(
   () =>
-    import(
-      "../components/designs/science.design"
-    ),
+    import("../designs/science.design"),
 );
 /*const BookIcon = dynamic(
   () =>
@@ -148,10 +121,7 @@ const DisplayAndWebpageIcon = dynamic(
     ),
 );*/
 const DribbbleIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/dribble.icon"
-    ),
+  () => import("../icons/dribble.icon"),
 );
 /*const DropIcon = dynamic(
   () =>
@@ -166,22 +136,14 @@ const HamburgerMenuIcon = dynamic(
     ),
 );*/
 const TwitterIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/twitter.icon"
-    ),
+  () => import("../icons/twitter.icon"),
 );
 const LinkedInIcon = dynamic(
   () =>
-    import(
-      "../components/icons/linkedin.icon"
-    ),
+    import("../icons/linkedin.icon"),
 );
 const GitHubIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/github.icon"
-    ),
+  () => import("../icons/github.icon"),
 );
 const MailIcon = dynamic(
   () =>
@@ -254,10 +216,7 @@ const InfoRoundedIcon = dynamic(
 );
 
 const FigmaIcon = dynamic(
-  () =>
-    import(
-      "../components/icons/figma.icon"
-    ),
+  () => import("../icons/figma.icon"),
 );
 
 const BubbleChartIcon = dynamic(

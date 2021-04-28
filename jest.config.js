@@ -1,18 +1,21 @@
-const { pathsToModuleNameMapper } = require("ts-jest/utils");
-const { compilerOptions } = require("./tsconfig.json");
-
 module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "node",
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    prefix: "<rootDir>/",
-  }),
-  setupFiles: ["dotenv/config", "<rootDir>/src/tests/config/setup.js"],
-  setupFilesAfterEnv: ["<rootDir>/src/tests/config/setupAfterEnv.js"],
-  testPathIgnorePatterns: [
-    "/.next/",
-    "/node_modules/",
-    "/tests/config/",
-    "/coverage/",
+  collectCoverageFrom: [
+    '**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**',
   ],
-};
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
+  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.css$': '<rootDir>/cssTransform.js',
+  },
+  transformIgnorePatterns: [
+    '/node_modules/',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
+  moduleNameMapper: {
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+  },
+  snapshotSerializers: ["@emotion/jest/serializer"]
+}

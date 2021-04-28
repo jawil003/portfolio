@@ -3,9 +3,10 @@ import {
   Story,
 } from "@storybook/react/types-6-0";
 import React from "react";
-import Button, {
+import {
+  Button,
   Props as ButtonProps,
-} from "../components/elements/Button";
+} from "../components/shared/button/button";
 
 export default {
   title: "Elements/Button",

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexResumeContainerHeader Create IndexResumeContainerHeader 1`] = `
+.emotion-0 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-0 {
+  font-weight: 600;
+  font-size: 2.125em;
+}
+
+<body>
+  <div>
+    <h4
+      class="emotion-0 emotion-1"
+      color="#000"
+      id="heading4"
+    >
+      Hello World
+    </h4>
+  </div>
+</body>
+`;

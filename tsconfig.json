@@ -7,7 +7,11 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "es2017", "es2019"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -18,24 +22,20 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": ".",
     "emitDecoratorMetadata": true,
-    "paths": {
-      "@apollo/myclient": [
-        "config/client.ts"
-      ],
-      "@style/breakpoints": [
-        "styles/breakpoints.ts"
-      ],
-      "@style/designSystem": [
-        "styles/designSystem.ts"
-      ]
-    }
+    "jsxImportSource": "@emotion/react",
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types"
+    ]
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules",
+    "next.config.js"
+  ],
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "src/tests/config/setupAfterEnv.js"
+    "next-env.d.ts"
   ]
 }

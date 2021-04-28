@@ -2,7 +2,12 @@ const designSystem = {
   font: {
     base: {
       size: "16px",
-      family: "'Open Sans', sans-serif",
+      family: {
+        base: "'Source Sans Pro'",
+        paragraph: "'Source Sans Pro'",
+        title: "'Source Sans Pro'",
+        fallback: "Arial, Helvetica",
+      },
     },
     fontWeight: {
       lighter: 200,

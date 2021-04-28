@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexResumeColorContainer Create IndexResumeColorContainer with color #fff 1`] = `
+.emotion-0 {
+  background-color: #fff;
+  position: relative;
+  left: -20px;
+  width: calc(100% + 40px);
+}
+
+<body>
+  <div>
+    <div
+      class="color-container  emotion-0"
+    />
+  </div>
+</body>
+`;

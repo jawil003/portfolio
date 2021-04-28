@@ -1,4 +1,4 @@
-import { ContactRequestType } from "types/typeDefs/contactRequest.type";
+import { ContactRequestType } from "../types/typeDefs/contactRequest.type";
 import axios from "axios";
 
 const {

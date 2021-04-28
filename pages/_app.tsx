@@ -1,13 +1,8 @@
-import React, {
-  useEffect,
-} from "react";
 import { AppProps } from "next/app";
-import BetaDialog from "../components/elements/BetaDialog";
 import globalStyles from "../styles/styles";
-import useViewportSizes from "use-viewport-sizes";
-import designSystem from "@style/designSystem";
-import { NotOptimized } from "components/elements/NotOptimized";
+import React from "react";
 import { DefaultSeo } from "next-seo";
+
 /**
  * An App React Component.
  * @author Jannik Will
@@ -17,17 +12,6 @@ const MyApp: React.FC<AppProps> = ({
   Component,
   pageProps,
 }) => {
-  const [
-    vpWidth,
-    _,
-    updateVpSizes,
-  ] = useViewportSizes({
-    dimension: "w",
-  });
-
-  useEffect(() => {
-    updateVpSizes?.();
-  }, [updateVpSizes]);
   return (
     <>
       {globalStyles}
@@ -76,14 +60,7 @@ const MyApp: React.FC<AppProps> = ({
         }}
       />
 
-      {vpWidth >=
-      designSystem.breakpoints
-        .tabletPortraitUpNumber ? (
-        <Component {...pageProps} />
-      ) : (
-        <NotOptimized />
-      )}
-      <BetaDialog />
+      <Component {...pageProps} />
     </>
   );
 };
