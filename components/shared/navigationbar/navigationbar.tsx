@@ -6,18 +6,19 @@ import {
   useAnimation,
 } from "framer-motion";
 import React, { useState } from "react";
+import { css } from "@emotion/react";
 import { useNavigationIcons } from "../../../hooks/useIcons.hook";
 import { Logo } from "../logo/logo";
-import { NavigationBarItem } from "./navigationbar-item";
+import { NavigationBarItem } from "./navigationbar-item/navigationbar-item";
 import { FlexContainer } from "../flexcontainer/flexcontainer";
-import Spacer from "../spacer/spacer";
+import { Spacer } from "../spacer/spacer";
 import {
   header as items,
   footer as footerItems,
+  // eslint-disable-next-line import/extensions
 } from "../../../config/routes.json";
 import HamburgerMenuIcon from "../../../icons/hamburgerMenu.icon";
 import designSystem from "../../../styles/designSystem";
-import { css } from "@emotion/react";
 import DesktopNavigationBarContext from "../../../contexts/DesktopNavigationBarContext";
 
 export interface Props {
@@ -234,3 +235,6 @@ export const NavigationBar: React.FC<Props> = React.memo(
 NavigationBar.defaultProps = {
   backgroundIsWhite: true,
 };
+
+NavigationBar.displayName =
+  "NavigationBar";

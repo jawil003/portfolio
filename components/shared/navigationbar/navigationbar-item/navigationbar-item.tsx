@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React from "react";
-import Spacer from "../spacer/spacer";
-import { Typography } from "../typography";
+import { Spacer } from "../../spacer/spacer";
+import { Typography } from "../../typography";
 import { css } from "@emotion/react";
-import designSystem from "../../../styles/designSystem";
-import useDesktopNavigationBarContext from "../../../hooks/useDesktopNavigationBarContext.hook";
+import designSystem from "../../../../styles/designSystem";
+import useDesktopNavigationBarContext from "../../../../hooks/useDesktopNavigationBarContext.hook";
 export interface Props {
   icon?: JSX.Element;
   href: string;

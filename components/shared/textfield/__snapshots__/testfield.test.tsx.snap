@@ -1,0 +1,340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField Create TextField with {"area": true, "name": "test", "onChange": [Function onChange], "placeholder": "Maxine Musterfrau", "rows": 3, "title": "Password", "value": ""} 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-rows: auto auto;
+  display: inline-block;
+}
+
+.emotion-1 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-1 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.emotion-1 {
+  margin: 0px;
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+
+.emotion-3 {
+  padding: 10px 15px;
+  border: 4px solid #000;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.emotion-4 {
+  font-size: 1.15em;
+  width: 100%;
+  border: none;
+  resize: none;
+  background: transparent;
+  color: #000;
+}
+
+.emotion-4:hover,
+.emotion-4:focus {
+  border: none;
+  outline: none;
+}
+
+<body>
+  <div>
+    <div
+      class="emotion-0"
+    >
+      <p
+        class="emotion-1 emotion-2"
+        color="#000"
+        id="body1"
+      >
+        Password
+      </p>
+      <div
+        class="emotion-3"
+      >
+        <textarea
+          class="emotion-4 emotion-5"
+          cols="23"
+          id="test"
+          name="test"
+          placeholder="Maxine Musterfrau"
+          rows="3"
+        />
+      </div>
+      <span />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`TextField Create TextField with {"area": true, "name": "test", "onChange": [Function onChange], "placeholder": "Maxine Musterfrau", "rows": 3, "title": "Password", "value": "12345678"} 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-rows: auto auto;
+  display: inline-block;
+}
+
+.emotion-1 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-1 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.emotion-1 {
+  margin: 0px;
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+
+.emotion-3 {
+  padding: 10px 15px;
+  border: 4px solid #000;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.emotion-4 {
+  font-size: 1.15em;
+  width: 100%;
+  border: none;
+  resize: none;
+  background: transparent;
+  color: #000;
+}
+
+.emotion-4:hover,
+.emotion-4:focus {
+  border: none;
+  outline: none;
+}
+
+<body>
+  <div>
+    <div
+      class="emotion-0"
+    >
+      <p
+        class="emotion-1 emotion-2"
+        color="#000"
+        id="body1"
+      >
+        Password
+      </p>
+      <div
+        class="emotion-3"
+      >
+        <textarea
+          class="emotion-4 emotion-5"
+          cols="23"
+          id="test"
+          name="test"
+          placeholder="Maxine Musterfrau"
+          rows="3"
+        >
+          12345678
+        </textarea>
+      </div>
+      <span />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`TextField Create TextField with {"name": "test", "onChange": [Function onChange], "placeholder": "Maxine Musterfrau", "title": "Password", "value": ""} 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-rows: auto auto;
+  display: inline-block;
+}
+
+.emotion-1 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-1 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.emotion-1 {
+  margin: 0px;
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+
+.emotion-3 {
+  padding: 10px 15px;
+  border: 4px solid #000;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.emotion-4 {
+  font-size: 1.15em;
+  width: 100%;
+  border: none;
+  resize: none;
+  background: transparent;
+  color: #000;
+}
+
+.emotion-4:hover,
+.emotion-4:focus {
+  border: none;
+  outline: none;
+}
+
+<body>
+  <div>
+    <div
+      class="emotion-0"
+    >
+      <p
+        class="emotion-1 emotion-2"
+        color="#000"
+        id="body1"
+      >
+        Password
+      </p>
+      <div
+        class="emotion-3"
+      >
+        <input
+          class="emotion-4 emotion-5"
+          id="test"
+          name="test"
+          placeholder="Maxine Musterfrau"
+          value=""
+        />
+      </div>
+      <span />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`TextField Create TextField with {"name": "test", "onChange": [Function onChange], "title": "Password", "value": "123password"} 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-rows: auto auto;
+  display: inline-block;
+}
+
+.emotion-1 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-1 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.emotion-1 {
+  margin: 0px;
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+
+.emotion-3 {
+  padding: 10px 15px;
+  border: 4px solid #000;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.emotion-4 {
+  font-size: 1.15em;
+  width: 100%;
+  border: none;
+  resize: none;
+  background: transparent;
+  color: #000;
+}
+
+.emotion-4:hover,
+.emotion-4:focus {
+  border: none;
+  outline: none;
+}
+
+<body>
+  <div>
+    <div
+      class="emotion-0"
+    >
+      <p
+        class="emotion-1 emotion-2"
+        color="#000"
+        id="body1"
+      >
+        Password
+      </p>
+      <div
+        class="emotion-3"
+      >
+        <input
+          class="emotion-4 emotion-5"
+          id="test"
+          name="test"
+          value="123password"
+        />
+      </div>
+      <span />
+    </div>
+  </div>
+</body>
+`;

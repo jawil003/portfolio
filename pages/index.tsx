@@ -14,7 +14,7 @@ import { IndexResumeColorContainer } from "../components/index/index-resumeconta
 import { FlexContainer } from "../components/shared/flexcontainer/flexcontainer";
 import { HeaderWithIcon } from "../components/shared/headerwithicon/headerwithicon";
 import { NavigationBar } from "../components/shared/navigationbar/navigationbar";
-import Spacer from "../components/shared/spacer/spacer";
+import { Spacer } from "../components/shared/spacer/spacer";
 import { TitleWithSubtitle } from "../components/shared/titlewithsubtitle/titlewithsubtitle";
 import { Typography } from "../components/shared/typography";
 import PersonWithLaptop from "../designs/personWithLaptop.design";

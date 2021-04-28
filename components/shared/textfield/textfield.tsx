@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import designSystem from "../../../styles/designSystem";
 import React from "react";
+import designSystem from "../../../styles/designSystem";
 import { Typography } from "../typography";
 
 const Input = styled.textarea`
@@ -42,7 +42,7 @@ export interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const TextField: React.FC<Props> = ({
+export const TextField: React.FC<Props> = ({
   title,
   placeholder,
   rows,
@@ -101,7 +101,7 @@ const TextField: React.FC<Props> = ({
             placeholder={placeholder}
             cols={23}
             rows={rows}
-          ></Input>
+          />
         ) : (
           <Input
             id={name}
@@ -123,5 +123,3 @@ TextField.defaultProps = {
   area: false,
   value: "",
 };
-
-export default TextField;

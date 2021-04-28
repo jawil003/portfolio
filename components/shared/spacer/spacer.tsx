@@ -1,6 +1,7 @@
+// eslint-disable-next-line no-use-before-define
 import React from "react";
 
-interface Props {
+export interface Props {
   width?: string;
   height?: string;
 }
@@ -10,7 +11,7 @@ interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-const Spacer: React.FC<Props> = ({
+export const Spacer: React.FC<Props> = ({
   width,
   height,
 }) => {
@@ -18,5 +19,3 @@ const Spacer: React.FC<Props> = ({
     <div style={{ width, height }} />
   );
 };
-
-export default Spacer;

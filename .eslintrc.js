@@ -13,6 +13,8 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    tsconfigRootDir: __dirname,
+    project: ["./tsconfig.json"],
   },
   plugins: [
     "@emotion",
@@ -22,16 +24,14 @@ module.exports = {
     "prettier",
   ],
   extends: [
-    "airbnb",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
+    "airbnb-typescript",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
     "prettier",
     "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
-  rules: {
+  /*rules: {
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -100,7 +100,8 @@ module.exports = {
     "@emotion/no-vanilla": 2,
     "@emotion/import-from-emotion": 2,
     "@emotion/styled-import": 2,
-  },
+    "no-use-before-define": ["off"],
+  },*/
   settings: {
     "import/resolver": {
       node: {

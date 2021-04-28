@@ -1,6 +1,6 @@
 import designSystem from "../../../../styles/designSystem";
 import React from "react";
-import Spacer from "../../../shared/spacer/spacer";
+import { Spacer } from "../../../shared/spacer/spacer";
 import { Typography } from "../../../shared/typography";
 
 export interface Props {

@@ -2,13 +2,14 @@ import {
   Meta,
   Story,
 } from "@storybook/react/types-6-0";
-import TextField, {
-  Props as TextFieldProps,
-} from "../components/shared/textfield/textfield";
 import {
   State,
   Store,
 } from "@sambego/storybook-state";
+import {
+  TextField,
+  Props as TextFieldProps,
+} from "../components/shared/textfield/textfield";
 
 export default {
   title: "Elements/TextField",

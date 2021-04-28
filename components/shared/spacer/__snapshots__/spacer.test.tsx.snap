@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spacer Create Spacer with {"height": "10px"} 1`] = `
+<body>
+  <div>
+    <div
+      style="height: 10px;"
+    />
+  </div>
+</body>
+`;
+
+exports[`Spacer Create Spacer with {"width": "20px"} 1`] = `
+<body>
+  <div>
+    <div
+      style="width: 20px;"
+    />
+  </div>
+</body>
+`;
+
+exports[`Spacer Create Spacer with {} 1`] = `
+<body>
+  <div>
+    <div />
+  </div>
+</body>
+`;
