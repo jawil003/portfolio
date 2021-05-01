@@ -3,7 +3,7 @@ import React from "react";
 import { FlexContainer } from "../flexcontainer/flexcontainer";
 import { Typography } from "../typography";
 
-interface Props {
+export interface Props {
   heading: string;
   description: string;
   className?: string;
@@ -55,3 +55,6 @@ export const TitleWithSubtitle: React.FC<Props> = ({
     </FlexContainer>
   );
 };
+
+TitleWithSubtitle.displayName =
+  "TitleWithSubtitle";

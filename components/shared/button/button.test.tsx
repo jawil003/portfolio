@@ -1,13 +1,13 @@
 import { render } from "@testing-library/react";
-import {
-  Button,
-  ButtonProps,
-} from "./";
+import { Button, ButtonProps } from ".";
 
 const variants: ButtonProps[] = [
   {
-    backgroundColor: "#fff",
-    color: "#000",
+    variant: "success",
+    text: "Hello World",
+  },
+  {
+    variant: "error",
     text: "Hello World",
   },
 ];
@@ -17,11 +17,12 @@ describe("Button", () => {
     "Create Button with %p",
     (variant) => {
       const testButton = render(
+        // eslint-disable-next-line react/jsx-props-no-spreading
         <Button {...variant} />,
       );
 
       expect(
-        testButton.baseElement,
+        testButton.container.firstChild,
       ).toMatchSnapshot();
     },
   );

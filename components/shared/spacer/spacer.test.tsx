@@ -19,7 +19,7 @@ describe("Spacer", () => {
       );
 
       expect(
-        testSpacer.baseElement,
+        testSpacer.container.firstChild,
       ).toMatchSnapshot();
     },
   );

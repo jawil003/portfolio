@@ -9,7 +9,8 @@ describe("IndexResumeColorContainer", () => {
     );
 
     expect(
-      colorContainer.baseElement,
+      colorContainer.container
+        .firstChild,
     ).toMatchSnapshot();
   });
 });

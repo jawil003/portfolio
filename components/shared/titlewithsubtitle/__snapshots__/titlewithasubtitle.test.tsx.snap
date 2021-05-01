@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleWithSubtitle Create TitleWithSubtitle 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: no-wrap;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  margin: calc(1em / -2) calc(0px / -2);
+}
+
+.emotion-0>* {
+  margin: calc(1em / 2) calc(0px / 2);
+}
+
+.emotion-0 {
+  display: inline-block;
+  margin: 0;
+  max-width: 500px;
+}
+
+.emotion-0>.subtitle {
+  width: 0;
+  min-width: 100%;
+}
+
+.emotion-1 {
+  text-align: start;
+  font-style: normal;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-1 {
+  font-weight: 600;
+  font-size: 3em;
+}
+
+.emotion-3 {
+  text-align: start;
+  font-style: italic;
+  margin: unset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #000;
+  word-wrap: unset;
+  padding: unset;
+  word-break: normal;
+}
+
+.emotion-3 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+<div
+  class="emotion-0"
+>
+  <h1
+    class="emotion-1 emotion-2"
+    color="#000"
+    id="heading3"
+  >
+    Test heading
+  </h1>
+  <p
+    class="subtitle emotion-3 emotion-4"
+    color="#000"
+    id="body1"
+  >
+    test description
+  </p>
+</div>
+`;

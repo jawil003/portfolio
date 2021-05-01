@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import {
   FlexContainer,
   FlexContainerProps,
-} from "./";
+} from ".";
 
 const variants: FlexContainerProps[] = [
   {
@@ -29,7 +29,8 @@ describe("FlexContainer", () => {
       );
 
       expect(
-        testFlexContainer.baseElement,
+        testFlexContainer.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );

@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-import designSystem from "../../../styles/designSystem";
 import {
   motion,
   useAnimation,
@@ -9,6 +8,7 @@ import React, {
   useEffect,
 } from "react";
 import { useInView } from "react-intersection-observer";
+import designSystem from "../../../styles/designSystem";
 import ResumeItemType from "../../../model/ResumeItem.model";
 import { IndexResumeContainerItem } from "./index-resumecontainer-item/index-resumecontainer-item";
 import { Typography } from "../../shared/typography";
@@ -104,13 +104,13 @@ export const IndexResumeContainer = forwardRef<
       >
         {items.map(
           ({
-            title,
+            title: titledef,
             description,
             start_year,
             end_year,
           }) => (
             <IndexResumeContainerItem
-              key={title}
+              key={titledef}
               latest={false}
               start_year={start_year}
               end_year={end_year}

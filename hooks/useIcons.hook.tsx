@@ -90,7 +90,7 @@ const SienceDesign = dynamic(
   () =>
     import("../designs/science.design"),
 );
-/*const BookIcon = dynamic(
+/* const BookIcon = dynamic(
   () =>
     import(
       "../components/icons/book.icon"
@@ -119,11 +119,11 @@ const DisplayAndWebpageIcon = dynamic(
     import(
       "../components/icons/displayAndWebpage.icon"
     ),
-);*/
+); */
 const DribbbleIcon = dynamic(
   () => import("../icons/dribble.icon"),
 );
-/*const DropIcon = dynamic(
+/* const DropIcon = dynamic(
   () =>
     import(
       "../components/icons/drop.icon"
@@ -134,7 +134,7 @@ const HamburgerMenuIcon = dynamic(
     import(
       "../components/icons/hamburgerMenu.icon"
     ),
-);*/
+); */
 const TwitterIcon = dynamic(
   () => import("../icons/twitter.icon"),
 );
@@ -223,6 +223,13 @@ const BubbleChartIcon = dynamic(
   () =>
     import(
       "@material-ui/icons/BubbleChart"
+    ),
+);
+
+const CheckBoxOutlineBlank = dynamic(
+  () =>
+    import(
+      "@material-ui/icons/CheckBoxOutlineBlank"
     ),
 );
 
@@ -441,6 +448,14 @@ export const useSocialLogos = () => {
           />
         );
       }
+      default: {
+        return (
+          <CheckBoxOutlineBlank
+            width={width}
+            height={height}
+          />
+        );
+      }
     }
   };
 };
@@ -518,6 +533,14 @@ export const useHeaderDesign = () => {
           <SienceDesign
             height={height}
             width={width}
+          />
+        );
+      }
+      default: {
+        return (
+          <CheckBoxOutlineBlank
+            width={width}
+            height={height}
           />
         );
       }

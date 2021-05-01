@@ -1,36 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Create Button with {"backgroundColor": "#fff", "color": "#000", "text": "Hello World"} 1`] = `
+exports[`Button Create Button with {"text": "Hello World", "variant": "error"} 1`] = `
 .emotion-0 {
-  position: relative;
-  overflow: hidden;
-  margin: 8px 0px;
-  padding: 15px 30px;
-  border-radius: 50px;
-  background-color: #fff;
-  outline: none;
+  background-color: #B74A66;
+  padding: 0.8333333333333334em 1.6666666666666667em;
   border: none;
+  outline: none;
+  height: 2.8333333333333335em;
+  min-width: 7.5em;
+  border-radius: 1.25em;
+  font-style: normal;
+  font-weight: 400;
+  font-weight: normal;
+  font-size: 0.8333333333333334em;
+  color: #fff;
 }
 
-.emotion-0 .button-label {
-  position: relative;
-  z-index: 3;
-  font-size: 1.5em;
-  color: #000;
-  font-weight: 500;
+<button
+  class="emotion-0"
+  type="button"
+>
+  Hello World
+</button>
+`;
+
+exports[`Button Create Button with {"text": "Hello World", "variant": "success"} 1`] = `
+.emotion-0 {
+  background-color: #3d899b;
+  padding: 0.8333333333333334em 1.6666666666666667em;
+  border: none;
+  outline: none;
+  height: 2.8333333333333335em;
+  min-width: 7.5em;
+  border-radius: 1.25em;
+  font-style: normal;
+  font-weight: 400;
+  font-weight: normal;
+  font-size: 0.8333333333333334em;
+  color: #fff;
 }
 
-<body>
-  <div>
-    <button
-      class="button-container  emotion-0"
-    >
-      <span
-        class="button-label"
-      >
-        Hello World
-      </span>
-    </button>
-  </div>
-</body>
+<button
+  class="emotion-0"
+  type="button"
+>
+  Hello World
+</button>
 `;

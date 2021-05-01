@@ -1,10 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import { css } from "@emotion/react";
 import { Spacer } from "../../spacer/spacer";
 import { Typography } from "../../typography";
-import { css } from "@emotion/react";
 import designSystem from "../../../../styles/designSystem";
 import useDesktopNavigationBarContext from "../../../../hooks/useDesktopNavigationBarContext.hook";
+
 export interface Props {
   icon?: JSX.Element;
   href: string;
@@ -90,67 +91,66 @@ export const NavigationBarItem: React.FC<Props> = ({
         </Typography>
       </a>
     );
-  } else {
-    return (
-      <Link href={href}>
-        <a
-          css={css`
-            & {
-              padding: 10px 20px;
-              height: 100%;
-              display: flex;
-              align-items: center;
-              text-decoration: none;
-              color: #000;
-              cursor: pointer;
-            }
-            & > svg {
-              fill: #000;
-            }
-
-            &:hover {
-              background-color: rgba(
-                0,
-                0,
-                0,
-                0.35
-              );
-            }
-            & > * {
-              display: inline-block;
-            }
-          `}
-        >
-          {icon
-            ? [
-                <div
-                  key="iconContainer"
-                  style={{
-                    display:
-                      "inline-flex",
-                    alignItems:
-                      "center",
-                  }}
-                >
-                  {icon}
-                </div>,
-                <Spacer
-                  key="iconTextSpacer"
-                  width="10px"
-                />,
-              ]
-            : undefined}
-          <Typography
-            variant="s1"
-            bold="semi-bold"
-            color={color}
-          >
-            {children}
-          </Typography>
-        </a>
-      </Link>
-    );
   }
+  return (
+    <Link href={href}>
+      <button
+        type="button"
+        css={css`
+          & {
+            padding: 10px 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+          }
+          & > svg {
+            fill: #000;
+          }
+
+          &:hover {
+            background-color: rgba(
+              0,
+              0,
+              0,
+              0.35
+            );
+          }
+          & > * {
+            display: inline-block;
+          }
+        `}
+      >
+        {icon
+          ? [
+              <div
+                key="iconContainer"
+                style={{
+                  display:
+                    "inline-flex",
+                  alignItems: "center",
+                }}
+              >
+                {icon}
+              </div>,
+              <Spacer
+                key="iconTextSpacer"
+                width="10px"
+              />,
+            ]
+          : undefined}
+        <Typography
+          variant="s1"
+          bold="semi-bold"
+          color={color}
+        >
+          {children}
+        </Typography>
+      </button>
+    </Link>
+  );
 };
 
 NavigationBarItem.defaultProps = {

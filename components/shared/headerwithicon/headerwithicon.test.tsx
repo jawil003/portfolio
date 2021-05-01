@@ -1,10 +1,9 @@
 import { render } from "@testing-library/react";
+import { AcUnit } from "@material-ui/icons";
 import {
   HeaderWithIcon,
   HeaderWithIconProps,
-} from "./";
-import reactIntersectionObserver from "react-intersection-observer";
-import { AcUnit } from "@material-ui/icons";
+} from ".";
 
 jest.mock(
   "react-intersection-observer",
@@ -42,7 +41,8 @@ describe("HeaderWithIcon", () => {
       );
 
       expect(
-        testheaderwithicon.baseElement,
+        testheaderwithicon.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );

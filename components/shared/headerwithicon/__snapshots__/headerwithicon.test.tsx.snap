@@ -123,31 +123,27 @@ exports[`HeaderWithIcon Create HeaderWithIcon with {"arrow": false, "first": tru
   padding-bottom: 100px;
 }
 
-<body>
-  <div>
-    <header
-      class="emotion-0"
+<header
+  class="emotion-0"
+>
+  <div
+    style="opacity: 0; transform: translateY(-200px) translateZ(0);"
+  />
+  <div
+    class="emotion-1"
+  >
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <div
-        style="opacity: 0; transform: translateY(-200px) translateZ(0);"
+      <path
+        d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
       />
-      <div
-        class="emotion-1"
-      >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
-          />
-        </svg>
-      </div>
-    </header>
+    </svg>
   </div>
-</body>
+</header>
 `;
 
 exports[`HeaderWithIcon Create HeaderWithIcon with {"arrow": true, "first": false, "icon": [Object]} 1`] = `
@@ -273,82 +269,27 @@ exports[`HeaderWithIcon Create HeaderWithIcon with {"arrow": true, "first": fals
   padding-bottom: 100px;
 }
 
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-flex-wrap: no-wrap;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
-  margin: calc(0px / -2) calc(0px / -2);
-}
-
-.emotion-2>* {
-  margin: calc(0px / 2) calc(0px / 2);
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-<body>
-  <div>
-    <header
-      class="emotion-0"
+<header
+  class="emotion-0"
+>
+  <div
+    style="opacity: 0; transform: translateY(-200px) translateZ(0);"
+  />
+  <div
+    class="emotion-1"
+  >
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <div
-        style="opacity: 0; transform: translateY(-200px) translateZ(0);"
+      <path
+        d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
       />
-      <div
-        class="emotion-1"
-      >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
-          />
-        </svg>
-      </div>
-    </header>
-    <div
-      class="emotion-2"
-    >
-      <svg
-        fill="none"
-        height="43px"
-        style="transform: translateY(-10px) translateZ(0);"
-        viewBox="0 0 43 43"
-        width="43px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M13.276 15.39l8.224 8.206 8.224-8.206 2.526 2.527-10.75 10.75-10.75-10.75 2.526-2.527z"
-          fill="#000"
-        />
-      </svg>
-    </div>
+    </svg>
   </div>
-</body>
+</header>
 `;
 
 exports[`HeaderWithIcon Create HeaderWithIcon with {"arrow": true, "first": true, "icon": [Object]} 1`] = `
@@ -474,80 +415,25 @@ exports[`HeaderWithIcon Create HeaderWithIcon with {"arrow": true, "first": true
   padding-bottom: 100px;
 }
 
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-flex-wrap: no-wrap;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
-  margin: calc(0px / -2) calc(0px / -2);
-}
-
-.emotion-2>* {
-  margin: calc(0px / 2) calc(0px / 2);
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-<body>
-  <div>
-    <header
-      class="emotion-0"
+<header
+  class="emotion-0"
+>
+  <div
+    style="opacity: 0; transform: translateY(-200px) translateZ(0);"
+  />
+  <div
+    class="emotion-1"
+  >
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <div
-        style="opacity: 0; transform: translateY(-200px) translateZ(0);"
+      <path
+        d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
       />
-      <div
-        class="emotion-1"
-      >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
-          />
-        </svg>
-      </div>
-    </header>
-    <div
-      class="emotion-2"
-    >
-      <svg
-        fill="none"
-        height="43px"
-        style="transform: translateY(-10px) translateZ(0);"
-        viewBox="0 0 43 43"
-        width="43px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M13.276 15.39l8.224 8.206 8.224-8.206 2.526 2.527-10.75 10.75-10.75-10.75 2.526-2.527z"
-          fill="#000"
-        />
-      </svg>
-    </div>
+    </svg>
   </div>
-</body>
+</header>
 `;

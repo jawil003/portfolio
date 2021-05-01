@@ -1,8 +1,8 @@
-/* eslint-disable react/jsx-key */
-import { title as appTitle } from "../package.json";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import { title as appTitle } from "../package.json";
+
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -39,6 +39,7 @@ class MetaService {
       />,
     ];
   }
+
   public static generateIndividualTags(
     data: {
       accentColor?: string;
@@ -187,11 +188,13 @@ class MetaService {
       ) : undefined,
     ];
   }
+
   public static provideImages(
     basePath: string,
     iconName: string,
   ) {
-    iconName = basePath + iconName;
+    const newIconName =
+      basePath + iconName;
     return [
       <link
         key="favicon"
@@ -202,58 +205,61 @@ class MetaService {
       <link
         key="apple-touch-icon-default"
         rel="apple-touch-icon"
-        href={`${iconName}-512x512.png`}
+        href={`${newIconName}-512x512.png`}
       />,
       <link
         key="apple-touch-icon-60x60"
         rel="apple-touch-icon"
         sizes="60x60"
-        href={`${iconName}-60x60.png`}
+        href={`${newIconName}-60x60.png`}
       />,
       <link
         key="apple-touch-icon-76x76"
         rel="apple-touch-icon"
         sizes="76x76"
-        href={`${iconName}-76x76.png`}
+        href={`${newIconName}-76x76.png`}
       />,
       <link
         key="apple-touch-icon-83.5x83.5"
         rel="apple-touch-icon"
         sizes="83.5x83.5"
-        href={`${iconName}-83.5x83.5.png`}
+        href={`${newIconName}-83.5x83.5.png`}
       />,
       <link
         key="apple-touch-icon-120x120"
         rel="apple-touch-icon"
         sizes="120x120"
-        href={`${iconName}-120x120.png`}
+        href={`${newIconName}-120x120.png`}
       />,
       <link
         key="apple-touch-icon-152x152"
         rel="apple-touch-icon"
         sizes="152x152"
-        href={`${iconName}-152x152.png`}
+        href={`${newIconName}-152x152.png`}
       />,
 
       <link
         key="apple-touch-icon-167x167"
         rel="apple-touch-icon"
         sizes="167x167"
-        href={`${iconName}-167x167.png`}
+        href={`${newIconName}-167x167.png`}
       />,
       <link
         key="apple-touch-icon-180x180"
         rel="apple-touch-icon"
         sizes="180x180"
-        href={`${iconName}-180x180.png`}
+        href={`${newIconName}-180x180.png`}
       />,
     ];
   }
 }
 
-export const generateGeneralTags =
-  MetaService.generateGeneralTags;
-export const generateIndividualTags =
-  MetaService.generateIndividualTags;
-export const provideImages =
-  MetaService.provideImages;
+export const {
+  generateGeneralTags,
+} = MetaService;
+export const {
+  generateIndividualTags,
+} = MetaService;
+export const {
+  provideImages,
+} = MetaService;

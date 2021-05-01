@@ -31,13 +31,9 @@ exports[`FlexContainer FlexContainer with {"alignContent": "flex-start", "alignI
   margin: calc(0px / 2) calc(0px / 2);
 }
 
-<body>
-  <div>
-    <div
-      class="emotion-0"
-    />
-  </div>
-</body>
+<div
+  class="emotion-0"
+/>
 `;
 
 exports[`FlexContainer FlexContainer with {"columnGap": "10px", "rowGap": "10px"} 1`] = `
@@ -60,13 +56,9 @@ exports[`FlexContainer FlexContainer with {"columnGap": "10px", "rowGap": "10px"
   margin: calc(10px / 2) calc(10px / 2);
 }
 
-<body>
-  <div>
-    <div
-      class="emotion-0"
-    />
-  </div>
-</body>
+<div
+  class="emotion-0"
+/>
 `;
 
 exports[`FlexContainer FlexContainer with {"wrap": true} 1`] = `
@@ -89,11 +81,7 @@ exports[`FlexContainer FlexContainer with {"wrap": true} 1`] = `
   margin: calc(0px / 2) calc(0px / 2);
 }
 
-<body>
-  <div>
-    <div
-      class="emotion-0"
-    />
-  </div>
-</body>
+<div
+  class="emotion-0"
+/>
 `;

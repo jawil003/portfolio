@@ -1,10 +1,10 @@
-import { ContactRequestType } from "../types/typeDefs/contactRequest.type";
 import axios from "axios";
+import { ContactRequestType } from "../interfaces/graphql/contactRequest.type";
 
 const {
-  SEND_IN_BLUE_API_KEY_V3: api_key,
-  SEND_IN_BLUE_SENDER_NAME: sender_name,
-  SEND_IN_BLUE_SENDER_EMAIL: sender_email,
+  SEND_IN_BLUE_API_KEY_V3: apiKey,
+  SEND_IN_BLUE_SENDER_NAME: senderName,
+  SEND_IN_BLUE_SENDER_EMAIL: senderEmail,
 } = process.env;
 export default class MailService {
   public static async send({
@@ -22,8 +22,8 @@ export default class MailService {
         },
         to: [
           {
-            email: sender_email,
-            name: sender_name,
+            email: senderEmail,
+            name: senderName,
           },
         ],
         subject: `Willey3x37.de Anfrage: ${title}`,
@@ -38,7 +38,7 @@ export default class MailService {
           Accept: "application/json",
           "Content-Type":
             "application/json",
-          "api-key": api_key,
+          "api-key": apiKey,
         },
       },
     );

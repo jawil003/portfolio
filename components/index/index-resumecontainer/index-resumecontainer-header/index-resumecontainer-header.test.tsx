@@ -1,11 +1,7 @@
 import { render } from "@testing-library/react";
 import { IndexResumeContainerHeader } from "./index-resumecontainer-header";
-import preloadAll from "jest-next-dynamic";
 
 describe("IndexResumeContainerHeader", () => {
-  beforeAll(async () => {
-    await preloadAll();
-  });
   test("Create IndexResumeContainerHeader", () => {
     const testHeader = render(
       <IndexResumeContainerHeader>
@@ -14,7 +10,7 @@ describe("IndexResumeContainerHeader", () => {
     );
 
     expect(
-      testHeader.baseElement,
+      testHeader.container.firstChild,
     ).toMatchSnapshot();
   });
 });

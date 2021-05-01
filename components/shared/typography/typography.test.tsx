@@ -1,8 +1,8 @@
+import { render } from "@testing-library/react";
 import {
   Typography,
   TypographyProps,
-} from "./";
-import { render } from "@testing-library/react";
+} from ".";
 
 const variants: TypographyProps["variant"][] = [
   "h1",
@@ -25,7 +25,8 @@ describe("Typography", () => {
         <Typography variant="h1" />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -39,7 +40,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -53,7 +55,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -67,7 +70,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -81,7 +85,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -95,7 +100,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -109,7 +115,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -123,7 +130,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -137,7 +145,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -151,7 +160,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -166,7 +176,8 @@ describe("Typography", () => {
         />,
       );
       expect(
-        testH1Typography.baseElement,
+        testH1Typography.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );

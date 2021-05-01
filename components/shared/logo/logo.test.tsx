@@ -6,7 +6,7 @@ describe("Logo", () => {
     const testLogo = render(<Logo />);
 
     expect(
-      testLogo.baseElement,
+      testLogo.container.firstChild,
     ).toMatchSnapshot();
   });
 });

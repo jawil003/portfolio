@@ -1,6 +1,5 @@
-import { ContactRequestType } from "../../types/typeDefs/contactRequest.type";
-import { localClient } from "../../config/client";
-import { gql } from "@apollo/client";
+import { ContactRequestType } from "../../interfaces/graphql/contactRequest.type";
+import { mutate } from "../../config/client";
 
 export default class ContactRequestService {
   public static async do({
@@ -9,8 +8,8 @@ export default class ContactRequestService {
     description,
     emailAdress,
   }: ContactRequestType) {
-    await localClient.mutate({
-      mutation: gql`mutation {
+    await mutate(
+      `mutation {
       send(
     contactRequest: {
       name: "${name}"
@@ -23,6 +22,6 @@ export default class ContactRequestService {
     emailAdress
   }
 }`,
-    });
+    );
   }
 }

@@ -71,42 +71,38 @@ exports[`IndexKnowledgeTable Create IndexKnowledgeTable 1`] = `
   color: #f3f3f3;
 }
 
-<body>
+<div
+  class="emotion-0"
+>
   <div>
-    <div
-      class="emotion-0"
+    <h5
+      class="emotion-1 emotion-2"
+      color="#f3f3f3"
+      id="heading5"
     >
-      <div>
-        <h5
-          class="emotion-1 emotion-2"
-          color="#f3f3f3"
-          id="heading5"
-        >
-          test
-        </h5>
-        <p
-          class="emotion-3 emotion-4"
-          color="#f3f3f3"
-          id="body2"
-        >
-          Lorem ipsum
-        </p>
-      </div>
-      <ul
-        class="emotion-5"
-      >
-        <li
-          class="emotion-6"
-        >
-          test
-        </li>
-        <li
-          class="emotion-6"
-        >
-          test1
-        </li>
-      </ul>
-    </div>
+      test
+    </h5>
+    <p
+      class="emotion-3 emotion-4"
+      color="#f3f3f3"
+      id="body2"
+    >
+      Lorem ipsum
+    </p>
   </div>
-</body>
+  <ul
+    class="emotion-5"
+  >
+    <li
+      class="emotion-6"
+    >
+      test
+    </li>
+    <li
+      class="emotion-6"
+    >
+      test1
+    </li>
+  </ul>
+</div>
 `;

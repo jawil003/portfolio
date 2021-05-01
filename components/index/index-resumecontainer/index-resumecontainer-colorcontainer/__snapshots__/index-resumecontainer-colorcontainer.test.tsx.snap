@@ -8,11 +8,7 @@ exports[`IndexResumeColorContainer Create IndexResumeColorContainer with color #
   width: calc(100% + 40px);
 }
 
-<body>
-  <div>
-    <div
-      class="color-container  emotion-0"
-    />
-  </div>
-</body>
+<div
+  class="color-container  emotion-0"
+/>
 `;

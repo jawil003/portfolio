@@ -3,9 +3,9 @@ import {
   useSpring,
 } from "framer-motion";
 import Link from "next/link";
-import React, {
-  CSSProperties,
-} from "react";
+import React from "react";
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
 export interface Props {
   size?: string;
@@ -15,6 +15,14 @@ export interface Props {
   children?: any;
   className?: string;
 }
+
+const IconLinkContainer = motion(styled.a`
+  & {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`);
 
 /**
  * An IconLink React Component.
@@ -34,7 +42,7 @@ export const IndexIconLink: React.FC<Props> = React.memo(
     return (
       <>
         {external ? (
-          <motion.a
+          <IconLinkContainer
             className={className}
             onMouseOver={() => {
               scale.set(1.2);
@@ -46,18 +54,21 @@ export const IndexIconLink: React.FC<Props> = React.memo(
             rel="noreferrer"
             target="_blank"
             style={{
-              backgroundColor: background,
-              scale,
-              width: size,
-              height: size,
-              ...styles.container,
+              scale: (scale as unknown) as number,
             }}
+            css={css`
+              & {
+                background-color: ${background};
+                width: ${size};
+                height: ${size};
+              }
+            `}
           >
             {children}
-          </motion.a>
+          </IconLinkContainer>
         ) : (
           <Link href={href}>
-            <motion.a
+            <IconLinkContainer
               className={className}
               onMouseOver={() => {
                 scale.set(1.2);
@@ -65,31 +76,22 @@ export const IndexIconLink: React.FC<Props> = React.memo(
               onMouseOut={() => {
                 scale.set(1);
               }}
-              style={{
-                backgroundColor: background,
-                width: size,
-                height: size,
-                ...styles.container,
-              }}
+              css={css`
+                & {
+                  background-color: ${background};
+                  width: ${size};
+                  height: ${size};
+                }
+              `}
             >
               {children}
-            </motion.a>
+            </IconLinkContainer>
           </Link>
         )}
       </>
     );
   },
 );
-
-const styles: {
-  [x: string]: CSSProperties;
-} = {
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-};
 
 IndexIconLink.displayName = "IconLink";
 

@@ -13,7 +13,8 @@ describe("IndexKnowledgeTable", () => {
     );
 
     expect(
-      testIndexKnowledgeTable.baseElement,
+      testIndexKnowledgeTable.container
+        .firstChild,
     ).toMatchSnapshot();
   });
 });

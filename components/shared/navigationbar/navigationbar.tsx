@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import {
   motion,
   useAnimation,
@@ -48,8 +45,9 @@ export const NavigationBar: React.FC<Props> = React.memo(
         <DesktopNavigationBarContext.Provider
           value={{
             open,
-            setOpen: (open: boolean) =>
-              setOpen(open),
+            setOpen: (
+              isOpen: boolean,
+            ) => setOpen(isOpen),
           }}
         >
           <motion.nav
@@ -74,6 +72,8 @@ export const NavigationBar: React.FC<Props> = React.memo(
           >
             <div
               className="desktop-navigation-bar-hamburger-menu-container"
+              role="button"
+              aria-hidden="true"
               onClick={() => {
                 setOpen(true);
                 navBar.start({
@@ -98,6 +98,7 @@ export const NavigationBar: React.FC<Props> = React.memo(
             </div>
           </motion.nav>
           <nav
+            aria-hidden="true"
             css={css`
               & {
                 display: ${open

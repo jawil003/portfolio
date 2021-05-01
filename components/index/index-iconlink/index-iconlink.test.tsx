@@ -1,8 +1,9 @@
 import { render } from "@testing-library/react";
+import React from "react";
 import {
   IndexIconLink,
   IndexIconLinkProps,
-} from "./";
+} from ".";
 
 const variants: IndexIconLinkProps[] = [
   {
@@ -23,11 +24,13 @@ describe("IndexIconLink", () => {
     "Create IndexIconLink with %p",
     (variant) => {
       const testIconLink = render(
+        // eslint-disable-next-line react/jsx-props-no-spreading
         <IndexIconLink {...variant} />,
       );
 
       expect(
-        testIconLink.baseElement,
+        testIconLink.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );
@@ -35,13 +38,14 @@ describe("IndexIconLink", () => {
   test("Check styling ability of IconLink", () => {
     const testIconLink = render(
       <IndexIconLink
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...variants[0]}
         className="testname"
       />,
     );
 
     expect(
-      testIconLink.baseElement,
+      testIconLink.container.firstChild,
     ).toMatchSnapshot();
   });
 });

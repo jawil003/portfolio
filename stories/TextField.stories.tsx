@@ -7,13 +7,13 @@ import {
   Store,
 } from "@sambego/storybook-state";
 import {
-  TextField,
+  Textfield,
   Props as TextFieldProps,
 } from "../components/shared/textfield/textfield";
 
 export default {
   title: "Elements/TextField",
-  component: TextField,
+  component: Textfield,
 } as Meta;
 
 const store = new Store({
@@ -25,12 +25,16 @@ const TextFieldElement: Story<TextFieldProps> = (
 ) => (
   <State store={store}>
     {(state) => (
-      <TextField
+      <Textfield
         {...args}
         value={state.value}
         onChange={({
           target: { value },
-        }) => store.set({ value })}
+        }) =>
+          store.set({
+            value,
+          })
+        }
       />
     )}
   </State>
@@ -40,11 +44,3 @@ export const Input = TextFieldElement.bind(
   {},
 );
 Input.args = {};
-
-export const Area = TextFieldElement.bind(
-  {},
-);
-Area.args = {
-  area: true,
-  rows: 5,
-};

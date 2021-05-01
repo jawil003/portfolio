@@ -1,7 +1,7 @@
 import { AppProps } from "next/app";
-import globalStyles from "../styles/styles";
 import React from "react";
 import { DefaultSeo } from "next-seo";
+import globalStyles from "../styles/styles";
 
 /**
  * An App React Component.
@@ -23,10 +23,7 @@ const MyApp: React.FC<AppProps> = ({
         openGraph={{
           type: "website",
           locale: "de",
-          url:
-            "https://" +
-            process.env
-              .NEXT_PUBLIC_HOST_URL,
+          url: `https://${process.env.NEXT_PUBLIC_HOST_URL}`,
           images: [
             {
               url: `https://${process.env.NEXT_PUBLIC_HOST_URL}/img/Og_Preview.png`,

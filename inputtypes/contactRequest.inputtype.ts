@@ -1,5 +1,5 @@
-import { gql } from "@apollo/client";
-import { ContactRequestString } from "../typeDefs/contactRequest.type";
+import { gql } from "apollo-server-micro";
+import { ContactRequestString } from "../interfaces/graphql/contactRequest.type";
 
 const ContactRequestInput = gql`
 input ContactRequestInput {

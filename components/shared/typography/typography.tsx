@@ -222,17 +222,32 @@ const resolveVariant = (
   wordBreak: Props["wordBreak"],
   color?: Props["color"],
 ) => {
-  const weight =
-    bold === "bold"
-      ? designSystem.font.fontWeight
-          .bold
-      : bold === "semi-bold"
-      ? designSystem.font.fontWeight
-          .semiBold
-      : bold === "bolder"
-      ? designSystem.font.fontWeight
-          .bolder
-      : undefined;
+  let weight: number | undefined;
+
+  switch (bold) {
+    case "bold": {
+      weight =
+        designSystem.font.fontWeight
+          .bold;
+      break;
+    }
+    case "semi-bold": {
+      weight =
+        designSystem.font.fontWeight
+          .semiBold;
+      break;
+    }
+    case "bolder": {
+      weight =
+        designSystem.font.fontWeight
+          .bolder;
+      break;
+    }
+    default: {
+      weight = undefined;
+      break;
+    }
+  }
 
   switch (variant) {
     case "h1": {
@@ -454,6 +469,28 @@ const resolveVariant = (
         >
           {text}
         </S2>
+      );
+    }
+    default: {
+      return (
+        <B1
+          id="body1"
+          color={color}
+          align={align}
+          weight={weight}
+          italic={italic}
+          underline={underline}
+          className={className}
+          wordSpacing={wordSpacing}
+          fontFamily={fontFamily}
+          wordBreak={wordBreak}
+          letterSpacing={letterSpacing}
+          maxLength={maxLength}
+          wordWrap={wordWrap}
+          as={component}
+        >
+          {text}
+        </B1>
       );
     }
   }

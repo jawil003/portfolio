@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import {
   IndexResumeContainerItem,
   IndexResumeContainerItemProps,
-} from "./";
+} from ".";
 
 const variants: IndexResumeContainerItemProps[] = [
   {
@@ -36,7 +36,7 @@ describe("IndexResumeContainerItem", () => {
       );
 
       expect(
-        testItem.baseElement,
+        testItem.container.firstChild,
       ).toMatchSnapshot();
     },
   );

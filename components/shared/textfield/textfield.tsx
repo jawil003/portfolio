@@ -1,125 +1,98 @@
 import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import React from "react";
-import designSystem from "../../../styles/designSystem";
-import { Typography } from "../typography";
 
-const Input = styled.textarea`
-  & {
-    font-size: 1.15em;
-    width: 100%;
-    border: none;
-    resize: none;
-    background: transparent;
-    color: ${designSystem.colors.brand
-      .secondaryText};
-  }
-  &:hover,
-  &:focus {
-    border: none;
-    outline: none;
-  }
-`;
-
-export interface Props {
-  error?: string;
-  title?: string;
-  name?: string;
-  placeholder?: string;
-  area?: boolean;
-  rows?: number;
+export interface Props
+  extends Omit<
+    React.HTMLAttributes<HTMLInputElement>,
+    "required"
+  > {
   value: string;
-  onChange?: (
-    event: React.ChangeEvent<
-      | HTMLInputElement
-      | HTMLTextAreaElement
-    >,
-  ) => void;
+  title: string;
+  placeholder: string;
+  required?: boolean;
+  error?: boolean;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 /**
- * An TextField React Component.
+ * An Textfield React Component in the Anywhere School Design System Specification.
  * @author Jannik Will
  * @version 0.1
  */
-export const TextField: React.FC<Props> = ({
+export const Textfield: React.FC<Props> = ({
+  value,
   title,
   placeholder,
-  rows,
-  area,
-  onChange,
-  value,
-  name,
+  required,
   error,
+  ...inputProps
 }) => {
   return (
     <div
       css={css`
         & {
-          display: grid;
-          grid-template-rows: auto auto;
-          display: inline-block;
+          background-color: var(
+            --white
+          );
+          border: 2px solid
+            ${error
+              ? "#B74A66"
+              : "#3d899b"};
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          padding: 8px 10px;
         }
       `}
     >
-      <Typography
+      <span
         css={css`
           & {
-            margin: 0px;
-            margin-left: 5px;
-            margin-bottom: 8px;
+            font-weight: 400;
+            font-size: 0.6666666666666666em;
+
+            font-style: normal;
+            color: ${error
+              ? "#B74A66"
+              : "#3d899b"};
           }
         `}
-        color={
-          designSystem.colors.brand
-            .secondaryText
-        }
-        variant="b1"
-        bold="semi-bold"
       >
         {title}
-      </Typography>
-      <div
+        {required ? "*" : undefined}
+      </span>
+      <input
+        {...inputProps}
+        value={value}
         css={css`
           & {
-            padding: 10px 15px;
-            border: 4px solid
-              ${designSystem.colors
-                .brand.secondaryText};
-            border-radius: 20px;
-            width: 100%;
-            max-width: 450px;
+            font-size: 1em;
+            border: none;
+            background-color: var(
+              --white
+            );
+            outline: none;
+            color: var(--black);
+            font-style: normal;
+            font-weight: 400;
+
+            height: 2.6666666666666665em;
+          }
+          &::placeholder,
+          &:-ms-input-placeholder,
+          &::-ms-input-placeholder {
+            color: #3d899b;
+            opacity: 0.4;
           }
         `}
-      >
-        {area ? (
-          <Input
-            id={name}
-            name={name}
-            onChange={onChange}
-            value={value}
-            placeholder={placeholder}
-            cols={23}
-            rows={rows}
-          />
-        ) : (
-          <Input
-            id={name}
-            name={name}
-            as="input"
-            value={value}
-            onChange={onChange}
-            placeholder={placeholder}
-          />
-        )}
-      </div>
-      <span>{error}</span>
+        placeholder={placeholder}
+      />
     </div>
   );
 };
 
-TextField.defaultProps = {
-  title: "Bitte Titel eingeben",
-  area: false,
+Textfield.defaultProps = {
   value: "",
+  required: false,
+  error: false,
 };

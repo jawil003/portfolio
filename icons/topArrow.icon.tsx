@@ -20,6 +20,9 @@ const getRotationForProp = (
     case "bottom": {
       return undefined;
     }
+    default: {
+      return undefined;
+    }
   }
 };
 

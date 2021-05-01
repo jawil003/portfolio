@@ -20,15 +20,11 @@ exports[`IndexResumeContainerHeader Create IndexResumeContainerHeader 1`] = `
   font-size: 2.125em;
 }
 
-<body>
-  <div>
-    <h4
-      class="emotion-0 emotion-1"
-      color="#000"
-      id="heading4"
-    >
-      Hello World
-    </h4>
-  </div>
-</body>
+<h4
+  class="emotion-0 emotion-1"
+  color="#000"
+  id="heading4"
+>
+  Hello World
+</h4>
 `;

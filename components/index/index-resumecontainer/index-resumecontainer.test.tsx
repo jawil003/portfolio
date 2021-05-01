@@ -1,6 +1,5 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import reactIntersectionObserver from "react-intersection-observer";
 import {
   IndexResumeContainer,
   IndexResumeContainerProps,
@@ -62,7 +61,8 @@ describe("IndexResumeContainer", () => {
       );
 
       expect(
-        testIndexResumeContainer.baseElement,
+        testIndexResumeContainer
+          .container.firstChild,
       ).toMatchSnapshot();
     },
   );

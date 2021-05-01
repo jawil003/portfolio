@@ -1,9 +1,9 @@
 import { ApolloServer } from "apollo-server-micro";
 import ContactRequestResolver from "../../resolvers/contactRequest.resolver";
-import ContactRequestInput from "../../types/inputTypes/contactRequest.inputtype";
-import ContactRequest from "../../types/typeDefs/contactRequest.type";
-import Mutation from "../../types/typeDefs/mutation.type";
-import Query from "../../types/typeDefs/query.type";
+import ContactRequestInput from "../../inputtypes/contactRequest.inputtype";
+import ContactRequest from "../../interfaces/graphql/contactRequest.type";
+import Mutation from "../../interfaces/graphql/mutation.type";
+import Query from "../../interfaces/graphql/query.type";
 
 const apolloServer = new ApolloServer({
   typeDefs: [

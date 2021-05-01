@@ -1,5 +1,5 @@
-import designSystem from "../../../../styles/designSystem";
 import React from "react";
+import designSystem from "../../../../styles/designSystem";
 import { Spacer } from "../../../shared/spacer/spacer";
 import { Typography } from "../../../shared/typography";
 
@@ -94,9 +94,7 @@ export const IndexResumeContainerItem: React.FC<Props> = ({
                     .brand.primary
                 }
               >
-                {end_year
-                  ? end_year
-                  : "heute"}
+                {end_year || "heute"}
               </Typography>,
             ]
           ) : (

@@ -26,7 +26,8 @@ describe("GridContainer", () => {
       );
 
       expect(
-        testgridcontainer.baseElement,
+        testgridcontainer.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );

@@ -24,11 +24,11 @@ exports[`NavigationBarItem Create NavigationBarItem 1`] = `
 
 .emotion-0:hover {
   background-color: rgba(
-                  0,
-                  0,
-                  0,
-                  0.35
-                );
+                0,
+                0,
+                0,
+                0.35
+              );
 }
 
 .emotion-0>* {
@@ -54,17 +54,14 @@ exports[`NavigationBarItem Create NavigationBarItem 1`] = `
   font-size: 1em;
 }
 
-<body>
-  <div>
-    <a
-      class="emotion-0"
-    >
-      <span
-        class="emotion-1 emotion-2"
-        color="#000"
-        id="subtitle1"
-      />
-    </a>
-  </div>
-</body>
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span
+    class="emotion-1 emotion-2"
+    color="#000"
+    id="subtitle1"
+  />
+</button>
 `;

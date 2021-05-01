@@ -19,6 +19,7 @@ import { TitleWithSubtitle } from "../components/shared/titlewithsubtitle/titlew
 import { Typography } from "../components/shared/typography";
 import PersonWithLaptop from "../designs/personWithLaptop.design";
 import { useSocialLogos } from "../hooks/useIcons.hook";
+import { SocialItem } from "../interfaces/socialItem.type";
 import KnowledgeItem from "../model/KnowledgeItem.model";
 import ResumeItemType from "../model/ResumeItem.model";
 import HeaderService, {
@@ -26,9 +27,7 @@ import HeaderService, {
 } from "../services/header.service";
 import KnowledgeService from "../services/knowledge.service";
 import ResumeService from "../services/resume.service";
-import SocialItemsService, {
-  SocialItem,
-} from "../services/SocialItems.service";
+import SocialItemsService from "../services/SocialItems.service";
 import designSystem from "../styles/designSystem";
 
 interface ServerSideProps {
@@ -123,6 +122,7 @@ const Index: React.FC<ServerSideProps> = ({
                 ({
                   href,
                   name,
+                  // eslint-disable-next-line @typescript-eslint/no-shadow
                   icon: { title },
                 }) => (
                   <IndexIconLink

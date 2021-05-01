@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-import designSystem from "../../../styles/designSystem";
 import {
   motion,
   useAnimation,
@@ -11,11 +10,12 @@ import React, {
   useState,
 } from "react";
 import { useInView } from "react-intersection-observer";
-import flyFromTop from "../../../variants/flyFromTop";
 import composeRefs from "@seznam/compose-react-refs";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import flyFromTop from "../../../variants/flyFromTop";
 import { FlexContainer } from "../flexcontainer/flexcontainer";
 import ArrowDownIcon from "../../../icons/arrowDown.icon";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import designSystem from "../../../styles/designSystem";
 
 const AnimatedArrowDownIcon = motion(
   ArrowDownIcon,

@@ -136,93 +136,89 @@ exports[`IndexResumeContainer Create IndexResumeContainer with {"items": [Array]
   font-size: 0.875em;
 }
 
-<body>
-  <div>
+<div
+  class="emotion-0"
+>
+  <div
+    class="emotion-1"
+  >
+    <h5
+      class="emotion-2 emotion-3"
+      color="#f3f3f3"
+      id="heading5"
+    >
+      test
+    </h5>
+  </div>
+  <div
+    class="emotion-4"
+    style="opacity: 0;"
+  >
     <div
-      class="emotion-0"
+      style="position: relative; display: flex; min-height: 200px;"
     >
       <div
-        class="emotion-1"
-      >
-        <h5
-          class="emotion-2 emotion-3"
-          color="#f3f3f3"
-          id="heading5"
-        >
-          test
-        </h5>
-      </div>
-      <div
-        class="emotion-4"
-        style="opacity: 0;"
+        style="display: flex; flex: 1; justify-content: center;"
       >
         <div
-          style="position: relative; display: flex; min-height: 200px;"
+          style="background-color: rgb(240, 240, 240); width: 3.5px; height: 100%;"
+        />
+      </div>
+      <div
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: flex;"
+      >
+        <div
+          style="flex: 1; display: grid; justify-content: flex-end; align-items: flex-start; align-content: flex-start; color: rgb(243, 243, 243);"
+        >
+          <h6
+            class="emotion-5 emotion-6"
+            color="#f3f3f3"
+            id="heading6"
+          >
+            2019
+          </h6>
+          <h6
+            class="emotion-5 emotion-6"
+            color="#f3f3f3"
+            id="heading6"
+          >
+            2020
+          </h6>
+        </div>
+        <div
+          style="width: 25px; display: flex; flex-direction: column; justify-content: flex-start; margin: 0px 20px;"
         >
           <div
-            style="display: flex; flex: 1; justify-content: center;"
+            style="height: 25px; border: 5px solid #f3f3f3; border-radius: 100%; background-color: rgb(0, 115, 157);"
+          />
+        </div>
+        <div
+          style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; color: rgb(243, 243, 243);"
+        >
+          <h6
+            class="emotion-9 emotion-6"
+            color="#f3f3f3"
+            id="heading6"
+            maxlength="100px"
           >
-            <div
-              style="background-color: rgb(240, 240, 240); width: 3.5px; height: 100%;"
-            />
-          </div>
+            test
+          </h6>
           <div
-            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: flex;"
+            style="height: 0.4em;"
+          />
+          <p
+            class="emotion-11 emotion-12"
+            color="#f3f3f3"
+            id="body2"
+            maxlength="150px"
           >
-            <div
-              style="flex: 1; display: grid; justify-content: flex-end; align-items: flex-start; align-content: flex-start; color: rgb(243, 243, 243);"
-            >
-              <h6
-                class="emotion-5 emotion-6"
-                color="#f3f3f3"
-                id="heading6"
-              >
-                2019
-              </h6>
-              <h6
-                class="emotion-5 emotion-6"
-                color="#f3f3f3"
-                id="heading6"
-              >
-                2020
-              </h6>
-            </div>
-            <div
-              style="width: 25px; display: flex; flex-direction: column; justify-content: flex-start; margin: 0px 20px;"
-            >
-              <div
-                style="height: 25px; border: 5px solid #f3f3f3; border-radius: 100%; background-color: rgb(0, 115, 157);"
-              />
-            </div>
-            <div
-              style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; color: rgb(243, 243, 243);"
-            >
-              <h6
-                class="emotion-9 emotion-6"
-                color="#f3f3f3"
-                id="heading6"
-                maxlength="100px"
-              >
-                test
-              </h6>
-              <div
-                style="height: 0.4em;"
-              />
-              <p
-                class="emotion-11 emotion-12"
-                color="#f3f3f3"
-                id="body2"
-                maxlength="150px"
-              >
-                Lorem ipsum
-              </p>
-            </div>
-          </div>
+            Lorem ipsum
+          </p>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
 `;
 
 exports[`IndexResumeContainer Create IndexResumeContainer with {"items": [Array], "title": "test"} 2`] = `
@@ -361,93 +357,89 @@ exports[`IndexResumeContainer Create IndexResumeContainer with {"items": [Array]
   font-size: 0.875em;
 }
 
-<body>
-  <div>
+<div
+  class="emotion-0"
+>
+  <div
+    class="emotion-1"
+  >
+    <h5
+      class="emotion-2 emotion-3"
+      color="#f3f3f3"
+      id="heading5"
+    >
+      test
+    </h5>
+  </div>
+  <div
+    class="emotion-4"
+    style="opacity: 0;"
+  >
     <div
-      class="emotion-0"
+      style="position: relative; display: flex; min-height: 200px;"
     >
       <div
-        class="emotion-1"
-      >
-        <h5
-          class="emotion-2 emotion-3"
-          color="#f3f3f3"
-          id="heading5"
-        >
-          test
-        </h5>
-      </div>
-      <div
-        class="emotion-4"
-        style="opacity: 0;"
+        style="display: flex; flex: 1; justify-content: center;"
       >
         <div
-          style="position: relative; display: flex; min-height: 200px;"
+          style="background-color: rgb(240, 240, 240); width: 3.5px; height: 100%;"
+        />
+      </div>
+      <div
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: flex;"
+      >
+        <div
+          style="flex: 1; display: grid; justify-content: flex-end; align-items: flex-start; align-content: flex-start; color: rgb(243, 243, 243);"
+        >
+          <h6
+            class="emotion-5 emotion-6"
+            color="#f3f3f3"
+            id="heading6"
+          >
+            2019
+          </h6>
+          <h6
+            class="emotion-5 emotion-6"
+            color="#f3f3f3"
+            id="heading6"
+          >
+            heute
+          </h6>
+        </div>
+        <div
+          style="width: 25px; display: flex; flex-direction: column; justify-content: flex-start; margin: 0px 20px;"
         >
           <div
-            style="display: flex; flex: 1; justify-content: center;"
+            style="height: 25px; border: 5px solid #f3f3f3; border-radius: 100%; background-color: rgb(0, 115, 157);"
+          />
+        </div>
+        <div
+          style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; color: rgb(243, 243, 243);"
+        >
+          <h6
+            class="emotion-9 emotion-6"
+            color="#f3f3f3"
+            id="heading6"
+            maxlength="100px"
           >
-            <div
-              style="background-color: rgb(240, 240, 240); width: 3.5px; height: 100%;"
-            />
-          </div>
+            test
+          </h6>
           <div
-            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: flex;"
+            style="height: 0.4em;"
+          />
+          <p
+            class="emotion-11 emotion-12"
+            color="#f3f3f3"
+            id="body2"
+            maxlength="150px"
           >
-            <div
-              style="flex: 1; display: grid; justify-content: flex-end; align-items: flex-start; align-content: flex-start; color: rgb(243, 243, 243);"
-            >
-              <h6
-                class="emotion-5 emotion-6"
-                color="#f3f3f3"
-                id="heading6"
-              >
-                2019
-              </h6>
-              <h6
-                class="emotion-5 emotion-6"
-                color="#f3f3f3"
-                id="heading6"
-              >
-                heute
-              </h6>
-            </div>
-            <div
-              style="width: 25px; display: flex; flex-direction: column; justify-content: flex-start; margin: 0px 20px;"
-            >
-              <div
-                style="height: 25px; border: 5px solid #f3f3f3; border-radius: 100%; background-color: rgb(0, 115, 157);"
-              />
-            </div>
-            <div
-              style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; color: rgb(243, 243, 243);"
-            >
-              <h6
-                class="emotion-9 emotion-6"
-                color="#f3f3f3"
-                id="heading6"
-                maxlength="100px"
-              >
-                test
-              </h6>
-              <div
-                style="height: 0.4em;"
-              />
-              <p
-                class="emotion-11 emotion-12"
-                color="#f3f3f3"
-                id="body2"
-                maxlength="150px"
-              >
-                Lorem ipsum
-              </p>
-            </div>
-          </div>
+            Lorem ipsum
+          </p>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
 `;
 
 exports[`IndexResumeContainer Create IndexResumeContainer with {"items": [Array], "title": "test"} 3`] = `
@@ -586,84 +578,80 @@ exports[`IndexResumeContainer Create IndexResumeContainer with {"items": [Array]
   font-size: 0.875em;
 }
 
-<body>
-  <div>
+<div
+  class="emotion-0"
+>
+  <div
+    class="emotion-1"
+  >
+    <h5
+      class="emotion-2 emotion-3"
+      color="#f3f3f3"
+      id="heading5"
+    >
+      test
+    </h5>
+  </div>
+  <div
+    class="emotion-4"
+    style="opacity: 0;"
+  >
     <div
-      class="emotion-0"
+      style="position: relative; display: flex; min-height: 200px;"
     >
       <div
-        class="emotion-1"
-      >
-        <h5
-          class="emotion-2 emotion-3"
-          color="#f3f3f3"
-          id="heading5"
-        >
-          test
-        </h5>
-      </div>
-      <div
-        class="emotion-4"
-        style="opacity: 0;"
+        style="display: flex; flex: 1; justify-content: center;"
       >
         <div
-          style="position: relative; display: flex; min-height: 200px;"
+          style="background-color: rgb(240, 240, 240); width: 3.5px; height: 100%;"
+        />
+      </div>
+      <div
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: flex;"
+      >
+        <div
+          style="flex: 1; display: grid; justify-content: flex-end; align-items: flex-start; align-content: flex-start; color: rgb(243, 243, 243);"
+        >
+          <h6
+            class="emotion-5 emotion-6"
+            color="#f3f3f3"
+            id="heading6"
+          >
+            2020
+          </h6>
+        </div>
+        <div
+          style="width: 25px; display: flex; flex-direction: column; justify-content: flex-start; margin: 0px 20px;"
         >
           <div
-            style="display: flex; flex: 1; justify-content: center;"
+            style="height: 25px; border: 5px solid #f3f3f3; border-radius: 100%; background-color: rgb(0, 115, 157);"
+          />
+        </div>
+        <div
+          style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; color: rgb(243, 243, 243);"
+        >
+          <h6
+            class="emotion-7 emotion-6"
+            color="#f3f3f3"
+            id="heading6"
+            maxlength="100px"
           >
-            <div
-              style="background-color: rgb(240, 240, 240); width: 3.5px; height: 100%;"
-            />
-          </div>
+            test
+          </h6>
           <div
-            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: flex;"
+            style="height: 0.4em;"
+          />
+          <p
+            class="emotion-9 emotion-10"
+            color="#f3f3f3"
+            id="body2"
+            maxlength="150px"
           >
-            <div
-              style="flex: 1; display: grid; justify-content: flex-end; align-items: flex-start; align-content: flex-start; color: rgb(243, 243, 243);"
-            >
-              <h6
-                class="emotion-5 emotion-6"
-                color="#f3f3f3"
-                id="heading6"
-              >
-                2020
-              </h6>
-            </div>
-            <div
-              style="width: 25px; display: flex; flex-direction: column; justify-content: flex-start; margin: 0px 20px;"
-            >
-              <div
-                style="height: 25px; border: 5px solid #f3f3f3; border-radius: 100%; background-color: rgb(0, 115, 157);"
-              />
-            </div>
-            <div
-              style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; color: rgb(243, 243, 243);"
-            >
-              <h6
-                class="emotion-7 emotion-6"
-                color="#f3f3f3"
-                id="heading6"
-                maxlength="100px"
-              >
-                test
-              </h6>
-              <div
-                style="height: 0.4em;"
-              />
-              <p
-                class="emotion-9 emotion-10"
-                color="#f3f3f3"
-                id="body2"
-                maxlength="150px"
-              >
-                Lorem ipsum
-              </p>
-            </div>
-          </div>
+            Lorem ipsum
+          </p>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
 `;

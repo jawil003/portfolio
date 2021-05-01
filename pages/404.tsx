@@ -2,14 +2,14 @@ import {
   css,
   Global,
 } from "@emotion/react";
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
+import React from "react";
 import { BlankCanvasDesign } from "../designs/blankCanvas.design";
 import { FlexContainer } from "../components/shared/flexcontainer/flexcontainer";
 import { HeaderWithIcon } from "../components/shared/headerwithicon/headerwithicon";
 import { Spacer } from "../components/shared/spacer/spacer";
 import { TitleWithSubtitle } from "../components/shared/titlewithsubtitle/titlewithsubtitle";
-import { GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
-import React from "react";
 import HeaderService, {
   Header,
 } from "../services/header.service";
@@ -31,7 +31,7 @@ const ErrorPage: React.FC<ServerSideProps> = ({
     <>
       <NextSeo
         title="Nicht gefunden"
-        noindex={true}
+        noindex
       />
       <Global
         styles={css`

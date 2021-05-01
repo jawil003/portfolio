@@ -1,5 +1,5 @@
-import designSystem from "../../../../styles/designSystem";
 import React from "react";
+import designSystem from "../../../../styles/designSystem";
 import { Typography } from "../../../shared/typography";
 
 export interface Props {}

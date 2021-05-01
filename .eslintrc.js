@@ -31,77 +31,17 @@ module.exports = {
     "prettier",
     "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
-  /*rules: {
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        vars: "all",
-        args: "after-used",
-        ignoreRestSiblings: false,
-      },
-    ],
-    "@typescript-eslint/no-explicit-any": 0,
-    "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/no-namespace": 0,
-    "@typescript-eslint/explicit-module-boundary-types": 0,
-    "import/extensions": [
-      1,
-      {
-        extensions: [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        devDependencies: true,
-      },
-    ],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        extensions: [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx",
-        ],
-      },
-    ],
-    "react/react-in-jsx-scope": 0,
-    "react/jsx-first-prop-new-line": 0,
-    "react/prop-types": 0,
+  rules: {
+    "react/prop-types": [0],
+    "react/react-in-jsx-scope": ["off"],
     "react/jsx-props-no-spreading": [
-      2,
-      { custom: "ignore" },
+      "off",
     ],
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        components: ["Link"],
-        specialLink: [
-          "hrefLeft",
-          "hrefRight",
-        ],
-        aspects: [
-          "invalidHref",
-          "preferButton",
-        ],
-      },
+    "no-console": ["off"],
+    "import/prefer-default-export": [
+      "off",
     ],
-    "prettier/prettier": 2,
-    "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 2,
-    "no-bitwise": 2,
-    "@emotion/no-vanilla": 2,
-    "@emotion/import-from-emotion": 2,
-    "@emotion/styled-import": 2,
-    "no-use-before-define": ["off"],
-  },*/
+  },
   settings: {
     "import/resolver": {
       node: {

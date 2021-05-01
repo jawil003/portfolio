@@ -94,45 +94,41 @@ exports[`IndexKnowledgeSection Create IndexKnowledgeSection 1`] = `
   color: #f3f3f3;
 }
 
-<body>
-  <div>
-    <div
-      class="emotion-0"
-      style="opacity: 0;"
-    >
-      <div
-        class="emotion-1"
+<div
+  class="emotion-0"
+  style="opacity: 0;"
+>
+  <div
+    class="emotion-1"
+  >
+    <div>
+      <h5
+        class="emotion-2 emotion-3"
+        color="#f3f3f3"
+        id="heading5"
       >
-        <div>
-          <h5
-            class="emotion-2 emotion-3"
-            color="#f3f3f3"
-            id="heading5"
-          >
-            test
-          </h5>
-          <p
-            class="emotion-4 emotion-5"
-            color="#f3f3f3"
-            id="body2"
-          />
-        </div>
-        <ul
-          class="emotion-6"
-        >
-          <li
-            class="emotion-7"
-          >
-            test
-          </li>
-          <li
-            class="emotion-7"
-          >
-            test1
-          </li>
-        </ul>
-      </div>
+        test
+      </h5>
+      <p
+        class="emotion-4 emotion-5"
+        color="#f3f3f3"
+        id="body2"
+      />
     </div>
+    <ul
+      class="emotion-6"
+    >
+      <li
+        class="emotion-7"
+      >
+        test
+      </li>
+      <li
+        class="emotion-7"
+      >
+        test1
+      </li>
+    </ul>
   </div>
-</body>
+</div>
 `;

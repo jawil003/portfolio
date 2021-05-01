@@ -1,7 +1,7 @@
-import designSystem from "../styles/designSystem";
 import React, {
   forwardRef,
 } from "react";
+import designSystem from "../styles/designSystem";
 
 interface Props {
   width?: string;
@@ -30,7 +30,7 @@ const ArrowDownIcon = forwardRef<
       <path
         fill={color}
         d="M13.276 15.39l8.224 8.206 8.224-8.206 2.526 2.527-10.75 10.75-10.75-10.75 2.526-2.527z"
-      ></path>
+      />
     </svg>
   );
 });

@@ -21,13 +21,9 @@ exports[`GridContainer Create GridContainer with {"alignContent": "center", "ali
   height: 100%;
 }
 
-<body>
-  <div>
-    <div
-      class="emotion-0"
-    />
-  </div>
-</body>
+<div
+  class="emotion-0"
+/>
 `;
 
 exports[`GridContainer Create GridContainer with {"columnGap": "10px", "rowGap": "10px"} 1`] = `
@@ -43,11 +39,7 @@ exports[`GridContainer Create GridContainer with {"columnGap": "10px", "rowGap":
   height: 100%;
 }
 
-<body>
-  <div>
-    <div
-      class="emotion-0"
-    />
-  </div>
-</body>
+<div
+  class="emotion-0"
+/>
 `;

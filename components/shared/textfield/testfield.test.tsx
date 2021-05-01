@@ -1,40 +1,21 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import {
-  TextField,
+  Textfield,
   Props as TextFieldProps,
 } from "./textfield";
 
 const variants: TextFieldProps[] = [
   {
-    name: "test",
+    placeholder: "test",
     value: "123password",
     title: "Password",
     onChange: () => {},
   },
   {
-    name: "test",
     value: "",
     placeholder: "Maxine Musterfrau",
     title: "Password",
-    onChange: () => {},
-  },
-  {
-    name: "test",
-    value: "",
-    placeholder: "Maxine Musterfrau",
-    title: "Password",
-    area: true,
-    rows: 3,
-    onChange: () => {},
-  },
-  {
-    name: "test",
-    value: "12345678",
-    placeholder: "Maxine Musterfrau",
-    title: "Password",
-    area: true,
-    rows: 3,
     onChange: () => {},
   },
 ];
@@ -45,11 +26,12 @@ describe("TextField", () => {
     (variant) => {
       const testTextField = render(
         // eslint-disable-next-line react/jsx-props-no-spreading
-        <TextField {...variant} />,
+        <Textfield {...variant} />,
       );
 
       expect(
-        testTextField.baseElement,
+        testTextField.container
+          .firstChild,
       ).toMatchSnapshot();
     },
   );

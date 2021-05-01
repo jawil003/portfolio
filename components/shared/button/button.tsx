@@ -2,65 +2,54 @@ import { css } from "@emotion/react";
 import React from "react";
 
 export interface Props {
-  backgroundColor?: string;
-  color?: string;
-  text?: string;
+  text: string;
+  variant?: "error" | "success";
   onClick?: () => void;
   className?: string;
-  disabled?: boolean;
 }
 
 /**
  * An Button React Component.
- * @author Jannik will
+ * @author Jannik Will
  * @version 0.1
  */
 export const Button: React.FC<Props> = ({
   text,
-  backgroundColor,
-  color,
+  variant,
   onClick,
   className,
-  disabled,
 }) => {
   return (
     <button
-      disabled={disabled}
+      type="button"
+      className={className}
       onClick={onClick}
       css={css`
         & {
-          position: relative;
-          overflow: hidden;
-          margin: 8px 0px;
-          padding: 15px 30px;
-          border-radius: 50px;
-          background-color: ${disabled
-            ? "grey"
-            : backgroundColor};
-          outline: none;
+          background-color: ${variant ===
+          "success"
+            ? "#3d899b"
+            : "#B74A66"};
+          padding: 0.8333333333333334em
+            1.6666666666666667em;
           border: none;
-        }
-        & .button-label {
-          position: relative;
-          z-index: 3;
-          font-size: 1.5em;
-          color: ${color};
-          font-weight: 500;
+          outline: none;
+          height: 2.8333333333333335em;
+          min-width: 7.5em;
+          border-radius: 1.25em;
+          font-style: normal;
+          font-weight: 400;
+          font-weight: normal;
+          font-size: 0.8333333333333334em;
+          color: #fff;
         }
       `}
-      className={`button-container ${
-        className || ""
-      }`}
     >
-      <span className="button-label">
-        {text}
-      </span>
+      {text}
     </button>
   );
 };
 
 Button.defaultProps = {
-  backgroundColor: "#165c6f",
-  color: "#fff",
-  text: "Bitte Text eingeben",
+  variant: "success",
 };

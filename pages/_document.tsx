@@ -6,10 +6,6 @@ import Document, {
 } from "next/document";
 import React from "react";
 
-import {
-  generateGeneralTags,
-  provideImages,
-} from "../services/meta.service";
 /**
  * An  React Component.
  * @author

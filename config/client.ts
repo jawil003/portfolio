@@ -1,22 +1,27 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  ApolloClient,
-  InMemoryCache,
-} from "@apollo/client";
-import { buildAxiosFetch } from "@lifeomic/axios-fetch";
 import axios from "axios";
-import { createHttpLink } from "apollo-link-http";
 
-const localLink = createHttpLink({
-  uri: `${process.env.NEXT_PUBLIC_HOST_URL}/api/graphql`,
-  fetch: buildAxiosFetch(
-    axios as any,
-  ) as any,
+const localClient = axios.create({
+  baseURL: `${process.env.NEXT_PUBLIC_HOST_URL}/api/graphql`,
 });
 
-export const localClient = new ApolloClient(
-  {
-    link: localLink as any,
-    cache: new InMemoryCache(),
-  },
-);
+export const mutate = <
+  T extends
+    | Record<string, unknown>
+    | Record<string, unknown>[]
+>(
+  value: string,
+) =>
+  localClient.post<T>("/", {
+    mutation: value,
+  });
+
+export const query = <
+  T extends
+    | Record<string, unknown>
+    | Record<string, unknown>[]
+>(
+  value: string,
+) =>
+  localClient.post<T>("/", {
+    query: value,
+  });

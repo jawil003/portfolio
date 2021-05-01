@@ -8,7 +8,8 @@ describe("NavigationBarItem", () => {
     );
 
     expect(
-      testNavigationBarItem.baseElement,
+      testNavigationBarItem.container
+        .firstChild,
     ).toMatchSnapshot();
   });
 });
