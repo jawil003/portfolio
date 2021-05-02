@@ -22,7 +22,6 @@ export interface Props
 export const Textarea: React.FC<Props> = ({
   title,
   className,
-  icon,
   ...textareprops
 }) => {
   const [field, meta] = useField(

@@ -9,7 +9,11 @@ import React, {
 } from "react";
 import { useInView } from "react-intersection-observer";
 import * as Yup from "yup";
-import designSystem from "../../../styles/designSystem";
+import {
+  EmailOutlined,
+  Person,
+  Title,
+} from "@material-ui/icons";
 import { Button } from "../../shared/button";
 import { FlexContainer } from "../../shared/flexcontainer";
 import { Spacer } from "../../shared/spacer/spacer";
@@ -132,18 +136,32 @@ export const IndexContactForm: React.FC<Props> = () => {
               title="Email Adresse"
               name="email"
               placeholder="maxine@musterfrau.de"
+              icon={{
+                align: "right",
+                value: (
+                  <EmailOutlined />
+                ),
+              }}
             />
             <Textfield
               required
               title="Name"
               name="name"
               placeholder="Maxine Musterfrau"
+              icon={{
+                align: "right",
+                value: <Person />,
+              }}
             />
             <Textfield
               required
               title="Titel"
               name="title"
               placeholder="Bitte Titel eingeben"
+              icon={{
+                align: "right",
+                value: <Title />,
+              }}
             />
             <Textarea
               required

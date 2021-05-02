@@ -237,7 +237,7 @@ const Index: React.FC<ServerSideProps> = ({
             min-height: 100vh;
             padding: 50px 0;
           }
-          & > *:first-child {
+          & > *:first-of-type {
             width: 100%;
             max-width: 400px;
           }

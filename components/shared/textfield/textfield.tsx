@@ -1,8 +1,13 @@
 import React from "react";
 import { useField } from "formik";
-import { css } from "@emotion/react";
+import {
+  css,
+  Interpolation,
+  Theme,
+} from "@emotion/react";
 import { FlexContainer } from "../flexcontainer";
 import designSystem from "../../../styles/designSystem";
+import { TextfieldIconWrapper } from "./textfield-icon-wrapper/textfield-icon-wrapper";
 
 const inputStyles = css`
   & {
@@ -11,6 +16,7 @@ const inputStyles = css`
     box-sizing: border-box;
     border-radius: 1.25em;
     padding: 0.75em 0.8em;
+    height: 3.0625em;
   }
   && {
     margin-bottom: 0;
@@ -38,7 +44,9 @@ export interface Props
   name: string;
   icon?: {
     align: "left" | "right";
-    value: React.ComponentType;
+    value: React.SVGProps<SVGSVGElement> & {
+      css?: Interpolation<Theme>;
+    };
   };
 }
 
@@ -80,9 +88,34 @@ export const Textfield: React.FC<Props> = ({
         </label>
         {/** TODO: Complete Icon Integration for textfield */}
         {icon ? (
-          <FlexContainer
-            css={inputStyles}
-          />
+          <div
+            css={css`
+              ${inputStyles}
+              & {
+                position: relative;
+              }
+            `}
+          >
+            <TextfieldIconWrapper
+              align={icon.align}
+            >
+              {icon.value}
+            </TextfieldIconWrapper>
+            <input
+              css={css`
+                & {
+                  flex: 1;
+                  border: none;
+                  outline: none;
+                }
+                &:focus-within {
+                  outline: none;
+                }
+              `}
+              {...inputProps}
+              {...field}
+            />
+          </div>
         ) : (
           <input
             css={inputStyles}

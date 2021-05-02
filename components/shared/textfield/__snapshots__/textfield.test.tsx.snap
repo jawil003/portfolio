@@ -31,6 +31,7 @@ exports[`TextField Create TextField with {"name": "password", "placeholder": "te
   box-sizing: border-box;
   border-radius: 1.25em;
   padding: 0.75em 0.8em;
+  height: 3.0625em;
 }
 
 .emotion-2.emotion-2 {
@@ -138,6 +139,7 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   box-sizing: border-box;
   border-radius: 1.25em;
   padding: 0.75em 0.8em;
+  height: 3.0625em;
 }
 
 .emotion-2.emotion-2 {
@@ -244,6 +246,7 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   box-sizing: border-box;
   border-radius: 1.25em;
   padding: 0.75em 0.8em;
+  height: 3.0625em;
 }
 
 .emotion-2.emotion-2 {
