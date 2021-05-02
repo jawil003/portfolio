@@ -2,6 +2,9 @@
 
 exports[`NavigationBarItem Create NavigationBarItem 1`] = `
 .emotion-0 {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
   padding: 10px 20px;
   height: 100%;
   display: -webkit-box;

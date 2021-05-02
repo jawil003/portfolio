@@ -98,6 +98,9 @@ export const NavigationBarItem: React.FC<Props> = ({
         type="button"
         css={css`
           & {
+            background-color: transparent;
+            box-shadow: none;
+            border: none;
             padding: 10px 20px;
             height: 100%;
             display: flex;
