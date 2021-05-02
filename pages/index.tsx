@@ -227,6 +227,12 @@ const Index: React.FC<ServerSideProps> = ({
         justifyContent="center"
         alignItems="center"
         css={css`
+          @media (max-width: ${designSystem
+              .breakpoints.phoneOnly}) {
+            && {
+              padding: 50px 2em;
+            }
+          }
           & {
             min-height: 100vh;
             padding: 50px 0;

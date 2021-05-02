@@ -9,6 +9,7 @@ import React, {
 } from "react";
 import { useInView } from "react-intersection-observer";
 import * as Yup from "yup";
+import designSystem from "../../../styles/designSystem";
 import { Button } from "../../shared/button";
 import { FlexContainer } from "../../shared/flexcontainer";
 import { Spacer } from "../../shared/spacer/spacer";
