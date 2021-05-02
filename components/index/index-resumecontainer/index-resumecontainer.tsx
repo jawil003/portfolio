@@ -114,7 +114,7 @@ export const IndexResumeContainer = forwardRef<
               latest={false}
               start_year={start_year}
               end_year={end_year}
-              title={title}
+              title={titledef}
               description={description}
             />
           ),
