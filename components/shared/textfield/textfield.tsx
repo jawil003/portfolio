@@ -4,6 +4,31 @@ import { css } from "@emotion/react";
 import { FlexContainer } from "../flexcontainer";
 import designSystem from "../../../styles/designSystem";
 
+const inputStyles = css`
+  & {
+    border: 0.13333333333333333em solid
+      #000000;
+    box-sizing: border-box;
+    border-radius: 1.25em;
+    padding: 0.75em 0.8em;
+  }
+  && {
+    margin-bottom: 0;
+  }
+  &&::placeholder,
+  &&::-webkit-input-placeholder,
+  &&::-ms-input-placeholder,
+  &&::-moz-placeholder {
+    color: #000000;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1em;
+    opacity: 0.5;
+  }
+  &:focus-within {
+    outline: none;
+  }
+`;
 export interface Props
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
@@ -11,6 +36,10 @@ export interface Props
   > {
   title: string;
   name: string;
+  icon?: {
+    align: "left" | "right";
+    value: React.ComponentType;
+  };
 }
 
 /**
@@ -21,6 +50,7 @@ export interface Props
 export const Textfield: React.FC<Props> = ({
   title,
   className,
+  icon,
   ...inputProps
 }) => {
   const [field, meta] = useField(
@@ -48,35 +78,18 @@ export const Textfield: React.FC<Props> = ({
             ? "*"
             : undefined}
         </label>
-        <input
-          css={css`
-            & {
-              border: 0.13333333333333333em
-                solid #000000;
-              box-sizing: border-box;
-              border-radius: 1.25em;
-              padding: 0.75em 0.8em;
-            }
-            && {
-              margin-bottom: 0;
-            }
-            &&::placeholder,
-            &&::-webkit-input-placeholder,
-            &&::-ms-input-placeholder,
-            &&::-moz-placeholder {
-              color: #000000;
-              font-style: normal;
-              font-weight: normal;
-              font-size: 1em;
-              opacity: 0.5;
-            }
-            &:focus-within {
-              outline: none;
-            }
-          `}
-          {...inputProps}
-          {...field}
-        />
+        {/** TODO: Complete Icon Integration for textfield */}
+        {icon ? (
+          <FlexContainer
+            css={inputStyles}
+          />
+        ) : (
+          <input
+            css={inputStyles}
+            {...inputProps}
+            {...field}
+          />
+        )}
 
         <div
           css={css`

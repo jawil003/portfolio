@@ -13,6 +13,7 @@ import designSystem from "../../../styles/designSystem";
 import { Button } from "../../shared/button";
 import { FlexContainer } from "../../shared/flexcontainer";
 import { Spacer } from "../../shared/spacer/spacer";
+import { Textarea } from "../../shared/textarea/textarea";
 import { Textfield } from "../../shared/textfield";
 import { Typography } from "../../shared/typography/typography";
 
@@ -41,7 +42,7 @@ const validationSchema = Yup.object().shape(
         "Bitte gültigen Namen eingeben",
       ),
     message: Yup.string().required(
-      "Bitte einen Vor und Nachnamen eingeben",
+      "Bitte eine Nachricht eingeben",
     ),
   },
 );
@@ -144,8 +145,9 @@ export const IndexContactForm: React.FC<Props> = () => {
               name="title"
               placeholder="Bitte Titel eingeben"
             />
-            <Textfield
+            <Textarea
               required
+              rows={6}
               title="Nachricht"
               name="message"
               placeholder="Bitte Nachricht eingeben"
