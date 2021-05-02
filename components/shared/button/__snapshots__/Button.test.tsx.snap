@@ -2,48 +2,56 @@
 
 exports[`Button Create Button with {"text": "Hello World", "variant": "error"} 1`] = `
 .emotion-0 {
-  background-color: #B74A66;
-  padding: 0.8333333333333334em 1.6666666666666667em;
-  border: none;
+  padding: 0.7em 1em;
+  background-color: #00739d;
+  color: #f3f3f3;
   outline: none;
-  height: 2.8333333333333335em;
-  min-width: 7.5em;
-  border-radius: 1.25em;
-  font-style: normal;
-  font-weight: 400;
-  font-weight: normal;
-  font-size: 0.8333333333333334em;
-  color: #fff;
+  border: none;
+  border-radius: 3.125em;
+}
+
+.emotion-0:disabled {
+  opacity: 0.35;
+}
+
+.emotion-0:hover:not(:disabled) {
+  background-color: #015b7c;
 }
 
 <button
   class="emotion-0"
-  type="button"
+  text="Hello World"
+  type="submit"
+  variant="error"
 >
-  Hello World
+  <span />
 </button>
 `;
 
 exports[`Button Create Button with {"text": "Hello World", "variant": "success"} 1`] = `
 .emotion-0 {
-  background-color: #3d899b;
-  padding: 0.8333333333333334em 1.6666666666666667em;
-  border: none;
+  padding: 0.7em 1em;
+  background-color: #00739d;
+  color: #f3f3f3;
   outline: none;
-  height: 2.8333333333333335em;
-  min-width: 7.5em;
-  border-radius: 1.25em;
-  font-style: normal;
-  font-weight: 400;
-  font-weight: normal;
-  font-size: 0.8333333333333334em;
-  color: #fff;
+  border: none;
+  border-radius: 3.125em;
+}
+
+.emotion-0:disabled {
+  opacity: 0.35;
+}
+
+.emotion-0:hover:not(:disabled) {
+  background-color: #015b7c;
 }
 
 <button
   class="emotion-0"
-  type="button"
+  text="Hello World"
+  type="submit"
+  variant="success"
 >
-  Hello World
+  <span />
 </button>
 `;

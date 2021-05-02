@@ -1,6 +1,8 @@
 import { AppProps } from "next/app";
 import React from "react";
 import { DefaultSeo } from "next-seo";
+import { ThemeProvider } from "@emotion/react";
+import { preset } from "../styles/theme";
 import globalStyles from "../styles/styles";
 
 /**
@@ -56,8 +58,9 @@ const MyApp: React.FC<AppProps> = ({
           maxVideoPreview: -1,
         }}
       />
-
-      <Component {...pageProps} />
+      <ThemeProvider theme={preset}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 };

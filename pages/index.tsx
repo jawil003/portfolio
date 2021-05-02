@@ -6,6 +6,8 @@ import React, {
   RefObject,
   useState,
 } from "react";
+import { IndexContactFormIllustration } from "../components/index/index-contact-form/index-contact-form-illustration/index-contact-form-illustration";
+import { IndexContactForm } from "../components/index/index-contact-form/index-contact.form";
 
 import { IndexIconLink } from "../components/index/index-iconlink/index-iconlink";
 import { IndexKnowledgeSection } from "../components/index/index-knowledgesection/index-knowledgesection";
@@ -222,6 +224,22 @@ const Index: React.FC<ServerSideProps> = ({
           </div>
         </div>
       </IndexResumeColorContainer>
+      <FlexContainer
+        justifyContent="center"
+        alignItems="center"
+        css={css`
+          & {
+            min-height: 100vh;
+            padding: 50px 0;
+          }
+          & > *:first-child {
+            width: 100%;
+            max-width: 400px;
+          }
+        `}
+      >
+        <IndexContactForm />
+      </FlexContainer>
     </>
   );
 };

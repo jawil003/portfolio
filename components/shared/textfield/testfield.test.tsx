@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { Formik } from "formik";
 import {
   Textfield,
   Props as TextFieldProps,
@@ -7,16 +8,19 @@ import {
 
 const variants: TextFieldProps[] = [
   {
-    placeholder: "test",
-    value: "123password",
     title: "Password",
-    onChange: () => {},
+    name: "password",
   },
   {
-    value: "",
-    placeholder: "Maxine Musterfrau",
     title: "Password",
-    onChange: () => {},
+    name: "password",
+    value: "test1234",
+  },
+  {
+    title: "Password",
+    name: "password",
+    value: "",
+    placeholder: "test1234",
   },
 ];
 
@@ -26,7 +30,16 @@ describe("TextField", () => {
     (variant) => {
       const testTextField = render(
         // eslint-disable-next-line react/jsx-props-no-spreading
-        <Textfield {...variant} />,
+        <Formik
+          initialValues={{
+            password: "",
+          }}
+          onSubmit={jest.fn()}
+        >
+          {() => (
+            <Textfield {...variant} />
+          )}
+        </Formik>,
       );
 
       expect(

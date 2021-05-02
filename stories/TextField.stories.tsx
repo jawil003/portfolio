@@ -2,10 +2,8 @@ import {
   Meta,
   Story,
 } from "@storybook/react/types-6-0";
-import {
-  State,
-  Store,
-} from "@sambego/storybook-state";
+import React from "react";
+import { Formik } from "formik";
 import {
   Textfield,
   Props as TextFieldProps,
@@ -16,31 +14,23 @@ export default {
   component: Textfield,
 } as Meta;
 
-const store = new Store({
-  value: "",
-});
-
 const TextFieldElement: Story<TextFieldProps> = (
   args,
 ) => (
-  <State store={store}>
-    {(state) => (
-      <Textfield
-        {...args}
-        value={state.value}
-        onChange={({
-          target: { value },
-        }) =>
-          store.set({
-            value,
-          })
-        }
-      />
-    )}
-  </State>
+  <Formik
+    // eslint-disable-next-line react/destructuring-assignment
+    initialValues={{ [args.name]: "" }}
+    onSubmit={() => {}}
+  >
+    {() => <Textfield {...args} />}
+  </Formik>
 );
 
 export const Input = TextFieldElement.bind(
   {},
 );
-Input.args = {};
+Input.args = {
+  name: "password",
+  title: "Password",
+  placeholder: "abc1234",
+};

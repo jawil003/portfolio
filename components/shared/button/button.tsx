@@ -1,12 +1,16 @@
 import { css } from "@emotion/react";
 import React from "react";
+import {
+  Button as ButtonRebass,
+  ButtonProps,
+} from "rebass";
+import designSystem from "../../../styles/designSystem";
 
-export interface Props {
-  text: string;
-  variant?: "error" | "success";
-  onClick?: () => void;
-  className?: string;
-}
+export interface Props
+  extends React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {}
 
 /**
  * An Button React Component.
@@ -14,42 +18,39 @@ export interface Props {
  * @version 0.1
  */
 export const Button: React.FC<Props> = ({
-  text,
-  variant,
-  onClick,
   className,
+  children,
+  ...props
 }) => {
   return (
+    // eslint-disable-next-line react/button-has-type
     <button
-      type="button"
-      className={className}
-      onClick={onClick}
       css={css`
         & {
-          background-color: ${variant ===
-          "success"
-            ? "#3d899b"
-            : "#B74A66"};
-          padding: 0.8333333333333334em
-            1.6666666666666667em;
-          border: none;
+          padding: 0.7em 1em;
+          background-color: ${designSystem
+            .colors.brand.secondary};
+          color: ${designSystem.colors
+            .brand.primary};
           outline: none;
-          height: 2.8333333333333335em;
-          min-width: 7.5em;
-          border-radius: 1.25em;
-          font-style: normal;
-          font-weight: 400;
-          font-weight: normal;
-          font-size: 0.8333333333333334em;
-          color: #fff;
+          border: none;
+          border-radius: 3.125em;
+        }
+        &:disabled {
+          opacity: 0.35;
+        }
+        &:hover:not(:disabled) {
+          background-color: #015b7c;
         }
       `}
+      {...props}
+      className={className}
     >
-      {text}
+      <span>{children}</span>
     </button>
   );
 };
 
 Button.defaultProps = {
-  variant: "success",
+  type: "submit",
 };
