@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Create Button with {"text": "Hello World", "variant": "error"} 1`] = `
+exports[`Button Create Button with {"children": "Hello World"} 1`] = `
 .emotion-0 {
   padding: 0.7em 1em;
   background-color: #00739d;
@@ -20,15 +20,15 @@ exports[`Button Create Button with {"text": "Hello World", "variant": "error"} 1
 
 <button
   class="emotion-0"
-  text="Hello World"
   type="submit"
-  variant="error"
 >
-  <span />
+  <span>
+    Hello World
+  </span>
 </button>
 `;
 
-exports[`Button Create Button with {"text": "Hello World", "variant": "success"} 1`] = `
+exports[`Button Create Button with {"children": "Hello World"} 2`] = `
 .emotion-0 {
   padding: 0.7em 1em;
   background-color: #00739d;
@@ -48,10 +48,10 @@ exports[`Button Create Button with {"text": "Hello World", "variant": "success"}
 
 <button
   class="emotion-0"
-  text="Hello World"
   type="submit"
-  variant="success"
 >
-  <span />
+  <span>
+    Hello World
+  </span>
 </button>
 `;

@@ -6,7 +6,6 @@ import React, {
   RefObject,
   useState,
 } from "react";
-import { IndexContactFormIllustration } from "../components/index/index-contact-form/index-contact-form-illustration/index-contact-form-illustration";
 import { IndexContactForm } from "../components/index/index-contact-form/index-contact.form";
 
 import { IndexIconLink } from "../components/index/index-iconlink/index-iconlink";

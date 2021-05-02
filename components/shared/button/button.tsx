@@ -1,9 +1,5 @@
 import { css } from "@emotion/react";
 import React from "react";
-import {
-  Button as ButtonRebass,
-  ButtonProps,
-} from "rebass";
 import designSystem from "../../../styles/designSystem";
 
 export interface Props

@@ -29,8 +29,12 @@ exports[`TextField Create TextField with {"name": "password", "placeholder": "te
 .emotion-2 {
   border: 0.13333333333333333em solid #000000;
   box-sizing: border-box;
-  border-radius: 20px;
-  padding: 0.5em 0.8em;
+  border-radius: 1.25em;
+  padding: 0.75em 0.8em;
+}
+
+.emotion-2.emotion-2 {
+  margin-bottom: 0;
 }
 
 .emotion-2.emotion-2::-webkit-input-placeholder {
@@ -38,7 +42,7 @@ exports[`TextField Create TextField with {"name": "password", "placeholder": "te
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2::-moz-placeholder {
@@ -46,7 +50,7 @@ exports[`TextField Create TextField with {"name": "password", "placeholder": "te
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2:-ms-input-placeholder {
@@ -54,7 +58,7 @@ exports[`TextField Create TextField with {"name": "password", "placeholder": "te
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2::placeholder,
@@ -65,11 +69,21 @@ exports[`TextField Create TextField with {"name": "password", "placeholder": "te
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2:focus-within {
   outline: none;
+}
+
+.emotion-3.emotion-3 {
+  color: red;
+  margin: 0;
+  font-size: 0.75em;
+  line-height: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  margin-left: 1em;
 }
 
 <div
@@ -86,6 +100,9 @@ exports[`TextField Create TextField with {"name": "password", "placeholder": "te
     name="password"
     placeholder="test1234"
     value=""
+  />
+  <div
+    class="emotion-3"
   />
 </div>
 `;
@@ -119,8 +136,12 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
 .emotion-2 {
   border: 0.13333333333333333em solid #000000;
   box-sizing: border-box;
-  border-radius: 20px;
-  padding: 0.5em 0.8em;
+  border-radius: 1.25em;
+  padding: 0.75em 0.8em;
+}
+
+.emotion-2.emotion-2 {
+  margin-bottom: 0;
 }
 
 .emotion-2.emotion-2::-webkit-input-placeholder {
@@ -128,7 +149,7 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2::-moz-placeholder {
@@ -136,7 +157,7 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2:-ms-input-placeholder {
@@ -144,7 +165,7 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2::placeholder,
@@ -155,11 +176,21 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2:focus-within {
   outline: none;
+}
+
+.emotion-3.emotion-3 {
+  color: red;
+  margin: 0;
+  font-size: 0.75em;
+  line-height: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  margin-left: 1em;
 }
 
 <div
@@ -175,6 +206,9 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
     class="emotion-2"
     name="password"
     value=""
+  />
+  <div
+    class="emotion-3"
   />
 </div>
 `;
@@ -208,8 +242,12 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
 .emotion-2 {
   border: 0.13333333333333333em solid #000000;
   box-sizing: border-box;
-  border-radius: 20px;
-  padding: 0.5em 0.8em;
+  border-radius: 1.25em;
+  padding: 0.75em 0.8em;
+}
+
+.emotion-2.emotion-2 {
+  margin-bottom: 0;
 }
 
 .emotion-2.emotion-2::-webkit-input-placeholder {
@@ -217,7 +255,7 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2::-moz-placeholder {
@@ -225,7 +263,7 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2:-ms-input-placeholder {
@@ -233,7 +271,7 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2.emotion-2::placeholder,
@@ -244,11 +282,21 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .emotion-2:focus-within {
   outline: none;
+}
+
+.emotion-3.emotion-3 {
+  color: red;
+  margin: 0;
+  font-size: 0.75em;
+  line-height: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  margin-left: 1em;
 }
 
 <div
@@ -264,6 +312,9 @@ exports[`TextField Create TextField with {"name": "password", "title": "Password
     class="emotion-2"
     name="password"
     value=""
+  />
+  <div
+    class="emotion-3"
   />
 </div>
 `;

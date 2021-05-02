@@ -3,12 +3,10 @@ import { Button, ButtonProps } from ".";
 
 const variants: ButtonProps[] = [
   {
-    variant: "success",
-    text: "Hello World",
+    children: "Hello World",
   },
   {
-    variant: "error",
-    text: "Hello World",
+    children: "Hello World",
   },
 ];
 

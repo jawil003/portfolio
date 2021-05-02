@@ -2,6 +2,7 @@ import React from "react";
 import { useField } from "formik";
 import { css } from "@emotion/react";
 import { FlexContainer } from "../flexcontainer";
+import designSystem from "../../../styles/designSystem";
 
 export interface Props
   extends React.DetailedHTMLProps<
@@ -43,6 +44,9 @@ export const Textfield: React.FC<Props> = ({
           htmlFor={inputProps.name}
         >
           {title}
+          {inputProps.required
+            ? "*"
+            : undefined}
         </label>
         <input
           css={css`
@@ -50,8 +54,11 @@ export const Textfield: React.FC<Props> = ({
               border: 0.13333333333333333em
                 solid #000000;
               box-sizing: border-box;
-              border-radius: 20px;
-              padding: 0.5em 0.8em;
+              border-radius: 1.25em;
+              padding: 0.75em 0.8em;
+            }
+            && {
+              margin-bottom: 0;
             }
             &&::placeholder,
             &&::-webkit-input-placeholder,
@@ -61,7 +68,7 @@ export const Textfield: React.FC<Props> = ({
               font-style: normal;
               font-weight: normal;
               font-size: 1em;
-              opacity: 1;
+              opacity: 0.5;
             }
             &:focus-within {
               outline: none;
@@ -70,12 +77,28 @@ export const Textfield: React.FC<Props> = ({
           {...inputProps}
           {...field}
         />
-      </FlexContainer>
-      {meta.touched && meta.error ? (
-        <div className="error">
-          {meta.error}
+
+        <div
+          css={css`
+            && {
+              color: ${designSystem
+                .colors.palette.red
+                .base};
+              margin: 0;
+
+              font-size: 0.75em;
+              line-height: 1em;
+              height: 1em;
+              margin-top: 0.25em;
+              margin-left: 1em;
+            }
+          `}
+        >
+          {meta.touched && meta.error
+            ? meta.error
+            : undefined}
         </div>
-      ) : null}
+      </FlexContainer>
     </>
   );
 };
