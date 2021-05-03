@@ -20,6 +20,8 @@ import { Spacer } from "../../shared/spacer/spacer";
 import { Textarea } from "../../shared/textarea/textarea";
 import { Textfield } from "../../shared/textfield";
 import { Typography } from "../../shared/typography/typography";
+import MailService from "../../../services/mail.service";
+import ContactRequestService from "../../../services/backend/contactRequest.service";
 
 const AnimatedFlexContainer = motion(
   FlexContainer,
@@ -100,11 +102,12 @@ export const IndexContactForm: React.FC<Props> = () => {
         validationSchema={
           validationSchema
         }
-        onSubmit={(
-          _values,
-          actions,
-        ) => {
+        onSubmit={(values, actions) => {
           actions.resetForm();
+
+          ContactRequestService.do(
+            values,
+          );
         }}
       >
         {({ isValid }) => (

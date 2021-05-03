@@ -5,21 +5,21 @@ export default class ContactRequestService {
   public static async do({
     name,
     title,
-    description,
-    emailAdress,
+    message,
+    email,
   }: ContactRequestType) {
     await mutate(
       `mutation {
       send(
     contactRequest: {
       name: "${name}"
-      emailAdress: "${emailAdress}"
+      email: "${email}"
       title: "${title}"
-      description: "${description}"
+      message: "${message}"
     }
   ) {
     name
-    emailAdress
+    email
   }
 }`,
     );

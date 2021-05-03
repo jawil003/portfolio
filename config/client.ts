@@ -12,7 +12,7 @@ export const mutate = <
   value: string,
 ) =>
   localClient.post<T>("/", {
-    mutation: value,
+    query: value,
   });
 
 export const query = <

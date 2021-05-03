@@ -2,16 +2,16 @@ import { gql } from "apollo-server-micro";
 
 export interface ContactRequestType {
   name: string;
-  emailAdress: string;
+  email: string;
   title: string;
-  description: string;
+  message: string;
 }
 
 export const ContactRequestString = `
     name: String!
-    emailAdress: String!
+    email: String!
     title: String!
-    description: String!
+    message: String!
   `;
 
 const ContactRequest = gql`

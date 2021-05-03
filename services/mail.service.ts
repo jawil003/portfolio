@@ -9,8 +9,8 @@ const {
 export default class MailService {
   public static async send({
     title,
-    description,
-    emailAdress: email,
+    message,
+    email,
     name,
   }: ContactRequestType) {
     await axios.post(
@@ -27,7 +27,7 @@ export default class MailService {
           },
         ],
         subject: `Willey3x37.de Anfrage: ${title}`,
-        textContent: description,
+        textContent: message,
         replyTo: {
           name,
           email,
