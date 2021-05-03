@@ -25,10 +25,10 @@ const MyApp: React.FC<AppProps> = ({
         openGraph={{
           type: "website",
           locale: "de",
-          url: `https://${process.env.NEXT_PUBLIC_HOST_URL}`,
+          url: `${process.env.NEXT_PUBLIC_HOST_URL}`,
           images: [
             {
-              url: `https://${process.env.NEXT_PUBLIC_HOST_URL}/img/Og_Preview.png`,
+              url: `${process.env.NEXT_PUBLIC_HOST_URL}/img/Og_Preview.png`,
               width: 1200,
               height: 630,
               alt:
