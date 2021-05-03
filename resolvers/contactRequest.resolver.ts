@@ -11,7 +11,7 @@ const ContactRequestResolver = {
         contactRequest: ContactRequestType;
       },
     ) => {
-      await MailService.send(
+      await await MailService.send(
         contactRequest,
       );
       return contactRequest;

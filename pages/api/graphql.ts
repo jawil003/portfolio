@@ -1,9 +1,12 @@
 import { ApolloServer } from "apollo-server-micro";
+import Cors from "micro-cors";
 import ContactRequestResolver from "../../resolvers/contactRequest.resolver";
 import ContactRequestInput from "../../inputtypes/contactRequest.inputtype";
 import ContactRequest from "../../interfaces/graphql/contactRequest.type";
 import Mutation from "../../interfaces/graphql/mutation.type";
 import Query from "../../interfaces/graphql/query.type";
+
+const cors = Cors();
 
 const apolloServer = new ApolloServer({
   typeDefs: [
@@ -15,11 +18,16 @@ const apolloServer = new ApolloServer({
   resolvers: [ContactRequestResolver],
 });
 
-export default apolloServer.createHandler(
-  {
+export default cors((req, res) => {
+  if (req.method === "OPTIONS") {
+    res.end();
+    return false;
+  }
+
+  return apolloServer.createHandler({
     path: "/api/graphql",
-  },
-);
+  })(req, res);
+});
 
 export const config = {
   api: {
