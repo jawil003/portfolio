@@ -14,7 +14,7 @@ const ContactRequestResolver = {
       },
     ) => {
       const mailService =
-        process.env.MODE ===
+        process.env.NODE_ENV ===
         "production"
           ? MailService.get()
           : await FakeMailService.get();
