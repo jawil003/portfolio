@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "@emotion/react";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import CancelIcon from "@material-ui/icons/Cancel";
 import designSystem from "../../../../styles/designSystem";
 import { Typography } from "../../../shared/typography";
 import { DialogWrapper } from "../../../shared/dialog-wrapper";
@@ -8,6 +9,7 @@ import { Spacer } from "../../../shared/spacer/spacer";
 
 export interface Props {
   show: boolean;
+  mode: "success" | "error";
 }
 
 /**
@@ -17,6 +19,7 @@ export interface Props {
  */
 export const IndexContactFormSuccessDialog: React.FC<Props> = ({
   show,
+  mode,
 }) => {
   return (
     <div>
@@ -35,22 +38,37 @@ export const IndexContactFormSuccessDialog: React.FC<Props> = ({
             }
           `}
         >
-          <CheckCircleIcon
-            css={css`
-              && {
-                fill: ${designSystem
-                  .colors.palette.green
-                  .base};
-                font-size: 175px;
-              }
-            `}
-          />
+          {mode === "success" ? (
+            <CheckCircleIcon
+              css={css`
+                && {
+                  fill: ${designSystem
+                    .colors.palette
+                    .green.base};
+                  font-size: 175px;
+                }
+              `}
+            />
+          ) : (
+            <CancelIcon
+              css={css`
+                && {
+                  fill: ${designSystem
+                    .colors.palette.red
+                    .base};
+                  font-size: 175px;
+                }
+              `}
+            />
+          )}
           <Spacer height="20px" />
           <Typography
             variant="h5"
             component="span"
           >
-            Erfolgreich abgesendet
+            {mode === "success"
+              ? "Erfolgreich abgesendet"
+              : "Etwas ist schiefgelaufen"}
           </Typography>
         </div>
       </DialogWrapper>

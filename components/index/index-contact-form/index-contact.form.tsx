@@ -72,9 +72,12 @@ export const IndexContactForm: React.FC<Props> = () => {
       animation.start({ opacity: 0 });
   }, [inView, animation]);
   const [
-    showDialog,
-    setShowDialog,
-  ] = useState(false);
+    dialogProps,
+    setDialogProps,
+  ] = useState<{
+    show: boolean;
+    mode: "success" | "error";
+  }>({ show: false, mode: "success" });
   return (
     <>
       <AnimatedFlexContainer
@@ -109,17 +112,32 @@ export const IndexContactForm: React.FC<Props> = () => {
             actions,
           ) => {
             if (values?.hidden) return;
+            try {
+              await ContactRequestService.do(
+                values,
+              );
+              setDialogProps({
+                show: true,
+                mode: "success",
+              });
+            } catch (err) {
+              setDialogProps({
+                show: true,
+                mode: "error",
+              });
+              throw err;
+            } finally {
+              window.setTimeout(() => {
+                setDialogProps(
+                  (props) => ({
+                    ...props,
+                    show: false,
+                  }),
+                );
+              }, 1500);
+            }
 
             actions.resetForm();
-
-            await ContactRequestService.do(
-              values,
-            );
-            setShowDialog(true);
-
-            window.setTimeout(() => {
-              setShowDialog(false);
-            }, 1500);
           }}
         >
           {({ isValid }) => (
@@ -211,7 +229,7 @@ export const IndexContactForm: React.FC<Props> = () => {
         </Formik>
       </AnimatedFlexContainer>
       <IndexContactFormSuccessDialog
-        show={showDialog}
+        {...dialogProps}
       />
     </>
   );
