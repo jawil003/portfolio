@@ -2,6 +2,7 @@ import nodemailer, {
   TestAccount,
 } from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
+import open from "open";
 import { ololog } from "../config/logger";
 import { ContactRequestType } from "../interfaces/graphql/contactRequest.type";
 
@@ -70,10 +71,12 @@ export default class FakeMailService {
         text: message,
       },
     );
+    const testurl = nodemailer.getTestMessageUrl(
+      info,
+    );
+    open(testurl as string);
     ololog.info(
-      `Preview Email: ${nodemailer.getTestMessageUrl(
-        info,
-      )}`,
+      `Preview Email: ${testurl}`,
     );
   }
 }
