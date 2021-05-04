@@ -223,6 +223,7 @@ const Index: React.FC<ServerSideProps> = ({
           </div>
         </div>
       </IndexResumeColorContainer>
+      <Spacer height="120px" />
       <FlexContainer
         justifyContent="center"
         alignItems="center"

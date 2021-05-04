@@ -1,9 +1,17 @@
 import { AppProps } from "next/app";
 import React from "react";
 import { DefaultSeo } from "next-seo";
-import { ThemeProvider } from "@emotion/react";
-import { preset } from "../styles/theme";
+import { prepareClientPortals } from "@jesstelford/react-portal-universal";
+import { css } from "@emotion/react";
 import globalStyles from "../styles/styles";
+import designSystem from "../styles/designSystem";
+
+if (typeof window !== "undefined") {
+  // On the client, we have to run this once before React attempts a render.
+  // Here in _app is a great place to do it as this file is only required once,
+  // and right now (outside the constructor) is before React is invoked.
+  prepareClientPortals();
+}
 
 /**
  * An App React Component.
@@ -58,9 +66,20 @@ const MyApp: React.FC<AppProps> = ({
           maxVideoPreview: -1,
         }}
       />
-      <ThemeProvider theme={preset}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <div
+        css={css`
+          & {
+            z-index: ${designSystem
+              .positioning.first};
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        `}
+        id="modal"
+      />
+
+      <Component {...pageProps} />
     </>
   );
 };

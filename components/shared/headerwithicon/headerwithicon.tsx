@@ -62,7 +62,6 @@ export const HeaderWithIcon = forwardRef<
 
     useScrollPosition(
       ({ currPos: { y } }) => {
-        console.log(y);
         if (y > 0) {
           setShowArrow(false);
         } else if (y === 0) {
