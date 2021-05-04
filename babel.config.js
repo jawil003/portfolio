@@ -6,9 +6,10 @@ const plugins = [
 if (
   process.env.NODE_ENV !== "production"
 ) {
-  plugins.push(
+  plugins.concat([
     "babel-plugin-typescript-to-proptypes",
-  );
+    "transform-remove-console",
+  ]);
 }
 
 module.exports = {

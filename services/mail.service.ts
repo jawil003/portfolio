@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import axios from "axios";
 import { ContactRequestType } from "../interfaces/graphql/contactRequest.type";
 
@@ -7,7 +8,19 @@ const {
   SEND_IN_BLUE_SENDER_EMAIL: senderEmail,
 } = process.env;
 export default class MailService {
-  public static async send({
+  private static instance: MailService;
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private constructor() {}
+
+  public static get() {
+    if (!this.instance)
+      this.instance = new MailService();
+
+    return this.instance;
+  }
+
+  public async send({
     title,
     message,
     email,

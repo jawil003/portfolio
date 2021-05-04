@@ -23,6 +23,7 @@ import { Textfield } from "../../shared/textfield";
 import { Typography } from "../../shared/typography/typography";
 import ContactRequestService from "../../../services/backend/contactRequest.service";
 import { IndexContactFormSuccessDialog } from "./index-contact-form-success.dialog";
+import { ololog } from "../../../config/logger";
 
 const AnimatedFlexContainer = motion(
   FlexContainer,
@@ -111,8 +112,10 @@ export const IndexContactForm: React.FC<Props> = () => {
             values,
             actions,
           ) => {
-            if (values?.hidden) return;
             try {
+              if (values?.hidden)
+                throw new Error();
+
               await ContactRequestService.do(
                 values,
               );
@@ -120,7 +123,15 @@ export const IndexContactForm: React.FC<Props> = () => {
                 show: true,
                 mode: "success",
               });
+              ololog.info(
+                "Send email with",
+                values,
+              );
             } catch (err) {
+              ololog.error(
+                "Something went wrong",
+                err,
+              );
               setDialogProps({
                 show: true,
                 mode: "error",
@@ -138,6 +149,9 @@ export const IndexContactForm: React.FC<Props> = () => {
             }
 
             actions.resetForm();
+            ololog.debug(
+              "Reset form to initial state",
+            );
           }}
         >
           {({ isValid }) => (
