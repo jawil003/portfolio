@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import CancelIcon from "@material-ui/icons/Cancel";
+import { motion } from "framer-motion";
 import designSystem from "../../../../styles/designSystem";
 import { Typography } from "../../../shared/typography";
 import { DialogWrapper } from "../../../shared/dialog-wrapper";
@@ -24,7 +25,7 @@ export const IndexContactFormSuccessDialog: React.FC<Props> = ({
   return (
     <div>
       <DialogWrapper show={show}>
-        <div
+        <motion.div
           css={css`
             & {
               padding: 50px 30px;
@@ -32,9 +33,9 @@ export const IndexContactFormSuccessDialog: React.FC<Props> = ({
                 .colors.palette.white
                 .base};
               border-radius: 20px;
-              display: flex;
               flex-direction: column;
               align-items: center;
+              display: flex;
             }
           `}
         >
@@ -70,7 +71,7 @@ export const IndexContactFormSuccessDialog: React.FC<Props> = ({
               ? "Erfolgreich abgesendet"
               : "Etwas ist schiefgelaufen"}
           </Typography>
-        </div>
+        </motion.div>
       </DialogWrapper>
     </div>
   );

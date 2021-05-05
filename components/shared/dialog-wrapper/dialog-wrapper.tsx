@@ -1,6 +1,15 @@
 import { css } from "@emotion/react";
 import { UniversalPortal } from "@jesstelford/react-portal-universal";
-import React from "react";
+import {
+  useTransform,
+  motion,
+  useSpring,
+  useAnimation,
+} from "framer-motion";
+import React, {
+  useEffect,
+  useState,
+} from "react";
 
 export interface Props {
   show: boolean;
@@ -15,10 +24,39 @@ export const DialogWrapper: React.FC<Props> = ({
   show,
   children,
 }) => {
+  const animation = useAnimation();
+  const [
+    display,
+    setDisplay,
+  ] = useState(show);
+
+  useEffect(() => {
+    if (show) {
+      setDisplay(true);
+      animation.start(
+        {
+          opacity: 1,
+        },
+        { duration: 2 },
+      );
+    } else {
+      animation
+        .start(
+          {
+            opacity: 0,
+          },
+          { duration: 2 },
+        )
+        .then(() => {
+          setDisplay(false);
+        });
+    }
+  }, [show]);
   return (
     <UniversalPortal selector="#modal">
       <div>
-        <div
+        <motion.div
+          animate={animation}
           css={css`
             & {
               position: fixed;
@@ -37,10 +75,12 @@ export const DialogWrapper: React.FC<Props> = ({
               box-sizing: border-box;
               justify-content: center;
               align-items: center;
-              display: ${show
+              flex-direction: column;
+            }
+            & {
+              display: ${display
                 ? "flex"
                 : "none"};
-              flex-direction: column;
             }
             &:after {
               content: "";
@@ -54,7 +94,7 @@ export const DialogWrapper: React.FC<Props> = ({
               min-height: 100vh;
               max-height: 100vh;
               background-color: #000000;
-              opacity: 0.2;
+              opacity: 0.75;
 
               z-index: 1;
             }
@@ -84,7 +124,7 @@ export const DialogWrapper: React.FC<Props> = ({
           >
             {children}
           </div>
-        </div>
+        </motion.div>
       </div>
     </UniversalPortal>
   );
