@@ -6,6 +6,7 @@ import Document, {
 } from "next/document";
 import React from "react";
 import { ServerPortal } from "@jesstelford/react-portal-universal/server";
+import { ViewportProvider } from "../contexts/viewport-provider";
 
 /**
  * An  React Component.

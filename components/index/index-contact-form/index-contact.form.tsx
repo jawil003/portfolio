@@ -178,6 +178,7 @@ export const IndexContactForm: React.FC<Props> = () => {
               `}
             >
               <Textfield
+                data-testid="index-contact-form-email-input"
                 required
                 type="email"
                 title="Email Adresse"
@@ -191,6 +192,7 @@ export const IndexContactForm: React.FC<Props> = () => {
                 }}
               />
               <Textfield
+                data-testid="index-contact-form-name-input"
                 required
                 title="Name"
                 name="name"
@@ -201,6 +203,7 @@ export const IndexContactForm: React.FC<Props> = () => {
                 }}
               />
               <Textfield
+                data-testid="index-contact-form-title-input"
                 required
                 title="Titel"
                 name="title"
@@ -211,6 +214,7 @@ export const IndexContactForm: React.FC<Props> = () => {
                 }}
               />
               <Textarea
+                data-testid="index-contact-form-message-textarea"
                 required
                 rows={6}
                 title="Nachricht"
@@ -229,6 +233,7 @@ export const IndexContactForm: React.FC<Props> = () => {
               <Spacer height="var(--indexContactFormRowGap)" />
 
               <Button
+                data-testid="index-contact-form-submit-button"
                 disabled={!isValid}
                 css={css`
                   && {
