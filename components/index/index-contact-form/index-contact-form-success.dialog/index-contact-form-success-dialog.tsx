@@ -5,11 +5,9 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import { motion } from "framer-motion";
 import designSystem from "../../../../styles/designSystem";
 import { Typography } from "../../../shared/typography";
-import { DialogWrapper } from "../../../shared/dialog-wrapper";
 import { Spacer } from "../../../shared/spacer/spacer";
 
 export interface Props {
-  show: boolean;
   mode: "success" | "error";
 }
 
@@ -19,60 +17,54 @@ export interface Props {
  * @version 0.1
  */
 export const IndexContactFormSuccessDialog: React.FC<Props> = ({
-  show,
   mode,
 }) => {
   return (
-    <div>
-      <DialogWrapper show={show}>
-        <motion.div
+    <motion.div
+      css={css`
+        & {
+          padding: 50px 30px;
+          background-color: ${designSystem
+            .colors.palette.white.base};
+          border-radius: 20px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+        }
+      `}
+    >
+      {mode === "success" ? (
+        <CheckCircleIcon
           css={css`
-            & {
-              padding: 50px 30px;
-              background-color: ${designSystem
-                .colors.palette.white
+            && {
+              fill: ${designSystem
+                .colors.palette.green
                 .base};
-              border-radius: 20px;
-              flex-direction: column;
-              align-items: center;
-              display: flex;
+              font-size: 175px;
             }
           `}
-        >
-          {mode === "success" ? (
-            <CheckCircleIcon
-              css={css`
-                && {
-                  fill: ${designSystem
-                    .colors.palette
-                    .green.base};
-                  font-size: 175px;
-                }
-              `}
-            />
-          ) : (
-            <CancelIcon
-              css={css`
-                && {
-                  fill: ${designSystem
-                    .colors.palette.red
-                    .base};
-                  font-size: 175px;
-                }
-              `}
-            />
-          )}
-          <Spacer height="20px" />
-          <Typography
-            variant="h5"
-            component="span"
-          >
-            {mode === "success"
-              ? "Erfolgreich abgesendet"
-              : "Etwas ist schiefgelaufen"}
-          </Typography>
-        </motion.div>
-      </DialogWrapper>
-    </div>
+        />
+      ) : (
+        <CancelIcon
+          css={css`
+            && {
+              fill: ${designSystem
+                .colors.palette.red
+                .base};
+              font-size: 175px;
+            }
+          `}
+        />
+      )}
+      <Spacer height="20px" />
+      <Typography
+        variant="h5"
+        component="span"
+      >
+        {mode === "success"
+          ? "Erfolgreich abgesendet"
+          : "Etwas ist schiefgelaufen"}
+      </Typography>
+    </motion.div>
   );
 };

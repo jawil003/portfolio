@@ -24,6 +24,7 @@ import { Typography } from "../../shared/typography/typography";
 import ContactRequestService from "../../../services/backend/contactRequest.service";
 import { IndexContactFormSuccessDialog } from "./index-contact-form-success.dialog";
 import { ololog } from "../../../config/logger";
+import { DialogWrapper } from "../../shared/dialog-wrapper";
 
 const AnimatedFlexContainer = motion(
   FlexContainer,
@@ -247,9 +248,16 @@ export const IndexContactForm: React.FC<Props> = () => {
           )}
         </Formik>
       </AnimatedFlexContainer>
-      <IndexContactFormSuccessDialog
-        {...dialogProps}
-      />
+
+      <DialogWrapper
+        show={dialogProps.show}
+      >
+        <div>
+          <IndexContactFormSuccessDialog
+            mode={dialogProps.mode}
+          />
+        </div>
+      </DialogWrapper>
     </>
   );
 };

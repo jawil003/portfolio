@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogWrapper Create DialogWrapper 1`] = `
+.emotion-0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100vw;
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: #000000;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  background-color: var(
+                    --greenblue
+                  );
+  min-width: 400px;
+  min-height: 200px;
+  border-radius: 10px;
+  z-index: 999;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 20px;
+  margin: -10px 0px;
+}
+
+.emotion-1>* {
+  margin: 10px 0px;
+  color: var(--white);
+}
+
+<body>
+  <div
+    id="modal"
+  >
+    <div>
+      <div
+        class="emotion-0"
+      >
+        <div
+          class="emotion-1"
+        />
+      </div>
+    </div>
+  </div>
+  <div />
+</body>
+`;
