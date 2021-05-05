@@ -104,9 +104,17 @@ export const Textfield: React.FC<Props> = ({
             <input
               css={css`
                 & {
-                  flex: 1;
                   border: none;
                   outline: none;
+                  padding-left: ${icon.align ===
+                  "left"
+                    ? "3.0625em"
+                    : ""};
+                  width: 100%;
+                  padding-right: ${icon.align ===
+                  "right"
+                    ? "3.0625em"
+                    : ""};
                 }
                 &:focus-within {
                   outline: none;
