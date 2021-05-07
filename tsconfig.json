@@ -31,7 +31,8 @@
   },
   "exclude": [
     "node_modules",
-    "next.config.js"
+    "next.config.js",
+    "cypress"
   ],
   "include": [
     "**/*.ts",

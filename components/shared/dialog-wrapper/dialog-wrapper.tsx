@@ -1,9 +1,7 @@
 import { css } from "@emotion/react";
 import { UniversalPortal } from "@jesstelford/react-portal-universal";
 import {
-  useTransform,
   motion,
-  useSpring,
   useAnimation,
 } from "framer-motion";
 import React, {
