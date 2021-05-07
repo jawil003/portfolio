@@ -17,5 +17,20 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
-  snapshotSerializers: ["@emotion/jest/serializer"]
+  snapshotSerializers: ["@emotion/jest/serializer"],
+  collectCoverageFrom: [
+    "**/*.{ts,tsx}",
+    "!**/node_modules/**",
+    "!**/vendor/**",
+    "!**/.vscode/**",
+    "!**/.husky/**",
+    "!**/.storybook/**",
+    "!**/stories/**",
+    "!**/variants/**",
+    "!**/styles/**",
+    "!**/public/**",
+    "!**/mocks/**",
+    "!**/typings/**",
+    "!**/next-env.d.ts"
+  ]
 }
