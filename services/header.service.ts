@@ -1,7 +1,7 @@
 import {
   indexHeader,
   errorHeader,
-} from "../config/headers";
+} from "../config/headers/headers";
 
 export default class HeaderService {
   public static getIndex() {
