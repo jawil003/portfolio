@@ -3,7 +3,7 @@ beforeEach(() => {
 });
 
 describe("Navigation", () => {
-  it("open page", () => {
+  it("Open navbar", () => {
     cy.get(
       ".desktop-navigation-bar-hamburger-menu-container",
     ).click();
@@ -15,7 +15,7 @@ describe("Navigation", () => {
 });
 
 describe("ContactForm", () => {
-  it("scroll", () => {
+  it("Fill contact form valid", () => {
     cy.get(
       ".css-xbw9dc-FlexContainer > #heading4",
     ).scrollIntoView();
@@ -39,6 +39,29 @@ describe("ContactForm", () => {
     );
     cy.get(
       "[data-testid=index-contact-form-submit-button]",
+    ).click();
+  });
+  it("Check contact form validation", () => {
+    cy.get(
+      ".css-xbw9dc-FlexContainer > #heading4",
+    ).scrollIntoView();
+
+    cy.get(
+      '[data-testid="index-contact-form-email-input"]',
+    )
+      .click()
+      .type("abc");
+
+    cy.get(
+      '[data-testid="index-contact-form-name-input"]',
+    ).click();
+
+    cy.get(
+      '[data-testid="index-contact-form-title-input"]',
+    ).click();
+
+    cy.get(
+      '[data-testid="index-contact-form-message-textarea"]',
     ).click();
   });
 });
