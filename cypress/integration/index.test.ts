@@ -22,21 +22,37 @@ describe("ContactForm", () => {
 
     cy.get(
       '[data-testid="index-contact-form-email-input"]',
-    ).type("maxine@musterfrau.de");
+    )
+      .type("maxine@musterfrau.de")
+      .should(
+        "have.value",
+        "maxine@musterfrau.de",
+      );
 
     cy.get(
       '[data-testid="index-contact-form-name-input"]',
-    ).type("Maxine Musterfrau");
+    )
+      .type("Maxine Musterfrau")
+      .should(
+        "have.value",
+        "Maxine Musterfrau",
+      );
 
     cy.get(
       '[data-testid="index-contact-form-title-input"]',
-    ).type("Anfrage");
+    )
+      .type("Anfrage")
+      .should("have.value", "Anfrage");
 
     cy.get(
       '[data-testid="index-contact-form-message-textarea"]',
-    ).type(
-      "Sehr geehrter Herr Will,\nich möchte ihnen auf diesem Wege eine nette Testnachricht schreiben.\nWas mich dazu bewegt hat, keine Ahnung.\nAber vielleicht freuen Sie sich ja trotzdem.",
-    );
+    )
+      .type("Sehr geehrter Herr Will")
+      .should(
+        "have.value",
+        "Sehr geehrter Herr Will",
+      );
+
     cy.get(
       "[data-testid=index-contact-form-submit-button]",
     ).click();
