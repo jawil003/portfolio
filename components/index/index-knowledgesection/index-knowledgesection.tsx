@@ -11,8 +11,6 @@ import { FlexContainer } from "../../shared/flexcontainer/flexcontainer";
 import { IndexKnowledgeTable } from "./index-knowledgesection-table/index-knowledgesection-table";
 import { useInView } from "react-intersection-observer";
 import composeRefs from "@seznam/compose-react-refs";
-import designSystem from "../../../styles/designSystem";
-import { css } from "@emotion/react";
 const AnimatedFlexContainer = motion(
   FlexContainer,
 );

@@ -263,6 +263,7 @@ exports[`NotOptimized Create NotOptimized 1`] = `
     >
       <div
         class="desktop-navigation-bar-hamburger-menu-container"
+        role="presentation"
       >
         <svg
           class="hamburger-menu-icon undefined"
@@ -295,6 +296,7 @@ exports[`NotOptimized Create NotOptimized 1`] = `
     </nav>
     <nav
       class="desktop-navigation-bar-sidebar-container-background  emotion-1"
+      role="presentation"
     >
       <div
         class="desktop-navigation-bar-sidebar-container"

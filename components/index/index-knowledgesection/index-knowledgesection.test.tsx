@@ -1,8 +1,5 @@
 import { render } from "@testing-library/react";
 import { IndexKnowledgeSection } from "./index-knowledgesection";
-import reactIntersectionObserver from "react-intersection-observer";
-import { mocked } from "ts-jest/utils";
-import { createRef } from "react";
 
 jest.mock(
   "react-intersection-observer",
@@ -11,10 +8,6 @@ jest.mock(
       .fn()
       .mockResolvedValue({ ref: {} }),
   }),
-);
-
-const mockedObserver = mocked(
-  reactIntersectionObserver,
 );
 
 describe("IndexKnowledgeSection", () => {

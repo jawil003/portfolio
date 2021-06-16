@@ -54,3 +54,5 @@ export const Logo: React.FC = React.memo(
     );
   },
 );
+
+Logo.displayName = "Logo";

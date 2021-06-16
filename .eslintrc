@@ -1,0 +1,75 @@
+{
+  "extends": ["next"],
+
+  "plugins": [
+    "@emotion",
+    "@typescript-eslint",
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-namespace": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".json"
+        ]
+      }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": [
+      2,
+      { "custom": "ignore" }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": [
+          "hrefLeft",
+          "hrefRight"
+        ],
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ],
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 2,
+    "no-bitwise": 2,
+    "@emotion/no-vanilla": 2,
+    "@emotion/import-from-emotion": 2,
+    "@emotion/styled-import": 2,
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ]
+  }
+}

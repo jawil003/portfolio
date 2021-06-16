@@ -4,12 +4,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import React from "react";
 
-import {
-  generateGeneralTags,
-  provideImages,
-} from "../services/meta.service";
 /**
  * An  React Component.
  * @author
@@ -20,12 +15,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="de">
-        <Head>
-          <link
-            rel="stylesheet"
-            href="index.css"
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

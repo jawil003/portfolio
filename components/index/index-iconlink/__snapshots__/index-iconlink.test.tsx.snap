@@ -1,13 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`IndexIconLink Check styling ability of IconLink 1`] = `
+.emotion-0 {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <body>
   <div>
     <a
-      class="testname"
+      class="testname emotion-0"
       href="https://google.de"
       rel="noreferrer"
-      style="background-color: white; width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; transform: none;"
+      style="transform: none;"
       target="_blank"
     />
   </div>
@@ -15,12 +36,34 @@ exports[`IndexIconLink Check styling ability of IconLink 1`] = `
 `;
 
 exports[`IndexIconLink Create IndexIconLink with {"background": "white", "external": true, "href": "https://google.de", "size": "20px"} 1`] = `
+.emotion-0 {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <body>
   <div>
     <a
+      class="emotion-0"
       href="https://google.de"
       rel="noreferrer"
-      style="background-color: white; width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; transform: none;"
+      style="transform: none;"
       target="_blank"
     />
   </div>
@@ -28,10 +71,32 @@ exports[`IndexIconLink Create IndexIconLink with {"background": "white", "extern
 `;
 
 exports[`IndexIconLink Create IndexIconLink with {"background": "white", "href": "/test", "size": "20px"} 1`] = `
+.emotion-0 {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <body>
   <div>
     <a
-      style="background-color: white; width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;"
+      class="emotion-0"
+      href="/test"
     />
   </div>
 </body>

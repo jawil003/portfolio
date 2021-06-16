@@ -1,11 +1,9 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import {
   motion,
   useAnimation,
 } from "framer-motion";
-import React, { useState } from "react";
+import { memo, useState } from "react";
+import { css } from "@emotion/react";
 import { useNavigationIcons } from "../../../hooks/useIcons.hook";
 import { Logo } from "../logo/logo";
 import { NavigationBarItem } from "./navigationbar-item";
@@ -17,7 +15,6 @@ import {
 } from "../../../config/routes.json";
 import HamburgerMenuIcon from "../../../icons/hamburgerMenu.icon";
 import designSystem from "../../../styles/designSystem";
-import { css } from "@emotion/react";
 import DesktopNavigationBarContext from "../../../contexts/DesktopNavigationBarContext";
 
 export interface Props {
@@ -30,7 +27,7 @@ export interface Props {
  * @author Jannik Will
  * @version 0.1
  */
-export const NavigationBar: React.FC<Props> = React.memo(
+export const NavigationBar: React.FC<Props> = memo(
   ({
     className,
     backgroundIsWhite,
@@ -47,8 +44,9 @@ export const NavigationBar: React.FC<Props> = React.memo(
         <DesktopNavigationBarContext.Provider
           value={{
             open,
-            setOpen: (open: boolean) =>
-              setOpen(open),
+            setOpen: (
+              openState: boolean,
+            ) => setOpen(openState),
           }}
         >
           <motion.nav
@@ -74,6 +72,17 @@ export const NavigationBar: React.FC<Props> = React.memo(
             <div
               className="desktop-navigation-bar-hamburger-menu-container"
               onClick={() => {
+                setOpen(true);
+                navBar.start({
+                  x: 0,
+                  transition: {
+                    duration: 0.6,
+                    ease: "easeOut",
+                  },
+                });
+              }}
+              role="presentation"
+              onKeyDown={() => {
                 setOpen(true);
                 navBar.start({
                   x: 0,
@@ -162,6 +171,20 @@ export const NavigationBar: React.FC<Props> = React.memo(
                   setOpen(false);
                 });
             }}
+            onKeyDown={() => {
+              navBar
+                .start({
+                  x: -200,
+                  transition: {
+                    duration: 0.8,
+                    ease: "easeOut",
+                  },
+                })
+                .then(() => {
+                  setOpen(false);
+                });
+            }}
+            role="presentation"
           >
             <motion.div
               className="desktop-navigation-bar-sidebar-container"
@@ -234,3 +257,6 @@ export const NavigationBar: React.FC<Props> = React.memo(
 NavigationBar.defaultProps = {
   backgroundIsWhite: true,
 };
+
+NavigationBar.displayName =
+  "NavigationBar";

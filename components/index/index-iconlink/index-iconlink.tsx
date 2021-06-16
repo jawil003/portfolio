@@ -1,11 +1,10 @@
+import { css } from "@emotion/react";
 import {
   motion,
   useSpring,
 } from "framer-motion";
 import Link from "next/link";
-import React, {
-  CSSProperties,
-} from "react";
+import React from "react";
 
 export interface Props {
   size?: string;
@@ -45,18 +44,26 @@ export const IndexIconLink: React.FC<Props> = React.memo(
             href={href}
             rel="noreferrer"
             target="_blank"
+            css={css`
+              & {
+                background-color: ${background};
+                width: ${size};
+                height: ${size};
+              }
+              & {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            `}
             style={{
-              backgroundColor: background,
               scale,
-              width: size,
-              height: size,
-              ...styles.container,
             }}
           >
             {children}
           </motion.a>
         ) : (
-          <Link href={href}>
+          <Link href={href} passHref>
             <motion.a
               className={className}
               onMouseOver={() => {
@@ -65,12 +72,18 @@ export const IndexIconLink: React.FC<Props> = React.memo(
               onMouseOut={() => {
                 scale.set(1);
               }}
-              style={{
-                backgroundColor: background,
-                width: size,
-                height: size,
-                ...styles.container,
-              }}
+              css={css`
+                & {
+                  background-color: ${background};
+                  width: ${size};
+                  height: ${size};
+                }
+                & {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              `}
             >
               {children}
             </motion.a>
@@ -80,16 +93,6 @@ export const IndexIconLink: React.FC<Props> = React.memo(
     );
   },
 );
-
-const styles: {
-  [x: string]: CSSProperties;
-} = {
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-};
 
 IndexIconLink.displayName = "IconLink";
 

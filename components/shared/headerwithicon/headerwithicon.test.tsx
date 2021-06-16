@@ -3,7 +3,6 @@ import {
   HeaderWithIcon,
   HeaderWithIconProps,
 } from "./";
-import reactIntersectionObserver from "react-intersection-observer";
 import { AcUnit } from "@material-ui/icons";
 
 jest.mock(
